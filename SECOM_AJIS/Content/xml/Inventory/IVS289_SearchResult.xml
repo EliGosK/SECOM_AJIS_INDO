@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="50" type="ro" align="center" sort="na"></column>
+    <column id="SlipNo" width="*" type="ro" align="left" sort="na">headerSearchSlipNo</column>
+    <column id="TransferDate" width="120" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="na">headerSearchTransferDate</column>
+    <column id="Qty" width="180" type="ron2" align="right" numberformat="#,##0" sort="na">headerSearchQty</column>
+    <column id="AmountUsD" width="220" type="ron2" align="right" numberformat="US$#,##0.00" sort="na">headerSearchTotal</column>
+    <column id="DetailButton" width="30" type="ro" align="center" sort="na">headerSearchDetailButton</column>
+    <column id="SelectButton" width="30" type="ro" align="center" sort="na">
+      <![CDATA[<input name='chkSelectAll' id='chkSelectAll' style='MARGIN-LEFT: -3px' type='checkbox' value='' />]]>
+    </column>
+    <column id="SelectedFlag" width="0" type="ro" hidden="true"></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

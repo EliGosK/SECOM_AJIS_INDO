@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAdd" xml:space="preserve">
+    <value>เพิ่ม</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="btnClear" xml:space="preserve">
+    <value>ล้าง</value>
+  </data>
+  <data name="btnNextToRegisterPayment" xml:space="preserve">
+    <value>บันทึกข้อมูลการชำระเงินอื่น</value>
+  </data>
+  <data name="btnRetrieve" xml:space="preserve">
+    <value>ดึงข้อมูล</value>
+  </data>
+  <data name="gridHeaderMemo" xml:space="preserve">
+    <value>บันทึกข้อความ</value>
+  </data>
+  <data name="gridHeaderPaymentAmount" xml:space="preserve">
+    <value>จำนวนเงินที่ชำระ (บาท)</value>
+  </data>
+  <data name="gridHeaderPaymentDate" xml:space="preserve">
+    <value>วันชำระเงิน</value>
+  </data>
+  <data name="gridHeaderPaymentName" xml:space="preserve">
+    <value>ชื่อผู้ชำระเงิน</value>
+  </data>
+  <data name="gridHeaderPaymentTransNo" xml:space="preserve">
+    <value>รหัสการชำระเงิน</value>
+  </data>
+  <data name="gridHeaderPaymentType" xml:space="preserve">
+    <value>ประเภทการชำระเงิน</value>
+  </data>
+  <data name="gridHeaderReceipt" xml:space="preserve">
+    <value>&lt;div&gt;ใบเสร็จรับเงิน&lt;br /&gt;(1) เลขที่&lt;br /&gt;(2) จำนวนเงิน (บาท)&lt;/div&gt;</value>
+  </data>
+  <data name="gridHeaderRemove" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;ลบ&lt;/div&gt;</value>
+  </data>
+  <data name="gridHeaderSECOMBank" xml:space="preserve">
+    <value>&lt;div&gt;บัญชีซีคอม&lt;br /&gt;(1) ธนาคาร&lt;br /&gt;(2) สาขา&lt;/div&gt;</value>
+  </data>
+  <data name="gridHeaderSending" xml:space="preserve">
+    <value>&lt;div&gt;บัญชีลูกค้า&lt;br /&gt;(1) ธนาคาร&lt;br /&gt;(2) สาขา&lt;/div&gt;</value>
+  </data>
+  <data name="lblAccountNo" xml:space="preserve">
+    <value>เลขที่บัญชี</value>
+  </data>
+  <data name="lblGroupname" xml:space="preserve">
+    <value>รหัสกลุ่ม</value>
+  </data>
+  <data name="lblHeaderRequired" xml:space="preserve">
+    <value>จำเป็นต้องกรอกในกรณีที่เป็นการเก็บเงินโดยตรง</value>
+  </data>
+  <data name="lblInvoiceNO" xml:space="preserve">
+    <value>เลขที่ใบแจ้งหนี้</value>
+  </data>
+  <data name="lblMemo" xml:space="preserve">
+    <value>บันทึกข้อความ</value>
+  </data>
+  <data name="lblMemoRemark" xml:space="preserve">
+    <value>* กรุณากรอกบันทึกข้อความไม่เกิน 100 ตัวอักษร</value>
+  </data>
+  <data name="lblNoWHT" xml:space="preserve">
+    <value>ไม่หัก WHT</value>
+  </data>
+  <data name="lblPayerNmae" xml:space="preserve">
+    <value>ชื่อผู้ชำระเงิน</value>
+  </data>
+  <data name="lblPaymentAmount" xml:space="preserve">
+    <value>จำนวนเงินที่ชำระ</value>
+  </data>
+  <data name="lblPaymentDate" xml:space="preserve">
+    <value>วันชำระเงิน</value>
+  </data>
+  <data name="lblPaymentType" xml:space="preserve">
+    <value>ประเภทการชำระเงิน</value>
+  </data>
+  <data name="lblPromissoryNoteDate" xml:space="preserve">
+    <value>วันที่เช็ค/&lt;br/&gt;ตั๋วสัญญาใช้เงิน</value>
+  </data>
+  <data name="lblPromissoryNoteNo" xml:space="preserve">
+    <value>เลขที่เช็ค/&lt;br/&gt;ตั๋วสัญญาใช้เงิน</value>
+  </data>
+  <data name="lblReceiptAmount" xml:space="preserve">
+    <value>ยอดเงินในใบเสร็จ</value>
+  </data>
+  <data name="lblReceiptCurrency" xml:space="preserve">
+    <value>บาท</value>
+  </data>
+  <data name="lblReceiptNo" xml:space="preserve">
+    <value>เลขที่ใบเสร็จรับเงิน</value>
+  </data>
+  <data name="lblSECOMBank" xml:space="preserve">
+    <value>บัญชีซีคอม</value>
+  </data>
+  <data name="lblSendingBank" xml:space="preserve">
+    <value>บัญชีลูกค้า</value>
+  </data>
+  <data name="lblSendingBranch" xml:space="preserve">
+    <value>สาขาบัญชีของลูกค้า</value>
+  </data>
+  <data name="lblTelephoneNo" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์</value>
+  </data>
+</root>

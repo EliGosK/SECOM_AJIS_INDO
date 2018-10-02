@@ -1,0 +1,40 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS220/CTS220_06.js")"></script>
+@{
+    Layout = "";
+    ViewBag.Title = "CTS220";
+    ViewBag.LabelWidth = "250px";
+    ViewBag.RightLabelWidth = "270px";
+    ViewBag.ObjectWidth = "120px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+
+<div id="divContractDocumentSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS220.lblContractDocumentInformation
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblDocumentAuditResult
+        </div>
+        <div class="usr-object" style="width: @ViewBag.ObjectWidth">
+            @Html.CommonTextBox("DocumentAuditResult", (string)@ViewBag.DocAuditResult, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = true })
+        </div>  
+        <div class="usr-label" style="width:311px;">
+            @Resources.CTS220.lblDocumentName
+        </div>
+        <div class="usr-object" style="width: 220px">
+             @*@Html.DocumentTypeCombo("DocumentName", new { style = "width:220px;" }) *@
+             @Html.DocumentNameComboBox("DocumentName", (string)@SECOM_AJIS.Common.Util.ConstantValue.DocumentType.C_DOCUMENT_TYPE_CONTRACT, new { style = "height: 22px; width: 220px;" })
+             @Html.Hidden("DocumentNameValue", (string)@ViewBag.DocumentCode)           
+        </div>             
+    </div>
+    <div class="usr-row">&nbsp;</div>
+</div>

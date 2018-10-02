@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="InstrumentCode" width="130" type="ro"  sort="na">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="na">headerInstrumentName</column>
+    <column id="PurchaseQty" width="100" type="edn" align="right" format="0,000" sort="na">headerPurchaseQty</column>
+    <column id="ReceiveQty" width="100" type="edn" align="right" format="0,000" sort="na">headerTotalReceiveQty</column>
+    <column id="RemainQty" width="100"   type="edn" align="right" format="0,000" sort="na">headerRemainQty</column>
+    <column id="NewReceiveQty" width="100" type="link" align="right" sort="na">headerReceiveQty</column>
+    <column id="InstArea" width="210" type="ro" align="left" sort="na">headerInstrumentArea</column>
+
+    <column id="SourceAreaCode" width="*" type="ro" align="center" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

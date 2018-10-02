@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="InstrumentCode" width="130" type="ro" align="left" sort="str_custom">headerInstruCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">headerInstruName</column>
+    <column id="TextTransferSaleUnitPrice" width="180" type="ro" align="right" sort="na">headerSaleUnit</column>
+    <column id="TextTransferRentalUnitPrice" width="180"  type="ro" align="right" sort="na">headerRentalUnit</column>
+    <column id="TextTransferAddUnitPrice" width="180" type="ro" align="right" sort="na">headerAddUnit</column>
+    <column id="Select" width="35" type="link" align="center" sort="na">headerSelect</column>
+    
+    <column id="ToJson" width="*" type="ro" hidden="true" align="center" ></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

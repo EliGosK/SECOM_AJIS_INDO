@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="btnClear" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+	<data name="btnRetrieve" xml:space="preserve">
+    <value>取得</value>
+  </data>
+	<data name="chkContractTargetFlag" xml:space="preserve">
+    <value>契約先重要顧客</value>
+  </data>
+	<data name="lblCancelDate" xml:space="preserve">
+    <value>解約日</value>
+  </data>
+	<data name="lblCancelReason" xml:space="preserve">
+    <value>解約理由</value>
+  </data>
+	<data name="lblCompleteCancelContract" xml:space="preserve">
+    <value>解約確定</value>
+  </data>
+	<data name="lblContractBasicInformation" xml:space="preserve">
+    <value>契約基本情報</value>
+  </data>
+	<data name="lblContractTargetAddressEN" xml:space="preserve">
+    <value>契約先住所（英語）</value>
+  </data>
+	<data name="lblContractTargetAddressLOC" xml:space="preserve">
+    <value>契約先住所（現地語）</value>
+  </data>
+	<data name="lblContractTargetNameEN" xml:space="preserve">
+    <value>契約先名称（英語）</value>
+  </data>
+	<data name="lblContractTargetNameLOC" xml:space="preserve">
+    <value>契約先名称（現地語）</value>
+  </data>
+	<data name="lblCustomerCode" xml:space="preserve">
+    <value>顧客コード（契約先）</value>
+  </data>
+	<data name="lblEntryContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+	<data name="lblFirstOperationDate" xml:space="preserve">
+    <value>当初実施日</value>
+  </data>
+	<data name="lblMonthlyContractFee" xml:space="preserve">
+    <value>月次契約料金</value>
+  </data>
+	<data name="lblMonthlyContractFeeUnit" xml:space="preserve">
+    <value>THB</value>
+  </data>
+	<data name="lblOperationOffice" xml:space="preserve">
+    <value>実施事業所</value>
+  </data>
+	<data name="lblRealCustomerCode" xml:space="preserve">
+    <value>顧客コード（お客様（最終設置先））</value>
+  </data>
+	<data name="lblRemarkCompleteCancelContract" xml:space="preserve">
+    <value>内容を確認の上、「OK」ボタンをクリックしてください。</value>
+  </data>
+	<data name="lblSiteAddressEN" xml:space="preserve">
+    <value>物件住所（英語）</value>
+  </data>
+	<data name="lblSiteAddressLOC" xml:space="preserve">
+    <value>物件住所（現地語）</value>
+  </data>
+	<data name="lblSiteCode" xml:space="preserve">
+    <value>物件コード</value>
+  </data>
+	<data name="lblSiteNameEN" xml:space="preserve">
+    <value>物件名称（英語）</value>
+  </data>
+	<data name="lblSiteNameLOC" xml:space="preserve">
+    <value>物件名称（現地語）</value>
+  </data>
+	<data name="lblSpecifyContractCode" xml:space="preserve">
+    <value>契約コード指定</value>
+  </data>
+	<data name="lblUserCode" xml:space="preserve">
+    <value>ユーザーコード</value>
+  </data>
+</root>

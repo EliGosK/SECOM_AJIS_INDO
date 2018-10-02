@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="QuatationCodeShow" width="100" type="ro" align="left" sort="str_custom">headerQuotationCode</column>
+    <column id="ContractTargatShow" width="250" type="ro" align="left" sort="str_custom">headerContractTargetPurchaser</column>
+    <column id="SiteShow" width="250" type="ro" align="left" sort="str_custom">headerSite</column>
+    <column id="OfficeShow" width="180" type="ro" align="left" sort="str_custom">headerOffice</column>
+    <column id="Salesman1Show" width="180" type="ro" align="left" sort="str_custom">headerSalesman1</column>
+    <column id="ApprovalStatusName" width="*" type="ro" align="left" sort="str_custom">headerApprovalStatus</column>
+    <column id="Audit" width="66" type="link" align="center" sort="na">headerAudit</column>
+    <column id="ContractCodeShow" width="90" type="ro" align="center" sort="str_custom">headerContractCode</column>
+    
+    <column id="ApprovalStatusCode" width="0" type="ro" hidden="true" ></column>
+    <column id="ProductTypeCode" width="0" type="ro" hidden="true" ></column>
+    <column id="ProductTypeCodeName" width="0" type="ro" hidden="true" ></column>
+    <column id="QuotationTargetCodeShow" width="0" type="ro" hidden="true" ></column>
+    <column id="OCC" width="0" type="ro" hidden="true" ></column>
+    <column id="KeyIndex" width="0" type="ro" hidden="true" ></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

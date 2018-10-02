@@ -1,0 +1,37 @@
+.flow-table .section-orange
+{
+}
+
+.section-orange .top
+{
+	background: #fff url(section_t.png) 100% 100% no-repeat;
+}
+.section-orange .middle
+{
+	background: #fff url(section_m.png) 100% 100% no-repeat;
+}
+.section-orange .middle-empty
+{
+	background: #fff url(section_me.png) 100% 100% no-repeat;
+}
+.section-orange .bottom
+{
+	background: #fff url(section_b.png) 100% 100% no-repeat;
+}
+.section-orange .bottom-empty
+{
+	background: #fff url(section_be.png) 100% 100% no-repeat;
+}
+
+.section-orange .left
+{
+	background: #fff url(section_l.png) 100% 100% no-repeat;
+}
+.section-orange .center
+{
+	background: #fff url(section_c.png) 100% 100% no-repeat;
+}
+.section-orange .right
+{
+	background: #fff url(section_r.png) 100% 100% no-repeat;
+}

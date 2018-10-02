@@ -1,0 +1,42 @@
+.flow-table .section-cms021
+{
+
+}
+
+.section-cms021  .subject-top
+{
+	background: #fff url(subject_t.png) 100% 100% no-repeat;
+}
+.section-cms021  .non-action-top-center
+{
+	background: #fff url(non_action_tio.png) 100% 100% no-repeat;
+}
+.section-cms021  .non-action-top-left
+{
+	background: #fff url(non_action_to.png) 100% 100% no-repeat;
+}
+.section-cms021  .action-top-center
+{
+	background: #fff url(action_tio.png) 100% 100% no-repeat;
+}
+.section-cms021  .link-start
+{
+	background: #fff url(link_s.png) 100% 100% no-repeat;
+}
+.section-cms021  .link-end
+{
+	background: #fff url(link_e.png) 100% 100% no-repeat;
+}
+
+.section-cms021  .non-action-bottom-center
+{
+	background: #fff url(non_action_bio.png) 100% 100% no-repeat;
+}
+.section-cms021  .action-bottom-center
+{
+	background: #fff url(action_bio.png) 100% 100% no-repeat;
+}
+.section-cms021  .non-action-bottom-right
+{
+	background: #fff url(non_action_bi.png) 100% 100% no-repeat;
+}

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+	<head>
+		<column id="FeeType" width="180" type="ro" align="left" sort="na">headerFeeType</column>
+		<column id="HandlingType" width="124" type="ro" align="left" sort="na">headerHandlingType</column>
+		<column id="Fee" width="100" type="ro" align="right" sort="na">headerFee</column>
+		<column id="Tax" width="100" type="ro" align="right" sort="na">headerTax</column>
+		<column id="Period" width="170" type="ro" align="left" sort="na">headerPeriod</column>
+		<column id="Remark" width="*" type="ro" align="left" sort="na">headerRemark</column>
+		<column id="Remove" width="30" type="link" align="center" sort="na">headerRemove</column>
+		<column id="FeeTypeCode" width="0" type="ro" hidden="true"></column>
+		<column id="HandlingTypeCode" width="0" type="ro" hidden="true"></column>
+		<column id="Sequence" width="0" type="ro" hidden="true"></column>
+		<settings>
+			<colwidth>px</colwidth>
+		</settings>
+	</head>
+</rows>

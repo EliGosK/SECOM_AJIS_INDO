@@ -1,0 +1,1343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AccountingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbm_AccountingDocument">
+          <Key>
+            <PropertyRef Name="DocumentCode" />
+          </Key>
+          <Property Name="DocumentCode" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="DocumentType" Type="varchar" MaxLength="2" />
+          <Property Name="DocumentNameEN" Type="nvarchar" MaxLength="200" />
+          <Property Name="DocumentGeneratorName" Type="varchar" MaxLength="1000" />
+          <Property Name="DocumentTimingType" Type="varchar" MaxLength="2" />
+          <Property Name="ReportFlag" Type="bit" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="10" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbt_AccountingDocumentList">
+          <Key>
+            <PropertyRef Name="DocumentNo" />
+            <PropertyRef Name="DocumentCode" />
+            <PropertyRef Name="TargetPeriodFrom" />
+            <PropertyRef Name="TargetPeriodTo" />
+            <PropertyRef Name="GenerateHQCode" />
+          </Key>
+          <Property Name="DocumentNo" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DocumentCode" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="TargetPeriodFrom" Type="date" Nullable="false" />
+          <Property Name="TargetPeriodTo" Type="date" Nullable="false" />
+          <Property Name="GenerateHQCode" Type="char" MaxLength="4" Nullable="false" />
+          <Property Name="ReportMonth" Type="int" />
+          <Property Name="ReportYear" Type="int" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="500" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="10" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <Function Name="sp_AC_GetACC009" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="DateTo" Type="datetime" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC010" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="DateTo" Type="datetime" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC011_Sheet1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="DateTo" Type="datetime" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC011_Sheet2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="DateTo" Type="datetime" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC011_Sheet3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="DateTo" Type="datetime" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC011_Sheet4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="DateTo" Type="datetime" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC011_Sheet5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="DateTo" Type="datetime" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC011_Sheet6" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="DateTo" Type="datetime" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC012_Sheet1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC012_Sheet2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC012_Sheet3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC012_Sheet4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC012_Sheet5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetACC012_Sheet6" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetAccountDataOfAgingReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TargetPeriod" Type="date" Mode="In" />
+          <Parameter Name="LastEndDate" Type="date" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+          <Parameter Name="C_RENTAL_CHANGE_TYPE" Type="varchar" Mode="In" />
+          <Parameter Name="C_SALE_CHANGE_TYPE" Type="varchar" Mode="In" />
+          <Parameter Name="C_PAYMENT_METHOD" Type="varchar" Mode="In" />
+          <Parameter Name="C_SHOW_DUEDATE" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetAccountDataOfPaymentInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TargetPeriod" Type="date" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+          <Parameter Name="C_PAYMENT_TYPE" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetAccountDataOfPaymentMatchingInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TargetPeriod" Type="date" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+          <Parameter Name="C_CORRECTION_REASON" Type="varchar" Mode="In" />
+          <Parameter Name="C_PAYMENT_MATCHING_STATUS" Type="varchar" Mode="In" />
+          <Parameter Name="C_PAYMENT_MATCHING_FULL" Type="varchar" Mode="In" />
+          <Parameter Name="C_PAYMENT_MATCHING_PARTIAL" Type="varchar" Mode="In" />
+          <Parameter Name="C_PAYMENT_MATCHING_PARTIAL_TO_FULL" Type="varchar" Mode="In" />
+          <Parameter Name="C_PAYMENT_STATUS_CANCEL" Type="varchar" Mode="In" />
+          <Parameter Name="C_PAYMENT_STATUS_PAYMENT_MATCH_CANCELLED" Type="varchar" Mode="In" />
+          <Parameter Name="C_PAYMENT_STATUS_NOTE_FAIL" Type="varchar" Mode="In" />
+          <Parameter Name="C_PAYMENT_STATUS_POST_FAIL" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetAccountDataOfVATReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TargetPeriodFrom" Type="date" Mode="In" />
+          <Parameter Name="TargetPeriodTo" Type="date" Mode="In" />
+          <Parameter Name="HQCode" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetAccountingBusinessDateOfAgingReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TargetPeriod" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetAccountingBusinessDateOfPaymentInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TargetPeriod" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetAccountingBusinessDateOfPaymentMatchingInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TargetPeriod" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetAccountingBusinessDateOfVATReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TargetPeriodFrom" Type="datetime" Mode="In" />
+          <Parameter Name="TargetPeriodTo" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetAccountingConfig" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ConfigGroup" Type="varchar" Mode="In" />
+          <Parameter Name="ConfigName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetAccountingDocument" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DocumentCode" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_GetAccountingDocumentList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="SearchDocumentCode" Type="char" Mode="In" />
+          <Parameter Name="SearchDocumentNo" Type="varchar" Mode="In" />
+          <Parameter Name="SearchTargetFrom" Type="datetime" Mode="In" />
+          <Parameter Name="SearchTargetTo" Type="datetime" Mode="In" />
+          <Parameter Name="SearchGenerateFrom" Type="datetime" Mode="In" />
+          <Parameter Name="SearchGenerateTo" Type="datetime" Mode="In" />
+          <Parameter Name="SearchHQCode" Type="char" Mode="In" />
+          <Parameter Name="SearchYear" Type="int" Mode="In" />
+          <Parameter Name="SearchMonth" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_AC_InsertTbt_AccountingDocumentList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="xmlTbt_AccountingDocumentList" Type="nvarchar(max)" Mode="In" />
+        </Function>
+        <EntityContainer Name="AccountingModelStoreContainer">
+          <EntitySet Name="tbm_AccountingDocument" EntityType="Self.tbm_AccountingDocument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbt_AccountingDocumentList" EntityType="Self.tbt_AccountingDocumentList" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AccountingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbm_AccountingDocument">
+          <Key>
+            <PropertyRef Name="DocumentCode" />
+          </Key>
+          <Property Name="DocumentCode" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DocumentType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentNameEN" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DocumentGeneratorName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentTimingType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="ReportFlag" Type="Boolean" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ACDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbm_AccountingDocument" EntityType="Self.tbm_AccountingDocument" />
+          <FunctionImport Name="GetAccountingDocument" ReturnType="Collection(AccountingModel.dtAccountingDocument)">
+          <Parameter Name="DocumentCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountingBusinessDateOfAgingReport" ReturnType="Collection(AccountingModel.dtAccountingBusinessDateOfAgingReport)">
+          <Parameter Name="TargetPeriod" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfAgingReport" ReturnType="Collection(AccountingModel.dtAccountDataOfAgingReport)">
+            <Parameter Name="TargetPeriod" Mode="In" Type="DateTime" />
+            <Parameter Name="LastEndDate" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+            <Parameter Name="C_RENTAL_CHANGE_TYPE" Mode="In" Type="String" />
+            <Parameter Name="C_SALE_CHANGE_TYPE" Mode="In" Type="String" />
+            <Parameter Name="C_PAYMENT_METHOD" Mode="In" Type="String" />
+            <Parameter Name="C_SHOW_DUEDATE" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertTbt_AccountingDocumentList" EntitySet="tbt_AccountingDocumentList" ReturnType="Collection(AccountingModel.tbt_AccountingDocumentList)">
+          <Parameter Name="xmlTbt_AccountingDocumentList" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="tbt_AccountingDocumentList" EntityType="AccountingModel.tbt_AccountingDocumentList" />
+          <FunctionImport Name="GetAccountingConfig" ReturnType="Collection(AccountingModel.dtAccountingConfig)">
+            <Parameter Name="ConfigGroup" Mode="In" Type="String" />
+            <Parameter Name="ConfigName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountingDocumentList" ReturnType="Collection(AccountingModel.dtAccountingDocumentList)">
+            <Parameter Name="SearchDocumentCode" Mode="In" Type="String" />
+            <Parameter Name="SearchDocumentNo" Mode="In" Type="String" />
+            <Parameter Name="SearchTargetFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="SearchTargetTo" Mode="In" Type="DateTime" />
+            <Parameter Name="SearchGenerateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="SearchGenerateTo" Mode="In" Type="DateTime" />
+            <Parameter Name="SearchHQCode" Mode="In" Type="String" />
+            <Parameter Name="SearchYear" Mode="In" Type="Int32" />
+            <Parameter Name="SearchMonth" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfPaymentInfo" ReturnType="Collection(AccountingModel.dtAccountDataOfPaymentInfo)">
+            <Parameter Name="TargetPeriod" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+            <Parameter Name="C_PAYMENT_TYPE" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountingBusinessDateOfPaymentInfo" ReturnType="Collection(AccountingModel.dtAccountingBusinessDateOfPaymentInfo)">
+          <Parameter Name="TargetPeriod" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfPaymentMatchingInfo" ReturnType="Collection(AccountingModel.dtAccountDataOfPaymentMatchingInfo)">
+            <Parameter Name="TargetPeriod" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+            <Parameter Name="C_CORRECTION_REASON" Mode="In" Type="String" />
+            <Parameter Name="C_PAYMENT_MATCHING_STATUS" Mode="In" Type="String" />
+            <Parameter Name="C_PAYMENT_MATCHING_FULL" Mode="In" Type="String" />
+            <Parameter Name="C_PAYMENT_MATCHING_PARTIAL" Mode="In" Type="String" />
+            <Parameter Name="C_PAYMENT_MATCHING_PARTIAL_TO_FULL" Mode="In" Type="String" />
+            <Parameter Name="C_PAYMENT_STATUS_CANCEL" Mode="In" Type="String" />
+            <Parameter Name="C_PAYMENT_STATUS_PAYMENT_MATCH_CANCELLED" Mode="In" Type="String" />
+            <Parameter Name="C_PAYMENT_STATUS_NOTE_FAIL" Mode="In" Type="String" />
+            <Parameter Name="C_PAYMENT_STATUS_POST_FAIL" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountingBusinessDateOfPaymentMatchingInfo" ReturnType="Collection(AccountingModel.dtAccountingBusinessDateOfPaymentMatchingInfo)">
+          <Parameter Name="TargetPeriod" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfVATReport" ReturnType="Collection(AccountingModel.dtAccountDataOfVATReport)">
+            <Parameter Name="TargetPeriodFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="TargetPeriodTo" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountingBusinessDateOfVATReport" ReturnType="Collection(AccountingModel.dtAccountingBusinessDateOfVATReport)">
+            <Parameter Name="TargetPeriodFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="TargetPeriodTo" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC009" ReturnType="Collection(AccountingModel.dtACC009)">
+            <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC010" ReturnType="Collection(AccountingModel.dtACC010)">
+            <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC011_Sheet1" ReturnType="Collection(AccountingModel.dtACC011_Sheet1)">
+            <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC011_Sheet2" ReturnType="Collection(AccountingModel.dtACC011_Sheet2)">
+            <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC011_Sheet3" ReturnType="Collection(AccountingModel.dtACC011_Sheet3)">
+            <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC011_Sheet4" ReturnType="Collection(AccountingModel.dtACC011_Sheet4)">
+            <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC011_Sheet5" ReturnType="Collection(AccountingModel.dtACC011_Sheet5)">
+            <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC011_Sheet6" ReturnType="Collection(AccountingModel.dtACC011_Sheet6)">
+            <Parameter Name="DateFrom" Mode="In" Type="DateTime" />
+            <Parameter Name="DateTo" Mode="In" Type="DateTime" />
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC012_Sheet1" ReturnType="Collection(AccountingModel.dtACC012_Sheet1)">
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC012_Sheet2" ReturnType="Collection(AccountingModel.dtACC012_Sheet2)">
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC012_Sheet3" ReturnType="Collection(AccountingModel.dtACC012_Sheet3)">
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC012_Sheet4" ReturnType="Collection(AccountingModel.dtACC012_Sheet4)">
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC012_Sheet5" ReturnType="Collection(AccountingModel.dtACC012_Sheet5)">
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetAccountDataOfACC012_Sheet6" ReturnType="Collection(AccountingModel.dtACC012_Sheet6)">
+            <Parameter Name="HQCode" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="doAccountingDocumentList" >
+          <Property Type="String" Name="DocumentCode" Nullable="false" />
+          <Property Type="String" Name="DocumentNameENWithCode" Nullable="false" />
+          <Property Type="String" Name="DocumentNameEN" Nullable="false" />
+          <Property Type="String" Name="DocumentTimingType" Nullable="false" />
+          <Property Type="String" Name="DocumentTimingTypeName" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="doDocumentTiming" >
+          <Property Type="String" Name="TimingType" Nullable="false" />
+          <Property Type="String" Name="TimingTypeName" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="dtAccountingDocument">
+          <Property Type="String" Name="DocumentCode" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="DocumentType" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="DocumentNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="Boolean" Name="ReportFlag" Nullable="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CreateBy" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UpdateBy" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="DocumentGeneratorName" Nullable="true" MaxLength="1000" />
+          <Property Type="String" Name="DocumentTimingType" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="DocumentTimingTypeDesc" Nullable="true" MaxLength="7" />
+        </ComplexType>
+        <ComplexType Name="dtAccountingBusinessDateOfAgingReport">
+          <Property Type="DateTime" Name="TargetPeriod" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ReportYear" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ReportMonth" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="LastEndDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="dtAccountDataOfAgingReport">
+          <Property Type="String" Name="BillingOffice" Nullable="true" MaxLength="56" />
+          <Property Type="String" Name="BillingTargetName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="false" MaxLength="14" />
+          <Property Type="String" Name="LastChangeType" Nullable="true" MaxLength="104" />
+          <Property Type="DateTime" Name="LastChangeDate" Nullable="true" />
+          <Property Type="String" Name="ProductName" Nullable="true" MaxLength="55" />
+          <Property Type="Int32" Name="BillingCycle" Nullable="true" />
+          <Property Type="Int32" Name="CreditTerm" Nullable="true" />
+          <Property Type="String" Name="PaymentMethod" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="12" />
+          <Property Type="DateTime" Name="InvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="PaymentDueDate" Nullable="true" />
+          <Property Type="DateTime" Name="BillingStartDate" Nullable="true" />
+          <Property Type="DateTime" Name="BillingEndDate" Nullable="true" />
+          <Property Type="Decimal" Name="InvoiceAmount" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="VatAmount" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="TotalAmount" Nullable="true" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="CreditNoteAmount" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Int32" Name="OverDueDate" Nullable="true" />
+          <Property Type="Decimal" Name="OverDueMonth" Nullable="true" Precision="14" Scale="2" />
+          <Property Type="Decimal" Name="OverDue0_3" Nullable="true" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="OverDue3_6" Nullable="true" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="OverDue6_12" Nullable="true" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="OverDueOver12" Nullable="true" Precision="19" Scale="4" />
+          <Property Type="String" Name="InvoiceAmountCurrencyType" Nullable="true" MaxLength="1" />
+        </ComplexType>
+        <EntityType Name="tbt_AccountingDocumentList">
+          <Key>
+            <PropertyRef Name="DocumentNo" />
+            <PropertyRef Name="DocumentCode" />
+            <PropertyRef Name="TargetPeriodFrom" />
+            <PropertyRef Name="TargetPeriodTo" />
+            <PropertyRef Name="GenerateHQCode" />
+          </Key>
+          <Property Name="DocumentNo" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentCode" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="TargetPeriodFrom" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TargetPeriodTo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="GenerateHQCode" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="ReportMonth" Type="Int32" />
+          <Property Name="ReportYear" Type="Int32" />
+          <Property Name="FilePath" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="dtAccountingConfig">
+          <Property Type="String" Name="ConfigGroup" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ConfigName" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="ConfigValue" Nullable="true" MaxLength="2000" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CreateBy" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UpdateBy" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="dtAccountingDocumentList">
+          <Property Type="String" Name="DocumentNo" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="DocumentCode" Nullable="false" MaxLength="6" />
+          <Property Type="DateTime" Name="TargetPeriodFrom" Nullable="false" />
+          <Property Type="DateTime" Name="TargetPeriodTo" Nullable="false" />
+          <Property Type="String" Name="GenerateHQCode" Nullable="false" MaxLength="4" />
+          <Property Type="Int32" Name="ReportMonth" Nullable="true" />
+          <Property Type="Int32" Name="ReportYear" Nullable="true" />
+          <Property Type="String" Name="FilePath" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CreateBy" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UpdateBy" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="DocumentTimingType" Nullable="true" MaxLength="2" />
+          <Property Type="DateTime" Name="GenerateDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="dtAccountDataOfPaymentInfo">
+          <Property Type="String" Name="PaymentTransNo" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="PaymentTypeCode" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="PaymentTypeName" Nullable="true" MaxLength="100" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="false" />
+          <Property Type="Decimal" Name="PaymentAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Int32" Name="SecomAccountID" Nullable="true" />
+          <Property Type="String" Name="SecomAccountNo" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="SecomAccountName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SecomBankCode" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SecomBankName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SecomBankBranchCode" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SecomBankBranchName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Payer" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="PayerBankAccNo" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="SendingBankCode" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SendingBankName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SendingBranchCode" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="SendingBankBranchName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="TelNo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Memo" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="SystemMethod" Nullable="true" MaxLength="1" />
+          <Property Type="Boolean" Name="DeleteFlag" Nullable="true" />
+          <Property Type="String" Name="CreateID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CreateName" Nullable="true" MaxLength="101" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UpdateID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UpdateName" Nullable="true" MaxLength="101" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PaymentAmountCurrencyType" Nullable="true" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="dtAccountingBusinessDateOfPaymentInfo">
+          <Property Type="DateTime" Name="TargetPeriod" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ReportYear" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ReportMonth" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="dtAccountDataOfPaymentMatchingInfo">
+          <Property Type="String" Name="MatchID" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="PaymentTransNo" Nullable="false" MaxLength="11" />
+          <Property Type="String" Name="InvoiceNo" Nullable="false" MaxLength="12" />
+          <Property Type="Int32" Name="InvoiceOCC" Nullable="false" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="IDNo" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="BillingTypeCode" Nullable="true" MaxLength="2" />
+          <Property Type="String" Name="BillingTypeNameEN" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="ServiceFee" Nullable="false" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="VatForServiceFee" Nullable="false" Precision="20" Scale="6" />
+          <Property Type="Decimal" Name="WhtForServiceFee" Nullable="false" Precision="20" Scale="6" />
+          <Property Type="Decimal" Name="CashReceive" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="InvoiceAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="VatAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="WHTAmount" Nullable="false" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="BankFeeAmount" Nullable="false" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="OtherExpenseAmount" Nullable="false" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="OtherIncomeAmount" Nullable="false" Precision="38" Scale="4" />
+          <Property Type="String" Name="BankName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="BankBranchCode" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="AccountName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ApproveNo1" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="ApproveNo2" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="MatchStatus" Nullable="true" MaxLength="103" />
+          <Property Type="String" Name="CorrectionReason" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="CreateID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="CreateName" Nullable="true" MaxLength="101" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UpdateID" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="UpdateName" Nullable="true" MaxLength="101" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="MatchDate" Nullable="false" />
+          <Property Type="String" Name="InvoiceAmountCurrencyType" Nullable="true" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="dtAccountingBusinessDateOfPaymentMatchingInfo">
+          <Property Type="DateTime" Name="TargetPeriod" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ReportYear" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ReportMonth" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="dtAccountDataOfVATReport">
+          <Property Type="DateTime" Name="DocDate" Nullable="true" />
+          <Property Type="String" Name="DocNo" Nullable="false" MaxLength="15" />
+          <Property Type="String" Name="BillingCilentName" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="TaxID" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="HeadOffice" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="Branch" Nullable="true" MaxLength="100" />
+          <Property Type="Decimal" Name="AmountExVAT" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Decimal" Name="VatAmount" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="Boolean" Name="CancelFlag" Nullable="true" />
+          <Property Type="DateTime" Name="MatchDate" Nullable="true" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="true" />
+          <Property Type="String" Name="Prefix" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="CurrencyType" Nullable="true" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="dtAccountingBusinessDateOfVATReport">
+          <Property Type="DateTime" Name="TargetPeriodFrom" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="TargetPeriodTo" Nullable="true" Precision="23" />
+          <Property Type="String" Name="ReportYear" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ReportMonth" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="dtACC009">
+          <Property Type="Int64" Name="No" Nullable="true" />
+          <Property Type="String" Name="SiteNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BillingTargetNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="16" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="PlanCode" Nullable="true" MaxLength="20" />
+          <Property Type="Decimal" Name="OrderDepositFee" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="OrderInstallFee" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="InstallFeeAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="String" Name="InstallFeeInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="Decimal" Name="OrderContractFee" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="ContractFeeAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="Int32" Name="BillingCycle" Nullable="true" />
+          <Property Type="String" Name="OfficeNameEN" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+          <Property Type="String" Name="ProductNameEN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SalesmanName" Nullable="true" MaxLength="101" />
+          <Property Type="String" Name="OrderDepositFeeCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="OrderInstallFeeCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="InstallFeeAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="OrderContractFeeCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="ContractFeeAmountCurrencyType" Nullable="true" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="dtACC010">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="CustFullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="SiteNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="PlanCode" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="OfficeNameEN" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="CustAcceptanceDate" Nullable="true" />
+          <Property Type="String" Name="ProductNameEN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SalesmanName" Nullable="true" MaxLength="101" />
+          <Property Type="String" Name="OrderProductPriceCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="OrderProductPrice" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="InstrumentCost" Nullable="true" Precision="38" Scale="4" />
+          <Property Type="String" Name="OrderInstallFeeCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="OrderInstallFee" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="String" Name="PayToSubcontractorCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="PayToSubcontractor" Nullable="true" Precision="17" Scale="4" />
+          <Property Type="String" Name="InstrumentCostCurrencyType" Nullable="true" MaxLength="1" />
+        </ComplexType>
+        <ComplexType Name="dtACC011_Sheet1">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="17" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="BillingTypeCode" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="VAT" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="true" />
+          <Property Type="DateTime" Name="MatchDate" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="dtACC011_Sheet2">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="17" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="BillingTypeCode" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="VAT" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="true" />
+          <Property Type="DateTime" Name="MatchDate" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="dtACC011_Sheet3">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="19" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="BillingTypeCode" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="VAT" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="true" />
+          <Property Type="DateTime" Name="MatchDate" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="dtACC011_Sheet4">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="17" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="BillingTypeCode" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="VAT" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="true" />
+          <Property Type="DateTime" Name="MatchDate" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="dtACC011_Sheet5">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="FullNameLC" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="17" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="BillingTypeCode" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="VAT" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="true" />
+          <Property Type="DateTime" Name="MatchDate" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="dtACC011_Sheet6">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="17" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="BillingTypeCode" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="VAT" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+          <Property Type="DateTime" Name="PaymentDate" Nullable="true" />
+          <Property Type="DateTime" Name="MatchDate" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="dtACC012_Sheet1">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="BillingType" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="DateTime" Name="BillingStartDate" Nullable="true" />
+          <Property Type="DateTime" Name="BillingEndDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="Vat" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="dtACC012_Sheet2">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="FullNameLC" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="16" />
+          <Property Type="String" Name="BillingType" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="DateTime" Name="BillingStartDate" Nullable="true" />
+          <Property Type="DateTime" Name="BillingEndDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="Vat" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="dtACC012_Sheet3">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="16" />
+          <Property Type="String" Name="BillingType" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="DateTime" Name="BillingStartDate" Nullable="true" />
+          <Property Type="DateTime" Name="BillingEndDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="Vat" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="dtACC012_Sheet4">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="BillingType" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="Vat" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="dtACC012_Sheet5">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="BillingType" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="Vat" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="dtACC012_Sheet6">
+          <Property Type="Int64" Name="RowNumber" Nullable="true" />
+          <Property Type="String" Name="FullNameEN" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="BillingTargetCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="ContractCode" Nullable="true" MaxLength="14" />
+          <Property Type="String" Name="BillingType" Nullable="true" MaxLength="104" />
+          <Property Type="String" Name="InvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="IssueInvDate" Nullable="true" />
+          <Property Type="String" Name="BillingAmountCurrencyType" Nullable="true" MaxLength="1" />
+          <Property Type="Decimal" Name="BillingAmount" Nullable="true" Precision="16" Scale="4" />
+          <Property Type="Decimal" Name="Vat" Nullable="true" Precision="22" Scale="6" />
+          <Property Type="String" Name="TaxInvoiceNo" Nullable="true" MaxLength="12" />
+          <Property Type="DateTime" Name="TaxInvoiceDate" Nullable="true" />
+          <Property Type="DateTime" Name="FirstSecurityStartDate" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AccountingModelStoreContainer" CdmEntityContainer="ACDataEntities">
+          <EntitySetMapping Name="tbm_AccountingDocument">
+            <EntityTypeMapping TypeName="AccountingModel.tbm_AccountingDocument">
+              <MappingFragment StoreEntitySet="tbm_AccountingDocument">
+                <ScalarProperty Name="DocumentCode" ColumnName="DocumentCode" />
+                <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+                <ScalarProperty Name="DocumentNameEN" ColumnName="DocumentNameEN" />
+                <ScalarProperty Name="DocumentGeneratorName" ColumnName="DocumentGeneratorName" />
+                <ScalarProperty Name="DocumentTimingType" ColumnName="DocumentTimingType" />
+                <ScalarProperty Name="ReportFlag" ColumnName="ReportFlag" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountingDocument" FunctionName="AccountingModel.Store.sp_AC_GetAccountingDocument">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtAccountingDocument">
+                <ScalarProperty Name="DocumentCode" ColumnName="DocumentCode" />
+                <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+                <ScalarProperty Name="DocumentNameEN" ColumnName="DocumentNameEN" />
+                <ScalarProperty Name="ReportFlag" ColumnName="ReportFlag" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="DocumentGeneratorName" ColumnName="DocumentGeneratorName" />
+                <ScalarProperty Name="DocumentTimingType" ColumnName="DocumentTimingType" />
+                <ScalarProperty Name="DocumentTimingTypeDesc" ColumnName="DocumentTimingTypeDesc" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountingBusinessDateOfAgingReport" FunctionName="AccountingModel.Store.sp_AC_GetAccountingBusinessDateOfAgingReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtAccountingBusinessDateOfAgingReport">
+                <ScalarProperty Name="TargetPeriod" ColumnName="TargetPeriod" />
+                <ScalarProperty Name="ReportYear" ColumnName="ReportYear" />
+                <ScalarProperty Name="ReportMonth" ColumnName="ReportMonth" />
+                <ScalarProperty Name="LastEndDate" ColumnName="LastEndDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfAgingReport" FunctionName="AccountingModel.Store.sp_AC_GetAccountDataOfAgingReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtAccountDataOfAgingReport">
+                <ScalarProperty Name="BillingOffice" ColumnName="BillingOffice" />
+                <ScalarProperty Name="BillingTargetName" ColumnName="BillingTargetName" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="LastChangeType" ColumnName="LastChangeType" />
+                <ScalarProperty Name="LastChangeDate" ColumnName="LastChangeDate" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="BillingCycle" ColumnName="BillingCycle" />
+                <ScalarProperty Name="CreditTerm" ColumnName="CreditTerm" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="PaymentDueDate" ColumnName="PaymentDueDate" />
+                <ScalarProperty Name="BillingStartDate" ColumnName="BillingStartDate" />
+                <ScalarProperty Name="BillingEndDate" ColumnName="BillingEndDate" />
+                <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+                <ScalarProperty Name="VatAmount" ColumnName="VatAmount" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="CreditNoteAmount" ColumnName="CreditNoteAmount" />
+                <ScalarProperty Name="OverDueDate" ColumnName="OverDueDate" />
+                <ScalarProperty Name="OverDueMonth" ColumnName="OverDueMonth" />
+                <ScalarProperty Name="OverDue0_3" ColumnName="OverDue0_3" />
+                <ScalarProperty Name="OverDue3_6" ColumnName="OverDue3_6" />
+                <ScalarProperty Name="OverDue6_12" ColumnName="OverDue6_12" />
+                <ScalarProperty Name="OverDueOver12" ColumnName="OverDueOver12" />
+                <ScalarProperty Name="InvoiceAmountCurrencyType" ColumnName="InvoiceAmountCurrencyType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertTbt_AccountingDocumentList" FunctionName="AccountingModel.Store.sp_AC_InsertTbt_AccountingDocumentList" />
+          <EntitySetMapping Name="tbt_AccountingDocumentList">
+            <EntityTypeMapping TypeName="AccountingModel.tbt_AccountingDocumentList">
+              <MappingFragment StoreEntitySet="tbt_AccountingDocumentList">
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="ReportYear" ColumnName="ReportYear" />
+                <ScalarProperty Name="ReportMonth" ColumnName="ReportMonth" />
+                <ScalarProperty Name="GenerateHQCode" ColumnName="GenerateHQCode" />
+                <ScalarProperty Name="TargetPeriodTo" ColumnName="TargetPeriodTo" />
+                <ScalarProperty Name="TargetPeriodFrom" ColumnName="TargetPeriodFrom" />
+                <ScalarProperty Name="DocumentCode" ColumnName="DocumentCode" />
+                <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountingConfig" FunctionName="AccountingModel.Store.sp_AC_GetAccountingConfig">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtAccountingConfig">
+                <ScalarProperty Name="ConfigGroup" ColumnName="ConfigGroup" />
+                <ScalarProperty Name="ConfigName" ColumnName="ConfigName" />
+                <ScalarProperty Name="ConfigValue" ColumnName="ConfigValue" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountingDocumentList" FunctionName="AccountingModel.Store.sp_AC_GetAccountingDocumentList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtAccountingDocumentList">
+                <ScalarProperty Name="DocumentNo" ColumnName="DocumentNo" />
+                <ScalarProperty Name="DocumentCode" ColumnName="DocumentCode" />
+                <ScalarProperty Name="TargetPeriodFrom" ColumnName="TargetPeriodFrom" />
+                <ScalarProperty Name="TargetPeriodTo" ColumnName="TargetPeriodTo" />
+                <ScalarProperty Name="GenerateHQCode" ColumnName="GenerateHQCode" />
+                <ScalarProperty Name="ReportMonth" ColumnName="ReportMonth" />
+                <ScalarProperty Name="ReportYear" ColumnName="ReportYear" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="DocumentTimingType" ColumnName="DocumentTimingType" />
+                <ScalarProperty Name="GenerateDate" ColumnName="GenerateDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfPaymentInfo" FunctionName="AccountingModel.Store.sp_AC_GetAccountDataOfPaymentInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtAccountDataOfPaymentInfo">
+                <ScalarProperty Name="PaymentTransNo" ColumnName="PaymentTransNo" />
+                <ScalarProperty Name="PaymentTypeCode" ColumnName="PaymentTypeCode" />
+                <ScalarProperty Name="PaymentTypeName" ColumnName="PaymentTypeName" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+                <ScalarProperty Name="SecomAccountID" ColumnName="SecomAccountID" />
+                <ScalarProperty Name="SecomAccountNo" ColumnName="SecomAccountNo" />
+                <ScalarProperty Name="SecomAccountName" ColumnName="SecomAccountName" />
+                <ScalarProperty Name="SecomBankCode" ColumnName="SecomBankCode" />
+                <ScalarProperty Name="SecomBankName" ColumnName="SecomBankName" />
+                <ScalarProperty Name="SecomBankBranchCode" ColumnName="SecomBankBranchCode" />
+                <ScalarProperty Name="SecomBankBranchName" ColumnName="SecomBankBranchName" />
+                <ScalarProperty Name="Payer" ColumnName="Payer" />
+                <ScalarProperty Name="PayerBankAccNo" ColumnName="PayerBankAccNo" />
+                <ScalarProperty Name="SendingBankCode" ColumnName="SendingBankCode" />
+                <ScalarProperty Name="SendingBankName" ColumnName="SendingBankName" />
+                <ScalarProperty Name="SendingBranchCode" ColumnName="SendingBranchCode" />
+                <ScalarProperty Name="SendingBankBranchName" ColumnName="SendingBankBranchName" />
+                <ScalarProperty Name="TelNo" ColumnName="TelNo" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="SystemMethod" ColumnName="SystemMethod" />
+                <ScalarProperty Name="DeleteFlag" ColumnName="DeleteFlag" />
+                <ScalarProperty Name="CreateID" ColumnName="CreateID" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateID" ColumnName="UpdateID" />
+                <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="PaymentAmountCurrencyType" ColumnName="PaymentAmountCurrencyType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountingBusinessDateOfPaymentInfo" FunctionName="AccountingModel.Store.sp_AC_GetAccountingBusinessDateOfPaymentInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtAccountingBusinessDateOfPaymentInfo">
+                <ScalarProperty Name="TargetPeriod" ColumnName="TargetPeriod" />
+                <ScalarProperty Name="ReportYear" ColumnName="ReportYear" />
+                <ScalarProperty Name="ReportMonth" ColumnName="ReportMonth" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfPaymentMatchingInfo" FunctionName="AccountingModel.Store.sp_AC_GetAccountDataOfPaymentMatchingInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtAccountDataOfPaymentMatchingInfo">
+                <ScalarProperty Name="MatchID" ColumnName="MatchID" />
+                <ScalarProperty Name="PaymentTransNo" ColumnName="PaymentTransNo" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="InvoiceOCC" ColumnName="InvoiceOCC" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="IDNo" ColumnName="IDNo" />
+                <ScalarProperty Name="BillingTypeCode" ColumnName="BillingTypeCode" />
+                <ScalarProperty Name="BillingTypeNameEN" ColumnName="BillingTypeNameEN" />
+                <ScalarProperty Name="ServiceFee" ColumnName="ServiceFee" />
+                <ScalarProperty Name="VatForServiceFee" ColumnName="VatForServiceFee" />
+                <ScalarProperty Name="WhtForServiceFee" ColumnName="WhtForServiceFee" />
+                <ScalarProperty Name="CashReceive" ColumnName="CashReceive" />
+                <ScalarProperty Name="InvoiceAmount" ColumnName="InvoiceAmount" />
+                <ScalarProperty Name="VatAmount" ColumnName="VatAmount" />
+                <ScalarProperty Name="WHTAmount" ColumnName="WHTAmount" />
+                <ScalarProperty Name="BankFeeAmount" ColumnName="BankFeeAmount" />
+                <ScalarProperty Name="OtherExpenseAmount" ColumnName="OtherExpenseAmount" />
+                <ScalarProperty Name="OtherIncomeAmount" ColumnName="OtherIncomeAmount" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BankBranchCode" ColumnName="BankBranchCode" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="ApproveNo1" ColumnName="ApproveNo1" />
+                <ScalarProperty Name="ApproveNo2" ColumnName="ApproveNo2" />
+                <ScalarProperty Name="MatchStatus" ColumnName="MatchStatus" />
+                <ScalarProperty Name="CorrectionReason" ColumnName="CorrectionReason" />
+                <ScalarProperty Name="CreateID" ColumnName="CreateID" />
+                <ScalarProperty Name="CreateName" ColumnName="CreateName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="UpdateID" ColumnName="UpdateID" />
+                <ScalarProperty Name="UpdateName" ColumnName="UpdateName" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+                <ScalarProperty Name="InvoiceAmountCurrencyType" ColumnName="InvoiceAmountCurrencyType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountingBusinessDateOfPaymentMatchingInfo" FunctionName="AccountingModel.Store.sp_AC_GetAccountingBusinessDateOfPaymentMatchingInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtAccountingBusinessDateOfPaymentMatchingInfo">
+                <ScalarProperty Name="TargetPeriod" ColumnName="TargetPeriod" />
+                <ScalarProperty Name="ReportYear" ColumnName="ReportYear" />
+                <ScalarProperty Name="ReportMonth" ColumnName="ReportMonth" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfVATReport" FunctionName="AccountingModel.Store.sp_AC_GetAccountDataOfVATReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtAccountDataOfVATReport">
+                <ScalarProperty Name="DocDate" ColumnName="DocDate" />
+                <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+                <ScalarProperty Name="BillingCilentName" ColumnName="BillingCilentName" />
+                <ScalarProperty Name="TaxID" ColumnName="TaxID" />
+                <ScalarProperty Name="HeadOffice" ColumnName="HeadOffice" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="AmountExVAT" ColumnName="AmountExVAT" />
+                <ScalarProperty Name="VatAmount" ColumnName="VatAmount" />
+                <ScalarProperty Name="CancelFlag" ColumnName="CancelFlag" />
+                <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="CurrencyType" ColumnName="CurrencyType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountingBusinessDateOfVATReport" FunctionName="AccountingModel.Store.sp_AC_GetAccountingBusinessDateOfVATReport">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtAccountingBusinessDateOfVATReport">
+                <ScalarProperty Name="TargetPeriodFrom" ColumnName="TargetPeriodFrom" />
+                <ScalarProperty Name="TargetPeriodTo" ColumnName="TargetPeriodTo" />
+                <ScalarProperty Name="ReportYear" ColumnName="ReportYear" />
+                <ScalarProperty Name="ReportMonth" ColumnName="ReportMonth" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC009" FunctionName="AccountingModel.Store.sp_AC_GetACC009">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC009">
+                <ScalarProperty Name="No" ColumnName="No" />
+                <ScalarProperty Name="SiteNameEN" ColumnName="SiteNameEN" />
+                <ScalarProperty Name="BillingTargetNameEN" ColumnName="BillingTargetNameEN" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="PlanCode" ColumnName="PlanCode" />
+                <ScalarProperty Name="OrderDepositFee" ColumnName="OrderDepositFee" />
+                <ScalarProperty Name="OrderInstallFee" ColumnName="OrderInstallFee" />
+                <ScalarProperty Name="InstallFeeAmount" ColumnName="InstallFeeAmount" />
+                <ScalarProperty Name="InstallFeeInvoiceNo" ColumnName="InstallFeeInvoiceNo" />
+                <ScalarProperty Name="OrderContractFee" ColumnName="OrderContractFee" />
+                <ScalarProperty Name="ContractFeeAmount" ColumnName="ContractFeeAmount" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="BillingCycle" ColumnName="BillingCycle" />
+                <ScalarProperty Name="OfficeNameEN" ColumnName="OfficeNameEN" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+                <ScalarProperty Name="ProductNameEN" ColumnName="ProductNameEN" />
+                <ScalarProperty Name="SalesmanName" ColumnName="SalesmanName" />
+                <ScalarProperty Name="OrderDepositFeeCurrencyType" ColumnName="OrderDepositFeeCurrencyType" />
+                <ScalarProperty Name="OrderInstallFeeCurrencyType" ColumnName="OrderInstallFeeCurrencyType" />
+                <ScalarProperty Name="InstallFeeAmountCurrencyType" ColumnName="InstallFeeAmountCurrencyType" />
+                <ScalarProperty Name="OrderContractFeeCurrencyType" ColumnName="OrderContractFeeCurrencyType" />
+                <ScalarProperty Name="ContractFeeAmountCurrencyType" ColumnName="ContractFeeAmountCurrencyType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC010" FunctionName="AccountingModel.Store.sp_AC_GetACC010">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC010">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="CustFullNameEN" ColumnName="CustFullNameEN" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="SiteNameEN" ColumnName="SiteNameEN" />
+                <ScalarProperty Name="PlanCode" ColumnName="PlanCode" />
+                <ScalarProperty Name="OfficeNameEN" ColumnName="OfficeNameEN" />
+                <ScalarProperty Name="CustAcceptanceDate" ColumnName="CustAcceptanceDate" />
+                <ScalarProperty Name="ProductNameEN" ColumnName="ProductNameEN" />
+                <ScalarProperty Name="SalesmanName" ColumnName="SalesmanName" />
+                <ScalarProperty Name="OrderProductPriceCurrencyType" ColumnName="OrderProductPriceCurrencyType" />
+                <ScalarProperty Name="OrderProductPrice" ColumnName="OrderProductPrice" />
+                <ScalarProperty Name="InstrumentCost" ColumnName="InstrumentCost" />
+                <ScalarProperty Name="OrderInstallFeeCurrencyType" ColumnName="OrderInstallFeeCurrencyType" />
+                <ScalarProperty Name="OrderInstallFee" ColumnName="OrderInstallFee" />
+                <ScalarProperty Name="PayToSubcontractorCurrencyType" ColumnName="PayToSubcontractorCurrencyType" />
+                <ScalarProperty Name="PayToSubcontractor" ColumnName="PayToSubcontractor" />
+                <ScalarProperty Name="InstrumentCostCurrencyType" ColumnName="InstrumentCostCurrencyType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC011_Sheet1" FunctionName="AccountingModel.Store.sp_AC_GetACC011_Sheet1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC011_Sheet1">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="BillingTypeCode" ColumnName="BillingTypeCode" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC011_Sheet2" FunctionName="AccountingModel.Store.sp_AC_GetACC011_Sheet2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC011_Sheet2">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="BillingTypeCode" ColumnName="BillingTypeCode" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC011_Sheet3" FunctionName="AccountingModel.Store.sp_AC_GetACC011_Sheet3">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC011_Sheet3">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="BillingTypeCode" ColumnName="BillingTypeCode" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC011_Sheet4" FunctionName="AccountingModel.Store.sp_AC_GetACC011_Sheet4">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC011_Sheet4">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="BillingTypeCode" ColumnName="BillingTypeCode" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC011_Sheet5" FunctionName="AccountingModel.Store.sp_AC_GetACC011_Sheet5">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC011_Sheet5">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="FullNameLC" ColumnName="FullNameLC" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="BillingTypeCode" ColumnName="BillingTypeCode" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC011_Sheet6" FunctionName="AccountingModel.Store.sp_AC_GetACC011_Sheet6">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC011_Sheet6">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="BillingTypeCode" ColumnName="BillingTypeCode" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="MatchDate" ColumnName="MatchDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC012_Sheet1" FunctionName="AccountingModel.Store.sp_AC_GetACC012_Sheet1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC012_Sheet1">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingType" ColumnName="BillingType" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingStartDate" ColumnName="BillingStartDate" />
+                <ScalarProperty Name="BillingEndDate" ColumnName="BillingEndDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="Vat" ColumnName="Vat" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC012_Sheet2" FunctionName="AccountingModel.Store.sp_AC_GetACC012_Sheet2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC012_Sheet2">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="FullNameLC" ColumnName="FullNameLC" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingType" ColumnName="BillingType" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingStartDate" ColumnName="BillingStartDate" />
+                <ScalarProperty Name="BillingEndDate" ColumnName="BillingEndDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="Vat" ColumnName="Vat" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC012_Sheet3" FunctionName="AccountingModel.Store.sp_AC_GetACC012_Sheet3">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC012_Sheet3">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingType" ColumnName="BillingType" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingStartDate" ColumnName="BillingStartDate" />
+                <ScalarProperty Name="BillingEndDate" ColumnName="BillingEndDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="Vat" ColumnName="Vat" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC012_Sheet4" FunctionName="AccountingModel.Store.sp_AC_GetACC012_Sheet4">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC012_Sheet4">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingType" ColumnName="BillingType" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="Vat" ColumnName="Vat" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC012_Sheet5" FunctionName="AccountingModel.Store.sp_AC_GetACC012_Sheet5">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC012_Sheet5">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingType" ColumnName="BillingType" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="Vat" ColumnName="Vat" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAccountDataOfACC012_Sheet6" FunctionName="AccountingModel.Store.sp_AC_GetACC012_Sheet6">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="AccountingModel.dtACC012_Sheet6">
+                <ScalarProperty Name="RowNumber" ColumnName="RowNumber" />
+                <ScalarProperty Name="FullNameEN" ColumnName="FullNameEN" />
+                <ScalarProperty Name="BillingTargetCode" ColumnName="BillingTargetCode" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="BillingType" ColumnName="BillingType" />
+                <ScalarProperty Name="InvoiceNo" ColumnName="InvoiceNo" />
+                <ScalarProperty Name="IssueInvDate" ColumnName="IssueInvDate" />
+                <ScalarProperty Name="BillingAmountCurrencyType" ColumnName="BillingAmountCurrencyType" />
+                <ScalarProperty Name="BillingAmount" ColumnName="BillingAmount" />
+                <ScalarProperty Name="Vat" ColumnName="Vat" />
+                <ScalarProperty Name="TaxInvoiceNo" ColumnName="TaxInvoiceNo" />
+                <ScalarProperty Name="TaxInvoiceDate" ColumnName="TaxInvoiceDate" />
+                <ScalarProperty Name="FirstSecurityStartDate" ColumnName="FirstSecurityStartDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="なし" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

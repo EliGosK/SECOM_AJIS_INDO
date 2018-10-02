@@ -1,0 +1,97 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+<div id="divSiteCustomerInfo" class="main-table">
+    <div class="table-header">@Resources.QUS020.lblSiteInfo</div>
+    <div id="divSpecifySite_CopyNameAddress" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object" style="padding-bottom:5px;">
+            <div class="usr-row">
+                <div class="usr-object">
+                    <div id="divSpecifySite" class="sub-table" style="float:left;width:360px;margin-right:10px;">
+                        <div class="table-header">@Resources.QUS020.lblSpecifyCode</div>
+                        <div class="usr-row">
+                            <div class="usr-label" style="width:100px;">@Resources.QUS020.lblSiteCode</div>
+                            <div class="usr-object">
+                                @Html.CommonTextBox("SiteCustCode", null, new { @readonly = true, style = "width:120px;" })&nbsp;-
+                                @Html.CommonTextBox("SiteCustCodeNo", null, new { maxlength = "4", style = "width:50px;" })
+                            </div>
+                        </div>
+                        <div class="usr-row usr-row-space">
+                            <div class="usr-label" style="width:100px;">&nbsp;</div>
+                            <div class="usr-object" style="padding-bottom: 17px;">
+                                @Html.CommonButton("btnRetrieveSiteData", (string)@Resources.QUS020.btnRetrieve, new { style = "width:80px;" })&nbsp;
+                                @Html.CommonButton("btnSearchSite", (string)@Resources.QUS020.btnSearchSite, new { style = "width:150px;" })
+                            </div>
+                        </div>
+                        <div class="usr-clear-style">&nbsp;</div>
+                    </div>
+                    <div id="divCopyNameAddressInfo" class="sub-table" style="float:left;width:350px;">
+                        <div class="table-header">@Resources.QUS020.lblCopyNameAddressInfo</div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="margin-left:5px;">
+                                @Html.CommonRadioButton("rdoContractTarget", (string)@Resources.QUS020.rdoContractTargetPurchaser, (string)@SECOM_AJIS.Common.Util.ConstantValue.CustPartType.C_CUST_PART_TYPE_CONTRACT_TARGET, false, "CopyNameAddrInfoGroup")
+                            </div>
+                        </div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="margin-left:5px;">
+                                @Html.CommonRadioButton("rdoRealCustomer", (string)@Resources.QUS020.rdoReadCustomer, (string)@SECOM_AJIS.Common.Util.ConstantValue.CustPartType.C_CUST_PART_TYPE_REAL_CUST, true, "CopyNameAddrInfoGroup")
+                            </div>
+                        </div>
+                        <div class="usr-row">
+                            <div style="float:right;">
+                                <div class="usr-object" style="padding-right:11px;">
+                                    @Html.CommonButton("btnCopy", (string)@Resources.QUS020.btnCopy, new { style = "width:100px;" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="usr-clear-style">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblSiteCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("SiteCodeShort", null, new { style = "width:120px;", @readonly = true })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnNewEditSite", (string)@Resources.QUS020.btnNewEditSiteInfo, new { style = "width:200px;" })
+            @Html.CommonButton("btnClearSite", (string)@Resources.QUS020.btnClearSite, new { style = "width:150px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblNameEN</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblAddressEN</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("AddressFullEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblNameLC</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblAddressLC</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("AddressFullLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblPhoneNo</div>
+        <div class="usr-object" style="width:170px;">
+            @Html.CommonTextBox("PhoneNo", null, new { style = "width:150px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:184px;">@Resources.QUS020.lblUsage</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol4Width;">
+            @Html.CommonTextBox("BuildingUsageName", null, new { style = "width:" + @ViewBag.ObjectCol4Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

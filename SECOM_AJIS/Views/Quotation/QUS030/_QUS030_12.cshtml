@@ -1,0 +1,138 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol3Width = "160px";
+    
+    ViewBag.ObjectCol1Width = "140px";
+    ViewBag.ObjectCol12Width = "380px";
+    ViewBag.ObjectCol1ComboWidth = "170px";
+    ViewBag.ObjectCol3Width = "185px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS030/QUS030_12.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("DisabledSecurityItemFee", (bool)@ViewBag.DisabledSecurityItemFee)
+    @Html.Hidden("DisabledOtherItemFee", (bool)@ViewBag.DisabledOtherItemFee)
+    @Html.Hidden("DisabledSentryGuardAreaTypeCode", (bool)@ViewBag.DisabledSentryGuardAreaTypeCode)
+    @Html.Hidden("DisabledEditSentryGuardButton", (bool)@ViewBag.DisabledEditSentryGuardButton)
+    @Html.Hidden("DisabledRemoveSentryButton", (bool)@ViewBag.DisabledRemoveSentryButton)
+    @Html.Hidden("DisabledSentryGuardDetail", (bool)@ViewBag.DisabledSentryGuardDetail)
+</div>
+<div id="divSentryGuardDetail" class="main-table">
+    <div class="table-header">
+        @Resources.QUS030.lblSentryGuardDetail
+    </div>
+    <form id="formSentryGuardInformation">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSecurityItemFee
+            </div>
+            <div class="usr-object">
+                @Html.NumericTextBoxWithMultipleCurrency("SecurityItemFee", (string)@ViewBag.SecurityItemFee, (string)@ViewBag.SecurityItemFeeCurrencyType, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblOtherItemFee
+            </div>
+            <div class="usr-object">
+                @Html.NumericTextBoxWithMultipleCurrency("OtherItemFee", (string)@ViewBag.OtherItemFee, (string)@ViewBag.OtherItemFeeCurrencyType, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSentryGuardAreaType
+            </div>
+            <div class="usr-object">
+                @Html.SentryGuardAreaTypeComboBox("SentryGuardAreaTypeCode", new { selected = @ViewBag.SentryGuardAreaTypeCode, style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";" })
+            </div>
+        </div>
+    </form>
+    <div class="usr-row usr-row-space-2x">
+        <div id="gridSentryGuardDetail" style="width:99%;margin-left:4px;"></div>
+    </div>
+    <form id="formRegisterSentryGuardInformation">
+        <div id="divRegisterSentryGuardInformation" class="usr-row" style="margin-top:10px;">
+            <div class="sub-table">
+                <div class="table-sub-header">
+                    @Resources.QUS030.lblRegisterSentryGuardInformation
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.QUS030.lblLineNo
+                    </div>
+                    <div class="usr-object">
+                        @Html.NumericTextBox("LineNo", null, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.QUS030.lblSentryGuardType
+                    </div>
+                    <div class="usr-object">
+                        @Html.SentryGuardTypeComboBox("SentryGuardTypeCode", new { selected = (string)@ViewBag.SentryGuardTypeCode, style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";" })
+                        @Html.RequireFiled()
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.QUS030.lblNumberOfDate
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                        @Html.NumberOfDateComboBox("NumOfDate", new { selected = (string)@ViewBag.NumOfDate, style = "width:363px;" })
+                        @Html.RequireFiled()
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.QUS030.lblSecurityStartTime
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                        @Html.CommonTextBox("SecurityStartTime", (string)@ViewBag.SecurityStartTime, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                        @Html.RequireFiled()
+                    </div>
+                    <div class="usr-label" style="margin-left:-51px;width:200px;">
+                        @Resources.QUS030.lblSecurityFinishTime
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                        @Html.CommonTextBox("SecurityFinishTime", (string)@ViewBag.SecurityFinishTime, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                        @Html.RequireFiled()
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.QUS030.lblWorkingHoursPerMonth
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                        @Html.NumericTextBox("WorkHourPerMonth", (string)@ViewBag.WorkHourPerMonth, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.QUS030.lblCostPerHour
+                    </div>
+                    <div class="usr-object">
+                        @Html.NumericTextBoxWithMultipleCurrency("CostPerHour", (string)@ViewBag.CostPerHour, (string)@ViewBag.CostPerHourCurrencyType, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.QUS030.lblNumerOfSentryGuard
+                    </div>
+                    <div class="usr-object">
+                        @Html.NumericTextBoxWithUnit("NumOfSentryGuard", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" }, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.PERSONS, true)
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div style="float:right;margin-right:10px;">
+                        @Html.CommonButton("btnAddUpdateSentryGuard", @Resources.QUS030.btnAddUpdate, new { style = "width:100px;" })
+                        @Html.CommonButton("btnCancelSentryGuard", @Resources.QUS030.btnCancel, new { style = "width:100px;" })
+                    </div>
+                </div>
+                <div class="usr-clear-style">&nbsp;</div>
+            </div>
+        </form>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

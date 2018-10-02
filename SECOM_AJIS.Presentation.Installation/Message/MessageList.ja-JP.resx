@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG5001" xml:space="preserve">
+    <value>全撤去工事が完了済みのため、工事登録できません。</value>
+  </data>
+  <data name="MSG5002" xml:space="preserve">
+    <value>契約ステータスが「成約取消」であり、かつ新規工事が完了していないため、工事登録できません。</value>
+  </data>
+  <data name="MSG5003" xml:space="preserve">
+    <value>工事が既に登録されているため、工事登録できません。</value>
+  </data>
+  <data name="MSG5004" xml:space="preserve">
+    <value>プロジェクト状態が「最終完了済み」または「取消済み」のため、工事登録できません。</value>
+  </data>
+  <data name="MSG5005" xml:space="preserve">
+    <value>承認依頼しますが、よろしいですか？</value>
+  </data>
+  <data name="MSG5006" xml:space="preserve">
+    <value>CP-12が登録されています。工事内容が契約内容と同じかどうか確認してください。この処理を続けてもよろしいですか？</value>
+  </data>
+  <data name="MSG5007" xml:space="preserve">
+    <value>登録された機器の使用についての決裁が取得済みであるか確認の上、また倉庫に出庫可能な在庫が存在するか確認の上、処理を行ってください。この処理を続けてもよろしいですか？</value>
+  </data>
+  <data name="MSG5008" xml:space="preserve">
+    <value>機器コード {0} に累計出庫数を超える繰入数を入力することはできません。</value>
+  </data>
+  <data name="MSG5009" xml:space="preserve">
+    <value>工事完了予定日に工事着工予定日より前の日付を入力することはできません。</value>
+  </data>
+  <data name="MSG5010" xml:space="preserve">
+    <value>工事着工希望日が過去日付で登録されています。処理を進めますか？</value>
+  </data>
+  <data name="MSG5011" xml:space="preserve">
+    <value>工事完了希望日が過去日付で登録されています。処理を進めますか？</value>
+  </data>
+  <data name="MSG5012" xml:space="preserve">
+    <value>メール通知先が登録されていません。処理を進めますか？</value>
+  </data>
+  <data name="MSG5013" xml:space="preserve">
+    <value>商品種類が売却、またはアラーム以外のため、工事登録できません。</value>
+  </data>
+  <data name="MSG5014" xml:space="preserve">
+    <value>プロジェクト状態が「取消済み」のため、登録できません。</value>
+  </data>
+  <data name="MSG5015" xml:space="preserve">
+    <value>プロジェクト状態が「最終完了済み」のため、登録できません。</value>
+  </data>
+  <data name="MSG5016" xml:space="preserve">
+    <value>工事監理情報を登録できません。工事依頼登録を先に行ってください。</value>
+  </data>
+  <data name="MSG5017" xml:space="preserve">
+    <value>工事監理情報を登録できません。工事発注登録を先に行ってください。</value>
+  </data>
+  <data name="MSG5018" xml:space="preserve">
+    <value>工事データが存在しないため、工事取消できません。</value>
+  </data>
+  <data name="MSG5019" xml:space="preserve">
+    <value>業者名称 {0} について、次の項目が必須入力となります：{1}</value>
+  </data>
+  <data name="MSG5020" xml:space="preserve">
+    <value>機器コード {0} に現契約設置数を超える保守交換数を入力することはできません。</value>
+  </data>
+  <data name="MSG5021" xml:space="preserve">
+    <value>保守交換機器が登録されています。機器到着希望日を指定してください。</value>
+  </data>
+  <data name="MSG5022" xml:space="preserve">
+    <value>最新OCCの変更種類が取消状態となっているため、工事種類は「全撤去」でなければなりません。</value>
+  </data>
+  <data name="MSG5023" xml:space="preserve">
+    <value>変更理由が「セコム理由」になっているため、請求工事料金を指定しないでください。</value>
+  </data>
+  <data name="MSG5024" xml:space="preserve">
+    <value>工事料金請求区分が「1: 請求する」になっているため、請求工事料金を指定してください。</value>
+  </data>
+  <data name="MSG5025" xml:space="preserve">
+    <value>工事料金請求区分が「9: 全額当社負担」になっているため、請求工事料金を指定しないでください。</value>
+  </data>
+  <data name="MSG5026" xml:space="preserve">
+    <value>工事伝票発行日は過去日付で登録できません。</value>
+  </data>
+  <data name="MSG5027" xml:space="preserve">
+    <value>正規工事料金が請求工事料金と同額ではありません。決裁番号を指定してください。</value>
+  </data>
+  <data name="MSG5028" xml:space="preserve">
+    <value>決裁番号は「決裁番号1」から順に登録してください。</value>
+  </data>
+  <data name="MSG5029" xml:space="preserve">
+    <value>機器コード {0}に現契約設置数を超える撤去数を入力することはできません。</value>
+  </data>
+  <data name="MSG5030" xml:space="preserve">
+    <value>機器到着希望日に工事伝票発行日より前の日付を入力することはできません。</value>
+  </data>
+  <data name="MSG5031" xml:space="preserve">
+    <value>この伝票で出庫する機器があります。機器到着希望日を指定してください。</value>
+  </data>
+  <data name="MSG5032" xml:space="preserve">
+    <value>仮採用、または一時採用の機器が追加設置として登録されていますが、現在の機器明細に存在していない場合は使用不可です。登録が誤りでない場合は、決裁を取得のうえ決裁番号を入力してください。</value>
+  </data>
+  <data name="MSG5033" xml:space="preserve">
+    <value>CP-12（計画変更）登録済みのため、変更理由として「セコム理由」を選択することはできません。</value>
+  </data>
+  <data name="MSG5034" xml:space="preserve">
+    <value>事前に工事依頼登録を行ってください。</value>
+  </data>
+  <data name="MSG5035" xml:space="preserve">
+    <value>承認依頼するためのメールアドレスを指定してください。</value>
+  </data>
+  <data name="MSG5036" xml:space="preserve">
+    <value>承認依頼するためには、少なくとも1つの業者データが存在しなければなりません。</value>
+  </data>
+  <data name="MSG5037" xml:space="preserve">
+    <value>{0}に{1}より前の日付を入力することはできません。</value>
+  </data>
+  <data name="MSG5038" xml:space="preserve">
+    <value>工事監理ステータスが取消になっているため、登録できません。</value>
+  </data>
+  <data name="MSG5039" xml:space="preserve">
+    <value>当該契約コードの最新伝票の工事伝票ステータスが「出庫済」または「出庫なし」以外のため、この画面を開くことができません。</value>
+  </data>
+  <data name="MSG5040" xml:space="preserve">
+    <value>機器コード {0} に累計出庫数を超える未設置数を入力することはできません。</value>
+  </data>
+  <data name="MSG5041" xml:space="preserve">
+    <value>機器コード {0} に「撤去数＋追加撤去数」を超える撤去不能数を入力することはできません。</value>
+  </data>
+  <data name="MSG5042" xml:space="preserve">
+    <value>工事完了日は未来日付で登録できません。</value>
+  </data>
+  <data name="MSG5043" xml:space="preserve">
+    <value>工事完了日は、継続契約の最新OCCの変更実施日より前の日付を入力することはできません。</value>
+  </data>
+  <data name="MSG5044" xml:space="preserve">
+    <value>機器コード {0} は、変更後契約設置数が「変更前契約設置数＋最新伝票の累計出庫数－最新伝票の未使用数－未設置数－最新伝票の撤去数＋今回の追加撤去数」の個数と同数でなければなりません。</value>
+  </data>
+  <data name="MSG5045" xml:space="preserve">
+    <value>変更理由が「お客様理由」になっているため、CP-12（計画変更）登録を行ってください。</value>
+  </data>
+  <data name="MSG5046" xml:space="preserve">
+    <value>工事完了登録の内容と契約条件登録の内容が異なっております。</value>
+  </data>
+  <data name="MSG5047" xml:space="preserve">
+    <value>全撤去工事完了登録の前に、解約／成約取消条件の登録を行ってください。</value>
+  </data>
+  <data name="MSG5048" xml:space="preserve">
+    <value>停止中工事完了登録の前に、業務停止登録を行ってください。</value>
+  </data>
+  <data name="MSG5049" xml:space="preserve">
+    <value>注文書が未回収、または回収不備のままです。回収を促進してください。この処理を続けてもよろしいですか？</value>
+  </data>
+  <data name="MSG5050" xml:space="preserve">
+    <value>この契約／プロジェクトコードに工事データがありません。</value>
+  </data>
+  <data name="MSG5051" xml:space="preserve">
+    <value>客先引渡登録済みのため、工事取消できません。</value>
+  </data>
+  <data name="MSG5052" xml:space="preserve">
+    <value>工事発注未登録のため、工事発注取消できません。</value>
+  </data>
+  <data name="MSG5053" xml:space="preserve">
+    <value>工事伝票未登録、または最新伝票が初回伝票でないため、工事取消できません。</value>
+  </data>
+  <data name="MSG5054" xml:space="preserve">
+    <value>工事伝票ステータスが「部分出庫中」ではいけません。</value>
+  </data>
+  <data name="MSG5055" xml:space="preserve">
+    <value>工事伝票未登録のため、工事取消できません。</value>
+  </data>
+  <data name="MSG5056" xml:space="preserve">
+    <value>工事伝票が一つしかないため、最新工事伝票を取消し、一つ前の伝票に戻ることができません。</value>
+  </data>
+  <data name="MSG5057" xml:space="preserve">
+    <value>契約コード／プロジェクトコードを指定してください。</value>
+  </data>
+  <data name="MSG5058" xml:space="preserve">
+    <value>工事登録済みのため、工事データを削除できません。</value>
+  </data>
+  <data name="MSG5059" xml:space="preserve">
+    <value>業者名称 {0} は既に一覧に存在しています。</value>
+  </data>
+  <data name="MSG5060" xml:space="preserve">
+    <value>少なくとも1つの業者を指定してください。</value>
+  </data>
+  <data name="MSG5061" xml:space="preserve">
+    <value>工事データが存在しません。工事情報の登録を行ってください。</value>
+  </data>
+  <data name="MSG5062" xml:space="preserve">
+    <value>工事監理ステータスが{0}になっているため、工事発注データを編集できません。</value>
+  </data>
+  <data name="MSG5063" xml:space="preserve">
+    <value>契約コード／プロジェクトコードが存在しません。</value>
+  </data>
+  <data name="MSG5064" xml:space="preserve">
+    <value>成約承認データが存在していないため、工事種類として「新規」を選択できません。</value>
+  </data>
+  <data name="MSG5065" xml:space="preserve">
+    <value>成約承認データが存在しているため、工事種類として「新規」以外を選択できません。</value>
+  </data>
+  <data name="MSG5066" xml:space="preserve">
+    <value>機器コード {0} は、追加設置数と繰入数の合計が部分出庫数以下であってはいけません。</value>
+  </data>
+  <data name="MSG5067" xml:space="preserve">
+    <value>最新工事伝票は出庫していないので、この伝票によって登録された内容は変更されます。この処理を続けてもよろしいですか？</value>
+  </data>
+  <data name="MSG5068" xml:space="preserve">
+    <value>この伝票の内容でCP12の登録を行ってください。この処理を続けてもよろしいですか？</value>
+  </data>
+  <data name="MSG5070" xml:space="preserve">
+    <value>客先引渡登録済みのため、伝票差替ができません。</value>
+  </data>
+  <data name="MSG5071" xml:space="preserve">
+    <value>工事伝票が存在しないため、工事完了登録できません。</value>
+  </data>
+  <data name="MSG5072" xml:space="preserve">
+    <value>工事基本が存在しないため、工事完了登録できません。</value>
+  </data>
+  <data name="MSG5074" xml:space="preserve">
+    <value>工事取消しますが、よろしいですか？</value>
+  </data>
+  <data name="MSG5075" xml:space="preserve">
+    <value>工事発注取消しますが、よろしいですか？</value>
+  </data>
+  <data name="MSG5076" xml:space="preserve">
+    <value>工事発注／伝票取消しますが、よろしいですか？</value>
+  </data>
+  <data name="MSG5077" xml:space="preserve">
+    <value>工事伝票取消しますが、よろしいですか？</value>
+  </data>
+  <data name="MSG5078" xml:space="preserve">
+    <value>最新工事伝票取消（一つ前の伝票に戻る）しますが、よろしいですか？</value>
+  </data>
+  <data name="MSG5079" xml:space="preserve">
+    <value>工事伝票ステータスが「部分出庫中」になっているため、工事取消できません。</value>
+  </data>
+  <data name="MSG5080" xml:space="preserve">
+    <value>施工担当者が工事業者になっています。事前に工事依頼登録を行ってください。</value>
+  </data>
+  <data name="MSG5081" xml:space="preserve">
+    <value>この業者を支払済にしますが、よろしいですか？</value>
+  </data>
+  <data name="MSG5069" xml:space="preserve">
+    <value>機器コード {0} は、レンタル単価が設定されていません。</value>
+  </data>
+  <data name="MSG5073" xml:space="preserve">
+    <value>機器コード {0} に保守交換数を超える撤去不能数を入力することはできません。</value>
+  </data>
+  <data name="MSG5082" xml:space="preserve">
+    <value>承認しますが、よろしいですか？</value>
+  </data>
+  <data name="MSG5083" xml:space="preserve">
+    <value>差し戻しますが、よろしいですか？</value>
+  </data>
+  <data name="MSG5084" xml:space="preserve">
+    <value>工事終了日に工事着工日より前の日付を入力することはできません。</value>
+  </data>
+  <data name="MSG5085" xml:space="preserve">
+    <value>工事完了日に工事終了日より前の日付を入力することはできません。</value>
+  </data>
+  <data name="MSG5086" xml:space="preserve">
+    <value>変更理由が選択されています。変更要請者を選択してください。</value>
+  </data>
+  <data name="MSG5087" xml:space="preserve">
+    <value>変更要請者が選択されています。変更理由を選択してください。</value>
+  </data>
+  <data name="MSG5088" xml:space="preserve">
+    <value>保守交換数に累計出庫数より少ない数量を入力することはできません。</value>
+  </data>
+  <data name="MSG5089" xml:space="preserve">
+    <value>工事発注を登録できません。先に工事伝票、または計画変更の登録を行ってください。</value>
+  </data>
+  <data name="MSG5090" xml:space="preserve">
+    <value>工事監理承認依頼の登録が完了しました。</value>
+  </data>
+  <data name="MSG5091" xml:space="preserve">
+    <value>工事監理承認の登録が完了しました。</value>
+  </data>
+  <data name="MSG5092" xml:space="preserve">
+    <value>工事監理差戻の登録が完了しました。</value>
+  </data>
+  <data name="MSG5093" xml:space="preserve">
+    <value>工事完了登録できません。先に工事発注を登録し、全ての工事発注書を発行してください。</value>
+  </data>
+  <data name="MSG5094" xml:space="preserve">
+    <value>全ての工事発注書が発行されました。</value>
+  </data>
+  <data name="MSG5095" xml:space="preserve">
+    <value>全ての業者に支払済です。</value>
+  </data>
+  <data name="MSG5096" xml:space="preserve">
+    <value>契約条件登録（CP-12）で登録された正規契約料金と、工事伝票作成登録で登録された正規契約料金の金額が異なるため工事完了登録できません。契約条件登録（CP-12）の金額が正しい場合は工事伝票作成の再登録を、工事伝票作成登録の金額が正しい場合は契約条件（CP-12）の再登録を行ってください。</value>
+  </data>
+  <data name="MSG5097" xml:space="preserve">
+    <value>契約条件登録（CP-12）で登録された正規工事料金と、工事伝票作成登録で登録された正規工事料金の金額が異なるため工事完了登録できません。契約条件登録（CP-12）の金額が正しい場合は工事伝票作成の再登録を、工事伝票作成登録の金額が正しい場合は契約条件（CP-12）の再登録を行ってください。</value>
+  </data>
+  <data name="MSG5098" xml:space="preserve">
+    <value>工事依頼登録がされていないため、工事発注登録はできません。</value>
+  </data>
+  <data name="MSG5099" xml:space="preserve">
+    <value>機器{0}は、現契約設置数を越える移動機器数を入力することができません。</value>
+  </data>
+  <data name="MSG5100" xml:space="preserve">
+    <value>工事伝票が登録済み、かつ施工担当者が業者以外であるため、工事依頼を登録できません。</value>
+  </data>
+  <data name="MSG5101" xml:space="preserve">
+    <value>工事完了が登録できません。先に工事依頼及び工事発注を登録してください。</value>
+  </data>
+  <data name="MSG5102" xml:space="preserve">
+    <value>「担当IE 1」と「担当IE 2」 に同じ社員番号の登録はできません。</value>
+  </data>
+  <data name="MSG5103" xml:space="preserve">
+    <value>担当IEは「担当IE 1」から順に登録してください。</value>
+  </data>
+  <data name="MSG5104" xml:space="preserve">
+    <value>機器コード {0} は、追加撤去数と撤去数の合計が現契約設置数を超えることはできません。</value>
+  </data>
+  <data name="MSG5105" xml:space="preserve">
+    <value>「苦情」が「あり」になっているので、「IEチェック日」を入力してください。</value>
+  </data>
+  <data name="MSG5106" xml:space="preserve">
+    <value>「未設置あり」がチェックされていますが、未設置の機器数が登録していません。未設置を登録しない場合、チェックを外してください。</value>
+  </data>
+  <data name="MSG5107" xml:space="preserve">
+    <value>「撤去不能あり」がチェックされていますが、撤去不能の機器数が登録していません。撤去不能を登録しない場合、チェックを外してください。</value>
+  </data>
+  <data name="MSG5108" xml:space="preserve">
+    <value>「追加撤去あり」がチェックされていますが、追加撤去の機器数が登録していません。追加撤去を登録しない場合、チェックを外してください。</value>
+  </data>
+  <data name="MSG5109" xml:space="preserve">
+    <value>「移設数変更あり」がチェックされていますが、移設数変更の機器数が登録していません。移設数変更を登録しない場合、チェックを外してください。</value>
+  </data>
+  <data name="MSG5110" xml:space="preserve">
+    <value>撤去数を1以上入力してください。</value>
+  </data>
+  <data name="MSG5111" xml:space="preserve">
+    <value>移設数を1以上入力してください。</value>
+  </data>
+  <data name="MSG5112" xml:space="preserve">
+    <value>保守交換数を1以上入力してください。</value>
+  </data>
+  <data name="MSG5113" xml:space="preserve">
+    <value>工事完了希望日に工事着工希望日より前の日付を入力することはできません。</value>
+  </data>
+  <data name="MSG5114" xml:space="preserve">
+    <value>この画面での機器明細の変更により正規契約料金が契約条件登録の内容から変更となりました。このまま確定は可能ですが、工事情報のみがこの登録で変更された金額で更新されます。工事情報と契約情報を合わせておきたい場合はCP12登録と伝票差替を行い工事完了してください。</value>
+  </data>
+  <data name="MSG5115" xml:space="preserve">
+    <value>この画面で正規工事料金が契約条件で登録した金額から変更されました。この登録で変更された金額で更新されます。誤りでないか確認してください。</value>
+  </data>
+  <data name="MSG5116" xml:space="preserve">
+    <value>販売停止機器が追加登録されています。誤りでないか在庫の有無と合わせて確認してください。</value>
+  </data>
+  <data name="MSG5117" xml:space="preserve">
+    <value>保証期間経過済みのため保守交換処理はできません。追加売却分の保守交換、または個別に決裁を取得している場合は決済番号を登録してください。</value>
+  </data>
+  <data name="MSG5118" xml:space="preserve">
+    <value>工事が登録済み、かつ変更理由がセコム理由のため計画変更を登録できません。</value>
+  </data>
+  <data name="MSG5119" xml:space="preserve">
+    <value>工事が登録済み、かつ工事種類が{0}のため計画変更を登録できません。</value>
+  </data>
+  <data name="MSG5120" xml:space="preserve">
+    <value>オンライン契約が有効な状態です。業務停止後または成約取消後に処理を行ってください。</value>
+  </data>
+  <data name="MSG5121" xml:space="preserve">
+    <value>設置機器数がないため、工事完了登録できません。</value>
+  </data>
+  <data name="MSG5122" xml:space="preserve">
+    <value>機器コード{0}は抹消済みのため、使用できません。代替機器等に置き換えて再見積り、計画変更を登録した上で、再度工事伝票を登録してください。</value>
+  </data>
+  <data name="MSG5123" xml:space="preserve">
+    <value>発注書または契約書が回収されていない、かつ決裁番号が入力されていないため、工事登録できません。</value>
+  </data>
+  <data name="MSG5124" xml:space="preserve">
+    <value>CQ-12 が登録されているため、工事完了が登録できません。工事伝票（差替）を再度登録してください。</value>
+  </data>
+  <data name="MSG5125" xml:space="preserve">
+    <value>Please Input InstallationDateFrom And InstallationDateTo.</value>
+  </data>
+  <data name="MSG5126" xml:space="preserve">
+    <value>User don't have permission or Contrat status is not 'before start operate'.</value>
+  </data>
+</root>

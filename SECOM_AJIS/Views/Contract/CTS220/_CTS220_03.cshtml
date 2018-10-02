@@ -1,0 +1,187 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+
+@{
+    Layout = "";
+    ViewBag.Title = "CTS220";
+    ViewBag.LabelWidth = "250px";
+    ViewBag.RightLabelWidth = "270px";
+    ViewBag.ObjectWidth = "120px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";      
+}
+
+<script language="javascript" runat="server"> 
+    var objCTS220_03 = {         
+                            C_CHANGE_REASON_TYPE: "@ViewBag.C_CHANGE_REASON_TYPE" ,
+                            C_CHANGE_NAME_REASON_TYPE: "@ViewBag.C_CHANGE_NAME_REASON_TYPE" ,
+                            C_STOP_CANCEL_REASON_TYPE: "@ViewBag.C_STOP_CANCEL_REASON_TYPE" ,
+                            C_RENTAL_CHANGE_TYPE_PLAN_CHANGE: "@ViewBag.C_RENTAL_CHANGE_TYPE_PLAN_CHANGE" ,
+                            C_RENTAL_CHANGE_TYPE_CHANGE_NAME: "@ViewBag.C_RENTAL_CHANGE_TYPE_CHANGE_NAME" ,
+                            C_RENTAL_CHANGE_TYPE_END_CONTRACT: "@ViewBag.C_RENTAL_CHANGE_TYPE_END_CONTRACT" ,
+                            C_RENTAL_CHANGE_TYPE_CANCEL: "@ViewBag.C_RENTAL_CHANGE_TYPE_CANCEL" ,
+                            C_RENTAL_CHANGE_TYPE_STOP: "@ViewBag.C_RENTAL_CHANGE_TYPE_STOP" ,
+                            C_RENTAL_CHANGE_TYPE_CHANGE_INSTRU_DURING_STOP: "@ViewBag.C_RENTAL_CHANGE_TYPE_CHANGE_INSTRU_DURING_STOP" ,
+                            C_RENTAL_CHANGE_TYPE_CHANGE_NAME_DURING_STOP: "@ViewBag.C_RENTAL_CHANGE_TYPE_CHANGE_NAME_DURING_STOP" ,
+                            C_RENTAL_CHANGE_TYPE_CANCEL_BEFORE_START: "@ViewBag.C_RENTAL_CHANGE_TYPE_CANCEL_BEFORE_START" ,
+                            C_RENTAL_CHANGE_TYPE_REMOVE_INSTRU_DURING_STOP: "@ViewBag.C_RENTAL_CHANGE_TYPE_REMOVE_INSTRU_DURING_STOP" ,               
+                            C_RENTAL_CHANGE_TYPE_REMOVE_ALL: "@ViewBag.C_RENTAL_CHANGE_TYPE_REMOVE_ALL"
+                        } 
+</script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS220/CTS220_03.js")"></script>
+
+<div id="divProductSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS220.lblProductInformation
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblContractFee
+        </div>
+        <div class="usr-object" style="width:220px;">
+            @Html.NumericTextBoxWithMultipleCurrency("OrderContractFee", null, null, new { style = "width:140px;" }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX, true)
+        </div>
+        <div class="usr-label" style="width:211px;">
+            @Resources.CTS220.lblChangeOperationDate
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ChangeImplementDate", null, new { style = "width:100px;" })            
+        </div>
+        @Html.LabelDateFormat("ChangeImplementDate")
+        &nbsp;@Html.RequireFiled()
+    </div>
+        <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblStopFee
+        </div>
+        <div class="usr-object" style="width:205px;">
+            @Html.NumericTextBoxWithMultipleCurrency("StopFee", null, null, new { style = "width:140px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblSecurityTypeCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth">
+            @Html.CommonTextBox("SecurityTypeCode", (string)@ViewBag.SecurityTypeCode, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:311px;">
+            @Resources.CTS220.lblProduct
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ProductCode", (string)@ViewBag.ProductCode, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = true })
+        </div>       
+    </div>   
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblChangeType
+        </div>
+        <div class="usr-object" style="width: 194px">
+             @Html.ChangeTypeComboBox("ChangeType", "RentalChangeType", new { style = "height: 22px; width: 194px;" }, true)
+        </div>
+        <div class="usr-label" style="width:237px;">
+            @Resources.CTS220.lblReason
+        </div>
+        <div class="usr-object" style="width: 194px">
+            @Html.ChangeReasonTypeComboBox("ChangeReasonType", new { style = "height: 22px; width: 194px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblSalesMan1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth">
+              @Html.CommonTextBox("SaleManEmpNo1", (string)@ViewBag.SaleManEmpNo1, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "10" })
+        </div>
+        <div class="usr-label" style="width:1px;">&nbsp;</div>
+        <div class="usr-object">
+              @Html.CommonTextBox("SaleManEmpName1", (string)@ViewBag.SaleManEmpName1, new { style = "width:189px;", @readonly = true })
+        </div>
+        <div class="usr-object">@Html.RequireFiled()</div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblSalesMan2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth">
+              @Html.CommonTextBox("SaleManEmpNo2", (string)@ViewBag.SaleManEmpNo2, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "10" })
+        </div>
+        <div class="usr-label" style="width:1px;">&nbsp;</div>
+        <div class="usr-object">
+              @Html.CommonTextBox("SaleManEmpName2", (string)@ViewBag.SaleManEmpName2, new { style = "width:189px;", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblApproveNo1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+              @Html.CommonTextBox("ApproveNo1", (string)@ViewBag.ApproveNo1, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "15" })
+        </div>
+         <div class="usr-label" style="width:311px;">
+            @Resources.CTS220.lblApproveNo2
+        </div>
+        <div class="usr-object">
+              @Html.CommonTextBox("ApproveNo2", (string)@ViewBag.ApproveNo2, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "15" })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblChangeOperationRegisterDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("CreateDate", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = true })
+        </div>
+         <div class="usr-label" style="width:311px;">
+            @Resources.CTS220.lblChangeOperationRegistrant
+        </div>
+        <div class="usr-object" style="width:70px;">
+              @Html.CommonTextBox("CreateBy", (string)@ViewBag.CreateBy, new { style = "width:70px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:1px;">&nbsp;</div>
+        <div class="usr-object">
+              @Html.CommonTextBox("CreateByName", (string)@ViewBag.CreateByName, new { style = "width:189px;", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblSecurityMemo
+        </div>
+        <div class="usr-object" style = "width:570px;">
+            @Html.TextArea("SecurityMemo", new { style = "width:570px;height:50px", maxlength = "4000" })   
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblOperationType
+        </div>
+        <div class="usr-object">
+            @*<div class="main-table" style="border-style:dotted">
+                <div class="usr-row">
+                    <div class="usr-object" style="width:180px;">
+                        @Html.CommonCheckButton("HaveKey", @Resources.CTS220.lblHaveKey, "True", null, null)
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-object" style="width:180px;">
+                        @Html.CommonCheckButton("HaveNoKey", @Resources.CTS220.lblHaveNoKey, "True", null, null)
+                    </div>
+                </div> 
+                <div class="usr-row" style="height:1px">&nbsp;</div>                    
+            </div>*@
+
+            @Html.OperationTypeCheckList("OperationType", (string[])@ViewBag.OperationTypeList, new { width = "142px", height = "40px" })
+        </div>
+    </div>
+    <div class="usr-row">&nbsp;</div>
+</div>

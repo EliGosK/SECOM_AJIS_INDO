@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="30" type="ro" align="center" sort="na"></column>
+    <column id="CallDateAndName" width="125" type="ro" align="left" sort="str_custom">headerCallDateAndName</column>
+    <column id="CallResultDesc" width="120" type="ro" align="left" sort="str_custom">headerCallResult</column>
+    <column id="PaymentDetail" width="200" type="ro" align="left" sort="na">headerPaymentDetail</column>
+    <column id="PostponeReasonDesc" width="150" type="ro" align="left" sort="str_custom">headerPostponeReason</column>
+    <column id="NextCallDate" width="100" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerNextCallDate</column>
+    <column id="Remark" width="150" type="ro" align="left" sort="str_custom">headerRemark</column>
+    <column id="InvoiceNo" width="*" type="ro" align="left" sort="str_custom">headerInvoiceNo</column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

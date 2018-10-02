@@ -1,0 +1,184 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Master.Helpers
+@{
+	ViewBag.Title = "Ajax Call";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/MessageDialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+<style type="text/css">
+    
+	.table
+	{
+		background: #333;
+		width: 1048px
+	}
+	.table ul
+	{
+		float: left;
+		margin: 0;
+		padding: 0;
+		border: 1px solid #C9C9C9;
+	}
+	.table ul li
+	{
+		list-style: none;
+		padding: 5px 10px;
+		border: 1px solid #C9C9C9;
+		height: 30px;
+	}
+	.table ul li.title
+	{
+		font-weight: bold;
+		background: #333;
+		color: #fff;
+	}
+	.table ul li.even
+	{
+		background: #fff;
+	}
+	.table ul li.odd
+	{
+		background: #FFFFE6;
+	}
+</style>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function () {
+
+		$("#Province").change(function () {
+			var Prov = { "provinceCode": $("#Province").val() };
+			call_ajax_method("/Master/GetAmphorEN", Prov, function (data) {
+				regenerate_combo("#District", data);
+			});
+		});
+		$("#Json1").click(function () {
+			TestCreateObject();
+		});
+		$("#Json2").click(function () {
+			TestCreateObjectWithDetail();
+});
+		$("#Json3").click(function () {
+			TestDownload();
+		});
+		
+
+	});
+	function TestCreateObject() {
+		var rawData = "id=12345"
+						+ "&description=Test Data"
+						+ "&startDate=2011/09/05";
+		var parameter = CreateObjectData(rawData);
+
+		call_ajax_method("/Test/TestPassJSON", parameter, function (data) {
+			alert(data);
+		});
+	}
+	function TestCreateObjectWithDetail() {        
+		var list = [{ id: 1, value: "detail 1" }
+					, { id: 2, value: "detail 2" }
+					, { id: 3, value: "detail 3"}];
+		var json = { id: 12345, description: "Test Data", startDate: "2011/09/05", detail: list };
+		call_ajax_method("/Test/TestPassJSON", json, function (data) {
+			alert(data);
+		});
+	}
+	function TestDownload() {
+		var list = [{ id: 1, value: "detail 1" }
+					, { id: 2, value: "detail 2" }
+					, { id: 3, value: "detail 3"}];
+		var json = { id: 12345, description: "Test Data", startDate: "2011/09/05", detail: list };
+
+		var url = '/us/Test/TestPassJSONDownload?' + decodeURIComponent($.param(json));
+		jQuery('<form action="' + url + '" method="post"></form>').appendTo('body').submit().remove();
+
+	}
+	
+</script>
+<div id="Search_Criteria" class="main-table">
+<form id="Search_Form" action="#">
+<h2>Ajax Call</h2>
+
+	<div class="table">
+		<ul>
+			<li class="title">Code</li>
+			<li class="even" style="height:150px">
+	<pre>
+	$("#Province").change(function () {
+		var Prov = { "provinceCode": $("#Province").val() };            
+		call_ajax_method("/Master/GetAmphorEN", Prov, function (data) {
+			regenerate_combo("#District", data);
+		});
+	});
+	</pre>
+			</li>              
+			<li class="odd" style="height:250px">
+	<pre>
+	public class TestDTO
+	{
+		public int id { get; set; }
+		public string description { get; set; }
+		public DateTime startDate { get; set; }
+		public IList<TestDetail> detail { get; set; }
+	}
+	public class TestDetail
+	{
+		public int id { get; set; }
+		public string value { get; set; }
+	}
+	</pre>
+			</li>                                            
+			<li class="odd" style="height:250px">
+	<pre>
+	//Controller
+	public string TestPassJSON(TestDTO data)
+	//View
+	function TestCreateObject() {
+		var rawData = "id=12345"
+						+ "&description=Test Data"
+						+ "&startDate=2011/09/05";
+		var parameter = CreateObjectData(rawData);
+
+		call_ajax_method("/Test/TestPassJSON", parameter, function (data) {
+			alert(data);
+		});
+	}
+	</pre>
+			</li>
+			<li class="even" style="height:250px">
+	<pre>
+	//Controller
+	public string TestPassJSON(TestDTO data)
+	//View
+	function TestCreateObjectWithDetail() {        
+		var list = [{ id: 1, value: "detail 1" }
+					, { id: 2, value: "detail 2" }
+					, { id: 3, value: "detail 3"}];
+		var json = { id: 12345, description: "Test Data", startDate: "2011/09/05", detail: list };
+		call_ajax_method("/Test/TestPassJSON", json, function (data) {
+			alert(data);
+		});
+	}
+	</pre>
+			</li>
+		</ul>
+		<ul>
+			<li class="title">Controls</li>
+			<li class="even"style="height:150px">
+				Province:<br />
+				@Html.ProvinceComboBox("Province", new { style = "width:174px;margin-top:5px;" })<br />
+				District:<br />
+				@Html.DistrictComboBox("District", null, new { style = "width:174px;margin-top:5px;" })
+			</li>
+
+			<li class="odd"style="height:250px">Class DTO</li>
+			<li class="odd"style="height:250px">@Html.CommonButton("Json1", "Create Object", new { style = "width:100px;", type = "button" })</li>
+			<li class="even"style="height:250px">@Html.CommonButton("Json2", "Pass JSON", new { style = "width:100px;", type = "button" })</li>
+			<li class="even"style="height:250px">@Html.CommonButton("Json3", "Pass JSON", new { style = "width:100px;", type = "button" })</li>
+		</ul>
+	</div>
+	
+	
+
+	<input type="hidden" name="data" id="data" />
+	</form>
+	<div class="usr-clear-style" style="height:0%">&nbsp;</div>
+</div>

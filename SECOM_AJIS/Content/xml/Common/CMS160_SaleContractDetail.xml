@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+  
+
+    <column id="Title" width="*" type="ro" align="right" sort="na" ></column>
+    <column id="txtNormalAmt" width="200" type="ro" align="right" sort="na">headerNormal_amount_THB</column>
+    <column id="txtBillinAmt" width="200" type="ro" align="right" sort="na">headerBilling_amount_THB</column>
+    <column id="DiscountName" width="170" type="ro" align="right" sort="na">headerDiscount_Over_received_rate</column>
+    <column id="DiscountRate" width="110" type="ro" align="right" sort="na">#cspan</column>
+  
+    <column id="Object" width="0" type="ro" align="center"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

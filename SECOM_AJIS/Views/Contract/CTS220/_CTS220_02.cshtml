@@ -1,0 +1,130 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@{
+    Layout = "";
+    ViewBag.Title = "CTS220";
+    ViewBag.LabelWidth = "250px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS220/CTS220_02.js")"></script>
+<div id="divContractBasicSection" class="main-table" style="height:auto">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS220.lblContractBasicInformation
+        </div>
+    </div>
+    <div class="usr-row" style="height:20px">
+        <div class="usr-label" style="width:250px;">
+            @Resources.CTS220.lblContractCode
+        </div>
+        <div class="usr-object" style="width: 100px">
+            @Html.CommonTextBox("ContractCode", (string)@ViewBag.ContractCode, new { style = "width:100px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 220px">
+            @Resources.CTS220.lblUserCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("UserCode", (string)@ViewBag.UserCode, new { style = "width:100px;", @readonly = true })
+        </div>
+
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:250px;">
+            @Resources.CTS220.lblContractTarget
+        </div>
+        <div class="usr-object" style="width: 100px">
+            @Html.CommonTextBox("ContractTarget", (string)@ViewBag.CustomerCode, new { style = "width:100px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 220px">
+            @Resources.CTS220.lblCustomerCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("RealCustomerCustCode", (string)@ViewBag.RealCustomerCustCode, new { style = "width:100px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 105px">
+            @Resources.CTS220.lblSiteCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("SiteCode", (string)@ViewBag.SiteCode, new { style = "width:110px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:20px">
+        <div class="usr-label" style="width:250px;">
+        </div>
+        <div class="usr-object">            
+            @Html.CommonCheckButton("ImportantFlag", @Resources.CTS220.lblContractTargetImportantCustomer, "", true, new { disabled = "disabled" })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:250px;">
+            @Resources.CTS220.lblContractTargetNameEnglish
+        </div>
+        <div class="usr-object" style = "width:650px;">
+            @Html.CommonTextBox("CustFullNameEN", (string)@ViewBag.CustFullNameEN, new { style = "width:650px;", maxlength = "200", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:250px;">
+            @Resources.CTS220.lblContractTargetAddressEnglish
+        </div>
+        <div class="usr-object" style = "width:650px;">
+            @Html.CommonTextBox("AddressFullEN", (string)@ViewBag.AddressFullEN, new { style = "width:650px;", maxlength = "1600", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:250px;">
+            @Resources.CTS220.lblSiteNameEnglish
+        </div>
+        <div class="usr-object" style = "width:650px;">
+            @Html.CommonTextBox("SiteNameEN", (string)@ViewBag.SiteNameEN, new { style = "width:650px;", maxlength = "200", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:250px;">
+            @Resources.CTS220.lblSiteAddressEnglish
+        </div>
+        <div class="usr-object" style = "width:650px;">
+            @Html.CommonTextBox("SiteAddressEN", (string)@ViewBag.SiteAddressEN, new { style = "width:650px;", maxlength = "1600", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:250px;">
+            @Resources.CTS220.lblContractTargetNameLocal
+        </div>
+        <div class="usr-object" style = "width:650px;">
+            @Html.CommonTextBox("CustFullNameLC", (string)@ViewBag.CustFullNameLC, new { style = "width:650px;", maxlength = "200", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:250px;">
+            @Resources.CTS220.lblContractTargetAddressLocal
+        </div>
+        <div class="usr-object" style = "width:650px;">
+            @Html.CommonTextBox("AddressFullLC", (string)@ViewBag.AddressFullLC, new { style = "width:650px;", maxlength = "200", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:250px;">
+            @Resources.CTS220.lblSiteNameLocal
+        </div>
+        <div class="usr-object" style = "width:650px;">
+            @Html.CommonTextBox("SiteNameLC", (string)@ViewBag.SiteNameLC, new { style = "width:650px;", maxlength = "200", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:250px;">
+            @Resources.CTS220.lblSiteAddressLocal
+        </div>
+        <div class="usr-object" style = "width:650px;">
+            @Html.CommonTextBox("SiteAddressLC", (string)@ViewBag.SiteAddressLC, new { style = "width:650px;", maxlength = "200", @readonly = true })
+        </div>
+    </div>  
+    <div class="usr-row"></div>
+</div>

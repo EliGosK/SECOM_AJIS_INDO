@@ -1,0 +1,67 @@
+﻿
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@{
+    ViewBag.SearchWidthCol1 = "160px;";
+    ViewBag.SearchWidthCol2 = "170px;";
+    ViewBag.SearchWidthCol3 = "240px;";
+    ViewBag.SearchWidthCol4 = "80px;";
+    ViewBag.SearchWidthButton = "90px";
+
+    ViewBag.ProductTypeCboWidth = "120px";
+    ViewBag.MonthCboWidth = "120px";
+    ViewBag.YearCboWidth = "120px";
+    ViewBag.ContractCodeWidth = "100px";
+    ViewBag.BillingOCC = "30px";
+    ViewBag.DatePickerWidth = "95px;";
+    ViewBag.Col1Width = "150px";
+}
+
+
+@section page_header{
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS490.js")"></script>
+
+}
+
+
+<input type="hidden" id="msgbox" value="@Resources.CMS490.msgbox" />
+<!-- Specify location -->
+<div class="main-table" id="divRe-issue">
+    <div class="table-header">@Resources.CMS490.lblHeaderReIssue</div>
+    <form id="formInputPayment" action="#">
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1Width">&nbsp;</div>
+        <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.CMS490.lblDocType</div>
+        <div class="usr-object">
+            @Html.CMS490DocTypeCbo("txtDocType", new { style = "width:" + ViewBag.SearchWidthCol3, name = "AreaCode" })
+            @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1Width">&nbsp;</div>
+        <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.CMS490.lblDocNo</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtDocNo", null, new { style = "width:236px;", maxlength = "12" })
+            @Html.RequireFiled()
+        </div>
+    </div><br /><br />
+    </form>
+    <div class="usr-row">
+        <div class="usr-object" style="float: right;">
+            @Html.CommonButton("btnReIssue", (string)@Resources.CMS490.btnReIssue, new { style = "width:" + @ViewBag.WidthButton1 })
+            @Html.CommonButton("btnClear", (string)@Resources.CMS490.btnClear, new { style = "width:" + @ViewBag.WidthButton2 })
+        </div>
+    </div>
+    
+    <div class="usr-clear-style">&nbsp;</div>
+    
+</div>
+
+
+

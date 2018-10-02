@@ -1,0 +1,190 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Inventory.Helpers
+@section page_header{
+    <script src="../../Scripts/jquery.maskedinput-1.3.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <link rel="STYLESHEET" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")" />
+    <link rel="STYLESHEET" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid_skins.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+    <link rel="STYLESHEET" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_skyblue.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script src="../../Scripts/Contract/Dialog.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <script src="../../Scripts/Inventory/IVS011.js" type="text/javascript"></script>
+    <script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var AssetRegistered = "@ViewBag.C_INV_REGISTER_ASSET_REGISTERED";
+        var AssetUnregistered = "@ViewBag.C_INV_REGISTER_ASSET_UNREGISTER";
+    </script>
+}
+@{
+    ViewBag.Col1 = "200px";
+    ViewBag.Col2 = "260px";
+    ViewBag.NormalTxt = "170px";
+    ViewBag.NormalCbo = "204px";
+    ViewBag.ProjPurSortObj = "120px";
+    ViewBag.LongTxt = "720px";
+    ViewBag.Midtxt = "220px";
+    ViewBag.SysProdTxt = "300px";
+}
+<!-- ===================================== search stock-in slip =========================================== -->
+<div id="divTmp">
+</div>
+<div class="main-table" id="StockInSlip">
+    <div class="table-header">
+        @Resources.IVS011.lblSearchStockInSlip</div>
+    <div id="Criteria">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS011.lblStockInSlipNo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SlipNo", null, new { style = "width:" + @ViewBag.NormalTxt + ";", maxlength = 16 })
+            </div>
+            <div class="usr-label" style="width: 286px;">@Resources.IVS011.headerPurchaseOrderNo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("PorderNo", null, new { style = "width: " + ViewBag.NormalTxt + ";", maxlength = 11 })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS011.lblStockInType
+            </div>
+            <div class="usr-object">
+                @Html.StockInTypeCbo("StockType", new { style = "width:174px;" })
+            </div>
+            <div class="usr-label" style="width: 286px;">@Resources.IVS011.lblSupplierDeliveryOrderNo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SupOrderNo", null, new { style = "width:" + ViewBag.NormalTxt + ";", maxlength = 15 })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS011.lblStockInDate
+            </div>
+            <!-- -->
+            <div class="usr-object">
+                <input type="text" id="from" name="from" style="width: 87px;" />
+            </div>
+            <div class="usr-label" style="padding-left: 5px">
+                ~
+            </div>
+            <div class="usr-object">
+                <input type="text" id="to" name="to" style="width: 87px;" />
+            </div>
+            <div class="usr-label" style="padding-left: 5px">
+                @Resources.QUS010.lblDateFormat
+            </div>
+            <!-- -->
+            <div class="usr-label" style="width: 121px;">@Resources.IVS011.lblRegisterAsset
+            </div>
+            <div class="usr-object">
+                @Html.RegisterAssetCbo("RegAsset", new { style = "width:174px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS011.lblMemo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextArea("memo", null, new { rows = "1", style = "width:634px;overflow:auto;height:35px", maxlength = "1000" })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-object" style="float: right; margin-right: 4px;">
+            @Html.CommonButton("btnSearch", @Resources.IVS011.lblBtnSearch)
+            @Html.CommonButton("btnClear", @Resources.IVS011.lblBtnClear)
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<!-- ===================================== search stock-in slip ===========================================
+-->
+<!-- ===================================== SlipList =========================================== -->
+<div class="main-table" id="StockInList">    
+    <div id="ResultSection">
+    <div class="table-header">
+        @Resources.IVS011.lblStockInSlipList</div>
+    <div class="usr-row">
+        <div id="SlipGrid" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+    </div>
+</div>
+<!-- ===================================== End SlipList=========================================== -->
+<!-- ===================================== SlipDetail =========================================== -->
+<div class="main-table" id="SlipDetailSection">
+    <div class="table-header">@Resources.IVS011.lblStockInInstrumentSlipDetail</div>
+    <div id="headSlipDetail">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS011.lblStockInSlipNo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("DetSlipNo", null, new { style = "width:" + ViewBag.NormalTxt + ";" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS011.headerPurchaseOrderNo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("DetPorderNo", null, new { style = "width:" + ViewBag.NormalTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS011.lblStockInType
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("DetstockType", null, new { style = "width:" + ViewBag.NormalTxt + ";" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS011.lblSupplierDeliveryOrderNo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("DetSupOrderNo", null, new { style = "width:" + ViewBag.NormalTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS011.lblStockInDate
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("DetStockDate", null, new { style = "width:" + ViewBag.NormalTxt + ";" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS011.lblRegisterAsset
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("DetRegAsset", null, new { style = "width:" + ViewBag.NormalTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS011.lblMemo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextArea("Detmemo", null, new { style = "width:559px;height:50px;overflow:auto;", maxlength = "1000" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div id="DetailGrid" style="width: 99%; margin-left: 4px;">
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-object" style="float: right; margin-right: 4px;">
+                @Html.CommonButton("btnCancelSlip", Resources.IVS011.lblBtnCancelSlip)
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<!-- ===================================== End SlipDetail=========================================== -->
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog">
+    </div>
+</div>

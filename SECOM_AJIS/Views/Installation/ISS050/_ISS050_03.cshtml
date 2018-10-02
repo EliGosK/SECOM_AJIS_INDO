@@ -1,0 +1,121 @@
+﻿@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+
+<!-- ======== Html content ======== --->
+
+
+@* --- Contract Information ---  *@
+
+<div id="divInstallationInfo" class="main-table" style="margin-top:5px;">
+
+    <div class="usr-row">
+        <div class="table-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS050.lblHeaderName3
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>   
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblInstallationType        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width; background-color:@ViewBag.txtBackgroundColor;">           
+            @Html.CommonTextBox("InstallationType", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })          
+        </div>  
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth2;">
+           @Resources.ISS050.lblInstallationMANo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("MaintenanceNo", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>     
+    </div>
+
+    <div class="usr-row">    
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS050.lblPlanCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("PlanCode", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>     
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">           
+        </div>  
+    </div>
+
+    
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblProposedInstallationStartDate
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width; background-color:@ViewBag.txtBackgroundColor;">
+             @Html.CommonTextBox("ProposeInstallStartDate", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth2;">
+            @Resources.ISS050.lblProposedInstallationCompleteDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ProposeInstallCompleteDate", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>   
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblSalesMan1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("SalesmanCode1", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:2px"></div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width; background-color:@ViewBag.txtBackgroundColor;">
+            @*@Html.CommonTextBox("SalesmanEN1", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })*@
+            @Html.CommonTextBox("Salesman1", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblSalesMan2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("SalesmanCode2", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:2px"></div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width; background-color:@ViewBag.txtBackgroundColor;">
+            @*@Html.CommonTextBox("SalesmanEN2", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })*@
+            @Html.CommonTextBox("Salesman2", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>    
+   
+    
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>      
+    <div class="usr-row">
+
+        <div class="usr-label" style="width:@ViewBag.lbWidth; height:60px;">@Resources.ISS050.lblRequestMemo</div>
+        <div class="usr-object" style="margin-right:5px;width:495px;">
+            @Html.CommonTextArea("RequestMemo", null, new { style = "width:650px; height:60px;", @readonly = true })
+        </div>
+
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+        
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+  
+</div>
+

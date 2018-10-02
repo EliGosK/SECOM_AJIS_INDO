@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="SlipNo" width="150" type="ro" align="left" sort="str_custom">headerInstallationSlipNo</column>
+    <column id="ExpectedDateAndContractCode" width="180" type="ro" align="left" sort="str_custom">headerExpectedDateAndContractCode</column>
+    <column id="ContractTargetAndPurchaserName" width="240" type="ro" align="left" sort="str_custom">headerContractTargetAndPurchaserName</column>
+    <column id="SiteName" width="*" type="ro" align="left" sort="str_custom">headerSiteName</column>
+    <column id="OperationOfficeAndSubContractor" width="160" type="ro" align="left" sort="str_custom">headerOperationOfficeAndSubContractor</column>
+    <column id="SelectButton" width="30" type="ro" align="left" sort="na">headerSelect</column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

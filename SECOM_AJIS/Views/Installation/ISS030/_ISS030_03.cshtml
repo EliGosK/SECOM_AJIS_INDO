@@ -1,0 +1,179 @@
+﻿@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+
+<!-- ======== Html content ======== --->
+
+@{
+    ViewBag.POlbWidth = "180px";
+    ViewBag.POControlWidth = "300px"; 
+ }
+@* --- Contract Information ---  *@
+
+<div id="divInstallationInstrumentInfo" class="main-table" style="margin-top:5px;">
+<div class="usr-row">
+        <div class="table-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS030.lblHeaderInstrument
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>  
+    <div class="usr-row" style="text-align:right">
+        @Html.CommonButton("btnResetAdditional", @Resources.ISS030.lblResetAdditional, new { style = "width:120px;" })
+    </div>
+    <div class="usr-row">
+            <div id="gridInstrumentInfo" >
+            </div>
+        </div>
+    <br />
+
+   <div id="divInstrumentAdd" class="main-table">
+        <div class="label-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS030.lblRegisOtherAdd
+            
+        </div>
+        <div class="usr-row"></div>
+        <div class="usr-label" style="width:130px;">
+            @Resources.QUS030.lblInstrumentCode
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("InstrumentCode", "", new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 50 })
+        
+            @Html.Hidden("LineUpTypeCode")
+            @Html.Hidden("InstrumentTypeCode")
+            @Html.Hidden("RentalFlag")
+            @Html.Hidden("SaleFlag")
+            @Html.Hidden("ExpansionTypeCode")
+            @Html.Hidden("InstrumentPrice")
+            @Html.Hidden("BlnHaveNewRow")
+            @Html.Hidden("BlnTypeOneTimeOrTemp")
+            @Html.Hidden("m_blnbFirstTimeRegister")
+            @Html.Hidden("SlipStatus")
+
+            @Html.Hidden("OldNormalContractFee")
+            @Html.Hidden("NewNormalContractFee")
+            @Html.Hidden("CalculatedNormalContractFee")
+            @Html.Hidden("OnRetrieveNormalContractFee")
+            @Html.Hidden("OnRetrieveNormalContractFeeForCal")
+            
+
+            @Html.Hidden("ChangeType")
+            @Html.Hidden("OldInstallationType")
+            
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("InstrumentName", "", new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonButton("btnSearchInstrument", @Resources.QUS030.btnSearchInstrument, new { style = "width:150px;" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.ObjectCol1Width;">
+            @Resources.ISS030.lblAdditionalQuantity
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.NumericTextBox("InstrumentQty", null, new { style = "width:50px;" })
+        </div>
+        <div class="usr-row"></div>
+        <div class="usr-row" style="text-align:right">
+            @Html.CommonButton("btnAddInstrument", @Resources.ISS030.lblAdd, new { style = "width:70px;" })
+            @Html.CommonButton("btnClearInstrument", @Resources.ISS030.lblClear, new { style = "width:70px;" })
+        </div>
+
+        
+    </div>
+
+    <div id="divArrivalInformation" class="main-table">
+        <div class="label-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS030.lblHeaderName4
+            
+        </div>
+        <div class="usr-row"></div>
+        <div class="usr-row"  >
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblExpectedInstrumentArrivalDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width; background-color:@ViewBag.ObjectCol1Width;">
+                <input type="text" id="ExpectedInstrumentArrivalDate" name="ExpectedInstrumentArrivalDate" style="width:100px;" />             
+                @*@Resources.ISS030.lblDMY*@
+            </div>  
+            @Html.LabelDateFormat("ExpectedInstrumentArrivalDate")
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.ISS030.lblStockOutType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.StockOutTypeComboBox("StockOutTypeCode", new { style = "width: 300px;" })
+                
+            </div>        
+        </div>
+        <div class="usr-row"></div>
+        <div class="usr-row"></div>
+    </div>
+
+
+   
+    <div id="dlgCTS053" class="main-popup-dialog">
+        <div class="popup-dialog">
+        </div>
+    </div>    
+
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+ 
+</div>
+
+<div id="divRegisterFacilityDetail" class="main-table" style="margin-top:5px;">
+    <div class="table-header" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Resources.ISS030.lblRegisterFacilityDetail
+    </div>
+    <div class="usr-row">
+        <div id="gridFacility" >
+        </div>
+    </div>
+    <br />
+  
+    <div class="usr-row" id="divInsertFacilityDetail">
+        <div class="usr-label" style="width:135px;">
+            @Resources.ISS030.lblFacilityCode
+        </div>
+        <div class="usr-object"" style="margin-right:5px;">
+            @Html.CommonTextBox("FacilityCode", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";"})
+            @Html.Hidden("InstrumentTypeCode")
+            
+        </div>
+        <div class="usr-object"" style="margin-right:5px;">
+            @Html.CommonTextBox("FacilityName", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+            
+        </div>
+        <div class="usr-object"">
+            @Html.CommonButton("btnSearchFacility", @Resources.ISS030.lblSearchFacility, new { style = "width:200px;" })
+            
+        </div>        
+        <div class="usr-label" style="width:135px;">
+            
+            @Resources.ISS030.lblQuantity
+        </div>
+        <div class="usr-object" >
+            @Html.NumericTextBox("FacilityQuantity", null, new { style = "width:50px;" })
+            
+        </div>
+    </div>
+    <div class="usr-row" style="text-align:right">
+            @Html.CommonButton("btnAddFacility", @Resources.ISS030.lblAdd, new { style = "width:70px;" })
+            @Html.CommonButton("btnClearFacility", @Resources.ISS030.lblClear, new { style = "width:70px;" })
+    </div>
+    <br />
+    <br />
+
+</div>
+
+
+

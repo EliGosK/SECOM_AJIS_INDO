@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="Instrumentcode" width="150" type="ro"  sort="str_custom">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">headerInstrumentName</column>
+    <column id="AreaCodeName" width="300" type="ro" align="left" sort="str_custom">headerInstrumentArea</column>
+    <column id="InstrumentQty" width="100" type="edn" align="right" format="0,000" sort="int">headerInstrumentQuantity</column>
+    <column id="BtnAdd" width="30" type="ro" align="center" sort="na">headerButtonAdd</column>
+
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="SubcontractorCode"  width="*" type="ro" align="left">headerSubContractorCode</column>
+	<column id="SubContractorNameEN_SubCont"  width="240" type="ro" align="left">headerSubContractorNameEN</column>
+	<column id="SubContractorNameLC_SubCont"  width="240" type="ro" align="left">headerSubContractorNameLC</column>
+	<column id="Remove"  width="30" type="link" align="center">headerRemove</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,697 @@
+﻿<!--
+//*********************************
+// Create by: Natthavat S.
+// Create date: 13/Dec/2011
+// Update date:  13/Dec/2011
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Common.Util;
+@{
+    ViewBag.LabelCol1Width = "240px";
+    ViewBag.LabelCol2Width = "180px";
+    ViewBag.LabelCol3Width = "250px";
+    ViewBag.LabelCol4Width = "110px";
+    ViewBag.ObjectCol1Width = "194px";
+    ViewBag.ObjectCol2Width = "250px";
+    ViewBag.ObjectCol3Width = "690px";
+    ViewBag.ObjectColMergeWidth = "700px";
+    ViewBag.HistoryAreaWidth = "700px";
+}
+
+@section page_header{
+    <style>
+        .lbl-remark
+        {
+            font-size: 0.8em;
+            color: rgb(119, 119, 119);
+            margin: 0px 0px 0px 5px;
+        }
+        .historyTxt
+        {
+            color: Black;
+        }
+        
+        .historyTxtIndent
+        {
+            padding-left: 35px;
+            color: Red;
+        }
+    </style>
+    <script type="text/javascript">
+        var CTS380_BlankComboBox = '@Html.BlankComboBox("{BLANK_ID}", new { style = "width: 260px;" })';
+        var CTS380_DefaultCBBWidth = '260px;';
+        var lblDC = '@Resources.CTS380.lblDC';
+        var lblOR = '@Resources.CTS380.lblOR';
+        var param = "@ViewBag.useKey";
+        var _arType_Customer = '@ARRelevant.C_AR_RELEVANT_TYPE_CUSTOMER';
+        var _arType_Site = '@ARRelevant.C_AR_RELEVANT_TYPE_SITE';
+        var _arType_Project = '@ARRelevant.C_AR_RELEVANT_TYPE_PROJECT';
+        var _arType_Contract = '@ARRelevant.C_AR_RELEVANT_TYPE_CONTRACT';
+        var _arType_Quotation = '@ARRelevant.C_AR_RELEVANT_TYPE_QUOTATION';
+        var _attach_k = '@ViewBag.AttachKey';
+
+        var _C_AR_STATUS_WAIT_FOR_APPROVAL = '@ARStatus.C_AR_STATUS_WAIT_FOR_APPROVAL';
+        var _C_AR_STATUS_AUDITING = '@ARStatus.C_AR_STATUS_AUDITING';
+        var _C_AR_STATUS_APPROVED = '@ARStatus.C_AR_STATUS_APPROVED';
+        var _C_AR_STATUS_REJECTED = '@ARStatus.C_AR_STATUS_REJECTED';
+        var _C_AR_STATUS_INSTRUCTED = '@ARStatus.C_AR_STATUS_INSTRUCTED';
+        var _C_AR_STATUS_RETURNED_REQUEST = '@ARStatus.C_AR_STATUS_RETURNED_REQUEST';
+
+        var _C_AR_INTERACTION_TYPE_REGISTER_BY_ADMIN = '@ARInteractionType.C_AR_INTERACTION_TYPE_REGISTER_BY_ADMIN';
+
+        var _C_AR_ROLE_AUDITOR = '@ARRole.C_AR_ROLE_AUDITOR';
+        var _C_AR_ROLE_RECEIPIENT = '@ARRole.C_AR_ROLE_RECEIPIENT';
+        var _C_AR_ROLE_REQUESTER = '@ARRole.C_AR_ROLE_REQUESTER';
+        var _C_AR_ROLE_APPROVER = '@ARRole.C_AR_ROLE_APPROVER';
+        var _C_AR_MAXIMUM_RECEIPIENT = '@CommonValue.C_AR_MAXIMUM_RECEIPIENT';
+        
+        var _CurrentEmpNo = '@CommonUtil.dsTransData.dtUserData.EmpNo';
+    </script>
+
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid_skins.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_skyblue.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS380.js")" ></script>
+}
+
+<div id="divARInfo" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS380.lblARInformation</div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblARRelevantType</div>
+        <div class="usr-object" style="margin-left:0px;">
+           @Html.CommonRadioButton("rdoCustomer", (string)@Resources.CTS380.rdoCustomer, @ARRelevant.C_AR_RELEVANT_TYPE_CUSTOMER, false, "ARRelevantType", new { @disabled = true }) 
+        </div> 
+        <div class="usr-object" style="margin-left:10px;">
+           @Html.CommonRadioButton("rdoSite", (string)@Resources.CTS380.rdoSite, @ARRelevant.C_AR_RELEVANT_TYPE_SITE, false, "ARRelevantType", new { @disabled = true }) 
+        </div>
+        <div class="usr-object" style="margin-left:10px;">
+           @Html.CommonRadioButton("rdoContract", (string)@Resources.CTS380.rdoContract, @ARRelevant.C_AR_RELEVANT_TYPE_CONTRACT, false, "ARRelevantType", new { @disabled = true }) 
+        </div>
+        <div class="usr-object" style="margin-left:10px;">
+           @Html.CommonRadioButton("rdoProject", (string)@Resources.CTS380.rdoProject, @ARRelevant.C_AR_RELEVANT_TYPE_PROJECT, false, "ARRelevantType", new { @disabled = true }) 
+        </div>
+        <div class="usr-object" style="margin-left:10px;">
+           @Html.CommonRadioButton("rdoQuotation", (string)@Resources.CTS350.rdoQuotation, @ARRelevant.C_AR_RELEVANT_TYPE_QUOTATION, false, "ARRelevantType", new { @disabled = true }) 
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblRequestNo</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("RequestNo", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS380.lblApproveNo</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ApproveNo", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblCustomerCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("CustomerCode", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS380.lblStatus</div>
+        <div class="usr-object" style="margin-left:0px; width: 385px;">
+            @Html.CommonTextBox("Status", null, new { style = "width: 385px;", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblCustomerNameEN</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CustomerNameEN", null, new { style = "width: " + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblCustomerNameLC</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CustomerNameLC", null, new { style = "width: " + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblSiteCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteCode", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblSiteNameEN</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameEN", null, new { style = "width: " + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblSiteNameLC</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameLC", null, new { style = "width: " + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblSiteAddressEN</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteAddressEN", null, new { style = "width: " + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblContractCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ContractCode", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS380.lblQuotationCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("QuotationCode", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblProjectCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ProjectCode", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS380.lblProjectName</div>
+        <div class="usr-object" style="margin-left:0px; width: 381px;">
+            @Html.CommonTextBox("ProjectName", null, new { style = "width: 381px;", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblUserCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("UserCode", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS380.lblRequester</div>
+        <div class="usr-object" style="margin-left:0px; width:381px;">
+            @Html.CommonTextBox("Requester", null, new { style = "width: 381px;", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+
+</div>
+
+<div id="divContractInfo" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS380.lblContractInformation</div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblContractCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ContractCode", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS380.lblStartDealDate</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("StartDealDate", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblMonthlyContractFee</div>
+        <div class="usr-object" style="margin-left:0px; width: 200px;">
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyContractFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:144px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 174px;">@Resources.CTS380.lblContractDurationFrom</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ContractDurationFrom", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="margin-left:5px;">@Resources.CTS380.lblContractDurationTo</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ContractDurationTo", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblFirstOperationDate</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("FirstOperationDate", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS380.lblContractDuration</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ContractDurationMonth", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblLastChangeType</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("LastChangeType", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS380.lblAutoRenew</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("AutoRenew", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblLastOperationDate</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("LastOperationDate", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS380.lblOldContractCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("OldContractCode", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblSecurityTypeCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("SecurityType", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS380.lblOperationOffice</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("OperationOffice", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol4Width;">@Resources.CTS380.lblProductName</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ProductName", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="divSaleContractInfo" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS380.lblSaleContractInformation</div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblContractCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ContractCode", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">@Resources.CTS380.lblProcessManagementStatus</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ProcessMgmtStatus", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblProductName</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ProductName", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">@Resources.CTS380.lblExpectedCompleteInstallationDate</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ExpectedCompleteInstallDate", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblMaintenanceContractCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MaintainContractCode", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">@Resources.CTS380.lblCompleteInstallationDate</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("CompleteInstallDate", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblSaleType</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("SaleType", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">@Resources.CTS380.lblExpectedCustomerAcceptanceDate</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ExpectedCustomerAcceptedDate", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblOperationOffice</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("OperationOffice", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">@Resources.CTS380.lblCustomerAcceptanceDate</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("CustomerAcceptedDate", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblLastChangeType</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("LastChangeType", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="divARDetail" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS380.lblARDetail</div>
+
+    <div id = "divARDetailInfo1">
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblARType</div>
+            <div class="usr-object" style="margin-left:0px; width: 400px;" id="divARType">
+                @Html.CommonTextBox("ARType", null, new { style = "width: 400px;", @readonly = true })
+            </div>
+            <div class="usr-label" style="width:10px;">&nbsp;</div>
+            <div class="usr-object" style="margin-left:0px;">
+                @Html.CommonCheckButton("ImportantFlag", @Resources.CTS380.lblImportanceFlag, "1", false, new { @disabled = true })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblARTitle</div>
+            <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol3Width;" id="divARTitle">
+                @Html.CommonTextBox("ARTitle", null, new { style = "width: " + @ViewBag.ObjectCol3Width + ";", @readonly = true })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblARSubTitle</div>
+            <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol3Width;">
+                @Html.CommonTextBox("ARSubTitle", null, new { style = "width: " + @ViewBag.ObjectCol3Width + ";", @readonly = true })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblARPurpose</div>
+            <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol3Width;">
+                @Html.CommonTextArea("ARPurpose", null, new { style = "width: " + @ViewBag.ObjectCol3Width + "; height: 200px;", @readonly = true })
+            </div>
+        </div>
+
+    </div>
+
+    <div class="usr-row" id="divFeeGrid1">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object" style="margin-left:0px;">
+            <div style="font-weight: bold;">@Resources.CTS380.lblAlarmMaintenSentryFee</div>
+            <div id="AlarmMaintenSentryFeeGrid" style="width:790px;">
+                <div style="width: 100%; height: auto; cursor: default;">
+                    <div class="custom-table" style="position: relative; width: 100%; overflow: hidden;">
+                        <table style="width: 100%; padding-right: 20px; table-layout: fixed; margin-right: 20px;" cellspacing="0" cellpadding="0">
+                            <tr class="hdr">
+                                <td style="width:145px;" />
+                                <td style="width:205px;">@Resources.CTS380.headerQuotation</td>
+                                <td style="width:205px;">@Resources.CTS380.headerAROrder</td>
+                                <td style="width:230px;">@Resources.CTS380.headerOCDC</td>
+                            </tr>
+                            <tr>
+                                <td>@Resources.CTS380.lblContractFee</td>
+                                <td>
+                                    @Html.NumericTextBoxWithMultipleCurrency("ContractQuotationFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+                                </td>
+                                <td>
+                                    @Html.NumericTextBoxWithMultipleCurrency("ContractARFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+                                </td>
+                                <td>
+                                    <div class="usr-label" style="width: 110px; text-align:left;">
+                                        <span id="spResContractFee"></span>
+                                    </div>
+                                    <div class="usr-object" style="width:75px;">
+                                        @Html.CommonTextBox("ContractOCDCRate", "", new { style = "text-align:right; width:70px;", @readonly = true })
+                                    </div>
+                                    <div class="usr-label" style="width: 20px;">%</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Resources.CTS380.lblInstallationFee</td>
+                                <td>
+                                    @Html.NumericTextBoxWithMultipleCurrency("InstallQuotationFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+                                </td>
+                                <td>
+                                    @Html.NumericTextBoxWithMultipleCurrency("InstallARFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+                                </td>
+                                <td>
+                                    <div class="usr-label" style="width: 110px; text-align:left;">
+                                        <span id="spResInstallFee"></span>
+                                    </div>
+                                    <div class="usr-object" style="width:75px;">
+                                        @Html.CommonTextBox("InstallOCDCRate", "", new { style = "text-align:right; width:70px;", @readonly = true })
+                                    </div>
+                                    <div class="usr-label" style="width: 20px;">%</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Resources.CTS380.lblDepositFee</td>
+                                <td>
+                                    @Html.NumericTextBoxWithMultipleCurrency("DepositQuotationFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+                                </td>
+                                <td>
+                                    @Html.NumericTextBoxWithMultipleCurrency("DepositARFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+                                </td>
+                                <td>
+                                    <div class="usr-label" style="width: 110px; text-align:left;">
+                                        <span id="spResDepositFee"></span>
+                                    </div>
+                                    <div class="usr-object" style="width:75px;">
+                                        @Html.CommonTextBox("DepositOCDCRate", "", new { style = "text-align:right; width:70px;", @readonly = true })
+                                    </div>
+                                    <div class="usr-label" style="width: 20px;">%</div>
+                                </td>
+                            </tr>
+                
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="usr-row" id="divFeeGrid2">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object" style="margin-left:0px;">
+            <div style="font-weight: bold;">@Resources.CTS380.lblSaleFee</div>
+            <div id="SaleGrid" style="width:790px;">
+                <div style="width: 100%; height: auto; cursor: default;">
+                    <div class="custom-table" style="position: relative; width: 100%; overflow: hidden;">
+                        <table style="width: 100%; padding-right: 20px; table-layout: fixed; margin-right: 20px;" cellspacing="0" cellpadding="0">
+                            <tr class="hdr">
+                                <td style="width:145px;" />
+                                <td style="width:205px;">@Resources.CTS380.headerQuotation</td>
+                                <td style="width:205px;">@Resources.CTS380.headerAROrder</td>
+                                <td style="width:230px;">@Resources.CTS380.headerOCDC</td>
+                            </tr>
+                            <tr>
+                                <td>@Resources.CTS380.lblProductPrice1</td>
+                                <td>
+                                    @Html.NumericTextBoxWithMultipleCurrency("ProductPriceQuotationFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+                                </td>
+                                <td>
+                                    @Html.NumericTextBoxWithMultipleCurrency("ProductPriceARFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+                                </td>
+                                <td>
+                                    <div class="usr-label" style="width: 110px; text-align:left;">
+                                        <span id="spResProductPrice1"></span>
+                                    </div>
+                                    <div class="usr-object" style="width:75px;">
+                                        @Html.CommonTextBox("ProductPriceOCDCRate", "", new { style = "text-align:right; width:70px;", @readonly = true })
+                                    </div>
+                                    <div class="usr-label" style="width: 20px;">%</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>@Resources.CTS380.lblInstallFee2</td>
+                                <td>
+                                    @Html.NumericTextBoxWithMultipleCurrency("InstallFeeQuotationFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+                                </td>
+                                <td>
+                                    @Html.NumericTextBoxWithMultipleCurrency("InstallFeeARFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+                                </td>
+                                <td>
+                                    <div class="usr-label" style="width: 110px; text-align:left;">
+                                        <span id="spResInstallFee2"></span>
+                                    </div>
+                                    <div class="usr-object" style="width:75px;">
+                                        @Html.CommonTextBox("InstallFeeOCDCRate", "", new { style = "text-align:right; width:70px;", @readonly = true })
+                                    </div>
+                                    <div class="usr-label" style="width: 20px;">%</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="usr-row">
+         <div class="usr-label">&nbsp;</div>
+    </div>
+
+    <div id = "divARDetailInfo2">
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS380.lblARAuditDetailHistory
+                <br />
+                @Html.CommonButton("btnHistory", @Resources.CTS380.btnHistory, new { @type = "button" })
+            </div>
+            <div class="usr-object" style="margin-left:0px; width:200px;">
+                <div id="divRespondingProgress" style="width:@ViewBag.HistoryAreaWidth; height:200px; overflow:scroll; border: #707070 1px solid; color: #000000; word-wrap: break-word;"></div>
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblInteractionType</div>
+            <div class="usr-object" style="margin-left:0px; width:260px;" id="divInteractionCBB">
+                @Html.BlankComboBox("InteractionType", new { style = "width:260px;" })
+            </div>
+            <div class="usr-label">@Html.RequireFiled()</div>
+
+            <div class="usr-label" style="width:160px;">@Resources.CTS380.lblStatusAfterUpdate</div>
+            <div class="usr-object" style="margin-left:0px; width:264px;">
+                @Html.ARStatusComboBox("ARStatusAfterUpdate", new { style = "width:264px;", @disabled = true })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblAuditDetail</div>
+            <div class="usr-object" style="margin-left:0px; width:@ViewBag.ObjectColMergeWidth;">
+                @*@Html.TextArea("AuditDetail", null, new { style = "width: " + @ViewBag.ObjectColMergeWidth + ";", @rows = 6, @maxlength  = "1000" })*@
+                @Html.CommonTextArea("AuditDetail", null, new { style = "width: " + @ViewBag.ObjectColMergeWidth + ";height:120px; overflow:auto", maxlength = "10000" })
+            </div>
+        </div>
+
+        <div class="usr-row">
+             <div class="usr-label">&nbsp;</div>
+        </div>
+
+    @*    <div class="usr-row" id="divDueDate">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS380.lblDueDateDeadLine&nbsp;@Html.RequireFiled()</div>
+            <div class="usr-object" style="margin-left:0px; width: 80px;">
+                @Html.CommonRadioButton("DueDate_Type", @Resources.CTS380.lblDueDate_Date, "1", null, "DueDateDeadLineType")
+            </div>
+            <div class="usr-object" style="margin-left:0px; width:160px;">
+                @Html.CommonTextBox("DueDate_Date", null, new { style = "width:130px;" })
+            </div>
+            <div class="usr-label">
+                @Html.LabelDateFormat("DueDate_Date")
+            </div>
+            <div class="usr-label" style="width:50px;">@Resources.CTS380.lblDueDate_Time</div>
+            <div class="usr-object" style="margin-left:0px; width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("DueDate_Time", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+
+        <div class="usr-row" id="divDeadLine">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                <div class="lbl-remark" id="divDueDateRemark">
+                    @Resources.CTS380.lblDeadline_Remark
+                </div>
+            </div>
+            <div class="usr-object" style="margin-left:0px; width: 80px;">
+                @Html.CommonRadioButton("Deadline_Type", @Resources.CTS380.lblDeadline_Date, "2", null, "DueDateDeadLineType")
+            </div>
+            <div class="usr-object" style="margin-left:0px; width:160px;">
+                @Html.CommonTextBox("Deadline_Date", null, new { style = "width:130px;" })
+            </div>
+            <div class="usr-label">
+                @Html.LabelDateFormat("Deadline_Date")
+            </div>
+            <div class="usr-label" style="width:50px;">@Resources.CTS380.lblDeadline_Until</div>
+            <div class="usr-object" style="margin-left:0px; width:@ViewBag.ObjectCol1Width;">
+                @Html.DeadLineTimeTypeComboBox("Deadline_Until", new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>*@
+
+        <div class="usr-clear-style">&nbsp;</div>
+
+        <div id="divAttachedDoclist" class="sub-table" style="margin-top:10px">
+        <div class="table-sub-header">@Resources.CTS380.lblAttachDocList</div>
+            <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+            <div style="float:left;">
+                <div id="CTS380_gridAttachDocList" style="width:400px;"></div>
+                <iframe id="ifDownload" style="visibility: hidden; width: 0px; height: 0px;"></iframe>
+            </div>
+        </div>
+        <div class="usr-row usr-row-space" id="divAttachFrame">
+            <iframe width="100%" height="25px" marginwidth="0" marginheight="0" id="frmAttach"
+                    vspace="0" hspace="0" frameborder="0" align="middle" scrolling="no"></iframe>
+        </div>
+
+        <div class="usr-row" id="divAttachRemark">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+            <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                @Resources.CTS380.lblPleasePayAttention
+            </div>
+            <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                    @Resources.CTS380.lblRemarkAttachFileSize
+                </div>
+        </div>
+
+
+        <div class="usr-clear-style">&nbsp;</div>
+        </div>
+
+        <div id="divAssignPIC" class="sub-table"  style="margin-top:10px" >
+            <div class="table-sub-header">@Resources.CTS380.lblAssignPersonInChargeInformation</div>
+            <div id="divSelectPIC">
+            <div class="lbl-remark">@Resources.CTS380.lblAssignPersonInchargeRemark</div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelCol1Width;" id="divlblOffice">@Resources.CTS380.lblOffice</div>
+                <div id="divCBBOffice" class="usr-object" style="width:260px;">
+                    @Html.BelongingOfficeComboBox("OfficeCode", new { style = "width:260px;" })
+                </div>
+                <div class="usr-label" style="width: 111px;" id="divlblDepartment">@Resources.CTS380.lblDepartment</div>
+                <div id="divCBBDepartment" class="usr-object" style="width:260px;">
+                    @Html.BlankComboBoxWithFirstRow("DepartmentCode", new { style = "width:260px;" })
+                </div>
+            </div>
+
+            <div class="usr-clear-style">&nbsp;</div>
+
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelCol1Width;" id="divlblARRole">@Resources.CTS380.lblARRole</div>
+                <div id="divCBBARRole" class="usr-object" style="width:260px;">
+                    @Html.ARRoleComboBox("ARRoleCode", new { style = "width:260px;" })
+                </div>
+                <div class="usr-label" style="width: 111px;"  id="divlvlEmpName">@Resources.CTS380.lblEmployeeName</div>
+                <div id="divCBBEmployee" class="usr-object" style="width:260px;">
+                     @Html.BlankComboBoxWithFirstRow("EmployeeCode", new { style = "width:260px;" })
+                </div>
+                <div class="usr-object" style="margin-left:5px" >
+                    @Html.CommonButton("btnAddPIC", (string)@Resources.CTS380.btnAdd, new { style = "width:60px", @type = "button" })
+                </div>
+            </div>
+            </div>
+            <div class="usr-row usr-row-space ">
+                <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+                <div style="float:left;">
+                    <div id="CTS380_gridAssignPIC" style="width:@ViewBag.ObjectColMergeWidth;"></div>
+                </div>
+            </div>
+            <div class="usr-clear-style">&nbsp;</div>
+        </div>
+
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>

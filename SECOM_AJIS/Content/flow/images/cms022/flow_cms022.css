@@ -1,0 +1,106 @@
+.flow-table .section-cms022
+{
+}
+
+.section-cms022 .subject-top
+{
+	background: #fff url(subject_t.png) 100% 100% no-repeat;
+}
+.section-cms022 .subject-middle-empty
+{
+	background: #fff url(subject_me.png) 100% 100% no-repeat;
+}
+
+.section-cms022 .non-action-top-left
+{
+	background: #fff url(non_action_to.png) 100% 100% no-repeat;
+}
+.section-cms022 .non-action-top-center
+{
+	background: #fff url(non_action_tio.png) 100% 100% no-repeat;
+}
+.section-cms022 .action-top-center
+{
+	background: #fff url(action_tio.png) 100% 100% no-repeat;
+}
+.section-cms022 .action-top-right
+{
+	background: #fff url(action_tr.png) 100% 100% no-repeat;
+}
+
+.section-cms022 .action-bottom-left
+{
+	background: #fff url(action_gbl.png) 100% 100% no-repeat;
+}
+.section-cms022 .action-bottom-center
+{
+	background: #fff url(action_gbc.png) 100% 100% no-repeat;
+}
+.section-cms022 .non-action-bottom-right
+{
+	background: #fff url(non_action_gbr.png) 100% 100% no-repeat;
+}
+.section-cms022 .empty-bottom-center
+{
+	background: #fff url(empty_bc.png) 100% 100% no-repeat;
+}
+.section-cms022 .empty-bottom-right
+{
+	background: #fff url(empty_br.png) 100% 100% no-repeat;
+}
+
+
+.section-cms022 .non-action-link-top-center
+{
+	background: #fff url(non_action_ltc.png) 100% 100% no-repeat;
+}
+.section-cms022 .link
+{
+	background: #fff url(link.png) 100% 100% no-repeat;
+}
+
+
+.flow-table .group-cms022
+{
+}
+
+.group-cms022 .subject-middle
+{
+    background: #fff url(subject_group_m.png) 100% 100% no-repeat;
+}
+.group-cms022 .action-left
+{
+    background: #fff url(action_group_l.png) 100% 100% no-repeat;
+}
+.group-cms022 .action-center
+{
+    background: #fff url(action_group_c.png) 100% 100% no-repeat;
+}
+.group-cms022 .action-right
+{
+    background: #fff url(action_group_r.png) 100% 100% no-repeat;
+}
+.group-cms022 .non-action-left
+{
+    background: #fff url(non_action_group_l.png) 100% 100% no-repeat;
+}
+.group-cms022 .non-action-center
+{
+    background: #fff url(non_action_group_c.png) 100% 100% no-repeat;
+}
+.group-cms022 .non-action-center-end
+{
+    background: #fff url(non_action_group_cd.png) 100% 100% no-repeat;
+}
+
+.group-cms022 .group-text-lvl1, .section-cms022 .group-text-lvl1
+{
+	margin:3px 0 0 10px;
+	position:absolute;
+	right:10px;
+	Z-index: 2;
+	text-align: right;
+	background-color: #fff;
+	padding: 0 5px 0 5px;
+	color: #b908c9;
+}

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    
+    <column id="OfficeName" width="130" type="ro" align="left">headerOffice</column>
+    <!--Hidden-->
+    <column id="OfficeCode" width="0" type="ro" align="left"  hidden="true"></column>
+    <column id="DepartmentName" width="*" type="ro" align="left" >headerDepartment</column>
+    <!--Hidden-->
+    <column id="DepartmentCode" width="0" type="ro" align="left"  hidden="true"></column>
+    <column id="IncidentRoleName" width="180" type="ro" align="left">headerIncidentRole</column>
+    <!--Hidden-->
+    <column id="IncidentRoleCode" width="0" type="ro" align="left"  hidden="true"></column>
+
+    <!--Hidden--><!--
+    <column id="FirstChiefFlag" width="0" type="ro" align="left"  hidden="true"></column>-->
+    <column id="EmpName" width="180" type="ro" align="left" >headerEmployeeName</column>
+    <!--Hidden-->
+    <column id="EmpNo" width="0" type="ro" hidden="true" ></column>
+    
+    <column id="RemoveBtn" width="30" type="ro" align="center" sort="na">headerRemove</column>
+    <column id="TmpColumn" width="0" type="ro" hidden="true" sort="na"></column>
+    <!--<column id="Object" width="0" type="ro" align="center"  hidden="true"></column>-->
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

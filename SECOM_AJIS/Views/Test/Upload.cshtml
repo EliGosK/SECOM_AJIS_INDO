@@ -1,0 +1,26 @@
+﻿ @{
+    ViewBag.Title = "Upload";
+    Layout = null;
+}
+
+@{
+    var list = ViewBag.AttachFileList;
+}
+
+<table>
+<tr><td>No.</td><td>File Name</td><td>Size</td><td>Action</td></tr>
+@if (list != null) { 
+    foreach (var item in list) { 
+        <tr><td></td><td>@item.FileName</td><td>@item.FileSize</td><td>Delete ID=@item.AttachFileID</td></tr>
+    }
+}
+
+</table>
+@using (Html.BeginForm("TestUploadFile", "Common", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    
+    <input type="file" name="uploadedFile" id="uploadedFile" size="40"/>
+    <input type="submit" value="submit" />
+    <input type="hidden" value="@Session.SessionID" name="TempRelatedID"/>
+}
+

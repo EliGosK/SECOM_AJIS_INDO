@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="InstrumentCode" width="180" type="ro" align="left" sort="na">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="na">headerInstrumentName</column>
+    <column id="AreaNameShort" width="100" type="ro" align="left" sort="na">headerInstrumentArea</column>
+    <column id="ShelfNo" width="100" type="ro" align="left" sort="na">headerShelfNo</column>
+    <column id="CurrentStockQty" width="100" type="ron" align="right" sort="na" format="0,000">headerCurrentStockQty</column>
+    <column id="StockOutQty" width="100" type="link" align="right" sort="na" format="0,000">headerStockOutQty</column>
+    <column id="StockOutAmt" width="100" type="ron" align="right" sort="na" format="0,000.00">headerStockOutAmt</column>
+    
+    <column id="RemoveButton" width="80" type="ro" align="center" sort="na">headerRemoveButton</column>
+    <column id="TempColumn" width="0" type="ro"  hidden="true" sort="na"></column>
+    
+    <column id="AreaCode" width="0" type="ro" align="left" sort="na" hidden="true"></column>
+    <column id="AreaCodeName" width="0" type="ro" align="left" sort="na" hidden="true"></column>
+    <column id="InputOrder" width="0" type="ro" align="left" sort="int" hidden="true"></column>
+    <column id="UnitPrice" width="0" type="ro" sort="int" hidden="true"></column>
+ 
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+	  <column id="No" width="45" type="ro" align="center">headerNo</column>
+    <column width="0" type="ro" align="center"></column>
+    
+    <column id="ContractCode" width="180" type="ro" align="center" sort="str_custom">headerContractCode</column>
+    <column id="ContractNameEN" width="220" type="ro" align="left" sort="str_custom">headerContractNameEN</column>
+    <column id="ContractNameLC" width="220" type="ro" align="left" sort="str_custom">headerContractNameLC</column>
+    <column id="AR" width="90" type="ro" align="center" sort="str_custom">headerAR</column>
+    <!--<column id="Delay" width="90" type="ro" align="center" sort="str_custom">headerDelay</column>-->
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="InstrumentCode" width="140" type="ro" align="left" sort="str_custom">headerFacilityCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">headerFacilityName</column>
+    <column id="InstrumentQty" width="80" type="link" align="right" sort="int">headerQuantity</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

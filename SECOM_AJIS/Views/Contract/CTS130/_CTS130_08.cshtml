@@ -1,0 +1,258 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS130/CTS130_08.js")"></script>
+<div id="divBillingTargetSection" class="main-table" style="height:auto">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS130.lblBillingTarget
+        </div>
+    </div>
+    <div class="usr-row" id="gridBillingTarget" style="width: 99%; margin-left: 5px;"></div>
+    <div class="usr-row" style="height: 5px"></div>
+    
+    <div id="divBillingTargetDetailSection">     
+        <div class="usr-row">
+            <div class="table-header" style="width: 400px;">
+                @Resources.CTS130.lblBillingTargetDetail
+            </div>
+        </div>
+        <div id="divSpecifyCodeAndCopyName" class="usr-row">
+            <div class="usr-label" style="width: 182px">&nbsp;</div>
+            <div class="usr-object">
+                <div id="specifyCode" class="sub-table" style="border-style: dotted; width: 372px">
+                    <div class="usr-label" style="width: 200px; font-weight: bold; text-align: left">
+                        @Resources.CTS130.lblSpecifyCode
+                    </div>
+                    <div class="usr-row" style="height: 10px"></div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width: 180px; text-align: left">
+                            &nbsp;&nbsp;@Html.CommonRadioButton("BT_rdoTargetCode", @Resources.CTS130.lblBillingTargetCode, "0", true, "BT_SpecifyCode")
+                        </div>
+                        <div class="usr-object">
+                            @Html.CommonTextBox("BT_BillingTargetCode", null, new { style = "width:90px;", maxlength = CommonValue.C_MAXLENGTH_BILLING_TARGE_CODE })
+                        </div>
+                        <div class="usr-object" style="margin-left:3px;">
+                            @Html.CommonButton("BT_btnRetrieveBillingTarget", @Resources.CTS130.lblRetrieve, new { style = "width:80px;", @type = "button" })
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width: 180px; text-align: left">
+                            &nbsp;&nbsp;@Html.CommonRadioButton("BT_rdoClientCode", @Resources.CTS130.lblBillingClientCode, "1", false, "BT_SpecifyCode")
+                        </div>
+                        <div class="usr-object">
+                            @Html.CommonTextBox("BT_BillingClientCode", null, new { style = "width:90px;", maxlength = CommonValue.C_MAXLENGTH_BILLING_CLIENT_CODE })
+                        </div>
+                        <div class="usr-object" style="margin-left:3px;">
+                            @Html.CommonButton("BT_btnRetrieveBillingClient", @Resources.CTS130.lblRetrieve, new { style = "width:80px;", @type = "button" })
+                        </div>
+                    </div>
+                    <div class="usr-row" style="height: 43px">
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width: 120px; text-align: left">&nbsp;</div>
+                        <div class="usr-object" style="width:50px;">&nbsp;</div>
+                        <div class="usr-label" style="width: 1px">&nbsp;</div>
+                        <div class="usr-object">
+                            @Html.CommonButton("BT_btnSearchBillingClient", @Resources.CTS130.lblSearchBillingClientDetail, new { style = "width:180px;", type = "button" })
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                    </div>
+                </div>
+            </div>
+            <div class="usr-label" style="width: 1px">&nbsp;</div>
+            <div class="usr-object">
+                <div id="copyName" class="sub-table" style="border-style: dotted; width: 372px">
+                    <div class="usr-label" style="width: 300px; font-weight: bold; text-align: left">
+                        @Resources.CTS130.lblCopyName
+                    </div>
+                    <div class="usr-row" style="height: 1px">
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.LabelWidth; text-align:left">
+                            &nbsp;&nbsp;@Html.CommonRadioButton("BT_rdoContractTarget", @Resources.CTS130.lblContractTargetPurchaser, "0", true, "BT_AddressInformation")
+                        </div>
+                        <div class="usr-object">
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:400px; text-align:left">
+                            &nbsp;&nbsp;@Html.CommonRadioButton("BT_rdoBranchOfContractTarget", @Resources.CTS130.lblBranchOfContractTargetPurchaser, "1", false, "BT_AddressInformation")
+                        </div>
+                        <div class="usr-object">
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.LabelWidth; text-align:left">
+                            &nbsp;&nbsp;@Html.CommonRadioButton("BT_rdoRealCustomer", @Resources.CTS130.lblRealCustomerEndUser, "2", false, "BT_AddressInformation")
+                        </div>
+                        <div class="usr-object">
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.LabelWidth; text-align:left">
+                            &nbsp;&nbsp;@Html.CommonRadioButton("BT_rdoSite", @Resources.CTS130.lblSite, "3", false, "BT_AddressInformation")
+                        </div>
+                        <div class="usr-object">
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width: 260px;">&nbsp;</div>
+                        <div class="usr-object">
+                            @Html.CommonButton("BT_btnCopy", @Resources.CTS130.lblCopy, new { style = "width:100px;", type = "button" })
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row" style="height:20px">&nbsp;</div>
+
+        <div id="divBillingTargetDetail" class="usr-row">
+            <div class="sub-table" style="border-style:none;">
+                <div class="usr-row">
+                    <div class="usr-label" style="width: 183px;">
+                        @Resources.CTS130.lblBillingTargetCode
+                    </div>
+                    <div class="usr-object" style = "width:150px;">
+                        @Html.CommonTextBox("BT_BillingTargetCodeDetail", null, new { style = "width:150px;", maxlength = CommonValue.C_MAXLENGTH_BILLING_TARGE_CODE, @readonly = true })
+                    </div>
+                    <div id="divlblBillingClientCode" class="usr-label" style="width: 132px;">
+                        @Resources.CTS130.lblBillingClientCode
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("BT_BillingClientCodeDetail", (string)@ViewBag.BT_BillingClientCodeDetail, new { style = "width:126px;", @readonly = true })
+                    </div>
+                    <div class="usr-label" style="width: 1px">&nbsp;</div>
+                    <div class="usr-object">
+                        @Html.CommonButton("BT_btnNewEdit", @Resources.CTS130.lblNewEditBillingClientInfo, new { style = "width:220px;" })
+                    </div>
+                    <div class="usr-label" style="width: 1px">&nbsp;</div>
+                    <div class="usr-object">
+                        @Html.CommonButton("BT_btnClearBillingTarget", @Resources.CTS130.lblClearBillingTarget, new { style = "width:155px;" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width: 183px;">
+                        @Resources.CTS130.lblNameEnglish
+                    </div>
+                    <div class="usr-object" style = "width:750px;">
+                        @Html.CommonTextBox("BT_FullNameEN", (string)@ViewBag.BT_FullNameEN, new { style = "width:800px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width: 183px;">
+                        @Resources.CTS130.lblBranchNameEnglish
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("BT_BranchNameEN", (string)@ViewBag.BT_BranchNameEN, new { style = "width:800px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width: 183px;">
+                        @Resources.CTS130.lblAddressEnglish
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("BT_AddressEN", (string)@ViewBag.BT_AddressEN, new { style = "width:800px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row" style="height:5px"></div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width: 183px;">
+                        @Resources.CTS130.lblNameLocal
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("BT_FullNameLC", (string)@ViewBag.BT_FullNameLC, new { style = "width:800px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width: 183px;">
+                        @Resources.CTS130.lblBranchNameLocal
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("BT_BranchNameLC", (string)@ViewBag.BT_BranchNameLC, new { style = "width:800px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width: 183px;">
+                        @Resources.CTS130.lblAddressLocal
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("BT_AddressLC", (string)@ViewBag.BT_AddressLC, new { style = "width:800px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row" style="height:5px"></div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width: 183px;">
+                        @Resources.CTS130.lblNationality
+                    </div>
+                    <div class="usr-object" style = "width:150px;">
+                        @Html.CommonTextBox("BT_Nationality", (string)@ViewBag.BT_Nationality, new { style = "width:150px;", @readonly = true })
+                    </div>
+                    <div class="usr-label" style="width: 142px;">
+                        @Resources.CTS130.lblTelephoneNo
+                    </div>
+                    <div class="usr-object" style = "width:160px;">
+                        @Html.CommonTextBox("BT_PhoneNo", (string)@ViewBag.BT_PhoneNo, new { style = "width:160px;", @readonly = true })
+                    </div>
+                    <div class="usr-label" style="width: 130px;">
+                        @Resources.CTS130.lblBusinessType
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("BT_BusinessType", (string)@ViewBag.BT_BusinessType, new { style = "width:208px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width: 183px;">
+                        @Resources.CTS130.lblIDTaxID
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("BT_IDNo", (string)@ViewBag.BT_IDNo, new { style = "width:150px;", @readonly = true })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width: 183px;">
+                @Resources.CTS130.lblBillingOffice
+            </div>
+            <div class="usr-object">
+                @Html.BillingOfficeNormalCbo("BT_BillingOffice", new { style = "height: 22px; width: 200px;" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+
+        <div class="usr-row"></div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width: 820px;">&nbsp;</div>
+            <div class="usr-object">
+                @Html.CommonButton("BT_btnUpdate", @Resources.CTS130.lblUpdate, new { style = "width:80px;", type = "button" })
+            </div>
+            <div class="usr-label" style="width:1px;">&nbsp;</div>
+            <div class="usr-object">
+                @Html.CommonButton("BT_btnCancelBilling", @Resources.CTS130.lblCancel, new { style = "width:80px;", type = "button" })
+            </div>
+            <div class="usr-row">
+            </div>
+        </div>
+
+    </div>
+
+</div>

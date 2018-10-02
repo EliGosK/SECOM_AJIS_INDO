@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="50" type="ro" align="center" sort="na"></column>
+    <!--headerNo-->
+
+   
+    <column id="MonthYear" width="190" type="ro" align="left" sort="str_custom">headerMonthYear</column>
+    <column id="GenerateDate" width="200" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date" >headerGenerateDate</column>
+    <column id="DocumentNo" width="*" type="ro" align="left" sort="str_custom">headerDocumentNo</column>
+
+    <!-- hidden -->
+    <column id="DocumentOCC" width="0" type="ro" align="left" sort="str_custom" hidden="true"></column>
+    <!-- hidden -->
+    <column id="DocumentCode" width="0" type="ro" align="left" sort="str_custom" hidden="true"></column>
+
+    <column id="Button" width="30" type="ro" align="center" sort="na">headerDownloadButton</column>
+    <column id="Object" width="0" type="ro" align="center" hidden="true"></column>
+    <!--FilePath-->
+    <column id="FilePath" width="0" type="ro" align="center" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

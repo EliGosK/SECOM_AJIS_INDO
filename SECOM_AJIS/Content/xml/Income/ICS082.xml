@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="InvoiceNo" width="*" type="ro" align="center" sort="str_custom">gridHeaderInvoiceNo</column>
+    <column id="NoOfBillingDetail" width="100" type="ro" align="right" format="0,000" sort="str_custom">girdHeaderNoOfDetail</column>
+    <column id="InvoiceAmountShow" width="120" type="edn" align="right" sort="str_custom">gridHeaderBillingAmountExcTax</column>
+    <column id="VatAmountShow" width="120" type="edn" align="right" sort="str_custom">gridHeaderVatAmount</column>
+    <column id="WHTAmountShow" width="120" type="edn" align="right" sort="str_custom">gridHeaderWhtAmount</column>
+    <column id="PaidAmountDisplayOnGridShow" width="120" type="edn" align="right" sort="str_custom">gridHeaderAccumPaidAmount</column>
+    <column id="UnpaidAmountShow" width="120" type="edn" align="right" sort="str_custom">gridHeaderUnpaidAmount</column>
+    <column id="IssueInvDate" width="120" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">girdHeaderIssueInvoiceDate</column>
+
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+    <column id="InvoiceOCC" width="*" type="ro" align="center" sort="na" hidden="true"></column>
+    
+    <column id="InvoiceAmount" width="0" type="ro"  hidden="true"></column>
+    <column id="VatAmount" width="0" type="ro"  hidden="true"></column>
+    <column id="WHTAmount" width="0" type="ro"  hidden="true"></column>
+    <column id="PaidAmountDisplayOnGrid" width="0" type="ro"  hidden="true"></column>
+    <column id="UnpaidAmount" width="0" type="ro"  hidden="true"></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+
+
+
+
+
+
+
+
+

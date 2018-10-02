@@ -1,0 +1,89 @@
+﻿@using SECOM_AJIS.DataEntity.Billing;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{     
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.lbWidth = "280px";  /* ViewBag.LabelWidth */
+    ViewBag.lbWidth2 = "280px";
+    ViewBag.ObjectWidth1 = "154px";
+    ViewBag.ObjectWidth2 = "430px";
+    ViewBag.ObjectWidth3 = "354px";
+    ViewBag.UserObjectWidth1 = "500px";
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Billing/BLS071.js")"></script>
+    <script src="../../Scripts/Base/ComboBox.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/AutoComplete.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/ComboBox.js" type="text/javascript"></script>
+    <script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_nxml.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+    <script type="text/javascript">
+    
+        var objBLS071 = {
+            BillingTargetCode: "@ViewBag.BillingTargetCode",
+            FullNameEN: "@ViewBag.FullNameEN",
+            FullNameLC: "@ViewBag.FullNameLC",   
+            currency: "@ViewBag.currency"
+        };
+
+        $("#currency").val(objBLS071.currency);
+    </script>
+}
+<div style="display: none;">
+    @Html.Hidden("btnOK", (string)@Resources._ButtonControl.btnCommandOK)
+    @Html.Hidden("btnCancel", (string)@Resources._ButtonControl.btnCommandCancel)
+</div>
+<form id="BillingDetail" action="#">
+<div id="divSelectBilingDetail" class="main-table" style="margin-top: 5px;">
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS071.lblBillingTargetCode
+        </div>
+        <div class="usr-object" style="width:200px;">
+            @Html.CommonTextBox("BillingTargetCode2", null, new { style = "width:" + @ViewBag.ObjectWidth1 + ";", @readonly = true })
+        </div>
+        <div class="usr-object" style="width: 180px;">
+            @Resources.BLS071.lbBillingCustomCurrency
+        </div>
+        <div class="usr-object" style="width: 100px;">
+            @Html.CommonTextBox("currency", null, new { style = "width:50px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS071.lblBillingClientNameEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.UserObjectWidth1;">
+            @Html.CommonTextBox("FullNameEN", null, new { style = "width:" + @ViewBag.ObjectWidth2 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS071.lblBillingClientNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.UserObjectWidth1;">
+            @Html.CommonTextBox("FullNameLC", null, new { style = "width:" + @ViewBag.ObjectWidth2 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<div id="divSelectBillingDetail" class="main-table" style="margin-top: 5px;">
+    <div class="usr-row" id="gridBillingDetail" style="width: 99%; margin-left: 5px;">
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+</form>

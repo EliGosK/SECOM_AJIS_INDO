@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+	  <column id="No" width="30" type="ro" align="center" sort="na">No.</column>
+	  <!--<column id="FirstFeeDetail" width="50" type="link" align="center" sort="na" >headerFFirstFeeDetail</column>-->
+	  <column id="BillingOCC" width="60" type="ro" align="left" sort="str_custom" >headerBillingOcc</column>
+	  <column id="BillingTargetCode_short" width="110" type="ro" align="left" sort="str_custom" >headerBillingTargetCode</column>
+	  <column id="OfficeName" width="100" type="ro" align="left" sort="str_custom" >headerBillingOffice</column>
+	  <column id="Name" width="*" type="ro" align="left" sort="str_custom" >headerBillingClientName</column>
+	  <column id="TextTransferMonthlyBillingAmount" width="210" type="ro" align="right" sort="na">headerBillingAmount</column>       
+    <column id="IssueInvoiceName" width="0" type="ro" align="left" sort="str_custom"><!--headerIssueInvoice--></column>
+    <column id="PaymentName" width="80" type="ro" align="left" sort="str_custom">headerPayment</column>
+    
+    <!--<column id="IssueInvoice_WithCheckConts" width="80" type="ro" align="left" sort="str_custom">headerIssueInvoice</column>
+	  <column id="Payment_WithCheckConts" width="80" type="ro" align="left" sort="str_custom">headerPayment</column>-->	
+    
+	  <column id="TextTransferBalanceDeposit" width="100" type="ro" align="right" sort="na">headerBalanceOfDepositFeeThb</column>
+	  <column id="Detail" width="30" type="link"  align="center" sort="na" >headerDepositDetail</column>
+	  <column id="ContractCode_short"  width="0" hidden ="true" type="ro"  align="left" sort="na" ></column>
+	  <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

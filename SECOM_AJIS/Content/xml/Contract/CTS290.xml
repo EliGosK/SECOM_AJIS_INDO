@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+	<head>
+		<column id="No" width="30" type="ro" align="center" sort="str_custom">headerNo</column>	
+		<column id="ContractCodeAndOCC" width="150" type="ro" align="left" sort="str_custom">headerContractCodeOCC</column>
+		<column id="SaleWarrantyPeriod" width="120" type="ro" align="left" sort="cts290_period_custom">headerSaleWarrantyPeriod</column>
+		<column id="OfficeNameAndInChargeName" width="130" type="ro" align="left" sort="str_custom">headerOfficeInChargeName</column>
+		<column id="SiteCodeAndOptOfficeName" width="145" type="ro" align="left" sort="str_custom">headerSiteCodeOptOfficeName</column>		
+		<column id="RealCustomerName" width="130" type="ro" align="left" sort="str_custom">headerRealCustomerName</column>
+		<column id="SiteName" width="*" type="ro" align="left" sort="str_custom">headerSiteName</column>
+		<column id="ProductName" width="100" type="ro" align="left" sort="str_custom">headerProductName</column>
+		<settings>
+			<colwidth>px</colwidth>
+		</settings>
+	</head>
+</rows>

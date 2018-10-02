@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG4001" xml:space="preserve">
+    <value>データが見つかりません。</value>
+  </data>
+  <data name="MSG4002" xml:space="preserve">
+    <value>棚卸開始前に機器データを退避させるプロセスはまだ実行されていません。</value>
+  </data>
+  <data name="MSG4003" xml:space="preserve">
+    <value>棚卸開始プロセスはまだ実行されていません。</value>
+  </data>
+  <data name="MSG4004" xml:space="preserve">
+    <value>検索結果が1000件以上あります。検索条件を絞り込んでください。</value>
+  </data>
+  <data name="MSG4005" xml:space="preserve">
+    <value>選択した機器が重複しています。</value>
+  </data>
+  <data name="MSG4006" xml:space="preserve">
+    <value>移動機器データがありません。</value>
+  </data>
+  <data name="MSG4007" xml:space="preserve">
+    <value>{0}の移動数が「0」より以上でなければなりません。</value>
+  </data>
+  <data name="MSG4008" xml:space="preserve">
+    <value>機器{0}の移動数が現在在庫数を越えています。</value>
+  </data>
+  <data name="MSG4009" xml:space="preserve">
+    <value>ロケーション元に機器{0}のデータがありません。</value>
+  </data>
+  <data name="MSG4010" xml:space="preserve">
+    <value>採番さんれた在庫伝票番号が最大値を越えます。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG4011" xml:space="preserve">
+    <value>伝票番号{0}が見つかりません。</value>
+  </data>
+  <data name="MSG4012" xml:space="preserve">
+    <value>伝票番号{0}が受領済みです。</value>
+  </data>
+  <data name="MSG4013" xml:space="preserve">
+    <value>機器を受領します。よろしいですか？</value>
+  </data>
+  <data name="MSG4014" xml:space="preserve">
+    <value>「移動元事業所」と「移動先事業所」は同じ事業所になってはいけません。</value>
+  </data>
+  <data name="MSG4015" xml:space="preserve">
+    <value>棚番（自）には、棚番（至）よりもアルファベット順で前にくる文字列を指定してください。</value>
+  </data>
+  <data name="MSG4016" xml:space="preserve">
+    <value>本社倉庫事業所のデータを取得できません。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG4017" xml:space="preserve">
+    <value>同時に「仕入先コート」と「仕入先名称」を入力できません。</value>
+  </data>
+  <data name="MSG4018" xml:space="preserve">
+    <value>この伝票番号の移動タイプが間違っています。</value>
+  </data>
+  <data name="MSG4019" xml:space="preserve">
+    <value>登録完了しました。</value>
+  </data>
+  <data name="MSG4020" xml:space="preserve">
+    <value>発注数は「0」より以上でなければなりません。</value>
+  </data>
+  <data name="MSG4021" xml:space="preserve">
+    <value>機器データを15件以上追加できません。</value>
+  </data>
+  <data name="MSG4022" xml:space="preserve">
+    <value>「メモ」テキストボックスで「Enter」を4回以上連続で押下してはいけません。</value>
+  </data>
+  <data name="MSG4023" xml:space="preserve">
+    <value>「発注機器指定」一覧にデータがありませんが、処理を進めますか？</value>
+  </data>
+  <data name="MSG4024" xml:space="preserve">
+    <value>発注対象機器の中にサンプル機器がありますが、処理を進めますか？</value>
+  </data>
+  <data name="MSG4025" xml:space="preserve">
+    <value>「修正発注数」が「入庫済数」以上でなければなりません。</value>
+  </data>
+  <data name="MSG4026" xml:space="preserve">
+    <value>「修正発注数」が「当初発注数」以下でなければなりません。</value>
+  </data>
+  <data name="MSG4027" xml:space="preserve">
+    <value>発注書取消が確定されます。よろしいですか？</value>
+  </data>
+  <data name="MSG4028" xml:space="preserve">
+    <value>DB上の現在の「発注ステータス」が「未受領」になっていません。</value>
+  </data>
+  <data name="MSG4029" xml:space="preserve">
+    <value>移動機器数には、1以上を指定してください。</value>
+  </data>
+  <data name="MSG4030" xml:space="preserve">
+    <value>機器{0}の出庫数には、1以上を指定してください。</value>
+  </data>
+  <data name="MSG4031" xml:space="preserve">
+    <value>機器{0}の修理返送数には、1以上を指定してください。</value>
+  </data>
+  <data name="MSG4032" xml:space="preserve">
+    <value>DB上の「発注ステータス」が「全受領済み」になっています。</value>
+  </data>
+  <data name="MSG4033" xml:space="preserve">
+    <value>「修正発注数」が「入庫済数」以上でなければなりません。</value>
+  </data>
+  <data name="MSG4034" xml:space="preserve">
+    <value>機器コード{0}の「今回入庫数」が「発注残数」以下でなければなりません。</value>
+  </data>
+  <data name="MSG4035" xml:space="preserve">
+    <value>今回入庫数の合計が「0」より以上でなければなりません。</value>
+  </data>
+  <data name="MSG4036" xml:space="preserve">
+    <value>入庫数の合計が「0」より以上でなければなりません。</value>
+  </data>
+  <data name="MSG4037" xml:space="preserve">
+    <value>入力された機器コードは、本システムの機器マスタに登録されていません。入力に誤りがないか確認してください。</value>
+  </data>
+  <data name="MSG4038" xml:space="preserve">
+    <value>この機器コードは既に一覧に存在しています。</value>
+  </data>
+  <data name="MSG4039" xml:space="preserve">
+    <value>この機器コードと機器エリアは既に一覧に存在しています。</value>
+  </data>
+  <data name="MSG4040" xml:space="preserve">
+    <value>入庫数は「1」以上でなければなりません。</value>
+  </data>
+  <data name="MSG4041" xml:space="preserve">
+    <value>「入庫日」は「出庫日」より前の日付、または同日でなければなりません。</value>
+  </data>
+  <data name="MSG4042" xml:space="preserve">
+    <value>「作成日（開始）」は「作成日（終了）」より前の日付、または同日でなければなりません。</value>
+  </data>
+  <data name="MSG4043" xml:space="preserve">
+    <value>伝票取消します。よろしいですか。</value>
+  </data>
+  <data name="MSG4044" xml:space="preserve">
+    <value>「入庫日」の月は当月でなくてはいけません。</value>
+  </data>
+  <data name="MSG4045" xml:space="preserve">
+    <value>機器{0}、エリア{1}は現在機器数が「入庫数」より以上又は同じ個数でなければなりません。
+</value>
+  </data>
+  <data name="MSG4046" xml:space="preserve">
+    <value>入庫伝票番号は資産未登録の状態でなければなりません。</value>
+  </data>
+  <data name="MSG4047" xml:space="preserve">
+    <value>棚番{0}、機器コード{1}に移動数が「0」より以上でなければなりません。</value>
+  </data>
+  <data name="MSG4048" xml:space="preserve">
+    <value>入力された棚番号{0}に誤りがあります。棚マスタに存在しません。</value>
+  </data>
+  <data name="MSG4049" xml:space="preserve">
+    <value>棚番{0}、機器コード{1}に移動先棚番を入力しなければなりません。</value>
+  </data>
+  <data name="MSG4050" xml:space="preserve">
+    <value>棚番{0}、機器コード{1}の「移動先棚番」欄に一時受領用棚番（00）を入力できません。</value>
+  </data>
+  <data name="MSG4051" xml:space="preserve">
+    <value>伝票番号を指定してください。</value>
+  </data>
+  <data name="MSG4052" xml:space="preserve">
+    <value>機器総額には、1以上を指定してください。</value>
+  </data>
+  <data name="MSG4053" xml:space="preserve">
+    <value>棚番{0}、機器コード{1}の「移動先棚番」を「移動元棚番」と同じ番号で入力できません。</value>
+  </data>
+  <data name="MSG4054" xml:space="preserve">
+    <value>棚番{0}、機器コード{1}を異なるエリアに移動できません。</value>
+  </data>
+  <data name="MSG4055" xml:space="preserve">
+    <value>同じエリア且つ同じ機器に紐付く棚が既に存在するため、棚番{0}、機器コード{1}は棚移動できません。</value>
+  </data>
+  <data name="MSG4056" xml:space="preserve">
+    <value>通常棚から空棚に移動する場合、棚番{0}、機器コード{1}に「移動数」が「在庫数」と同じ個数を入力しなければなりません。</value>
+  </data>
+  <data name="MSG4057" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG4058" xml:space="preserve">
+    <value>棚番{0}、機器コード{1}に「移動数」が「在庫数」を超えています。</value>
+  </data>
+  <data name="MSG4059" xml:space="preserve">
+    <value>このロケーションに棚番{1}、機器コード{0}のデータが存在しません。</value>
+  </data>
+  <data name="MSG4060" xml:space="preserve">
+    <value>採番さんれたピッキングリスト伝票番号が最大値を越えます。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG4061" xml:space="preserve">
+    <value>「出庫予定日（開始）」が「出庫予定日（終了）」以上でなければなりません。</value>
+  </data>
+  <data name="MSG4062" xml:space="preserve">
+    <value>選択した「工事伝票番号」が重複しています。</value>
+  </data>
+  <data name="MSG4063" xml:space="preserve">
+    <value>ピッキングリストを生成するデータがありません。</value>
+  </data>
+  <data name="MSG4064" xml:space="preserve">
+    <value>工事伝票{0}が既にピッキングリストを登録するために使用しました。</value>
+  </data>
+  <data name="MSG4065" xml:space="preserve">
+    <value>工事伝票情報を取得できません。</value>
+  </data>
+  <data name="MSG4066" xml:space="preserve">
+    <value>プロジェクトを取得する前に「プロジェクトコード」を指定してください。</value>
+  </data>
+  <data name="MSG4067" xml:space="preserve">
+    <value>プロジェクトコード{0}が見つかりません。</value>
+  </data>
+  <data name="MSG4068" xml:space="preserve">
+    <value>計算対象データがありません。</value>
+  </data>
+  <data name="MSG4069" xml:space="preserve">
+    <value>機器コード{0}が0より以上入力しなければなりません。</value>
+  </data>
+  <data name="MSG4070" xml:space="preserve">
+    <value>「プロジェクト状態」が「進行中」になっていません。</value>
+  </data>
+  <data name="MSG4071" xml:space="preserve">
+    <value>「返却確定数」が0より以上入力しなければなりません。</value>
+  </data>
+  <data name="MSG4072" xml:space="preserve">
+    <value>棚卸開始しますがよろしいですか？</value>
+  </data>
+  <data name="MSG4073" xml:space="preserve">
+    <value>「棚卸状態」が「準備中」になっていないため、棚卸開始できません。</value>
+  </data>
+  <data name="MSG4074" xml:space="preserve">
+    <value>「棚卸終了」を確定しますか？</value>
+  </data>
+  <data name="MSG4075" xml:space="preserve">
+    <value>「棚卸状態」が「実施中」になっていないため、棚卸開始できません。</value>
+  </data>
+  <data name="MSG4076" xml:space="preserve">
+    <value>採番さんれた発注書伝票番号が最大値を越えます。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG4077" xml:space="preserve">
+    <value>「棚卸日」を「棚卸開始日({0})」と「当日」の間以外入力できません。</value>
+  </data>
+  <data name="MSG4078" xml:space="preserve">
+    <value>実地棚卸結果表が見つかりません。</value>
+  </data>
+  <data name="MSG4079" xml:space="preserve">
+    <value>棚番{0}のエリアが機器エリアと異なります。</value>
+  </data>
+  <data name="MSG4080" xml:space="preserve">
+    <value>空棚を入力できません。</value>
+  </data>
+  <data name="MSG4081" xml:space="preserve">
+    <value>追加した機器データが重複しています。</value>
+  </data>
+  <data name="MSG4082" xml:space="preserve">
+    <value>棚卸データがありません。</value>
+  </data>
+  <data name="MSG4083" xml:space="preserve">
+    <value>棚番{0}、機器エリア{1}、機器コード{3}の「実地棚卸数」を入力しなければなりません。</value>
+  </data>
+  <data name="MSG4084" xml:space="preserve">
+    <value>棚卸データが見つかりません。</value>
+  </data>
+  <data name="MSG4085" xml:space="preserve">
+    <value>出庫用の工事伝票データが見つかりません。</value>
+  </data>
+  <data name="MSG4086" xml:space="preserve">
+    <value>「新品売買機器」が現在在庫数を越えるため、機器コード{0}が出庫できません。</value>
+  </data>
+  <data name="MSG4087" xml:space="preserve">
+    <value>「新品サンプル機器」が現在在庫数を越えるため、機器コード{0}が出庫できません。</value>
+  </data>
+  <data name="MSG4088" xml:space="preserve">
+    <value>「新品レンタル機器」が現在在庫数を越えるため、機器コード{0}が出庫できません。</value>
+  </data>
+  <data name="MSG4089" xml:space="preserve">
+    <value>「中古品レンタル機器」が現在在庫数を越えるため、機器コード{0}が出庫できません。</value>
+  </data>
+  <data name="MSG4090" xml:space="preserve">
+    <value>「合計出庫数」が各機器エリアの出庫数の合計と一致しないため、機器{0}は出庫できません。一致するように出庫数を調整してください。</value>
+  </data>
+  <data name="MSG4091" xml:space="preserve">
+    <value>初回出庫に出庫数の合計は「残出庫数」と同じ個数ではいけません。全機器を全数出庫したい場合、IVS020：機器出庫登録を使用してください。</value>
+  </data>
+  <data name="MSG4092" xml:space="preserve">
+    <value>機器コード{0}に出庫数の合計は「残出庫数」以上でなければいけません。</value>
+  </data>
+  <data name="MSG4093" xml:space="preserve">
+    <value>採番さんれたロット番号が最大値を越えます。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG4094" xml:space="preserve">
+    <value>撤去機器受領用の工事伝票が見つかりません。</value>
+  </data>
+  <data name="MSG4095" xml:space="preserve">
+    <value>撤去機器受領用の在庫伝票が見つかりません。</value>
+  </data>
+  <data name="MSG4096" xml:space="preserve">
+    <value>撤去機器を受領します。よろしいですか。</value>
+  </data>
+  <data name="MSG4097" xml:space="preserve">
+    <value>この伝票は撤去機器を受領しました。</value>
+  </data>
+  <data name="MSG4098" xml:space="preserve">
+    <value>この操作を行う権限がありません。</value>
+  </data>
+  <data name="MSG4099" xml:space="preserve">
+    <value>データタイプが間違っています。</value>
+  </data>
+  <data name="MSG4100" xml:space="preserve">
+    <value>棚卸調整を確定します。処理を続けますか？</value>
+  </data>
+  <data name="MSG4101" xml:space="preserve">
+    <value>棚卸調整数が棚卸調整確定数以上でなければなりません。</value>
+  </data>
+  <data name="MSG4102" xml:space="preserve">
+    <value>棚卸調整数が棚卸前在庫数より以下でなければなりません。</value>
+  </data>
+  <data name="MSG4103" xml:space="preserve">
+    <value>移動日が当月以内でなければなりません。</value>
+  </data>
+  <data name="MSG4104" xml:space="preserve">
+    <value>棚番{0}が通常棚ではありません。</value>
+  </data>
+  <data name="MSG4105" xml:space="preserve">
+    <value>指定した棚番先{0}／エリア先／機器の組み合わせが、棚番マスタ上に登録されている該当棚番／エリア／機器の組み合わせと一致しません。</value>
+  </data>
+  <data name="MSG4106" xml:space="preserve">
+    <value>棚番{0}に指定する機器コード及びエリアは既に別の棚番{1}に紐付けています。</value>
+  </data>
+  <data name="MSG4107" xml:space="preserve">
+    <value>機器コード{0}に「棚番先」を「棚番元」と同じ番号を入力する場合、「移動数」を「在庫数」と同じ個数を入力しなければなりません。</value>
+  </data>
+  <data name="MSG4108" xml:space="preserve">
+    <value>棚番{0}に「棚番先」を「棚番元」と同じ番号を入力する場合、機器数を0で入力しなければなりません。</value>
+  </data>
+  <data name="MSG4109" xml:space="preserve">
+    <value>機器{0}は在庫データベースに存在しません。</value>
+  </data>
+  <data name="MSG4112" xml:space="preserve">
+    <value>{0}にデータを入力してください。</value>
+  </data>
+  <data name="MSG4113" xml:space="preserve">
+    <value>簿外出庫を登録します。よろしいですか？</value>
+  </data>
+  <data name="MSG4114" xml:space="preserve">
+    <value>編集したVATとWHTは合計金額より以上ではいけません。</value>
+  </data>
+  <data name="MSG4115" xml:space="preserve">
+    <value>除去機器が確定します。処理を続けますか？</value>
+  </data>
+  <data name="MSG4116" xml:space="preserve">
+    <value>機器データを退避させるプロセスは実行されていません。</value>
+  </data>
+  <data name="MSG4117" xml:space="preserve">
+    <value>実地棚卸表が既に作成されました。</value>
+  </data>
+  <data name="MSG4118" xml:space="preserve">
+    <value>実地棚卸表が既に作成されました。</value>
+  </data>
+  <data name="MSG4119" xml:space="preserve">
+    <value>機器コード{0}の「機器エリア」を選択してください。</value>
+  </data>
+  <data name="MSG4120" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG4121" xml:space="preserve">
+    <value>機器コード{0}：同じ親機器の子機器は全て同じ出庫数を入力しなければなりません。</value>
+  </data>
+  <data name="MSG4122" xml:space="preserve">
+    <value>出庫数は0より上でなければないりません。</value>
+  </data>
+  <data name="MSG4123" xml:space="preserve">
+    <value>機器コード{0}は一般用または部材に設定しなければなりません。</value>
+  </data>
+  <data name="MSG4124" xml:space="preserve">
+    <value>機器コード{0}には子機器があります。子機器で発注してください。</value>
+  </data>
+  <data name="MSG4125" xml:space="preserve">
+    <value>「入庫日（開始）」は「入庫日「終了」」より前又は同じ日付でなければなりません。</value>
+  </data>
+  <data name="MSG4126" xml:space="preserve">
+    <value>この伝票を取得する権利がありません。</value>
+  </data>
+  <data name="MSG4127" xml:space="preserve">
+    <value>受領対象の返却機器がありません。</value>
+  </data>
+  <data name="MSG4128" xml:space="preserve">
+    <value>棚番{0}、機器{1}：「機器コード」が異なる「棚番先」に対して、同じ空棚を指定することができません。</value>
+  </data>
+  <data name="MSG4130" xml:space="preserve">
+    <value>この画面にアクセスする権限がありません。</value>
+  </data>
+  <data name="MSG4131" xml:space="preserve">
+    <value>中古機器の在庫数に不整合が生じています。在庫統轄部門に連絡してください。</value>
+  </data>
+  <data name="MSG4132" xml:space="preserve">
+    <value>合計金額は10桁を超えるため登録できません。</value>
+  </data>
+  <data name="MSG4129" xml:space="preserve">
+    <value>tbt_RentalContractBasicからDepreciation period for contract及びDepreciation period for revenueが取得できません。</value>
+  </data>
+  <data name="MSG4133" xml:space="preserve">
+    <value>機器情報がないため、発注が登録できません。</value>
+  </data>
+  <data name="MSG4134" xml:space="preserve">
+    <value>「修正発注数」を編集する対象レコードがありません。</value>
+  </data>
+  <data name="MSG4135" xml:space="preserve">
+    <value>「新品売買機器」がプロジェクト出庫を行った機器数を越えるため、機器コード{0}が出庫できません。</value>
+  </data>
+  <data name="MSG4136" xml:space="preserve">
+    <value>「新品サンプル機器」がプロジェクト出庫を行った機器数を越えるため、機器コード{0}が出庫できません。</value>
+  </data>
+  <data name="MSG4137" xml:space="preserve">
+    <value>「新品レンタル機器」がプロジェクト出庫を行った機器数を越えるため、機器コード{0}が出庫できません。</value>
+  </data>
+  <data name="MSG4138" xml:space="preserve">
+    <value>「中古品レンタル機器」がプロジェクト出庫を行った機器数を越えるため、機器コード{0}が出庫できません。</value>
+  </data>
+  <data name="MSG4139" xml:space="preserve">
+    <value>棚番{0}、機器コード{1}、通常棚を機器数＞0の別の通常棚に移動できません。</value>
+  </data>
+  <data name="MSG4140" xml:space="preserve">
+    <value>機器{0}が抹消されました。</value>
+  </data>
+  <data name="MSG4141" xml:space="preserve">
+    <value>伝票ステータスが「未出庫」又は「部分出庫」ではないので、伝票{0}は出庫できません。</value>
+  </data>
+  <data name="MSG4142" xml:space="preserve">
+    <value>伝票ステータスが「未出庫」ではないので、伝票{0}は出庫できません。</value>
+  </data>
+  <data name="MSG4143" xml:space="preserve">
+    <value>棚卸調整倉庫およびユーザー倉庫には機器がないので、機器{0}個数は変更できません。</value>
+  </data>
+  <data name="MSG4144" xml:space="preserve">
+    <value>割引金額が合計金額を超えてはいけません。</value>
+  </data>
+  <data name="MSG4145" xml:space="preserve">
+    <value>ユニットを指定してください。</value>
+  </data>
+  <data name="MSG4146" xml:space="preserve">
+    <value>この伝票はすでに資産登録されています。</value>
+  </data>
+  <data name="MSG4147" xml:space="preserve">
+    <value>機器総額０で登録します。よろしいですか？({0})</value>
+  </data>
+  <data name="MSG4148" xml:space="preserve">
+    <value>Cannot update or cancel stock-in slip after calculate monthly average price.</value>
+  </data>
+  <data name="MSG4149" xml:space="preserve">
+    <value>ไลน์อัพของ {0} เป็น 'หยุดขาย'.</value>
+  </data>
+</root>

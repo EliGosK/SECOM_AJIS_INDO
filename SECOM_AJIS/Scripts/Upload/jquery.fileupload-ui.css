@@ -1,0 +1,81 @@
+#filediv {
+  position: relative;
+  overflow: hidden;
+  direction: ltr;
+  cursor: pointer;
+  width: 100px;
+  height: 22px;
+  /*text-align: center;
+  border: 1px solid #707070; 
+  background: #dbdbdb url(/Content/themes/custom-theme/images/ui-bg_glass_100_dbdbdb_1x400.png) 50% 50% repeat-x; 
+  font-weight: normal; 
+  color: #000000;
+  width: 100px;
+  height: 22px;
+  padding: 0;
+  line-height: 19px;
+        
+  -moz-border-radius: 4px; 
+  -webkit-border-radius: 4px; 
+  border-radius: 4px; */
+}
+#filediv input 
+{
+  position: absolute;
+  top: 0;
+  right: 15px;
+  margin: 0;
+  
+  height: 22px;
+}
+
+.file_upload_small {
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+  font-size: auto;
+  background: palegreen;
+  border: 1px solid limegreen;
+}
+
+.file_upload_large {
+  width: 100%;
+  height: 150px;
+  line-height: 150px;
+  font-size: 20px;
+  background: palegreen;
+  border: 1px solid limegreen;
+}
+
+.file_upload_highlight {
+  background: lawngreen;
+}
+
+
+#filediv div 
+{
+    position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#filediv iframe, #filediv button {
+  display: none;
+}
+
+.file_upload_preview img {
+  width: 80px;
+}
+
+.file_upload_progress .ui-progressbar-value {
+  background: url(pbar-ani.gif);
+}
+
+.file_upload_progress div {
+  width: 150px;
+  height: 15px;
+}
+
+.file_upload_cancel button {
+  cursor: pointer;
+}

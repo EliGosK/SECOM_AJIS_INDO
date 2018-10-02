@@ -1,0 +1,101 @@
+﻿@using SECOM_AJIS.DataEntity.Installation
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Installation.Controllers 
+@using SECOM_AJIS.Common.Util.ConstantValue
+@{
+    
+ 
+
+    ViewBag.lbWidth = "220px";  /* ViewBag.LabelWidth */
+    ViewBag.lbWidth2 = "260px";  
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectCol4Width = "180px";
+    ViewBag.ObjectColMergeWidth = "720px";
+    ViewBag.headText2 = "220px";  
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+    
+    ViewBag.C_SERVICE_TYPE_RENTAL = ServiceType.C_SERVICE_TYPE_RENTAL;
+    ViewBag.C_SERVICE_TYPE_SALE = ServiceType.C_SERVICE_TYPE_SALE;
+    ViewBag.C_SERVICE_TYPE_PROJECT = ServiceType.C_SERVICE_TYPE_PROJECT;
+    
+    ViewBag.C_CUSTOMER_REASON = MiscType.C_CUSTOMER_REASON;
+    ViewBag.C_SECOM_REASON = MiscType.C_SECOM_REASON;
+    
+    ViewBag.C_INSTALL_CHANGE_REASON_CUS = InstallChangeReason.C_INSTALL_CHANGE_REASON_CUS;
+    ViewBag.C_INSTALL_CHANGE_REASON_SECOM = InstallChangeReason.C_INSTALL_CHANGE_REASON_SECOM;
+    ViewBag.C_INSTALLATION_BY_OTHER = InstallationBy.C_INSTALLATION_BY_OTHER;
+    ViewBag.C_CUSTOMER_REASON_OTHER = CustomerReason.C_CUSTOMER_REASON_OTHER;
+    ////==============================================================
+    ViewBag.C_INSTALLATION_BY = MiscType.C_INSTALLATION_BY;
+    ViewBag.C_INSTALL_FEE_BILLING_TYPE = MiscType.C_INSTALL_FEE_BILLING_TYPE;
+    
+    ViewBag.C_SLIP_STATUS_NO_NEED_TO_STOCK_OUT = SlipStatus.C_SLIP_STATUS_NO_NEED_TO_STOCK_OUT;
+    ViewBag.C_SLIP_STATUS_NOT_STOCK_OUT = SlipStatus.C_SLIP_STATUS_NOT_STOCK_OUT;
+    
+ }
+
+@section page_header{
+
+<script type="text/javascript" >
+
+    var C_SERVICE_TYPE_RENTAL = "@ViewBag.C_SERVICE_TYPE_RENTAL";
+    var C_SERVICE_TYPE_SALE = "@ViewBag.C_SERVICE_TYPE_SALE";
+    var C_SERVICE_TYPE_PROJECT = "@ViewBag.C_SERVICE_TYPE_PROJECT";
+    
+    var C_CUSTOMER_REASON = "@ViewBag.C_CUSTOMER_REASON";
+    var C_SECOM_REASON = "@ViewBag.C_SECOM_REASON";
+
+    var C_INSTALL_CHANGE_REASON_CUS = "@ViewBag.C_INSTALL_CHANGE_REASON_CUS";
+    var C_INSTALL_CHANGE_REASON_SECOM = "@ViewBag.C_INSTALL_CHANGE_REASON_SECOM";
+    var C_INSTALLATION_BY_OTHER = "@ViewBag.C_INSTALLATION_BY_OTHER";
+    var C_CUSTOMER_REASON_OTHER = "@ViewBag.C_CUSTOMER_REASON_OTHER";
+    //====================================================
+    var C_INSTALLATION_BY = "@ViewBag.C_INSTALLATION_BY";
+    var C_INSTALL_FEE_BILLING_TYPE = "@ViewBag.C_INSTALL_FEE_BILLING_TYPE";
+
+    var C_SLIP_STATUS_NO_NEED_TO_STOCK_OUT = "@ViewBag.C_SLIP_STATUS_NO_NEED_TO_STOCK_OUT";
+    var C_SLIP_STATUS_NOT_STOCK_OUT = "@ViewBag.C_SLIP_STATUS_NOT_STOCK_OUT";
+    var ROWS_PER_PAGE_FOR_SEARCHPAGE = @CommonValue.ROWS_PER_PAGE_FOR_SEARCHPAGE;
+</script>
+<script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Installation/ISS080.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/MessageDialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Master/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Scripts/Upload/jquery.fileupload-ui.css")" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/Upload/jquery.fileupload.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Upload/jquery.fileupload-ui.js")"></script>
+
+
+}
+
+
+<!-- Html content --->
+
+    @Html.Hidden("ServiceTypeCode")
+    @Html.Partial("ISS080/_ISS080_01")
+    @Html.Partial("ISS080/_ISS080_02") 
+    
+   
+    <div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>
+

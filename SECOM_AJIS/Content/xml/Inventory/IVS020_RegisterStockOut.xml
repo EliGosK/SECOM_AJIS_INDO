@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="Blank" width="0" type="ro" align="left" sort="na" hidden="true"></column>
+    <column id="InstrumentCode" width="200" type="link" align="left" sort="na">headerInstrumentCode</column>
+    <column id="InstrumentName" width="200" type="ro" align="left" sort="na">headerInstrumentName</column>
+    <column id="AddInstalledQty" width="*" type="link" align="right" format="0,000" sort="na">headerTotalStockOutQty</column>
+    <column id="NewInstSale" width="100" type="link" align="right" format="0,000" sort="na">headerDetailColumnHeader</column>
+    <column id="NewInstSample" width="100"   type="link" align="right" format="0,000" sort="na">#cspan</column>
+    <column id="NewInstRental" width="100" type="link" align="right" format="0,000" sort="na">#cspan</column>
+    <column id="SecondhandInstRental" width="100" type="link" align="right" format="0,000" sort="na">#cspan</column>
+    <column id="ToJson" width="0" type="ro" align="left" hidden="true"></column>
+    
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,#rspan,headerNewInstSale,headerNewInstSample,headerNewInstRental,headerSecondhandInstRental</param>
+      </call>
+    </afterInit>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

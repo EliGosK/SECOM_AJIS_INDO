@@ -1,0 +1,156 @@
+﻿@using SECOM_AJIS.DataEntity.Installation
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Installation.Controllers
+@using SECOM_AJIS.Common.Util.ConstantValue
+@{
+    
+ 
+
+    ViewBag.lbWidth = "220px";  /* ViewBag.LabelWidth */
+    ViewBag.lbWidth2 = "280px";  /* ViewBag.LabelWidth */
+
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectCol4Width = "150px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+
+    ViewBag.C_FUNC_ID_VIEW = FunctionID.C_FUNC_ID_VIEW;
+    ViewBag.C_FUNC_ID_APPROVE = FunctionID.C_FUNC_ID_APPROVE;
+    ViewBag.C_FUNC_ID_OPERATE = FunctionID.C_FUNC_ID_OPERATE;
+    ViewBag.C_FUNC_ID_COMPLETE = FunctionID.C_FUNC_ID_COMPLETE;
+    ViewBag.C_FLAG_ON = FlagType.C_FLAG_ON;
+    ViewBag.C_FLAG_OFF = FlagType.C_FLAG_OFF;
+    ViewBag.C_INSTALL_MANAGE_STATUS_APPROVED = InstallationManagementStatus.C_INSTALL_MANAGE_STATUS_APPROVED;
+    ViewBag.C_INSTALL_MANAGE_STATUS_COMPLETED = InstallationManagementStatus.C_INSTALL_MANAGE_STATUS_COMPLETED;
+    ViewBag.C_INSTALL_MANAGE_STATUS_PROCESSING = InstallationManagementStatus.C_INSTALL_MANAGE_STATUS_PROCESSING;
+
+    ViewBag.C_INSTALL_ADJUSTMENT_HAVE = AdjustmentType.C_INSTALL_ADJUSTMENT_HAVE;
+    ViewBag.C_INSTALL_ADJUSTMENT_NO_HAVE = AdjustmentType.C_INSTALL_ADJUSTMENT_NO_HAVE;
+    ViewBag.C_SERVICE_TYPE_PROJECT = ServiceType.C_SERVICE_TYPE_PROJECT;
+    ViewBag.C_SERVICE_TYPE_RENTAL = ServiceType.C_SERVICE_TYPE_RENTAL;
+    ViewBag.C_SERVICE_TYPE_SALE = ServiceType.C_SERVICE_TYPE_SALE;
+
+    ViewBag.C_INSTALL_MANAGE_STATUS_REQUEST_APPROVE = InstallationManagementStatus.C_INSTALL_MANAGE_STATUS_REQUEST_APPROVE;
+    ViewBag.C_INSTALL_MANAGE_STATUS_REJECTED = InstallationManagementStatus.C_INSTALL_MANAGE_STATUS_REJECTED;
+    ViewBag.lblTotal = Resources.ISS050.lblTotal;
+
+    ViewBag.C_INSTALL_BEFORE_CHANGE_REASON_OTHER = InstallationBeforeChangeReason.C_INSTALL_BEFORE_CHANGE_REASON_OTHER;
+    ViewBag.C_INSTALL_BEFORE_CHANGE_REQUESTER_OTHER = InstallationBeforeChangeRequester.C_INSTALL_BEFORE_CHANGE_REQUESTER_OTHER;
+    
+    ViewBag.lblIEFirstCheckDate = Resources.ISS090.lblIEFirstCheckDate;
+    ViewBag.lblInstallationStartDate = Resources.ISS090.lblInstallationStartDate;
+    ViewBag.lblIELastInspectionDate = Resources.ISS090.lblIELastInspectionDate;
+ }
+
+
+@section page_header{
+
+<script type="text/javascript" >
+    var C_INSTALL_BEFORE_CHANGE_REASON_OTHER = "@ViewBag.C_INSTALL_BEFORE_CHANGE_REASON_OTHER";
+    var C_INSTALL_BEFORE_CHANGE_REQUESTER_OTHER = "@ViewBag.C_INSTALL_BEFORE_CHANGE_REQUESTER_OTHER";
+
+    var C_FUNC_ID_VIEW = "@ViewBag.C_FUNC_ID_VIEW";
+    var C_FUNC_ID_VIEW = "@ViewBag.C_FUNC_ID_VIEW";
+    var C_FUNC_ID_APPROVE = "@ViewBag.C_FUNC_ID_APPROVE";
+    var C_FUNC_ID_OPERATE = "@ViewBag.C_FUNC_ID_OPERATE";
+    var C_FUNC_ID_COMPLETE = "@ViewBag.C_FUNC_ID_COMPLETE";
+    var C_FUNC_ID_DOWNLOAD = "@FunctionID.C_FUNC_ID_DOWNLOAD";
+    var C_FLAG_ON = "@ViewBag.C_FLAG_ON";
+    var C_FLAG_OFF = "@ViewBag.C_FLAG_OFF";
+
+    var C_INSTALL_MANAGE_STATUS_APPROVED = "@ViewBag.C_INSTALL_MANAGE_STATUS_APPROVED";
+    var C_INSTALL_MANAGE_STATUS_COMPLETED = "@ViewBag.C_INSTALL_MANAGE_STATUS_COMPLETED";
+
+    var C_SERVICE_TYPE_PROJECT = "@ViewBag.C_SERVICE_TYPE_PROJECT";
+    var C_SERVICE_TYPE_RENTAL = "@ViewBag.C_SERVICE_TYPE_RENTAL";
+    var C_SERVICE_TYPE_SALE = "@ViewBag.C_SERVICE_TYPE_SALE";
+
+    var C_INSTALL_MANAGE_STATUS_REQUEST_APPROVE = "@ViewBag.C_INSTALL_MANAGE_STATUS_REQUEST_APPROVE";
+    var C_INSTALL_MANAGE_STATUS_REJECTED = "@ViewBag.C_INSTALL_MANAGE_STATUS_REJECTED";
+    var C_INSTALL_MANAGE_STATUS_PROCESSING = "@ViewBag.C_INSTALL_MANAGE_STATUS_PROCESSING";
+    var lblTotal = "@ViewBag.lblTotal";
+
+    var C_INSTALL_ADJUSTMENT_HAVE = "@ViewBag.C_INSTALL_ADJUSTMENT_HAVE";
+    var C_INSTALL_ADJUSTMENT_NO_HAVE = "@ViewBag.C_INSTALL_ADJUSTMENT_NO_HAVE";
+
+    var lblIEFirstCheckDate = "@ViewBag.lblIEFirstCheckDate";
+    var lblInstallationStartDate = "@ViewBag.lblInstallationStartDate";
+    var lblIELastInspectionDate = "@ViewBag.lblIELastInspectionDate";
+    var _attach_k = '@ViewBag.AttachKey';
+    var lblPaid = '@Resources.ISS090.lblPaid';
+    var lblAdvancePayment = '@Resources.ISS090.lblAdvancePayment';
+
+    var C_INSTALL_COMPLAIN_HAVE = "@InstallationComplain.C_INSTALL_COMPLAIN_HAVE";
+    var C_INSTALL_COMPLAIN_NO_HAVE = "@InstallationComplain.C_INSTALL_COMPLAIN_NO_HAVE";
+
+    var C_FUNC_ID_INSTALL_ADVANCE_PAY = "@FunctionID.C_FUNC_ID_INSTALL_ADVANCE_PAY";
+</script>
+
+<script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Installation/ISS090.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/MessageDialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Master/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/Dialog.js")"></script>
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Scripts/Upload/jquery.fileupload-ui.css")" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/Upload/jquery.fileupload.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Upload/jquery.fileupload-ui.js")"></script>
+
+
+}
+
+
+<!-- Html content --->
+<div id="divInputContractCode" class="main-table" style="margin-top:5px;display:none;">
+
+    <div class="table-header">
+        @Resources.ISS090.lblHeaderSpecified
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS090.lblContractProjectCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+           @Html.CommonTextBox("ContractCodeProjectCode", (string)@ViewBag.ContractProjectCode, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+        </div>          
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Html.CommonButton("btnRetrieveInstallation", (string)@Resources.ISS090.btnRetrieve, new { style = "width:100px;" })
+            @Html.CommonButton("btnClearInstallation", (string)@Resources.ISS090.btnClear, new { style = "width:100px;" })
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            
+        </div>     
+    </div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+ </div>
+    @Html.Hidden("StatusCompletedFlag")
+    @Html.Hidden("ServiceTypeCode")
+    @Html.Hidden("strMode")
+    @Html.Hidden("strInstallationManagementStatus")
+    @Html.Hidden("MaintenanceNo")
+    @Html.Partial("ISS090/_ISS090_01")
+    @Html.Partial("ISS090/_ISS090_02")
+    @Html.Partial("ISS090/_ISS090_03")
+    @Html.Partial("ISS090/_ISS090_04")
+    @Html.Partial("ISS090/_ISS090_05")

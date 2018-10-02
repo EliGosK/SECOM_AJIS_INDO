@@ -1,0 +1,16 @@
+<models>
+	<model name="tbt_tmpImportContent">
+    <column name="PaymentType"/>
+    <column name="PaymentDate"/>
+    <column name="RefInvoiceNo"/>
+    <column name="PaymentAmount"/>
+    <column name="WHTAmount"/>
+    <column name="AutoTransferResult"/>
+    <column name="FailureReason"/>
+    <column name="Payer"/>
+    <column name="SendingBankCode"/>
+    <column name="SendingBranchCode"/>
+    <column name="PayerBankAccNo"/>
+    <column name="TelNo"/>
+	</model>
+</models>

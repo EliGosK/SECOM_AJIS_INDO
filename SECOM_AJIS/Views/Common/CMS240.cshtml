@@ -1,0 +1,66 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS240.js")"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+
+ 
+}
+@{
+    
+    ViewBag.LabelWidth = "220px";
+    ViewBag.Label2Width = "130px";
+    ViewBag.ObjectWidth = "300px";
+
+            
+}
+<div style="display: none">
+    @Html.Hidden("CMS240_lblFailedStatus", (string)@Resources.CMS240.lblFailedStatus)
+    @Html.Hidden("CMS240_lblSucceededStatus", (string)@Resources.CMS240.lblSucceededStatus)
+    @Html.Hidden("CMS240_lblProcessingStatus", (string)@Resources.CMS240.lblProcessingStatus)
+
+</div>
+<div id="Search_Criteria" class="main-table">
+    <div class="table-header">
+        @Resources.CMS240.lblHeaderSearch
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS240.lblmonthandyear
+        </div>
+        <div class="usr-object">
+            @Html.LogMonthYear("MonthYear", new { style = "width:174px;" })
+            @Html.RequireFiled()
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS240.lblPugeStat
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("Status", "", new { style = "width:170px;", @readonly = "readonly" })
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+<div id="Search_Result" class="main-table">
+    <div class="table-header">
+        @Resources.CMS240.lblHeaderResult
+    </div>
+    <div id="grid_result" style="width: 99%; height: 100px;">
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

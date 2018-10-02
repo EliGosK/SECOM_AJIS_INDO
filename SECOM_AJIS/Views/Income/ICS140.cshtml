@@ -1,0 +1,324 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Income.Helpers;
+@using SECOM_AJIS.Presentation.Income.Controllers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_ron2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Income/ICS140.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/number-functions.js")"></script>
+    <script type="text/javascript">
+        DebtTracingResult = {
+            C_DEBT_TRACE_RESULT_WAIT_MATCH: "@DebtTracingResult.C_DEBT_TRACE_RESULT_WAIT_MATCH",
+            C_DEBT_TRACE_RESULT_POSTPONE: "@DebtTracingResult.C_DEBT_TRACE_RESULT_POSTPONE",
+            C_DEBT_TRACE_RESULT_WAIT_FOR_PAYMENT: "@DebtTracingResult.C_DEBT_TRACE_RESULT_WAIT_FOR_PAYMENT",
+            C_DEBT_TRACE_RESULT_TRANSFER_TO_BRANCH: "@DebtTracingResult.C_DEBT_TRACE_RESULT_TRANSFER_TO_BRANCH",
+            C_DEBT_TRACE_RESULT_TRANSFER_TO_HQ: "@DebtTracingResult.C_DEBT_TRACE_RESULT_TRANSFER_TO_HQ",
+            C_DEBT_TRACE_RESULT_LAWSUIT: "@DebtTracingResult.C_DEBT_TRACE_RESULT_LAWSUIT",
+            C_CURRENCY_LOCAL: "@CurrencyUtil.C_CURRENCY_LOCAL",
+            C_CURRENCY_US: "@CurrencyUtil.C_CURRENCY_US"
+        };
+        DebtTracingStatus = {
+            C_DEBT_TRACE_SUBSTATUS_HQ_OUTSTANDING: "@DebtTracingSubStatus.C_DEBT_TRACE_SUBSTATUS_HQ_OUTSTANDING",
+            C_DEBT_TRACE_SUBSTATUS_BR_OUTSTANDING: "@DebtTracingSubStatus.C_DEBT_TRACE_SUBSTATUS_BR_OUTSTANDING"
+        };
+        IsHQUser = @ViewBag.IsHQUser.ToString().ToLower();
+        PaidButtonLabel = "@ViewBag.PaidButtonLabel";
+        PaidConfirmParam = "@ViewBag.PaidConfirmParam";
+    </script>
+}
+@{
+    ViewBag.Col1 = "170px;";
+    ViewBag.Col2 = "250px;";
+    ViewBag.Col3 = "170px;";
+    ViewBag.Col2Col3 = "420px;";
+    ViewBag.Col4 = "250px;";
+    ViewBag.ContactCol1 = "180px;";
+    ViewBag.ContactCol2 = "300px;";
+
+    ViewBag.InputCol1 = "220px;";
+    ViewBag.InputCol2 = "220px;";
+    ViewBag.InputCol3 = "176px;";
+    ViewBag.InputCol4 = "220px;";
+    ViewBag.InputColMerge2 = "660px;";
+
+    ViewBag.CustDebtInfoHeaderHeight = "140px;";
+
+    ViewBag.TextBoxWidth = "180px";
+    ViewBag.TextBoxLongWidth = "600px";
+    ViewBag.DatePickerWidth = "160px";
+    ViewBag.ComboBoxWidth = "185px";
+    ViewBag.ComboBoxLongWidth = "605px";
+}
+<div class="main-table" id="divDTListPanel">
+    <div class="table-header">
+        @Resources.ICS140.lblDTList
+    </div>
+    <form name="formDTList" id="formDTList" action="#">
+    <div id="divDTList">
+        <div class="usr-row" style="">
+            <div class="usr-label" style="width:@ViewBag.Col1">
+                @Resources.ICS140.lblBillingOffice
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col2">
+                @Html.DebtTracingPermissionCombo("cboBillingOffice", new { style = "width:" + ViewBag.ComboBoxWidth } )
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3">
+                @Resources.ICS140.lblContractCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col4">
+                @Html.CommonTextBox("txtSearchContractCode", null, new { style = "width:" + ViewBag.TextBoxWidth })
+            </div>
+        </div>
+        <div class="usr-row" style="">
+            <div class="usr-label" style="width:@ViewBag.Col1">
+                @Resources.ICS140.lblBillingClient
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col2">
+                @Html.CommonTextBox("txtSearchBillingClient", null, new { style = "width:" + ViewBag.TextBoxWidth })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3">
+                @Resources.ICS140.lblInvoiceNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col4">
+                @Html.CommonTextBox("txtSearchInvoiceNo", null, new { style = "width:" + ViewBag.TextBoxWidth })
+            </div>
+        </div>
+        <div class="usr-row" style="">
+            <div class="usr-label" style="width:@ViewBag.Col1">
+                @Resources.ICS140.lblDebtTracingStatus
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col2Col3">
+                @Html.CommonCheckButton("chkShowNotDue", @Resources.ICS140.chkShowNotDue, null, false)
+                @Html.CommonCheckButton("chkShowPending", @Resources.ICS140.chkShowPending, null, false, new { style = "margin-left: 5px" })
+                @Html.CommonCheckButton("chkShowOutStanding", @Resources.ICS140.chkShowOutStanding, null, true, new { style = "margin-left: 5px" })
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col4">
+                @Html.CommonCheckButton("chkFirstFeeFlag", @Resources.ICS140.chkFirstFeeFlag, null, false)
+            </div>
+        </div>
+        @if (@ViewBag.IsHQUser)
+        {
+        <div class="usr-row" style="">
+            <div class="usr-label" style="width:@ViewBag.Col1">
+            </div>
+            <div class="usr-object" style="">
+                    @Html.CommonCheckButton("chkShowLawsuit", @Resources.ICS140.chkShowLawsuit, null, false)
+                    @Html.CommonCheckButton("chkShowBranch", @Resources.ICS140.chkShowBranch, null, false, new { style = "margin-left: 5px" })
+            </div>
+        </div>
+        }
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+        <div class="usr-row" style="margin-top: 5px">
+            <div class="usr-object" style="float: right; margin-right: 4px;">
+                @Html.CommonButton("btnSearch", @Resources.ICS140.lblBtnSearch, new { type = "button" })
+                @Html.CommonButton("btnClear", @Resources.ICS140.lblBtnClear, new { type = "button" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+        <div id="divGridCustList" style="width: 99%; margin-left: 4px; margin-top: 5px;">
+        </div>
+        <div class="usr-clear-style">
+        </div>
+    </div>
+    </form>
+</div>
+<div class="main-table" id="divCustDebtInfoPanel" style="display: none">
+    <div class="table-header">
+        @Resources.ICS140.lblCustDebtInfo
+    </div>
+    <div id="divContacts" style="float: left; width: auto; height: @ViewBag.CustDebtInfoHeaderHeight; width: 500px;">
+        <div class="label-header usr-row-space">
+            @Resources.ICS140.lblContacts
+        </div>
+        <div>
+            <div class="usr-row" style="">
+                <div class="usr-label" style="width:@ViewBag.ContactCol1;">
+                    @Resources.ICS140.lblBillingOffice
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ContactCol2;">
+                    @Html.CommonTextBox("txtBillingOffice", null, new { style = "width:" + @ViewBag.ContactCol2 })
+                </div>
+            </div>
+            <div class="usr-clear-style">
+            </div>
+            <div class="usr-row" style="">
+                <div class="usr-label" style="width:@ViewBag.ContactCol1;">
+                    @Resources.ICS140.headerBillingTarget
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ContactCol2;">
+                    @Html.CommonTextBox("txtBillingTargetCode", null, new { style = "width:" + @ViewBag.ContactCol2 })
+                </div>
+            </div>
+            <div class="usr-clear-style">
+            </div>
+            <div class="usr-row" style="">
+                <div class="usr-label" style="width:@ViewBag.ContactCol1;">
+                    @Resources.ICS140.headerBillingClient
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ContactCol2;">
+                    @Html.CommonTextBox("txtBillingClientName", null, new { style = "width:" + @ViewBag.ContactCol2 })
+                </div>
+            </div>
+            <div class="usr-clear-style">
+            </div>
+            <div class="usr-row" style="">
+                <div class="usr-label" style="width:@ViewBag.ContactCol1;">
+                    @Resources.ICS140.lblContactPersonName
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ContactCol2;">
+                    @Html.CommonTextBox("txtContactPersonName", null, new { style = "width:" + @ViewBag.ContactCol2 })
+                </div>
+            </div>
+            <div class="usr-clear-style">
+            </div>
+            <div class="usr-row" style="">
+                <div class="usr-label" style="width:@ViewBag.ContactCol1;">
+                    @Resources.ICS140.lblPhoneNo
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ContactCol2;">
+                    @Html.CommonTextBox("txtPhoneNo", null, new { style = "width:" + @ViewBag.ContactCol2 })
+                </div>
+            </div>
+            <div class="usr-clear-style">
+            </div>
+        </div>
+    </div>
+    <div id="divCustDebtInfoRight" style="float: right; height: @ViewBag.CustDebtInfoHeaderHeight; width: 400px;">
+        <div style="overflow: auto; height: 100%; width: 100%">
+            <div id="divGridReturnedCheque" style="width: 97%; height: 97%; margin-left: 4px;
+                margin-top: 5px;">
+            </div>
+        </div>
+    </div>
+    <div id="divInvoiceList">
+        <div class="label-header usr-row-space">
+            @Resources.ICS140.lblInvoiceList
+        </div>
+        <div id="divGridInvoiceList" style="width: 99%; margin-left: 4px; margin-top: 5px;">
+        </div>
+    </div>
+    <div id="divInvoiceDetail">
+        <div class="label-header usr-row-space">
+            @Resources.ICS140.lblInvoiceDetails
+        </div>
+        <div id="divGridInvoiceDetail" style="width: 99%; margin-left: 4px; margin-top: 5px;">
+        </div>
+    </div>
+    <div class="sub-table" id="divDebtTracingInput">
+        <form name="formDebtTracingInput" id="formDebtTracingInput" action="#">
+        <div class="table-sub-header">@Resources.ICS140.lblDebtTracingInput</div>
+        <div class="usr-clear-style">
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.InputCol1">
+                @Resources.ICS140.lblCurrentStatus
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InputCol2;">
+                @Html.CommonTextBox("txtCurrentStatus", null, new { style = "width:" + ViewBag.TextBoxWidth, @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.InputCol1">
+                @Resources.ICS140.lblResult
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InputCol2;">
+                @Html.DebtTracingResultCombo("cboInputResult", new { style = "width:" + ViewBag.ComboBoxWidth })
+                @Html.RequireFiled()
+            </div>
+            <div class="usr-label" style="width:@ViewBag.InputCol3">
+                @Resources.ICS140.lblNextCallDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InputCol4;">
+                @Html.CommonTextBox("txtNextCallDate", null, new { style = "width:" + ViewBag.DatePickerWidth })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.InputCol1">
+                @Resources.ICS140.lblEstimateDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InputCol2;">
+                @Html.CommonTextBox("txtInputEstimateDate", null, new { style = "width:" + ViewBag.DatePickerWidth })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.InputCol3">
+                @Resources.ICS140.lblAmount
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InputCol4;">
+                @*@Html.NumericTextBox("txtInputAmount", null, new { style = "width:" + @ViewBag.TextBoxWidth }) comment by jirawat jannet on 2016-10-31 *@
+                @*Add by jirawat jannet on 2016-10-31*@
+                @Html.NumericTextBoxWithMultipleCurrency("txtInputAmount", null, CurrencyUtil.C_CURRENCY_LOCAL, new { style="width: 150px;" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.InputCol1">
+                @Resources.ICS140.lblPaymentMethod
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InputCol2;">
+                @Html.DebtTracingPaymentMethodComboBox("cboInputPaymentMethod", new { style = "width:" + ViewBag.ComboBoxWidth })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.InputCol3">
+                @Resources.ICS140.lblAmount
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InputCol4;">
+                @*Add by jirawat jannet on 2016-11-08*@
+                @Html.NumericTextBoxWithMultipleCurrency("txtInputAmountUsd", null, CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width: 150px;" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.InputCol1">
+                @Resources.ICS140.lblPostponeReason
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InputColMerge2;">
+                @Html.DebtTracingPostponeReasonCombo("cboInputPostponeReason", new { style = "width:" + ViewBag.ComboBoxLongWidth })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.InputCol1">
+                @Resources.ICS140.lblRemark
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InputColMerge2;">
+                @Html.CommonTextArea("txtRemark", null, new { style = "height:50px;overflow:auto;width:" + ViewBag.TextBoxLongWidth, maxlength = 250 })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+        </div>
+        <div class="usr-row" style="margin-top: 5px">
+            <div class="usr-object" style="float: right; margin-right: 4px;">
+                @Html.CommonButton("btnSave", "Save", new { type = "button" })
+                @Html.CommonButton("btnCancel", "Cancel", new { type = "button" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+        </form>
+    </div>
+    <div class="usr-clear-style" style="margin-top: 5px">
+    </div>
+    <div class="sub-table" id="divHistory">
+        <div class="label-header usr-row-space">
+            @Resources.ICS140.lblHistory
+        </div>
+        <div id="divGridHistory" style="width: 99%; margin-left: 4px; margin-top: 5px;">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,177 @@
+﻿<!--
+//*********************************
+// Create by: Nattapong N.
+// Create date: 15/Jun/2010
+// Update date: 20/Jun/2010
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Quotation.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.Label1Width = "240px";
+    ViewBag.Label2Width = "269px";
+    ViewBag.ObjectWidth = "210px";
+    ViewBag.ObjectTextWidth = "200px";
+    ViewBag.ObjectComboWidth = "205px";
+    ViewBag.ObjectMergeWidth = "684px";
+}
+<script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+<script src="../../Content/js/dhtmlxgrid/dhtmlxgrid.js" type="text/javascript"></script>
+<script src="../../Content/js/dhtmlxgrid/dhtmlxgridcell.js" type="text/javascript"></script>
+<script src="../../Content/js/dhtmlxgrid/dhtmlxcommon.js" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")" type="text/javascript"></script>
+<script src="../../Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js"
+    type="text/javascript"></script>
+<script src="../../Content/js/dhtmlxgrid/dhtmlxcalendar.js" type="text/javascript"></script>
+<script src="../../Scripts/Base/GridControl.js" type="text/javascript"></script>
+<script src="../../Scripts/Quotation/Dialog.js" type="text/javascript"></script>
+<script src="../../Scripts/Quotation/QUS040.js" type="text/javascript"></script>
+<div style="display: none">
+    @Html.Hidden("btnClose", (string)@Resources.QUS040.lblbtnClose)
+</div>
+<div id="SearchCriteriaSection">
+    <div class="main-table">
+        <div class="table-header">
+            @Resources.QUS040.lblSearchCriteria
+        </div>
+        <form name="searchQuotationForm" id="searchQuotationForm">
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS040.lblQuotationTargetCode
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                    @Html.CommonTextBox("QuotationTargetCode", null, new { @maxlength = CommonValue.C_MAXLENGTH_QUOTATION_TARGE_CODE, style = "width:" + @ViewBag.ObjectTextWidth + ";" })
+                </div>
+                <div class="usr-label" style="width:@ViewBag.Label2Width;">
+                    @Resources.QUS040.lblProductType
+                </div>
+                <div class="usr-object">
+                    @Html.ProductTypeComboBox("ProductTypeCode", new { style = "width:" + @ViewBag.ObjectComboWidth + ";" }, "ALL")
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS040.lblQuotationOffice
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                    @Html.QuotationOfficeAuthorityCbo("QuotationOfficeCode", new { style = "width:" + @ViewBag.ObjectComboWidth + ";" }, true, "ALL")
+                </div>
+                <div class="usr-label" style="width:@ViewBag.Label2Width;">
+                    @Resources.QUS040.lblOperationOffice
+                </div>
+                <div class="usr-object">
+                    @Html.OperationOfficeAuthorityCbo("OperationOfficeCode", new { style = "width:" + @ViewBag.ObjectComboWidth + ";" }, true, "ALL")
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS040.lblContractTargetPurchaserCode
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("ContractTargetCode", null, new { @maxlength = CommonValue.C_MAXLENGTH_CUSTOMER_CODE, style = "width:" + @ViewBag.ObjectMergeWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS040.lblContractTargetPurchaserName
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("ContractTargetName", null, new { @maxlength = "200", style = "width:" + @ViewBag.ObjectMergeWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS040.lblContractTargetPurchaserAddr
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("ContractTargetAddr", null, new { @maxlength = "255", style = "width:" + @ViewBag.ObjectMergeWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS040.lblSiteCode
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("SiteCode", null, new { @maxlength = CommonValue.C_MAXLENGTH_SITE_CODE, style = "width:" + @ViewBag.ObjectTextWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS040.lblSiteName
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("SiteName", null, new { @maxlength = "200", style = "width:" + @ViewBag.ObjectMergeWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS040.lblSiteAddr
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("SiteAddr", null, new { @maxlength = "255", style = "width:" + @ViewBag.ObjectMergeWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS040.lblQuotationStaffCode
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                    @Html.CommonTextBox("StaffCode", null, new { @maxlength = "10", style = "width:" + @ViewBag.ObjectTextWidth + ";" })
+                </div>
+                <div class="usr-label" style="width:@ViewBag.Label2Width;">
+                    @Resources.QUS040.lblQuotationStaffName
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("StaffName", null, new { @maxlength = "100", style = "width:" + @ViewBag.ObjectTextWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS040.lblRegistrationDate
+                </div>
+                <div class="usr-object">
+                    <div class="object-unit">
+                        @Html.CommonTextBox("QuotationDateFrom", null, new { style = "width:100px;" })
+                    </div>
+                </div>
+                <div class="usr-label" style="padding-left: 5px">
+                    ~
+                </div>
+                <div class="usr-object">
+                    <div class="object-unit">
+                        @Html.CommonTextBox("QuotationDateTo", null, new { style = "width:100px;" })
+                    </div>
+                    <div style="float:left;">
+                        @Html.LabelDateFormat("QuotationDate")
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="usr-row usr-row-space-2x">
+            <div class="usr-object" style="float: right; margin-right: 14px;">
+                @Html.CommonButton("btnSearch", Resources.QUS040.lblbtnSearch, new { type = "button", style = "width:100px;" })
+                @Html.CommonButton("btnClear", Resources.QUS040.lblbtnClear, new { type = "button", style = "width:100px;" })
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</div>
+<div id="ResultSection">
+    <div class="main-table">
+        <div class="table-header">
+            @Resources.QUS040.lblSearchResultList
+        </div>
+        <div class="usr-row">
+            <div id="ResultListSection" style="width: 99%; margin-left: 4px;">
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</div>

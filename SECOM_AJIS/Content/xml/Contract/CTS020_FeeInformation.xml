@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column id="Name" width="*" type="ro" align="right"></column>
+    <column id="Normal" width="156" type="link" align="right">headerNormal</column>
+    <column id="Order" width="170" type="link" align="right">headerOrder</column>
+    <column id="Approve" width="156" type="link" align="right">headerBillingTiming</column>
+    <column id="Partial" width="156" type="link" align="right">#cspan</column>
+    <column id="Acceptance" width="165" type="link" align="right">#cspan</column>
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,headerApprove,headerPartial,headerAcceptance</param>
+      </call>
+    </afterInit>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

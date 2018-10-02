@@ -1,0 +1,35 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+<div id="divSpecifyQuotation" class="main-table" style="display:none;">
+    <div class="table-header">
+        @Resources.CTS020.lblSpecifyQuotation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblQuotationCode</div>
+        <div class="usr-object" style="width:200px;margin-right:5px;">
+            @Html.CommonTextBox("QuotationTargetCode", null, new { maxlength = CommonValue.C_MAXLENGTH_QUOTATION_TARGE_CODE, style = "width:142px;" })
+            @Html.CommonTextBox("Alphabet", null, new { maxlength = "2", style = "width:30px;" })
+            @Html.RequireFiled()
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnRetrieveQuotationTarget", @Resources.CTS020.btnRetrieveQuotationTarget, new { style = "width:100px;" })
+            @Html.CommonButton("btnSearchQuotationTarget", @Resources.CTS020.btnSearchQuotationTarget, new { style = "width:180px;" })
+            @if (ViewBag.HideChangeQuotationButton != true)
+            {
+                @Html.CommonButton("btnChangeQuotationTarget", @Resources.CTS020.btnChangeQuotationTarget, new { style = "width:180px;" })
+            }
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblProductName</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("ProductName", null, new { style = "width:181px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div style="float:right">
+            @Html.CommonButton("btnViewQuotationDetail", @Resources.CTS020.btnViewQuotationDetail, new { style = "width:180px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

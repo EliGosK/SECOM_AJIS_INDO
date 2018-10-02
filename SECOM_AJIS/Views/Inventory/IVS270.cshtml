@@ -1,0 +1,158 @@
+﻿<!--
+//*********************************
+// Create by: Non A.
+// Create date: 15/Mar/2012
+// Update date: 15/Mar/2012
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.Col1Width = "180px";
+    ViewBag.Col2Width = "180px";
+    ViewBag.Col2WidthCbo = "184px";
+    ViewBag.Col2WidthCboHalf = "389px";
+    ViewBag.Col2WidthFull = "549px";
+    ViewBag.Col3Width = "180px";
+    ViewBag.Col4Width = "180px";
+    ViewBag.Col4WidthCbo = "184px";
+    ViewBag.WidthButton1 = "80px";
+    ViewBag.WidthButton2 = "80px";
+    ViewBag.DatePickerWidth = "95px";
+
+    ViewBag.SLWidthCol1 = "250px;";
+    ViewBag.SLWidthCol2 = "200px;";
+    ViewBag.SLWidthCol3 = "150px;";
+    ViewBag.SLWidthCol4 = "150px;";
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Inventory/IVS270.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    
+    <script type="text/javascript">
+    var IVS270_Constant = {
+        InvHeadOfficeCode: "@ViewBag.InvHeadOfficeCode",
+        InvHeadOfficeName: "@ViewBag.InvHeadOfficeName",
+        LocationCode: "@ViewBag.LocationCode",
+        LocationName: "@ViewBag.LocationName",
+        LabelTotalProjectStockOut: "@ViewBag.lblTotalProjectStockOut"
+    };
+    </script>
+    
+}
+<div id="divProject" class="main-table" style="margin-top: 5px;">
+    <div class="table-header">@Resources.IVS270.lblSpecifyProject</div>
+    <form id="frmProject" action="#">
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS270.lblProjectCode</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtProjectCode", null, new { style = "width:" + ViewBag.Col2Width, maxlength = 8 })
+            @Html.CommonButton("btnProjectRetrieve", (string)@Resources.IVS270.btnProjectRetrieve, new { style = "width:" + @ViewBag.WidthButton1 })
+            @Html.CommonButton("btnProjectCancel", (string)@Resources.IVS270.btnProjectCancel, new { style = "width:" + @ViewBag.WidthButton2 })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS270.lblProjectName</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtProjectName", null, new { style = "width:" + ViewBag.Col2Width })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.Col3Width;">@Resources.IVS270.lblProjectManager</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtProjectManager", null, new { style = "width:" + ViewBag.Col4Width })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS270.lblProjectAddress</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtProjectAddress", null, new { style = "width:" + ViewBag.Col2WidthFull })
+        </div>
+    </div>
+    </form>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="divSearchInstrument" class="main-table" style="margin-top: 5px;">
+    <div class="table-header">@Resources.IVS270.lblSearchInstrument</div>
+    <form id="frmSearchInstrument" action="#">
+    <input type="hidden" name="OfficeCode" value="@ViewBag.InvHeadOfficeCode" />
+    <input type="hidden" name="LocationCode" value="@ViewBag.LocationCode" />
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS270.lblOffice</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtOffice", (string)ViewBag.InvHeadOfficeName, new { style = "width:" + ViewBag.Col2Width, name = "OfficeName" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.Col3Width;">@Resources.IVS270.lblLocation</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtLocation", (string)ViewBag.LocationName, new { style = "width:" + ViewBag.Col4Width, name = "LocationName" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS270.lblInstrumentCode</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtInstrumentCode", null, new { style = "width:" + ViewBag.Col2Width, name = "Instrumentcode", maxlength = 25 })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.Col3Width;">@Resources.IVS270.lblInstrumentName</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtInstrumentName", null, new { style = "width:" + ViewBag.Col4Width, name = "InstrumentName", maxlength = 100 })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS270.lblInstrumentArea</div>
+        <div class="usr-object">
+            @Html.IVS270InstrumentAreaCbo("cboInstrumentArea", new { style = "width:" + ViewBag.Col2WidthCboHalf, name = "AreaCode" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS270.lblShelfNo</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtShelfNoFrom", null, new { style = "width:" + ViewBag.Col2Width, name = "StartShelfNo", maxlength = 50 })
+            <span>~ </span>
+            @Html.CommonTextBox("txtShelfNoTo", null, new { style = "width:" + ViewBag.Col2Width, name = "EndShelfNo", maxlength = 50 })
+        </div>
+    </div>
+    <div class="usr-row" style="margin-top: 5px">
+        <div style="text-align: right; float: right;  margin-right: 4px;">
+            @Html.CommonButton("btnSearch", (string)@Resources.IVS270.btnSearch, new { style = "width:" + @ViewBag.WidthButton1 })
+            @Html.CommonButton("btnClear", (string)@Resources.IVS270.btnClear, new { style = "width:" + @ViewBag.WidthButton2 })
+        </div>
+    </div>
+    </form>
+    <div class="usr-clear-style">&nbsp;</div>
+    <div id="divSearchInstrumentResultGrid" style="width: 99%; margin-left: 4px; margin-top:5px;">
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="divStockOutDetail" class="main-table" style="margin-top: 5px;">
+    <div class="table-header">@Resources.IVS270.lblProjectStockOutDetail</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS270.lblMemo</div>
+        <div class="usr-object" style="width:@ViewBag.Col2WidthFull;">
+            @Html.CommonTextArea("txtMemo", null, new { style = "height: 50px; width:" + ViewBag.Col2WidthFull, maxlength = 200 })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+    <div id="divStockOutInstGrid" style="width: 99%; margin-left: 4px; margin-top:5px;">
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div class="main-table" id="divShowSlip" style="visibility: hidden">
+    <div class="table-header">
+        @Resources.IVS270.lblHeaderShowSlipNo
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SLWidthCol1">@Resources.IVS270.lblSlipNo</div>
+        <div class="usr-object" style="width:@ViewBag.SLWidthCol2">@Html.CommonTextBox("txtShowSlipNo", null, new { style = "width:95%" })</div>
+        @Html.CommonButton("btnDownloadSlip", @Resources.IVS270.lblBtnDownloadSlip, new { style = "width:" + ViewBag.SLWidthCol3 }) 
+        @Html.CommonButton("btnNewRegister", @Resources.IVS270.lblBtnNewRegister, new { style = "width:" + ViewBag.SLWidthCol4 }) 
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+

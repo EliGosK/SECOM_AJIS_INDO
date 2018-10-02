@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="InstrumentCode"  width="150" type="ro" align="left" sort="str_custom">HgridInstrumentCode</column>
+    <column id="InstrumentName"  width="*" type="ro" align="left" sort="str_custom">HgridInstrumentName</column>
+    <!--<column id="InstrumentQty"  width="120" type="edn" align="right" format="0,000.00">HgridQuantity</column>-->
+    <column id="InstrumentQty"  width="100" type="edn" align="right" format="0,000" sort="int">HgridAllStockOutQty</column>
+    <column id="SumAssignQty"  width="100" type="edn" align="right" format="0,000" sort="int">HgridAssignedBranchQty</column>
+    <column id="SumNotAssign"  width="100"  type="edn" align="right" format="0,000" sort="int">HgridNotAssignedBranchQty</column>
+    <column id="AssignBranchQty"  width="100" type="edn" align="right" format="0,000" sort="int">HgridAssignForCurrentBranchQty</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

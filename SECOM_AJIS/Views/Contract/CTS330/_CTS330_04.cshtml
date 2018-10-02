@@ -1,0 +1,133 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+
+@{
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "220px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+    ViewBag.DivColMergeWidth = "722px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblIncidentTitle</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("IncidentTitle", null, new { style = "width: " + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblIncidentType</div>
+        <div class="usr-object" style="margin-left:0px; width: 245px;">
+            @Html.CommonTextBox("IncidentType", null, new { style = "width: 235px;", @readonly = true })
+        </div>
+
+        <div class="usr-label" style="width:140px;">@Resources.CTS330.lblReasonType</div>
+        <div class="usr-object" style="margin-left:0px; width: 340px;">
+            @Html.CommonTextBox("ReasonType", null, new { style = "width: 330px;", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object" style="margin-left:0px;">
+            @Html.CommonCheckButton("Confidential", @Resources.CTS330.rdoConfidential, null, null, new { @disabled = true })
+        </div>
+
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object" style="margin-left:0px;">
+            @Html.CommonCheckButton("Importance", @Resources.CTS330.rdoImportance, null, null, new { @disabled = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblContractDetail</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("ContractDetail", null, new { style = "width: " + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblReceivedDetails</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectColMergeWidth;">
+            @Html.TextArea("ReceivedDetails", null, new { style = "width: " + @ViewBag.ObjectColMergeWidth + ";", @readonly = true, @rows = 6 })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS330.lblRespondingProgress
+            <br />
+            @Html.CommonButton("btnHistory", @Resources.CTS330.btnHistory, new { @type = "button" })
+        </div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectColMergeWidth;">
+            <div id="divRespondingProgress" style=" width: @ViewBag.ObjectColMergeWidth; height:200px; overflow:scroll; border: #707070 1px solid; color: #000000; word-wrap: break-word;"></div>
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblInteractionType</div>
+        <div class="usr-object" style="margin-left:0px; width:235px;" id="divInteractionCBB">
+            @Html.BlankComboBox("InteractionType", new { style = "width:235px;" })
+        </div>
+        <div class="usr-label">@Html.RequireFiled()</div>
+
+        <div class="usr-label" style="width:140px;">@Resources.CTS330.lblStatusAfterUpdate</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.LabelCol1Width;">
+            @Html.IncidentStatusComboBox("IncidentStatusAfterUpdate", new { style = "width:330px;", @disabled = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblCurrentRespondingDetail</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectColMergeWidth;">
+            @Html.TextArea("CurrentRespondingDetail", null, new { style = "width: " + @ViewBag.ObjectColMergeWidth + ";", @rows = 6, @maxlength = "1000" })
+        </div>
+    </div>
+
+    <div class="usr-row">
+         <div class="usr-label">&nbsp;</div>
+    </div>
+
+    <div class="usr-row" id="divDueDate">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblDueDateDeadLine&nbsp;@Html.RequireFiled()</div>
+        <div class="usr-object" style="margin-left:0px; width: 100px;">
+            @Html.CommonRadioButton("DueDate_Type", @Resources.CTS330.lblDueDate_Date, "1", null, "DueDateDeadLineType")
+        </div>
+        <div class="usr-object" style="margin-left:0px; width: 250px;">
+            <div class="usr-object" style="width:160px">@Html.CommonTextBox("DueDate_Date", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })</div>
+            <div class="usr-object">@Html.LabelDateFormat("DueDate_Date")</div>
+        </div>
+        
+        
+        <div class="usr-label" style="width:50px;">@Resources.CTS330.lblDueDate_Time</div>
+        <div class="usr-object" style="margin-left:0px; width:  @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("DueDate_Time", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+    </div>
+
+    <div class="usr-row" id="divDeadLine">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            <div style="font-size: 0.8em; color: rgb(119, 119, 119);" id="DeadlineRemark">
+                @Resources.CTS330.lblDeadline_Remark
+            </div>
+        </div>
+        <div class="usr-object" style="margin-left:0px; width: 100px;">
+            @Html.CommonRadioButton("Deadline_Type", @Resources.CTS330.lblDeadline_Date, "2", null, "DueDateDeadLineType")
+        </div>
+        <div class="usr-object" style="margin-left:0px; width:250px;">
+            <div class="usr-object" style="width:160px">@Html.CommonTextBox("Deadline_Date", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })</div>
+            <div class="usr-object">@Html.LabelDateFormat("Deadline_Date")</div>
+        </div>
+        
+        <div class="usr-label" style="width:50px;">@Resources.CTS330.lblDeadline_Until</div>
+        <div class="usr-object" style="margin-left:0px; width:" + @ViewBag.ObjectCol1Width + ";">
+            @Html.DeadLineTimeTypeComboBox("Deadline_Until", new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+    </div>

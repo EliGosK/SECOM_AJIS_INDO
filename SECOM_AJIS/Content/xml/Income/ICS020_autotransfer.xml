@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="GridPaymentDateDisplay" width="150" type="ro" align="left" sort="na">gridHeaderAUAutoTransferDate</column>
+    <column id="RefInvoiceNo" width="150" type="ro" align="left" sort="na">gridHeaderAUInvoiceNo</column>
+    <column id="PaymentAmount" width="120" type="edn" align="right" format="0,000.00" sort="na">gridHeaderAUAmount</column>
+    <column id="WHTAmount" width="100" type="edn" align="right" format="0,000.00" sort="na">gridHeaderAUWHTAmount</column>
+    <column id="GridAutoTransferResultDisplay" width="70" type="ro" align="left" sort="na">gridHeaderAUAutoTransferResult</column>
+    <column id="FailureReason" width="*" type="ro" align="left" sort="na">gridHeaderAUReasonforFailure</column>
+    <column id="ImportErrorReason" width="200" type="ro" align="left" sort="na">gridHeaderAUImportErrorReason</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+
+
+
+
+
+
+
+
+

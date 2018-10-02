@@ -1,0 +1,84 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<div style="display:none;">
+    @Html.Hidden("MaintenanceTypeCodeValue", (string)@ViewBag.MaintenanceTypeCode);
+    @Html.Hidden("MaintenanceCycleValue", (int?)@ViewBag.MaintenanceCycle)
+    @Html.Hidden("MaintenanceContractStartMonthValue", (int?)@ViewBag.MaintenanceContractStartMonth)
+    @Html.Hidden("MaintenanceContractStartYearValue", (int?)@ViewBag.MaintenanceContractStartYear)
+    @Html.Hidden("MaintenanceFeeTypeCodeValue", (string)@ViewBag.MaintenanceFeeTypeCode)
+</div>
+<div id="divMaintenanceInformation" class="main-table">
+    <div class="usr-row">
+        <div class="table-header">
+            @Resources.CTS140.lblMaintenanceInformation
+        </div>              
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblMaintenanceType
+            </div>
+            <div class="usr-object" style="width: 143px">
+                @Html.MaintenanceTypeComboBox("MaintenanceTypeCode", new { style = "width:140px;" })                         
+            </div>
+            <div class="usr-object">@Html.RequireFiled()</div>
+            <div class="usr-label" style="width: 245px">
+                @Resources.CTS140.lblMaintenanceCycle
+            </div>
+            <div class="usr-object" style="width: 95px">
+                @Html.MaintenanceCycleComboBox("MaintenanceCycle", new { style = "width:95px;" })        
+            </div>
+            <div class="usr-object">@Html.RequireFiled()</div>
+        </div>         
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblMaintenanceContractStartMonth
+            </div>
+            <div class="usr-object" style="width: 105px">
+                @Html.MonthComboBox("Month", new { style = "width:100px;" })                         
+            </div>
+            <div class="usr-object" style="width: 95px">
+                @Html.YearComboBox("Year", new { style = "width:95px;" })                         
+            </div>
+            <div class="usr-object">@Html.RequireFiled()</div>
+            <div class="usr-label" style="width: 188px">
+                @Resources.CTS140.lblMaintenanceFeeType
+            </div>
+            <div class="usr-object">
+                @Html.MaintenanceFeeTypeComboBox("MaintenanceFeeType", new { style = "width:200px;" })        
+            </div>
+        </div>
+    </div>
+    <div class="usr-row" style="height:15px"></div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 453px">
+            @Resources.CTS140.lblMaintenanceTargetContractCode
+        </div>
+        <div class="usr-object" style="width: 168px">
+            @Html.CommonTextBox("MaintenanceTargetContractCode", "", new { style = "width:160px;", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+        </div>        
+        <div class="usr-object" style="width: 84px">
+            @Html.CommonButton("btnAdd", @Resources.CTS053.lblAdd, new { style = "width:80px;" })
+        </div>
+        <div class="usr-object" style="width: 85px">
+            @Html.CommonButton("btnClear", @Resources.CTS053.lblClear, new { style = "width:80px;" })
+        </div>
+    </div>
+    <div class="usr-row" style="height:15px"></div>
+    <div id="gridMaintenance" style="width: 50%; margin-left: 225px;"></div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>   
+
+<div style="display:none">
+    @Resources.CTS140.lblMaintenanceContractStartYear
+</div>

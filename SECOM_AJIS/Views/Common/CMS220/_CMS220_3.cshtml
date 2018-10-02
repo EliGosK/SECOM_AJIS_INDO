@@ -1,0 +1,209 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+
+<!-------- Real Customer End User (RC) --------->
+
+<div class="main-table">
+<div class="table-header">@Resources.CMS220.lblRealCustomerEndUser</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblCustomerCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCCustomerCode", (string)@ViewBag.txtRCCustomerCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblCustomerStatus
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCCustomerStatus", (string)@ViewBag.txtRCCustomerStatus, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lb2Width;">
+            @Resources.CMS220.lblCustomerType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCCustomerType", (string)@ViewBag.txtRCCustomerType, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblName_English
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCName_English", (string)@ViewBag.txtRCName_English, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblAddress_English
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCAddress_English", (string)@ViewBag.txtRCAddress_English, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <!---===============================================================================--->
+    <div class="usr-row" style="height:20px">&nbsp;</div>
+    <!---===============================================================================--->
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblName_Local
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCName_Local", (string)@ViewBag.txtRCName_Local, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblAddress_Local
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCAddress_Local", (string)@ViewBag.txtRCAddress_Local, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblRepresentativePersonName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCRepresentativePersonName", (string)@ViewBag.txtRCRepresentativePersonName, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lb2Width;">
+            @Resources.CMS220.lblContactPersonName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCContactPersonName", (string)@ViewBag.txtRCContactPersonName, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblNationality
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCNationality", (string)@ViewBag.txtRCNationality, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lb2Width;">
+            @Resources.CMS220.lblTelephoneNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCTelephoneNo", (string)@ViewBag.txtRCTelephoneNo, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblFinancialMarketType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCFinancialMarketType", (string)@ViewBag.txtRCFinancialMarketType, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lb2Width;">
+            @Resources.CMS220.lblBusinessType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCBusinessType", (string)@ViewBag.txtRCBusinessType, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblIDTax
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCIDTax", (string)@ViewBag.txtRCIDTax, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lb2Width;">
+            @Resources.CMS220.lblSECOMContactPerson
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCSECOMContactPerson", (string)@ViewBag.txtRCSECOMContactPerson, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblURL
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCURL", (string)@ViewBag.txtRCURL, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <!---===============================================================================--->
+    <div class="usr-row" style="height:10px">&nbsp;</div>
+    <!---===============================================================================--->
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            &nbsp;
+        </div>
+        <div class="usr-object" style="width:600px;">
+            <!----============================== Grid Group ==============================---->
+            <div id="mygrid_RCGroup" style="width: 99% ;  margin-left: 4px;">
+        </div>
+        </div>
+    </div>
+
+
+    @*
+
+    <!---===============================================================================--->
+    <div class="usr-row" style="height:10px">&nbsp;</div>
+    <!---===============================================================================--->
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblBranchName_English
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCBranchName_English", (string)@ViewBag.txtRCBranchName_English, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblBranchAddress_English
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCBranchAddress_English", (string)@ViewBag.txtRCBranchAddress_English, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <!---===============================================================================--->
+    <div class="usr-row" style="height:20px">&nbsp;</div>
+    <!---===============================================================================--->
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblBranchName_Local
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCBranchName_Local", (string)@ViewBag.txtRCBranchName_Local, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS220.lblBranchAddress_Local
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRCBranchAddress_Local", (string)@ViewBag.txtRCBranchAddress_Local, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    *@
+
+<div class="usr-clear-style">&nbsp;</div>
+</div>

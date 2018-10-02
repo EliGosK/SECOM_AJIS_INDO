@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="30" type="ro" align="left" sort="na" ></column>
+    <column id="BillingOfficeCode" width="100" type="ro" align="left" sort="na" >lblHeaderBillingOfficeCode</column>
+    <column id="BillingOfficeName" width="*" type="ro" align="left" sort="na" >lblHeaderBillingOfficeName</column>
+    <column id="Currency" width="100" type="ro" align="left" sort="na" >lbCurrency</column>
+    <column id="AllUnpaidTargetAmount" width="200" type="link" align="left" sort="na" >lblHeaderAllUnpaid</column>
+    <column id="AllUnpaidTargetNoOfBillingDetail" width="200" type="link" align="left" sort="na" >#cspan</column>
+    <column id="UnpaidOverTargetAmount" width="200" type="link" align="left" sort="na" >lblHeaderUnpaidOver2Month</column>
+    <column id="UnpaidOverTargetNoOfBillingDetail" width="200" type="link" align="left" sort="na" >#cspan</column>
+
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,#rspan,lblHeaderAllUnpaidTargetAmount,lblHeaderAllUnpaidTargetNoOfBillingDetail,lblHeaderUnpaidOverTargetAmount,lblHeaderUnpaidOverTargetNoOfBillingDetail</param>
+      </call>
+    </afterInit>
+  </head>
+</rows>

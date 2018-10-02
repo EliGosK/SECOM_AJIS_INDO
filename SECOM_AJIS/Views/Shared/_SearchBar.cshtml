@@ -1,0 +1,61 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+<script type="text/javascript">
+    SEARCH_CONDITION = {
+        ContractCode: "@ViewBag.SearchContractCode",
+        ProjectCode: "@ViewBag.SearchProjectCode"
+    };
+</script>
+<div>
+    <div id="divSearchBar" style="display: none; padding-top: 15px;">
+        <div class="search-bar">
+            <div class="search-bar-header"><img src="../../Content/images/search_menu.png" /></div>
+            <div class="search-bar-body">
+                <div class="label">
+                    <div class="icon">
+                        <img src="../../Content/images/icon/search_menu_list.png" />
+                    </div>
+                    <div class="text">
+                        @Resources.CMS020.lblSBContractCode
+                    </div>                </div>
+                <div class="control">
+                    @Html.CommonTextBox("ContractCode_Searbar", null, new { style = "width:150px;", @maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+                </div>
+                <div class="label">
+                    <div class="icon">
+                        <img src="../../Content/images/icon/search_menu_list.png" />
+                    </div>
+                    <div class="text">
+                        @Resources.CMS020.lblSBUserCode
+                    </div>                </div>
+                <div class="control">
+                    @Html.CommonTextBox("UserCode_Searbar", null, new { style = "width:150px;", @maxlength = 5 })
+                </div>
+                <div class="label">
+                    <div class="icon">
+                        <img src="../../Content/images/icon/search_menu_list.png" />
+                    </div>
+                    <div class="text">
+                        @Resources.CMS020.lblSBInvoiceNo
+                    </div>                </div>
+                <div class="control">
+                    @Html.CommonTextBox("InvoiceNo_Searbar", null, new { style = "width:150px;", @maxlength = 12 })
+                </div>
+                <div class="label">
+                    <div class="icon">
+                        <img src="../../Content/images/icon/search_menu_list.png" />
+                    </div>
+                    <div class="text">
+                        @Resources.CMS020.lblSBProjectCode
+                    </div>                </div>
+                <div class="control">
+                    @Html.CommonTextBox("ProjectCode_Searbar", null, new { style = "width:150px;", @maxlength = 8 })
+                </div>
+                <div class="control" style="margin:10px 10px 5px 0;">
+                    @Html.CommonButton("btnRetrieve_Searchbar", Resources.CMS020.lblSBbtnRetrieve, new { style = "width:100px;margin-bottom:5px;", type="button" })<br />
+                    @Html.CommonButton("btnSearch_Searchbar", Resources.CMS020.lblSBbtnSearch, new { style = "width:100px;", type = "button" })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

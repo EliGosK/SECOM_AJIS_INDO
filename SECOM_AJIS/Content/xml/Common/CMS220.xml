@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>  <!--headerNo-->
+
+    <column id="GroupCode" width="145" type="ro" align="left" sort="str_custom">headerGroupCode</column>
+    <column id="GroupNameEN" width="200" type="ro" align="left" sort="str_custom">headerGroupName_English</column>
+    <column id="GroupNameLC" width="*" type="ro" align="left" sort="str_custom">headerGroupName_Local</column>
+  
+    <column id="Object" width="0" type="ro" align="center"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

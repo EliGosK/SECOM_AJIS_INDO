@@ -1,0 +1,103 @@
+﻿@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <meta charset="utf-8" />
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.13.custom.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/json.js")" ></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/superfish/hoverIntent.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/superfish/superfish.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Base/MessageDialog.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Base/control_events.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Base/object/master_event.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Base/object/ajax_method.js")"></script>
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Base/object/command_event.js")"></script>
+        
+        <script type="text/javascript">
+            ajax_method.CallScreenControllerWithAuthority = function (url, obj, new_window, subobject) {
+                var key = ajax_method.GetKeyURL(null);
+                var module = "";
+                var screen = "";
+                var info = ajax_method.GetScreenInformation(null);
+                if (info.length == 2) {
+                    module = info[0];
+                    screen = info[1];
+                }
+
+                if (typeof (obj) == "object") {
+                    if (obj == null)
+                        obj = new Object();
+
+                    obj.CallerKey = key;
+                    obj.CallerModule = module;
+                    obj.CallerScreenID = screen;
+                    obj.SubObjectID = subobject;
+                }
+                else {
+                    obj = {
+                        CallerKey: key,
+                        CallerModule: module,
+                        CallerScreenID: screen,
+                        SubObjectID: subobject
+                    };
+                }
+
+                var link = url + "_Authority";
+                ajax_method.CallScreenController(link, obj, function (result) {
+                    if (result != undefined) {
+                        /* --- Merge --- */
+                        /* master_event.LoadScreen(result, false, new_window); */
+                        master_event.LoadScreen(result, null, new_window);
+                        /* ------------- */
+                    }
+                    else {
+                        funcRedirect();
+                    }
+                });
+            };
+
+
+            var funcRedirect = function() {
+                ajax_method.CallScreenController("/Common/CMS000_RedirectScreen", "",
+                    function (result) {
+                        if (typeof (result) == "string") {
+                            window.location.href = ajax_method.GenerateURL(result);
+                        }
+                        else {
+                            var link = "/" + result.Controller + "/" + result.ScreenID;
+                            var obj = "";
+                            if (result.Parameters != undefined) {
+                                obj = new Object();
+                                for (var i = 0; i < result.Parameters.length; i++) {
+                                    obj[result.Parameters[i]] = result.Values[i];
+                                }
+                            }
+                            ajax_method.CallScreenControllerWithAuthority(link, obj, false);
+                        }
+                    }
+                );
+            };
+            $(document).ready(function () {
+                funcRedirect();
+            });
+        </script>
+
+        <link href="@Url.Content("~/Content/css/main_layout.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/themes/custom-theme/jquery-ui-1.8.14.custom.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/css/table_style.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/superfish/superfish.css")" rel="stylesheet" type="text/css" />
+
+        <title>Redirect</title>
+    </head>
+    <body>
+        <p>Redirect...</p>
+        @Html.Partial("_MessageDialog")
+    </body>
+</html>
+

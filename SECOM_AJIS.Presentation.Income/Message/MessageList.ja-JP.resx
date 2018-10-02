@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG7001" xml:space="preserve">
+    <value>入金金額は請求書金額と同額ではありません。</value>
+  </data>
+  <data name="MSG7002" xml:space="preserve">
+    <value>領収書番号 {0} は既に登録中の一覧に存在しているため、登録できません。</value>
+  </data>
+  <data name="MSG7003" xml:space="preserve">
+    <value>この{0}は存在しません。</value>
+  </data>
+  <data name="MSG7004" xml:space="preserve">
+    <value>領収書番号 {0} は入金後発行領収書のため、入金登録できません。</value>
+  </data>
+  <data name="MSG7005" xml:space="preserve">
+    <value>領収書番号 {0} は入金登録済みのため、入金登録できません。</value>
+  </data>
+  <data name="MSG7006" xml:space="preserve">
+    <value>入金促進情報を登録できません。再度登録処理を行ってください。</value>
+  </data>
+  <data name="MSG7007" xml:space="preserve">
+    <value>請求書 {0} は請求免除登録が可能な未収ではないため、請求免除登録はできません。</value>
+  </data>
+  <data name="MSG7008" xml:space="preserve">
+    <value>処理が完了しました。</value>
+  </data>
+  <data name="MSG7009" xml:space="preserve">
+    <value>請求書番号 {0} は、領収書発行済みです。</value>
+  </data>
+  <data name="MSG7010" xml:space="preserve">
+    <value>領収書を発行できません。再度発行してください。</value>
+  </data>
+  <data name="MSG7011" xml:space="preserve">
+    <value>ファイルが存在しません。</value>
+  </data>
+  <data name="MSG7012" xml:space="preserve">
+    <value>この自振ファイルは既にインポートされました。</value>
+  </data>
+  <data name="MSG7013" xml:space="preserve">
+    <value>請求書・金額が間違っています。</value>
+  </data>
+  <data name="MSG7014" xml:space="preserve">
+    <value>請求書が間違っています。</value>
+  </data>
+  <data name="MSG7015" xml:space="preserve">
+    <value>この請求書は、既に入金情報がインポートされました。</value>
+  </data>
+  <data name="MSG7016" xml:space="preserve">
+    <value>この請求書は入金済みです。</value>
+  </data>
+  <data name="MSG7017" xml:space="preserve">
+    <value>ファイル内容が間違っています。</value>
+  </data>
+  <data name="MSG7018" xml:space="preserve">
+    <value>ファイルのフォーマットが間違っています。</value>
+  </data>
+  <data name="MSG7019" xml:space="preserve">
+    <value>入金データファイル内の入金タイプに矛盾があります。</value>
+  </data>
+  <data name="MSG7020" xml:space="preserve">
+    <value>入金タイプが間違っています。</value>
+  </data>
+  <data name="MSG7021" xml:space="preserve">
+    <value>必須項目が未入力です。</value>
+  </data>
+  <data name="MSG7022" xml:space="preserve">
+    <value>入金データファイル内の入金日に矛盾があります。</value>
+  </data>
+  <data name="MSG7023" xml:space="preserve">
+    <value>入金登録できません。</value>
+  </data>
+  <data name="MSG7024" xml:space="preserve">
+    <value>入金登録されましたが、入金処理に失敗しました。</value>
+  </data>
+  <data name="MSG7025" xml:space="preserve">
+    <value>仮受情報が登録されました。入金処理は手動で行わなければなりません。</value>
+  </data>
+  <data name="MSG7026" xml:space="preserve">
+    <value>入金区分を更新できません。</value>
+  </data>
+  <data name="MSG7027" xml:space="preserve">
+    <value>自振不能な請求書番号 {0} は、振込請求書を作成できません。</value>
+  </data>
+  <data name="MSG7028" xml:space="preserve">
+    <value>領収書番号 {0} は事前発行の領収書ではありません。</value>
+  </data>
+  <data name="MSG7029" xml:space="preserve">
+    <value>この領収書は既に取消されています。</value>
+  </data>
+  <data name="MSG7030" xml:space="preserve">
+    <value>この領収書の取消は、合わせて入金処理の取り消しも必要です。本処理後、必ず行ってください。</value>
+  </data>
+  <data name="MSG7031" xml:space="preserve">
+    <value>領収書を取消できません。</value>
+  </data>
+  <data name="MSG7032" xml:space="preserve">
+    <value>Tax invoiceを取消できません。</value>
+  </data>
+  <data name="MSG7033" xml:space="preserve">
+    <value>仮受情報を削除できません。</value>
+  </data>
+  <data name="MSG7034" xml:space="preserve">
+    <value>検索条件の指定が正しくありません。「{0}（終了）」≧「{0}（開始）」で入力してください。</value>
+  </data>
+  <data name="MSG7035" xml:space="preserve">
+    <value>請求書が選択されていません。</value>
+  </data>
+  <data name="MSG7036" xml:space="preserve">
+    <value>「処理後残高」がマイナスになっているため、入金処理ができません。</value>
+  </data>
+  <data name="MSG7037" xml:space="preserve">
+    <value>「入金処理額（WHT込）」には、「未引当金額」を超える金額を登録できません。</value>
+  </data>
+  <data name="MSG7038" xml:space="preserve">
+    <value>処理後残高が「0」ではありません。処理はできますが間違いないか確認してください。</value>
+  </data>
+  <data name="MSG7039" xml:space="preserve">
+    <value>この登録は請求書に対して一部引当て処理となりますが間違いないか確認してください。</value>
+  </data>
+  <data name="MSG7040" xml:space="preserve">
+    <value>WHT税額が登録されていません。処理を進めますか？</value>
+  </data>
+  <data name="MSG7041" xml:space="preserve">
+    <value>この請求書に対して領収書が発行されています。入金処理を取消する前に、領収書を取消してください。</value>
+  </data>
+  <data name="MSG7042" xml:space="preserve">
+    <value>入金処理を取消できません。</value>
+  </data>
+  <data name="MSG7043" xml:space="preserve">
+    <value>新請求書を発行できません。</value>
+  </data>
+  <data name="MSG7044" xml:space="preserve">
+    <value>クレジットノート番号 {0} が見つかりません。</value>
+  </data>
+  <data name="MSG7045" xml:space="preserve">
+    <value>このTax Invoice番号は存在しません。誤りでないか確認し、誤りでない場合は「取得しない」にチェックの上、以降の登録を続けてください。</value>
+  </data>
+  <data name="MSG7046" xml:space="preserve">
+    <value>この請求コードは存在しません。</value>
+  </data>
+  <data name="MSG7047" xml:space="preserve">
+    <value>「クレジットノート金額（VAT込）」は「0」を超える金額でなければなりません。</value>
+  </data>
+  <data name="MSG7048" xml:space="preserve">
+    <value>「クレジットノート金額（VAT込）」には「Tax Invoice金額」を超える金額を登録できません。</value>
+  </data>
+  <data name="MSG7049" xml:space="preserve">
+    <value>「クレジットノート金額（VAT込）」には、未収金額（Tax Invoice金額－累計入金金額）を超える金額を登録できません。</value>
+  </data>
+  <data name="MSG7050" xml:space="preserve">
+    <value>「クレジットノートVAT金額」には「クレジットノート金額（VAT込）」以上の金額を登録できません。</value>
+  </data>
+  <data name="MSG7051" xml:space="preserve">
+    <value>クレジットノート日付は未来日付で登録できません。</value>
+  </data>
+  <data name="MSG7052" xml:space="preserve">
+    <value>「クレジットノートVAT金額」が計算したVAT金額とかけ離れています（差分±10バーツ以上）。処理を進めますか？</value>
+  </data>
+  <data name="MSG7053" xml:space="preserve">
+    <value>このTax Invoiceは複数明細がまとまっているため、取得できません。誤りでない場合は「取得しない」にチェックのうえ登録を継続してください。</value>
+  </data>
+  <data name="MSG7054" xml:space="preserve">
+    <value>「保証金返金金額（VAT込）」は「0」を超える金額でなければなりません。</value>
+  </data>
+  <data name="MSG7055" xml:space="preserve">
+    <value>「保証金返金金額（VAT込）」には「保証金現預り額」を超える金額を登録できません。</value>
+  </data>
+  <data name="MSG7056" xml:space="preserve">
+    <value>保証金現預り額、累計入金金額を超える返金額は登録できません。保証金データの誤りの場合はデータ修正後に登録してください。</value>
+  </data>
+  <data name="MSG7057" xml:space="preserve">
+    <value>「クレジットノートVAT金額」には「保証金返金金額（VAT込）」以上の金額を登録できません。</value>
+  </data>
+  <data name="MSG7058" xml:space="preserve">
+    <value>「保証金収納金額（VAT込）」は「0」を超える金額でなければなりません。</value>
+  </data>
+  <data name="MSG7059" xml:space="preserve">
+    <value>「収納VAT金額」には「保証金収納金額（VAT込）」以上の金額を登録できません。</value>
+  </data>
+  <data name="MSG7060" xml:space="preserve">
+    <value>このクレジットノートは既に処理されているため、取消できません。</value>
+  </data>
+  <data name="MSG7061" xml:space="preserve">
+    <value>クレジットノートを取消しますが、よろしいですか？</value>
+  </data>
+  <data name="MSG7062" xml:space="preserve">
+    <value>取消処理が完了しました。</value>
+  </data>
+  <data name="MSG7063" xml:space="preserve">
+    <value>クレジットノート取消中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7064" xml:space="preserve">
+    <value>クレジットノート情報保存中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7065" xml:space="preserve">
+    <value>収納情報登録中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7066" xml:space="preserve">
+    <value>入金情報登録中にエラーが発生しました。全てのトランザクションがロールバックされます。</value>
+  </data>
+  <data name="MSG7067" xml:space="preserve">
+    <value>検索方法を指定してください。</value>
+  </data>
+  <data name="MSG7068" xml:space="preserve">
+    <value>検索対象コードの区分を選択してください。</value>
+  </data>
+  <data name="MSG7069" xml:space="preserve">
+    <value>自振入金金額が請求書の金額と一致しておりません。</value>
+  </data>
+  <data name="MSG7070" xml:space="preserve">
+    <value>請求書番号 {0} は既に登録中の一覧に存在しているため、登録できません。</value>
+  </data>
+  <data name="MSG7071" xml:space="preserve">
+    <value>データを登録してください。</value>
+  </data>
+  <data name="MSG7072" xml:space="preserve">
+    <value>この請求書は保証金請求の請求書であるため、「返金クレジットノート登録（保証金）」処理を選択してください。</value>
+  </data>
+  <data name="MSG7073" xml:space="preserve">
+    <value>この請求書は、保証金以外の請求の請求書であるため、「返金クレジットノート登録（保証金以外）」処理を選択してください。</value>
+  </data>
+  <data name="MSG7074" xml:space="preserve">
+    <value>ファイルが指定されていません。ファイル指定の上、「内容表示」ボタンを押してください。</value>
+  </data>
+  <data name="MSG7075" xml:space="preserve">
+    <value>このファイル種類は指定できません。CSVファイルを指定してください。</value>
+  </data>
+  <data name="MSG7076" xml:space="preserve">
+    <value>入金日は未来日付で登録できません。</value>
+  </data>
+  <data name="MSG7077" xml:space="preserve">
+    <value>口座番号の入力が完全でありません。</value>
+  </data>
+  <data name="MSG7078" xml:space="preserve">
+    <value>入金処理に失敗しました。入金処理ヘッダー情報の保存中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7079" xml:space="preserve">
+    <value>入金処理に失敗しました。入金処理明細情報の保存中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7080" xml:space="preserve">
+    <value>入金処理に失敗しました。請求書情報の更新中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7081" xml:space="preserve">
+    <value>入金処理に失敗しました。領収書情報の更新中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7082" xml:space="preserve">
+    <value>入金処理に失敗しました。保証金情報の更新中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7083" xml:space="preserve">
+    <value>入金処理に失敗しました。入金情報の更新中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7084" xml:space="preserve">
+    <value>請求書番号 {0} は、返金クレジットノート対象の請求書のため、入金処理できません。</value>
+  </data>
+  <data name="MSG7085" xml:space="preserve">
+    <value>このデータは、別の処理、またはユーザーにより更新されたため、削除できません。再度削除処理を行ってください。</value>
+  </data>
+  <data name="MSG7086" xml:space="preserve">
+    <value>エラーが発生しました。未収目標情報を登録できません。再度登録処理を行ってください。</value>
+  </data>
+  <data name="MSG7087" xml:space="preserve">
+    <value>エラーが発生しました。請求免除登録できません。再度登録処理を行ってください。</value>
+  </data>
+  <data name="MSG7088" xml:space="preserve">
+    <value>この請求書は請求免除登録済みのため、請求免除登録ができません。</value>
+  </data>
+  <data name="MSG7089" xml:space="preserve">
+    <value>請求書番号 {0} は取消済みです。</value>
+  </data>
+  <data name="MSG7090" xml:space="preserve">
+    <value>請求書番号 {0} は請求免除登録がされています。</value>
+  </data>
+  <data name="MSG7091" xml:space="preserve">
+    <value>保証金現預り額を超える金額が登録されています。誤りでないか確認してください。保証金データの誤りの場合はデータ修正後に登録してください。</value>
+  </data>
+  <data name="MSG7092" xml:space="preserve">
+    <value>この仮受に対し、手数料は以前の入金処理で既に登録されています。手数料は一つの仮受に対し、一度の登録しかできません。</value>
+  </data>
+  <data name="MSG7093" xml:space="preserve">
+    <value>この仮受に対し、その他費用は以前の入金処理で既に登録されています。その他費用は一つの仮受に対し、一度の登録しかできません。</value>
+  </data>
+  <data name="MSG7094" xml:space="preserve">
+    <value>この仮受に対し、その他収入は以前の入金処理で既に登録されています。その他収入は一つの仮受に対し、一度の登録しかできません。</value>
+  </data>
+  <data name="MSG7095" xml:space="preserve">
+    <value>この請求書は入金処理未登録のため、入金処理を取消できません。</value>
+  </data>
+  <data name="MSG7096" xml:space="preserve">
+    <value>入金処理取消に失敗しました。入金処理明細情報の更新中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7097" xml:space="preserve">
+    <value>入金処理取消に失敗しました。入金処理ヘッダー情報の更新中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7098" xml:space="preserve">
+    <value>入金処理取消に失敗しました。仮受情報の更新中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7099" xml:space="preserve">
+    <value>入金処理取消に失敗しました。請求書情報の更新中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7100" xml:space="preserve">
+    <value>入金処理取消に失敗しました。保証金情報の更新中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7101" xml:space="preserve">
+    <value>指定されたコードで検索された請求先には、引当可能な未収が存在しません。</value>
+  </data>
+  <data name="MSG7102" xml:space="preserve">
+    <value>特別処理がチェックされていますが、決裁番号、及びその他費用／その他収入はまだ未登録です。特別処理取消の場合はチェックを外してください。</value>
+  </data>
+  <data name="MSG7103" xml:space="preserve">
+    <value>Tax Invoice番号 {0} は既に登録中の一覧に存在しているため、登録できません。</value>
+  </data>
+  <data name="MSG7104" xml:space="preserve">
+    <value>エラーが発生しました。入金データファイルのインポートに失敗しました。</value>
+  </data>
+  <data name="MSG7105" xml:space="preserve">
+    <value>ビジネスロジックの検証でエラーが発生しました。入金データファイルをインポートできません。</value>
+  </data>
+  <data name="MSG7106" xml:space="preserve">
+    <value>領収書番号 {0} は存在しません。</value>
+  </data>
+  <data name="MSG7107" xml:space="preserve">
+    <value>請求コード {0} は既に登録中の一覧に存在しているため、登録できません。</value>
+  </data>
+  <data name="MSG7108" xml:space="preserve">
+    <value>この仮受は、「減額クレジットノート登録」処理で作成されたため、本処理によって削除できません。この仮受は「クレジットノート取消」処理で削除されます。</value>
+  </data>
+  <data name="MSG7109" xml:space="preserve">
+    <value>この領収書番号が登録された仮受情報が存在します。領収書取消する場合は当該仮受情報の削除を先に行ってください。</value>
+  </data>
+  <data name="MSG7110" xml:space="preserve">
+    <value>この請求先はVAT非課税請求先ですが、VAT金額が登録されています。誤りでないか確認してください。処理を進めますか？</value>
+  </data>
+  <data name="MSG7111" xml:space="preserve">
+    <value>保証金現預り額が「0」未満となるため、この操作を行うことができません。</value>
+  </data>
+  <data name="MSG7112" xml:space="preserve">
+    <value>この請求書は自振の請求書です。</value>
+  </data>
+  <data name="MSG7113" xml:space="preserve">
+    <value>引落日が一致していません。</value>
+  </data>
+  <data name="MSG7114" xml:space="preserve">
+    <value>このファイルの内容は不完全です（生成した自振ファイルの一部が含まれていません）。</value>
+  </data>
+  <data name="MSG7115" xml:space="preserve">
+    <value>現金化処理中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7116" xml:space="preserve">
+    <value>現金化取消処理中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7117" xml:space="preserve">
+    <value>入金データファイル内の自振銀行コードの指定が正しくありません。</value>
+  </data>
+  <data name="MSG7118" xml:space="preserve">
+    <value>自振銀行コードが一致していません。</value>
+  </data>
+  <data name="MSG7119" xml:space="preserve">
+    <value>手形・先日付小切手の入金タイプの場合、満額入金処理のみできます。部分入金処理はできません。</value>
+  </data>
+  <data name="MSG7120" xml:space="preserve">
+    <value>入金処理中にエラーが発生しました。全てのトランザクションがロールバックされます。</value>
+  </data>
+  <data name="MSG7121" xml:space="preserve">
+    <value>未収目標登録中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7122" xml:space="preserve">
+    <value>集金予定登録中にエラーが発生しました。</value>
+  </data>
+  <data name="MSG7123" xml:space="preserve">
+    <value>自振銀行データ／クレジットカードデータが確定したため、クレジットノートが登録できません。</value>
+  </data>
+  <data name="MSG7124" xml:space="preserve">
+    <value>現在のTax Invoine　総額を超えた金額でクレジットノートを作成することができません。</value>
+  </data>
+  <data name="MSG7125" xml:space="preserve">
+    <value>未入金のため、登録ができません。未入金分の減額処理の場合は「減額クレジットノート登録」で処理してください。</value>
+  </data>
+  <data name="MSG7126" xml:space="preserve">
+    <value>Cannot input Matched amount more than WHT amount.</value>
+  </data>
+  <data name="MSG7127" xml:space="preserve">
+    <value>Please input Payment date and Group nameJP.</value>
+  </data>
+  <data name="MSG7128" xml:space="preserve">
+    <value>Currency type not match invoid currency type</value>
+  </data>
+  <data name="MSG7129" xml:space="preserve">
+    <value>ドル請求＆ルピア入金以外は入力できません。</value>
+  </data>
+  <data name="MSG7130" xml:space="preserve">
+    <value>為替差損と為替差益は両方の入力はできません。</value>
+  </data>
+  <data name="MSG7131" xml:space="preserve">
+    <value>Not support: Ref. Q&amp;A No. 57</value>
+  </data>
+</root>

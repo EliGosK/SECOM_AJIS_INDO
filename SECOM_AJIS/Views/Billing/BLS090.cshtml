@@ -1,0 +1,124 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Income.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Controllers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "180px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+
+    
+ }
+
+@section page_header{
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/number-functions.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Billing/BLS090.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/object/control_event.js")"></script>
+
+
+<script type="text/javascript">
+    var BLS090_ViewBag = {
+        Currency: '@ViewBag.Currency'
+    };
+</script>
+
+
+}
+
+
+
+<div style="display:none">
+    @Html.Hidden("lblTotal", (string)@Resources.BLS090.lblTotal)
+</div>
+
+<!-- Contract Information -->
+
+
+<div class="main-table" id="divSearchCondition">
+    <div class="table-header">
+        @Resources.BLS090.lblContractInformation
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.BLS090.lblContractCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ContractCode",null ,new { style = "width:130px;", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+            @Html.CommonButton("btnRetrieve", @Resources.BLS090.btnRetrieve, new { style = "width:100px;", type = "button" })
+        </div>
+        
+    </div>
+
+    <form id="formContractInfo" action="#">
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.BLS090.lblContractTargetNameEng</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("ContractTargetCustNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.BLS090.lblContractTargetNameLocal</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("ContractTargetCustNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.BLS090.lblSiteNameEng</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.BLS090.lblSiteNameLocal</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.BLS090.lblContractFee</div>
+        <div class="usr-object" style="width:200px;">
+            @*@Html.NumericTextBox("ContractFeeForDisplay", null, new { style = "width:" + @ViewBag.ObjectCol1Width + "; ", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("ContractFeeForDisplay", "", null, new { style = "width:140px;", @readonly = true })
+        </div>
+        <div class="usr-object">
+            @*@Html.LabelCurrencyUnit("")*@
+        </div>
+    </div>
+    
+    </form>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+
+
+<!-- Result list -->
+<div class="main-table" id="divSearchResult">
+    <div class="table-header">
+        @Resources.BLS090.lblMonthlyBillingFeeList
+    </div>
+    
+    <div class="usr-row">
+        <div id="BLS090_ResultListGrid" style="width: 99%; margin-left: 4px;"></div>
+    </div>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+

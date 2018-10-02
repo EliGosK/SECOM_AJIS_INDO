@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="SelectInvoice" width="70" type="ro" align="center" sort="na">gridHeaderSelect</column>
+    <column id="InvoiceNo" width="*" type="ro" align="left"  sort="na">gridHeaderInvoiceNo</column>
+    <column id="IssueInvDate" width="100" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="na" >gridHeaderIssueDate</column>
+    <column id="BillingAmountIncTaxShow" width="160" type="edn" align="right" sort="na">gridHeaderBillingAmount</column>
+    <column id="PaidAmountDisplayOnGridShow" width="160" type="edn" align="right" sort="na">gridHeaderAccumalatedPaid</column>
+    <column id="UnpaidAmountShow" width="200" type="edn" align="right" sort="na">gridHeaderUnpaidAmount</column>
+
+    <column id="KeyInMatchAmountIncWHT" width="220" type="link" align="right" sort="na">gridHeaderMatchPaymentAmount</column>
+    <column id="KeyInWHTAmount" width="220" type="link" align="right" sort="na">gridHeaderWhtAmount</column>
+	
+	<column id="MatchAmountIncWHT" width="0" type="ro" hidden="true"></column>
+	<column id="WHTAmountDefault" width="0" type="ro" hidden="true"></column>
+    
+    <column id="IsToMatchableProcess" width="0" type="ro" hidden="true"></column>
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+    <column id="BillingAmountIncTax" width="0" type="ro"  hidden="true"></column>
+    <column id="PaidAmountDisplayOnGrid" width="0" type="ro"  hidden="true"></column>
+    <column id="UnpaidAmount" width="0" type="ro"  hidden="true"></column>
+    <column id="InvoiceAmountCurrencyType" width="0" type="ro"  hidden="true"></column>
+    <column id="PaidAmountCurrencyType" width="0" type="ro"  hidden="true"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+
+
+
+
+
+
+
+
+

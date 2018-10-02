@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0972BFD8-3D4F-47B4-8A52-35DA9A23DB83}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.JobScheduler</RootNamespace>
+    <AssemblyName>SECOM_AJIS.JobScheduler</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>"%24/Source Code/SECOM_AJIS_MS", YKSEAAAA</SccProjectName>
+    <SccLocalPath>..</SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>MSSCCI:Microsoft Visual SourceSafe</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>calendar_128.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\SECOM_AJIS.JobScheduler.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\SECOM_AJIS.JobScheduler.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SECOM_AJIS.Common\_ExtLib\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SECOM_AJIS.Common\_ExtLib\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging">
+      <HintPath>..\SECOM_AJIS.Common\_ExtLib\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="CSI.WindsorHelper">
+      <HintPath>..\SECOM_AJIS.Common\_ExtLib\CSI.WindsorHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SECOM_AJIS.Common\_ExtLib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\SECOM_AJIS\DLL\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmJobMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmJobMonitor.Designer.cs">
+      <DependentUpon>frmJobMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorLogger.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SequentialProcessJob.cs" />
+    <Content Include="calendar_128.ico" />
+    <EmbeddedResource Include="frmJobMonitor.resx">
+      <DependentUpon>frmJobMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Content Include="..\SECOM_AJIS.Common\ConstantValues.config">
+      <Link>ConstantValues.config</Link>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="app.manifest" />
+    <Content Include="DLL\AntiXssLibrary.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DLL\libiconv2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DLL\pdftk.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DLL\Quartz.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\DataSources\SECOM_AJIS.DataEntity.Common.tbs_BatchQueue.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.DataEntity.Billing\SECOM_AJIS.DataEntity.Billing.csproj">
+      <Project>{D2EAD138-C647-4F68-9474-11877BC5C215}</Project>
+      <Name>SECOM_AJIS.DataEntity.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.DataEntity.Common\SECOM_AJIS.DataEntity.Common.csproj">
+      <Project>{47ACFDCD-BB7F-4069-9B3E-DA0263312BDC}</Project>
+      <Name>SECOM_AJIS.DataEntity.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.DataEntity.Contract\SECOM_AJIS.DataEntity.Contract.csproj">
+      <Project>{0BD063C2-563C-489E-A3A2-337881A8CBAB}</Project>
+      <Name>SECOM_AJIS.DataEntity.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.DataEntity.Income\SECOM_AJIS.DataEntity.Income.csproj">
+      <Project>{D02689C5-5D70-4D74-8975-D5F2E2E9186B}</Project>
+      <Name>SECOM_AJIS.DataEntity.Income</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.DataEntity.Installation\SECOM_AJIS.DataEntity.Installation.csproj">
+      <Project>{B7341E95-F839-42F7-98B4-11C4B0EDDCC4}</Project>
+      <Name>SECOM_AJIS.DataEntity.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.DataEntity.Inventory\SECOM_AJIS.DataEntity.Inventory.csproj">
+      <Project>{5F70B63F-3198-43EB-B452-0B42CF40EDD1}</Project>
+      <Name>SECOM_AJIS.DataEntity.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.DataEntity.Master\SECOM_AJIS.DataEntity.Master.csproj">
+      <Project>{4D7B3E4B-E965-4F31-A2DD-49B2B39BADFD}</Project>
+      <Name>SECOM_AJIS.DataEntity.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.DataEntity.Quotation\SECOM_AJIS.DataEntity.Quotation.csproj">
+      <Project>{5FCD8306-0B6B-4224-92AD-8589700B4BFB}</Project>
+      <Name>SECOM_AJIS.DataEntity.Quotation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Billing\SECOM_AJIS.Entity.Billing.csproj">
+      <Project>{D5237D53-9467-4B1E-92D7-B91C8358402C}</Project>
+      <Name>SECOM_AJIS.Entity.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Common\SECOM_AJIS.Entity.Common.csproj">
+      <Project>{527A7562-621E-47CD-92CB-E0FA26660A4E}</Project>
+      <Name>SECOM_AJIS.Entity.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Contract\SECOM_AJIS.Entity.Contract.csproj">
+      <Project>{22F8AFE0-0CBB-4543-A703-2C29A1E2105A}</Project>
+      <Name>SECOM_AJIS.Entity.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Income\SECOM_AJIS.Entity.Income.csproj">
+      <Project>{82E5CDD0-5A70-4637-9BF2-AE7DED57B8C7}</Project>
+      <Name>SECOM_AJIS.Entity.Income</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Installation\SECOM_AJIS.Entity.Installation.csproj">
+      <Project>{E952E4EE-DD08-4187-AD89-0F56C4CF8D7D}</Project>
+      <Name>SECOM_AJIS.Entity.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Inventory\SECOM_AJIS.Entity.Inventory.csproj">
+      <Project>{DDC95591-2286-4A85-BD76-C3499101BA98}</Project>
+      <Name>SECOM_AJIS.Entity.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Master\SECOM_AJIS.Entity.Master.csproj">
+      <Project>{65F28583-CF30-4765-A871-E97D2AE7F9B9}</Project>
+      <Name>SECOM_AJIS.Entity.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Quotation\SECOM_AJIS.Entity.Quotation.csproj">
+      <Project>{E44DC4DC-CE32-4CE7-9CB6-ADDEDFDF1B23}</Project>
+      <Name>SECOM_AJIS.Entity.Quotation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Billing\SECOM_AJIS.Interface.Billing.csproj">
+      <Project>{0958FEAD-16B9-4BB9-9C1E-DA33749F7685}</Project>
+      <Name>SECOM_AJIS.Interface.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Common\SECOM_AJIS.Interface.Common.csproj">
+      <Project>{0177E9AC-5098-42BC-9AC1-9B8862FB3E3C}</Project>
+      <Name>SECOM_AJIS.Interface.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Contract\SECOM_AJIS.Interface.Contract.csproj">
+      <Project>{99F59DB1-92D2-49BB-9FCD-46D7880F089E}</Project>
+      <Name>SECOM_AJIS.Interface.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Income\SECOM_AJIS.Interface.Income.csproj">
+      <Project>{BA5911DE-A7E3-467B-8857-1528A134CE42}</Project>
+      <Name>SECOM_AJIS.Interface.Income</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Installation\SECOM_AJIS.Interface.Installation.csproj">
+      <Project>{BFF36845-756B-4D9B-A575-DEBC4099774B}</Project>
+      <Name>SECOM_AJIS.Interface.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Inventory\SECOM_AJIS.Interface.Inventory.csproj">
+      <Project>{0CB3F45D-11BB-45C1-8031-BB960C5C5B0D}</Project>
+      <Name>SECOM_AJIS.Interface.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Master\SECOM_AJIS.Interface.Master.csproj">
+      <Project>{0AC1F756-B4CC-4386-B6A3-C58F555E953B}</Project>
+      <Name>SECOM_AJIS.Interface.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Quotation\SECOM_AJIS.Interface.Quotation.csproj">
+      <Project>{1F3EE1E7-4718-4410-A396-6C7B0E5A95C5}</Project>
+      <Name>SECOM_AJIS.Interface.Quotation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.JobScheduler.Injectors\SECOM_AJIS.JobScheduler.Injectors.csproj">
+      <Project>{2E9AC01B-5B39-46BE-8EBA-47EAC68A4F5E}</Project>
+      <Name>SECOM_AJIS.JobScheduler.Injectors</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>mkdir "$(TargetDir)App_GlobalResources"
+xcopy /E /Y "$(SolutionDir)SECOM_AJIS\App_GlobalResources" "$(TargetDir)App_GlobalResources"
+mkdir "$(TargetDir)Content"
+xcopy /E /Y "$(SolutionDir)SECOM_AJIS\Content" "$(TargetDir)Content"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

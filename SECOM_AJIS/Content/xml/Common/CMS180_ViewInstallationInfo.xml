@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="StarStatus" width="20" type="ro" align="center" sort="na" ></column>
+    <column id="InstallationStatusMapping_Text" width="135" type="ro" align="left" sort="str_custom">headerInstallationStatus</column>
+    <!--<column id="CreditNoteIssueDetail" width="50" type="link" align="center" sort="na">headerCCreditNoteIssueDetail</column>-->
+    <column id="InstallationName_Text" width="*" type="ro" align="left" sort="str_custom" >headerInstallationname</column>
+    <column id="ContractCode_Short_Text" width="75" type="ro" align="left" sort="str_custom" >headerContractCode</column>
+    <column id="InstallationTypeName_Text" width="100" type="ro" align="left" sort="str_custom" >headerInstallationType</column>
+    <column id="SlipType_Text" width="55" type="ro" align="left" sort="str_custom" >headerSlipType</column>
+    <column id="SlipStatusMapping_Text" width="105" type="ro" align="left" sort="str_custom" >headerSlipStatus</column>
+    <column id="SubContractorName_Text" width="100" type="ro" align="left" sort="str_custom" >headerSubContractorName</column>
+    <column id="ManagementStatusName_Text" width="100" type="ro" align="left" sort="str_custom" >headerInstallationManagementStatus</column>
+    <column id="Register" width="90" type="link" align="center" sort="str_custom">headerRegister</column>
+    <column id="Detail" width="30" type="link" align="center" sort="na">headerDetail</column>
+    <column id="ToJson"   hidden ="true" width="0" type="ro"></column>
+    <column id="NextStepButtonName"   hidden ="true" width="0" type="ro"></column>
+    <column id="ContractCode"   hidden ="true" width="0" type="ro"></column>
+    <column id="InstallationStatus"   hidden ="true" width="0" type="ro"></column>
+    <column id="SlipStatus"   hidden ="true" width="0" type="ro"></column>
+
+    <column id="SlipNo"   hidden ="true" width="0" type="ro"></column>
+    <column id="SubContractor"   hidden ="true" width="0" type="ro"></column>
+    <column id="ContractStatus"   hidden ="true" width="0" type="ro"></column>
+    <column id="InstallationType"   hidden ="true" width="0" type="ro"></column>
+
+    <column id="CMS180_RegisterTextButton" hidden ="true" width="0" type="ro"></column>
+    <column id="CMS180_RegisterFlagButton" hidden ="true" width="0" type="ro"></column>
+    <column id="CMS180_ViewDetail" hidden ="true" width="0" type="ro"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

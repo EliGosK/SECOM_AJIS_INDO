@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Template>
+  <AdminEmail></AdminEmail>
+  <AdminSubject></AdminSubject>
+  <AdminContent></AdminContent>
+  <TemplateSubject>[SIMS] Notify email for change fee</TemplateSubject>
+  <TemplateContent>
+    <html>
+      <body>
+        <p>
+          เนื่องจากอีก 35 วันถัดจากนี้จะเป็นวันที่ครบกำหนดเปลี่ยนกลับไปใช้ราคาเก่าของการเปลี่ยนแปลงราคาแบบมีกำหนดระยะเวลาตามรายละเอียดที่ระบุไว้ด้านล่าง
+          ดังนั้นจึงแจ้งมาเพื่อทราบ และขอให้ตรวจเช็คสถานะการออกใบแจ้งหนี้และช่วงเวลาออกใบแจ้งหนี้ครั้งต่อไปเพื่อนำไปปรับแก้ร่วมกับลูกค้า
+          กรณีที่มีการปรับแก้เนื่องจากกลับไปใช้ราคาค่าเช่าเก่า ให้ดำเนินการตามขั้นตอนเมื่อถึงกำหนดเวลา
+          และหาไม่ยังเปลี่ยนกลับไปใช้ราคาค่าเช่าเก่า จำเป็นต้องมีการทำรายงานและสัญญาการเปลี่ยนแปลงค่าเช่าอีกครั้ง
+
+          เลขที่ใบแจ้งหนี้: [ContractCode]
+          ชื่อผู้ทำสัญญา: [ContractTargetNameLC]
+          ชื่อสถานที่ติดตั้ง: [SiteNameLC]
+          วันที่เปลี่ยนแปลงค่าธรรมเนียม: [ChangeDateOfContractFee]
+          ค่าธรรมเนียมก่อนการเปลี่ยนแปลง: [ContractFeeBeforeChange] บาท
+          ค่าธรรมเนียมหลังการเปลี่ยนแปลง: [ContractFeeAfterChange] บาท
+          วันที่เปลี่ยนกลับไปใช้ราคาเก่า: [ReturnToOriginalFeeDate]
+          สาขาที่ให้บริการ: [OperationOfficeLC]
+          พนักงานที่ลงทะเบียนการเปลี่ยนแปลงราคา: [RegisterChangeEmpNameLC]
+          สาขาที่ออกใบแจ้งหนี้: [BillingOfficeLC]
+
+          ขอแสดงความนับถือ
+          SIMS ADMINISTRATOR
+
+
+          Today is 35 days before the effective end date of time-limited change fee.
+          Please check Invoice issue status, Issue timing of next invoice, etc. and then perform adjustment with customer.
+          In case there is adjustment because change fee effective end, please follow the procedure when due date has come.
+          Moreover, in case of change fee effective does not end, it is necessary to make a report and fee change memorandum again.
+
+          Billing code: [ContractCode]
+          Contract target name: [ContractTargetNameEN]
+          Site name: [SiteNameEN]
+          Change fee affective date: [ChangeDateOfContractFee]
+          Old service fee: [ContractFeeBeforeChange] Baht
+          New service fee: [ContractFeeAfterChange] Baht
+          Return date to original fee: [ReturnToOriginalFeeDate]
+          Office in charge of operation: [OperationOfficeEN]
+          Change fee registration employee: [RegisterChangeEmpNameEN]
+          Office in charge of billing: [BillingOfficeEN]
+
+          Best regards,
+          SIMS ADMINISTRATOR
+        </p>
+      </body>
+    </html>
+  </TemplateContent>
+</Template>

@@ -1,0 +1,117 @@
+.flow-table .section-cms023
+{
+}
+
+.section-cms023 .group-text-lvl1
+{
+	margin:3px 0 0 10px;
+	position:absolute;
+	right:10px;
+	Z-index: 2;
+	text-align: right;
+	background-color: #fff;
+	padding: 0 5px 0 5px;
+	color: #b908c9;
+}
+.section-cms023 .group-text-lvl2
+{
+	margin:-7px 0 0 10px;
+	position:absolute;
+	right:20px;
+	Z-index: 2;
+	text-align: right;
+	background-color: #fff;
+	padding: 0 5px 0 5px;
+	color: #b908c9;
+}
+
+.section-cms023 .subject-top-middle
+{
+	background: #fff url(subject_tm.png) 100% 100% no-repeat;
+}
+
+.section-cms023 .action-group-top-left
+{
+	background: #fff url(action_group_tl.png) 100% 100% no-repeat;
+}
+.section-cms023 .action-group-top-right
+{
+	background: #fff url(action_group_tr.png) 100% 100% no-repeat;
+}
+.section-cms023 .non-action-group-top-center
+{
+	background: #fff url(non_action_group_tc.png) 100% 100% no-repeat;
+}
+
+.section-cms023 .action-top-center
+{
+	background: #fff url(action_tc.png) 100% 100% no-repeat;
+}
+.section-cms023 .action-top-right
+{
+	background: #fff url(action_tr.png) 100% 100% no-repeat;
+}
+
+.section-cms023 .empty-top-center
+{
+	background: #fff url(empty_tc.png) 100% 100% no-repeat;
+}
+.section-cms023 .empty-top-right
+{
+	background: #fff url(empty_tr.png) 100% 100% no-repeat;
+}
+
+
+
+.section-cms023 .subject-middle-middle
+{
+	background: #fff url(subject_mm.png) 100% 100% no-repeat;
+}
+.section-cms023 .subject-middle-middle-empty
+{
+	background: #fff url(subject_mme.png) 100% 100% no-repeat;
+}
+.section-cms023 .action-middle-right
+{
+	background: #fff url(action_mr.png) 100% 100% no-repeat;
+}
+.section-cms023 .empty-middle-right
+{
+	background: #fff url(empty_mr.png) 100% 100% no-repeat;
+}
+
+.section-cms023 .subject-bottom-middle
+{
+	background: #fff url(subject_bm.png) 100% 100% no-repeat;
+}
+
+.section-cms023 .action-bottom-center
+{
+	background: #fff url(action_bc.png) 100% 100% no-repeat;
+}
+.section-cms023 .non-action-bottom-left
+{
+	background: #fff url(non_action_bl.png) 100% 100% no-repeat;
+}
+.section-cms023 .non-action-bottom-right
+{
+	background: #fff url(non_action_br.png) 100% 100% no-repeat;
+}
+.section-cms023 .empty-bottom-center
+{
+	background: #fff url(empty_bc.png) 100% 100% no-repeat;
+}
+.section-cms023 .empty-bottom-right
+{
+	background: #fff url(empty_br.png) 100% 100% no-repeat;
+}
+
+
+.section-cms023 .non-action-center-link
+{
+	background: #fff url(non_action_lc.png) 100% 100% no-repeat;
+}
+.section-cms023 .link
+{
+	background: #fff url(link.png) 100% 100% no-repeat;
+}

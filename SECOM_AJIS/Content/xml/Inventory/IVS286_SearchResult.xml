@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="50" type="ro" align="center" sort="na"></column>
+    <column id="ContractCodeShort" width="100" type="ro" align="left" sort="na">headerContract</column>
+    <column id="ContractType" width="80" type="ro" align="left" sort="na">headerContractType</column>
+    <column id="Customer" width="*" type="ro" align="left" sort="na">headerCustomer</column>
+    <column id="SiteName" width="200" type="ro" align="left" sort="na">headerSiteName</column>
+    <column id="Qty" width="75" type="ron2" align="right" numberformat="#,##0" sort="na">headerUnit</column>
+    <column id="AmountUsD" width="100" type="ron2" align="right" numberformat="US$#,##0.00" sort="na">headerAmount</column>
+    <column id="DetailButton" width="30" type="ro" align="center" sort="na">headerDetailButton</column>
+    <column id="SelectButton" width="30" type="ro" align="center" sort="na">
+      <![CDATA[<input name='chkSelectAll' id='chkSelectAll' style='MARGIN-LEFT: -3px' type='checkbox' value='' />]]>
+    </column>
+    <column id="SelectedFlag" width="0" type="ro" hidden="true"></column>
+    <column id="ContractCode" width="0" type="ro" hidden="true"></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

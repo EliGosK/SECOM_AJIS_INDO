@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="No" width="30" type="ro" align="center" sort="na">No.</column>
+    <column id="BillingCodeTaxIDNo" width="140" type="ro"  align="left" sort="str_custom" >headerBillingCodeTaxIDNo</column>
+    <column id="Name" width="150" type="ro" align="left" sort="str_custom" >headerBillingClientName</column>
+    <column id="Address" width="*" type="ro" align="left" sort="str_custom">headerBillingClientAddress</column>
+    <column id="OfficeName" width="120" type="ro" align="left" sort="str_custom">headerBillingOffice</column>
+    <column id="TextTransferAmount" width="120" type="edn" align="right" sort="int">headerMonthlyBillingAmountThb</column>
+    <column id="DetailBillingBasic" width="60" type="link"  align="center" sort="na" >headerBillingBasic</column>
+    <column id="DetailBillingDetail" width="60" type="link"  align="center" sort="na" >headerBillingDetail</column>
+    <column id="ContractCode_Short"  width="0" hidden="true"  type="ro"  align="left" sort="na" ></column>
+    <column id="BillingOCC"  width="0" hidden="true"  type="ro"  align="left" sort="na" ></column>
+    <!--<column id="BillingCode_Short" width="0" hidde="true" type="ro"  align="left" sort="na" ></column>-->
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

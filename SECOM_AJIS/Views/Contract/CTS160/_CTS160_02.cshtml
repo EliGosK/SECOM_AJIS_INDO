@@ -1,0 +1,65 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers
+<div id="divDocumentTemplate" class="main-table" style="display:none;">
+    <div class="table-header">
+        @Resources.CTS160.lblTitleDocumentTemplate
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Label1Width;">&nbsp;</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectMerge_TWidth;">
+            <div class="sub-table" style="padding-left:5px;">
+                <div class="usr-row">
+                    <div class="usr-object" style="width:@ViewBag.Object1_TWidth;">
+                        @Html.CommonRadioButton("rdoContract", @Resources.CTS160.lblContractReport, "1", false, "SelectDocumentTemplate")
+                    </div>
+                    <div class="usr-label" style="width:@ViewBag.Label2Width;">
+                        @Resources.CTS160.lblContractDocumentLanguage
+                    </div> 
+                    <div class="usr-object" style="width:@ViewBag.Object2Width;margin-left:-1px;">
+                        @Html.ContractDocumentLanguageComboBox("ContractDocumentLanguage", new { style = "width:205px;" })
+                        @Html.Hidden("C_DOC_LANGUAGE_EN", SECOM_AJIS.Common.Util.ConstantValue.DocLanguage.C_DOC_LANGUAGE_EN)
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-object" style="width:@ViewBag.Object1_TWidth;">
+                        @Html.CommonRadioButton("rdoMemorandum", @Resources.CTS160.lblMemorandum, "2", false, "SelectDocumentTemplate")
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-object" style="width:@ViewBag.Object1_TWidth;">
+                        @Html.CommonRadioButton("rdoNotice", @Resources.CTS160.lblNotice, "3", false, "SelectDocumentTemplate")
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-object" style="width:@ViewBag.Object1_TWidth;">
+                        @Html.CommonRadioButton("rdoCoverLetter", @Resources.CTS160.lblCoverLetter, "4", false, "SelectDocumentTemplate")
+                    </div>
+                    <div class="usr-label" style="width:@ViewBag.Label2Width;">
+                        @Resources.CTS160.lblDocumentName
+                    </div> 
+                    <div class="usr-object" style="width:@ViewBag.Object2Width;margin-left:-1px;">
+                        @Html.RentalDocumentNameComboBox("RentalDocumentName", new { style = "width:205px;" })
+                        @Html.SaleDocumentNameComboBox("SaleDocumentName", new { style = "width:205px;", @readonly = "readonly" })
+                    </div>
+                </div>
+                <div class="usr-clear-style">&nbsp;</div>
+            </div>
+        </div>
+        @*<div class="usr-object" style="margin-left:5px;padding-top:10px;">
+            @Html.RequireFiled()
+        </div>*@
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.Label1Width;">&nbsp;</div> 
+        <div class="usr-object">
+                @Html.CommonCheckButton("ShowSignature", @Resources.CTS160.lblShowSignature, null, false)        
+        </div>                   
+    </div>
+    <div id="divSelectCommand" class="usr-row">               
+        <div class="usr-label" style="width:@ViewBag.Label1Width;">&nbsp;</div> 
+        <div class="usr-object">
+                @Html.CommonButton("btnSelect", @Resources.CTS160.lblSelect, new { style = "width:100px;" }) 
+        </div>                                
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>       
+</div>

@@ -1,0 +1,43 @@
+.usr-datalist
+{
+    overflow: scroll;
+    overflow-x: hidden;
+    border: 1px solid #aaaaaa;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.usr-datalist dl
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.usr-datalist dl dt
+{
+    margin: 3px 3px 3px 0;
+    padding: 2px;
+    float: left;
+    text-align: center;
+    border: 1px solid #B1C6F3;
+    background-color: #D0DFFC;
+    font-family: Tahoma;
+    font-size:11px;
+}
+
+.removelink
+{
+    margin: 1px;
+    padding: 0px 4px;
+    color: #008;
+    text-decoration: none;
+    background-color: #B1C6F3;
+    
+    font-family: "arial";
+    font-size: 0.9em;
+    font-weight: bold;
+}

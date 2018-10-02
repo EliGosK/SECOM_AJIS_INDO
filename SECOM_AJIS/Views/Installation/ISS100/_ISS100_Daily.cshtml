@@ -1,0 +1,38 @@
+﻿@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers
+
+<!-- ======== Html content ======== --->
+@* --- Contract Information ---  *@
+
+<div id="divDailyBasicInfo" class="main-table" style="margin-top: 5px; display: none;">
+    <div class="table-header">
+        @Resources.ISS100.lblSearchCriteria @*(@Resources.ISS100.lblHeaderDailyName)*@
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.ISS100.lblPaidDate</div>
+        <div class="usr-object" style="margin-left: 0px;">
+            <div class="usr-object">
+                @Html.CommonTextBox("PaidDateFrom", null, new { style = "width:" + @ViewBag.Col1Width + ";" })
+                ~&nbsp;@Html.CommonTextBox("PaidDateTo", null, new { style = "width:" + @ViewBag.Col1Width + ";" })
+            </div>@Html.LabelDateFormat("PaidDateFrom") @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.ISS100.lblSubContractorName</div>
+        <div class="usr-object" style="margin-left: 0px;">
+            @Html.SubContractorComboBoxWithFirstElement("SubcontractorCode", "All", new { style = "width:333px;", selected = (string)@ViewBag.SubcontractCode })
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        </div>
+    </div>
+    <div class="usr-row" style="text-align: right">
+        @Html.CommonButton("btnDownloadDaily", @Resources.ISS100.lblDownloadExcel, new { style = "width:80px" })
+        @Html.CommonButton("btnClear", @Resources.ISS100.lblClear, new { style = "width:80px" })
+          <iframe id="ifDownload" name="Download" style="visibility: hidden; width: 0px; height: 0px;">
+            </iframe>
+    </div>
+</div>
+

@@ -1,0 +1,365 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Presentation.Master.Helpers
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.LabelWidth = "200px";
+
+    ViewBag.CustTypeClass = "usr-row usr-row-space-2x";
+    if (ViewBag.IsFullValidate == false)
+    {
+        ViewBag.CustTypeClass = "usr-row";
+    }
+}
+
+@section page_header{
+<script src="../../Scripts/Base/AutoComplete.js" type="text/javascript"></script>
+<script src="../../Scripts/Base/ComboBox.js" type="text/javascript"></script>
+<script src="../../Scripts/Master/MAS050.js" type="text/javascript"></script>
+}
+<div style="display:none;">
+    @Html.Hidden("IsFullValidate", (bool)ViewBag.IsFullValidate);
+    @Html.Hidden("DefDistrictEN", (string)ViewBag.DistrictEN);
+    @Html.Hidden("DefDistrictLC", (string)ViewBag.DistrictLC);
+    @Html.Hidden("btnOK", (string)@Resources._ButtonControl.btnCommandOK)
+    @Html.Hidden("btnCancel", (string)@Resources._ButtonControl.btnCommandCancel)
+</div>
+<form id="Register" style="border:0;">
+    <div class="main-table" id="divCustInfo">
+        <div class="table-header">
+            @Resources.MAS050.lblCustomerInfornmation
+        </div>
+        @if (ViewBag.IsFullValidate == true)
+        {
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                    @Resources.MAS050.lblCustomerCode
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("CustCode", (string)@ViewBag.CustCode, new { style = "width:200px;", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                    @Resources.MAS050.lblCustomerStatus
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("CustStatus", (string)@ViewBag.CustStatus, new { style = "width:200px;", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                    @Resources.MAS050.lblCustomerGroupCode
+                </div>
+                <div class="usr-object">
+                    @Html.GroupCodeComboBox("CustomerGroupCode", new { style = "width:204px;" })
+                </div>
+                <div class="usr-label" style="width:5px">&nbsp;</div>
+                <div class="usr-object">
+                    @Html.CommonButton("Add", @Resources.MAS050.btnAdd, new { type = "button" }) 
+                </div>
+            </div>
+            <div class="usr-row" >   
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+                <div class="usr-object" style="height:100%;"> 
+                    <div id="Result_Div_Add" style="width:530px;"></div> 
+                </div> 
+                <div class="usr-clear-style">&nbsp;</div>   
+            </div>
+            
+        }
+        <div class="@ViewBag.CustTypeClass">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblCustomerType
+            </div>
+            <div class="usr-object">
+                @Html.CustomerTypeComboBox("CustomerType", new {selected = (string)@ViewBag.CustomerType, style = "width:204px;" })
+                @Html.RequireFiled() 
+            </div> 
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblCompanyType
+            </div>
+            <div class="usr-object">
+                @Html.CompanyTypeComboBox("CompanyType", new {selected = (string)@ViewBag.CompanyType, style = "width:204px;" })
+            </div>             
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblFinancialMarketType
+            </div>
+            <div class="usr-object">
+                @Html.FinancialComboBox("FinancialMarketType", new { selected = (string)@ViewBag.FinancialMarketType, style = "width:204px;" })
+            </div> 
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblIDno_TaxIDno
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("IDNo", (string)@ViewBag.IDNo, new { style = "width:200px;", maxlength = "15" })
+                @if (ViewBag.IsFullValidate == true)
+                {
+                    @Html.RequireFiled()
+                }
+            </div>   
+            @if (ViewBag.IsFullValidate == true)
+            {
+                <div class="usr-label" style="width:10px;">&nbsp;</div>
+                <div class="usr-object">
+                    @Html.CommonCheckButton("Dummy", @Resources.MAS050.lblDummyIDno_TaxIDno, "", (bool?)@ViewBag.IsDummyFlag)
+                </div>                                       
+            }
+        </div> 
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblName_English
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("CustNameEN", (string)@ViewBag.CustNameEN, new { style = "width:605px;", maxlength = "100" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">  
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+            <div class="usr-object" >
+                @Html.CommonTextBox("CustFullNameEN", "", new { style = "width:605px;", @readonly = "readonly" })
+            </div>        
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblName_Local
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("CustNameLC", (string)@ViewBag.CustNameLC, new { style = "width:605px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">  
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+            <div class="usr-object" >
+                @Html.CommonTextBox("CustFullNameLC", "", new { style = "width:605px;", @readonly = "readonly" })
+            </div>        
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblRepresentativePersonName
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("RepPersonName", (string)@ViewBag.RepPersonName, new { style = "width:605px;", maxlength = "100" })
+            </div>      
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblCustomerContact
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("ContactPersonName", (string)@ViewBag.ContactPersonName, new { style = "width:605px;", maxlength = "100" })
+            </div>      
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblSECOMContact
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SECOMContactPerson", (string)@ViewBag.SECOMContactPerson, new { style = "width:605px;", maxlength = "100" })           
+            </div>        
+        </div>           
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblNationality
+            </div>
+            <div class="usr-object" style="width:220px;">
+                @Html.NationalityComboBox("Nationality", new {selected = (string)@ViewBag.Nationality, style = "width:204px;" })
+                @Html.RequireFiled()
+            </div>
+            <div class="usr-label" style="width:180px;">
+                @Resources.MAS050.lblBusinessType
+            </div>
+            <div class="usr-object">
+                @Html.BusinessTypeComboBox("BusinessType", new { selected = (string)@ViewBag.BusinessType, style = "width:204px;" })
+                @if (ViewBag.IsFullValidate == true)
+                {
+                    @Html.RequireFiled()
+                }
+            </div> 
+        </div> 
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblTelephoneNo
+            </div>
+            <div class="usr-object" style="width:220px;">
+                @Html.CommonTextBox("TelePhoneNo", (string)@ViewBag.PhoneNo, new { style = "width:200px;", maxlength = "100" })            
+            </div> 
+            <div class="usr-label" style="width:180px;">
+                @Resources.MAS050.lblFaxNo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("FaxNo", (string)@ViewBag.FaxNo, new { style = "width:200px;", maxlength = "20" })
+            </div>      
+        </div>
+        <div class="usr-row" >
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblURL
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("URL", (string)@ViewBag.URL, new { style = "width:605px;", maxlength = "100" })
+            </div>              
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>  
+    <div class="main-table" id="divAddressInfo">
+        <div class="table-header">
+            @Resources.MAS050.lblAddressInformation
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;margin-top:17px;">
+                <div class="usr-row">
+                    <div style="width:@ViewBag.LabelWidth;">
+                        @Resources.MAS050.lblAdress
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div style="width:@ViewBag.LabelWidth;margin-top:8px;" >
+                        @Resources.MAS050.lblSoi 
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div style="width:@ViewBag.LabelWidth;margin-top:8px;" >
+                        @Resources.MAS050.lblRoad
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div style="width:@ViewBag.LabelWidth;margin-top:8px;" >
+                        @Resources.MAS050.lblTambol_Kwaeng
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div style="width:@ViewBag.LabelWidth;margin-top:8px;" >
+                        @Resources.MAS050.lblJangwat
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div style="width:@ViewBag.LabelWidth;margin-top:8px;" >
+                        @Resources.MAS050.lblAmper_Ked 
+                    </div>   
+                </div>       
+            </div> 
+            <div class="usr-object" style="height:100%;">
+                <div class="fieldset-table" style="float:left;width:300px;">
+                    <div class="fieldset-header">
+                        <span>@Resources.MAS050.lblEn</span>
+                    </div>
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.CommonTextBox("AddressEN", (string)@ViewBag.AddressEN, new { style = "width:250px;", maxlength = "255" })
+                            @if (ViewBag.IsFullValidate == true)
+                            {
+                                @Html.RequireFiled()
+                            }
+                        </div> 
+                    </div>  
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.CommonTextBox("AlleyEN", (string)@ViewBag.AlleyEN, new { style = "width:250px;", maxlength = "50" })
+                        </div>                                
+                    </div>  
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.CommonTextBox("RoadEN", (string)@ViewBag.RoadEN, new { style = "width:250px;", maxlength = "50" })
+                        </div> 
+                    </div>   
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.CommonTextBox("SubDistrictEN", (string)@ViewBag.SubDistrictEN, new { style = "width:250px;", maxlength = "50" })
+                            @if (ViewBag.IsFullValidate == true)
+                            {
+                                @Html.RequireFiled()
+                            }
+                        </div> 
+                    </div> 
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.ProVinceEnComboBox("ProvinceEN", new { selected = (string)@ViewBag.ProvinceEN, style = "width:254px;" })
+                            @if (ViewBag.IsFullValidate == true)
+                            {
+                                @Html.RequireFiled()
+                            }
+                        </div> 
+                    </div> 
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.DistrictComboBoxEn("DistrictEN", null, new { selected = (string)@ViewBag.DistrictEN, style = "width:254px;" })
+                            @if (ViewBag.IsFullValidate == true)
+                            {
+                                @Html.RequireFiled()
+                            }
+                        </div> 
+                    </div>
+                    <div class="usr-clear-style">&nbsp;</div>
+                </div>
+                <div class="fieldset-table" style="float:left;width:300px;margin-left:5px;">
+                    <div class="fieldset-header">
+                        <span>@Resources.MAS050.lblLc</span>
+                    </div>
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.CommonTextBox("AddressLC", (string)@ViewBag.AddressLC, new { style = "width:250px;", maxlength = "255" })
+                            @*@if (ViewBag.IsFullValidate == true)
+                            {
+                                @Html.RequireFiled()
+                            }*@
+                        </div> 
+                    </div>  
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.CommonTextBox("AlleyLC", (string)@ViewBag.AlleyLC, new { style = "width:250px;", maxlength = "50" })
+                        </div>                                
+                    </div>  
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.CommonTextBox("RoadLC", (string)@ViewBag.RoadLC, new { style = "width:250px;", maxlength = "50" })
+                        </div> 
+                    </div>   
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.CommonTextBox("SubDistrictLC", (string)@ViewBag.SubDistrictLC, new { style = "width:250px;", maxlength = "50" })
+                            @*@if (ViewBag.IsFullValidate == true)
+                            {
+                                @Html.RequireFiled()
+                            }*@
+                        </div> 
+                    </div> 
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.ProVinceLCComboBox("ProvinceLC", new {selected = (string)@ViewBag.ProvinceLC, style = "width:254px;" })
+                            @*@if (ViewBag.IsFullValidate == true)
+                            {
+                                @Html.RequireFiled()
+                            }*@
+                        </div> 
+                    </div> 
+                    <div class="usr-row" style="margin-left:20px;">
+                        <div class="usr-object">
+                            @Html.DistrictComboBoxLc("DistrictLC", null, new { selected = (string)@ViewBag.DistrictLC, style = "width:254px;" })
+                            @*@if (ViewBag.IsFullValidate == true)
+                            {
+                                @Html.RequireFiled()
+                            }*@
+                        </div> 
+                    </div>
+                    <div class="usr-clear-style">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS050.lblZipCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("Zipcode", (string)@ViewBag.ZipCode, new { style = "width:200px;", maxlength = "10" })
+            </div> 
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</form>

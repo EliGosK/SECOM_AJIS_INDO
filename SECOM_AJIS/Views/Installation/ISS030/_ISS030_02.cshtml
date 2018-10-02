@@ -1,0 +1,351 @@
+﻿@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+<!-- ======== Html content ======== --->
+
+
+@* --- Contract Information ---  *@
+
+<div id="divInstallationInfo" class="main-table" style="margin-top:5px;">
+<form id="form1"  >
+    <div class="usr-row">
+        <div class="table-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS030.lblHeaderName2
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>   
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblInstallationMANo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("InstallationMANo", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>  
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS030.lblPlanCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("PlanCode", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "20" }) @Html.RequireFiled()
+        </div>     
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblSalesMan1
+        </div>
+        <div class="usr-object" style="width:135px; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("SalesmanCode1", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("SalesmanEN1", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblSalesMan2
+        </div>
+        <div class="usr-object" style="width:135px; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("SalesmanCode2", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("SalesmanEN2", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS030.lblChangeReason
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonRadioButton("ChangeCustomerReason", @Resources.ISS030.lblCustomerReason, @InstallChangeReason.C_INSTALL_CHANGE_REASON_CUS, false, "ChangeReasonCode")
+                @Html.CommonRadioButton("ChangeSecomReason", @Resources.ISS030.lblSecomReason, @InstallChangeReason.C_INSTALL_CHANGE_REASON_SECOM, false, "ChangeReasonCode")
+        </div>
+    </div>       
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblInstallationType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.InstallationTypeComboBox("InstallationType", null, new { style = "width: 400px;" })
+            @Html.RequireFiled()
+            @Html.Hidden("InstallationTypeCode")
+            
+        </div>         
+          
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblInstallationCauseReason
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CauseReasonComboBox("CauseReason", null, new { style = "width: 400px;" })
+            @Html.RequireFiled()
+        </div>         
+          
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblNormalContractFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+            @*@Html.NumericTextBox("NormalContractFee", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("NormalContractFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+            </div>@*@Html.LabelCurrencyUnit("NormalContractFeeTHB")*@
+        </div>  
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS030.lblNormalInstallationFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+            @*@Html.NumericTextBox("NormalInstallFee", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })*@
+            @Html.NumericTextBoxWithMultipleCurrency("NormalInstallFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+            </div>
+            @*@Html.LabelCurrencyUnit("NormalInstallFeeTHB")*@
+            &nbsp;
+            @Html.RequireFiled()
+            
+            
+        </div>     
+        
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblInstallFeeBilling
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.FeeBillingTypeComboBox("InstallFeeBillingType", new { style = "width: 250px;" })
+            
+        </div>  
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS030.lblBillingInstallFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @*@Html.NumericTextBox("BillingInstallFee", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })*@
+            @Html.NumericTextBoxWithMultipleCurrency("BillingInstallFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+        </div>     @*@Html.LabelCurrencyUnit("")*@
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblBillingOCC
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.InstallBillingOCCComboBox("BillingOCC", (string)@ViewBag.ContractCodeLong, new { style = "width: " + @ViewBag.ObjectCol1Width + ";" })
+        </div>  
+        
+        @*<div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS030.lblMaterialFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("MaterialFee", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";",maxlength = "15" })
+        </div>    *@ 
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblSECOMPaymentFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object" >
+            @*@Html.NumericTextBox("SECOMPaymentFee", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("SECOMPaymentFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+            </div> @*@Html.LabelCurrencyUnit("SECOMPaymentFeeTHB")*@
+        </div> 
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS030.lblSECOMRevenueFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object" >
+            @*@Html.NumericTextBox("SECOMRevenueFee", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("SECOMRevenueFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+            </div>@*@Html.LabelCurrencyUnit("SECOMRevenueFeeTHB")*@  
+        </div>   
+        
+    </div>
+
+       @*<div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblInstallFeeforSubcontract
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.NumericTextBox("InstallFeeforSubcontract", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })
+            
+        </div>  
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS030.lblPurchaseOrderAmount
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.NumericTextBox("PurchaseOrderAmount", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })
+            
+        </div>     
+    </div>*@
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblInstallationBy
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.InstallationByComboBox("InstallationBy", new { style = "width:230px;" })
+            @Html.RequireFiled()
+        </div>  
+        
+        @*<div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS030.lblInstallationQuoteNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("InstallationQuoteNo", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })
+        </div>     *@
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblSlipIssueDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+            <input type="text" id="SlipIssueDate" name="SlipIssueDate" style="width:100px;" />
+            </div>
+            @Html.LabelDateFormat("SlipIssueDate")
+            @*&nbsp;@Resources.ISS010.lblDMY*@
+            @Html.RequireFiled()
+        </div>  
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+        
+           @Resources.ISS030.lblSlipIssueOfficeCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.InstallSlipOutputTargetComboBox("SlipIssueOfficeCode", new { style = "width:" + @ViewBag.ObjectCol4Width + ";" })
+            @Html.RequireFiled()
+        </div>     
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblApproveNo1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ApproveNo1", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })
+        </div>
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS030.lblApproveNo2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ApproveNo2", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })
+        </div>
+    </div>
+     
+</form>
+    
+    
+    <div class="usr-row" id="divAddEmail">
+        <div class="usr-label" style="width: @ViewBag.lbWidth;">
+            @Resources.ISS030.lblEmailNoticeTarget
+        </div>
+        <div class="usr-object" style="width: 140px">
+            @Html.CommonTextBox("EmailAddress", "", new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "50" })
+        </div>
+        <div class="usr-object" style="width: 120px;text-align:left" >
+            @ViewBag.EmailSuffix
+        </div>
+        <div class="usr-object" style="width: 85px">
+            @Html.CommonButton("btnAdd", @Resources.CTS053.lblAdd, new { style = "width:80px;" })
+        </div>
+        <div class="usr-object" style="width: 85px">
+            @Html.CommonButton("btnClear", @Resources.CTS053.lblClear, new { style = "width:80px;" })
+        </div>
+        <div class="usr-object" style="width: 85px">
+            @Html.CommonButton("btnSearchEmail", @Resources.CTS053.lblSearchEmail, new { style = "width:100px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+    </div>
+    <div class="usr-row">
+        <div id="gridEmail" style="width: 360px; margin-left: 225px;">
+        </div>
+    </div>
+   
+    
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>   
+        
+<form id="form2">
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth; height:60px;">@Resources.ISS030.lblInstallationMemo</div>
+        <div class="usr-object" style="margin-right:5px;width:500px;">
+            @Html.CommonTextArea("Memo", null, new { style = "width:495px; height:60px;", maxlength = "4000" })
+        </div>
+
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+        
+    </div>
+    <br />
+    <div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.lbWidth; height:15px;"></div>    
+    </div>
+    <br />
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;"></div>
+        <div class="usr-object" style="margin-right:5px;font-size: 0.8em;">
+        @Resources.ISS030.lblRemark1
+        </div>
+        </div>
+    <div class="usr-row">
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth; height:60px;">@Resources.ISS030.lblChangeContent</div>
+        <div class="usr-object" style="margin-right:5px;width:500px;">
+            @Html.CommonTextArea("ChangeContents", null, new { style = "width:495px; height:60px;", maxlength = "4000" })
+        </div>
+
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+</form>
+        
+    </div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    
+    <br />
+    
+
+
+
+ 
+</div>
+

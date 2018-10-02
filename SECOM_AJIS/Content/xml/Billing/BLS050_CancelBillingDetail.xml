@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head width="920">
+ 
+    <column id="Chk" width="30" type="link" align="center" sort="na"> </column> <!--lblHeader2Chk-->
+    <column id="Invoiceno" width="190" type="ro" align="left" sort="na">lblHeader2Invoiceno</column>
+    <column id="InvoiceOCC" width="0" type="ro" hidden="true"></column>
+    <column id="Runningno" width="120" type="ro" align="left" sort="na">lblHeader2TopBillingdetailno</column>
+      <column id="Billingtype" width="200" type="ro" align="left" sort="na">#cspan</column>
+      <column id="Paymentstatus" width="200" type="ro" align="left" sort="na">#cspan</column>
+      <column id="Billingperiod" width="300" type="ro" align="left" sort="na">#cspan</column>
+      <column id="Billingamount" width="250" type="edn" align="right" sort="na">#cspan</column>
+      
+      <column id="DateStart" width="0" type="ro"  hidden="true"></column>
+      <column id="DateEnd" width="0" type="ro"  hidden="true"></column>
+      <column id="BillingtypeCode" width="0" type="ro" hidden="true"></column>
+      <!--<column id="Runningno" width="*" type="ro" align="left" sort="str_custom">lblHeader2Runningno</column>-->
+      <!--<column id="Billingtype" width="*" type="ro" align="left" sort="str_custom">lblHeader2Billingtype</column-->
+      <!--<column id="Paymentstatus" width="*" type="ro" align="left" sort="str_custom">lblHeader2Paymentstatus</column>-->
+      <!--<column id="Billingperiod" width="*" type="ro" align="left" sort="str_custom">lblHeader2Billingperiod</column>-->
+      <!--<column id="Billingamount" width="*" type="ro" align="left" sort="str_custom">lblHeader2Billingamount</column>-->
+	  <column id="FirstFeeFlag" width="0" type="ro" hidden="true"></column>
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,lblHeader2Runningno,lblHeader2Billingtype,lblHeader2Paymentstatus,lblHeader2Billingperiod,lblHeader2Billingamount</param>
+      </call>
+    </afterInit>
+
+  </head>
+</rows>

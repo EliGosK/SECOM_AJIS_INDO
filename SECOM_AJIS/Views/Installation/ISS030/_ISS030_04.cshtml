@@ -1,0 +1,39 @@
+﻿@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+
+<!-- ======== Html content ======== --->
+
+@{
+    ViewBag.lblWidth = "220px";
+    ViewBag.ObjectColMergeWidth = "720px";
+ }
+@* --- Contract Information ---  *@
+
+<!---------------------------------- Attached Document list ---------------------------------------------->
+    <div id="divAttachedDoclist" class="main-table" style="margin-top:10px">
+        <div class="table-header">@Resources.ISS030.lblAttachedDocList</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.lblWidth;">&nbsp;</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                <div id="ISS030_gridAttachDocList" style="width:400px;"></div>
+            </div>
+        </div>
+        <div class="usr-row usr-row-space" id="divAttachFrame">
+            <iframe width="100%" height="25px" marginwidth="0" marginheight="0" id="frmAttach"
+                    vspace="0" hspace="0" frameborder="0" align="middle" scrolling="no"></iframe>         
+        </div>
+
+        <div class="usr-row" id="divAttachRemark">
+            <div class="usr-label" style="width:@ViewBag.lblWidth;">&nbsp;</div>
+            <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                @Resources.ISS030.lblPleasePayAttention
+            </div>
+            <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                @Resources.ISS030.lblRemarkAttachFileSize
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+    
+    <!---------------------------------- End   Attached Document list---------------------------------------------->

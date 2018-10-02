@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="headerContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+	<data name="headerDetail" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;詳細&lt;/div&gt;</value>
+  </data>
+	<data name="headerFee" xml:space="preserve">
+    <value>料金</value>
+  </data>
+	<data name="headerFeeType" xml:space="preserve">
+    <value>料金種別</value>
+  </data>
+	<data name="headerHandlingType" xml:space="preserve">
+    <value>取扱区分</value>
+  </data>
+	<data name="headerPeriod" xml:space="preserve">
+    <value>期間</value>
+  </data>
+	<data name="headerProductName" xml:space="preserve">
+    <value>商品名称</value>
+  </data>
+	<data name="headerRemark" xml:space="preserve">
+    <value>備考</value>
+  </data>
+	<data name="headerRemove" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;消去&lt;/div&gt;</value>
+  </data>
+	<data name="headerTax" xml:space="preserve">
+    <value>税金</value>
+  </data>
+	<data name="lblAcquisitionType" xml:space="preserve">
+    <value>取得タイプ</value>
+  </data>
+	<data name="lblAdd" xml:space="preserve">
+    <value>追加</value>
+  </data>
+	<data name="lblAlarmProvidedServiceType" xml:space="preserve">
+    <value>アラームの提供サービス種類</value>
+  </data>
+	<data name="lblApproveContractDate" xml:space="preserve">
+    <value>成約承認日</value>
+  </data>
+	<data name="lblAutoRenewMonth" xml:space="preserve">
+    <value>更新月数</value>
+  </data>
+	<data name="lblBill" xml:space="preserve">
+    <value>請求</value>
+  </data>
+	<data name="lblBillingDepositFee" xml:space="preserve">
+    <value>受注保証金</value>
+  </data>
+	<data name="lblCancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+	<data name="lblCancelContractCondition" xml:space="preserve">
+    <value>解約／成約取消条件</value>
+  </data>
+	<data name="lblClear" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+	<data name="lblContractAgreementInformation" xml:space="preserve">
+    <value>成約情報</value>
+  </data>
+	<data name="lblContractBasicInformation" xml:space="preserve">
+    <value>契約基本情報</value>
+  </data>
+	<data name="lblContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+	<data name="lblContractCodeForSlideFee" xml:space="preserve">
+    <value>スライド先契約コード</value>
+  </data>
+	<data name="lblContractDocumentInformation" xml:space="preserve">
+    <value>契約文書情報</value>
+  </data>
+	<data name="lblContractDuration" xml:space="preserve">
+    <value>契約期間</value>
+  </data>
+	<data name="lblContractDurationMonth" xml:space="preserve">
+    <value>契約期間（月数）</value>
+  </data>
+	<data name="lblContractFee" xml:space="preserve">
+    <value>契約料金</value>
+  </data>
+	<data name="lblContractFeeValidate" xml:space="preserve">
+    <value>契約料金</value>
+  </data>
+	<data name="lblContractOffice" xml:space="preserve">
+    <value>成約事業所</value>
+  </data>
+	<data name="lblContractRelated" xml:space="preserve">
+    <value>契約関連情報</value>
+  </data>
+	<data name="lblContractRelatedFeeInformation" xml:space="preserve">
+    <value>契約関連／料金情報</value>
+  </data>
+	<data name="lblContractReport" xml:space="preserve">
+    <value>契約書</value>
+  </data>
+	<data name="lblContractTarget" xml:space="preserve">
+    <value>顧客コード（契約先）</value>
+  </data>
+	<data name="lblContractTargetAddressEnglish" xml:space="preserve">
+    <value>契約先住所（英語）</value>
+  </data>
+	<data name="lblContractTargetAddressLocal" xml:space="preserve">
+    <value>契約先住所（現地語）</value>
+  </data>
+	<data name="lblContractTargetImportantCustomer" xml:space="preserve">
+    <value>契約先重要顧客</value>
+  </data>
+	<data name="lblContractTargetNameEnglish" xml:space="preserve">
+    <value>契約先名称（英語）</value>
+  </data>
+	<data name="lblContractTargetNameLocal" xml:space="preserve">
+    <value>契約先名称（現地語）</value>
+  </data>
+	<data name="lblCrimePrevention" xml:space="preserve">
+    <value>防犯</value>
+  </data>
+	<data name="lblCustomerCode" xml:space="preserve">
+    <value>顧客コード（お客様（最終設置先））</value>
+  </data>
+	<data name="lblDepositFee" xml:space="preserve">
+    <value>保証金</value>
+  </data>
+	<data name="lblDepositInformation" xml:space="preserve">
+    <value>保証金情報</value>
+  </data>
+	<data name="lblDocumentAuditResult" xml:space="preserve">
+    <value>文書審査結果</value>
+  </data>
+	<data name="lblEmergencyReport" xml:space="preserve">
+    <value>非常通報</value>
+  </data>
+	<data name="lblExempt" xml:space="preserve">
+    <value>免除</value>
+  </data>
+	<data name="lblExemptedDepositFee" xml:space="preserve">
+    <value>免除保証金</value>
+  </data>
+	<data name="lblFacilityMonitoring" xml:space="preserve">
+    <value>設備監視</value>
+  </data>
+	<data name="lblFee" xml:space="preserve">
+    <value>料金</value>
+  </data>
+	<data name="lblFeeType" xml:space="preserve">
+    <value>料金種別</value>
+  </data>
+	<data name="lblFireMonitoring" xml:space="preserve">
+    <value>火災監視</value>
+  </data>
+	<data name="lblFirstOperationDate" xml:space="preserve">
+    <value>当初実施日</value>
+  </data>
+	<data name="lblHandlingType" xml:space="preserve">
+    <value>取扱区分</value>
+  </data>
+	<data name="lblHeadingType" xml:space="preserve">
+    <value>取扱区分</value>
+  </data>
+	<data name="lblIntroducerCode" xml:space="preserve">
+    <value>紹介元コード</value>
+  </data>
+	<data name="lblLastChangeType" xml:space="preserve">
+    <value>最新変更種類</value>
+  </data>
+	<data name="lblLastOccurence" xml:space="preserve">
+    <value>最新OCC</value>
+  </data>
+	<data name="lblLastOperationDate" xml:space="preserve">
+    <value>最新実施日</value>
+  </data>
+	<data name="lblLineForDisconnectionMonitoring" xml:space="preserve">
+    <value>通常信号用回線</value>
+  </data>
+	<data name="lblLineForImageMonitoring" xml:space="preserve">
+    <value>画像監視用回線</value>
+  </data>
+	<data name="lblLineForNormalSignal" xml:space="preserve">
+    <value>断線監視用回線</value>
+  </data>
+	<data name="lblLinkageSaleContractCode" xml:space="preserve">
+    <value>連係元売買契約コード</value>
+  </data>
+	<data name="lblMainStructureType" xml:space="preserve">
+    <value>主体構造</value>
+  </data>
+	<data name="lblMaintainContractData" xml:space="preserve">
+    <value>契約関連情報修正（CP-33）（契約基本）</value>
+  </data>
+	<data name="lblMaintenanceContractStartMonth" xml:space="preserve">
+    <value>保守契約開始月</value>
+  </data>
+	<data name="lblMaintenanceContractStartYear" xml:space="preserve">
+    <value>保守契約開始年</value>
+  </data>
+	<data name="lblMaintenanceCycle" xml:space="preserve">
+    <value>保守サイクル（月数）</value>
+  </data>
+	<data name="lblMaintenanceFeeType" xml:space="preserve">
+    <value>保守請求区分</value>
+  </data>
+	<data name="lblMaintenanceFeeValidate" xml:space="preserve">
+    <value>保守料金</value>
+  </data>
+	<data name="lblMaintenanceInformation" xml:space="preserve">
+    <value>保守情報</value>
+  </data>
+	<data name="lblMaintenanceTargetContractCode" xml:space="preserve">
+    <value>保守対象契約コード</value>
+  </data>
+	<data name="lblMaintenanceType" xml:space="preserve">
+    <value>保守タイプ</value>
+  </data>
+	<data name="lblMemo" xml:space="preserve">
+    <value>メモ</value>
+  </data>
+	<data name="lblMotivationType" xml:space="preserve">
+    <value>導入動機</value>
+  </data>
+	<data name="lblNewOldBuilding" xml:space="preserve">
+    <value>新築・既築区分</value>
+  </data>
+	<data name="lblNormalDepositFee" xml:space="preserve">
+    <value>正規保証金</value>
+  </data>
+	<data name="lblNormalFee" xml:space="preserve">
+    <value>正規料金</value>
+  </data>
+	<data name="lblNumberOfBuilding" xml:space="preserve">
+    <value>棟数</value>
+  </data>
+	<data name="lblNumberOfFloor" xml:space="preserve">
+    <value>階数</value>
+  </data>
+	<data name="lblOldContractCode" xml:space="preserve">
+    <value>旧契約コード</value>
+  </data>
+	<data name="lblOperationOffice" xml:space="preserve">
+    <value>実施事業所</value>
+  </data>
+	<data name="lblOriginContractCodeForSlide" xml:space="preserve">
+    <value>保証金スライド元契約コード</value>
+  </data>
+	<data name="lblOtherInformation" xml:space="preserve">
+    <value>その他の情報</value>
+  </data>
+	<data name="lblOthersRemark" xml:space="preserve">
+    <value>その他通信欄</value>
+  </data>
+	<data name="lblOutOfRegulation" xml:space="preserve">
+    <value>規定外文書使用フラグ</value>
+  </data>
+	<data name="lblPeriod" xml:space="preserve">
+    <value>期間</value>
+  </data>
+	<data name="lblPlanCode" xml:space="preserve">
+    <value>プランコード</value>
+  </data>
+	<data name="lblPOReport" xml:space="preserve">
+    <value>発注書</value>
+  </data>
+	<data name="lblProduct" xml:space="preserve">
+    <value>商品</value>
+  </data>
+	<data name="lblProductName" xml:space="preserve">
+    <value>商品名称</value>
+  </data>
+	<data name="lblProjectCode" xml:space="preserve">
+    <value>プロジェクトコード</value>
+  </data>
+	<data name="lblProvideServiceInformation" xml:space="preserve">
+    <value>提供サービス情報</value>
+  </data>
+	<data name="lblQuotationCode" xml:space="preserve">
+    <value>見積コード</value>
+  </data>
+	<data name="lblReceiveAsRevenue" xml:space="preserve">
+    <value>収納</value>
+  </data>
+	<data name="lblReceiveDate" xml:space="preserve">
+    <value>回収日</value>
+  </data>
+	<data name="lblRefund" xml:space="preserve">
+    <value>返金</value>
+  </data>
+	<data name="lblRemark" xml:space="preserve">
+    <value>備考</value>
+  </data>
+	<data name="lblSaleMan1" xml:space="preserve">
+    <value>営業社員1</value>
+  </data>
+	<data name="lblSaleMan2" xml:space="preserve">
+    <value>営業社員2</value>
+  </data>
+	<data name="lblSaleSupporter" xml:space="preserve">
+    <value>営業貢献者</value>
+  </data>
+	<data name="lblSecurityArea" xml:space="preserve">
+    <value>警備面積（平方メートル）</value>
+  </data>
+	<data name="lblSecurityTypeCode" xml:space="preserve">
+    <value>警備種類コード</value>
+  </data>
+	<data name="lblSelectProcessAfterCounter" xml:space="preserve">
+    <value>相殺後処理</value>
+  </data>
+	<data name="lblSiteAddressEnglish" xml:space="preserve">
+    <value>物件住所（英語）</value>
+  </data>
+	<data name="lblSiteAddressLocal" xml:space="preserve">
+    <value>物件住所（現地語）</value>
+  </data>
+	<data name="lblSiteBulidingArea" xml:space="preserve">
+    <value>物件建物延床面積</value>
+  </data>
+	<data name="lblSiteCode" xml:space="preserve">
+    <value>物件コード</value>
+  </data>
+	<data name="lblSiteInformation" xml:space="preserve">
+    <value>物件情報</value>
+  </data>
+	<data name="lblSiteNameEnglish" xml:space="preserve">
+    <value>物件名称（英語）</value>
+  </data>
+	<data name="lblSiteNameLocal" xml:space="preserve">
+    <value>物件名称（現地語）</value>
+  </data>
+	<data name="lblStartDealDate" xml:space="preserve">
+    <value>取引開始日</value>
+  </data>
+	<data name="lblStartMemorandum" xml:space="preserve">
+    <value>業務開始確認書</value>
+  </data>
+	<data name="lblTax" xml:space="preserve">
+    <value>税金</value>
+  </data>
+	<data name="lblTelephoneLineOwner" xml:space="preserve">
+    <value>回線名義</value>
+  </data>
+	<data name="lblTelephoneLineType" xml:space="preserve">
+    <value>回線種類</value>
+  </data>
+	<data name="lblTelephoneNo" xml:space="preserve">
+    <value>電話番号</value>
+  </data>
+	<data name="lblTo" xml:space="preserve">
+    <value>~</value>
+  </data>
+	<data name="lblTotalBillingAmount" xml:space="preserve">
+    <value>(2) 合計請求額</value>
+  </data>
+	<data name="lblTotalCounterBalancing" xml:space="preserve">
+    <value>(1) - (2) 相殺後金額</value>
+  </data>
+	<data name="lblTotalRefundAmount" xml:space="preserve">
+    <value>(1) 合計返金額</value>
+  </data>
+	<data name="lblTotalSlideAmount" xml:space="preserve">
+    <value>合計スライド金額</value>
+  </data>
+	<data name="lblUserCode" xml:space="preserve">
+    <value>ユーザーコード</value>
+  </data>
+	<data name="lblCustomerCodeMsg" xml:space="preserve">
+    <value>顧客コード</value>
+  </data>
+	<data name="lblEmployeeCodeMsg" xml:space="preserve">
+    <value>社員番号</value>
+  </data>
+	<data name="lblSubcontractorCodeMsg" xml:space="preserve">
+    <value>業者コード</value>
+  </data>
+	<data name="lblPeriodFrom" xml:space="preserve">
+    <value>期間（開始）</value>
+  </data>
+	<data name="lblPeriodTo" xml:space="preserve">
+    <value>期間（終了）</value>
+  </data>
+	<data name="lblRemovalInstallationCompleteDate" xml:space="preserve">
+    <value>撤去工事完了日</value>
+  </data>
+	<data name="lblCancelContractDate" xml:space="preserve">
+    <value>解約／成約取消日</value>
+  </data>
+</root>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="No" width="0" type="ro" align="left" sort="na" > </column>
+    <column id="ContractCode" width="180" type="link" align="left" sort="na">lblHeader2BillingDetailsNo</column>
+      <column id="BillingOCC" width="150" type="link" align="left" sort="na">#cspan</column>
+      <column id="RunningNo" width="150" type="link" align="right" format="000" sort="na">#cspan</column>
+      <!--<column id="ContractCode" width="30" type="ro" align="left" sort="str_custom" >lblHeader2ContractCode</column>-->
+      <!--<column id="BillingOCC" width="30" type="ro" align="left" sort="str_custom" >lblHeader2BillingOCC</column>-->
+      <!--<column id="RunningNo" width="30" type="ro" align="left" sort="str_custom" >lblHeader2RunningNo</column>-->
+    <column id="IssuedateAutoTransferDate" width="150" type="link" align="left" sort="na" >lblHeader2IssuedateAutoTransferDate</column>
+    <column id="RealTimeIssue" width="100" type="link" align="center" sort="na" >lblHeader2RealTimeIssue</column>
+    <column id="Del" width="30" type="link" align="center" sort="na" >headerButtonRemove</column>
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,lblHeader2ContractCode,lblHeader2BillingOCC,lblHeader2RunningNo,#rspan,#rspan,#rspan</param>
+      </call>
+    </afterInit>
+  </head>
+</rows>

@@ -1,0 +1,74 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    
+}
+
+@section page_header{
+    <link rel="stylesheet" href="../../Content/css/fullcalendar.css" type="text/css">
+    <link rel="stylesheet" href="../../Content/css/ExchangeRate/Master.css" type="text/css">
+    <link rel="stylesheet" href="../../Content/css/fullcalendar_customize.css" type="text/css">
+    <script src="../../Scripts/fullcalendar.js" type="text/javascript"></script>
+    <script src="../../Scripts/ExchangeRate/Dialog.js" type="text/javascript"></script>
+    <script src="../../Scripts/ExchangeRate/Master.js" type="text/javascript"></script>
+    <script src="../../Scripts/ExchangeRate/RateCalendar.js" type="text/javascript"></script>
+}
+
+<div class="main-table-rate">
+    <div id="CurrentRate_Section" class="main-table">
+        <div class="table-header">
+            Current rate
+        </div>
+        <div class="usr-row" style="">
+            <div id="EffectiveDate" class="usr-object current-rate-date">
+                
+            </div>
+            <div class="usr-row" style="width:700px;margin:auto;">
+                <div class="ui-helper-clearfix" style="width:650px;text-align: center;margin:auto;">
+                    <div class="usr-label" style="width: 100px;">
+                        BANK Rate
+                    </div>
+                    <div class="usr-object" style="margin-left: 50px;width: 300px;">
+                        <span id="currentBankRate" style="font-size: 40px;"></span>
+                    </div>
+                    <div class="usr-object" style="padding: 20px 5px 0;">
+                        IRP / 1.00 USD
+                    </div>
+                </div>
+            </div>
+
+            <div class="usr-row" style="width:700px;margin:auto;border-top: 1px solid #aaa;">
+                <div class="ui-helper-clearfix" style="width:650px;text-align: center;margin:auto;">
+                    <div class="usr-label" style="width: 100px;">
+                        TAX Rate
+                    </div>
+                    <div class="usr-object" style="margin-left: 50px;width: 300px;">
+                        <span id="currentTaxRate" style="font-size: 40px;"></span>
+                    </div>
+                    <div class="usr-object" style="padding: 20px 5px 0;">
+                        IRP / 1.00 USD
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: right;height: 20px;">
+                <button id="btnCurrentRateEdit" name="btnCurrentRateEdit" style="width:100px;">Edit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="Rate_Calendar" class="main-table">
+    <div class="table-header">
+        Rate calendar
+    </div>
+    <div class="usr-row" style="text-align: center;">
+        <div id="calendar-area"></div>
+        <button type="button" id="btnCalendarReload" style="display: none;">Reload</button>
+    </div>
+</div>
+
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>
+
+
+   

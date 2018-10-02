@@ -1,0 +1,868 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@section page_header{
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS062.js")" ></script>
+    <script src="../../Scripts/Quotation/Dialog.js" type="text/javascript"></script>
+    <script src="../../Scripts/Master/Dialog.js" type="text/javascript"></script>
+    <script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+    <script src="../../Scripts/Contract/Dialog.js" type="text/javascript"></script>
+}
+@{
+    //ViewBag.Title = "CTS062";
+    ViewBag.LabelWidth = "250px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    <script language="javascript" runat="server"> 
+        var ObjCTS062 = { ServiceTypeCode: "@ViewBag.LastOCC ", TargetCodeType: "@ViewBag.TargetCodeType ", LastOCC: " @ViewBag.LastOCC ", ExpectedInstallCompleteDate : " @ViewBag.ExpectedInstallCompleteDate " , EmpNo : ""} 
+        var _lblReq = '@Html.RequireFiled()';
+    </script>
+    
+    @*if (ViewBag.IsSystemSuspending)
+    {
+    <script language="javascript" runat="server">
+        var obj = {
+        module: "Common",
+        code: "MSG0049"
+        };
+        call_ajax_method("/Shared/GetMessage", obj, function (result) {
+            OpenErrorMessageDialog(result.Code, result.Message,
+            function () {
+                window.location.href = generate_url("/common/CMS020");
+            },
+            null);
+        });
+    </script>
+    }
+    else
+    {
+        if (ViewBag.Permission == false)
+        {
+            <script language="javascript" runat="server">
+                var obj = {
+                module: "Common",
+                code: "MSG0053"
+                };
+                call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                    OpenErrorMessageDialog(result.Code, result.Message,
+                    function () {
+                        window.location.href = generate_url("/common/CMS020");
+                    },
+                    null);
+                });
+            </script>
+        }
+        else
+        {
+            if (ViewBag.HasAuthorityContract == false)
+            {
+                <script language="javascript" runat="server">
+                    var obj = {
+                    module: "Common",
+                    code: "MSG0063"
+                    };
+                    call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                        OpenErrorMessageDialog(result.Code, result.Message,
+                        function () {
+                            window.location.href = generate_url("/common/CMS020");
+                        },
+                        null);
+                    });
+                </script>
+            }
+            else
+            {
+                if (ViewBag.HasAuthorityOperation == false)
+                {
+                    <script language="javascript" runat="server">
+                        var obj = {
+                        module: "Common",
+                        code: "MSG0063"
+                        };
+                        call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                            OpenErrorMessageDialog(result.Code, result.Message,
+                            function () {
+                                window.location.href = generate_url("/common/CMS020");
+                            },
+                            null);
+                        });
+                    </script>
+                }
+                else
+                {
+                    if (ViewBag.IsLastOCCCompleted == false || ViewBag.IsLastOCCCompleted == null)
+                    {
+                        <script language="javascript" runat="server">
+                            var obj = { 
+                            module: "Contract",
+                            code: "MSG3058"
+                            };
+                            call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                                OpenErrorMessageDialog(result.Code, result.Message,
+                                function () {
+                                    window.location.href = generate_url("/common/CMS020");
+                                },
+                                null);
+                            });
+                        </script>
+                    }
+                }
+            }
+        }
+    }
+    *@
+}
+<div id="SaleContractChangeSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS062.lblSaleContractBasicInformation
+        </div>
+    </div>
+    <div class="usr-row" style="height:20px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblContractCode
+        </div>
+        <div class="usr-object" style="width: 100px">
+            @Html.CommonTextBox("ContractCode", (string)@ViewBag.ContractCode, new { style = "width:100px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblPurchaserCustCode
+        </div>
+        <div class="usr-object" style="width: 107px">
+            @Html.CommonTextBox("PurchaserCustCode", (string)@ViewBag.PurchaserCustCode, new { style = "width:100px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 170px">
+            @Resources.CTS062.lblRealCustomerCustCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("RealCustomerCustCode", (string)@ViewBag.RealCustomerCustCode, new { style = "width:100px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 120px">
+            @Resources.CTS062.lblSiteCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("SiteCode", (string)@ViewBag.SiteCode, new { style = "width:140px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:20px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        </div>
+        <div class="usr-object">
+            @*@Html.CommonCheckButton("ImportantFlag", @Resources.CTS062.lblImportantFlag, "", (bool)@ViewBag.ImportantFlag, new { disabled = "disabled" })*@
+            @Html.CommonCheckButton("ImportantFlag", @Resources.CTS062.lblImportantFlag, "", (bool)ViewBag.ImportantFlag, new { disabled = "disabled" })
+        </div>
+    </div>
+    <div class="usr-row" style="height:20px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblCustFullNameEN
+        </div>
+        <div class="usr-object" style="width: 650px;">
+            @Html.CommonTextBox("PurchaserNameEN", (string)@ViewBag.PurchaserNameEN, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblPurchaserAddressEnglish
+        </div>
+        <div class="usr-object" style="width: 650px;">
+            @Html.CommonTextBox("PurchaserAddressEN", (string)@ViewBag.PurchaserAddressEN, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblSiteNameEN
+        </div>
+        <div class="usr-object" style="width: 650px;">
+            @Html.CommonTextBox("SiteNameEN", (string)@ViewBag.SiteNameEN, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblSiteAddressEN
+        </div>
+        <div class="usr-object" style="width: 650px;">
+            @Html.CommonTextBox("SiteAddressEN", (string)@ViewBag.SiteAddressEN, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblCustFullNameLC
+        </div>
+        <div class="usr-object" style="width: 650px;">
+            @Html.CommonTextBox("CustFullNameLC", (string)@ViewBag.PurchaserNameLC, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblPurchaserAddressLocal
+        </div>
+        <div class="usr-object" style="width: 650px;">
+            @Html.CommonTextBox("PurchaserAddressLocal", (string)@ViewBag.PurchaserAddressLC, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" >
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblSiteNameLC
+        </div>
+        <div class="usr-object" style="width: 650px;">
+            @Html.CommonTextBox("SiteNameLC", (string)@ViewBag.SiteNameLC, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblSiteAddressLC
+        </div>
+        <div class="usr-object" style="width: 650px;">
+            @Html.CommonTextBox("SiteAddressLC", (string)@ViewBag.SiteAddressLC, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    @*<div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblInstallationStatusName
+        </div>
+        <div class="usr-object" style="width: 205px">
+            @Html.CommonTextBox("InstallationStatusName", (string)@ViewBag.InstallationStatusCodeName, new { style = "width:200px;", @readonly = true })
+        </div>
+        <div class="usr-object" style="width: 300px">
+            @Html.CommonButton("btnViewInstalltionDetail", @Resources.CTS062.lblViewInstallationDetail, new { style = "width:200px;" })
+        </div>
+    </div>*@
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblOperationOffice
+        </div>
+        <div class="usr-object" style="width: 200px;">
+            @Html.CommonTextBox("OperationOffice", (string)@ViewBag.OperationOfficeName, new { style = "width:200px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+@*//SpecifyQuotationSection----------------------------------------------------------------------------------------------------------------------------------------------------*@
+<div id="SpecifyQuotationSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS062.lblSpecifyQuotation
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblQuotationCode
+        </div>
+        <div class="usr-object" style="width: 105px">
+            @Html.CommonTextBox("QuotationTargetCode", (string)ViewBag.QuotationTargetCode, new { style = "width:100px;", @readonly = true })
+        </div>
+        <div class="usr-object" style="width: 70px">
+            @Html.CommonTextBox("Alphabet", null, new { style = "width:65px;", @maxlength = "2" })
+        </div>
+        <div class="usr-object" style="width: 10px">
+            @*<font style="color: Red">*</font>*@
+            @Html.RequireFiled()
+        </div>
+        <div class="usr-object" style="width: 101px">
+            @Html.CommonButton("btnRetrieve", @Resources.CTS062.lblRetrieve, new { style = "width:100px;" })
+        </div>
+        <div class="usr-object" style="width: 150px">
+            @Html.CommonButton("btnSearchQuotation", @Resources.CTS062.lblSearchQuotation, new { style = "width:150px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblProductName
+        </div>
+        <div class="usr-object" style="width: 175px">
+            @Html.CommonTextBox("ProductName", null, new { style = "width:170px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 848px;">
+            @Html.CommonButton("btnViewQuotationDetail", @Resources.CTS062.lblViewQuotationDetail, new { style = "width:150px;" })
+        </div>
+        <div class="usr-label">
+            @Html.CommonButton("btnSpecifyClear", @Resources.CTS062.lblClear, new { style = "width:100px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+@*//ChangePlanSection----------------------------------------------------------------------------------------------------------------------------------------------------*@
+<div id="ChangePlanSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS062.lblChangePlan
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblExpectedCompleteInstallationDate
+        </div>
+        <div class="usr-object" style="width: 130px">
+            @Html.CommonTextBox("ExpectedInstallCompleteDate", null, new { style = "width:100px;" })
+        </div>
+        <div class="usr-object" style="width: 120px;">
+            @Html.RequireFiled()
+            &nbsp;@Html.LabelDateFormat("ExpectedInstallCompleteDate")
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblSaleType
+        </div>
+        <div class="usr-object" style="width: 80px">
+            @Html.CommonTextBox("SalesType", (string)ViewBag.SalesType, new { style = "width:150px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblExpectedCustomerAcceptanceDate
+        </div>
+        <div class="usr-object" style="width: 130px">
+            @Html.CommonTextBox("ExpectedCustAcceptanceDate", null, new { style = "width:100px;" })
+        </div>
+        <div class="usr-object" style="width: 120px;">
+            @Html.RequireFiled()
+            &nbsp;@Html.LabelDateFormat("ExpectedCustAcceptanceDate")
+        </div>
+    </div>
+    <div class="usr-row" style="height:10px"></div>
+    <div class="usr-row">
+        <div id="gridChangePlanBillingTarget">
+            <div class="gridbox_dhx_secom" style="width: 1200px">
+                <div class="custom-table" style="width:100%;">
+                    <table cellspacing="0" cellpadding="0" style="width: 100%;">
+                        <tr class="hdr">
+                            <td style="width:150px;" rowspan="2" />
+                            <td style="width:205px;" rowspan="2">@Resources.CTS062.headerNormal</td>
+                            <td style="width:215px;" rowspan="2">@Resources.CTS062.headerOrder</td>
+                            <td colspan="3">@Resources.CTS062.headerBillingTiming</td>
+                        </tr>
+
+                        <tr class="hdr">
+                            <td style="width:205px;">@Html.LabelDecode(@Resources.CTS062.headerBillingPriceATApproval)</td>
+                            <td style="width:205px;">@Resources.CTS062.headerPartialFee</td>
+                            <td style="width:215px;">@Html.LabelDecode(@Resources.CTS062.headerBillingPriceAtCustomerAcceptance)</td>
+                        </tr>
+
+                        <tr>
+                            <td align="right">@Resources.CTS062.lblProductPrice</td>
+                            <td style="padding-left:1px;vertical-align: top;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("NormalProductPrice", null, null, new { style = "width:140px;", @readonly = true })
+                                </div>
+                            </td>
+                            <td style="padding-left:1px;vertical-align: top;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("OrderProductPrice", null, null, new { style = "width:140px;" })
+                                    @Html.RequireFiled()
+                                </div>
+                            </td>
+                            <td style="padding-left:1px;vertical-align: top;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("BillingAmt_ApproveContract", null, null, new { style = "width:140px;", @readonly = true })
+                                </div>
+                            </td>
+                            <td style="padding-left:1px;vertical-align: top;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("BillingAmt_PartialFee", null, null, new { style = "width:140px;", @readonly = true })
+                                </div>
+                            </td>
+                            <td style="padding-left:1px;vertical-align: top;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("BillingAmt_Acceptance", null, null, new { style = "width:140px;" })
+                                    @Html.RequireFiled()
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="odd_dhx_secom">
+                            <td align="right">@Resources.CTS062.lblInstallationFee</td>
+
+                            <td style="padding-left:1px;vertical-align: top;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("NormalInstallFee", null, null, new { style = "width:140px;", @readonly = true })
+                                </div>
+                            </td>
+                            <td style="padding-left:1px;vertical-align: top;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("OrderInstallFee", null, null, new { style = "width:140px;" })
+                                    @Html.RequireFiled()
+                                </div>
+                            </td>
+                            <td style="padding-left:1px;vertical-align: top;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("BillingAmtInstallation_ApproveContract", null, null, new { style = "width:140px;", @readonly = true })
+                                </div>
+                            </td>
+                            <td style="padding-left:1px;vertical-align: top;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("BillingAmtInstallation_PartialFee", null, null, new { style = "width:140px;", @readonly = true })
+                                </div>
+                            </td>
+                            <td style="padding-left:1px;vertical-align: top;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("BillingAmtInstallation_Acceptance", null, null, new { style = "width:140px;" })
+                                    @Html.RequireFiled()
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+    <div class="usr-label" style="width:416px">@Html.CommonCheckButton("ConnectionFlag", @Resources.CTS062.lblConnectToOnlineFlag, "", null, null)</div>
+    <div class="usr-object" style="width: 105px">
+        @Html.CommonTextBox("ConnectTargetCode", null, new { style = "width:200px;", @readonly = true })
+    </div>
+    <div class="usr-row" style="height:10px"></div>
+    <div id="DistributedSection" class="main-table" style="border-style: dotted; width: 99%">
+        <div class="usr-row">
+            <div class="usr-label" style="width:232px">
+                @Resources.CTS062.lblDistributed
+            </div>
+            <div class="usr-object" style="width: 15px;">@*<font style="color: Red">*</font>*@@Html.RequireFiled()</div>
+            <div class="usr-object" style="width: 143px">
+                @Html.CommonRadioButton("rdoNotDistributed", @Resources.CTS062.lblNotDistribute, "0", false, "DistributedSection")
+            </div>
+            <div class="usr-object" style="width: 165px">
+                @Html.CommonRadioButton("rdoDistributedOrigin", @Resources.CTS062.lblDistributedOrigin, "1", false, "DistributedSection")
+            </div>
+            <div class="usr-object" style="width: 165px">
+                @Html.CommonRadioButton("rdoDistributedTarget", @Resources.CTS062.lblDistributedTarget, "2", false, "DistributedSection")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:245px">
+                @Resources.CTS062.lblDistributedCode
+            </div>
+            <div class="usr-object" style="width: 155px">
+                @Html.CommonTextBox("DistributedOriginCode", null, new { style = "width:150px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+        </div>
+    </div>
+    <div id="SalemanSection1" class="usr-row">
+        <div class="usr-row">        
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS062.lblSaleMan1
+            </div>
+            <div class="usr-object" style="padding-right: 1px;">
+                @Html.CommonTextBox("SalesmanEmpNo1", null, new { style = "width:100px;", @readonly = true, maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("SalesmanEmpName1", null, new { style = "width:200px;", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS062.lblSaleMan2
+            </div>
+            <div class="usr-object" style="padding-right: 1px;">
+                @Html.CommonTextBox("SalesmanEmpNo2", null, new { style = "width:100px;", @readonly = true, maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("SalesmanEmpName2", null, new { style = "width:200px;", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:165px">
+                @Html.CommonLink("More", @Resources.CTS062.lblMore, new { style = "width:200px;", @readonly = true }) 
+                @Html.CommonLink("Less", @Resources.CTS062.lblLess, new { style = "width:200px;", @readonly = true })  
+            </div>
+            <div class="usr-label" style="width:80px;">
+                @Resources.CTS062.lblSaleMan3
+            </div>
+            <div class="usr-object" style="padding-right: 1px;">
+                @Html.CommonTextBox("SalesmanEmpNo3", null, new { style = "width:100px;", @readonly = true, maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("SalesmanEmpName3", null, new { style = "width:200px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div id="SalemanSection2" class="usr-row">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS062.lblSaleMan4
+            </div>
+            <div class="usr-object" style="padding-right: 1px;">
+                @Html.CommonTextBox("SalesmanEmpNo4", null, new { style = "width:100px;", @readonly = true, maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("SalesmanEmpName4", null, new { style = "width:200px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div id="SalemanSection3" class="usr-row">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS062.lblSaleMan5
+            </div>
+            <div class="usr-object" style="padding-right: 1px;">
+                @Html.CommonTextBox("SalesmanEmpNo5", null, new { style = "width:100px;", @readonly = true, maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("SalesmanEmpName5", null, new { style = "width:200px;", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS062.lblSaleMan6
+            </div>
+            <div class="usr-object" style="padding-right: 1px;">
+                @Html.CommonTextBox("SalesmanEmpNo6", null, new { style = "width:100px;", @readonly = true, maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("SalesmanEmpName6", null, new { style = "width:200px;", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS062.lblSaleMan7
+            </div>
+            <div class="usr-object" style="padding-right: 1px;">
+                @Html.CommonTextBox("SalesmanEmpNo7", null, new { style = "width:100px;", @readonly = true, maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("SalesmanEmpName7", null, new { style = "width:200px;", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS062.lblSaleMan8
+            </div>
+            <div class="usr-object" style="padding-right: 1px;">
+                @Html.CommonTextBox("SalesmanEmpNo8", null, new { style = "width:100px;", @readonly = true, maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("SalesmanEmpName8", null, new { style = "width:200px;", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS062.lblSaleMan9
+            </div>
+            <div class="usr-object" style="padding-right: 1px;">
+                @Html.CommonTextBox("SalesmanEmpNo9", null, new { style = "width:100px;", @readonly = true, maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("SalesmanEmpName9", null, new { style = "width:200px;", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS062.lblSaleMan10
+            </div>
+            <div class="usr-object" style="padding-right: 1px;">
+                @Html.CommonTextBox("SalesmanEmpNo10", null, new { style = "width:100px;", @readonly = true, maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("SalesmanEmpName10", null, new { style = "width:200px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row" style="height:10px"></div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblNegotiationStaff1
+        </div>
+        <div class="usr-object" style="padding-right: 1px;">
+            @Html.CommonTextBox("NegotiationStaffEmpNo1", null, new { style = "width:100px;", maxlength = "10" })
+        </div>
+        <div class="usr-object" style="width: 205px;">
+            @Html.CommonTextBox("NegotiationStaffEmpName1", null, new { style = "width:200px;", @readonly = true })
+        </div>
+        <div class="usr-label">
+            @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblNegotiationStaff2
+        </div>
+        <div class="usr-object" style="padding-right: 1px;">
+            @Html.CommonTextBox("NegotiationStaffEmpNo2", null, new { style = "width:100px;", maxlength = "10" })
+        </div>
+        <div class="usr-object" style="width: 205px;">
+            @Html.CommonTextBox("NegotiationStaffEmpName2", null, new { style = "width:200px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:10px"></div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblApproveNo1
+        </div>
+        <div class="usr-object" style="width: 105px">
+            @Html.CommonTextBox("ApproveNo1", null, new { style = "width:100px;", maxlength = "15" })
+        </div>        
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblApproveNo2
+        </div>
+        <div class="usr-object" style="width: 105px">
+            @Html.CommonTextBox("ApproveNo2", null, new { style = "width:100px;", maxlength = "15" })
+        </div>        
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblApproveNo3
+        </div>
+        <div class="usr-object" style="width: 105px">
+            @Html.CommonTextBox("ApproveNo3", null, new { style = "width:100px;", maxlength = "15" })
+        </div>        
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblApproveNo4
+        </div>
+        <div class="usr-object" style="width: 105px">
+            @Html.CommonTextBox("ApproveNo4", null, new { style = "width:100px;", maxlength = "15" })
+        </div>        
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblApproveNo5
+        </div>
+        <div class="usr-object" style="width: 105px">
+            @Html.CommonTextBox("ApproveNo5", null, new { style = "width:100px;", maxlength = "15" })
+        </div>        
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+@*//-Billing Target Detail--------------------------------------------------------------------------------------------------------------------------------------*@
+<div id="BillingTargetDetailSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS062.lblBillingTargetDetail
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 183px;">
+            @Resources.CTS062.lblBillingTargetCode
+        </div>
+        <div class="usr-object" style="width: 100px; text-align: left">
+            @Html.CommonTextBox("BillingTargetCodeDetail", null, new { style = "width:150px;", maxlength = CommonValue.C_MAXLENGTH_BILLING_TARGE_CODE, @readonly = true })
+        </div>
+        <div id="divlblBillingClientCode" class="usr-label" style="width: 220px;">
+            @Resources.CTS062.lblBillingClientCode
+        </div>
+        <div class="usr-object" style="width: 160px;">
+            @Html.CommonTextBox("BillingClientCodeDetail", null, new { style = "width:150px;", maxlength = "12", @readonly = true })
+        </div>
+        <div class="usr-label" style="text-align: left">
+            @Html.CommonButton("btnNewEdit", @Resources.CTS062.lblEditBillingClientInfo, new { style = "width:161px;" })
+        </div>
+        <div class="usr-label" style="text-align: left">
+            @Html.CommonButton("btnClearBillingTarget", @Resources.CTS062.lblClearBillingTarget, new { style = "width:110px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 183px;">
+            @Resources.CTS062.lblNameEnglish
+        </div>
+        <div class="usr-object" style="width:760px;">
+            @Html.CommonTextBox("FullNameEN", null, new { style = "width:758px;", maxlength = "12", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 183px;">
+            @Resources.CTS062.lblBranchNameEnglish
+        </div>
+        <div class="usr-object" style="width:760px;">
+            @Html.CommonTextBox("BranchNameEN", null, new { style = "width:758px;", maxlength = "12", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 183px;">
+            @Resources.CTS062.lblAddressEnglish
+        </div>
+        <div class="usr-object" style="width:760px;">
+            @Html.CommonTextBox("AddressEN", null, new { style = "width:758px;", maxlength = "160", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 183px;">
+            @Resources.CTS062.lblNameLocal
+        </div>
+        <div class="usr-object" style="width:760px;">
+            @Html.CommonTextBox("FullNameLC", null, new { style = "width:758px;", maxlength = "12", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 183px;">
+            @Resources.CTS062.lblBranchNameLocal
+        </div>
+        <div class="usr-object" style="width:760px;">
+            @Html.CommonTextBox("BranchNameLC", null, new { style = "width:758px;", maxlength = "12", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 183px;">
+            @Resources.CTS062.lblAddressLocal
+        </div>
+        <div class="usr-object" style="width:760px;">
+            @Html.CommonTextBox("AddressLC", null, new { style = "width:758px;", maxlength = "12", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 183px;">
+            @Resources.CTS062.lblNationality
+        </div>
+        <div class="usr-object" style="width: 100px; text-align: left">
+            @Html.CommonTextBox("Nationality", null, new { style = "width:150px;", maxlength = "12", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 200px;">
+            @Resources.CTS062.lblTelephoneNo
+        </div>
+        <div class="usr-object" style="width: 160px;">
+            @Html.CommonTextBox("PhoneNo", null, new { style = "width:160px;", maxlength = "12", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 130px;">
+            @Resources.CTS062.lblBusinessType
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("BusinessType", null, new { style = "width:158px;", maxlength = "12", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 183px;">
+            @Resources.CTS062.lblIDTaxNo
+        </div>
+        <div class="usr-object" style="width:760px;">
+            @Html.CommonTextBox("IDNo", null, new { style = "width:758px;", maxlength = "15", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 183px;">
+            @Resources.CTS062.lblBillingOffice
+        </div>
+        <div class="usr-object">
+            @Html.BillingOfficeCombo("BillingOffice", new { style = "height: 22px; width: 200px; text-align:center" })
+        </div>
+    </div>
+    <div class="usr-row" style="height:10px"></div>
+    <div class="usr-row">
+        <div class="usr-row">
+            <div id="gridChangePlanBillingDetail" style="margin-left: 188px;">
+                <div class="gridbox_dhx_secom" style="width:680px;">
+                    <div class="custom-table" style="width:100%;">
+                        <table cellspacing="0" cellpadding="0" style="width:100%;">
+                            <tr class="hdr">
+                                <td colspan="2" style="width:300px;">&nbsp;</td>
+                                <td style="width:205px;">@Resources.CTS062.headerAmount</td>
+                                <td style="width:140px;">@Resources.CTS062.headerPaymentMethod</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="width:150px;text-align:right;">@Resources.CTS062.headerProductPrice</td>
+                                <td style="width:150px;text-align:right;">@Resources.CTS062.lblApprove</td>
+                                <td>
+                                    <div style="float:right;">
+                                        @Html.NumericTextBoxWithMultipleCurrency("SalePrice_Approval", null, null, new { @readonly = true, style = "width:140px;" })
+                                    </div>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td style="width:150px;text-align:right;">@Resources.CTS062.lblPartialFee</td>
+                                <td>
+                                    <div style="float:right;">
+                                        @Html.NumericTextBoxWithMultipleCurrency("SalePrice_Partial", null, null, new { @readonly = true, style = "width:140px;" })
+                                    </div>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td style="width:150px;text-align:right;">@Resources.CTS062.lblCustomerAcceptance</td>
+                                <td>
+                                    <div style="float:right;">
+                                        @Html.NumericTextBoxWithMultipleCurrency("SalePrice_Acceptance", null, null, new { @readonly = true, style = "width:140px;" })
+                                    </div>
+                                </td>
+                                <td>
+                                    @Html.PaymentMethodTypeComboBox("SalePrice_PaymentMethod_Acceptance", new { style = "width:140px;" }, true)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" style="width:150px;text-align:right;">@Resources.CTS062.headerInstallationFee</td>
+                                <td style="width:150px;text-align:right;">@Resources.CTS062.lblApprove</td>
+                                <td>
+                                    <div style="float:right;">
+                                        @Html.NumericTextBoxWithMultipleCurrency("InstallationFee_Approval", null, null, new { @readonly = true, style = "width:140px;" })
+                                    </div>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td style="width:150px;text-align:right;">@Resources.CTS062.lblPartialFee</td>
+                                <td>
+                                    <div style="float:right;">
+                                        @Html.NumericTextBoxWithMultipleCurrency("InstallationFee_Partial", null, null, new { @readonly = true, style = "width:140px;" })
+                                    </div>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td style="width:150px;text-align:right;">@Resources.CTS062.lblCustomerAcceptance</td>
+                                <td>
+                                    <div style="float:right;">
+                                        @Html.NumericTextBoxWithMultipleCurrency("InstallationFee_Acceptance", null, null, new { @readonly = true, style = "width:140px;" })
+                                    </div>
+                                </td>
+                                <td>
+                                    @Html.PaymentMethodTypeComboBox("InstallationFee_PaymentMethod_Acceptance", new { style = "width:140px;" }, true)
+                                </td>
+                            </tr>
+
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="dlgCTS062" class="main-popup-dialog">
+    <div class="popup-dialog">
+    </div>
+</div>
+<div>
+    @Html.Hidden("lblContractFeeAfterChange", @Resources.CTS051.lblContractFeeAfterChange)
+</div>
+<div>
+    @Html.Hidden("lblInstallationFeeAfterChange", @Resources.CTS051.lblInstallationFeeAfterChange)
+</div>
+<div>
+    @Html.Hidden("lblAdditionalDepositFee", @Resources.CTS051.lblAdditionalDepositFee)
+</div>
+<div>
+    @Html.Hidden("lblBillingContractFee", @Resources.CTS051.lblBillingContractFee)
+</div>
+<div>
+    @Html.Hidden("lblBillingInstallationFee", @Resources.CTS051.lblBillingInstallationFee)
+</div>
+<div>
+    @Html.Hidden("lblBillingDepositFee", @Resources.CTS051.lblBillingDepositFee)
+</div>
+<div>
+    @Html.Hidden("lblCustomerAcceptance", @Resources.CTS062.lblCustomerAcceptance)
+</div>
+<div>
+    @Html.Hidden("lblApproval", @Resources.CTS051.lblApproval)
+</div>
+<div>
+    @Html.Hidden("lblStartService", @Resources.CTS051.lblStartService)
+</div>
+<div>
+    @Html.Hidden("lblTotal", @Resources.CTS051.lblTotal)
+</div>
+<div>
+    @Html.Hidden("lblTotal", @Resources.CTS051.lblBillingDepositFee)
+</div>

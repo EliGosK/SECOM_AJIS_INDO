@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+
+    <column id="OfficeNameDisplay" width="*" type="ro" align="left" sort="str_custom">headerOfficeName</column>
+    <column id="DownloadStatus" width="200" type="ro" align="center" sort="na">headerCheckingSlip</column>
+    <column id="DownloadDate" width="200" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="na" >#cspan</column>
+    <column id="CheckingStartDate" width="180" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="na" >headerCheckingResultRegisterDate</column>
+
+
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,headerDownloadCheckingSlip,headerDownloadDate,#rspan</param>
+      </call>
+    </afterInit>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

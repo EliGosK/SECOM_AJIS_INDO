@@ -1,0 +1,437 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+<div id="divContractDetailInfo" class="main-table" style="margin-top: 5px;">
+    <div class="table-header">@Resources.CTS150.lblSaleContractDetailInfo</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblProductName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ProductName", null, new { style = "width:204px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblApproveContractDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("ApproveContractDate", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblContractOffice
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.ContractOfficeCombo("ContractOffice", new { style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";", @tabindex = "3" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblSaleType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.SaleTypeComboBox("SaleType", new { style = "width:" + @ViewBag.ObjectCol2ComboWidth + ";", @tabindex = "4" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblOperationOffice
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.OperationOfficeCombo_CTS150("OperationOffice", new { style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";", @tabindex = "5" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblPlanCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("PlanCode", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblSaleOffice
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.ContractOfficeCombo("SalesOffice", new { style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";", @tabindex = "6" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblQuotationNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("QuotationNo", null, new { style = "width:200px;", maxlength = "30" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            &nbsp;
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            &nbsp;
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblQuotationCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            <div style="margin-top: 3px;">
+                @Html.CommonLink("QuotationCode", null, new { @tabindex = "7" })
+                @Html.Hidden("HidQuotationCode")
+                @Html.Hidden("HidAlphabet")
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            &nbsp;</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            &nbsp;</div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblProjectCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("ProjectCode", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblDocAuditResult
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.DocAuditResultComboBox("DocAuditResult", new { style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";", @tabindex = "8" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblDistributeType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.DistributeTypeComboBox("DistributedType", new { style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";", @tabindex = "9" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblDocRecieveDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("DocRecieveDate", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("DocRecieveDate")
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;margin-left:-50px;">
+            @Resources.CTS150.lblDistributeOriginCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("DistributedOriginCode", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @tabindex = "11", @maxlength = "12" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            &nbsp;</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            &nbsp;</div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblOnlineContractCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("OnlineContractCode", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @tabindex = "12", @maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            &nbsp;</div>
+        <div class="usr-object custom-table" style="width: 795px;">
+            <table cellpadding="0" cellspacing="0">
+                <tr class="hdr">
+                    <td style="width: 170px;">&nbsp;</td>
+                    <td style="width: 205px;">@Resources.CTS150.headerBillingAmount</td>
+                    <td style="width: 215px;">@Resources.CTS150.headerNormalAmount</td>
+                    <td style="width: 205px;">@Resources.CTS150.headerDCOC</td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">@Resources.CTS150.lblProductPrice</td>
+                    <td style="padding-left:1px;">
+                        @Html.NumericTextBoxWithMultipleCurrency("ProductBillingAmount", null, null, new { style = "width:140px;" })
+                    </td>
+                    <td style="padding-left:1px;">
+                        @Html.NumericTextBoxWithMultipleCurrency("ProductNormalAmount", null, null, new { style = "width:140px;" }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX, true)
+                    </td>
+                    <td>
+                        <div style="float:left;">
+                            <span id="spProductResTxt"></span>
+                        </div>
+                        <div style="float:right;">
+                            <div class="object-unit">
+                                @Html.NumericTextBox("ProductResultAmount", null, new { style = "width:70px;", @readonly = true })
+                            </div>
+                            <div id="unitProductResultAmount" class="label-unit">%</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:left;">@Resources.CTS150.lblInstallationFee</td>
+                    <td style="padding-left:1px;">
+                        @Html.NumericTextBoxWithMultipleCurrency("InstallBillingAmount", null, null, new { style = "width:140px;" })
+                    </td>
+                    <td style="padding-left:1px;">
+                        @Html.NumericTextBoxWithMultipleCurrency("InstallNormalAmount", null, null, new { style = "width:140px;" }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX, true)
+                    </td>
+                    <td>
+                        <div style="float:left;">
+                            <span id="spInstallResTxt"></span>
+                        </div>
+                        <div style="float:right;">
+                            <div class="object-unit">
+                                @Html.NumericTextBox("InstallResultAmount", null, new { style = "width:70px;", @readonly = true })
+                            </div>
+                            <div id="unitInstallResultAmount" class="label-unit">%</div>
+                        </div>
+                    </td>
+                </tr>                
+            </table>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            &nbsp;</div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblBidAmount1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("BidGuaranteeAmount1", null, null, new { style = "width:140px;" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblBidReturnDate1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("BidGuaranteeReturnDate1", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("BidGuaranteeReturnDate1")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblBidAmount2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("BidGuaranteeAmount2", null, null, new { style = "width:140px;" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblBidReturnDate2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("BidGuaranteeReturnDate2", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("BidGuaranteeReturnDate2")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblPurchaseReasonType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.PurchaseReasonTypeComboBox("PurchaseReasonType", new { style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";", @tabindex = "23" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+        @Resources.CTS150.lblAcquisitionType
+        </div>
+        <div class="usr-object" style="width:250px;">
+            @Html.AcquisitionTypeComboBox("AcquisitionType", new { style = "width:250px;", @tabindex = "24" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">&nbsp;</div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblIntroducerCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("IntroducerCode", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @tabindex = "26", @maxlength = "11" })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+        @Resources.CTS150.lblApproveNo1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ContractApproveNo1", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @tabindex = "27", @maxlength = "15" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+        @Resources.CTS150.lblApproveNo2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("ContractApproveNo2", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @tabindex = "28", @maxlength = "15" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblApproveNo3
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ContractApproveNo3", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @tabindex = "29", @maxlength = "15" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblApproveNo4
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("ContractApproveNo4", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @tabindex = "30", @maxlength = "15" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblApproveNo5
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("ContractApproveNo5", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @tabindex = "29", @maxlength = "15" })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @String.Format("{0} 1", @Resources.CTS150.lblSalesman)
+        </div>
+        <div class="usr-object">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("SalesmanCode1", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("SalesmanName1", null, new { style = "width:280px;", @readonly = true })
+                @Html.RequireFiled()
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @String.Format("{0} 2", @Resources.CTS150.lblSalesman)
+        </div>
+        <div class="usr-object">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("SalesmanCode2", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("SalesmanName2", null, new { style = "width:280px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            <div style="float:left;">
+                <span id="lnkMore" class="lbl-link">@Resources.CTS150.lblMore</span>
+                <span id="lnkLess" class="lbl-link">@Resources.CTS150.lblLess</span>
+            </div>
+            @String.Format("{0} 3", @Resources.CTS150.lblSalesman)
+        </div>
+        <div class="usr-object">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("SalesmanCode3", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("SalesmanName3", null, new { style = "width:280px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row" id="divSaleRow4">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @String.Format("{0} 4", @Resources.CTS150.lblSalesman)
+        </div>
+        <div class="usr-object">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("SalesmanCode4", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("SalesmanName4", null, new { style = "width:280px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row" id="divSaleRow5">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @String.Format("{0} 5", @Resources.CTS150.lblSalesman)
+        </div>
+        <div class="usr-object">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("SalesmanCode5", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("SalesmanName5", null, new { style = "width:280px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row" id="divSaleRow6">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @String.Format("{0} 6", @Resources.CTS150.lblSalesman)
+        </div>
+        <div class="usr-object">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("SalesmanCode6", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("SalesmanName6", null, new { style = "width:280px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row" id="divSaleRow7">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @String.Format("{0} 7", @Resources.CTS150.lblSalesman)
+        </div>
+        <div class="usr-object">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("SalesmanCode7", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("SalesmanName7", null, new { style = "width:280px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row" id="divSaleRow8">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @String.Format("{0} 8", @Resources.CTS150.lblSalesman)
+        </div>
+        <div class="usr-object">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("SalesmanCode8", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("SalesmanName8", null, new { style = "width:280px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row" id="divSaleRow9">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @String.Format("{0} 9", @Resources.CTS150.lblSalesman)
+        </div>
+        <div class="usr-object">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("SalesmanCode9", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("SalesmanName9", null, new { style = "width:280px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row" id="divSaleRow10">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @String.Format("{0} 10", @Resources.CTS150.lblSalesman)
+        </div>
+        <div class="usr-object">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("SalesmanCode10", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("SalesmanName10", null, new { style = "width:280px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblPaymentDateIncentive
+        </div>
+        <div class="usr-object">
+            <div class="object-unit">
+                @Html.CommonTextBox("PaymentDateIncentive", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("PaymentDateIncentive")
+        </div>
+    </div>
+    
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>

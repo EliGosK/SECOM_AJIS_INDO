@@ -1,0 +1,29 @@
+﻿.groupheader {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.subheader {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top:-8px;
+}
+
+.label {
+    text-align: right;
+    vertical-align: middle;
+}
+
+.star {
+    color: red;
+}
+
+.component {
+    padding: 2px 5px 2px 5px;
+    vertical-align: middle;
+}
+.section {
+    border-width:thin;
+    border-style:ridge;
+    padding: 2px 2px 2px 2px;
+}

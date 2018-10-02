@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Template>
+  <AdminEmail></AdminEmail>
+  <AdminSubject></AdminSubject>
+  <AdminContent></AdminContent>
+  <TemplateSubject>[SIMS] Incident : [IncidentRelatedCode] : [IncidentTitle]</TemplateSubject>
+  <TemplateContent>
+    <html>
+		&lt;body style="font-family: tahoma; font-size: 10pt;"&gt;
+				&lt;br/&gt;มีการบันทึกเหตุการณ์สำคัญส่งมาถึงคุณ
+				&lt;br/&gt;กรุณาเข้าไปตรวจสอบจาก URL ด้านล่างนี้
+				&lt;br/&gt; &lt;a href="[ViewURLLC]"&gt; [ViewURLLC] &lt;/a&gt;
+			&lt;br/&gt;
+				&lt;br/&gt;There is register incident importance sent to you. Please check at below URL.
+				&lt;br/&gt; &lt;a href="[ViewURL]"&gt; [ViewURL] &lt;/a&gt;
+			&lt;br/&gt;
+				&lt;br/&gt; &lt;b&gt; &lt;u&gt; Incident Detail/รายละเอียดเหตุการณ์ &lt;/u&gt; &lt;/b&gt;
+				&lt;br/&gt;Incident No/เลขที่เหตุการณ์: [IncidentNo]
+				&lt;br/&gt;Incident title/หัวข้อเหตุการณ์:
+				&lt;br/&gt;[IncidentTitle]
+				&lt;br/&gt;				
+				&lt;br/&gt;Contact detail/ข้อมูลผู้ติดต่อ:
+				&lt;br/&gt;[ContactDetail]
+				&lt;br/&gt;				
+				&lt;br/&gt;Received detail/รายละเอียดการรับเรื่อง:
+				&lt;br/&gt;[ReceivedDetail]
+		&lt;/body&gt;
+    </html>
+  </TemplateContent>
+</Template>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="No" width="30" type="ro" align="center" sort="na"></column>
+    <column id="SentryGuardTypeName" width="*" type="ro" align="left" sort="na">headerSentryGuardType</column>
+    <column id="NumOfDate" width="80" type="ro" align="right" sort="na">headerNoOfDate</column>
+    <column id="SecurityStartTime" width="80" type="ro" align="center" sort="na">headerSecurityTime</column>
+    <column id="SecurityFinishTime" width="80" type="ro" align="center" sort="na">#cspan</column>
+    <column id="WorkHourPerMonth" width="110" type="edn" format="0,000.0" align="right" sort="na">headerWorkingHour</column>
+    <column id="CostPerHour" width="180" type="ro" align="right" sort="na">headerCostPerHour</column>
+    <column id="NumOfSentryGuard" width="110" type="edn" format="0,000" align="right" sort="na">headerNoOfSG</column>
+    <column id="Edit" width="30" type="ro" align="center" sort="na">headerEdit</column>
+    <column id="FixScroll1" width="0" type="ro" hidden="true"></column>
+    <column id="Remove" width="30" type="ro" align="center" sort="na">headerRemove</column>
+    <column id="FixScroll2" width="0" type="ro" hidden="true"></column>
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,headerSecurityTimeStart,headerSecurityTimeFinish,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan</param>
+      </call>
+    </afterInit>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,34 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    Layout = "";
+
+    ViewBag.LabelCol1Width = "190px";
+    ViewBag.ObjectCol1Width = "225px";
+    ViewBag.LabelCol2Width = "190px";
+    ViewBag.ObjectCol2Width = "225px";
+    ViewBag.ObjectColMergeWidth = "630px";
+    ViewBag.isViewMode = true;
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS012/QUS012_08.js")"></script>
+<div id="divInstrumentDetailONLINE" class="main-table">
+    <div class="table-header">
+        @Resources.QUS012.lblInstrumentDetailONLINE
+    </div>
+    <div class="usr-row" style="margin-top:15px;">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblLinkageSaleContractCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("LinkageSaleContractCode", (string)@ViewBag.LinkageSaleContractCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div style="margin-top: 20px;">
+        <div class="table-remark">
+            <img src="../../Content/images/icon/star.png"/>@Resources.QUS012.lblNecessary
+        </div>
+    </div>
+    <div class="usr-row">
+        <div id="gridInstrumentDetailOnline" style="width:835px;margin-left:4px;"></div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

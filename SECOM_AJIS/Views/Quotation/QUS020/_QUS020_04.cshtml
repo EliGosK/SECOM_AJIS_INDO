@@ -1,0 +1,62 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Quotation.Helpers
+
+<div id="divMoreInformation" class="main-table">
+    <div class="table-header">@Resources.QUS020.lblMoreInfo</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblProductType</div>
+        <div class="usr-object">
+            @Html.ProductTypeComboBox("ProductTypeCode", new { style = "width:154px;" })
+            @Html.RequireFiled()
+            @Html.Hidden("C_PROD_TYPE_SALE", (string)@SECOM_AJIS.Common.Util.ConstantValue.ProductType.C_PROD_TYPE_SALE)
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblQuotationOffice</div>
+        <div class="usr-object" style="width:304px;">
+            @Html.QuotationOfficeComboBox("QuotationOfficeCode", new { style = "width:154px;" })
+            @Html.RequireFiled()
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblOperationOffice</div>
+        <div class="usr-object" style="width:170px;">
+            @*@Html.OperationOfficeComboBox("OperationOfficeCode", new { style = "width:154px;" })*@
+            @Html.OperationOfficeComboQUS010("OperationOfficeCode", new { style = "width:154px;" }, "ALL")
+            @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblAcquisitionType</div>
+        <div class="usr-object" style="width:304px;">
+            @Html.AcquisitionComboBox("AcquisitionTypeCode", new { style = "width:304px;" })
+            @Html.Hidden("C_ACQUISITION_TYPE_CUST", (string)@SECOM_AJIS.Common.Util.ConstantValue.AcquisitionType.C_ACQUISITION_TYPE_CUST)
+            @Html.Hidden("C_ACQUISITION_TYPE_INSIDE_COMPANY", (string)@SECOM_AJIS.Common.Util.ConstantValue.AcquisitionType.C_ACQUISITION_TYPE_INSIDE_COMPANY)
+            @Html.Hidden("C_ACQUISITION_TYPE_SUBCONTRACTOR", (string)@SECOM_AJIS.Common.Util.ConstantValue.AcquisitionType.C_ACQUISITION_TYPE_SUBCONTRACTOR)
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblIntroducerCode</div>
+        <div class="usr-object" style="width:150px;">
+            @Html.CommonTextBox("IntroducerCode", null, new { maxlength = "11", style = "width:150px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblPurchaseReasonMotivationType</div>
+        <div class="usr-object" style="width:304px;">
+            @Html.MotivationComboBox("MotivationTypeCode", new { style = "width:304px;" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblOldContractCode</div>
+        <div class="usr-object" style="width:150px;">
+            @Html.CommonTextBox("OldContractCode", null, new { maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE, style = "width:150px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblQuotationStaff</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("QuotationStaffEmpNo", "", new { maxlength = "10", style = "width:150px;" })
+        </div>
+        <div class="usr-object" style="width:200px;">
+            @Html.CommonTextBox("QuotationStaffName", "", new { style = "width:200px;", @readonly=true })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

@@ -1,0 +1,191 @@
+﻿@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+<!-- ======== Html content ======== --->
+<div id="divPaymentChange" class="main-table" style="margin-top: 5px;">
+    <div class="table-header">  
+            @Resources.BLS040.lblPaymentconditionchangeinformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            @Resources.BLS040.lblLastpaymentconditionchangingdate
+        </div>
+        <div class="usr-object" style="width:160px; ">
+            <input type="text" id="ChangeDate" name="ChangeDate" style="width: 130px;" />
+        </div>
+
+        <div class="usr-object" style="width:85px; " >
+            @Html.LabelDateFormat("ChangeDate")
+        </div>
+
+        <div class="usr-label" style="width:190px">
+            @Resources.BLS040.lblRegisteringdateoflastchanging
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width; ">
+            @Html.CommonTextBox("LastChangeDate", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+            
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            @Resources.BLS040.lblApproveNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width; ">
+            @Html.CommonTextBox("ApproveNo", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })
+        </div>
+        <div class="usr-label" style="width:305px;">
+            @Resources.BLS040.lblDocumentreceiving
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width; ">
+            @Html.CommonTextBox("DocReceiving", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>   
+
+    <div class="usr-clear-style" style="height:0px;">&nbsp;</div>
+</div>
+
+
+<div id="divBillingHistory" class="main-table" style="margin-top: 5px;">
+    <div class="table-header"> 
+            @Resources.BLS040.lblBillingHistory
+    </div>
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            @Resources.BLS040.lblLastmonthlybillingamount
+        </div>
+        <div class="usr-object" style="width:200px; ">
+            @*@Html.NumericTextBox("MonthlyBillingAmount0", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })*@  
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyBillingAmount0", (string)@ViewBag.OrderContractFee, null, new { style = "width:140px;", @readonly = true })
+        </div>
+         @*<div class="usr-object" style="width:30px; margin-left:5px;" >
+            @Html.LabelCurrencyUnit("")
+        </div>*@
+        <div class="usr-label" style="width:235px;">
+            @Resources.BLS040.lblDatebeforechanging0
+        </div>
+        <div class="usr-object" style="width:160px; ">
+            <input type="text" id="BillingStartDate0" name="BillingStartDate0" style="width: 130px;" />
+            @Html.Hidden("OldBillingStartDate0")
+        </div>
+        <div class="usr-object" >
+            @Html.LabelDateFormat("BillingStartDate0")
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            @Resources.BLS040.lblMonthlybillingamountbeforechanging1
+        </div>
+        <div class="usr-object" style="width:200px; ">
+            @*@Html.NumericTextBox("MonthlyBillingAmount1", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyBillingAmount1", (string)@ViewBag.OrderContractFee, null, new { style = "width:140px;", @readonly = true })
+        </div>
+         @*<div class="usr-object" style="width:30px; margin-left:5px;" >
+            @Html.LabelCurrencyUnit("")
+        </div>*@
+        <div class="usr-label" style="width:235px;">
+            @Resources.BLS040.lblDatebeforechanging1
+        </div>
+        <div class="usr-object" style="width:160px; ">
+            <input type="text" id="BillingStartDate1" name="BillingStartDate1" style="width: 130px;" />
+            @Html.Hidden("OldBillingStartDate1")
+        </div>
+        <div class="usr-object" >
+            @Html.LabelDateFormat("BillingStartDate1")
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            @Resources.BLS040.lblMonthlybillingamountbeforechanging2
+        </div>
+        <div class="usr-object" style="width:200px;; ">
+            @*@Html.NumericTextBox("MonthlyBillingAmount2", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyBillingAmount2", (string)@ViewBag.OrderContractFee, null, new { style = "width:140px;", @readonly = true })
+        </div>
+        @*<div class="usr-object" style="width:30px; margin-left:5px;" >
+            @Html.LabelCurrencyUnit("")
+        </div>*@
+        <div class="usr-label" style="width:235px;">
+            @Resources.BLS040.lblDatebeforechanging2
+        </div>
+        <div class="usr-object" style="width:160px; ">
+            <input type="text" id="BillingStartDate2" name="BillingStartDate2" style="width: 130px;" />
+            @Html.Hidden("OldBillingStartDate2")
+        </div>
+        <div class="usr-object" >
+            @Html.LabelDateFormat("BillingStartDate2")
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            @Resources.BLS040.lblMonthlybillingamountbeforechanging3
+        </div>
+        <div class="usr-object" style="width:200px;; ">
+            @*@Html.NumericTextBox("MonthlyBillingAmount3", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyBillingAmount2", (string)@ViewBag.OrderContractFee, null, new { style = "width:140px;", @readonly = true })
+        </div>
+         @*<div class="usr-object" style="width:30px; margin-left:5px;" >
+            @Html.LabelCurrencyUnit("")
+        </div>*@
+        <div class="usr-label" style="width:235px;">
+            @Resources.BLS040.lblDatebeforechanging3
+        </div>
+        <div class="usr-object" style="width:160px; ">
+            <input type="text" id="BillingStartDate3" name="BillingStartDate3" style="width: 130px;" />
+            @Html.Hidden("OldBillingStartDate3")
+        </div>
+        <div class="usr-object" >
+            @Html.LabelDateFormat("BillingStartDate3")
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            @Resources.BLS040.lblMonthlybillingamountbeforechanging4
+        </div>
+        <div class="usr-object" style="width:200px; ">
+            @*@Html.NumericTextBox("MonthlyBillingAmount4", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyBillingAmount4", (string)@ViewBag.OrderContractFee, null, new { style = "width:140px;", @readonly = true })
+        </div>
+        @*<div class="usr-object" style="width:30px; margin-left:5px;" >
+            @Html.LabelCurrencyUnit("")
+        </div>*@
+        <div class="usr-label" style="width:235px;">
+            @Resources.BLS040.lblDatebeforechanging4
+        </div>
+        <div class="usr-object" style="width:160px; ">
+            <input type="text" id="BillingStartDate4" name="BillingStartDate4" style="width: 130px;" />
+            @Html.Hidden("OldBillingStartDate4")
+        </div>
+        <div class="usr-object" >
+            @Html.LabelDateFormat("BillingStartDate4")
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label firstColWidth">
+            @Resources.BLS040.lblMonthlybillingamountbeforechanging5
+        </div>
+        <div class="usr-object" style="width:200px; ">
+            @*@Html.NumericTextBox("MonthlyBillingAmount5", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyBillingAmount5", (string)@ViewBag.OrderContractFee, null, new { style = "width:140px;", @readonly = true })
+        </div>
+        @*<div class="usr-object" style="width:30px; margin-left:5px;" >
+            @Html.LabelCurrencyUnit("")
+        </div>*@
+        <div class="usr-label" style="width:235px;">
+            @Resources.BLS040.lblDatebeforechanging5
+        </div>
+        <div class="usr-object" style="width:160px; ">
+            <input type="text" id="BillingStartDate5" name="BillingStartDate5" style="width: 130px;" />
+            @Html.Hidden("OldBillingStartDate5")
+        </div>
+        <div class="usr-object" >
+            @Html.LabelDateFormat("BillingStartDate5")
+        </div>
+    </div>
+
+    <div class="usr-clear-style" style="height:0px;">&nbsp;</div>
+</div>

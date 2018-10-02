@@ -1,0 +1,141 @@
+﻿<!--
+//*********************************
+// Create by: Natthavat S.
+// Create date: 02/Feb/2012
+// Update date:  02/Feb/2012
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+@{
+    ViewBag.Col1Width = "180px";
+    ViewBag.Col2Width = "370px";
+    ViewBag.Col2WidthCbo = "184px";
+    ViewBag.Col3Width = "130px";
+    ViewBag.Col4Width = "180px";
+    ViewBag.Col4WidthCbo = "184px";
+    ViewBag.TextboxWidth = "180px";
+    ViewBag.Col4WidthShelfNoFrom = "80px";
+    ViewBag.Col4WidthShelfNoTo = "80px";
+    ViewBag.SearchWidthButton1 = "80px";
+    ViewBag.SearchWidthButton2 = "80px";
+    ViewBag.DatePickerWidth = "95px";
+}
+
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_ron2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Inventory/IVS220.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/number-functions.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+
+    <script type="text/javascript">
+
+        var IVS220_Constant = {
+            C_INV_LOC_INSTOCK: "@InstrumentLocation.C_INV_LOC_INSTOCK",
+            HeadOfficeCode: "@ViewBag.HeadOfficeCode"
+        };
+
+    </script>
+}
+
+
+<div id="divSearchCriteria" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.IVS220.lblSearchCriteria</div>
+    <form name="formSearch" id="formSearch" action="#">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS220.lblSearchInvOffice</div>
+            <div class="usr-object" style="margin-left:0px; width:@ViewBag.Col2Width;">
+               @Html.IVS220InventoryOfficeCbo("cboSearchInvOffice", new { style = "width:" + @ViewBag.Col2WidthCbo })
+            </div> 
+            <div class="usr-label" style="width:@ViewBag.Col3Width;">@Resources.IVS220.lblSearchInvLocation</div>
+            <div class="usr-object" style="margin-left:0px;">
+               @Html.InventoryLocationCbo("cboSearchInvLocation", new { style = "width:" + @ViewBag.Col4WidthCbo }, false)
+            </div> 
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS220.lblInOutDate</div>
+            <div class="usr-object" style="margin-left:0px; width:270px;">
+                @Html.CommonTextBox("txtSearchDateFrom", null, new { style = "width:" + ViewBag.DatePickerWidth })
+                <span> ~ </span>
+                @Html.CommonTextBox("txtSearchDateTo", null, new { style = "width:" + ViewBag.DatePickerWidth })
+            </div>
+            <div class="usr-object" style="margin-left:0px; width:100px;">
+                @Html.LabelDateFormat("lblDateFormat")
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3Width;">@Resources.IVS220.lblInventorySlipNo</div>
+            <div class="usr-object" style="margin-left:0px;">
+                @Html.CommonTextBox("txtSearchInvSlipNo", null, new { style = "width:" + ViewBag.TextboxWidth, maxlength = 16 })
+            </div>
+        </div>
+        
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS220.lblInstrumentCode</div>
+            <div class="usr-object" style="margin-left:0px; width:@ViewBag.Col2Width;">
+               @Html.CommonTextBox("txtSearchInstrumentCode", null, new { style = "width: " + @ViewBag.TextboxWidth, maxlength = 50 })
+            </div> 
+            <div class="usr-label" style="width:@ViewBag.Col3Width;">@Resources.IVS220.lblInstrumentName</div>
+            <div class="usr-object" style="margin-left:0px;">
+               @Html.CommonTextBox("txtSearchInstrumentName", null, new { style = "width: " + @ViewBag.TextboxWidth, maxlength = 200 })
+            </div> 
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS220.lblInstrumentArea</div>
+            <div class="usr-object" style="margin-left:0px; width:@ViewBag.Col2Width;">
+               @Html.InstrumentAreaCbo("cboSearchInstArea", new { style = "width: 364px" })
+            </div> 
+            <div class="usr-label" style="width:@ViewBag.Col3Width;">@Resources.IVS220.lblContractCode</div>
+            <div class="usr-object" style="margin-left:0px;">
+               @Html.CommonTextBox("txtSearchContractCode", null, new { style = "width: " + @ViewBag.TextboxWidth, maxlength = 50 })
+            </div> 
+        </div>
+        
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS220.lblTransferType</div>
+            <div class="usr-object" style="margin-left:0px; width:@ViewBag.Col2Width;">
+               @Html.TransferTypeCbo("cboTransferType", new { style = "width: 364px" })
+            </div> 
+            <div class="usr-label" style="width:@ViewBag.Col3Width;">@Resources.IVS220.lblSupplierName</div>
+            <div class="usr-object" style="margin-left:0px;">
+               @Html.CommonTextBox("txtSearchSupplierName", null, new { style = "width: " + @ViewBag.TextboxWidth, maxlength = 200 })
+            </div> 
+        </div>
+        
+    </form>
+    <div class="usr-clear-style">&nbsp;</div>
+    <div class="usr-row" style="margin-top: 5px">
+        <div style="text-align: right; float: right; width:@ViewBag.ObjectColMergeWidth; margin-right: 4px;">
+            @Html.CommonButton("btnSearch", (string)@Resources.IVS220.btnSearch, new { style = "width:" + @ViewBag.SearchWidthButton1 })
+            @Html.CommonButton("btnClear", (string)@Resources.IVS220.btnClear, new { style = "width:" + @ViewBag.SearchWidthButton2 })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="divStockInOutList" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.IVS220.lblStockInOutList</div>
+
+    <div id="divGrdStockInOutList" style="width: 99%; margin-left: 4px;">
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+    <div class="usr-row" id="divTotalTransferQty" style="display: none">
+        <div style="text-align: right; float: right; width:@ViewBag.ObjectColMergeWidth; margin-right: 4px;">
+            <div class="usr-label">Total transfer qty</div>
+            <div class="usr-object" style="margin-left:0px;">
+                @Html.CommonTextBox("txtTotalTransferQty", null, new { style = "text-align: right; width: " + @ViewBag.TextboxWidth, maxlength = 50 })
+            </div> 
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+

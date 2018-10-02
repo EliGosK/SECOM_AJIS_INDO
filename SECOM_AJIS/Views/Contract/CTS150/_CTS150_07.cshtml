@@ -1,0 +1,65 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+
+<div id="divInstrumentInfo" class="main-table" style="margin-top:5px;">
+    <div class="table-header">
+        @Resources.CTS150.lblInstrumentInfo
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblWarranteePeriodFrom
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("WaranteePeriodFrom", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("WaranteePeriodFrom")
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;margin-left:-50px;">
+            @Resources.CTS150.lblWarranteePeriodTo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("WaranteePeriodTo", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("WaranteePeriodTo")
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div id="InstrumentGrid"></div>
+    </div>
+    <div class="usr-row usr-row-space-2x" id="divInstrumentAdd1">
+        <div class="usr-label" style="width:120px;">
+            @Resources.CTS150.lblInstrumentCode
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("InstrumentCode", null, new { style = "width:90px;", @maxlength = "50" })
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("InstrumentName", null, new { style = "width:320px;", @readonly = true })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnSearchInstrument", (string)@Resources.CTS150.btnSearchInstrument, new { style = "width:130px;", type = "button" })
+        </div>
+        <div class="usr-label" style="width:150px;">
+            @Resources.CTS150.lblAddedQty
+        </div>
+        <div class="usr-object">
+            @Html.NumericTextBox("AddedQty", null, new { style = "width:90px;" })
+        </div>
+    </div>
+    <div class="usr-row" id="divInstrumentAdd2">
+        <div class="usr-label" style="width:120px;">
+            @Resources.CTS150.lblInstrumentMaker
+        </div>
+        <div class="usr-object" style="width:807px;">
+            <div style="float:left;">
+                @Html.CommonTextBox("InstrumentMaker", null, new { style = "width:419px;", @readonly = true })
+            </div>
+            <div style="float:right;">
+                @Html.CommonButton("btnAddInstrument", @Resources.CTS150.btnAddInstrument, new { style = "vertical-align: middle;", type = "button" })
+                @Html.CommonButton("btnClearInstrument", @Resources.CTS150.btnClearInstrument, new { style = "vertical-align: middle;", type = "button" })
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

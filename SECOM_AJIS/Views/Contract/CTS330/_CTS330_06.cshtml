@@ -1,0 +1,56 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@{
+    Layout = "";
+
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+
+<div id="divAssignPIC" class="sub-table"  style="margin-top:10px" >
+        <div class="table-sub-header">@Resources.CTS330.lblAssignPersonInChargeInformation</div>
+
+        <div class="usr-row" id="PICSelect1">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblOffice</div>
+            <div id="divCBBOffice" class="usr-object" style="width:260px;">
+                @Html.BlankComboBoxWithFirstRow("BelongOfficeCode", new { style = "width:260px;" })
+            </div>
+            <div class="usr-label" style="width:120px;">@Resources.CTS330.lblDepartment</div>
+            <div id="divCBBDepartment" class="usr-object" style="width:260px;">
+                @Html.BlankComboBoxWithFirstRow("DepartmentCode", new { style = "width:260px;" })
+            </div>
+        </div>
+
+        <div class="usr-clear-style" id="PICSelect2">&nbsp;</div>
+
+        <div class="usr-row" id="PICSelect3">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblIncidentRole</div>
+            <div id="divCBBIncidentRole" class="usr-object" style="width:260px;">
+                @Html.IncidentRoleAllComboBox("IncidentRoleCode", new { style = "width:260px;" })
+            </div>
+            <div class="usr-label" style="width:120px;">@Resources.CTS330.lblEmployeeName</div>
+            <div id="divCBBEmployee" class="usr-object" style="width:260px;">
+                 @Html.BlankComboBoxWithFirstRow("EmployeeCode", new { style = "width:260px;" })
+            </div>
+            <div class="usr-object" style="text-align:right;margin-left:5px" >
+                @Html.CommonButton("btnAddPIC", (string)@Resources.CTS330.btnAdd, new { style = "width:60px", @type = "button" })
+            </div>
+        </div>
+
+        <div class="usr-row usr-row-space ">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+            <div style="float:left;">
+                <div id="CTS330_gridAssignPIC" style="width:@ViewBag.ObjectColMergeWidth;"></div>
+            </div>
+        </div>
+    <div class="usr-clear-style">&nbsp;</div>
+    </div>

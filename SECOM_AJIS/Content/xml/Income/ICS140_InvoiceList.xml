@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="30" type="ro" align="center" sort="na"></column>
+    <column id="SelectButton" width="30" type="ro" align="center" sort="na">headerSelectAll</column>
+    <column id="FirstFeeFlagIcon" width="30" type="ro" align="center" sort="na">headerFirstFeeFlag</column>
+    <column id="InvoiceNo" width="120" type="ro" align="left" sort="str_custom">headerInvoiceNo</column>
+    <column id="IssueInvDate" width="110" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerIssueDate</column>
+    <column id="BillingDueDate" width="110" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerDueDate</column>
+    <column id="IsOverDueDesc" width="100" type="ro" align="left" sort="str_custom">headerIsOverDueDesc</column>
+    <column id="PaymentMethodName" width="*" type="ro" align="left" sort="str_custom">headerPaymentMethod</column>
+    
+    <!--Edit by Jirawat Jannet on 2016-10-31-->
+    <column id="InvoiceAmountShow" width="160" type="ro" align="right" sort="str_custom">headerInvoiceAmount</column>
+    <column id="InvoiceUnpaidAmountShow" width="160" type="ro" align="right" sort="str_custom">headerUnpaidAmount</column>
+    
+    <column id="DetailButton" width="30" type="ro" align="center" sort="na"></column>
+    <column id="InvoiceOCC" width="0" type="ro"  hidden="true"></column>
+    <column id="BillingTargetCode" width="0" type="ro"  hidden="true"></column>
+    <column id="SelectedFlag" width="0" type="ro"  hidden="true"></column>
+    <column id="FirstFeeFlag" width="0" type="ro"  hidden="true"></column>
+
+    <!--Add by Jirawat Jannet on 2016-10-31-->
+    <column id="InvoiceAmount" width="0" type="ro" hidden="true"></column>
+    <column id="InvoiceUnpaidAmount" width="0" type="ro" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

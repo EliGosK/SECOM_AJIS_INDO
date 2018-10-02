@@ -1,0 +1,143 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+
+<div id="divInstallInfo" class="main-table" style="margin-top:5px;">
+    <div class="table-header">
+        @Resources.CTS150.lblInstallInfo
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblProcessMgrStatus
+        </div>
+        <div class="usr-object" style="width:280px;">
+            @Html.InstallProcessMgmtStatusComboBox("ProcessManagementStatus", new { style = "width:280px;", @tabindex = "43" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;margin-left:-80px;">
+            @Resources.CTS150.lblInstallSlipNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            <div style="margin-top: 3px;">
+                @Html.CommonLink("InstallSlipNo1", null, new { @tabindex = "44" })
+                @Html.Hidden("HidInstallSlipNo1")
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblExpectCompleteInstall
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("ExpectedCompleteInstallDate", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("ExpectedCompleteInstallDate")
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;margin-left:-50px;">
+            @Resources.CTS150.lblNewOldBuilding
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.InstallNewOldBuildingComboBox("NewOldBuilding", new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @tabindex = "46" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblExpectCustAccept
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("ExpectedCustomerAccept", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("ExpectedCustomerAccept")
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;margin-left:-50px;">
+            @Resources.CTS150.lblNewBuildMgmtType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonRadioButton("NewBuildMgmtType_Need", @Resources.CTS150.lblNewBuildMgmtTypeNeed, "1", false, "NewBuildMgmtTypeGroup", new { name = "NewBuildMgmtType", @tabindex = "48" })
+            @Html.CommonRadioButton("NewBuildMgmtType_NoNeed", @Resources.CTS150.lblNewBuildMgmtTypeNoNeed, "0", true, "NewBuildMgmtTypeGroup", new { name = "NewBuildMgmtType", @tabindex = "49" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblStockOutDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("InstrumentStockOutDate", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("InstrumentStockOutDate")
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;margin-left:-50px;">
+            @Resources.CTS150.lblNewBuildMgmtCost
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.NumericTextBoxWithUnit("NewBuildingMgmtCost", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblSubcontractCompleteInstall
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("SubcontractCompleteInstallDate", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("SubcontractCompleteInstallDate")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblCompleteInstallDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("CompleteInstallDate", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("CompleteInstallDate")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblCustAccept
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("CustomerAcceptDate", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("CustomerAcceptDate")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblDeliveryDocRecieve
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+            <div class="object-unit">
+                @Html.CommonTextBox("DeliveryDocRecieveDate", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("DeliveryDocRecieveDate")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblIEInCharge
+        </div>
+        <div class="usr-object">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("IEInChargeCode", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("IEInChargeName", null, new { style = "width:280px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object">
+            <div style="font-weight: bold;">@Resources.CTS150.lblInstallSubContract</div>
+            <div id="InstallSubCTGrid1" style="width: 580px;">
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

@@ -1,0 +1,22 @@
+﻿body 
+{
+    background-color: #075695 !important;
+    font-family: Verdana, MS UI Gothic;
+    font-size: 10px;
+}
+
+.panel
+{
+    margin: auto;
+    margin-top: 250px;
+    padding: 10px;
+    width: 300px;
+    background-color: #00257E;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+.panel td
+{
+    color: #FFFFFF;
+    font-size: 12px;
+}

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="0" type="ro" align="center"></column>
+    <column id="RequestInst" width="60" type="reqInstallCell" align="left" sort="na">headerRequest</column>
+    <column id="Name" width="*" type="ro" align="left" sort="na">headerOffice</column>
+    <column id="TotalIncident" width="85" type="ro" align="center" sort="na">headerTotalIncident</column>
+    <column id="TotalIncompleteIncident" width="85" type="ro" align="center" sort="na">#cspan</column>
+    <column id="TotalOverIncident" width="85" type="ro" align="center" sort="na">#cspan</column>
+    <column id="CanIncident" width="85" type="ro" align="center" sort="na">headerTotalCancelContractIncident</column>
+    <column id="CanIncompleteIncident" width="85" type="ro" align="center" sort="na">#cspan</column>
+    <column id="CanOverIncident" width="85" type="ro" align="center" sort="na">#cspan</column>
+    <column id="ClaimIncident" width="85" type="ro" align="center" sort="na">headerTotalClaimIncident</column>
+    <column id="ClaimIncompleteIncident" width="85" type="ro" align="center" sort="na">#cspan</column>
+    <column id="ClaimOverIncident" width="85" type="ro" align="center" sort="na">#cspan</column>
+    <column id="OfficeCode" width="100" type="ro" align="left" hidden="true"></column>
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,headerTotal,headerIncomplete,headerOverdue,headerTotal,headerIncomplete,headerOverdue,headerTotal,headerIncomplete,headerOverdue,#rspan</param>
+      </call>
+    </afterInit>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

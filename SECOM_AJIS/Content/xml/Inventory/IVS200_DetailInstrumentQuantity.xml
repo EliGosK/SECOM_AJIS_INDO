@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="ContractCodeShort" width="120" type="ro" align="left" sort="str_custom">headerContractCode</column>
+    <column id="CustName" width="*" type="ro" align="left" sort="str_custom">headerCustName</column>
+    <column id="SiteName" width="140" type="ro" align="left" sort="str_custom">headerSiteName</column>
+    <column id="InstrumentCode" width="160" type="ro" align="left" sort="str_custom">headerInstrumentCode</column>
+    <column id="AreaCode" width="90" format="0,000" type="ron" align="right" sort="int">headerAreaCode</column>
+    <column id="BookingQty" width="100" format="0,000" type="ron" align="right" sort="int">headerBookingQty</column>
+    <column id="StockOutQty" width="120" format="0,000" type="ron" align="right" sort="int">headerStockOutQty</column>
+    <column id="ContractCode" width="0" type="ro"  hidden="true"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

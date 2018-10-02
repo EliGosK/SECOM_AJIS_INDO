@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblHeader1AllUnpaid" xml:space="preserve">
+    <value>ค้างชำระทั้งหมด</value>
+  </data>
+  <data name="lblHeader1AllUnpaidActual" xml:space="preserve">
+    <value>ข้อมูลจริง</value>
+  </data>
+  <data name="lblHeader1AllUnpaidActualDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) จำนวนเงิน (บาท)&lt;BR&gt;(2) จำนวนข้อมูล&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1AllUnpaidCompareTotarget" xml:space="preserve">
+    <value>เทียบกับเป้าหมาย</value>
+  </data>
+  <data name="lblHeader1AllUnpaidCompareTotargetDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) จำนวนเงิน (%)&lt;BR&gt;(2) จำนวนข้อมูล (%)&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1AllUnpaidTarget" xml:space="preserve">
+    <value>ข้อมูลเป้าหมาย</value>
+  </data>
+  <data name="lblHeader1AllUnpaidTargetDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) จำนวนเงิน (บาท)&lt;BR&gt;(2) จำนวนข้อมูล&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1BillingOffice" xml:space="preserve">
+    <value>สาขาที่ออกบิล</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2Month" xml:space="preserve">
+    <value>ค้างชำระเกิน 2 เดือน</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthActual" xml:space="preserve">
+    <value>ข้อมูลจริง</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthActualDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) จำนวนเงิน (บาท)&lt;BR&gt;(2) จำนวนข้อมูล&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthCompareTotarget" xml:space="preserve">
+    <value>เทียบกับเป้าหมาย</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthCompareTotargetDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) จำนวนเงิน (%)&lt;BR&gt;(2) จำนวนข้อมูล (%)&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthTarget" xml:space="preserve">
+    <value>ข้อมูลเป้าหมาย</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthTargetDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) จำนวนเงิน (บาท)&lt;BR&gt;(2) จำนวนข้อมูล&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1UnpaidOver6Month" xml:space="preserve">
+    <value>ค้างชำระเกิน 6 เดือน</value>
+  </data>
+  <data name="lblHeader1UnpaidOver6MonthActual" xml:space="preserve">
+    <value>ข้อมูลจริง</value>
+  </data>
+  <data name="lblHeader1UnpaidOver6MonthActualDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) จำนวนเงิน (บาท)&lt;BR&gt;(2) จำนวนข้อมูล&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingBillingClientName" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;ชื่อลูกค้าสำหรับเรียกเก็บ&lt;BR&gt;(1) อังกฤษ&lt;BR&gt;(2) ไทย&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingBillingTargetCode" xml:space="preserve">
+    <value>รหัสลูกค้าสำหรับออกใบแจ้งหนี้</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingIncludeFirstFee" xml:space="preserve">
+    <value>มีค่าใช้จ่ายครั้งแรก</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingNumberOfBillingDetail" xml:space="preserve">
+    <value>จำนวนรายการเรียกเก็บ</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingNumberOfUnpaidAmount" xml:space="preserve">
+    <value>จำนวนใบแจ้งหนี้ที่ค้างชำระ</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingOldestBillingDetailDelayMonth" xml:space="preserve">
+    <value>จำนวนเดือนที่ล่าช้ามากที่สุด</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingTracingResultRegistered" xml:space="preserve">
+    <value>บันทึกผลการติดตามหนี้แล้ว</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingUnpaidAmount" xml:space="preserve">
+    <value>ยอดค้างชำระ (บาท)</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceBillingAmountExTax" xml:space="preserve">
+    <value>ราคาที่เรียกเก็บ&lt;BR&gt;(ไม่รวมภาษีมูลค่าเพิ่ม)&lt;BR&gt;(บาท)</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceIncludeFirstFee" xml:space="preserve">
+    <value>มีค่าใช้จ่ายครั้งแรก</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceInvoiceNo" xml:space="preserve">
+    <value>เลขที่ใบแจ้งหนี้</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceIssueInvoiceDate" xml:space="preserve">
+    <value>วันที่ออกใบแจ้งหนี้</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceNumberOFBillingDetail" xml:space="preserve">
+    <value>จำนวนรายการเรียกเก็บ</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceOldBillingDetailDelayMonth" xml:space="preserve">
+    <value>จำนวนเดือนที่ล่าช้ามากที่สุด</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoicePaymentMethod" xml:space="preserve">
+    <value>วิธีการชำระเงิน</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceTracingResaultRegister" xml:space="preserve">
+    <value>บันทึกผลการติดตามหนี้แล้ว</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceUnpaidAmount" xml:space="preserve">
+    <value>ยอดค้างชำระ&lt;BR&gt;(บาท)</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceVatAmount" xml:space="preserve">
+    <value>ภาษีมูลค่าเพิ่ม&lt;BR&gt;(บาท)</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceViewRegisterDebtTracingInfo" xml:space="preserve">
+    <value>บันทึก/ดูข้อมูลการติดตามหนี้</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceWHTAmount" xml:space="preserve">
+    <value>ภาษีหัก ณ ที่จ่าย&lt;BR&gt;(บาท)</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingBillingAmount" xml:space="preserve">
+    <value>ราคาที่เรียกเก็บ&lt;BR&gt;(บาท)</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingBillingCode" xml:space="preserve">
+    <value>เลขที่รายการเรียกเก็บ</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingBillingPeriod" xml:space="preserve">
+    <value>รอบบิล</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingBillingType" xml:space="preserve">
+    <value>ประเภทการเรียกเก็บ</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingCreditNoteImage" xml:space="preserve">
+    <value>&lt;img width='20' height='20' title='Credit note issue detail' class='row-image' style='margin-top: -1px;' src='../../Content/images/icon/creditNote.PNG'/&gt;</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingFirstFee" xml:space="preserve">
+    <value>ค่าใช้จ่ายครั้งแรก</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingFirstFeeImage" xml:space="preserve">
+    <value>&lt;img width='20' height='20' title='First fee detail' class='row-image' style='margin-top: -1px;' src='../../Content/images/icon/firstFee.PNG'/&gt;</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingInvoiceNo" xml:space="preserve">
+    <value>เลขที่ใบแจ้งหนี้</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingNumberOfDelayMonth" xml:space="preserve">
+    <value>จำนวนเดือนที่ล่าช้า</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingPaymentStatus" xml:space="preserve">
+    <value>สถานะการชำระเงิน</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingSiteName" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;ชื่อสถานที่ติดตั้ง&lt;BR&gt;(1) อังกฤษ&lt;BR&gt;(2) ไทย&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingTracingResaultRegister" xml:space="preserve">
+    <value>บันทึกผลการติดตามหนี้แล้ว</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingViewRegisterDebtTracingInfo" xml:space="preserve">
+    <value>บันทึก/ดูข้อมูลการติดตามหนี้</value>
+  </data>
+  <data name="lblHeaderDebtActualSummary" xml:space="preserve">
+    <value>ข้อมูลการค้างชำระ</value>
+  </data>
+  <data name="lblHeaderDebtActualTable" xml:space="preserve">
+    <value>ตารางข้อมูลการค้างชำระ</value>
+  </data>
+  <data name="lblHeaderListOfUnPaidBillingTargetByBillingOffice" xml:space="preserve">
+    <value>รายการเรียกเก็บลูกค้าที่ค้างชำระแยกตามสาขาที่ออกบิล</value>
+  </data>
+  <data name="lblHeaderListOfUnPaidByBillingTarget" xml:space="preserve">
+    <value>รายการข้อมูลการเรียกเก็บที่ค้างชำระแยกตามลูกค้าสำหรับออกใบแจ้งหนี้</value>
+  </data>
+  <data name="lblHeaderListOfUnPaidBySelectedInvoice" xml:space="preserve">
+    <value>รายการข้อมูลการเรียกเก็บที่ค้างชำระของใบแจ้งหนี้ที่เลือก</value>
+  </data>
+  <data name="lblHeaderListOfUnPaidInvoiceByBillingTarget" xml:space="preserve">
+    <value>รายการข้อมูลใบแจ้งหนี้ที่ค้างชำระแยกตามรหัสลูกค้าสำหรับออกใบแจ้งหนี้</value>
+  </data>
+  <data name="lblHeaderViewRegsiterDebt" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;บันทึก/ดูข้อมูลการติดตามหนี้&lt;/div&gt;</value>
+  </data>
+  <data name="lblIconCreditNoteIssuedDetail" xml:space="preserve">
+    <value>ออกใบลดหนี้แล้ว</value>
+  </data>
+  <data name="lblIconFirstFeeDetail" xml:space="preserve">
+    <value>เป็นค่าใช้จ่ายครั้งแรก</value>
+  </data>
+  <data name="lblMonthYear" xml:space="preserve">
+    <value>เดือน-ปี</value>
+  </data>
+  <data name="lblTotal" xml:space="preserve">
+    <value>รวม</value>
+  </data>
+  <data name="lblUnPaidBillingBillingOffice" xml:space="preserve">
+    <value>สาขาที่ออกบิล</value>
+  </data>
+  <data name="lblUnPaidBillingBillingOfficeCode" xml:space="preserve">
+    <value>รหัสสาขาที่ออกบิล</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientAddressEN" xml:space="preserve">
+    <value>ที่อยู่ลูกค้าสำหรับเรียกเก็บ (อังกฤษ)</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientAddressLC" xml:space="preserve">
+    <value>ที่อยู่ลูกค้าสำหรับเรียกเก็บ (ไทย)</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientContactPerson" xml:space="preserve">
+    <value>ผู้ติดต่อสำหรับเรียกเก็บ</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientNameEN" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ (อังกฤษ)</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientNameLC" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ (ไทย)</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientTelNo" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์ลูกค้าสำหรับเรียกเก็บ</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingOffice" xml:space="preserve">
+    <value>สาขาที่ออกบิล</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingOfficeCode" xml:space="preserve">
+    <value>รหัสสาขาที่ออกบิล</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingTargetCode" xml:space="preserve">
+    <value>รหัสลูกค้าสำหรับออกใบแจ้งหนี้</value>
+  </data>
+  <data name="lblUnPaidByBillingTotalUnpaidAmount" xml:space="preserve">
+    <value>ยอดค้างชำระทั้งหมด</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientAddressEN" xml:space="preserve">
+    <value>ที่อยู่ลูกค้าสำหรับเรียกเก็บ (อังกฤษ)</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientAddressLC" xml:space="preserve">
+    <value>ที่อยู่ลูกค้าสำหรับเรียกเก็บ (ไทย)</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientContactPerson" xml:space="preserve">
+    <value>ผู้ติดต่อสำหรับเรียกเก็บ</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientNameEN" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ (อังกฤษ)</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientNameLC" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ (ไทย)</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientTelNo" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์ลูกค้าสำหรับเรียกเก็บ</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingOffice" xml:space="preserve">
+    <value>สาขาที่ออกบิล</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingOfficeCode" xml:space="preserve">
+    <value>รหัสสาขาที่ออกบิล</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingTargetCode" xml:space="preserve">
+    <value>รหัสลูกค้าสำหรับออกใบแจ้งหนี้</value>
+  </data>
+  <data name="lblUnPaidInvoiceTotalUnpaidAmount" xml:space="preserve">
+    <value>ยอดค้างชำระทั้งหมด</value>
+  </data>
+</root>

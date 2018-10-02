@@ -1,0 +1,227 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Income.Models;
+
+@using SECOM_AJIS.Presentation.Income.Controllers;
+@using SECOM_AJIS.Presentation.Income.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+@{  
+    Layout = "";
+    ViewBag.Col1Width = "210px";
+    ViewBag.Col2Width = "250px";
+    ViewBag.Col3Width = "190px";
+    ViewBag.Col4Width = "250px";
+    ViewBag.MergeCol234Width = "645px";
+    ViewBag.MergeCol34Width = "395px";
+    ViewBag.Col1FieldSetWidth = "205px";        //Col1Width - 5px
+    ViewBag.ColCheckboxWidth = "130px";
+    
+    ViewBag.CommonTextboxWidth = "200px";
+    ViewBag.CommonTextbox2Width = "164px";
+    ViewBag.LongTextboxWidth = "300px";
+    
+    ViewBag.CommonCalendarTextboxWidth = "93px";       //CommonTextboxWidth - 22px   /  2
+    ViewBag.CommonMatchBalanceWidth = "120px";
+    ViewBag.CommonDDLWidth = "264px";
+
+    ViewBag.WidthButtonWidth = "140px";
+    ViewBag.CommonButtonWidth = "100px";
+    ViewBag.FullWidth = "950px";
+
+    ViewBag.SectionSepWidth = "20px";
+
+    ViewBag.ShortCol2Width = "180px";
+ }
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Income/ICS084.js")"></script>
+
+<script type="text/javascript">
+    var ICS084ScreenObject = {
+        C_CURRENCY_LOCAL: '@CurrencyUtil.C_CURRENCY_LOCAL',
+        C_CURRENCY_US: '@CurrencyUtil.C_CURRENCY_US'
+    }
+</script>
+
+<div style="display:none;">
+    @Html.Hidden("ics084ScreenCaller", (SECOM_AJIS.Presentation.Income.Models.ICS084_ScreenCaller)@ViewBag.ScreenCaller);
+    @Html.Hidden("ics084InvoiceNo", (string)@ViewBag.InvoiceNo);
+    @Html.Hidden("ics084BillingTargetCodeLongFormat", (string)@ViewBag.BillingTargetCodeLongFormat);
+    @Html.Hidden("BankFeeRegisteredFlag", (bool)@ViewBag.BankFeeRegisteredFlag);
+    @Html.Hidden("OtherIncomeRegisteredFlag", (bool)@ViewBag.OtherIncomeRegisteredFlag);
+    @Html.Hidden("OtherExpenseRegisteredFlag", (bool)@ViewBag.OtherExpenseRegisteredFlag);
+    @Html.Hidden("WHTFlag", (bool)@ViewBag.WHTFlag);
+</div>
+
+
+<div class="main-table" id="divTargetPayment">
+    <div class="table-header">
+        @Resources.ICS084.lblSectionTargetPayment
+    </div>
+
+   <div id="divTargetPaymentDetail">
+        <div class="usr-row">
+            <div class="usr-label bold" style="width:@ViewBag.Col1Width">@Resources.ICS084.lblMatchableBalance</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                <div style="float:left">
+                    @*@Html.NumericTextBox("MatchableBalance", (string)@ViewBag.MatchableBalance, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })*@
+                    @Html.NumericTextBoxWithMultipleCurrency("MatchableBalance", (string)@ViewBag.MatchableBalance, (string)@ViewBag.MatchableBalanceCurrencyType, new { style = "width: 150px;", @readonly = true })
+                </div>
+                <div class="usr-object bold">
+                    @*@Html.LabelCurrencyUnit("")*@
+                </div>
+            </div>
+
+            <div class="usr-label bold" style="width:@ViewBag.Col3Width">@Resources.ICS084.lblFirstPaymentAmount</div>
+            <div class="usr-object" style="width:@ViewBag.Col4Width">
+                <div style="float:left">
+                    @*@Html.NumericTextBox("FirstPaymentAmount", (string)@ViewBag.FirstPaymentAmount, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })*@
+                    @Html.NumericTextBoxWithMultipleCurrency("FirstPaymentAmount", (string)@ViewBag.FirstPaymentAmount, (string)@ViewBag.FirstPaymentAmountCurrencyType, new { style = "width: 150px;", @readonly = true })
+                </div>
+                <div class="usr-object bold">
+                    @*@Html.LabelCurrencyUnit("")*@
+                </div>
+            </div>
+        </div>
+
+        <div class="usr-row" style="padding-top:@ViewBag.SectionSepWidth">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS084.lblSECOMBankBranch</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                @Html.CommonTextBox("SECOMBankBranch", (string)@ViewBag.SECOMBankBranch, new { style = "width:" + @ViewBag.MergeCol234Width, @readonly = true })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS084.lblPaymentTransNo</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                @Html.CommonTextBox("ics084PaymentTransNo", (string)@ViewBag.PaymentTransNo, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3Width">@Resources.ICS084.lblPaymentDate</div>
+            <div class="usr-object" style="width:@ViewBag.Col4Width">
+                @Html.CommonTextBox("PaymentDate", (string)@ViewBag.PaymentDate, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS084.lblPayerName</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("Payer", (string)@ViewBag.PayerName, new { style = "width:" + @ViewBag.MergeCol234Width, @readonly = true })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS084.lblMemo</div>
+            <div class="usr-object">
+                @Html.CommonTextArea("Memo", (string)@ViewBag.Memo, new { style = "height:80px;overflow:auto;width:" + @ViewBag.MergeCol234Width, @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+<div class="main-table" id="divTargetInvoiceForPaymentMatching">
+    <div class="table-header">
+        @Resources.ICS084.lblSectionTargetInvoice
+    </div>
+
+    <div id="divTargetInvoiceForPaymentMatchingDetail">
+        <form id="formTargetInvoiceForPaymentMatching" action="#">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS084.lblBillingTargetCode</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                @Html.CommonTextBox("ics084BillingTargetCode", (string)@ViewBag.BillingTargetCode, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3Width">@Resources.ICS084.lblBankFee</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                <div style="float:left;">
+                    @*@Html.NumericTextBox("BankFee", null, new { style = "width:" + @ViewBag.CommonTextboxWidth })*@
+                    @Html.NumericTextBoxWithMultipleCurrency("BankFee", null, null, new { style = "width: 150px;" })
+                </div>
+                @*@Html.LabelCurrencyUnit("")*@
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS084.lblBillingClientNameEN</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                @Html.CommonTextBox("BillingClientNameEN", (string)@ViewBag.BillingClientNameEN, new { style = "width:" + @ViewBag.LongTextboxWidth, @readonly = true })
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col3Width">
+                <div style="float:right">
+                    @Html.CommonCheckButton("SelectSpecialProcess", @Resources.ICS084.lblSpecialProcess, "True", false)
+                </div>
+            </div>
+            <div class="usr-object" style="">
+                <div style="float:left">
+                    <div class="usr-label" style="padding-left:20px;">@Resources.ICS084.lblApproveNo</div>
+                    <div class="usr-object" style="">
+                        @Html.CommonTextBox("ApproveNo", null, new { style = "width:100px", @readonly = true, maxlength = "15" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS084.lblBillingClientNameLC</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                @Html.CommonTextBox("BillingClientNameLC", (string)@ViewBag.BillingClientNameLC, new { style = "width:" + @ViewBag.LongTextboxWidth, @readonly = true })
+            </div>
+            <div class="usr-object remark-gray" style="padding-left:75px;width:@ViewBag.MergeCol34Width">@Resources.ICS084.lblSpecialProcessRemark</div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS084.lbExchangeLoss</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                @Html.NumericTextBoxWithMultipleCurrency("ExchangeLoss", null, null, new { style = "width: 150px;" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3Width">@Resources.ICS084.lblOtherExpense</div>
+            <div class="usr-object" style="">
+                <div style="float:left;">
+                    @*@Html.NumericTextBox("OtherExpense", null, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })*@
+                    @Html.NumericTextBoxWithMultipleCurrency("OtherExpense", null, null, new { style = "width: 150px;", @readonly = true })
+                </div>
+                @*@Html.LabelCurrencyUnit("")*@
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">
+                @Resources.ICS084.lbExchangeGain
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                @Html.NumericTextBoxWithMultipleCurrency("ExchangeGain", null, null, new { style = "width: 150px;" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3Width">@Resources.ICS084.lblOtherIncome</div>
+            <div class="usr-object" style="">
+                <div style="float:left;">
+                    @*@Html.NumericTextBox("OtherIncome", null, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })*@
+                    @Html.NumericTextBoxWithMultipleCurrency("OtherIncome", null, null, new { style = "width: 150px;", @readonly = true })
+                </div>
+                @*@Html.LabelCurrencyUnit("")*@
+            </div>
+        </div>
+        
+        <div class="usr-row" style="padding-top:@ViewBag.SectionSepWidth">
+            <div id="TargetInvoiceGrid" style="margin-left:5px;"></div>
+        </div>
+
+        <div class="usr-row" id="divBalanceAfterProcessing" style="display:none;">
+            <div class="usr-object bold" style="float:right;">
+                <div class="usr-label" style="float:left;">@Resources.ICS084.lblBalanceAfterProcessing</div>
+                <div style="float:left;">
+                    @*@Html.NumericTextBox("BalanceAfterProcessing", null, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })*@
+                    @Html.NumericTextBoxWithMultipleCurrency("BalanceAfterProcessing", null, null, new { style = "width: 150px;", @readonly = true })
+                </div>
+                <div class="usr-object">
+                    @*@Html.LabelCurrencyUnit("")*@
+                </div>
+            </div>
+        </div>
+
+        </form>
+    </div>
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>

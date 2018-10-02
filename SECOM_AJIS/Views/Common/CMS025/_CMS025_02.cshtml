@@ -1,0 +1,146 @@
+﻿@using SECOM_AJIS.Common.Helpers
+<div id="divFlowTable" class="flow-table">
+	<div class="line">
+    	<div class="section subject">
+            <div class="text subject-text">@Resources.FlowMenu.lblChangeOnlyFee</div>
+        </div>
+        <div class="section" style="width:480px;">
+			<div class="upper-text upper-section" style="width:458px;">@Resources.FlowMenu.lblReceivieArrangeInfo</div>
+            <div class="section non-action-left">
+                <div class="text">@Html.Raw(Resources.FlowMenu.lblReceiveChangeFeeRequest)</div>
+            </div>
+            <div class="section non-action-center">
+                <div class="text">@Resources.FlowMenu.lblArrangeChangeFeeDetail</div>
+            </div>
+            <div class="section non-action-center">
+                <div class="text">@Html.Raw(Resources.FlowMenu.lblReceiveChangeFeeApproval)</div>
+            </div>
+            <div class="section non-action-center">
+                <div class="text">@Html.Raw(Resources.FlowMenu.lblCreateAndSignChangeFeeDocument)</div>
+            </div>
+        </div>
+        <div class="section action-center">
+          	<div class="text">@Html.CommonLink("CHANGE_CONTRACT_FEE", @Resources.FlowMenu.lblRegisterChangeFee)</div>
+       	</div>
+        <div class="section-cms025">
+            <div class="section line-middle">&nbsp;</div>
+        </div>
+        <div class="section-orange">
+            <div class="section top">
+                <div class="text special">@Html.CommonLink("SEARCH_QUOTATION_INFORMATION", @Resources.FlowMenu.lblSearchQuotationInformation)</div>
+            </div>
+        </div>
+    </div>
+    <div class="line">
+    	<div class="section subject">
+            <div class="text subject-text">@Resources.FlowMenu.lblChangeNameAndAddress</div>
+        </div>
+       <div class="section" style="width:480px;">
+			<div class="upper-text upper-section" style="width:458px;">@Resources.FlowMenu.lblReceivieArrangeInfo</div>
+            <div class="section non-action-left">
+                <div class="text">@Html.Raw(Resources.FlowMenu.lblReceiveChangeNameAddressRequest)</div>
+            </div>
+            <div class="section non-action-center">
+                <div class="text">@Html.Raw(Resources.FlowMenu.lblArrangeChangeNameAddressDetail)</div>
+            </div>
+            <div class="section non-action-center">
+                <div class="text">@Html.Raw(Resources.FlowMenu.lblReceiveChangeAddressApproval) <span style="color:Red;">*</span></div>
+            </div>
+            <div class="section non-action-center">
+                <div class="text">@Resources.FlowMenu.lblCollectSupportDocuments</div>
+            </div>
+      	</div>
+        <div class="section action-center">
+          	<div class="text">@Html.CommonLink("CHANGE_NAME_AND_ADDRESS", @Resources.FlowMenu.lblRegisterChangeNameAddress)</div>
+       	</div>
+        <div class="section-cms025">
+            <div class="section line-full">&nbsp;</div>
+        </div>
+        <div class="section-orange">
+            <div class="section middle">
+                <div class="text special">@Html.CommonLink("SEARCH_VIEW_CONTRACT_CUSTOMER_INFORMATION", @Resources.FlowMenu.lblSearchViewContractCustomerInformation)</div>
+            </div>
+        </div>
+    </div>
+    <div class="line section-cms025">
+    	<div class="section subject-middle">
+            <div class="text subject-text">@Resources.FlowMenu.lblChangePaymentCondition</div>
+        </div>
+       <div class="section" style="width:480px;">
+            <div class="upper-text-lvl2" style="width:458px;">@Resources.FlowMenu.lblRemark</div>
+			<div class="upper-text upper-section" style="width:458px;">@Resources.FlowMenu.lblReceivieArrangeInfo</div>
+            <div class="section non-action-left">
+                <div class="text">@Html.Raw(Resources.FlowMenu.lblReceviceChangePaymentConditionRequest)</div>
+            </div>
+            <div class="section non-action-center">
+                <div class="text">@Html.Raw(Resources.FlowMenu.lblArrangeChangePaymentConditionDetail)</div>
+            </div>
+            <div class="section non-action-center">
+                <div class="text">@Html.Raw(Resources.FlowMenu.lblReceiveChangePaymentConditionApproval)</div>
+            </div>
+            <div class="section non-action-center">
+                <div class="text">@Html.Raw(Resources.FlowMenu.lblCreateCollectChangePaymentConditionDocument)</div>
+            </div>
+      	</div>
+        <div class="section action-center">
+          	<div class="text">@Html.CommonLink("REGISTER_CHANGE_BILLING_BASIC", @Resources.FlowMenu.lblRegisterChangeBillingBasic)</div>
+       	</div>
+        <div class="section line-full-end">&nbsp;</div>
+        <div class="section-orange">
+            <div class="section middle">
+                <div class="text special">@Html.CommonLink("VIEW_INSTALLATION_INFORMATION", @Resources.FlowMenu.lblViewInstallationInformation)</div>
+            </div>
+        </div>
+    </div>
+    <div class="line">
+        <div class="section subject-bottom">
+            <div class="text subject-text">@Resources.FlowMenu.lblContractDocument</div>
+        </div>
+        <div class="section action-left">
+            <div class="text">@Html.CommonLink("REGISTER_GENERATE_CONTRACT_DOCUMENT", @Resources.FlowMenu.lblRegisterGenerateContractDocument)</div>
+        </div>
+        <div class="section non-action-center">
+            <div class="text">@Resources.FlowMenu.lblSendDocument</div>
+        </div>
+        <div class="section action-right">
+            <div class="text">@Html.CommonLink("REGISTER_CONTRACT_DOCUMENT_RECEIVING", @Resources.FlowMenu.lblRegisterContractDocumentReceiving)</div>
+        </div>
+        <div class="section">&nbsp;</div>
+        <div class="section">&nbsp;</div>
+        <div class="section">&nbsp;</div>
+        <div class="section-orange">
+            <div class="section middle">
+                <div class="text special">@Html.CommonLink("VIEW_INVENTORY_INFORMATION", @Resources.FlowMenu.lblViewInventoryInformation)</div>
+            </div>
+        </div>
+    </div>
+    <div class="line">
+        <div class="section">&nbsp;</div>
+        <div class="section-orange">
+            <div class="section left">
+                <div class="text">@Html.CommonLink("CUSTOMER_CORRESPONDENT_SUPPORT", @Resources.FlowMenu.lblCustomerCorrespondentSupport)</div>
+            </div>
+            <div class="section right">
+                <div class="text">@Html.CommonLink("AR", @Resources.FlowMenu.lblAR)</div>
+            </div>
+        </div>
+        <div class="section">&nbsp;</div>
+        <div class="section-gray">
+            <div class="section left">
+                <div class="text">@Html.CommonLink("CANCEL_UN_OPERATED_CONTRACT", @Resources.FlowMenu.lblCancelUnOperatedContract)</div>
+            </div>
+            <div class="section center">
+                <div class="text">@Html.CommonLink("CANCEL_INSTALLATION", @Resources.FlowMenu.lblCancelInstallation)</div>
+            </div>
+            <div class="section right">
+                <div class="text">@Html.CommonLink("CANCEL_CONTRACT_BEFORE_START", @Resources.FlowMenu.lblCancelContractBeforeStart)</div>
+            </div>
+        </div>
+        <div class="section-orange">
+            <div class="section bottom">
+                <div class="text special">@Html.CommonLink("VIEW_BILLING_INFORMATION", @Resources.FlowMenu.lblViewBillingInformation)</div>
+            </div>
+        </div>
+    </div>
+    <div class="end-line">&nbsp;</div>
+</div>

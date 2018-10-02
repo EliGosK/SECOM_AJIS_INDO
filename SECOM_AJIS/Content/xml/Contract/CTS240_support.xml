@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="EmpNo"  width="120" type="ro" align="left" sort="na">HgridEmployeeNo</column>
+    <column id="EmpFullName"  width="*"  type="ro" align="left" sort="na">HgridName</column>
+    <column id="Belonging"  width="*"  type="ro" align="left" sort="na">HgridBelonging</column>
+    <column id="Remark"  width="180"  type="ro" align="left" sort="na">HgridRemark</column>
+    <column id="Remove"  width="30"  type="ro" align="center" sort="na">HgridRemove</column>
+    <!-- Hidden -->
+    <column id="tmpCol" width="*" hidden="true" type="ro" align="center"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

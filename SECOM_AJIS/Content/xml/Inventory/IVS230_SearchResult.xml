@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="InventorySlipNoLink" width="170" type="ro" align="left" sort="str_custom">headerInventorySlipNo</column>
+    <column id="TransferType" width="150" type="ro" align="left" sort="str_custom">headerTransferType</column>
+    <column id="SlipStatus" width="120" type="ro" align="left" sort="str_custom">headerSlipStatus</column>
+    <column id="SourceOfficeName" width="120" type="ro" align="left" sort="str_custom">headerSourceOfficeName</column>
+    <column id="CreateDate" width="120" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date" >headerCreateDate</column>
+    <column id="EmpFullName" width="*" type="ro" align="left" sort="str_custom">headerEmpFullName</column>
+    <column id="DetailButton" width="30" type="ro" align="left" sort="na">headerDetailButton</column>
+    <column id="ToJson" width="0" type="ro" hidden="true"></column>
+    <column id="InventorySlipNo" width="0" type="ro" hidden="true"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

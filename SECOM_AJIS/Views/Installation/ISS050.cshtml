@@ -1,0 +1,117 @@
+﻿@using SECOM_AJIS.DataEntity.Installation
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Installation.Controllers 
+@using SECOM_AJIS.Common.Util.ConstantValue
+@using SECOM_AJIS.DataEntity.Common
+@using CSI.WindsorHelper
+@{
+    
+ 
+
+    ViewBag.lbWidth = "220px";  /* ViewBag.LabelWidth */
+    ViewBag.lbWidth2 = "360px"; 
+   
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+    ViewBag.lblTotal = Resources.ISS050.lblTotal;
+    ViewBag.lblAdd = Resources.ISS050.lblAdd;
+    ViewBag.lblUpdate = Resources.ISS050.lblUpdate;
+
+    ICommonHandler chandler = ServiceContainer.GetService<ICommonHandler>() as ICommonHandler;
+    List<doSystemConfig> lst = chandler.GetSystemConfig("EmailSuffix");
+    if (lst.Count > 0)
+    {
+        ViewBag.EmailSuffix = lst[0].ConfigValue;
+    }
+
+    ViewBag.lblInstallationEmail = Resources.ISS010.lblInstallationEmail;
+    
+ }
+
+@section page_header{
+
+
+<script type="text/javascript" >
+
+    var lblTotal = "@ViewBag.lblTotal";
+    var lblAdd = "@ViewBag.lblAdd";
+    var lblUpdate = "@ViewBag.lblUpdate";
+    var strEmailSuffix = "@ViewBag.EmailSuffix";
+    var lblInstallationEmail = "@ViewBag.lblInstallationEmail";
+    var _attach_k = '@ViewBag.AttachKey';
+
+    var C_SERVICE_TYPE_RENTAL = "@ServiceType.C_SERVICE_TYPE_RENTAL";
+    var C_SERVICE_TYPE_SALE = "@ServiceType.C_SERVICE_TYPE_SALE";
+</script>
+<script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+
+
+
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_rowspan.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/MessageDialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Master/Dialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/Dialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Installation/ISS050.js")"></script>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Scripts/Upload/jquery.fileupload-ui.css")" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/Upload/jquery.fileupload.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Upload/jquery.fileupload-ui.js")"></script>
+
+
+}
+<div id="topHeader"></div>
+
+<!-- Html content --->
+<div id="divInputContractCode" class="main-table" style="margin-top:5px;">
+
+    <div class="table-header">
+        @Resources.ISS050.lblHeaderSpecified
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblContractProjectCode
+        </div>
+        <div class="usr-object" style="width:150px; background-color:@ViewBag.txtBackgroundColor;">
+           @Html.CommonTextBox("ContractCodeProjectCode", (string)@ViewBag.ContractProjectCode, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+        </div>          
+        <div class="usr-object" style="width:@ViewBag.lbWidth;">
+            @Html.CommonButton("btnRetrieveInstallation", (string)@Resources.ISS050.btnRetrieve, new { style = "width:100px;" })
+            @Html.CommonButton("btnClearInstallation", (string)@Resources.ISS050.btnClear, new { style = "width:100px;" })
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            
+        </div>     
+    </div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+ </div>
+ @*<form id="form1"  >*@
+    @Html.Hidden("ServiceTypeCode")
+    @Html.Partial("ISS050/_ISS050_01")
+    @Html.Partial("ISS050/_ISS050_02")
+    @Html.Partial("ISS050/_ISS050_03")
+    @Html.Partial("ISS050/_ISS050_04")
+
+@*</form>*@

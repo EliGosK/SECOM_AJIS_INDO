@@ -1,0 +1,220 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+
+    ViewBag.SubLabelWidth = "215px";
+    ViewBag.SubRightLabelWidth = "235px";
+    ViewBag.TotalLabelWidth = "280px";
+}
+<div id="divCancelContractCondition" class="main-table">
+    <div class="usr-row">
+        <div class="table-header">
+            @Resources.CTS140.lblCancelContractCondition
+        </div>    
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblCancelContractDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                @Html.CommonTextBox("CancelContractDate", (string)ViewBag.CancelContractDate, new { style = "width:150px;", @readonly = true })                         
+            </div>
+            <div class="usr-label" style="width:240px;">
+                @Resources.CTS140.lblRemovalInstallationCompleteDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.RightObjectWidth;">   
+                @Html.CommonTextBox("RemovalInstallationCompleteDate", (string)ViewBag.RemovalInstallationCompleteDate, new { style = "width:150px;", @readonly = true })                         
+            </div>
+        </div>
+        <div class="usr-row"></div>
+        <div id="divCondition" class="main-table" >
+            <div class="table-header">
+            </div>
+            <div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                        @Resources.CTS140.lblFeeType
+                    </div>
+                    <div class="usr-object">
+                        @Html.FeeTypeCancelContractComboBox("FeeType", new { style = "width:220px;" }, (string)@ViewBag.ProductTypeCode, (bool?)@ViewBag.FirstInstallCompleteFlag)                         
+                    </div>
+                    <div class="usr-label" style="width:179px;">
+                        @Resources.CTS140.lblHandlingType
+                    </div>
+                    <div class="usr-object">   
+                        @Html.HandlingTypeComboBox("HandlingType", new { style = "width:220px;" })                         
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                        @Resources.CTS140.lblFee
+                    </div>
+                    <div class="usr-object">
+                        @Html.NumericTextBoxWithMultipleCurrency("FeeAmount", (string)ViewBag.FeeAmount, (string)ViewBag.FeeAmountCurrencyType, new { style = "width:140px;" })
+                    </div>        
+                    <div class="usr-label" style="width: 205px;">
+                        @Resources.CTS140.lblTax
+                    </div>
+                    <div class="usr-object">
+                        @Html.NumericTextBoxWithMultipleCurrency("TaxAmount", (string)ViewBag.TaxAmount, (string)ViewBag.TaxAmountCurrencyType, new { style = "width:140px;" })
+                    </div> 
+                </div>    
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                        @Resources.CTS140.lblNormalFee
+                    </div>
+                    <div class="usr-object">
+                        @Html.NumericTextBoxWithMultipleCurrency("NormalFeeAmount", (string)ViewBag.NormalFeeAmount, (string)ViewBag.NormalFeeAmountCurrencyType, new { style = "width:140px;" })
+                    </div>
+                    <div class="usr-label" style="width: 205px;">
+                        @Resources.CTS140.lblContractCodeForSlideFee
+                    </div>
+                    <div class="usr-object">   
+                        @Html.CommonTextBox("ContractCode_CounterBalance", (string)ViewBag.ContractCode_CounterBalance, new { style = "width:150px;", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+                    </div>                     
+                </div>  
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                        @Resources.CTS140.lblPeriod
+                    </div>
+                    <div class="usr-object">
+                        <div class="object-unit">
+                            <div class="usr-object">
+                                @Html.CommonTextBox("StartPeriodDateContract", null, new { style = "width:100px;", maxlength = "50" }) 
+                            </div>
+                            <div class="usr-label" style="width:15px;"> 
+                                @Resources.CTS140.lblTo  
+                            </div>
+                            <div class="usr-object"> 
+                                @Html.CommonTextBox("EndPeriodDateContract", null, new { style = "width:100px;", maxlength = "50" })  
+                            </div>           
+                        </div>    
+                        @Html.LabelDateFormat("EndPeriodDateContract")
+                    </div>
+                </div>     
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                        @Resources.CTS140.lblRemark
+                    </div>
+                    <div class="usr-object" style="width: 105px">
+                        @Html.TextArea("Remark", (string)ViewBag.Remark, new { style = "width:645px; height:50px; overflow:auto", maxlength = "100" })                                     
+                    </div>          
+                </div> 
+                <div class="usr-clear-style">&nbsp;</div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:650px;">&nbsp;</div>  
+            <div class="usr-object">
+                @Html.CommonButton("btnAddCancelContract", @Resources.CTS053.lblAdd, new { style = "width:80px;" })
+            </div>
+            <div class="usr-label" style="width:1px;">&nbsp;</div>
+            <div class="usr-object">
+                @Html.CommonButton("btnCancel", @Resources.CTS053.lblCancelDetail, new { style = "width:80px;" })
+            </div>          
+        </div> 
+        <div class="usr-row" style="height:5px"></div>
+        <div class="usr-row" id="gridCancelContract" style="width: 99%; margin-left: 5px;"></div>
+        <div class="usr-row" style="height:5px"></div>
+
+        <div id="divConditionMemo" class="usr-row">
+            <div class="usr-object custom-table">
+                <table cellpadding="0" cellspacing="0">
+                    <tr class="hdr">
+                        <td style="width:300px;">&nbsp;</td>
+                        <td style="width:185px;">@Resources.CTS140.headerCurrencyLocal</td>
+                        <td style="width:185px;">@Resources.CTS140.headerCurrencyUsd</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right;">@Resources.CTS140.lblTotalSlideAmount</td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("TotalSlideAmt", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+                        </td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("TotalSlideAmtUsd", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_US, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right;">@Resources.CTS140.lblTotalRefundAmount</td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("TotalRefundAmt", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+                        </td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("TotalRefundAmtUsd", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_US, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right;">@Resources.CTS140.lblTotalBillingAmount</td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("TotalBillingAmt", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+                        </td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("TotalBillingAmtUsd", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_US, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right;">@Resources.CTS140.lblTotalCounterBalancing</td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("TotalAmtAfterCounterBalanceType", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+                        </td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("TotalAmtAfterCounterBalanceTypeUsd", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_US, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right;vertical-align: top;">@Resources.CTS140.lblSelectProcessAfterCounter</td>
+                        <td style="vertical-align: top;">
+                            <div id="divProcessCounterBalance" class="usr-row">
+                                <ul>
+                                    <li class="r-type1">@Html.CommonRadioButton("Bill", @Resources.CTS110.lblBill, (string)@SECOM_AJIS.Common.Util.ConstantValue.ProcAfterCounterBalanceType.C_PROC_AFT_COUNTER_BALANCE_TYPE_BILL, (bool?)ViewBag.Bill, "ProcessCounterBalance")</li>
+                                    <li class="r-type2">@Html.CommonRadioButton("Exempt", @Resources.CTS110.lblExempt, (string)@SECOM_AJIS.Common.Util.ConstantValue.ProcAfterCounterBalanceType.C_PROC_AFT_COUNTER_BALANCE_TYPE_EXEMPT, (bool?)ViewBag.Exempt, "ProcessCounterBalance")</li>
+                                    <li class="r-type3">@Html.CommonRadioButton("Refund", @Resources.CTS110.lblRefund, (string)@SECOM_AJIS.Common.Util.ConstantValue.ProcAfterCounterBalanceType.C_PROC_AFT_COUNTER_BALANCE_TYPE_REFUND, (bool?)ViewBag.Refund, "ProcessCounterBalance")</li>
+                                    <li class="r-type4">@Html.CommonRadioButton("ReceiveAsRevenue", @Resources.CTS110.lblReceiveAsRevenue, (string)@SECOM_AJIS.Common.Util.ConstantValue.ProcAfterCounterBalanceType.C_PROC_AFT_COUNTER_BALANCE_TYPE_RECEIVE, (bool?)ViewBag.ReceiveRevenue, "ProcessCounterBalance")</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td style="vertical-align: top;">
+                            <div id="divProcessCounterBalanceUsd" class="usr-row">
+                                <ul>
+                                    <li class="r-type1">@Html.CommonRadioButton("BillUsd", @Resources.CTS110.lblBill, (string)@SECOM_AJIS.Common.Util.ConstantValue.ProcAfterCounterBalanceType.C_PROC_AFT_COUNTER_BALANCE_TYPE_BILL, (bool?)ViewBag.BillUsd, "ProcessCounterBalanceUsd")</li>
+                                    <li class="r-type2">@Html.CommonRadioButton("ExemptUsd", @Resources.CTS110.lblExempt, (string)@SECOM_AJIS.Common.Util.ConstantValue.ProcAfterCounterBalanceType.C_PROC_AFT_COUNTER_BALANCE_TYPE_EXEMPT, (bool?)ViewBag.ExemptUsd, "ProcessCounterBalanceUsd")</li>
+                                    <li class="r-type3">@Html.CommonRadioButton("RefundUsd", @Resources.CTS110.lblRefund, (string)@SECOM_AJIS.Common.Util.ConstantValue.ProcAfterCounterBalanceType.C_PROC_AFT_COUNTER_BALANCE_TYPE_REFUND, (bool?)ViewBag.RefundUsd, "ProcessCounterBalanceUsd")</li>
+                                    <li class="r-type4">@Html.CommonRadioButton("ReceiveAsRevenueUsd", @Resources.CTS110.lblReceiveAsRevenue, (string)@SECOM_AJIS.Common.Util.ConstantValue.ProcAfterCounterBalanceType.C_PROC_AFT_COUNTER_BALANCE_TYPE_RECEIVE, (bool?)ViewBag.ReceiveRevenueUsd, "ProcessCounterBalanceUsd")</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="usr-label">&nbsp;</div>
+            <div class="usr-object">
+                <div class="sub-table" style="border-width:0px; width: 410px">
+                    <div class="usr-row">
+                        <div class="usr-label" style="width: 110px;">
+                            @Resources.CTS140.lblOthersRemark
+                        </div>
+                        <div class="usr-object" style="width:285px;">
+                            @Html.CommonTextArea("OtherRemarks", null, new { style = "width:285px;height:120px; overflow:auto", maxlength = "1600" })
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        
+    </div>    
+    <div class="usr-clear-style">&nbsp;</div>
+</div>   
+<div style="display:none">@Html.CommonTextBox("lblMaintenanceFeeValidate", @Resources.CTS140.lblMaintenanceFeeValidate, new { style = "width:160px;", maxlength = "50", @readonly = true })</div>                                     
+<div style="display:none">@Html.CommonTextBox("lblContractFeeValidate", @Resources.CTS140.lblContractFeeValidate, new { style = "width:160px;", maxlength = "50", @readonly = true })</div>                                    

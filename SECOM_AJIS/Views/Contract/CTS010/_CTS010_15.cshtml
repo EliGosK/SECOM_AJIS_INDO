@@ -1,0 +1,31 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "130px";
+    ViewBag.ObjectCol3Width = "200px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS010/CTS010_15.js")"></script>
+<div id="divContactPoint" class="main-table">
+    <div class="table-header">@Resources.CTS010.lblContactPoint</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Resources.CTS010.lblContactPointInformation
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object" style="width:600px;">
+            @Html.CommonTextArea("ContactPoint", (string)@ViewBag.ContactPoint, new { style = "width:600px;height:85px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

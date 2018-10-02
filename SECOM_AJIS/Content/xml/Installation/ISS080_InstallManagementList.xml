@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+      <column id="No" width="35" type="ro" align="center"  ></column>
+	  <column id="ContractProjectCode" width="140" type="ro" align="left" sort="str_custom" >headerContractProjectCode</column>
+	  <column id="IEStaffName" width="115" type="ro" align="left" sort="str_custom" >headerIEStaffName</column>
+	  <column id="Subcontractor" width="140" type="ro" align="left" sort="str_custom" >headerSubcontractor</column>
+	  <!--<column id="IntsallationCompleteDate" width="120" type="ro" align="left" sort="str_custom" >headerIntsallationCompleteDate</column>-->
+	  <column id="IntsallationDate" width="180" type="ro" align="left" sort="str_custom" >headerIntsallationDate</column>
+	  <column id="Site" width="*" type="ro" align="left" sort="str_custom" >headerSite</column>
+	  <column id="OperationOffice" width="80" type="ro" align="left" sort="str_custom" >headerOperationOffice</column>
+	  <column id="InstallationManagementStatus" width="115" type="ro" align="left" sort="str_custom" >headerInstallationManagementStatus</column>
+      <column id="Detail" width="30" type="link" align="center" sort="str_custom" >headerDetail</column>
+	  <column id="MaintenanceNo" width="0" type="ro" hidden="true" sort="str_custom"  >headerDetail</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,74 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Master.Helpers
+@{
+    /* --- Before use this control, You must declare
+     *      1.) ViewBag.SLabelWidth (string)
+     */
+
+    if (ViewBag.SearchAddressUserControlWidth == null)
+    {
+        ViewBag.SearchAddressUserControlWidth = "630px";
+    }
+    
+    if (ViewBag.SLabelWidth == null)
+    {
+        ViewBag.SLabelWidth = "110px";
+    }
+}
+<div id="divSearchAddrCtrl" class="sub-table" style="width:@ViewBag.SearchAddressUserControlWidth;">
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SLabelWidth;">
+            @Resources._SearchAddressControl.lblAddress
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("Address", null, new { style = "width:500px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SLabelWidth;">
+            @Resources._SearchAddressControl.lblSoi
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("Alley", null, new { style = "width:205px;" })
+        </div>
+        <div class="usr-label" style="width:81px;">
+            @Resources._SearchAddressControl.lblRoad
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("Road", null, new { style = "width:205px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SLabelWidth;">
+            @Resources._SearchAddressControl.lblTambolKwaeng
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("SubDistrict", null, new { style = "width:205px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SLabelWidth;">
+            @Resources._SearchAddressControl.lblJangwat
+        </div>
+        <div class="usr-object">
+            @Html.ProvinceComboBox("ProvinceCode", new { style = "width:209px;" },"ALL")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SLabelWidth;">
+            @Resources._SearchAddressControl.lblAmperKed
+        </div>
+        <div class="usr-object">
+            @Html.DistrictComboBox("DistrictCode", null, new { style = "width:209px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SLabelWidth;">
+            @Resources._SearchAddressControl.lblZipCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ZipCode", null, new { style = "width:205px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

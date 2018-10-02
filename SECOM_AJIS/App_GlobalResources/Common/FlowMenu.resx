@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblApproveContract" xml:space="preserve">
+    <value>Approve contract</value>
+  </data>
+  <data name="lblAR" xml:space="preserve">
+    <value>Approval request</value>
+  </data>
+  <data name="lblBICW" xml:space="preserve">
+    <value>BIC/WORKSHEET</value>
+  </data>
+  <data name="lblCancelInstallation" xml:space="preserve">
+    <value>Cancel installation</value>
+  </data>
+  <data name="lblCancelContractBeforeStart" xml:space="preserve">
+    <value>Termination before start</value>
+  </data>
+  <data name="lblChangeNameAndAddress" xml:space="preserve">
+    <value>Change name and address</value>
+  </data>
+  <data name="lblContractCode" xml:space="preserve">
+    <value>Contract no.</value>
+  </data>
+  <data name="lblCustomerCode" xml:space="preserve">
+    <value>Customer code (Purchaser)</value>
+  </data>
+  <data name="lblCustomerCorrespondentSupport" xml:space="preserve">
+    <value>Incident</value>
+  </data>
+  <data name="lblCustomerNameEN" xml:space="preserve">
+    <value>Customer name (English)</value>
+  </data>
+  <data name="lblCustomerNameLC" xml:space="preserve">
+    <value>Customer name (Local)</value>
+  </data>
+  <data name="lblLocalServey" xml:space="preserve">
+    <value>Local survey</value>
+  </data>
+  <data name="lblNewContractPriceNegotiation" xml:space="preserve">
+    <value>New contract/ price negotiation</value>
+  </data>
+  <data name="lblOccurrence" xml:space="preserve">
+    <value>Occurrence</value>
+  </data>
+  <data name="lblPlanning" xml:space="preserve">
+    <value>Planning</value>
+  </data>
+  <data name="lblPriceEstimation" xml:space="preserve">
+    <value>Price estimation</value>
+  </data>
+  <data name="lblQuotation" xml:space="preserve">
+    <value>Quotation</value>
+  </data>
+  <data name="lblRealCustomerCode" xml:space="preserve">
+    <value>Customer code (Real customer (End user))</value>
+  </data>
+  <data name="lblRegisterChangeInstallationSlip" xml:space="preserve">
+    <value>Register change installation slip</value>
+  </data>
+  <data name="lblRegisterCompleteInstallation" xml:space="preserve">
+    <value>Register complete installation</value>
+  </data>
+  <data name="lblRegisterContractChange" xml:space="preserve">
+    <value>Register contract change</value>
+  </data>
+  <data name="lblRegisterContractDocumentReceiving" xml:space="preserve">
+    <value>Register contract doc. receiving</value>
+  </data>
+  <data name="lblRegisterCustomerAcceptance" xml:space="preserve">
+    <value>Register customer acceptance</value>
+  </data>
+  <data name="lblRegisterGenerateContractDocument" xml:space="preserve">
+    <value>Register generate contract doc.</value>
+  </data>
+  <data name="lblRegisterGeneratedInstallationSlip" xml:space="preserve">
+    <value>Register generated installation slip</value>
+  </data>
+  <data name="lblRegisterInstallationManagement" xml:space="preserve">
+    <value>Register installation PO</value>
+  </data>
+  <data name="lblRegisterInstallationRequest" xml:space="preserve">
+    <value>Register installation request</value>
+  </data>
+  <data name="lblRegisterNewContract" xml:space="preserve">
+    <value>Register new contract</value>
+  </data>
+  <data name="lblRegisterQuotation" xml:space="preserve">
+    <value>Register quotation</value>
+  </data>
+  <data name="lblRegisterStockOutInstrument" xml:space="preserve">
+    <value>Stock-out equipment</value>
+  </data>
+  <data name="lblRetrieve" xml:space="preserve">
+    <value>Retrieve</value>
+  </data>
+  <data name="lblSaleContractBasicInformation" xml:space="preserve">
+    <value>Sale contract basic information</value>
+  </data>
+  <data name="lblSearchViewContractCustomerInformation" xml:space="preserve">
+    <value>Search/view contract &amp; customer</value>
+  </data>
+  <data name="lblSearchQuotationInformation" xml:space="preserve">
+    <value>Search quotation</value>
+  </data>
+  <data name="lblSiteCode" xml:space="preserve">
+    <value>Premise's code</value>
+  </data>
+  <data name="lblSiteNameEN" xml:space="preserve">
+    <value>Premise's name (English)</value>
+  </data>
+  <data name="lblSiteNameLC" xml:space="preserve">
+    <value>Premise's name (Local)</value>
+  </data>
+  <data name="lblViewBillingInformation" xml:space="preserve">
+    <value>View billing</value>
+  </data>
+  <data name="lblViewInstallationInformation" xml:space="preserve">
+    <value>View installation</value>
+  </data>
+  <data name="lblViewInventoryInformation" xml:space="preserve">
+    <value>View inventory</value>
+  </data>
+  <data name="lblChangeBeforeStart" xml:space="preserve">
+    <value>Change before start</value>
+  </data>
+  <data name="lblChangeContractConditionPriceNegotiation" xml:space="preserve">
+    <value>Change contract condition/price negotiation</value>
+  </data>
+  <data name="lblCollectSendCompleteInstallationConfirmation" xml:space="preserve">
+    <value>Collect/Send complete installation confirmation</value>
+  </data>
+  <data name="lblContract" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="lblInstallation" xml:space="preserve">
+    <value>Installation</value>
+  </data>
+  <data name="lblNewInstallationCompleteAndStartSecurity" xml:space="preserve">
+    <value>New installation complete and start security</value>
+  </data>
+  <data name="lblRePlanning" xml:space="preserve">
+    <value>Re-planning</value>
+  </data>
+  <data name="lblSendInstallationPlan" xml:space="preserve">
+    <value>Send installation plan</value>
+  </data>
+  <data name="lblSendInstrument" xml:space="preserve">
+    <value>Send equipment</value>
+  </data>
+  <data name="lblSomeChangeOccurred" xml:space="preserve">
+    <value>Some change occurred</value>
+  </data>
+  <data name="lblArrangeCancelContractDetail" xml:space="preserve">
+    <value>Arrange termination detail</value>
+  </data>
+  <data name="lblArrangeStopServiceDetail" xml:space="preserve">
+    <value>Arrange suspension detail</value>
+  </data>
+  <data name="lblCancelUnOperatedContract" xml:space="preserve">
+    <value>Cancel un-operated contract</value>
+  </data>
+  <data name="lblChangeBeforeInstallationComplete" xml:space="preserve">
+    <value>Change before installation complete</value>
+  </data>
+  <data name="lblChangeInstallationComplete" xml:space="preserve">
+    <value>Change installation complete</value>
+  </data>
+  <data name="lblCollectConfirmation" xml:space="preserve">
+    <value>Collect confirmation</value>
+  </data>
+  <data name="lblCollectSendConfirmation" xml:space="preserve">
+    <value>Collect confirmation</value>
+  </data>
+  <data name="lblContractDocument" xml:space="preserve">
+    <value>Contract document</value>
+  </data>
+  <data name="lblCreateCancelMemo" xml:space="preserve">
+    <value>Create termination memo</value>
+  </data>
+  <data name="lblCreateChangedContractDocument" xml:space="preserve">
+    <value>Create changed contract doc.</value>
+  </data>
+  <data name="lblReceiveCancelContractRequest" xml:space="preserve">
+    <value>Receive termination request</value>
+  </data>
+  <data name="lblReceiveCanelContractApproval" xml:space="preserve">
+    <value>Receive termination approval</value>
+  </data>
+  <data name="lblReceiveStopServiceApproval" xml:space="preserve">
+    <value>Receive suspension approval</value>
+  </data>
+  <data name="lblReceiveStopServiceRequest" xml:space="preserve">
+    <value>Receive suspension request</value>
+  </data>
+  <data name="lblRegisterStartService" xml:space="preserve">
+    <value>Register start service</value>
+  </data>
+  <data name="lblRegisterStopService" xml:space="preserve">
+    <value>Register suspension</value>
+  </data>
+  <data name="lblRemovalInstallationComplete" xml:space="preserve">
+    <value>Removal installation complete</value>
+  </data>
+  <data name="lblRemovalInstallationPreparation" xml:space="preserve">
+    <value>Removal installation preparation</value>
+  </data>
+  <data name="lblShutdownSitePower" xml:space="preserve">
+    <value>Shutdown premise's power</value>
+  </data>
+  <data name="lblShutdownSitePowerAL" xml:space="preserve">
+    <value>Shutdown premise's power (in case of alarm)</value>
+  </data>
+  <data name="lblSignCancelMemo" xml:space="preserve">
+    <value>Sign termination memo</value>
+  </data>
+  <data name="lblSignContractDocumentOrSendNotification" xml:space="preserve">
+    <value>Sign contract doc. or send notification</value>
+  </data>
+  <data name="lblStopService" xml:space="preserve">
+    <value>Suspension</value>
+  </data>
+  <data name="lblStopServiceCondition" xml:space="preserve">
+    <value>Suspension condition (Termination condition/stop condition)</value>
+  </data>
+  <data name="lblArrangeChangeFeeDetail" xml:space="preserve">
+    <value>Arrange change fee detail</value>
+  </data>
+  <data name="lblArrangeChangeNameAddressDetail" xml:space="preserve">
+    <value>Arrange change name &amp; address detail</value>
+  </data>
+  <data name="lblChangeOnlyFee" xml:space="preserve">
+    <value>Change only fee</value>
+  </data>
+  <data name="lblCreateAndSignChangeFeeDocument" xml:space="preserve">
+    <value>Create and sign change fee doc.</value>
+  </data>
+  <data name="lblReceiveChangeFeeApproval" xml:space="preserve">
+    <value>Receive change fee approval</value>
+  </data>
+  <data name="lblReceiveChangeFeeRequest" xml:space="preserve">
+    <value>Receive change fee request</value>
+  </data>
+  <data name="lblReceiveChangeNameAddressRequest" xml:space="preserve">
+    <value>Receive change name &amp; address request</value>
+  </data>
+  <data name="lblReceivieArrangeInfo" xml:space="preserve">
+    <value>Receive and arrange the detail in "Incident" and control progress there</value>
+  </data>
+  <data name="lblRegisterCancelContractAfterStart" xml:space="preserve">
+    <value>Register termination after start</value>
+  </data>
+  <data name="lblRegisterChangeFee" xml:space="preserve">
+    <value>Register change fee</value>
+  </data>
+  <data name="lblArrangeChangePaymentConditionDetail" xml:space="preserve">
+    <value>Arrange change payment condition detail</value>
+  </data>
+  <data name="lblChangePaymentCondition" xml:space="preserve">
+    <value>Change payment condition</value>
+  </data>
+  <data name="lblCollectSupportDocuments" xml:space="preserve">
+    <value>Collect support documents</value>
+  </data>
+  <data name="lblCreateCollectChangePaymentConditionDocument" xml:space="preserve">
+    <value>Create and collect change payment condition document</value>
+  </data>
+  <data name="lblReceiveChangeAddressApproval" xml:space="preserve">
+    <value>Receive change name &amp; address approval</value>
+  </data>
+  <data name="lblReceiveChangePaymentConditionApproval" xml:space="preserve">
+    <value>Receive change payment condition approval</value>
+  </data>
+  <data name="lblReceviceChangePaymentConditionRequest" xml:space="preserve">
+    <value>Receive change payment condition request</value>
+  </data>
+  <data name="lblRegisterChangeBillingBasic" xml:space="preserve">
+    <value>Register change billing basic</value>
+  </data>
+  <data name="lblRegisterChangeNameAddress" xml:space="preserve">
+    <value>Register change name &amp; address</value>
+  </data>
+  <data name="lblSendDocument" xml:space="preserve">
+    <value>Send document</value>
+  </data>
+  <data name="lblRemark" xml:space="preserve">
+    <value>* No need approval for change each address and change premise's name</value>
+  </data>
+  <data name="lblUseInCaseAlarmOnly" xml:space="preserve">
+    <value>Use in case of alarm only</value>
+  </data>
+  <data name="lblUseInCaseAlarmSale" xml:space="preserve">
+    <value>Use in case of alarm only</value>
+  </data>
+  <data name="lblUseInCaseInstallationSubContract" xml:space="preserve">
+    <value>Use in case of installation by subcontract</value>
+  </data>
+  <data name="lblSearchViewQuotationInformation" xml:space="preserve">
+    <value>Search / View quotation information</value>
+  </data>
+  <data name="lblContractTargetCustomerCode" xml:space="preserve">
+    <value>Customer code (Customer)</value>
+  </data>
+  <data name="lblContractTargetCustomerNameEN" xml:space="preserve">
+    <value>Customer name (English)</value>
+  </data>
+  <data name="lblContractTargetCustomerNameLC" xml:space="preserve">
+    <value>Customer name (Local)</value>
+  </data>
+  <data name="lblContractBasicInformation" xml:space="preserve">
+    <value>Contract basic information</value>
+  </data>
+  <data name="lblContractTargetSiteNameEN" xml:space="preserve">
+    <value>Premise's Name (English)</value>
+  </data>
+  <data name="lblContractTargetSiteNameLC" xml:space="preserve">
+    <value>Premise's Name (Local)</value>
+  </data>
+  <data name="lblSearchInstallationManagement" xml:space="preserve">
+    <value>Search installation management</value>
+  </data>
+</root>

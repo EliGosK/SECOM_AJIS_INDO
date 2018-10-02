@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="0" type="ro" align="center"></column>
+    <column id="OverNewImportant" width="50" type="overNewImportantCell" align="left" sort="na">headerOverNewIncident</column>
+    <column id="Important" width="30" type="ImportantCell" align="center" sort="na">headerOverNewIncident</column>
+    <column id="IncidentNo" width="110" type="ro" align="center" sort="link_custom">headerIncidentNo</column>
+    <column id="DueDateDeadLineDisplay" width="100" type="ro" align="left" sort="str_custom">headerDueDateDeadline</column>
+    <column id="RealCustomer" width="*" type="ro" align="left" sort="str_custom">headerRealCustomer</column>
+    <column id="SiteName" width="100" type="ro" align="left" sort="str_custom">headerSiteName</column>
+    <column id="IncidentTypeNameDisplay" width="100" type="ro" align="left" sort="str_custom">headerIncidentType</column>
+    <!--<column id="IncidentTitleDisplay" width="100" type="ro" align="left" sort="str_custom">headerIncidentTitle</column>-->
+	<column id="ReasonTypeNameDisplay" width="100" type="ro" align="left" sort="str_custom">headerReasonType</column>
+    <column id="ConChief" width="90" type="ro" align="left" sort="str_custom">headerChief</column>
+    <column id="CorrespondentDisplay" width="110" type="ro" align="left" sort="str_custom">headerCorrespondent</column>
+    <column id="IncidentStatusNameDisplay" width="70" type="ro" align="left" sort="str_custom">headerStatus</column>
+    <column id="IncidentID" width="0" type="ro" align="left" sort="str_custom" hidden="true">hideIncidentID</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

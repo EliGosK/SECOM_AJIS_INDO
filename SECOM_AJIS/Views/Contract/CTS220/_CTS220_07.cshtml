@@ -1,0 +1,45 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS220/CTS220_07.js")"></script>
+@{
+    Layout = "";
+    ViewBag.Title = "CTS220";
+    ViewBag.LabelWidth = "250px";
+    ViewBag.RightLabelWidth = "174px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+
+<div id="divFutureDateSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS220.lblFutureDateInformation
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblExpectedResumeServiceDate
+        </div>
+        <div class="usr-object" style="width: 126px">
+            @Html.CommonTextBox("ExpectedResumeDate", null, new { style = "width:100px;"})
+        </div>  
+        <div class="usr-label">
+             @Html.LabelDateFormat("ExpectedResumeDate")         
+        </div>
+
+        <div class="usr-label" style="width:213px;">
+            @Resources.CTS220.lblReturnDateToOriginalFee
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ReturnToOriginalFeeDate", null, new { style = "width:100px;" })             
+        </div>       
+        <div class="usr-label">
+             @Html.LabelDateFormat("ReturnToOriginalFeeDate")         
+        </div>        
+    </div>
+    <div class="usr-row">&nbsp;</div>
+</div>

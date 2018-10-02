@@ -1,0 +1,121 @@
+﻿@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers
+<!-- ======== Html content ======== --->
+@* --- Contract Information ---  *@
+<div id="divMonthBasicInfo" class="main-table" style="margin-top: 5px; display: none;">
+    <div class="table-header">
+        @Resources.ISS100.lblSearchCriteria @*(@Resources.ISS100.lblHeaderMonthName)*@
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.ISS100.lblInstallationType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+               @Html.InstallTypeCbo("InstallationType", new { style = "width:" + ViewBag.ObjectCol3Width + ";", name = "InstallationType" })
+            </div>
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.ISS100.lblReceiveDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+                @Html.CommonTextBox("ReceiveDateFrom", null, new { style = "width:" + @ViewBag.Col1Width + ";" })
+                ~&nbsp;@Html.CommonTextBox("ReceiveDateTo", null, new { style = "width:" + @ViewBag.Col1Width + ";" })
+            </div>@Html.LabelDateFormat("ReceiveDateFrom")
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.ISS100.lblExpectedStartDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+                @Html.CommonTextBox("ExpectedStartDateFrom", null, new { style = "width:" + @ViewBag.Col1Width + ";" })
+                ~&nbsp;@Html.CommonTextBox("ExpectedStartDateTo", null, new { style = "width:" + @ViewBag.Col1Width + ";" })
+            </div>@Html.LabelDateFormat("ExpectedStartDateFrom")
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.ISS100.lblExpectedCompleteDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+                @Html.CommonTextBox("ExpectedCompleteDateFrom", null, new { style = "width:" + @ViewBag.Col1Width + ";" })
+                ~&nbsp;@Html.CommonTextBox("ExpectedCompleteDateTo", null, new { style = "width:" + @ViewBag.Col1Width + ";" })
+            </div>@Html.LabelDateFormat("ExpectedCompleteDateFrom")
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.ISS100.lblCompleteDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+                @Html.CommonTextBox("CompleteDateFrom", null, new { style = "width:" + @ViewBag.Col1Width + ";" })
+                ~&nbsp;@Html.CommonTextBox("CompleteDateTo", null, new { style = "width:" + @ViewBag.Col1Width + ";" })
+            </div>@Html.LabelDateFormat("CompleteDateFrom")
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.ISS100.lblContractCode</div>
+        <div class="usr-object" style="margin-left: 0px;">
+            <div class="usr-object">
+                @Html.CommonTextBox("ContractCode", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.ISS100.lblSiteName</div>
+        <div class="usr-object" style="margin-left: 0px;">
+            @Html.CommonTextBox("SiteName", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.ISS100.lblSubContractorName</div>
+        <div class="usr-object" style="margin-left: 0px;">
+            @Html.SubContractorComboBoxWithFirstElement("SubcontractorCodeMonthly", "All", new { style = "width:" + @ViewBag.ObjectCol3Width+";", selected = (string)@ViewBag.SubcontractCode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.ISS100.lblProductName</div>
+        <div class="usr-object" style="margin-left: 0px;">
+           
+              @Html.ProductNameCbo("ProductName","All", new { style = "width:344px;", name = "ProductName" })
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.ISS100.lblNew_OldBuilding
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+                @Html.InstallBuiildingType("BuildingType", new { style = "width:" + ViewBag.ObjectCol3Width + ";", name = "BuildingType" })
+            </div>
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        </div>
+    </div>
+    <div class="usr-row" style="text-align: right">
+        @Html.CommonButton("btnDownloadMonth", @Resources.ISS100.lblDownloadExcel, new { style = "width:80px" })
+        @Html.CommonButton("btnClearMonth", @Resources.ISS100.lblClear, new { style = "width:80px" })
+        <iframe id="ifDownload" name="Download" style="visibility: hidden; width: 0px; height: 0px;">
+        </iframe>
+    </div>
+</div>

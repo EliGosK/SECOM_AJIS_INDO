@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na">headerNo</column>
+    <column id="GroupCode" width="200" type="ro" align="left" sort="str_custom">headerGroupcode</column>
+    <column id="GroupNameEN" width="300" type="ro" align="left" sort="str_custom">headerGroupNameEN</column>
+    <column id="GroupNameLC" width="*" type="ro" align="left" sort="str_custom">headerGroupNameLC</column>
+    <column id="Detail" width="90" type="link" align="center" sort="na">headerBtnGroupinformation</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

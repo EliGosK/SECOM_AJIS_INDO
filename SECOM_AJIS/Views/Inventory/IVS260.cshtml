@@ -1,0 +1,296 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Inventory.Helpers
+@section page_header{
+    <script src="../../Scripts/jquery.maskedinput-1.3.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script src="../../Scripts/Contract/Dialog.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <script src="../../Scripts/Inventory/IVS260.js" type="text/javascript"></script>
+    <script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var C_PURCHASE_ORDER_TYPE_DOMESTIC = "@ViewBag.C_PURCHASE_ORDER_TYPE_DOMESTIC";
+        var AreaSample = "@ViewBag.AreaSample";
+        var CancelPurchaseOrder = "@ViewBag.CancelPurchaseOrder";
+        var WaitToReceive = "@ViewBag.WaitToReceive";
+        var CompleteReceive = "@ViewBag.CompleteReceive";
+
+        var c_cancelPurchaseOrder = "@Resources.IVS260.lblCancelPurchaseOrder";
+        var c_currency_THB = "@ViewBag.CurrencyTHB"; //Add by Jutarat A. on 31102013
+        var VatTHB = "@ViewBag.VatTHB"; //Add by Jutarat A. on 31102013
+        var WHT = "@ViewBag.WHT"; 
+        var ViewOnlyMode = @ViewBag.ViewOnlyMode;
+    </script>
+}
+@{
+    ViewBag.Col1 = "width:190px;";
+    ViewBag.Col2 = "width:211px;";
+    ViewBag.NormalTxt = "width:175px;";
+    ViewBag.NormalCbo = "width:175px;";
+    ViewBag.ProjPurSortObj = "width:120px;";
+    ViewBag.LongTxt = "width:720px;";
+    ViewBag.Midtxt = "width:220px;";
+    ViewBag.SysProdTxt = "width:300px;";
+
+    ViewBag.WidthDatePicker = "90px";
+
+    ViewBag.SPWidthCol1 = "width:250px;";
+    ViewBag.SPWidthCol2 = "width:200px;";
+    ViewBag.SPWidthCol3 = "width:180px;";
+    ViewBag.SPWidthCol4 = "width:150px;";
+}
+<!-- =====================================  =========================================== -->
+<div id="IVS260PAGE">
+    <div class="main-table" id="SearchPurchaseOrder">
+        <div id="ResultSection">
+        <div class="table-header">
+            @Resources.IVS260.lblSearchPurchaseOrder</div>
+        <div class="usr-row">
+            <div class="usr-label" style="@ViewBag.Col1">@Resources.IVS260.lblPurchaseOrderNo</div>
+            <div class="usr-object" style="@ViewBag.NormalTxt" >
+                @Html.CommonTextBox("PurchaseOrderNo", null, new { style = ViewBag.NormalTxt })
+            </div>
+            <div class="usr-label" style="@ViewBag.Col2">@Resources.IVS260.lblPurchaseOrderStatus</div>
+            <div class="usr-object" >@Html.PurchaseOrderStatusCbo("PurchaseOrderStatus", new { style = @ViewBag.NormalCbo })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="@ViewBag.Col1">@Resources.IVS260.lblSupplierCode</div>
+            <div class="usr-object" style="@ViewBag.NormalTxt">
+                @Html.CommonTextBox("SupplierCode", null, new { style = ViewBag.NormalTxt })
+            </div>
+            <div class="usr-label" style="@ViewBag.Col2">@Resources.IVS260.lblSupplierName</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SupplierName", null, new { style = ViewBag.NormalTxt })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="@ViewBag.Col1">@Resources.IVS260.lblTransportType</div>
+            <div class="usr-object" style="@ViewBag.NormalCbo">
+                @Html.TransportTypeCbo("TransportType", new { style = @ViewBag.NormalCbo })
+            </div>
+            <div class="usr-label" style="@ViewBag.Col2">@Resources.IVS260.lblPOIssueDate</div>
+            <div class="usr-object" >
+                @Html.CommonTextBox("POIssueDateFrom", null, new { style = "width:" + ViewBag.WidthDatePicker, name = "POIssueDateFrom" })
+                <label>
+                    ~
+                </label>
+                @Html.CommonTextBox("POIssueDateTo", null, new { style = "width:" + ViewBag.WidthDatePicker, name = "POIssueDateTo" })
+                <label>
+                    (ddMMyyyy)
+                </label>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="@ViewBag.Col1">@Resources.IVS260.lblInstrumentCode</div>
+            <div class="usr-object" style="@ViewBag.NormalTxt">
+                @Html.CommonTextBox("SearchInstrumentCode", null, new { style = @ViewBag.NormalTxt })
+            </div>
+            <div class="usr-label" style="@ViewBag.Col2">@Resources.IVS260.lblExpectedDeliveryDate</div>
+            <div class="usr-object" >
+                @Html.CommonTextBox("SearchExpectedDeliveryDateFrom", null, new { style = "width:" + ViewBag.WidthDatePicker, name = "SearchExpectedDeliveryDateFrom" })
+                <label>
+                    ~
+                </label>
+                @Html.CommonTextBox("SearchExpectedDeliveryDateTo", null, new { style = "width:" + ViewBag.WidthDatePicker, name = "SearchExpectedDeliveryDateTo" })
+                <label>
+                    (ddMMyyyy)
+                </label>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width: 98%">
+                @Html.CommonButton("btnSearch", @Resources.IVS260.lblBtnSearch)
+                @Html.CommonButton("btnClear", @Resources.IVS260.lblBtnClear)
+            </div>
+        </div>
+        <div class="usr-row">
+            <div id="POrderGrid" style="width: 99%; margin-left: 4px;"></div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+        </div>
+    </div>
+    <!-- ===================================== End ===========================================-->
+    <!-- ===================================== ===========================================-->
+    <div class="main-table" id="MaintainPurchaseOrder" style="display: none;">
+        <div class="table-header">
+            @Resources.IVS260.lblMaintainPurchaseOrder</div>
+        <div id="PurchaseData">
+            <div class="usr-row">
+                <div class="usr-label" style="@ViewBag.Col1">@Resources.IVS260.lblPurchaseOrderNo
+                </div>
+                <div class="usr-object" style="@ViewBag.NormalTxt">
+                    @Html.CommonTextBox("DTPurchaseOrderNo", null, new { @readonly = true, style = ViewBag.NormalTxt })
+                </div>
+                @*<div class="usr-label" style="@ViewBag.Col2">@Resources.IVS260.lblPurchaseAmount
+                </div>
+                <div class="usr-object">
+                    @Html.NumericTextBox("DTAmount", null, new { @readonly = true, style = ViewBag.NormalTxt })
+                </div>*@
+                <div class="usr-label" style="@ViewBag.Col2">@Resources.IVS260.lblPurchaseOrderStatus
+                </div>
+                <div class="usr-object" style="@ViewBag.NormalTxt">
+                    @Html.CommonTextBox("DTPurchaseOrderStatusName", null, new { @readonly = true, style = ViewBag.NormalTxt })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="@ViewBag.Col1">@Resources.IVS260.lblSupplierCode
+                </div>
+                <div class="usr-object" style="@ViewBag.NormalTxt">
+                    @Html.CommonTextBox("DTSupplierCode", null, new { @readonly = true, style = ViewBag.NormalTxt })
+                </div>
+                <div class="usr-label" style="@ViewBag.Col2">@Resources.IVS260.lblSupplierName
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("DTSupplierName", null, new { @readonly = true, style = ViewBag.NormalTxt })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="@ViewBag.Col1">@Resources.IVS260.lblSupplierNation
+                </div>
+                <div class="usr-object" style="@ViewBag.NormalTxt">
+                    @Html.CommonTextBox("DTRegionName", null, new { @readonly = true, style = ViewBag.NormalTxt })
+                </div>
+                @*<div class="usr-label" style="@ViewBag.Col2">@Resources.IVS260.lblCurrency
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("DTCurrencyName", null, new { @readonly = true, style = ViewBag.NormalTxt })
+                </div>*@
+            </div>
+            <div class="usr-row">
+                @*<div class="usr-label" style="@ViewBag.Col1">@Resources.IVS260.lblPurchaseOrderStatus
+                </div>
+                <div class="usr-object" style="@ViewBag.NormalTxt">
+                    @Html.CommonTextBox("DTPurchaseOrderStatusName", null, new { @readonly = true, style = ViewBag.NormalTxt })
+                </div>
+                <div class="usr-label" style="@ViewBag.Col2">@Resources.IVS260.lblTransportType
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("DTTransportTypeName", null, new { @readonly = true, style = ViewBag.NormalTxt })
+                </div>*@
+
+                <div class="usr-label" style="@ViewBag.Col1">
+                    @Resources.IVS260.lblPurchaseOrderType
+                </div>
+                <div class="usr-object" style="width:270px">
+                    @Html.PurchaseOrderTypeCbo("DTPurchaseOrderType", new { style = @ViewBag.NormalCbo }) @Html.RequireFiled()
+                </div>
+                <div class="usr-label" style="width: 147px;">@Resources.IVS260.lblTransportType
+                </div>
+                <div class="usr-object">            
+                        @Html.TransportTypeCbo("DTTransportType", new { style = @ViewBag.NormalCbo }) @Html.RequireFiled()            
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="@ViewBag.Col1">@Resources.IVS260.lblAdjustDueDate
+                </div>
+                <div class="usr-object" style="width:270px">
+                    <div class="object-unit">
+                        @Html.CommonTextBox("AdjustDueDate", null, new { style = "width:155px;" }) 
+                    </div>
+                    <div style="font-size:9pt;float:left;">
+                        @Html.LabelDateFormat("AdjustDueDate") @Html.RequireFiled()
+                    </div>
+                </div>
+                <div class="usr-label" style="width: 147px;">@Resources.IVS260.lblCurrency
+                </div>
+                <div class="usr-object">
+                    @Html.CurrencyCbo("Currency", new { style = @ViewBag.NormalCbo }) @Html.RequireFiled()
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="@ViewBag.Col1">@Resources.IVS012.lblMemo
+                </div>
+                <div class="usr-object" style="width:652px">
+                    @Html.CommonTextArea("Memo", null, new { style = "width: 652px; overflow: auto;height:50px;", maxlength = "1000" })
+                </div>
+            </div>
+            <div class="usr-row">
+                &nbsp;
+            </div>
+        </div>
+
+        <form name="formSearch" id="formSearch" action="#">
+        <div id="InstInput">
+            <div class="usr-row">
+                <div class="usr-label" style="@ViewBag.Col1">@Resources.IVS260.lblInstrumentCode
+                </div>
+                <div class="usr-object" style="width:168px">
+                    @Html.CommonTextBox("InstrumentCode", null, new { style = "width:160px;", maxlength = "50" })
+                </div>
+                <div class="usr-object" style="width:267px">
+                    @Html.CommonTextBox("InstrumentName", null, new { @readonly = true, style = "width:259px;" })
+                </div>
+                <div class="usr-object">
+                    @Html.CommonButton("btnSearchInstrument", (string)@Resources.IVS260.lblBtnSearchInstrument, new { style = "width:130px;", type = "button" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="@ViewBag.Col1">
+                    @Resources.IVS260.lblUnitPrice
+                </div>
+                <div class="usr-object" style="width:190px">
+                    @Html.NumericTextBox("UnitPrice", null, new { style = "width:140px;" })
+                </div>
+                <div class="usr-label" style="width:200px;">
+                    @Resources.IVS260.lblOrderQty
+                </div>
+                <div class="usr-object" style="width:200px">
+                    @Html.NumericTextBox("OrderQty", null, new { style = "width:140px;" })</div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="@ViewBag.Col1">
+                    @Resources.IVS260.lblUnit
+                </div>
+                <div class="usr-object" style="width:190px">
+                    @Html.UnitCbo("Unit", new { style = "width:140px;" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-object" style="float: right;">                
+                    @Html.CommonButton("btnAdd", @Resources.IVS260.lblBtnAdd, new { type = "button" }) @Html.CommonButton("btnCancel", @Resources.IVS260.lblBtnCancel, new { type = "button" })</div>
+            </div>
+        </div>
+        </form>
+                
+        <div class="usr-row">
+            <div id="InstGrid" style="width: 99%; margin-left: 4px;">
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+    
+</div>
+
+<div class="main-table" id="divShowPurchaseOrder" style="display: none">
+    <div class="table-header">
+        @Resources.IVS260.lblHeaderShowPurchaseOrder
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="@ViewBag.SPWidthCol1">@Resources.IVS260.lblPurchaseOrderNo</div>
+        <div class="usr-object" style="@ViewBag.SPWidthCol2">@Html.CommonTextBox("txtShowPurchaseOrderNo", null, new { style = "width:95%" })</div>
+        @Html.CommonButton("btnDownload", @Resources.IVS260.lblBtnDownload, new { style = ViewBag.SPWidthCol3 }) 
+        @Html.CommonButton("btnNewRegister", @Resources.IVS260.lblBtnNewRegister, new { style = ViewBag.SPWidthCol4 }) 
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<!-- ===================================== End ===========================================
+-->
+<!-- ===================================== Specify =========================================== -->
+<!-- =====================================
+End Specify purchase order instrument ===========================================
+-->
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog">
+    </div>
+</div>

@@ -1,0 +1,264 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "130px";
+    ViewBag.ObjectCol3Width = "200px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<div id="divBillingTargetDetail" class="main-table" style="display:none;">
+    <div class="table-header">@Resources.CTS010.lblBillingTargetDetail</div>
+    <div id="divSpecifyBillingTargetDetail" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object" style="padding-bottom:5px;">
+            <div class="usr-row">
+                <div class="usr-object">
+                    <div id="divSpecifyBillingCode" class="sub-table" style="float:left;width:350px;margin-right:10px;">
+                        <div class="table-header">@Resources.CTS010.lblSpecifyCode</div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="margin-left:5px;height:20px;">&nbsp;</div>
+                        </div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="width:170px;margin-left:5px;">
+                                @Html.CommonRadioButton("rdoBillingTargetCode", (string)@Resources.CTS010.rdoBillingTargetCode, "1", false, "BillingCodeGroup")
+                            </div>
+                            <div class="usr-object">
+                                @Html.CommonTextBox("BillingTargetCode", null, new { maxlength = CommonValue.C_MAXLENGTH_BILLING_TARGE_CODE, style = "width:90px;" })
+                            </div>
+                            <div class="usr-object" style="margin-left:3px;">
+                                @Html.CommonButton("btnRetrieveBillingTargetCode", (string)@Resources.CTS010.btnRetrieve, new { style = "width:70px;" })
+                            </div>
+                        </div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="width:170px;margin-left:5px;">
+                                @Html.CommonRadioButton("rdoBillingClientCode", (string)@Resources.CTS010.rdoBillingClientCode, "2", true, "BillingCodeGroup")
+                            </div>
+                            <div class="usr-object">
+                                @Html.CommonTextBox("BillingClientCode", null, new { maxlength = CommonValue.C_MAXLENGTH_BILLING_CLIENT_CODE, style = "width:90px;" })
+                            </div>
+                            <div class="usr-object" style="margin-left:3px;">
+                                @Html.CommonButton("btnRetrieveBillingClientCode", (string)@Resources.CTS010.btnRetrieve, new { style = "width:70px;" })
+                            </div>
+                        </div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="margin-left:5px;height:20px;">&nbsp;</div>
+                        </div>
+                        <div class="usr-row">
+                            <div style="float:right;">
+                                <div class="usr-object" style="padding-right:11px;">
+                                    @Html.CommonButton("btnSearchBillingClient", (string)@Resources.CTS010.btnSearchBillingClient, new { style = "width:150px;" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="usr-clear-style">&nbsp;</div>
+                    </div>
+                    <div id="divCopyBillingNameAddress" class="sub-table" style="float:left;width:350px;">
+                        <div class="table-header">@Resources.CTS010.lblCopyNameAddressInfo</div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="margin-left:5px;">
+                                @Html.CommonRadioButton("rdoBillingContractTarget", @Resources.CTS010.rdoContractTargetPurchaser, "1", true, "CopyNameAddrBillingGroup")
+                            </div>
+                        </div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="height:22px;margin-left:5px;">
+                                @Html.CommonRadioButton("rdoBillingBranchOfContractTarget", @Resources.CTS010.rdoBranchContractTarget, "2", false, "CopyNameAddrBillingGroup")
+                            </div>
+                        </div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="height:22px;margin-left:5px;">
+                                @Html.CommonRadioButton("rdoBillingRealCustomer", @Resources.CTS010.rdoReadCustomer, "3", false, "CopyNameAddrBillingGroup")
+                            </div>
+                        </div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="margin-left:5px;">
+                                @Html.CommonRadioButton("rdoBillingSite", @Resources.CTS010.rdoSite, "4", false, "CopyNameAddrBillingGroup")
+                            </div>
+                        </div>
+                        <div class="usr-row">
+                            <div style="float:right;">
+                                <div class="usr-object" style="padding-right:11px;">
+                                    @Html.CommonButton("btnCopyBilling", (string)@Resources.CTS010.btnCopy, new { style = "width:100px;" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="usr-clear-style">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divBillingClientInformation">
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblBillingTargetCode</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("BillingTargetCodeShort", null, new { style = "width:" + ViewBag.ObjectCol1Width + ";", @readonly = true })
+                @Html.Hidden("SelectedBillingTargetCode")
+            </div>
+            <div class="usr-label" style="width:130px;">@Resources.CTS010.lblBillingClientCode</div>
+            <div class="usr-object" style="margin-right:5px;">
+                @Html.CommonTextBox("BillingClientCodeShort", null, new { style = "width:85px;", @readonly = true })
+                @Html.Hidden("SelectedBillingClientCode")
+            </div>
+            <div class="usr-object" style="float:left;">
+                @Html.CommonButton("btnNewEditBillingTarget", (string)@Resources.CTS010.btnNewEditBillingClientInfo, new { style = "width:210px;" })
+                @Html.CommonButton("btnClearBillingTarget", (string)@Resources.CTS010.btnClearBillingTarget, new { style = "width:150px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblNameEN</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("BillingFullNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblBranchNameEN</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("BillingBranchNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblAddressEN</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("BillingAddressEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblNameLC</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("BillingFullNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblBranchNameLC</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("BillingBranchNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblAddressLC</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("BillingAddressLC", (string)@ViewBag.AddressFullLC, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblNationality</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("BillingNationality", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS010.lblPhoneNo</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+                @Html.CommonTextBox("BillingPhoneNo", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">@Resources.CTS010.lblBusinessType</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                @Html.CommonTextBox("BillingBusinessTypeName", null, new { style = "width:" + @ViewBag.ObjectCol3Width + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblIDNo</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("BillingIDNo", (string)@ViewBag.IDNo, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+            </div>
+
+            <div id="lblInvoiceLanguage" class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS010.lblInvoiceLanguage</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+                @Html.DisplayLanguageComboBox("DocLanguage", new { style = "width:135px;" }, false)
+                @Html.Hidden("hidDocLanguageTH", (string)DocLanguage.C_DOC_LANGUAGE_EN)
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblBillingOffice</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.BillingOfficeNormalCbo("BillingOfficeCode", new { style = "width:200px;" })
+            @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object custom-table" style="width:@ViewBag.ObjectColMergeWidth;">
+            <form id="formBillingTargetDetail">
+                <table cellpadding="0" cellspacing="0">
+                    <tr class="hdr">
+                        <td colspan="2" style="width:300px;">&nbsp;</td>
+                        <td style="width:205px;">@Resources.CTS010.headerAmount</td>
+                        <td style="width:140px;">@Resources.CTS010.headerPaymentMethod</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:right;">@Resources.CTS010.lblBillingContractFee</td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("ContractFee", null, null, new { style = "width:140px;" })
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3" style="width:150px;text-align:right;">@Resources.CTS010.lblBillingInstallationFee</td>
+                        <td style="width:150px;text-align:left;">@Resources.CTS010.lblApproval</td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("InstallFee_Approval", null, null, new { style = "width:140px;" })
+                        </td>
+                        <td>
+                            @Html.PaymentMethodTypeComboBox("PaymentMethod_Approval", new { style = "width:140px;" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:150px;text-align:left;">@Resources.CTS010.lblCompleteInstallation</td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("InstallFee_CompleteInstallation", null, null, new { style = "width:140px;" })
+                        </td>
+                        <td>
+                            @Html.PaymentMethodTypeComboBox("PaymentMethod_CompleteInstallation", new { style = "width:140px;" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:150px;text-align:left;">@Resources.CTS010.lblStartService</td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("InstallFee_StartService", null, null, new { style = "width:140px;" })
+                        </td>
+                        <td>
+                            @Html.PaymentMethodTypeComboBox("PaymentMethod_StartService", new { style = "width:140px;" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:right;">@Resources.CTS010.lblTotal</td>
+                        <td>
+                            <div style="height:25px;">
+                                @Html.NumericTextBoxWithMultipleCurrency("TotalFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { @readonly = true, style = "width:160px;" }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+                            </div>
+                            <div>
+                                @Html.NumericTextBoxWithMultipleCurrency("TotalFeeUsd", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_US, new { @readonly = true, style = "width:160px;" }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+                            </div>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:right;">@Resources.CTS010.lblBillingDepositFee</td>
+                        <td>
+                            @Html.NumericTextBoxWithMultipleCurrency("DepositFee", null, null, new { style = "width:140px;" })
+                        </td>
+                        <td>
+                            @Html.PaymentMethodTypeComboBox("PaymentMethod_Deposit", new { style = "width:140px;" })
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="usr-row usr-row-space-2x">
+            <div style="float:right;margin-right:10px;">
+                @Html.CommonButton("btnAddUpdateBillingTargetdetail", @Resources.CTS010.btnAddUpdate, new { style = "width:100px;" })
+                @Html.CommonButton("btnCancelBillingTargetDetail", @Resources.CTS010.btnCancel, new { style = "width:100px;" })
+            </div>
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

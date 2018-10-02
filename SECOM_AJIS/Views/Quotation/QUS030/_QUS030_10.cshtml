@@ -1,0 +1,63 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "120px";
+    ViewBag.LabelCol2Width = "75px";
+    
+    ViewBag.ObjectCol1Width = "140px";
+    ViewBag.ObjectCol2Width = "80px";
+    ViewBag.ObjectColCustNameWidth = "200px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS030/QUS030_10.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("DisabledAllFacilityControls", (bool)@ViewBag.DisabledAllFacilityControls)
+    @Html.Hidden("DisabledRemoveFacilityButton", (bool)@ViewBag.DisabledFacilityRemoveButton)
+    @Html.Hidden("DisabledFacilityQuantityTextBox", (bool)@ViewBag.DisabledFacilityQuantityTextBox)
+    @Html.Hidden("DisabledFacilityMemo", (bool)@ViewBag.DisabledFacilityMemo)
+</div>
+<div id="divFacilityDetail" class="main-table">
+    <div class="table-header">
+        @Resources.QUS030.lblFacilityDetail
+    </div>
+    <div class="usr-row">
+        <div class="usr-object" style="margin-left:4px;">
+            @Html.CommonButton("btnShowDefaultFacility", @Resources.QUS030.btnShowDefault, new { style = "width:100px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div id="gridFacilityDetail" style="width:99%;margin-left:4px;"></div>
+    </div>
+    <div id="divFacilityAdd" class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS030.lblFacilityCode
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("FacilityCode", null, new { maxlength = "50", style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("FacilityName", null, new { style = "width:" + @ViewBag.ObjectColCustNameWidth + ";", @readonly = true })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnSearchFacility", @Resources.QUS030.btnSearchFacility, new { style = "width:150px;" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS030.lblQuantity
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.NumericTextBox("FacilityQty", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnAddFacility", @Resources.QUS030.btnAdd, new { style = "width:70px;" })
+            @Html.CommonButton("btnCancelFacility", @Resources.QUS030.btnCancel, new { style = "width:70px;" })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS030.lblMemo</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextArea("FacilityMemo", (string)@ViewBag.FacilityMemo, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";height:65px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG6001" xml:space="preserve">
+    <value>「請求書発行タイミング（月数）」欄に60ヶ月を越える数値を入力できません。</value>
+  </data>
+  <data name="MSG6002" xml:space="preserve">
+    <value>指定された請求先コードと請求事業所の組み合わせは、請求先コード {0} で既に存在しています。</value>
+  </data>
+  <data name="MSG6003" xml:space="preserve">
+    <value>指定された契約コード／プロジェクトコードと請求先コードの組み合わせは、請求コード {0} で既に存在しています。</value>
+  </data>
+  <data name="MSG6004" xml:space="preserve">
+    <value>請求種別 {0} は既に一覧上に存在しています。</value>
+  </data>
+  <data name="MSG6005" xml:space="preserve">
+    <value>少なくとも1つの請求種別を選択してください。</value>
+  </data>
+  <data name="MSG6006" xml:space="preserve">
+    <value>支払方法が「自振」になっています。自振情報を登録してください。</value>
+  </data>
+  <data name="MSG6007" xml:space="preserve">
+    <value>支払方法が「クレジットカード」になっています。クレジットカード情報を登録してください。</value>
+  </data>
+  <data name="MSG6008" xml:space="preserve">
+    <value>{0} を消去できません。</value>
+  </data>
+  <data name="MSG6009" xml:space="preserve">
+    <value>請求サイクルが「2」以下の場合、決裁の取得が必要です。</value>
+  </data>
+  <data name="MSG6010" xml:space="preserve">
+    <value>定時発行調整日には、請求最終日以前の日付の登録はできません。</value>
+  </data>
+  <data name="MSG6011" xml:space="preserve">
+    <value>最新支払条件変更日は未来日付で登録できません。</value>
+  </data>
+  <data name="MSG6012" xml:space="preserve">
+    <value>「最新適用日」と「変更前適用日1～4」の継続性に矛盾があります。</value>
+  </data>
+  <data name="MSG6013" xml:space="preserve">
+    <value>請求基本の一番最初の請求履歴の適用期間開始日は、契約側の新規実施日より前の日付で登録できません。</value>
+  </data>
+  <data name="MSG6014" xml:space="preserve">
+    <value>「請求期間（開始）」は成約承認日以降の日付で登録しなければなりません。</value>
+  </data>
+  <data name="MSG6015" xml:space="preserve">
+    <value>登録してから「指示物件」のチェックを外すまで、「指示物件区分」以外の情報編集が不可になります。</value>
+  </data>
+  <data name="MSG6016" xml:space="preserve">
+    <value>支払方法が「自振」から、自振以外に変更されました。自振情報が削除されますので確認してください。</value>
+  </data>
+  <data name="MSG6017" xml:space="preserve">
+    <value>支払方法が「クレジットカード」から、クレジットカード以外に変更されました。クレジットカード情報が削除されますので確認してください。</value>
+  </data>
+  <data name="MSG6018" xml:space="preserve">
+    <value>「請求サイクル」に60ヶ月を超える数値が登録されています。誤りでないか確認してください。</value>
+  </data>
+  <data name="MSG6019" xml:space="preserve">
+    <value>後納月数に１２ヶ月を超える数値が登録されています。誤りでないか確認してください。</value>
+  </data>
+  <data name="MSG6020" xml:space="preserve">
+    <value>この変更は継続料金の請求が停止されます。問題ないか確認してください。</value>
+  </data>
+  <data name="MSG6021" xml:space="preserve">
+    <value>請求区分が変更されたため、継続料金の請求が発行されます。問題ないか確認してください。</value>
+  </data>
+  <data name="MSG6022" xml:space="preserve">
+    <value>契約料金と矛盾がないように、契約データの修正も必ず行ってください。</value>
+  </data>
+  <data name="MSG6023" xml:space="preserve">
+    <value>請求明細破棄の権限がありません。</value>
+  </data>
+  <data name="MSG6024" xml:space="preserve">
+    <value>破棄明細と発行明細は同一請求種別を持たなければなりません。</value>
+  </data>
+  <data name="MSG6025" xml:space="preserve">
+    <value>発行／振替予定日は過去日付で登録できません。</value>
+  </data>
+  <data name="MSG6026" xml:space="preserve">
+    <value>指定した発行／振替予定日はマスターに設定している振替日と一致していません。</value>
+  </data>
+  <data name="MSG6027" xml:space="preserve">
+    <value>指定した発行／振替予定日はマスターに設定しているクレジットカードの振替日と一致していません。</value>
+  </data>
+  <data name="MSG6028" xml:space="preserve">
+    <value>この振替予定日は自振銀行ファイル確定済みです。</value>
+  </data>
+  <data name="MSG6029" xml:space="preserve">
+    <value>この振替予定日はクレジットカード振替ファイル確定済みです。</value>
+  </data>
+  <data name="MSG6030" xml:space="preserve">
+    <value>「請求期間（開始）」は実施日以降の日付で登録しなければなりません。</value>
+  </data>
+  <data name="MSG6031" xml:space="preserve">
+    <value>請求期間（{0}～{1}）が既存請求明細の請求期間の継続期間でなければなりません。</value>
+  </data>
+  <data name="MSG6032" xml:space="preserve">
+    <value>請求期間（{0}～{1}）が既存請求明細の請求期間と重複してはいけません。</value>
+  </data>
+  <data name="MSG6033" xml:space="preserve">
+    <value>請求履歴の最初の適用期間開始日からの請求明細が存在しなくなるため登録できません。</value>
+  </data>
+  <data name="MSG6034" xml:space="preserve">
+    <value>請求履歴の最初の適用期間開始日より前の請求明細は作成できません。</value>
+  </data>
+  <data name="MSG6035" xml:space="preserve">
+    <value>この請求明細は請求書発行済みで、その請求書には複数の請求明細があります。破棄処理を進めますか？</value>
+  </data>
+  <data name="MSG6036" xml:space="preserve">
+    <value>この請求基本には次回調整金額の登録があります。処理金額に誤りがないかを確認してください。また、次回調整金額の修正、削除が必要でないか確認してください。</value>
+  </data>
+  <data name="MSG6037" xml:space="preserve">
+    <value>「次回調整期間（開始）」は実施日以降の日付で登録しなければなりません。</value>
+  </data>
+  <data name="MSG6038" xml:space="preserve">
+    <value>「次回調整期間（終了）」は請求最終日以前の日付で登録しなければなりません。</value>
+  </data>
+  <data name="MSG6039" xml:space="preserve">
+    <value>次回調整データを変更しますが、よろしいですか？</value>
+  </data>
+  <data name="MSG6040" xml:space="preserve">
+    <value>この請求先は存在しません。</value>
+  </data>
+  <data name="MSG6041" xml:space="preserve">
+    <value>この請求基本は存在しません。</value>
+  </data>
+  <data name="MSG6042" xml:space="preserve">
+    <value>この請求明細は存在しません。</value>
+  </data>
+  <data name="MSG6043" xml:space="preserve">
+    <value>この請求書は存在しません。</value>
+  </data>
+  <data name="MSG6044" xml:space="preserve">
+    <value>支払方法が「自振」または「クレジットカード」以外のため、自振／クレジットカード乗替処理を行えません。</value>
+  </data>
+  <data name="MSG6045" xml:space="preserve">
+    <value>この請求明細は請求書発行済みで、請求書が複数の請求明細を持っているため、自振／クレジットカード乗替は請求書単位で行ってください。</value>
+  </data>
+  <data name="MSG6046" xml:space="preserve">
+    <value>請求明細の入金区分が「00（請求書未発行）」、または「01（未入金）」（請求書の明細は一つだけ存在）ではないため、自振／クレジットカード乗替処理を行えません。</value>
+  </data>
+  <data name="MSG6047" xml:space="preserve">
+    <value>この請求明細は請求書発行済みで、請求書が複数の請求明細を持っているため、自振／クレジットカード停止処理を行えません。</value>
+  </data>
+  <data name="MSG6048" xml:space="preserve">
+    <value>請求明細の入金区分が「04（請求書未発行）」、または「03（未入金）」（請求書の明細は一つだけ存在）ではないため、自振／クレジットカード停止処理を行えません。</value>
+  </data>
+  <data name="MSG6049" xml:space="preserve">
+    <value>請求書未発行、未入金の明細でないため、発行／振替予定日を変更できません。</value>
+  </data>
+  <data name="MSG6050" xml:space="preserve">
+    <value>自振情報／クレジットカード情報に関して、異なる口座情報の請求コードがあるため、自振／クレジットカード乗替処理を行えません。</value>
+  </data>
+  <data name="MSG6051" xml:space="preserve">
+    <value>請求明細の入金区分が「01（未入金）」以外のため、自振／クレジットカード乗替処理を行えません。</value>
+  </data>
+  <data name="MSG6052" xml:space="preserve">
+    <value>請求明細の入金区分が「03（未入金）」以外のため、自振／クレジットカード停止処理を行えません。</value>
+  </data>
+  <data name="MSG6053" xml:space="preserve">
+    <value>最新適用期間でない明細を破棄することはできません。</value>
+  </data>
+  <data name="MSG6054" xml:space="preserve">
+    <value>破棄するためには、少なくとも1つの請求明細を選択してください。</value>
+  </data>
+  <data name="MSG6055" xml:space="preserve">
+    <value>少なくとも1つの請求明細を発行してください。</value>
+  </data>
+  <data name="MSG6056" xml:space="preserve">
+    <value>請求基本 {0} が指示物件として設定されているため、この請求基本、及びこの請求基本を持つ請求明細、請求書情報を編集できません。</value>
+  </data>
+  <data name="MSG6057" xml:space="preserve">
+    <value>契約コードが存在しません。</value>
+  </data>
+  <data name="MSG6058" xml:space="preserve">
+    <value>登録した請求月額の合計が最新契約料金と同額でなければなりません。</value>
+  </data>
+  <data name="MSG6059" xml:space="preserve">
+    <value>請求書の全ての請求明細が同一請求種別を持たなければなりません。</value>
+  </data>
+  <data name="MSG6060" xml:space="preserve">
+    <value>請求書の全ての請求明細が同一支払方法を持たなければなりません。</value>
+  </data>
+  <data name="MSG6061" xml:space="preserve">
+    <value>請求書の全ての請求明細が同一税率を持たなければなりません。</value>
+  </data>
+  <data name="MSG6062" xml:space="preserve">
+    <value>この契約は実施済みでなければなりません。</value>
+  </data>
+  <data name="MSG6063" xml:space="preserve">
+    <value>請求期間（開始～終了）が既存請求明細の請求期間と重複してはいけません。</value>
+  </data>
+  <data name="MSG6064" xml:space="preserve">
+    <value>進行管理状態が「2（出庫）」または「4（完了済未検収）」以外のため、売却請求書を発行することができません。</value>
+  </data>
+  <data name="MSG6065" xml:space="preserve">
+    <value>請求書分離するために、少なくとも1つの請求明細を選択してください。</value>
+  </data>
+  <data name="MSG6066" xml:space="preserve">
+    <value>請求書分離の「請求書番号変更しない」チェックボックスにチェックされています。間違いがないか確認して下さい。</value>
+  </data>
+  <data name="MSG6067" xml:space="preserve">
+    <value>請求書結合するために、少なくとも1つの請求明細を選択してください。</value>
+  </data>
+  <data name="MSG6068" xml:space="preserve">
+    <value>同一請求種別を持つ請求明細のみ結合できます。</value>
+  </data>
+  <data name="MSG6069" xml:space="preserve">
+    <value>請求書結合の「請求書番号変更しない」チェックボックスにチェックされています。間違いがないか確認して下さい。</value>
+  </data>
+  <data name="MSG6070" xml:space="preserve">
+    <value>分離元請求書から全ての明細が分離される処理となりますが、よろしいですか？</value>
+  </data>
+  <data name="MSG6071" xml:space="preserve">
+    <value>売買契約が存在しません。</value>
+  </data>
+  <data name="MSG6072" xml:space="preserve">
+    <value>未発行の一部金がこの登録で合わせて発行されます。処理を進めますか？</value>
+  </data>
+  <data name="MSG6073" xml:space="preserve">
+    <value>請求書 {0} は入金区分 {1} を持っているため、この請求書から分離できません。</value>
+  </data>
+  <data name="MSG6074" xml:space="preserve">
+    <value>請求書 {0} は入金区分 {1} を持っているため、この請求書に結合できません。</value>
+  </data>
+  <data name="MSG6075" xml:space="preserve">
+    <value>この請求基本は自振の請求明細、または請求書発行済みのため、自振の支払方法を変更できません。</value>
+  </data>
+  <data name="MSG6076" xml:space="preserve">
+    <value>この請求基本は自振請求書発行済みのため、自振情報を変更できません。</value>
+  </data>
+  <data name="MSG6077" xml:space="preserve">
+    <value>この請求基本はクレジットカードの請求明細、または請求書発行済みのため、クレジットカードの支払方法を変更できません。</value>
+  </data>
+  <data name="MSG6078" xml:space="preserve">
+    <value>この請求基本はクレジットカードの請求書発行済みのため、クレジットカード情報を変更できません。</value>
+  </data>
+  <data name="MSG6079" xml:space="preserve">
+    <value>請求書 {0} が異なる請求先コードを持っているため、この請求書から分離できません。</value>
+  </data>
+  <data name="MSG6080" xml:space="preserve">
+    <value>請求書 {0} が異なる請求先コードを持っているため、この請求書に結合できません。</value>
+  </data>
+  <data name="MSG6081" xml:space="preserve">
+    <value>この請求書は、異なる請求先コードを持っているため、作成できません。</value>
+  </data>
+  <data name="MSG6082" xml:space="preserve">
+    <value>月次契約料金がシステムにないため、編集できません。</value>
+  </data>
+  <data name="MSG6083" xml:space="preserve">
+    <value>計算した請求金額の桁数が12桁を超えているため、請求明細情報を保存できません。</value>
+  </data>
+  <data name="MSG6084" xml:space="preserve">
+    <value>計算した請求書金額の桁数が12桁を超えているため、請求書情報を保存できません。</value>
+  </data>
+  <data name="MSG6085" xml:space="preserve">
+    <value>計算したVAT税額の桁数が12桁を超えているため、請求書情報を保存できません。</value>
+  </data>
+  <data name="MSG6086" xml:space="preserve">
+    <value>計算したWHT税額の桁数が12桁を超えているため、請求書情報を保存できません。</value>
+  </data>
+  <data name="MSG6087" xml:space="preserve">
+    <value>この処理を行う権限がありません。</value>
+  </data>
+  <data name="MSG6088" xml:space="preserve">
+    <value>請求期間（{0}～{1}）は既存請求明細の請求期間と重複してはいけません。</value>
+  </data>
+  <data name="MSG6089" xml:space="preserve">
+    <value>一番最初の請求履歴の「適用期間開始」が新規実施日と同一の請求OCCが一つも存在しないため、請求基本情報を登録できません。</value>
+  </data>
+  <data name="MSG6090" xml:space="preserve">
+    <value>請求種別を指定してください。</value>
+  </data>
+  <data name="MSG6091" xml:space="preserve">
+    <value>少なくとも処理対象を１つ以上登録してください。</value>
+  </data>
+  <data name="MSG6092" xml:space="preserve">
+    <value>初回売却料とそれ以外の追加売却料などが混在した破棄再作成はできません。それぞれ別々に破棄再作成処理を行ってください。</value>
+  </data>
+  <data name="MSG6093" xml:space="preserve">
+    <value>Billing type {0} &lt;b&gt;&lt;u&gt;doesn't have&lt;/u&gt;&lt;/b&gt; first fee flag in system.&lt;br/&gt;Do you want to continue?</value>
+  </data>
+  <data name="MSG6094" xml:space="preserve">
+    <value>Billing type {0} already has first fee flag in system.&lt;br/&gt;Do you want to continue?</value>
+  </data>
+</root>

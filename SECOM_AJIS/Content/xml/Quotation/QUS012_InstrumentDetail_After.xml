@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="MaintenanceFlag" width="30" type="ro" align="center" sort="na"></column>
+    <column id="InstrumentCode" width="140" type="ro" align="left" sort="str_custom">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">headerInstrumentName</column>
+    <column id="LineUpTypeCodeName" width="120" type="ro" align="left" sort="str_custom">headerLineUpType</column>
+    <column id="InstrumentQty" width="80" type="edn" format="0,000" align="right" sort="int">headerBeforeQuantity</column>
+    <column id="AddQty" width="80" type="edn" format="0,000" align="right" sort="int">headerChangeQuantity</column>
+    <column id="RemoveQty" width="80" type="edn" format="0,000" align="right" sort="int">#cspan</column>
+    <column id="InstalledQty" width="80" type="edn" format="0,000" align="right" sort="int">headerInstalledQuantity</column>
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,headerAdditionalQuantity,headerRemovalQuantity,#rspan</param>
+      </call>
+    </afterInit>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

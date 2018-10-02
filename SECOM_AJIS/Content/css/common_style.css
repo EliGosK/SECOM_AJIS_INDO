@@ -1,0 +1,339 @@
+﻿/* --- Span --- */
+.lbl-link
+{
+    font-family: Verdana, MS UI Gothic;
+    font-size: 10pt;
+    font-weight: normal;
+    color: Blue;
+    cursor: pointer;
+}
+
+/* --- TextBox --- */
+input[type=text]
+{
+    color: #000000;
+    border: 1px solid #707070;
+    height: 20px;
+    padding: 0 1px 0 1px;
+    line-height: 17px;
+    font-family: Verdana, MS UI Gothic;
+    font-size: 10pt;
+}
+.highlight
+{
+    background-color: #FFE2E2;
+}
+input[type=text][readonly]
+{
+    background-color: #dfdfdf;
+    color: #000000;
+    border: 1px solid #707070;
+}
+input[type="password"]
+{
+    color: #000000;
+    border: 1px solid #707070;
+}
+.numeric-box
+{
+    text-align: right;
+}
+
+/* --- Radio Box --- */
+input[type=radio]
+{
+    /*height:17px;     padding: 0 3px 0 1px;     margin-top: -2px;*/
+    padding: 3px 3px 4px 1px;
+}
+
+/* --- Text Area --- */
+textarea
+{
+    color: #000000;
+    border: 1px solid #707070;
+    /*font-family: Verdana, MS UI Gothic;*/
+	font-size: 10pt;
+}
+textarea[readonly]
+{
+    background-color: #dfdfdf;
+    color: #000000;
+    border: 1px solid #707070;
+}
+
+/* --- Select --- */
+
+select
+{
+    color: #000000;
+    border: 1px solid #707070;
+    height: 22px;
+    font-family: Verdana, MS UI Gothic;
+    font-size: 10pt;
+}
+
+select[disabled]
+{
+    background-color: #dfdfdf;
+    color: #000000;
+    border: 1px solid #707070;
+}
+
+
+/* --- Label --- */
+.label-view
+{
+    color: #ff7700; /*line-height: 21px;*/
+    margin-top: 3px;
+    line-height: 14px;
+    padding: 0;
+}
+.label-checkbox-view
+{
+    color: #ff7700;
+}
+.label-readonly-view
+{
+    color: gray; /*line-height: 21px;*/
+    /*margin-top: 3px;*/
+    line-height: 14px;
+    padding: 0;
+    padding-top:3px;
+    float: left;
+    width:100%;
+}
+.label-readonly-view-number
+{
+    color: gray; /*line-height: 21px;*/
+    /*margin-top: 3px;*/
+    line-height: 14px;
+    padding: 0;
+    padding-top:3px;
+    float: left;
+    width:100%;
+    text-align: right;
+}
+.label-edit-view
+{
+    color: Blue; /*line-height: 21px;*/
+    /*margin-top: 3px;*/
+    line-height: 14px;
+    padding: 0;
+    padding-top:3px;
+    float: left;
+    width:100%;
+}
+.label-edit-view-number
+{
+    color: Blue; /*line-height: 21px;*/
+    /*margin-top: 3px;*/
+    line-height: 14px;
+    padding: 0;
+    padding-top:3px;
+    float: left;
+    width:100%;
+    text-align: right;
+}
+.label-remark
+{
+    color: Red;
+    font-weight: bold;
+    line-height: 18px;
+}
+
+.remark-gray 
+{
+     font-size: 0.8em; 
+     color: rgb(119, 119, 119); 
+ }
+
+.label-info
+{
+    color: Gray;
+    font-size: 8pt;
+}
+
+/* --- Control List --- */
+.ctrl-list
+{
+    width: 100%;
+    overflow-y: auto;
+}
+.ctrl-list-horizontal
+{
+    width: 100%;
+}
+.ctrl-list ul, .ctrl-list-horizontal ul
+{
+    list-style: none;
+    padding: 0 0 0 8px;
+    margin: -3px 0 0 0;
+}
+.ctrl-list li
+{
+    margin: 0 0 1px 0;
+    line-height: 18px;
+}
+.ctrl-list-horizontal ul
+{
+    list-style: none;
+    padding: 0 0 0 8px;
+    margin: 4px 0 0 0;
+}
+.ctrl-list-horizontal li
+{
+    float: left;
+    margin: 0 70px 1px 0;
+}
+
+/* --- Button --- */
+button
+{
+    border: 1px solid #707070;
+    background: #dbdbdb url(/Content/themes/custom-theme/images/ui-bg_glass_100_dbdbdb_1x400.png) 50% 50% repeat-x;
+    font-weight: normal;
+    color: #000000;
+    width: 100px;
+    height: 22px;
+    padding: 0;
+    line-height: 19px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    font-family: Verdana, MS UI Gothic;
+    font-size: 10pt;
+}
+button:hover
+{
+    cursor: pointer;
+    border: 1px solid #2c628b;
+    background: #d9f0fc url(/Content/themes/custom-theme/images/ui-bg_glass_100_d9f0fc_1x400.png) 50% 50% repeat-x;
+    font-weight: normal;
+    color: #000000;
+}
+button:active
+{
+    border: 1px solid #999999;
+    background: #6eac2c url(/Content/themes/custom-theme/images/ui-bg_glass_30_6eac2c_1x400.png) 50% 50% repeat-x;
+    font-weight: normal;
+    color: #000000;
+}
+button[disabled]
+{
+    border: 1px solid #adb2b5;
+    background: #f4f4f4;
+    cursor: default;
+}
+
+/* --- Popup Dialog --- */
+.main-popup-dialog
+{
+    display: none;
+}
+
+.main-popup-dialog .popup-dialog
+{
+    margin: 0px 0 0 0px;
+    padding-right: 10px;
+    overflow-y: scroll; /*overflow-y: auto; */
+}
+
+.popup-dialog .dialog-header
+{
+    width: 100%;
+    font-size: 12pt;
+    padding: 0px 0px 5px 0px;
+    font-weight: bold;
+}
+.dialog-header .dialog-screen-name
+{
+    float: left;
+    width: 80%;
+    height: 25px;
+}
+.dialog-header .dialog-screen-code
+{
+    font-size: 10pt;
+    float: right;
+    width: 19%;
+    height: 22px;
+    padding-top: 3px;
+    text-align: right;
+}
+.popup-dialog .dialog-body
+{
+    clear: both;
+    position: relative;
+}
+
+.msg-info-image
+{
+    float: left;
+    width: 50px;
+}
+.msg-popup-dialog
+{
+    overflow-y: auto;
+    height: 100%;
+    word-wrap: break-word;
+    float: left;
+    width: 323px;
+}
+
+/* --- Warning Dialog --- */
+.warning-popup-dialog ul
+{
+    margin: 0px;
+    padding-left: 15px;
+    list-style-image: url("/Content/images/bullet.png");
+}
+
+.warning-popup-dialog ul li
+{
+    height: 100%;
+    padding-bottom: 3px;
+}
+
+/* --- Grid --- */
+.table-remark
+{
+    float: right;
+    font-weight: normal;
+    font-size: 10pt;
+    padding-top: 2px;
+    margin-right: 4px;
+}
+
+
+/* --- Table --- */
+.custom-table table
+{
+    border: 1px solid #CCCCCC;
+}
+.custom-table table tr.hdr td
+{
+    background-color: #D1ECFA;
+    padding: 5px 0px 5px 0px;
+    border: none;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    font-family: Verdana, MS UI Gothic;
+    font-size: 10pt;
+    font-weight: bold;
+    color: #2C8BCA;
+    vertical-align: middle;
+    text-align: center;
+}
+.custom-table table tr td
+{
+    padding: 1px;
+    border: none;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 1px solid #CCCCCC;
+    font-family: Verdana, MS UI Gothic;
+    font-size: 10pt;
+    padding-right: 4px;
+    padding-left: 4px;
+    line-height: 18px;
+}
+

@@ -1,0 +1,67 @@
+﻿<!--
+//*********************************
+// Create by: Siripoj S.
+// Create date: 22/Mar/2012
+// Update date: 22/Mar/2012
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+   
+   
+    ViewBag.LabelWidth = "220px";
+    ViewBag.LabelWidth2 = "190px";
+
+    ViewBag.ObjectWidth = "200px";
+    ViewBag.ObjectWidth2 = "250px";
+
+    ViewBag.ObjectWidthLong = "450px";
+
+
+    ViewBag.isViewMode = true;
+
+    // for debug
+    ViewBag.txtBackgroundColor = "none";  // Lime
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS460.js")" ></script>
+}
+<!-- Re Print Billint Relate Document SECTION ==================================================================================================================== -->
+<div id="divRe-PrintBilling" class="main-table">
+    <div class="table-header">
+        @Resources.CMS460.lblSpecifyCondition
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS460.lblIssuedate
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("IssueDate", "", new { style = "width:100px;" }) @Html.RequireFiled()
+        </div>
+        <div class="usr-object">
+            <div style="margin-right: 5px;">
+                @Html.LabelDateFormat("lblIssuedate")      
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS460.lblManagementNo
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ManagementNoFrom", null, new { style =  "width:150px;text-align: right;", maxlength = "50" })
+            <span>~ </span>
+            @Html.CommonTextBox("ManagementNoTo", null, new { style = "width:150px;text-align: right;", maxlength = "50" })
+            @Html.RequireFiled()
+        </div>
+    </div>
+     <div class="usr-row">
+        <div class="usr-object" style="float: right; margin-right: 5px">
+            @Html.CommonButton("btnReprint", @Resources.CMS460.lblReprint, new { style = "width:100px;", type = "button" })         
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height: 0px">
+        &nbsp;</div>
+</div>

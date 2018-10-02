@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="TableName" width="323" type="ro" align="left" sort="na">GirdLogtableName</column>
+    <column id="ErrorDescription" width="*" type="ro" align="left" sort="na">GridError</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+	  <column id="No" width="45" type="ro" align="center">headerNo</column>
+    <column width="0" type="ro" align="center"></column>
+    
+    <column id="SiteCode" width="180" type="ro" align="center" sort="str_custom">headerSiteCode</column>
+    <column id="SiteNameEN" width="220" type="ro" align="left" sort="str_custom">headerSiteNameEN</column>
+    <column id="SiteNameLC" width="220" type="ro" align="left" sort="str_custom">headerSiteNameLC</column>
+    <column id="Incident" width="90" type="ro" align="center" sort="str_custom">headerIncident</column>
+    <column id="Delay" width="90" type="ro" align="center" sort="str_custom">headerDelay</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

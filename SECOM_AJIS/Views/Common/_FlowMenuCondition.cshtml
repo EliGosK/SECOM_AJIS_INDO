@@ -1,0 +1,139 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue
+@{
+    ViewBag.Label1Width = "220px";
+    ViewBag.Label2Width = "220px";
+    ViewBag.Label2SWidth = "115px";
+    ViewBag.Label3Width = "120px";
+    
+    ViewBag.ObjectWidth = "100px";
+    ViewBag.Object1Width = "120px";
+    ViewBag.Object11Width = "120px";
+    ViewBag.Object12Width = "100px";
+    ViewBag.Object2Width = "120px";
+    ViewBag.Object3Width = "120px";
+    
+    ViewBag.ObjectMergeWidth = "709px";
+}
+<div id="divSaleContractBasicInformation" class="main-table">
+    <div class="table-header">
+        @if (ViewBag.ScreenID == "CMS021")
+        {
+            @Resources.FlowMenu.lblSaleContractBasicInformation
+        }
+        else
+        {
+            @Resources.FlowMenu.lblContractBasicInformation
+        }
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Label1Width;">
+            @Resources.FlowMenu.lblContractCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.Object11Width;margin-right:5px;">
+            @Html.CommonTextBox("ContractCode", (string)@ViewBag.ContractCode, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+            @Html.RequireFiled()
+        </div>
+        <div class="usr-object" style="width:@ViewBag.Object12Width;">
+            @Html.CommonButton("btnRetrieve", @Resources.FlowMenu.lblRetrieve, new { style = "width:100px;" }) 
+        </div>
+        <div id="divOCC" style="display:none;">
+            <div class="usr-label" style="width:@ViewBag.Label2SWidth;">
+                @Resources.FlowMenu.lblOccurrence
+            </div> 
+            <div class="usr-object">
+                @Html.CommonTextBox("OCC", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", isViewMode = true })
+            </div>
+        </div>
+    </div>
+    <div id="divInformation" style="display:none;">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                @if (ViewBag.ScreenID == "CMS021")
+                {
+                    @Resources.FlowMenu.lblCustomerCode
+                }
+                else
+                {
+                    @Resources.FlowMenu.lblContractTargetCustomerCode
+                }
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Object1Width;">
+                @Html.CommonLink("PurchaserCode", null)&nbsp;
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Label2Width;">
+                @Resources.FlowMenu.lblRealCustomerCode
+            </div> 
+            <div class="usr-object" style="width:@ViewBag.Object2Width;">
+                @Html.CommonLink("RealCustomerCode", null)&nbsp;
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Label3Width;">
+                @Resources.FlowMenu.lblSiteCode
+            </div> 
+            <div class="usr-object" style="width:@ViewBag.Object3Width;">
+                @Html.CommonLink("SiteCode", null)&nbsp;
+            </div>
+        </div>
+        <div class="usr-row usr-row-space-2x">
+            <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                @if (ViewBag.ScreenID == "CMS021")
+                {
+                    @Resources.FlowMenu.lblCustomerNameEN
+                }
+                else
+                {
+                    @Resources.FlowMenu.lblContractTargetCustomerNameEN
+                }            
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectMergeWidth;">
+                @Html.CommonTextBox("CustFullNameEN", null, new { isViewMode = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                @if (ViewBag.ScreenID == "CMS021")
+                {
+                    @Resources.FlowMenu.lblSiteNameEN
+                }
+                else
+                {
+                    @Resources.FlowMenu.lblContractTargetSiteNameEN
+                }
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectMergeWidth;">
+                @Html.CommonTextBox("SiteNameEN", null, new { isViewMode = true })
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                @if (ViewBag.ScreenID == "CMS021")
+                {
+                    @Resources.FlowMenu.lblCustomerNameLC
+                }
+                else
+                {
+                    @Resources.FlowMenu.lblContractTargetCustomerNameLC
+                }
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectMergeWidth;">
+                @Html.CommonTextBox("CustFullNameLC", null, new { isViewMode = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                @if (ViewBag.ScreenID == "CMS021")
+                {
+                    @Resources.FlowMenu.lblSiteNameLC
+                }
+                else
+                {
+                    @Resources.FlowMenu.lblContractTargetSiteNameLC
+                }
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectMergeWidth;">
+                @Html.CommonTextBox("SiteNameLC", null, new { isViewMode = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

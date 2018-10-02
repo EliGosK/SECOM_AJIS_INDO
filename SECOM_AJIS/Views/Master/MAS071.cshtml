@@ -1,0 +1,41 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    ViewBag.LabelWidth = "300px";
+}
+
+@section page_header{
+    <script src="../../Scripts/Master/MAS071.js" type="text/javascript"></script>
+}
+
+<div id="password-input-section" class="main-table">
+    <div class="table-header">
+        Maintain password
+    </div>
+    <form id="MAS071_ChangePassword" action='#'>
+        <div class="usr-row" style="">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                Old password
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtOldPassword", "", new { type = "password" })
+            </div>
+        </div>
+        <div class="usr-row" style="">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                New password
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtNewPassword", "", new { type = "password" })
+            </div>
+        </div>
+        <div class="usr-row" style="">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                Confirm new password
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtConfirmNewPassword", "", new { type = "password" })
+            </div>
+        </div>
+        <div class="ui-helper-clearfix"></div>
+    </form>
+</div>

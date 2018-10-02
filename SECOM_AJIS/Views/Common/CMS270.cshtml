@@ -1,0 +1,147 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+
+    ViewBag.LabelWidth = "215px";
+
+}
+
+@section page_header{
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS270.js")" ></script>
+
+<script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+
+}
+
+
+<div style="display:none">
+    @Html.Hidden("btnCancel_CMS270", (string)@Resources.CMS270.btnCancel)
+</div>
+
+
+<!--  ====== Search condition ======= -->
+<form id="searchCondition">
+<div id = "divSearchCtrl">
+
+<div class="main-table">
+    <div class="table-header">
+        @Resources.CMS270.lblSearchCondition
+    </div>
+    <div class="usr-row">
+        <div class ="usr-label" style = "width:@ViewBag.LabelWidth" >
+            @Resources.CMS270.lblBillingClientCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("BillingClientCode", null, new { style = "width:250px;", maxlength = "100" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class ="usr-label" style = "width:@ViewBag.LabelWidth" >
+            @Resources.CMS270.lblBillingClientName
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("BillingClientName", null, new { style = "width:620px;", maxlength = "100" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class ="usr-label" style = "width:@ViewBag.LabelWidth; margin-top:45px" >
+            @Resources.CMS270.lblCustomerType
+            @Html.RequireFiled()
+        </div>
+        <div class="usr-object" style="height: 100%; width: 625px">
+            <div class="sub-table">
+                @Html.CommonCheckButton("chkJuristic", @Resources.CMS270.chkJuristic, @CustomerType.C_CUST_TYPE_JURISTIC)
+                &nbsp;
+                @Html.CompanyTypeComboBox("CompanyTypeCode", new { style = "height: 22px; width: 240px;" },"ALL")
+                <br />
+                @Html.CommonCheckButton("chkIndividual", @Resources.CMS270.chkIndividual, @CustomerType.C_CUST_TYPE_INDIVIDUAL)
+                <br />
+                @Html.CommonCheckButton("chkAssociation", @Resources.CMS270.chkAssociation, @CustomerType.C_CUST_TYPE_ASSOCIATION)
+                <br />
+                @Html.CommonCheckButton("chkPublicOffice", @Resources.CMS270.chkPublicOffice, @CustomerType.C_CUST_TYPE_PUBLIC_OFFICE)
+                <br />
+                @Html.CommonCheckButton("chkOther", @Resources.CMS270.chkOther, @CustomerType.C_CUST_TYPE_OTHERS)
+                
+                <div class="usr-clear-style">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class ="usr-label" style = "width:@ViewBag.LabelWidth" >
+            @Resources.CMS270.lblNationality
+        </div>
+        <div class="usr-object">
+            @Html.NationalityComboBox("RegionCode", new { style = "height: 22px; width: 200px;" },true,"ALL")
+        </div>
+      
+        <div class="usr-label" style="width: 120px">
+            @Resources.CMS270.lblBusinessType
+        </div>
+        <div class="usr-object">
+            @Html.BusinessTypeComboBox("BusinessTypeCode", new { style = "height: 22px; width: 300px;" },true,"ALL")
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class ="usr-label" style = "width:@ViewBag.LabelWidth" >
+            @Resources.CMS270.lblAddress
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("Address", null, new { style = "width:620px;", maxlength = "100" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class ="usr-label" style = "width:@ViewBag.LabelWidth" >
+            @Resources.CMS270.lblTelephoneNo
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("TelephoneNo", null, new { style = "width:200px;", maxlength = "100" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-object" style="float: right; margin-right: 5px">
+            @Html.CommonButton("btnSearch", @Resources.CMS270.btnSearch, new { style = "width:100px;",type ="button" })
+            @Html.CommonButton("btnClear", @Resources.CMS270.btnClear, new { style = "width:100px;", type = "button" })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+
+</div>
+</form>
+<div class="table-line">
+
+</div>
+<!-- ============== Result list ================= -->
+<div id="divSearchResult">
+    <div class="main-table">
+        <div class="table-header">
+            @Resources.CMS270.lblResultList
+        </div>
+        <div>
+            <div id="mygrid_container" style="width: 99%; margin-left: 4px;">
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</div>
+<!-- ====== End main table ======= -->

@@ -1,0 +1,18 @@
+﻿<script type="text/javascript">
+    var ROWS_PER_PAGE_FOR_SEARCHPAGE = "@ViewBag.ROWS_PER_PAGE_FOR_SEARCHPAGE";
+    var ROWS_PER_PAGE_FOR_VIEWPAGE = "@ViewBag.ROWS_PER_PAGE_FOR_VIEWPAGE";
+</script>
+@RenderSection("page_header", required: false)
+<div class="dialog-header">
+    <div class="dialog-screen-name">
+        @ViewBag.ScreenName
+    </div>
+    <div class="dialog-screen-code">
+        @ViewBag.ScreenCode
+    </div>
+</div>
+<div class="dialog-body">
+    @RenderBody()
+</div>
+
+

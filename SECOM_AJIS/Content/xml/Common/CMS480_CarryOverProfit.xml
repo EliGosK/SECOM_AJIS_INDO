@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="ReportMonthYear" width="100" type="ro" align="left" sort="str_custom">headerMonthYear</column>
+    <column id="BillingCode" width="110" type="ro"  align="left" sort="str_custom" >headerBillingCode</column>
+    <column id="ReceiveAmount" width="205" type="ro" align="right" sort="int">headerReceivedAmount</column>
+    <column id="IncomeRentalFee" width="205" type="ro" align="right" sort="int">headerIncomeRentalFee</column>
+    <column id="AccumulatedReceiveAmount" width="205" type="ro" align="right" sort="int">headerAccAdvanceReceive</column>
+    <column id="AccumulatedUnpaid" width="205" type="ro" align="right" sort="int">headerAccUnpaid</column>
+    <column id="IncomeVat" width="205" type="ro" align="right" sort="int">headerIncomeVat</column>
+    <column id="UnpaidPeriod" width="100" type="ro" align="right" sort="int">headerUnpaidPeriod</column>
+    <column id="IncomeDate" width="130" type="ro" align="center" sort="str_custom">headerIncomeDate</column>
+    <column id="TaxRate" hidden="true" width="0" type="ro"  align="left" ></column>
+    <column id="MonthlyBillingAmount" hidden="true" width="0" type="ro"  align="left" ></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,135 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Controllers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    
+ 
+
+    ViewBag.lbWidth = "220px";  /* ViewBag.LabelWidth */
+    ViewBag.lb2Width = "150px";
+    ViewBag.lb3Width = "120px";
+
+    ViewBag.headText = "120px";
+
+    ViewBag.shortText = "170px";
+    ViewBag.longText = "525px";
+
+    ViewBag.shortText2 = "170px"; /* for case 3 column*/
+
+    ViewBag.shortTextPrdInfo = "160px";  //180px
+
+    ViewBag.RightBtnSet = "185px";
+    ViewBag.btnViewContractDocumentInfo = "300px";
+
+    ViewBag.ViewClass = "label-view";
+    ViewBag.isViewMode = true;
+
+    ViewBag.merge = "750px";
+    ViewBag.AramWidth = "210px";
+
+    /* for debug */
+    ViewBag.txtBackgroundColor = "none"; /*green*/
+
+    /* for debug */
+    ViewBag.isShowAll = false;
+        
+
+
+
+
+
+    /* enable button in herder section*/
+    ViewBag.EnableContractBasic = true ;
+    //ViewBag.EnableSecurityBasic = false ;
+    //ViewBag.EnableSecurityDetail = true ;
+    ViewBag.EnableHistoryDigest = true ;
+    ViewBag.EnableSalesContractBasic = false ;
+    ViewBag.EnableContractBillingTransfer = true ;
+
+    if ((string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_AL || (string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_RENTAL_SALE || (string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_SALE)
+    {
+        ViewBag.EnableInstallation = true;
+
+    }
+    else
+    {
+        ViewBag.EnableInstallation = false;
+    }
+    
+    ViewBag.EnableBillingBasic = true;
+    
+
+  
+ }
+
+@section page_header{
+
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS130.js")"></script>
+
+<script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+<script src="../../Scripts/Quotation/Dialog.js" type="text/javascript"></script>
+
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+    <script type="text/javascript">
+
+        var CMS130Data =
+            {
+                "strContractCode": "@ViewBag.strContractCode",
+                "strOCC": "@ViewBag.strOCC" ,
+                "ContractTargetCode": "@ViewBag.ContractTargetCode",
+                "RealCustomerCode": "@ViewBag.RealCustomerCode",
+                "SiteCode": "@ViewBag.SiteCode" ,
+
+                "ProductTypeCode": "@ViewBag.ProductTypeCode" ,
+                "ServiceTypeCode": "@ViewBag.ServiceTypeCode",
+                "QuotationTargetCode": "@ViewBag.QuotationTargetCode",
+                "QuotationAlphabet": "@ViewBag.QuotationAlphabet" ,
+                "InstallationSlipNo": "@ViewBag.InstallationSlipNo",
+                "txtAttachImportanceFlag": "@ViewBag.txtAttachImportanceFlag" == "True" ? true : false
+            };
+
+
+
+    </script>
+
+
+}
+
+
+<!-- Html content --->
+
+<div style="display:none">
+    @Html.Hidden("C_INCIDENT_RELEVANT_TYPE_CONTRACT", IncidentRelevant.C_INCIDENT_RELEVANT_TYPE_CONTRACT)
+    @Html.Hidden("C_AR_RELEVANT_TYPE_CONTRACT", ARRelevant.C_AR_RELEVANT_TYPE_CONTRACT)
+</div>
+
+<div id="dlgCMS130" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>
+
+<div id="divAll">
+
+@Html.Partial("_ButtonControl")
+@Html.Partial("CMS130/_CMS130_1")
+@Html.Partial("CMS130/_CMS130_2")
+@Html.Partial("CMS130/_CMS130_3") 
+@Html.Partial("CMS130/_CMS130_4")
+@Html.Partial("CMS130/_CMS130_5")
+
+
+</div>

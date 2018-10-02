@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="left" sort="str_custom"></column>
+    <column id="Code" width="*" type="ed" align="left" sort="str_custom">Code</column>
+    <column id="DisplayName" width="150" type="ed" align="right" sort="str_custom">Display Name</column>
+    <column width="100" type="ro" align="center"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

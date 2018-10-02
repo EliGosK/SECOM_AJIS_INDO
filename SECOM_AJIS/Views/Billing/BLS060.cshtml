@@ -1,0 +1,159 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Controllers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    // template width please don't change 
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "180px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectCol4Width = "550px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+
+    ViewBag.lbWidth = "220px";  /* ViewBag.LabelWidth */
+    ViewBag.lbWidth2 = "234px";
+    ViewBag.ObjectCol1Div = "140px";
+    ViewBag.Div1Width = "160px";  
+
+}
+@section page_header{
+
+<script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+ 
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/MessageDialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Billing/Dialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Master/Dialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/Dialog.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Billing/BLS060.js")"></script>
+    <script type="text/javascript">
+        BLS060_ViewBag = {
+            lblHeader2IssuedateAutoTransferDate: "@Resources.BLS060.lblHeader2IssuedateAutoTransferDate",
+            lblHeader2AutoTransferDate: "@Resources.BLS060.lblHeader2AutoTransferDate"
+        };
+    </script>
+}
+
+<!-- template block -->
+<!-- Specify Process Type -->
+@*<div class="main-table" id="divSpecifyProcessType">
+    <div class="table-header">
+            @Resources.BLS050.lblTableHeader
+    </div>
+<div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>*@
+
+    <form id="form1" action="#">
+    <!-- Form 1 -->
+<!-- Specify Process Type -->
+<div class="main-table" id="divSpecifyProcessType">
+    <div class="table-header">
+        @Resources.BLS060.lblTableHeader1
+    </div>
+
+
+        <div id="divSpecifyProcessTypeBody">
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                     @Resources.BLS060.lblProcessType 
+                </div>
+                <div class="usr-object" style="width:@ViewBag.SubTableWidth;">
+                    <div class="sub-table" style="text-align: left;">
+                        <div style="margin-left:5px">
+                        <div class="usr-row">
+                        @Html.CommonRadioButton("rdoSwitchToAutoTransferCreditCard", @Resources.BLS060.rdoSwitchToAutoTransferCreditCard, "SwitchToAutoTransferCreditCard", false, "SpecifyProcessType")
+                        </div>
+                        <div class="usr-row">
+                        @Html.CommonRadioButton("rdoStopAutoTransferCreditCard", @Resources.BLS060.rdoStopAutoTransferCreditCard, "StopAutoTransferCreditCard", false, "SpecifyProcessType")
+                        </div>
+                        <div class="usr-row">
+                        @Html.CommonRadioButton("rdoChangeExpectedIssueDateAutoTransferDate", @Resources.BLS060.rdoChangeExpectedIssueDateAutoTransferDate, "ChangeExpectedIssueDateAutoTransferDate", true, "SpecifyProcessType")
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                     @Resources.BLS060.lblProcessUnit 
+                </div>
+                <div class="usr-object" style="width:@ViewBag.SubTableWidth;">
+                    <div class="sub-table" style="text-align: left;">
+                        <div style="margin-left:5px">
+                        <div class="usr-row">
+                        @Html.CommonRadioButton("rdoByBillingDetails", @Resources.BLS060.rdoByBillingDetails, "ByBillingDetails", true, "SpecifyProcessUnit")
+                        </div>
+                        <div class="usr-row">
+                        @Html.CommonRadioButton("rdoByInvoice", @Resources.BLS060.rdoByInvoice, "ByInvoice", false, "SpecifyProcessUnit")
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                     
+                </div>
+                <div class="usr-object" style="width:160px;">
+                    @Html.CommonButton("btnSelectProcess", (string)@Resources.BLS060.btnSelectProcess, new { style = "width:160px;", type = "Button" })
+                </div>
+
+            </div>
+        </div>
+
+
+<div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+<!-- By Billing Detail -->
+<div class="main-table" id="divByBillingDetail">
+    <div class="table-header">
+        @Resources.BLS060.lblTableHeader2
+    </div>
+
+    <div class="usr-row">
+        <div id="BLS060_ByBillingDetailGrid" style="width: 760px ; margin-left: 4px;"></div>
+    </div>
+
+<div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+
+<!-- By Invoice -->
+<div class="main-table" id="divByInvoice">
+    <div class="table-header">
+        @Resources.BLS060.lblTableHeader3
+    </div>
+
+    <div class="usr-row">
+        <div id="BLS060_ByInvoiceGrid" style="width: 460px ; margin-left: 4px;"></div>
+    </div>
+
+    <!--<div class="usr-row">
+        <input type="button" value="Test Process BatchGenerateAutoTransferBankFile" id="btnBLS040" />
+    </div>-->
+
+    
+<div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+    <!-- End Form 1 -->
+    </form>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="No" width="30" type="ro" align="left" sort="na" ></column>
+    <column id="RegistrationContents" width="*" type="ro" align="left" sort="na" >lblHeaderRegistrationContents</column>
+    <column id="AmountIncludingVatShow" width="200" type="ro" align="right" sort="na">lblHeaderAmountIncludingVat</column>
+    <column id="VatAmountShow" width="200" type="ro" align="right" sort="na">lblHeaderVatAmount</column>
+    <column id="CreditNoteDate" width="120" type="ro" align="left" sort="na" >lblHeaderCreditNoteDate</column>
+    <column id="BillingCode" width="150" type="ro" align="left" sort="na" >lblHeaderBillingCode</column>
+    <column id="CreditNoteNo" width="120" type="ro" align="left" sort="na" >lblHeaderCreditNoteNo</column>
+    <column id="BillingClientName" width="200" type="ro" align="left" sort="na" >lblHeaderBillingClientName</column>
+    <column id="Del" width="30" type="link" align="left" sort="na" >lblHeaderRemove</column>
+    
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+    <column id="CreditNoteType" width="0" type="ro"  hidden="true"></column>
+    <column id="TaxInvoiceNo" width="0" type="ro"  hidden="true"></column>
+    <column id="BillingTargetCode" width="0" type="ro"  hidden="true"></column>
+    <column id="CreditAmountIncVAT" width="0" type="ro"  hidden="true"></column>
+    <column id="CreditVATAmount" width="0" type="ro"  hidden="true"></column>
+    <column id="BillingTypeCode" width="0" type="ro"  hidden="true"></column>
+    <column id="ApproveNo" width="0" type="ro"  hidden="true"></column>
+    <column id="IssueReason" width="0" type="ro"  hidden="true"></column>
+    <column id="TaxInvoiceAmount" width="0" type="ro"  hidden="true"></column>
+    <column id="TaxInvoiceVATAmount" width="0" type="ro"  hidden="true"></column>
+    <column id="TaxInvoiceDate" width="0" type="ro"  hidden="true"></column>
+    <column id="PaymentTransNo" width="0" type="ro"  hidden="true"></column>
+    <column id="CancelFlag" width="0" type="ro"  hidden="true"></column>
+    <column id="RevenueNo" width="0" type="ro"  hidden="true"></column>
+    <column id="IssueDate" width="0" type="ro"  hidden="true"></column>
+    <column id="RevenueAmountIncVAT" width="0" type="ro"  hidden="true"></column>
+    <column id="RevenueVATAmount" width="0" type="ro"  hidden="true"></column>
+    <column id="InvoiceNo" width="0" type="ro"  hidden="true"></column>
+    <column id="InvoiceOCC" width="0" type="ro"  hidden="true"></column>
+    <column id="NotRetrieveFlag" width="0" type="ro"  hidden="true"></column>
+    <column id="BillingClientNameEN" width="0" type="ro"  hidden="true"></column>
+    <column id="AmountIncludingVat" width="0" type="ro"  hidden="true"></column>
+    <column id="VatAmount" width="0" type="ro"  hidden="true"></column>
+    <column id="AmountIncludingVatCurrencyType" width="0" type="ro"  hidden="true"></column>
+    <column id="VatAmountCurrencyType" width="0" type="ro"  hidden="true"></column>
+    <column id="RevenueAmountIncVATCurrencyType" width="0" type="ro"  hidden="true"></column>
+    <column id="RevenueVATAmountCurrencyType" width="0" type="ro"  hidden="true"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

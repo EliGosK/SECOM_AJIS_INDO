@@ -1,0 +1,58 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Income.Models;
+
+@using SECOM_AJIS.Presentation.Income.Controllers;
+@using SECOM_AJIS.Presentation.Income.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+@{  
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.isViewModeFlag = true;
+    
+    ViewBag.Col1Width = "210px";
+    ViewBag.Col2Width = "700px";
+    ViewBag.CommonTextboxWidth = "240px";
+    ViewBag.LongTextboxWidth = "700px";
+    ViewBag.SectionSepWidth = "20px";
+ }
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Income/ICS083.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("ics083btnClose", (string)@Resources.ICS083.btnClose)
+</div>
+
+<div class="main-table" id="divBillingDetailStatus">
+    
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS083.lblBillingTargetCode</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                @Html.CommonTextBox("BillingTargetCode", (string)@ViewBag.BillingTargetCode, new { isViewMode = @ViewBag.isViewModeFlag, style = "width:" + @ViewBag.CommonTextboxWidth })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS083.lblBillingClientNameEN</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                @Html.CommonTextBox("BillingClientNameEN", (string)@ViewBag.BillingClientNameEN, new { isViewMode = @ViewBag.isViewModeFlag, style = "width:" + @ViewBag.LongTextboxWidth })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS083.lblBillingClientNameLC</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                @Html.CommonTextBox("BillingClientNameLC", (string)@ViewBag.BillingClientNameLC, new { isViewMode = @ViewBag.isViewModeFlag, style = "width:" + @ViewBag.LongTextboxWidth })
+            </div>
+        </div>
+    
+        <div class="usr-row" style="padding-top:@ViewBag.SectionSepWidth;padding-left:5px;">
+            <div class="usr-object">
+                <img width='20' height='20' title='' style='margin-top: -1px;' src='../../Content/images/icon/firstFee.PNG'/>&nbsp;@Resources.ICS083.lblRegendFirstFee&nbsp;&nbsp;<img width='20' height='20' title=''  style='margin-top: -1px;' src='../../Content/images/icon/creditNote.PNG'/>&nbsp;@Resources.ICS083.lblRegendCreditNote
+            </div>
+        </div>
+        <div class="usr-row">
+            <div id="ics083BillingDetailGrid" style="margin-left:5px;"></div>
+        </div>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>

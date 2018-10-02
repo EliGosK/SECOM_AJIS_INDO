@@ -1,0 +1,153 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+<!-- ======== Html content ======== --->
+@* --- Billint Target Information ---  *@
+<form id="form2" action="">
+<div id="divInvoiceInfo" class="main-table" style="margin-top: 5px;">
+    <div class="table-header">
+        @Resources.BLS010.headerInvoiceInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS010.lblIssueInvoiceTiming
+        </div>
+        <div class="usr-object" style="width: 250px;">
+            @Html.IssueInvoiceTimingComboBox("IssueInvTime", new { style = "width:246px" })
+        </div>
+        <div class="usr-object" style="width: 20px">
+            @Html.CommonTextBox("IssueInvMonth", null, new { style = "width:20px;", maxlength = "3" })
+        </div>
+        <div class="usr-label" style="width: 55px;">
+            @Resources.BLS010.lblMonth
+        </div>
+        <div class="usr-label" style="width:@ViewBag.Invoice_lbWidth;">
+            @Resources.BLS010.lblIssueInvoiceDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.Textbox;">
+            @Html.IssueInvoiceDateComboBox("IssueInvDate", new { style = "width:" + @ViewBag.Textbox + ";" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS010.lblInvoiceFormat
+        </div>
+        <div class="usr-object" style="width:@ViewBag.Invoice_ColObject1;">
+            @Html.InvoiceFormatComboBox("InvFormatType", new { style = "width:276px" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.Invoice_lbWidth;">
+            @Resources.BLS010.lblSignatureType
+        </div>
+        <div class="usr-object" style="width: 155px">
+            @Html.SignatureTypeComboBox("SignatureType", new { style = "width:" + @ViewBag.Textbox + ";" })
+        </div>
+        
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS010.lblDisplayLanguage
+        </div>
+        <div class="usr-object" style="width:@ViewBag.Invoice_ColObject1;">
+            @Html.DisplayLanguageComboBox("DocLanguage", new { style = "width:276px" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS010.lblShowPaymentDueDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.Invoice_ColObject1;">
+            @Html.ShowPaymentDuedateComboBox("ShowDueDate", new { style = "width:276px" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.Invoice_lbWidth;">
+            @Resources.BLS010.lblIssueTaxInvoiceReceiptTiming
+        </div>
+        <div class="usr-object" style="width:@ViewBag.Textbox ;">
+            @Html.IssueReceiptTiminngComboBox("IssueReceiptTiming", new { style = "width:" + @ViewBag.Textbox + ";" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS010.lblShowAutoTransferAccount
+        </div>
+        <div class="usr-object" style="width:@ViewBag.Invoice_ColObject1;">
+            @Html.AutoTransferAccountComboBox("ShowAccType", new { style = "width:276px" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.Invoice_lbWidth;">
+            @Resources.BLS010.lblAutoTransferWhtDeductionType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.Textbox;">
+            @Html.AutoTransferWithDeductionTypeComboBox("WhtDeductionType", new { style = "width:" + @ViewBag.Textbox + ";" })
+        </div>
+        
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           &nbsp;
+        </div>
+        <div class="usr-object" style="width:@ViewBag.Invoice_ColObject1;">
+           &nbsp;
+        </div>
+        <div class="usr-label" style="width:@ViewBag.Invoice_lbWidth;">
+            &nbsp;
+        </div>
+        <div class="usr-object" style="width:160px;">
+            @Html.CommonCheckButton("ShowInvWHTFlag", @Resources.BLS010.lblPrintInvoiceWht, "True", false)
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS010.lblPrintIssueDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.Invoice_ColObject1;">
+            @Html.PrintIssueDateComboBox("ShowIssueDate", new { style = "width:276px" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.Invoice_lbWidth;">
+            &nbsp;
+        </div>
+        <div class="usr-object" style="width: 300px;">
+            @Html.CommonCheckButton("PayByChequeFlag", @Resources.BLS010.lblPayByChequeViaMail, "true", false)
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS010.lblSeparateInvoiceType
+        </div>
+        <div class="usr-object" style="width: 658px;">
+            @Html.SeparateInvoiceTypeComboBox("SeparateInvType", new { style = "width:658px" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS010.lblSupplementaryInvoiceAddress
+        </div>
+        <div class="usr-object" style="width: 654px;">
+            @Html.CommonTextBox("SuppleInvAddress", null, new { style = "width:654px", maxlength = "4000" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+</form>
+
+
+
+
+<form id="form4" action="">
+<div id="divResultOfRegisterBillingTarget" class="main-table" style="margin-top: 5px;">
+    <div class="table-header">
+        @Resources.BLS010.headerResultOfRegisterBillingTarget
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 220px">
+            @Resources.BLS010.lblBillingTargetCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox2;">
+            @Html.CommonTextBox("BillingTargetCode", null, new { style = "width:" + @ViewBag.Textbox2 + ";", @readonly = true })
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectButton2;">
+            @Html.CommonButton("btnRegisterBillingBasic", (string)@Resources.BLS010.lblBtnRegisterBillingBasic, new { style = "width:" + @ViewBag.Button2 + ";", type = "button" })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+</form>

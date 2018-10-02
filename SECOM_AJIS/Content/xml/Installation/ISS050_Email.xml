@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="EmailAddress" width="*" type="ro" align="left" sort="str_custom" >lblEmailNoticeTarget</column>
+    <column id="ButtonRemove" width="30" type="link" align="center" >hdRemove</column>
+	  <column id="TempColumn" width="0" type="ro" hidden="true" sort="na"></column>
+	  <!--<column id="Test" width="10" type="ro" align="left" hidden="false" ></column>-->
+    <column id="EmpNo" width="0" type="ro" align="left" hidden="true" ></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

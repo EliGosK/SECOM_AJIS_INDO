@@ -1,0 +1,27 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.DataEntity.Common
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS026.js")"></script>
+<div style="display:none">
+    @Html.Hidden("btnClose", (string)@Resources.CommonResources.btnClose)
+</div>
+<div class="main-table">
+    <div class="table-header">
+        @ViewBag.PopupSubmenuName
+    </div>
+    <div class="usr-row">
+        <div id="divPopupSubMenuList" class="sub-table">
+            @foreach (doPopupSubMenuList menu in (List<doPopupSubMenuList>)@ViewBag.PopupSubMenuList)
+            {
+                <div class="usr-row usr-row-space-2x" style="margin-left:10px;">
+                    <div class="usr-object" style="width:220px;margin-right: 5px;">@Html.CommonButton(menu.ObjectID, menu.ObjectName, new { style = "width:220px;height:50px;" })</div>
+                    <div class="usr-object" style="width:550px;margin-top: 4px;line-height: 14px;padding-bottom: 4px;">@menu.ObjectDescription</div>
+                </div>
+            }
+            <div class="usr-clear-style">&nbsp;</div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>        

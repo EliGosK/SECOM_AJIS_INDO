@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="Kode_Jenis_Trans" type="text" >lbKode_Jenis_Trans</column>
+    <column id="FP_FP_Pengganti" type="text" >lbFP_FP_Pengganti</column>
+    <column id="Nomor_FP" type="text" >lbNomor_FP</column>
+    <column id="IssueInvDateMonth" type="text">lbIssueInvDateMonth</column>
+    <column id="IssueInvDateYear" type="text" >lbIssueInvDateYear</column>
+    <column id="IssueInvDate" type="date" format="dd/MM/yyyy" >lbIssueInvDate</column>
+    <column id="IDNo" type="text" >lbIDNo</column>
+    <column id="RealBillingClientNameEN" type="text" >lbRealBillingClientNameEN</column>
+    <column id="RealBillingClientAddressEN" type="text" >lbRealBillingClientAddressEN</column>
+    <column id="Keterangan" type="text" >lbKeterangan</column>
+    <column id="Uang_Muka" type="text" >lbUang_Muka</column>
+    <column id="DPP_Uang_Muka" type="text" >lbDPP_Uang_Muka</column>
+    <column id="PPN_Uang_Muka" type="text" >lbPPN_Uang_Muka</column>
+    <column id="Uang_Muka_PPnBM" type="text" >lbUang_Muka_PPnBM</column>
+    <column id="InvoiceNo" type="text" >lbInvoiceNo</column>
+    <column id="Kode_Barang" type="text" >lbKode_Barang</column>
+    <column id="ProductNameEN" type="text" >lbProductNameEN</column>
+    <column id="BillingAmount" type="text" >lbBillingAmount</column>
+    <column id="Jumlah_Barang" type="text" >lbJumlah_Barang</column>
+    <column id="Diskon" type="text" >lbDiskon</column>
+    <column id="BillingAmountUsd" type="text" >lbBillingAmountUsd</column>
+  </head>
+</rows>

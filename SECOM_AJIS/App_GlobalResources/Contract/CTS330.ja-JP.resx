@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="btnAdd" xml:space="preserve">
+    <value>追加</value>
+  </data>
+	<data name="btnDelete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+	<data name="btnDownload" xml:space="preserve">
+    <value>ダウンロード</value>
+  </data>
+	<data name="btnHistory" xml:space="preserve">
+    <value>履歴</value>
+  </data>
+	<data name="btnRemove" xml:space="preserve">
+    <value>消去</value>
+  </data>
+	<data name="headerDelete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+	<data name="headerDepartment" xml:space="preserve">
+    <value>部署</value>
+  </data>
+	<data name="headerDocumentName" xml:space="preserve">
+    <value>資料名</value>
+  </data>
+	<data name="headerDownload" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;ダウンロード&lt;/div&gt;</value>
+  </data>
+	<data name="headerEmployeeName" xml:space="preserve">
+    <value>社員名称</value>
+  </data>
+	<data name="headerIncidentRole" xml:space="preserve">
+    <value>事案役割</value>
+  </data>
+	<data name="headerOffice" xml:space="preserve">
+    <value>事業所</value>
+  </data>
+	<data name="headerRemove" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;消去&lt;/div&gt;</value>
+  </data>
+	<data name="lblAssignPersonInChargeInformation" xml:space="preserve">
+    <value>担当者指定情報</value>
+  </data>
+	<data name="lblAttachedDocument" xml:space="preserve">
+    <value>添付書類</value>
+  </data>
+	<data name="lblAttachedDocumentList" xml:space="preserve">
+    <value>添付書類一覧</value>
+  </data>
+	<data name="lblAutoRenew" xml:space="preserve">
+    <value>更新月数</value>
+  </data>
+	<data name="lblCompleteInstallationDate" xml:space="preserve">
+    <value>工事完了日</value>
+  </data>
+	<data name="lblContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+	<data name="lblContractDetail" xml:space="preserve">
+    <value>ご連絡</value>
+  </data>
+	<data name="lblContractDuration" xml:space="preserve">
+    <value>契約期間（月数）</value>
+  </data>
+	<data name="lblContractDurationFrom" xml:space="preserve">
+    <value>契約期間</value>
+  </data>
+	<data name="lblContractDurationTo" xml:space="preserve">
+    <value>~</value>
+  </data>
+	<data name="lblContractInformation" xml:space="preserve">
+    <value>契約情報</value>
+  </data>
+	<data name="lblCurrentRespondingDetail" xml:space="preserve">
+    <value>今回対応内容</value>
+  </data>
+	<data name="lblCustomerAcceptanceDate" xml:space="preserve">
+    <value>客先引渡日</value>
+  </data>
+	<data name="lblCustomerCode" xml:space="preserve">
+    <value>顧客コード</value>
+  </data>
+	<data name="lblCustomerNameEN" xml:space="preserve">
+    <value>顧客名称（英語）</value>
+  </data>
+	<data name="lblCustomerNameLC" xml:space="preserve">
+    <value>顧客名称（現地語）</value>
+  </data>
+	<data name="lblDeadline_Date" xml:space="preserve">
+    <value>期限</value>
+  </data>
+	<data name="lblDeadline_Remark" xml:space="preserve">
+    <value>期日／期限のいずれかを必ず設定してください。</value>
+  </data>
+	<data name="lblDeadline_Until" xml:space="preserve">
+    <value>～まで</value>
+  </data>
+	<data name="lblDepartment" xml:space="preserve">
+    <value>部署</value>
+  </data>
+	<data name="lblDocumentName" xml:space="preserve">
+    <value>資料名</value>
+  </data>
+	<data name="lblDueDateDeadLine" xml:space="preserve">
+    <value>期日／期限</value>
+  </data>
+	<data name="lblDueDate_Date" xml:space="preserve">
+    <value>期日</value>
+  </data>
+	<data name="lblDueDate_Time" xml:space="preserve">
+    <value>時刻</value>
+  </data>
+	<data name="lblEmployeeName" xml:space="preserve">
+    <value>社員名称</value>
+  </data>
+	<data name="lblExpectedCompleteInstallationDate" xml:space="preserve">
+    <value>工事完了予定日</value>
+  </data>
+	<data name="lblExpectedCustomerAcceptanceDate" xml:space="preserve">
+    <value>客先引渡予定日</value>
+  </data>
+	<data name="lblFirstOperationDate" xml:space="preserve">
+    <value>当初実施日</value>
+  </data>
+	<data name="lblIncidentDetail" xml:space="preserve">
+    <value>事案明細</value>
+  </data>
+	<data name="lblIncidentInformation" xml:space="preserve">
+    <value>事案情報</value>
+  </data>
+	<data name="lblIncidentNo" xml:space="preserve">
+    <value>事案番号</value>
+  </data>
+	<data name="lblIncidentRelevantType" xml:space="preserve">
+    <value>事案連係種類</value>
+  </data>
+	<data name="lblIncidentRole" xml:space="preserve">
+    <value>事案役割</value>
+  </data>
+	<data name="lblIncidentTitle" xml:space="preserve">
+    <value>事案タイトル</value>
+  </data>
+	<data name="lblIncidentType" xml:space="preserve">
+    <value>事案内容</value>
+  </data>
+	<data name="lblInteractionType" xml:space="preserve">
+    <value>社内連絡区分</value>
+  </data>
+	<data name="lblLastChangeType" xml:space="preserve">
+    <value>最新変更種類</value>
+  </data>
+	<data name="lblLastOperationDate" xml:space="preserve">
+    <value>最新実施日</value>
+  </data>
+	<data name="lblMaintenanceContractCode" xml:space="preserve">
+    <value>保守契約コード</value>
+  </data>
+	<data name="lblMonthlyContractFee" xml:space="preserve">
+    <value>月次契約料金</value>
+  </data>
+	<data name="lblNA" xml:space="preserve">
+    <value>未付与</value>
+  </data>
+	<data name="lblOffice" xml:space="preserve">
+    <value>事業所</value>
+  </data>
+	<data name="lblOldContractCode" xml:space="preserve">
+    <value>旧契約コード</value>
+  </data>
+	<data name="lblOperationOffice" xml:space="preserve">
+    <value>実施事業所</value>
+  </data>
+	<data name="lblPleasePayAttention" xml:space="preserve">
+    <value>登録後に判別がつかなくならないよう、資料名は注意して入力してください。</value>
+  </data>
+	<data name="lblProcessManagementStatus" xml:space="preserve">
+    <value>進行管理状態</value>
+  </data>
+	<data name="lblProductName" xml:space="preserve">
+    <value>商品名称</value>
+  </data>
+	<data name="lblProjectCode" xml:space="preserve">
+    <value>プロジェクトコード</value>
+  </data>
+	<data name="lblProjectName" xml:space="preserve">
+    <value>プロジェクト名称</value>
+  </data>
+	<data name="lblReasonType" xml:space="preserve">
+    <value>理由区分</value>
+  </data>
+	<data name="lblReceivedDetails" xml:space="preserve">
+    <value>受付詳細</value>
+  </data>
+	<data name="lblRegistrant" xml:space="preserve">
+    <value>登録者</value>
+  </data>
+	<data name="lblRemarkAttachFileSize" xml:space="preserve">
+    <value>添付ファイルの合計ファイルサイズは5MBを超えることができません。</value>
+  </data>
+	<data name="lblRespondingProgress" xml:space="preserve">
+    <value>対応経過</value>
+  </data>
+	<data name="lblSaleContractInformation" xml:space="preserve">
+    <value>売買契約情報</value>
+  </data>
+	<data name="lblSaleType" xml:space="preserve">
+    <value>販売形態区分</value>
+  </data>
+	<data name="lblSecurityTypeCode" xml:space="preserve">
+    <value>警備種類コード</value>
+  </data>
+	<data name="lblSiteAddressEN" xml:space="preserve">
+    <value>物件／納入先住所（英語）</value>
+  </data>
+	<data name="lblSiteCode" xml:space="preserve">
+    <value>物件コード</value>
+  </data>
+	<data name="lblSiteNameEN" xml:space="preserve">
+    <value>物件／納入先名称（英語）</value>
+  </data>
+	<data name="lblSiteNameLC" xml:space="preserve">
+    <value>物件／納入先名称（現地語）</value>
+  </data>
+	<data name="lblStartDealDate" xml:space="preserve">
+    <value>取引開始日</value>
+  </data>
+	<data name="lblStatusAfterUpdate" xml:space="preserve">
+    <value>更新後のステータス</value>
+  </data>
+	<data name="lblUserCode" xml:space="preserve">
+    <value>ユーザーコード</value>
+  </data>
+	<data name="rdoConfidential" xml:space="preserve">
+    <value>機密</value>
+  </data>
+	<data name="rdoContract" xml:space="preserve">
+    <value>契約</value>
+  </data>
+	<data name="rdoCustomer" xml:space="preserve">
+    <value>顧客</value>
+  </data>
+	<data name="rdoImportance" xml:space="preserve">
+    <value>重要</value>
+  </data>
+	<data name="rdoProject" xml:space="preserve">
+    <value>プロジェクト</value>
+  </data>
+	<data name="rdoSite" xml:space="preserve">
+    <value>物件／納入先</value>
+  </data>
+</root>

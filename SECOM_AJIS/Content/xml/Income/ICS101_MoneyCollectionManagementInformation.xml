@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="ReceiptNo" width="110" type="ro" align="left" sort="na">lblHeaderReceiptNo</column>
+    <column id="ReceiptDateText" width="100" type="ro" align="left" sort="na">lblHeaderReceiptDate</column>
+    <column id="BillingTargetCodeShort" width="100" type="ro" align="left" sort="na">lblHeaderBillingTargetCode</column>
+    <column id="BillingClientName" width="150" type="ro" align="left" sort="na">lblHeaderBillingClient</column>
+    <column id="BillingClientAddress" width="*" type="ro" align="left" sort="na">#cspan</column>
+    <column id="ReceiptAmountShow" width="160" type="edn" align="right" sort="na">lblHeaderReceiptAmount</column>
+    <column id="CollectionAreaCodeName" width="90" type="ro" align="left" sort="na">lblHeaderCollectionArea</column>
+    <column id="ExpectedCollectDateText" width="100" type="ro" align="left" sort="na">lblHeaderExpectedCollectDate</column>
+    <column id="Memo" width="70" type="ro" align="left" sort="na">lblHeaderMemo</column>
+    <column id="Del" width="30" type="ro" align="left" sort="na">lblHeaderRemove</column>
+    <column id="TempSpan" width="0" type="ro" hidden="true"></column>
+    <column id="BillingClientNameEN" width="0" type="ro" hidden="true"></column>
+    <column id="BillingClientNameLC" width="0" type="ro" hidden="true"></column>
+    <column id="BillingClientAddressEN" width="0" type="ro" hidden="true"></column>
+    <column id="BillingClientAddressLC" width="0" type="ro" hidden="true"></column>
+    <column id="ReceiptAmount" width="0" type="ro" hidden="true"></column>
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,#rspan,lblHeaderBillingClientName,lblHeaderBillingClientAddress,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan</param>
+      </call>
+    </afterInit>
+  </head>
+</rows>

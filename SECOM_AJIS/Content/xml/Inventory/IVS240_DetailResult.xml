@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="SourceShelfNo" width="120" type="ro" align="left" sort="DetailCustomSort">headerSourceShelfNo</column>
+    <column id="InstrumentCode" width="200" type="ro" align="left" sort="str_custom">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">headerInstrumentName</column>
+    <column id="SourceAreaCode" width="0" type="ro" align="left" sort="str_custom" hidden="true"></column>
+    <column id="SourceArea" width="200" type="ro" align="left" sort="str_custom">headerSourceAreaName</column>
+    <column id="TransferQty" width="100" type="ron" align="right" format="0,000" sort="int">headerTransferQty</column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="EmpNo" width="115" type="ro" align="left" sort="str_custom">headerEmployeeCode</column>
+    <column id="EmployeeNameDisplay" width="*" type="ro" align="left" sort="str_custom">headerEmployeeName</column>
+    <column id="Remove" width="30" type="ro" align="left" sort="str_custom">headerRemove</column>
+    <column id="ModifyMode" width="0" type="ro" hidden="true">headerRemove</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+

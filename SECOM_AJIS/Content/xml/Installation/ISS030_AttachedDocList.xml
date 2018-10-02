@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    
+    <column id="FileName" width="*" type="ro" align="left">headerDocumentName</column>
+	  <column id="AttachFileID" width="30" type="ro" align="center" sort="na" hidden="true"></column>
+    <!--<column id="downloadButton" width="30" type="ro" align="center" sort="na"></column>-->
+    <column id="removeButton" width="30" type="ro" align="center" sort="na">headerRemove1</column>
+    <column id="TmpColumn" width="0" type="ro" hidden="true" sort="na"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

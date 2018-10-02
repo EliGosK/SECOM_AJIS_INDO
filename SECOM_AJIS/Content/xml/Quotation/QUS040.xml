@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="num" width="30" type="ro" align="center" sort="na"></column>
+    <column id="QuotationDate" width="100" type="dhxCalendar" format="%d-%b-%Y" align="center" sort="date">headerRegistrationDate</column>
+    <column id="QuotationTargetCode_short" width="100" type="txt" align="left" sort="str_custom">headerQuotationTargetCode</column>
+    <column id="ContPurData" width="*" type="ro" align="left" sort="str_custom">headerContPurData</column>
+    <column id="SiteData" width="200" type="ro" align="left" sort="str_custom">headerSiteData</column>
+    <column id="OfficeData" width="150" type="ro" align="left"  sort="str_custom">headerOfficeData</column>
+    <column id="EmpFullName" width="120" type="ro" align="left" sort="str_custom">headerEmpNameEN</column>
+    <column id="Select" width="30" type="link" align="center" sort="na">headerSelect</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

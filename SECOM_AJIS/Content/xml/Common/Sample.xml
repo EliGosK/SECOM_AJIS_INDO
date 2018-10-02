@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="40" type="ro" align="center"></column>
+    
+    <column id="CustCode" width="120" type="ro" align="center">headerCustomerCode</column>
+    <column id="CustName_Extra" width="200" type="ro" align="left" sort="str_custom">headerCustomerName</column>
+    <column id="Address_Extra" width="*" type="ro" align="left" sort="str_custom">headerAddress</column>
+    
+    <column id="Button" width="60" type="ro" align="center">headerSelectButton</column>
+    <column id="Object" width="0" type="ro" align="center"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

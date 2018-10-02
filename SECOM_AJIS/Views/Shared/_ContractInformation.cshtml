@@ -1,0 +1,138 @@
+﻿@using SECOM_AJIS.Common.Helpers
+
+<div class="table-header">
+    @Resources._ContractInformation.lblHeaderName
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblContractCode
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtContractCode", null, new { @readonly = "readonly", style = "width:120px;" })
+    </div>
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblUserCode
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtUserCode", null, new { @readonly = "readonly", style = "width:120px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblCustomerCodeC
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtCustomerCodeC", null, new { @readonly = "readonly", style = "width:120px;" })
+    </div>
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        <div style="margin-top:-7px;">
+            @Resources._ContractInformation.lblCustomerCodeR
+        </div>
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtCustomerCodeR", null, new { @readonly = "readonly", style = "width:120px;" })
+    </div>
+    <div class="usr-label" style="width:115px;">
+        @Resources._ContractInformation.lblSiteCode
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtSiteCode", null, new { @readonly = "readonly", style = "width:120px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+    <div class="usr-object">
+        @Html.CommonCheckButton("chkContractTarget", @Resources._ContractInformation.chkContractTarget, null, null ,new { @enabled = "false" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblContractNameEng
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtContractNameEng", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblCointractAddrEng
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtCointractAddrEng", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row" style="margin-top:10px;">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblSiteNameEng
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtSiteNameEng", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblSiteAddrEng
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtSiteAddrEng", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row" style="margin-top:10px;">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblContractNameLocal
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtContractNameLocal", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblCointractAddrLocal
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtCointractAddrLocal", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row" style="margin-top:10px;">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblSiteNameLocal
+    </div>
+    <div class="sr-object">
+        @Html.CommonTextBox("txtSiteNameLocal", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblSiteAddrLocal
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtSiteAddrLocal", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row" style="margin-top:10px;">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblInstallationStatus
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtInstallationStatus", null, new { @readonly = "readonly", style = "width:120px;" })
+    </div>
+    <div class="usr-object"  style="padding-left:10px;margin-top:-1px;">
+        @Html.CommonButton("btnViewInstallationDetail", @Resources._ContractInformation.btnViewInstallationDetail, new { style = "width:185px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblContractOffice
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtContractOffice", null, new { @readonly = "readonly", style = "width:180px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._ContractInformation.lblOperationOffice
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtOperationOffice", null, new { @readonly = "readonly", style = "width:180px;" })
+    </div>
+</div>

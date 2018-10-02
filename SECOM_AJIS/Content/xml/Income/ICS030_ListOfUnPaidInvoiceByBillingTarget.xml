@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="InvoiceNo" width="110" type="ro" align="left" sort="str_custom" >lblHeader3UnPaidInvoiceInvoiceNo</column>
+    <column id="IssueInvDateGridFormat" width="100" type="ro" align="left" sort="str_custom" >lblHeader3UnPaidInvoiceIssueInvoiceDate</column>
+	<column id="BillingTypeCode" width="50" type="ro" align="center" sort="str_custom" >lblHeader4UnPaidByBillingBillingType</column>  
+    <column id="InvoiceAmountString" width="140" type="edn" align="right" sort="int">lblHeader3UnPaidInvoiceBillingAmountExTax</column>
+    <column id="VatAmountString" width="140" type="edn" align="right" sort="int">lblHeader3UnPaidInvoiceVatAmount</column>
+    <!--<column id="WHTAmount" width="80" type="edn" align="right" format="0,000.00" sort="int">lblHeader3UnPaidInvoiceWHTAmount</column>-->
+    <column id="UnpaidAmountString" width="140" type="edn" align="right" sort="str_custom">lblHeader3UnPaidInvoiceUnpaidAmount</column>
+    <column id="PaymentMethod" width="*" type="ro" align="left" sort="str_custom">lblHeader3UnPaidInvoicePaymentMethod</column>
+    <column id="NoOfBillingDetailString" width="70" type="ro" align="right" format="0,000" sort="na">lblHeader3UnPaidInvoiceNumberOFBillingDetail</column>
+    <column id="IncludeFirstFeeGridFormat" width="70" type="ro" align="center" sort="str_custom" >lblHeader3UnPaidInvoiceIncludeFirstFee</column>
+    <column id="DebtTracingRegisteredGridFormat" width="70" type="ro" align="center" sort="str_custom" >lblHeader3UnPaidInvoiceTracingResaultRegister</column>
+    <column id="OldestDelayedMonth" width="70" type="ro" align="right" format="0,000" sort="na">lblHeader3UnPaidInvoiceOldBillingDetailDelayMonth</column>
+    <column id="ViewRegisterDebtTracingInfo" width="30" type="link" align="left" sort="na" >lblHeaderViewRegsiterDebt</column>
+
+    <column id="InvoiceOCC" width="0" type="ro" hidden="true"></column>
+    <column id="OldestInvoiceExpectedPaymentDateFlag" width="0" type="ro" hidden="true" ></column>
+    <column id="UnpaidAmount" width="0" type="ro"  hidden="true"></column>
+    <column id="UnpaidAmountUsd" width="0" type="ro"  hidden="true"></column>
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+
+
+
+
+
+
+
+
+

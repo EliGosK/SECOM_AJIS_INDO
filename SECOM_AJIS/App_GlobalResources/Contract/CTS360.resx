@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="btnSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="cboAROffice" xml:space="preserve">
+    <value>Approval request office</value>
+  </data>
+  <data name="cboARRole" xml:space="preserve">
+    <value>Approval request role</value>
+  </data>
+  <data name="cboARStatus" xml:space="preserve">
+    <value>Approval request status</value>
+  </data>
+  <data name="cboARType" xml:space="preserve">
+    <value>Approval request type</value>
+  </data>
+  <data name="cboOperationOffice" xml:space="preserve">
+    <value>Operation office</value>
+  </data>
+  <data name="cboSpecifyPeriod" xml:space="preserve">
+    <value>Specify period</value>
+  </data>
+  <data name="headerApprover" xml:space="preserve">
+    <value>Approver</value>
+  </data>
+  <data name="headerARTitle" xml:space="preserve">
+    <value>Approval request title</value>
+  </data>
+  <data name="headerARType" xml:space="preserve">
+    <value>Approval request type</value>
+  </data>
+  <data name="headerDueDateDeadline" xml:space="preserve">
+    <value>Due date/&lt;br/&gt;Deadline</value>
+  </data>
+  <data name="headerRealCustomer" xml:space="preserve">
+    <value>&lt;div&gt;Customer name&lt;br /&gt;(1) English&lt;br /&gt;(2) Local&lt;/div&gt;</value>
+  </data>
+  <data name="headerReqeuster" xml:space="preserve">
+    <value>Requester</value>
+  </data>
+  <data name="headerRequesterApprover" xml:space="preserve">
+    <value>&lt;div&gt;Request No./&lt;br/&gt;Approve No.&lt;br/&gt;&lt;br/&gt;Contract no.&lt;/div&gt;</value>
+  </data>
+  <data name="headerSiteName" xml:space="preserve">
+    <value>&lt;div&gt;Premise's name&lt;br /&gt;(1) English&lt;br /&gt;(2) Local&lt;/div&gt;</value>
+  </data>
+  <data name="headerStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="labelddMMyyyy" xml:space="preserve">
+    <value>(ddMMyyyy)</value>
+  </data>
+  <data name="lblApproveNo" xml:space="preserve">
+    <value>Approve no.</value>
+  </data>
+  <data name="lblApprover" xml:space="preserve">
+    <value>Approver</value>
+  </data>
+  <data name="lblARStatus" xml:space="preserve">
+    <value>Approval request status</value>
+  </data>
+  <data name="lblARTitle" xml:space="preserve">
+    <value>Approval request title</value>
+  </data>
+  <data name="lblAuditor" xml:space="preserve">
+    <value>Auditor</value>
+  </data>
+  <data name="lblCompleted" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="lblContractOffice" xml:space="preserve">
+    <value>Contract office</value>
+  </data>
+  <data name="lblContractStatus" xml:space="preserve">
+    <value>Contract status</value>
+  </data>
+  <data name="lblContractTargetPurchaserName" xml:space="preserve">
+    <value>Customer name (Customer)</value>
+  </data>
+  <data name="lblContractType" xml:space="preserve">
+    <value>Contract type</value>
+  </data>
+  <data name="lblCustomerGroupName" xml:space="preserve">
+    <value>Customer group name</value>
+  </data>
+  <data name="lblCustomerName" xml:space="preserve">
+    <value>Customer name (Client)</value>
+  </data>
+  <data name="lblHandling" xml:space="preserve">
+    <value>Handling</value>
+  </data>
+  <data name="lblProjectName" xml:space="preserve">
+    <value>Project name</value>
+  </data>
+  <data name="lblQuotationTargetCode" xml:space="preserve">
+    <value>Quotation target code</value>
+  </data>
+  <data name="lblRequester" xml:space="preserve">
+    <value>Requester</value>
+  </data>
+  <data name="lblRequestNo" xml:space="preserve">
+    <value>Request no.</value>
+  </data>
+  <data name="lblSiteName" xml:space="preserve">
+    <value>Premise's name</value>
+  </data>
+  <data name="lblUserCodeContractCode" xml:space="preserve">
+    <value>User code/Contract no.</value>
+  </data>
+  <data name="sectionARListByRole" xml:space="preserve">
+    <value>Approval request list by role</value>
+  </data>
+  <data name="sectionARResultList" xml:space="preserve">
+    <value>Approval request result list</value>
+  </data>
+  <data name="sectionSearchAR" xml:space="preserve">
+    <value>Search approval request</value>
+  </data>
+  <data name="lblAL" xml:space="preserve">
+    <value>AL</value>
+  </data>
+  <data name="lblAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="lblCancelFinish" xml:space="preserve">
+    <value>Cancel/Finish</value>
+  </data>
+  <data name="lblImplemented" xml:space="preserve">
+    <value>Operated</value>
+  </data>
+  <data name="lblMaintenance" xml:space="preserve">
+    <value>Maintenance</value>
+  </data>
+  <data name="lblSales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="lblSentryGuard" xml:space="preserve">
+    <value>Security guard</value>
+  </data>
+  <data name="lblStopService" xml:space="preserve">
+    <value>Suspension</value>
+  </data>
+  <data name="lblUnimplemented" xml:space="preserve">
+    <value>Un-operated</value>
+  </data>
+  <data name="cellNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="cellOver" xml:space="preserve">
+    <value>Over!</value>
+  </data>
+  <data name="headerOverNewAR" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;Detail&lt;/div&gt;</value>
+  </data>
+  <data name="lblComment" xml:space="preserve">
+    <value>* In order to search approval request related to Customer or Premises, please do not use these criteria</value>
+  </data>
+  <data name="headerARTypeAndARTitle" xml:space="preserve">
+    <value>&lt;div&gt;(1) Approval request type&lt;br/&gt;(2) Approval request title&lt;/div&gt;</value>
+  </data>
+  <data name="headerAuditor" xml:space="preserve">
+    <value>Auditor</value>
+  </data>
+  <data name="headerLastactionDateAndRequestDate" xml:space="preserve">
+    <value>&lt;div&gt;(1) Last action date&lt;br/&gt;(2) Request date&lt;br/&gt;(YYYY-MM-DD)&lt;/div&gt;</value>
+  </data>
+  <data name="headerApproverAuditorAndRequester" xml:space="preserve">
+    <value>&lt;div&gt;(1) Approver&lt;br/&gt;(2) Auditor&lt;br/&gt;(3) Requester&lt;/div&gt;</value>
+  </data>
+  <data name="headerRealCustomerSiteName" xml:space="preserve">
+    <value>&lt;div&gt;&lt;u&gt;Customer name&lt;/u&gt;&lt;br /&gt;(1) English&lt;br /&gt;(2) Local&lt;br/&gt;&lt;u&gt;Premise's name&lt;/u&gt;&lt;br /&gt;(3) English&lt;br /&gt;(4) Local&lt;/div&gt;</value>
+  </data>
+</root>

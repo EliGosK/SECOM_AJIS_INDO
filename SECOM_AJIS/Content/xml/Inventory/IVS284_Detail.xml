@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    
+    <column id="No" width="50" type="ro" align="center" sort="na"></column>
+    <column id="InstrumentCode" width="*" type="ro" align="left" sort="na">headerInstrumentCode</column>
+    <column id="Qty" width="180" type="ron2" align="right" numberformat="#,##0" sort="na">headerUnit</column>
+    <column id="UnitPriceUsD" width="180" type="ron2" align="right" numberformat="US$#,##0.00" sort="na">headerCost</column>
+    <column id="AmountUsD" width="220" type="ron2" align="right" numberformat="US$#,##0.00" sort="na">headerAmount</column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

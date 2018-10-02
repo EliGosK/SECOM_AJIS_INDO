@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnCallScreenToSelectCombileDetail" xml:space="preserve">
+    <value>Call screen to select combine detail</value>
+  </data>
+  <data name="btnRetrieve" xml:space="preserve">
+    <value>Retrieve</value>
+  </data>
+  <data name="chkComNotChangeInvoiceNo" xml:space="preserve">
+    <value>Not change invoice no.</value>
+  </data>
+  <data name="chkSepNotChangeInvoiceNo" xml:space="preserve">
+    <value>Not change invoice no.</value>
+  </data>
+  <data name="dtpCustomerAcceptanceDate" xml:space="preserve">
+    <value>Customer acceptance date</value>
+  </data>
+  <data name="lblComBillingTargetCode" xml:space="preserve">
+    <value>Billing customer code</value>
+  </data>
+  <data name="lblComBliiingClientNameEN" xml:space="preserve">
+    <value>Billing customer name (English)</value>
+  </data>
+  <data name="lblComBliiingClientNameLC" xml:space="preserve">
+    <value>Billing customer name (Local)</value>
+  </data>
+  <data name="lblComInvoiceNo" xml:space="preserve">
+    <value>Invoice no.</value>
+  </data>
+  <data name="lblHeader1AftAmount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="lblHeader1AfterSeparate" xml:space="preserve">
+    <value>After separate</value>
+  </data>
+  <data name="lblHeader1AftNumberOfDetail" xml:space="preserve">
+    <value>Number of detail</value>
+  </data>
+  <data name="lblHeader1BefAmount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="lblHeader1BefNumberOfDetail" xml:space="preserve">
+    <value>Number of detail</value>
+  </data>
+  <data name="lblHeader1BeforeSeparate" xml:space="preserve">
+    <value>Before separate</value>
+  </data>
+  <data name="lblHeader2BillingAmount" xml:space="preserve">
+    <value>Billing service fee</value>
+  </data>
+  <data name="lblHeader2BillingCode" xml:space="preserve">
+    <value>Billing code</value>
+  </data>
+  <data name="lblHeader2BillingType" xml:space="preserve">
+    <value>Billing type</value>
+  </data>
+  <data name="lblHeader2IssueInvoiceofSeparateDetail" xml:space="preserve">
+    <value>Issue invoice of separate detail</value>
+  </data>
+  <data name="lblHeader2RunningNo" xml:space="preserve">
+    <value>Running no.</value>
+  </data>
+  <data name="lblHeader2SelectSeparateDetail" xml:space="preserve">
+    <value>Select separate detail</value>
+  </data>
+  <data name="lblHeader2SiteName" xml:space="preserve">
+    <value>Premise’s name &lt;BR&gt; (1) English &lt;BR&gt; (2) Local</value>
+  </data>
+  <data name="lblHeader3AftAmount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="lblHeader3AfterSeparate" xml:space="preserve">
+    <value>After separate</value>
+  </data>
+  <data name="lblHeader3AftNumberOfDetail" xml:space="preserve">
+    <value>Number of detail</value>
+  </data>
+  <data name="lblHeader3BefAmount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="lblHeader3BefNumberOfDetail" xml:space="preserve">
+    <value>Number of detail</value>
+  </data>
+  <data name="lblHeader3BeforeSeparate" xml:space="preserve">
+    <value>Before separate</value>
+  </data>
+  <data name="lblHeader4BillingAmount" xml:space="preserve">
+    <value>Billing service fee</value>
+  </data>
+  <data name="lblHeader4BillingCode" xml:space="preserve">
+    <value>Billing code</value>
+  </data>
+  <data name="lblHeader4BillingType" xml:space="preserve">
+    <value>Billing type</value>
+  </data>
+  <data name="lblHeader4RunningNo" xml:space="preserve">
+    <value>Running no.</value>
+  </data>
+  <data name="lblHeader4SiteName" xml:space="preserve">
+    <value>&lt;div&gt;Premise’s name &lt;BR&gt; (1) English &lt;BR&gt; (2) Local&lt;/div&gt;</value>
+  </data>
+  <data name="lblIssueInvoiceAfterCombine" xml:space="preserve">
+    <value>Issue invoice after combine</value>
+  </data>
+  <data name="lblIssueInvoiceAfterSeparate" xml:space="preserve">
+    <value>Issue invoice after separate</value>
+  </data>
+  <data name="lblPaymentMethodsOfCombineToInvoice" xml:space="preserve">
+    <value>Payment method of combine-to invoice</value>
+  </data>
+  <data name="lblPaymentMethodsOfSeparateFrom" xml:space="preserve">
+    <value>Payment method of separate-from invoice</value>
+  </data>
+  <data name="lblSelCombineToInvoiceNo" xml:space="preserve">
+    <value>Combine-to invoice no.</value>
+  </data>
+  <data name="lblSelContractCode" xml:space="preserve">
+    <value>Contract no.</value>
+  </data>
+  <data name="lblSelSaleOCC" xml:space="preserve">
+    <value>Sale OCC</value>
+  </data>
+  <data name="lblSelSeparateFromInvoiceNo" xml:space="preserve">
+    <value>Separate-from invoice no.</value>
+  </data>
+  <data name="lblSepBillingTargetCode" xml:space="preserve">
+    <value>Billing customer code</value>
+  </data>
+  <data name="lblSepBliiingClientNameEN" xml:space="preserve">
+    <value>Billing customer name (English)</value>
+  </data>
+  <data name="lblSepBliiingClientNameLC" xml:space="preserve">
+    <value>Billing customer name (Local)</value>
+  </data>
+  <data name="lblSepInvoiceNo" xml:space="preserve">
+    <value>Invoice no.</value>
+  </data>
+  <data name="lblTableHeader1" xml:space="preserve">
+    <value>Manage invoice information (CF-15)</value>
+  </data>
+  <data name="lblTableHeader2" xml:space="preserve">
+    <value>Select process</value>
+  </data>
+  <data name="lblTableHeader3" xml:space="preserve">
+    <value>Separate invoice</value>
+  </data>
+  <data name="lblTableHeader4" xml:space="preserve">
+    <value>Separate-from invoice</value>
+  </data>
+  <data name="lblTableHeader5" xml:space="preserve">
+    <value>Combine invoice</value>
+  </data>
+  <data name="lblTableHeader6" xml:space="preserve">
+    <value>Combine-to invoice</value>
+  </data>
+  <data name="lblTableHeader7" xml:space="preserve">
+    <value>Register customer acceptance date (Issue sale invoice)</value>
+  </data>
+  <data name="rdoCombineInvoice" xml:space="preserve">
+    <value>Combine invoice</value>
+  </data>
+  <data name="rdoIssueSaleInvoice" xml:space="preserve">
+    <value>Register customer acceptance date&lt;br&gt; (Issue sale invoice)</value>
+  </data>
+  <data name="rdoSeparateInvoice" xml:space="preserve">
+    <value>Separate invoice</value>
+  </data>
+  <data name="txtBillingAmount" xml:space="preserve">
+    <value>Product price (excluding tax)</value>
+  </data>
+  <data name="txtIssContractCode" xml:space="preserve">
+    <value>Contract no.</value>
+  </data>
+  <data name="txtIssSaleOCC" xml:space="preserve">
+    <value>Sale OCC</value>
+  </data>
+  <data name="txtVATAmount" xml:space="preserve">
+    <value>VAT amount</value>
+  </data>
+  <data name="txtWHTAmount" xml:space="preserve">
+    <value>WHT amount</value>
+  </data>
+  <data name="headerAfterCombine" xml:space="preserve">
+    <value>After combine</value>
+  </data>
+  <data name="headerBeforeCombine" xml:space="preserve">
+    <value>Before combine</value>
+  </data>
+  <data name="txtInstallationAmount" xml:space="preserve">
+    <value>Installation fee (excluding tax)</value>
+  </data>
+</root>

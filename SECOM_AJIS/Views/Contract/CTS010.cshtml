@@ -1,0 +1,46 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@{
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "181px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol12_SWidth = "369px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMerge12Width = "280px";
+    ViewBag.ObjectColMergeWidth = "720px";
+    
+    ViewBag.ObjectColCustNameWidth = "200px";
+    
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Master/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS010.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS010/CTS010_01.js")"></script>
+}
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>
+@Html.Partial("CTS010/_CTS010_01")
+@Html.EmptyDIVforLoadData2("CTS010_02")
+@Html.EmptyDIVforLoadData2("CTS010_03")
+@Html.EmptyDIVforLoadData2("CTS010_03_F")
+@Html.EmptyDIVforLoadData2("CTS010_04")
+@Html.EmptyDIVforLoadData2("CTS010_05")
+@Html.EmptyDIVforLoadData2("CTS010_06")
+@Html.EmptyDIVforLoadData2("CTS010_07")
+@Html.EmptyDIVforLoadData2("CTS010_08")
+@Html.EmptyDIVforLoadData2("CTS010_09")
+@Html.EmptyDIVforLoadData2("CTS010_10")
+@Html.EmptyDIVforLoadData2("CTS010_11")
+@Html.EmptyDIVforLoadData2("CTS010_12")
+@Html.EmptyDIVforLoadData2("CTS010_13")
+@Html.EmptyDIVforLoadData2("CTS010_14")
+@Html.EmptyDIVforLoadData2("CTS010_15")
+@Html.EmptyDIVforLoadData2("CTS010_16")
+@Html.EmptyDIVforLoadData2("CTS010_18")

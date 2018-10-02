@@ -1,0 +1,50 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+<div id="divSelectIncidentListFields" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS320.lblSelectIncidentList</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS320.lblIncidentListMode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonRadioButton("radCustomer", @Resources.CTS320.radCustomer, null, false, "radGrpSelectIncident", null)
+            @Html.CommonRadioButton("radSite", @Resources.CTS320.radSite, null, false, "radGrpSelectIncident", null)
+            @Html.CommonRadioButton("radContract", @Resources.CTS320.radContract, null, false, "radGrpSelectIncident", null)
+            @Html.CommonRadioButton("radProject", @Resources.CTS320.radProject, null, false, "radGrpSelectIncident", null)
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS320.lblCustomerCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @*@Html.CommonTextBox("txtCustomerCode", null, new { style = "width:220px;", @maxlength = "11" })*@
+            @Html.CommonTextBox("txtCustomerCode", null, new { style = "width:220px;", maxlength = CommonValue.C_MAXLENGTH_CUSTOMER_CODE })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS320.lblSiteCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @*@Html.CommonTextBox("txtSiteCode", null, new { style = "width:220px;", @maxlength = "16" })*@
+            @Html.CommonTextBox("txtSiteCode", null, new { style = "width:220px;", maxlength = CommonValue.C_MAXLENGTH_SITE_CODE })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS320.lblContractCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @*@Html.CommonTextBox("txtContractCode", null, new { style = "width:220px;", @maxlength = "12" })*@
+            @Html.CommonTextBox("txtContractCode", null, new { style = "width:220px;", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS320.lblProjectCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+           @* @Html.CommonTextBox("txtProjectCode", null, new { style = "width:220px;", @maxlength = "8" })*@
+           @Html.CommonTextBox("txtProjectCode", null, new { style = "width:220px;", @maxlength = "8" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div style="text-align:right;">
+            @Html.CommonButton("btnRetrieveSelectIncidentList", @Resources.CTS320.btnRetrieve, new { style = "vertical-align: middle;", @type = "button" })
+            @Html.CommonButton("btnClearSelectIncidentList", @Resources.CTS320.btnClear, new { style = "vertical-align: middle;", @type = "button" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

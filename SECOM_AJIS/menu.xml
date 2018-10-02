@@ -1,0 +1,308 @@
+﻿<Menu>
+
+  <MenuHeader id="Quotation" NameEN="Quotation" NameJP="見積" NameLC="คำนวนราคา">
+    <MenuList id="QUS020" controller="Quotation" action="QUS020"/>
+    <MenuList id="QUS030" controller="Quotation" action="QUS030"/>
+  </MenuHeader>
+
+  
+  <MenuHeader id="Contract" NameEN="Contract" NameJP="契約" NameLC="สัญญา">
+    <MenuList id="RegisterNewContractCondition" NameEN="Register new contract condition (FN/FQ-99)" NameJP="新規契約条件登録 (FN/FQ-99)" NameLC="บันทึกข้อมูลสัญญา (FN/FQ-99)">
+      <SubMenu id="CTS010" controller="Contract" action="CTS010" subobject="0" />
+      <SubMenu id="CTS010" controller="Contract" action="CTS010" subobject="1" />
+      <SubMenu id="CTS020" controller="Contract" action="CTS020" subobject="0" />
+      <SubMenu id="CTS020" controller="Contract" action="CTS020" subobject="1" />
+    </MenuList>
+    <MenuList id="ApprovContract" NameEN="Approve contract" NameJP="成約承認" NameLC="อนุมัติสัญญา">
+      <SubMenu id="CTS030" controller="Contract" action="CTS030" />
+      <SubMenu id="CTS040" controller="Contract" action="CTS040" />
+    </MenuList>
+    <MenuList id="RegisterContinuousContractChange" NameEN="Register recurring contract change (CP-12)" NameJP="契約条件変更（継続収入契約） (CP-12)" NameLC="บันทึกการเปลี่ยนแปลงสัญญาต่อเนื่อง (CP-12)">
+      <SubMenu id="CTS051" controller="Contract" action="CTS051" />
+      <SubMenu id="CTS052" controller="Contract" action="CTS052" />
+      <SubMenu id="CTS053" controller="Contract" action="CTS053" />
+      <SubMenu id="CTS054" controller="Contract" action="CTS054" />
+      <SubMenu id="CTS055" controller="Contract" action="CTS055" />
+    </MenuList>
+    <MenuList id="RegisteSaleContractChange" NameEN="Register sales contract change (CQ-12)" NameJP="契約条件変更（売買契約） (CQ-12)" NameLC="บันทึกการเปลี่ยนแปลงสัญญาขายขาด (CQ-12)">
+      <SubMenu id="CTS062" controller="Contract" action="CTS062" />
+      <SubMenu id="CTS061" controller="Contract" action="CTS061" />
+    </MenuList>
+    <MenuList id="CancelContractBeforeStart" NameEN="Termination before start (CP-15)" NameJP="成約取消 (CP-15)" NameLC="ยกเลิกสัญญาก่อนเปิดใช้บริการ (CP-15)">
+      <SubMenu id="CTS110" controller="Contract" action="CTS110" subobject="0" />
+      <SubMenu id="CTS090" controller="Contract" action="CTS090" subobject="0" />
+    </MenuList>
+
+    <MenuList id="CTS070" controller="Contract" action="CTS070"/>
+    <MenuList id="CTS100" controller="Contract" action="CTS100"/>
+
+    <MenuList id="CancelContractAfterStart" NameEN="Termination after start" NameJP="解約" NameLC="ยกเลิกสัญญาหลังเปิดใช้บริการ">
+      <SubMenu id="CTS080" controller="Contract" action="CTS080" />
+      <SubMenu id="CTS110" controller="Contract" action="CTS110" subobject="1" />
+      <SubMenu id="CTS120" controller="Contract" action="CTS120" />
+    </MenuList>
+
+    <MenuList id="CTS130" controller="Contract" action="CTS130"/>
+    <MenuList id="Correct contract data" NameEN="Correct contract data" NameJP="データ訂正" NameLC="แก้ไขข้อมูลสัญญา">
+      <SubMenu id="CTS140" controller="Contract" action="CTS140" />
+      <SubMenu id="CTS220" controller="Contract" action="CTS220" />
+      <SubMenu id="CTS150" controller="Contract" action="CTS150" />
+    </MenuList>
+    <MenuList id="Project" NameEN="Project" NameJP="プロジェクト" NameLC="โครงการ">
+      <SubMenu id="CTS230" controller="Contract" action="CTS230" />
+      <SubMenu id="CTS240" controller="Contract" action="CTS240" />
+      <SubMenu id="CTS260" controller="Contract" action="CTS260" />
+    </MenuList>
+    <MenuList id="MaintenanceCheckUp" NameEN="Maintenance check-up" NameJP="保守点検" NameLC="เข้าบำรุงรักษาอุปกรณ์">
+      <SubMenu id="CTS270" controller="Contract" action="CTS270" />
+      <SubMenu id="CTS290" controller="Contract" action="CTS290" />
+    </MenuList>
+  </MenuHeader>
+
+  
+  <MenuHeader id="Installation" NameEN="Installation" NameJP="工事" NameLC="การติดตั้ง">
+    <MenuList id="ISS010" controller="Installation" action="ISS010"/>
+    <MenuList id="ISS030" controller="Installation" action="ISS030"/>
+    <MenuList id="ISS050" controller="Installation" action="ISS050"/>
+    <MenuList id="ISS060" controller="Installation" action="ISS060"/>
+    <MenuList id="ISS070" controller="Installation" action="ISS070"/>
+    <MenuList id="ISS080" controller="Installation" action="ISS080"/>
+    <MenuList id="ISS100" controller="Installation" action="ISS100" />
+  </MenuHeader>
+
+
+  <MenuHeader id="Inventory" NameEN="Inventory" NameJP="在庫" NameLC="คลังสินค้า">
+    <MenuList id="PurchaseOrder" NameEN="Purchase Order" NameJP="発注" NameLC="สั่งซื้อ">
+      <SubMenu id="IVS250" controller="Inventory" action="IVS250" />
+      <SubMenu id="IVS260" controller="Inventory" action="IVS260" />
+    </MenuList>
+    <MenuList id="StockIn" NameEN="Stock-in" NameJP="入庫" NameLC="นำของเข้า">
+      <SubMenu id="IVS010" controller="Inventory" action="IVS010" />
+      <SubMenu id="IVS011" controller="Inventory" action="IVS011" />
+      <SubMenu id="IVS012" controller="Inventory" action="IVS012" />
+      <SubMenu id="IVS210" controller="Inventory" action="IVS210" />
+    </MenuList>
+    <MenuList id="StockOut" NameEN="Stock-out" NameJP="出庫" NameLC="ส่งของออก">
+      <SubMenu id="IVS020" controller="Inventory" action="IVS020" />
+      <SubMenu id="IVS240" controller="Inventory" action="IVS240" />
+      <SubMenu id="IVS021" controller="Inventory" action="IVS021" />
+      <SubMenu id="IVS270" controller="Inventory" action="IVS270" />
+      <SubMenu id="IVS060" controller="Inventory" action="IVS060" />
+      <SubMenu id="IVS100" controller="Inventory" action="IVS100" />
+      <SubMenu id="IVS120" controller="Inventory" action="IVS120" />
+    </MenuList>
+    <MenuList id="Receive" NameEN="Receive" NameJP="受領" NameLC="การรับ">
+      <SubMenu id="IVS030" controller="Inventory" action="IVS030" />
+      <SubMenu id="IVS070" controller="Inventory" action="IVS070" />
+      <SubMenu id="IVS110" controller="Inventory" action="IVS110" />
+      <SubMenu id="IVS130" controller="Inventory" action="IVS130" />
+      <SubMenu id="IVS140" controller="Inventory" action="IVS140" />
+    </MenuList>
+    <MenuList id="IVS080" controller="Inventory" action="IVS080"/>
+
+    <MenuList id="Stocktaking" NameEN="Stocktaking" NameJP="棚卸" NameLC="นับสต็อก">
+      <SubMenu id="IVS150" controller="Inventory" action="IVS150" />
+      <SubMenu id="IVS160" controller="Inventory" action="IVS160" />
+      <SubMenu id="IVS170" controller="Inventory" action="IVS170" />
+      <SubMenu id="IVS180" controller="Inventory" action="IVS180" />
+      <SubMenu id="IVS190" controller="Inventory" action="IVS190" />
+    </MenuList>
+    <MenuList id="Elimination" NameEN="Elimination" NameJP="除却" NameLC="การกำจัดทิ้ง">
+      <SubMenu id="IVS040" controller="Inventory" action="IVS040" />
+      <SubMenu id="IVS050" controller="Inventory" action="IVS050" />
+      <!--<SubMenu id="IVS010" controller="Inventory" action="IVS010" />-->
+    </MenuList>
+    <MenuList id="Special stock in/out" NameEN="Special stock in/out" NameJP="簿外" NameLC="การนำของเข้า/ออกแบบพิเศษ">
+      <SubMenu id="IVS010" controller="Inventory" action="IVS010" />
+      <SubMenu id="IVS090" controller="Inventory" action="IVS090" />
+    </MenuList>
+    
+  </MenuHeader>
+
+
+  <MenuHeader id="Billing" NameEN="Billing" NameJP="請求" NameLC="การวางบิล">
+    <MenuList id="BillingTarget" NameEN="Billing customer" NameJP="請求先" NameLC="เป้าหมายการวางบิล">
+      <SubMenu id="BLS010" controller="Billing" action="BLS010" />
+      <SubMenu id="BLS020" controller="Billing" action="BLS020" />
+    </MenuList>
+    <MenuList id="BillingBasic" NameEN="Billing basic" NameJP="請求基本" NameLC="ข้อมูลพื้นฐานการวางบิล">
+      <SubMenu id="BLS030" controller="Billing" action="BLS030" />
+      <SubMenu id="BLS040" controller="Billing" action="BLS040" />
+    </MenuList>
+    <MenuList id="BillingDetail" NameEN="Billing detail" NameJP="請求明細" NameLC="รายละเอียดการวางบิล">
+      <SubMenu id="BLS050" controller="Billing" action="BLS050" />
+    </MenuList>
+    <MenuList id="MaintainBillingInformation" NameEN="Maintain billing information" NameJP="請求情報メンテナンス" NameLC="การจัดการข้อมูลการวางบิล">
+      <SubMenu id="BLS060" controller="Billing" action="BLS060" />
+      <SubMenu id="BLS070" controller="Billing" action="BLS070" />
+    </MenuList>
+    
+    <MenuList id="ICS050" controller="Income" action="ICS050"/>
+
+    <MenuList id="MoneyCollectionManagement" NameEN="Money collection management" NameJP="集金管理" NameLC="การจัดการการรับเงิน">
+      <SubMenu id="ICS100" controller="Income" action="ICS100" />
+      <SubMenu id="ICS101" controller="Income" action="ICS101" />
+    </MenuList>
+    <MenuList id="Others" NameEN="Others" NameJP="その他" NameLC="อื่นๆ">
+      <!--<SubMenu id="BLS080" controller="Billing" action="BLS080" />-->
+      <SubMenu id="BLS090" controller="Billing" action="BLS090" />
+    </MenuList>
+  </MenuHeader>
+
+  
+  <MenuHeader id="Income" NameEN="Income" NameJP="入金" NameLC="การเก็บเงิน">
+    <MenuList id="IncomeManagement" NameEN="Income Management" NameJP="入金管理" NameLC="การจัดการการเก็บเงิน">
+      <SubMenu id="ICS010" controller="Income" action="ICS010" />
+      <SubMenu id="ICS020" controller="Income" action="ICS020" />
+      <SubMenu id="ICS080" controller="Income" action="ICS080" subobject="0"/>
+      <SubMenu id="ICS080" controller="Income" action="ICS080" subobject="1"/>
+      <SubMenu id="ICS080" controller="Income" action="ICS080" subobject="2"/>
+    </MenuList>
+    <MenuList id="DebtTracingManagement" NameEN="Debt tracing management" NameJP="入金促進管理" NameLC="การจัดการบันทึกหนี้">
+      <SubMenu id="ICS030" controller="Income" action="ICS030" />
+      <SubMenu id="ICS031" controller="Income" action="ICS031" />
+      <SubMenu id="ICS140" controller="Income" action="ICS140" />
+    </MenuList>
+    <MenuList id="DebtReductionExemptionAndRefund" NameEN="Debt reduction/exemption and refund" NameJP="請求免除・返金・収納管理" NameLC="การลด/งดเว้น และคืนหนี้">
+      <SubMenu id="ICS040" controller="Income" action="ICS040" />
+      <SubMenu id="ICS070" controller="Income" action="ICS070" />
+    </MenuList>
+    <MenuList id="CancellationProcess" NameEN="Cancellation process" NameJP="取消処理" NameLC="กระบวนการยกเลิก">
+      <SubMenu id="ICS060" controller="Income" action="ICS060" />
+      <SubMenu id="ICS090" controller="Income" action="ICS090" />
+    </MenuList>
+    <MenuList id="WithholdingTax" NameEN="Withholding tax" NameJP="源泉徴収税" NameLC="ภาษีหัก ณ ที่จ่าย">
+      <SubMenu id="ICS110" controller="Income" action="ICS110" />
+      <SubMenu id="ICS120" controller="Income" action="ICS120" />
+      <SubMenu id="ICS130" controller="Income" action="ICS130" />
+    </MenuList>
+    <MenuList id="ICS150" controller="Income" action="ICS150" />
+  </MenuHeader>
+
+  
+  <MenuHeader id="DocumentManagement" NameEN="Document" NameJP="文書管理" NameLC="การจัดการเอกสาร">
+    <MenuList id="ContractDocument" NameEN="Contract document" NameJP="契約文書" NameLC="เอกสารสัญญา">
+      <SubMenu id="CTS160" controller="Contract" action="CTS160" />
+      <SubMenu id="CTS210" controller="Contract" action="CTS210" />
+      <SubMenu id="CTS180" controller="Contract" action="CTS180" />
+      <SubMenu id="CTS190" controller="Contract" action="CTS190" />
+    </MenuList>
+    <MenuList id="IssueDocument" NameEN="Issue document" NameJP="文書発行" NameLC="การออกเอกสาร">
+      <SubMenu id="CMS030" controller="Common" action="CMS030" />
+      <SubMenu id="CMS460" controller="Common" action="CMS460" />
+      <SubMenu id="CMS490" controller="Common" action="CMS490" />
+      <!--<SubMenu id="ICS050" controller="Income" action="ICS050" />
+      <SubMenu id="ICS060" controller="Income" action="ICS060" />-->
+    </MenuList>
+    <MenuList id="CMS480" controller="Common" action="CMS480" />
+    <MenuList id="AccountingReport" NameEN="Accounting report" NameJP="経理レポート" NameLC="รายงานอุปกรณ์">
+      <SubMenu id="IVS280" controller="Inventory" action="IVS280" />
+      <SubMenu id="IVS281" controller="Inventory" action="IVS281" />
+      <SubMenu id="IVS282" controller="Inventory" action="IVS282" />
+      <SubMenu id="IVS283" controller="Inventory" action="IVS283" />
+      <SubMenu id="IVS284" controller="Inventory" action="IVS284" />
+      <SubMenu id="IVS285" controller="Inventory" action="IVS285" />
+      <SubMenu id="IVS286" controller="Inventory" action="IVS286" />
+      <SubMenu id="IVS287" controller="Inventory" action="IVS287" />
+      <SubMenu id="IVS288" controller="Inventory" action="IVS288" />
+      <SubMenu id="IVS289" controller="Inventory" action="IVS289" />
+      <SubMenu id="IVS290" controller="Inventory" action="IVS290" />
+      <SubMenu id="ACS010" controller="Accounting" action="ACS010" />
+    </MenuList>
+  </MenuHeader>
+  
+  
+  <MenuHeader id="CustomerCorrespondenceSupport" NameEN="Incident" NameJP="事案" NameLC="เหตุการณ์">
+    <MenuList id="CTS300" controller="Contract" action="CTS300"/>
+    <MenuList id="Search incident" NameEN="Search incident" NameJP="事案検索" NameLC="ค้นหาเหตุการณ์">
+      <SubMenu id="CTS310" controller="Contract" action="CTS310" subobject="0" />
+      <SubMenu id="CTS310" controller="Contract" action="CTS310" subobject="1" />
+      <SubMenu id="CTS310" controller="Contract" action="CTS310" subobject="2" />
+      <SubMenu id="CTS310" controller="Contract" action="CTS310" subobject="3" />
+    </MenuList>
+    <MenuList id="CTS320" controller="Contract" action="CTS320"/>
+    <MenuList id="CTS340" controller="Contract" action="CTS340"/>
+  </MenuHeader>
+
+  
+  <MenuHeader id="AR" NameEN="Approval Request" NameJP="上申" NameLC="Approval Request">
+    <MenuList id="CTS350" controller="Contract" action="CTS350"/>
+    <MenuList id="SearchAR" NameEN="Search AR" NameJP="上申検索" NameLC="ค้นหาAR">
+      <SubMenu id="CTS360" controller="Contract" action="CTS360" subobject="0" />
+      <SubMenu id="CTS360" controller="Contract" action="CTS360" subobject="1" />
+      <SubMenu id="CTS360" controller="Contract" action="CTS360" subobject="2" />
+      <SubMenu id="CTS360" controller="Contract" action="CTS360" subobject="3" />
+    </MenuList>
+    <MenuList id="CTS370" controller="Contract" action="CTS370"/>
+    <MenuList id="CTS390" controller="Contract" action="CTS390"/>
+  </MenuHeader>
+
+  
+  <MenuHeader id="Inquiry" NameEN="Inquiry" NameJP="照会" NameLC="ดูข้อมูล">
+    <MenuList id="Quotation" NameEN="Quotation" NameJP="見積情報" NameLC="ใบคำนวณราคา">
+      <SubMenu id="QUS010" controller="Quotation" action="QUS010" />
+    </MenuList>
+    <MenuList id="ContractAndCustomer" NameEN="Contract &amp; Customer" NameJP="契約・顧客情報" NameLC="สัญญา &amp; ลูกค้า">
+      <SubMenu id="CMS070" controller="Common" action="CMS070" />
+      <SubMenu id="CMS190" controller="Common" action="CMS190" />
+      <SubMenu id="CMS090" controller="Common" action="CMS090" />
+    </MenuList>
+    <MenuList id="Installation" NameEN="Installation" NameJP="工事" NameLC="การติดตั้ง">
+      <SubMenu id="CMS180" controller="Common" action="CMS180" />
+      <SubMenu id="ISS080" controller="Installation" action="ISS080" />
+      <!--<SubMenu id="ISS090" controller="Installation" action="ISS090" />-->
+    </MenuList>
+    <MenuList id="Inventory" NameEN="Inventory" NameJP="在庫" NameLC="คลังสินค้า">
+      <SubMenu id="IVS200" controller="Inventory" action="IVS200" />
+      <SubMenu id="IVS201" controller="Inventory" action="IVS201" />
+      <SubMenu id="IVS220" controller="Inventory" action="IVS220" />
+      <SubMenu id="IVS230" controller="Inventory" action="IVS230" />
+    </MenuList>
+    <MenuList id="Billing" NameEN="Billing" NameJP="請求" NameLC="การวางบิล">
+      <!--<SubMenu id="CMS410" controller="Common" action="CMS410" />-->
+      <SubMenu id="CMS420" controller="Common" action="CMS420" />
+      <SubMenu id="CMS430" controller="Common" action="CMS430" />
+      <!--<SubMenu id="CMS450" controller="Common" action="CMS450" />-->
+    </MenuList>
+  </MenuHeader>
+
+  
+  <MenuHeader id="Master" NameEN="Master" NameJP="マスタ" NameLC="มาสเตอร์">
+    <MenuList id="MAS010" controller="Master" action="MAS010"/>
+    <MenuList id="MAS020" controller="Master" action="MAS020"/>
+    <MenuList id="MAS060" controller="Master" action="MAS060"/>
+    <MenuList id="MAS070" controller="Master" action="MAS070"/>
+    <MenuList id="MAS071" controller="Master" action="MAS071"/>
+    <MenuList id="MAS080" controller="Master" action="MAS080"/>
+    <MenuList id="MAS090" controller="Master" action="MAS090"/>
+    <MenuList id="MAS100" controller="Master" action="MAS100"/>
+    <MenuList id="MAS110" controller="Master" action="MAS110"/>
+    <MenuList id="MAS120" controller="Master" action="MAS120"/>
+    <MenuList id="MAS130" controller="Master" action="MAS130"/>
+    <MenuList id="EXRATE" controller="ExchangeRate" action="Master"/>
+  </MenuHeader>
+
+  <MenuHeader id="Administrator" NameEN="Admin" NameJP="管理者" NameLC="ผู้ดำเนินการ">
+    <MenuList id="CMS040" controller="Common" action="CMS040"/>
+    <MenuList id="CMS050" controller="Common" action="CMS050"/>
+    <MenuList id="CMS240" controller="Common" action="CMS240"/>
+<!-- PAUSE because no screen interface yet...
+    <MenuList id="CMS440" controller="Common" action="CMS440"/>
+-->
+  </MenuHeader>
+
+
+  <MenuHeader id="FlowMenu" NameEN="Flow Menu" NameJP="フローメニュー" NameLC="ขั้นตอนการทำงาน">
+     <!--Please put it out after flow menu completes.-->
+    <MenuList id="CMS021" controller="Common" action="CMS021" subobject="0" />
+    <MenuList id="CMS022" controller="Common" action="CMS022" subobject="0" />
+    <MenuList id="CMS023" controller="Common" action="CMS023" subobject="0" />
+    <MenuList id="CMS024" controller="Common" action="CMS024" subobject="0" />
+    <MenuList id="CMS025" controller="Common" action="CMS025" subobject="0" />
+  
+  </MenuHeader>
+
+  <MenuHeader id="FAQ" NameEN="FAQ" NameJP="FAQ" NameLC="FAQ" action="file:///\\192.168.118.13\FileServer$" target="_blank">
+  </MenuHeader>
+  
+</Menu>

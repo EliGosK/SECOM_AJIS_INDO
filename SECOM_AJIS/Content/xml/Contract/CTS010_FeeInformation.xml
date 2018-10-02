@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column id="Name" width="*" type="ro" align="left"></column>
+    <column id="Normal" width="156" type="link" align="right">headerNormal</column>
+    <column id="Order" width="170" type="link" align="right">headerOrder</column>
+    <column id="Approve" width="170" type="link" align="right">headerApprove</column>
+    <column id="Complete" width="170" type="link" align="right">headerComplete</column>
+    <column id="Start" width="170" type="link" align="right">headerStart</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

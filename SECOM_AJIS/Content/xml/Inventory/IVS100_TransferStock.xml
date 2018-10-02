@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="Instrumentcode" width="150" type="ro"  sort="na">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="na">headerInstrumentName</column>
+    <column id="AreaCodeName" width="200" type="ro" align="left" sort="na">headerInstrumentArea</column>
+    <column id="InstrumentQty" width="85"   type="edn" align="right" format="0,000" sort="na">headerSourceInstrumentQuantity</column>
+    <column id="StockOutQty" width="85"   type="link" align="right" sort="na">headerStockOutQuantity</column>
+    <column id="Remove" width="30" type="ro" align="right" sort="na">headerRemove</column>
+    <column id="TempColumn" width="0" type="ro" hidden="true" sort="na"></column>
+    <column id="AreaCode" width="*" type="ro" align="center" hidden="true"></column>
+    <column id="ShelfNo" width="*" type="ro" align="center" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

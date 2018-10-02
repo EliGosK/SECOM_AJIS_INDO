@@ -1,0 +1,201 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Controllers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "180px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+
+    
+ }
+
+@section page_header{
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Inventory/IVS180.js")"></script>
+
+
+<script type="text/javascript">
+    var IVS180_ViewBag = {};
+    var IVS180_ViewBag_Flag = {
+        EnableChecking: "@ViewBag.EnableLastChecking"
+    };
+</script>
+
+
+}
+
+<div style="display:none">
+    @Html.Hidden("btnCalculate", (string)@Resources.IVS180.headerButtonCalculate)
+    @Html.Hidden("lblTotalAmountOfTransfer", (string)@Resources.IVS180.lblTotalAmtTransferAsset)
+</div>
+
+<!-- Specify location -->
+<div class="main-table" id="divSpecifyLocation">
+    <div class="table-header">
+        @Resources.IVS180.lblSpecifyLocation
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS180.lblSourceLocation
+        </div>
+         <div class="usr-object">
+            @Html.InventoryTransferBufferCbo("SourceLocationCode", new { style = "width:154px" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.IVS180.lblDestinationLocation 
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;" >
+            @Html.CommonTextBox("DestinationLocation", (string)@ViewBag.DestinationLocation , new { style = "width:150px;" ,ReadOnly = "readonly"}) 
+        </div>
+
+    </div>    
+    <div class="usr-row" style="height:5px;">&nbsp;</div>
+    <div id = "divSearchInstrument">
+    <hr />
+    <div id="ResultSection">
+    <form id="formSearchCriteria" action = "#" >
+    <div class="table-header">
+        @Resources.IVS180.lblSearchInstrument
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS180.lblLocation
+        </div>
+        <div class="usr-object">
+           @Html.BlankComboBox("LocationCode", new { style = "width:154px" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS180.lblInstrumentCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("InstrumentCode", null, new { style = "width:150px;", maxlength = "50" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.IVS180.lblInstrumentName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;" >
+            @Html.CommonTextBox("InstrumentName", null, new { style = "width:150px;", maxlength = "100" }) 
+        </div>
+    </div>
+
+    <div class="usr-row">
+         <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS180.lblInstrumentArea
+        </div>
+         <div class="usr-object">
+            @Html.InvenotryAreaNoLendingCbo("AreaCode", new { style = "width:494px" }, true, "All")
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-object" style="margin-top:5px;margin-right:4px; float:right;">
+            <div>
+                @Html.CommonButton("btnSearch", @Resources.IVS180.btnSearch, new { style = "width:100px;", type = "button" })
+                @Html.CommonButton("btnClear", @Resources.IVS180.btnClear, new { style = "width:100px;", type = "button" })
+            </div>
+        </div>
+    </div>
+
+    <div class="usr-row" style="height:5px;">&nbsp;</div>
+
+    </form>
+
+    <div class="usr-row">
+        <div id="IVS180_SearchResultGrid" style="width: 99%; margin-left: 4px;"></div>
+    </div>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+    </div>
+    </div>
+</div>
+
+
+<!-- Transfer instrument detail -->
+<div class="main-table" id="divTransferInstrumentDetail">
+    <div class="table-header">
+        @Resources.IVS180.lblTransferInstrumentDetail
+    </div>
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS180.lblApproveNo
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ApproveNo", null, new { style = "width:150px;", maxlength = "15" }) @Html.RequireFiled()
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.IVS180.lblTransferDate
+        </div>
+        <div class="usr-object" >
+            @Html.CommonTextBox("TransferDate", (string)@ViewBag.CheckingYearMonth, new { style = "width:125px;" }) 
+        </div>
+        <div class="usr-object">
+                <div style="margin-right:5px;">
+                    @Html.LabelDateFormat("TransferDate")
+                    @Html.RequireFiled()
+                </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS180.lblMemo
+        </div>
+         <div class="usr-object"  style="width:500px">
+            @Html.CommonTextArea("Memo", null, new { style = "width:500px; height:80px ;  overflow:auto", maxlength = "1000" })
+        </div>
+    </div>
+
+    <div class="usr-row" style="height:5px;">&nbsp;</div>
+
+    <div class="usr-row">
+        <div id="IVS180_RetrundInstrumentCheckingDetailGrid" style="width: 99%; margin-left: 4px;"></div>
+    </div>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+
+<!-- Show slip no. -->
+<div class="main-table" id="divShowSlipNo">
+    <div class="table-header">
+        @Resources.IVS180.lblShowSlipNo
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS180.lblSlipNo
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("SlipNo", (string)@ViewBag.SoruceLocation, new { style = "width:280px;", ReadOnly = "readonly" })
+        </div>
+        <div class="usr-object">
+            &nbsp;
+            @Html.CommonButton("btnDownloadSlip", (string)@Resources.IVS180.btnDownloadSlip, new { style = "width:100px;", type = "button" })
+            @Html.CommonButton("btnNewRegister", (string)@Resources.IVS180.btnNewRegister, new { style = "width:100px;", type = "button" })
+        </div>
+    </div>
+
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>

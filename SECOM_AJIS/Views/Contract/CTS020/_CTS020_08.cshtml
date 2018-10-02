@@ -1,0 +1,117 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "130px";
+    ViewBag.ObjectCol3Width = "200px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+
+    ViewBag.HasSiteData = true;
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS020/CTS020_08.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("HasSiteData", (bool)@ViewBag.HasSiteData)
+</div>
+<div id="divSiteCustomerInfo" class="main-table">
+    <div class="table-header">@Resources.CTS020.lblSiteInfo</div>
+    <div id="divSpecifySite_CopyNameAddress" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object" style="padding-bottom:5px;">
+            <div class="usr-row">
+                <div class="usr-object">
+                    <div id="divSpecifySite" class="sub-table" style="float:left;width:360px;margin-right:10px;">
+                        <div class="table-header">@Resources.CTS020.lblSpecifyCode</div>
+                        <div class="usr-row">
+                            <div class="usr-label" style="width:120px;">@Resources.CTS020.lblSiteCode</div>
+                            <div class="usr-object">
+                                @Html.CommonTextBox("SiteCustCode", (string)@ViewBag.SiteCodeForSearch, new { @readonly = true, style = "width:120px;" })&nbsp;-
+                                @Html.CommonTextBox("SiteCustCodeNo", (string)@ViewBag.SiteNo, new { maxlength = "4", style = "width:50px;" })
+                            </div>
+                        </div>
+                        <div class="usr-row usr-row-space">
+                            <div class="usr-label" style="width:120px;">&nbsp;</div>
+                            <div class="usr-object" style="padding-bottom: 17px;">
+                                @Html.CommonButton("btnRetrieveSiteData", (string)@Resources.CTS020.btnRetrieve, new { style = "width:80px;" })&nbsp;
+                                @Html.CommonButton("btnSearchSite", (string)@Resources.CTS020.btnSearchSite, new { style = "width:130px;" })
+                            </div>
+                        </div>
+                        <div class="usr-clear-style">&nbsp;</div>
+                    </div>
+                    <div id="divCopyNameAddressInfo" class="sub-table" style="float:left;width:350px;">
+                        <div class="table-header">@Resources.CTS020.lblCopyNameAddressInfo</div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="margin-left:5px;">
+                                @Html.CommonRadioButton("rdoPurchaser", (string)@Resources.CTS020.rdoContractTargetPurchaser, (string)@SECOM_AJIS.Common.Util.ConstantValue.CustPartType.C_CUST_PART_TYPE_CONTRACT_TARGET, false, "CopyNameAddrInfoGroup")
+                            </div>
+                        </div>
+                        <div class="usr-row">
+                            <div class="usr-object"  style="margin-left:5px;">
+                                @Html.CommonRadioButton("rdoRealCustomer", (string)@Resources.CTS020.rdoReadCustomer, (string)@SECOM_AJIS.Common.Util.ConstantValue.CustPartType.C_CUST_PART_TYPE_REAL_CUST, true, "CopyNameAddrInfoGroup")
+                            </div>
+                        </div>
+                        <div class="usr-row">
+                            <div style="float:right;">
+                                <div class="usr-object" style="padding-right:11px;">
+                                    @Html.CommonButton("btnCopy", (string)@Resources.CTS020.btnCopy, new { style = "width:100px;" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="usr-clear-style">&nbsp;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblSiteCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("SiteCodeShort", (string)@ViewBag.SiteCode, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnNewEditSite", (string)@Resources.CTS020.btnNewEditSiteInfo, new { style = "width:200px;" })
+            @Html.CommonButton("btnClearSite", (string)@Resources.CTS020.btnClearSite, new { style = "width:150px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblNameEN</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameEN", (string)@ViewBag.SiteNameEN, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblAddressEN</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("AddressFullEN", (string)@ViewBag.AddressFullEN, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblNameLC</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameLC", (string)@ViewBag.SiteNameLC, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblAddressLC</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("AddressFullLC", (string)@ViewBag.AddressFullLC, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblPhoneNo</div>
+        <div class="usr-object" style="width:150px;">
+            @Html.CommonTextBox("PhoneNo", (string)@ViewBag.PhoneNo, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS020.lblUsage</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("BuildingUsageName", (string)@ViewBag.BuildingUsageName, new { style = "width:445px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

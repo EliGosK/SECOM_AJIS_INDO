@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="InstrumentCode" width="150" type="ro"  align="left" sort="na">HeaderInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="link" align="left" sort="na">HeaderInstrumentName</column>
+    <column id="OriginalUnitPrice" width="140" type="link" align="right" format="0,000.00" sort="na">HeaderUnitPrice</column>
+    <column id="UnitPrice" width="140" type="link" align="right" format="0,000.00" sort="na">HeaderUnitPriceDiscount</column>
+    <column id="OrderQty" width="70" type="link" align="right" format="0,000" sort="na">HeaderOrderQty</column>
+    <column id="Unit" width="70" type="link" align="left" sort="na">lblUnit</column>
+    <column id="Amount" width="120" type="link" align="right" format="0,000.00" sort="na">HeaderAmount</column>
+    <column id="Remove" width="30" type="ro" align="center" sort="na">HeaderRemove</column>
+    <column id="TempColumn" width="0" type="ro" hidden="true" sort="na"></column>
+    <column id="SourceAreaCode" width ="*" hidden="true" type="ro"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

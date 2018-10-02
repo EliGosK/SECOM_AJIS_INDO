@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+	  <column id="No" width="30" type="ro" align="center" sort="na">No.</column>	  
+	  <column id="InvoiceNoAndTaxNo" width="150" type="ro"  align="left" sort="str_custom" >headerInvoicenotaxinvoiceno</column>
+	  <column id="CreditNoteIssueDetail" width="30" type="link"  align="center" sort="na" >headerCreditNoteIssueDetail</column>
+	  <column id="IssueInvDate" width="100" type="dhxCalendar"  align="left" sort="date" format="%d-%b-%Y" >headerIssueInvoiceDate</column>	
+	  <column id="BillingAmount" width="110" type="edn" align="right" format="0,000.00" sort="int" >headerBillingAmountExcludeTaxThb</column>	  
+	  <column id="TaxAmount" width="110" type="ro" align="left" sort="str_custom">headerTaxAmountThb</column>
+	  <column id="InvoicePaymentStatusMapping" width="*" type="ro"  align="left" sort="str_custom" >headerInvoicePaymentStatus</column>
+    <column id="FirstIssueInvDisplay" width="50" type="ro"  align="center" sort="str_custom" >headerInvoicePrint</column>
+	  <column id="Name" width="140" type="ro"  align="left" sort="str_custom" >headerBillingClientName</column>
+	  <!--<column id="NoOfBillingDetail" width="100" type="edn"  align="right" sort="str_custom" format="0,000.00" >headerNumberOfBillingDetail</column>-->
+	  <column id="NoOfBillingDetail_TextDisplay" width="100" type="ro"  align="right" sort="str_custom"  >headerNumberOfBillingDetail</column>
+	  <column id="CreditNoteFlag"  width="0" hidden="true" type="ro"  align="left" sort="str_custom" ></column>
+	  <column id="CreditNoteInvoiceForTooltip"  width="0" hidden="true"  type="ro"  align="left" sort="str_custom" ></column>
+	  <column id="InvoiceNo"  width="0" hidden="true"  type="ro"  align="left" sort="str_custom" ></column>
+    <column id="NoOfBillingDetail_Text" width="0" hidden="true"  type="ro" ></column>
+    <column id="FirstIssueInvFlag" width="0" hidden="true" type="ro"></column>
+	  <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

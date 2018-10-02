@@ -1,0 +1,187 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Controllers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Inventory.Helpers;
+
+@{
+    
+    ViewBag.Col1 = "130px;";
+    ViewBag.Col2 = "241px;";
+    ViewBag.Col3 = "140px;";
+    ViewBag.NormalTxt = "275px;";
+    ViewBag.NormalCbo = "281px;";
+    ViewBag.ProjPurSortObj = "120px;";
+    ViewBag.LongTxt = "720px;";
+    ViewBag.Midtxt = "220px;";
+    ViewBag.SysProdTxt = "300px;";
+    ViewBag.ShelfNo = "130px;"; 
+
+ }
+
+@section page_header{
+
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Inventory/IVS080.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/Dialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+<script type="text/javascript">
+    var IVS080_InventoryAreaCbo = '@Html.InventoryAreaCbo("{BlankID}", new { style = "width:281px;" })';
+    var IVS080_InventoryAreaSrinakarinCbo = '@Html.InventoryAreaSrinakarinCbo("{BlankID}", new { style = "width:281px;" })';
+    var IVS080_InventoryAreaDepoCbo = '@Html.InventoryAreaDepoCbo("{BlankID}", new { style = "width:281px;" })';
+
+    var C_MINDATE = "@ViewBag.MinDate";
+    var C_MAXDATE = "@ViewBag.MaxDate";
+</script>
+
+
+}
+
+<!-- ===================================== Specify Location =========================================== -->
+<div class="main-table" id="MainSection"> 
+    <div id="Specify Location">      
+    <div class="table-header">
+        @Resources.IVS080.lblSpecifyOffice</div> 
+        <div id = "areaSection">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;margin-left:30px">@Resources.IVS080.lblOffice
+            </div>
+            <div class="usr-object" id="divOffice" style="width:@ViewBag.NormalCbo">@Html.OfficeCbo("Office", new { style = "width:" + @ViewBag.NormalCbo })
+            @Html.Hidden("HeadOfficeCode", (string)@ViewBag.HeadOfficeCode)
+            @Html.Hidden("SrinakarinOfficeCode", (string)@ViewBag.SrinakarinOfficeCode)
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3">@Resources.IVS080.lblLocation
+            </div>
+            <div class="usr-object" id="divLocation" style="width:@ViewBag.NormalCbo">@Html.CommonTextBox("Location", (string)@ViewBag.Location, new { style = "width:" + ViewBag.NormalTxt, @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;margin-left:30px">@Resources.IVS080.lblSourceArea
+            </div>
+            <div class="usr-object" id="divSourceArea" style="width:@ViewBag.NormalCbo">@Html.InstrumentAreaCbo("SourceArea", new { style = "width:" + @ViewBag.NormalCbo }, true, "Select")
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3">@Resources.IVS080.lblDestinationArea
+            </div>
+            <div class="usr-object" id="divDestArea" style="width:@ViewBag.NormalCbo">@Html.InstrumentAreaCbo("DestinationArea", new { style = "width:" + @ViewBag.NormalCbo }, true, "Select")
+            </div>
+        </div>
+        </div> 
+        <div class="usr-row" style="height:5px;">&nbsp;</div>
+        </div> 
+        <div id = "searchSection">
+        <hr />
+        <div id="ResultSection">
+        <div class="table-header">
+            @Resources.IVS080.lblSearchInstrument</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;margin-left:30px">@Resources.IVS080.lblInstrumentCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("InstCode", null, new { style = "width:" + ViewBag.NormalTxt, maxlength = "50" })</div>
+            <div class="usr-label" style="width:@ViewBag.Col3">@Resources.IVS080.lblInstrumentName
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("InstName", null, new { style = "width:" + ViewBag.NormalTxt, maxlength = "100" })</div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;margin-left:30px">@Resources.IVS080.lblShelfNo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("ShelfNoFrom", null, new { style = "width:" + ViewBag.ShelfNo, maxlength = "50" })~
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("ShelfNoTo", null, new { style = "width:" + ViewBag.ShelfNo, maxlength = "50" })
+            </div>
+        </div>    
+    <div class="usr-row">
+        <div class="usr-object" style="float: right;">
+            @Html.CommonButton("btnSearch", @Resources.IVS080.lblBtnSearch) @Html.CommonButton("btnClear", @Resources.IVS080.lblBtnClear)
+        </div>
+    </div>     
+        <div class="usr-row" id="divInstGrid">
+            <div id="InstGrid" style="width: 99%; margin-left: 7px;">
+            </div>
+        </div>      
+    <div class="usr-clear-style">
+        &nbsp;</div>
+    </div>
+    </div> 
+</div>
+<!-- ===================================== End Specify Location ========================================-->
+<!-- ===================================== transfer stock-out repairing instrument detail =========================================== -->
+<div class="main-table" id="TransferStock">
+    <form id="instrumentDetail" action="#">
+    <div class="table-header">@Resources.IVS080.lblTransferInstrumentDetail</div>
+    <div class="usr-row" style="width:100%">
+        <div class="usr-label" style="width:@ViewBag.Col1;margin-left:30px">@Resources.IVS080.lblApproveNo
+        </div>
+        <div class="usr-object" style="width:200px">
+            @Html.CommonTextBox("ApproveNo", null, new { style = "width:200px", maxlength = "15" })</div>
+        <div id="approve_require" style="float: left">&nbsp;@Html.RequireFiled()</div>
+        <div id="lblContractCode" class="usr-label" style="width:200px;">@Resources.IVS080.lblContractCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.NormalTxt">
+            @Html.CommonTextBox("ContractCode", null, new { style = "width:200px", maxlength = "15" })</div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1; margin-left:30px">@Resources.IVS080.lblTransferDate
+        </div>
+        <div class="usr-object" style="width:618px">
+            <div class="object-unit">@Html.CommonTextBox("txtTransferDate", null, new { style = "width:100px;", maxlength = "15" })</div>
+            @Html.LabelDateFormat("txtTransferDate")
+            &nbsp;@Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1; margin-left:30px">@Resources.IVS080.lblMemo
+        </div>
+        <div class="usr-object" style="width:618px">
+            @Html.CommonTextArea("memo", null, new { style = "width:618px; height:80px", maxlength = "1000" })
+        </div>
+    </div>
+    <div class="usr-row" id="divGrid">
+        <div id="EliminateInst" style="width: 99%; margin-left: 7px;">
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+    </form>
+</div>
+<!-- ===================================== End transfer stock-out repairing instrument detail =========================================== -->
+<!-- ===================================== Show slip no. =========================================== -->
+<div class="main-table" id="ShowSlip">
+    <div class="table-header">
+        @Resources.IVS080.lblShowSlipNo</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 200px;margin-left:90px;">@Resources.IVS080.lblSlipNo
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("Slipno", null, new { @readonly = "true" }) 
+            @Html.CommonButton("Download", @Resources.IVS080.lblBtnDownloadSlip)
+            @Html.CommonButton("NewRegister", @Resources.IVS080.lblBtnNewRegister)
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<!-- ===================================== End Show slip no. =========================================== -->
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog">
+    </div>
+</div>

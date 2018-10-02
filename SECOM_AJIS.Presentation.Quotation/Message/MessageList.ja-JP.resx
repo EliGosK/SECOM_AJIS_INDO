@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="MSG2001" xml:space="preserve">
+    <value>検索条件の指定が正しくありません。日付（開始）＞日付（終了）で指定してください。</value>
+  </data>
+	<data name="MSG2002" xml:space="preserve">
+    <value>検索条件の指定が正しくありません。当該アルファベットの見積先コードを指定してください。</value>
+  </data>
+	<data name="MSG2003" xml:space="preserve">
+    <value>次の見積先コードが存在しません。 {0}</value>
+  </data>
+	<data name="MSG2004" xml:space="preserve">
+    <value>指定された見積先コードは否認されています。他の見積先コードを指定してください。</value>
+  </data>
+	<data name="MSG2005" xml:space="preserve">
+    <value>常駐明細が変更されています。変更内容を確認、または取消してから、再度登録を行ってください。</value>
+  </data>
+	<data name="MSG2006" xml:space="preserve">
+    <value>次の見積コードが存在しません。 {0}</value>
+  </data>
+	<data name="MSG2007" xml:space="preserve">
+    <value>選択したアルファベットはロックされています。アルファベットを選択し直してください。</value>
+  </data>
+	<data name="MSG2008" xml:space="preserve">
+    <value>アルファベットの桁数が2桁ではないため、アルファベットを生成できません。</value>
+  </data>
+	<data name="MSG2009" xml:space="preserve">
+    <value>無効な文字があるため、アルファベットを生成できません。</value>
+  </data>
+	<data name="MSG2010" xml:space="preserve">
+    <value>アルファベット範囲が最大値になっているため、アルファベットを生成できません。</value>
+  </data>
+	<data name="MSG2011" xml:space="preserve">
+    <value>見積プレフィックスが存在しないため、見積先コードを生成できません。</value>
+  </data>
+	<data name="MSG2012" xml:space="preserve">
+    <value>次の指定された見積先コードには見積明細が存在しません。{0}</value>
+  </data>
+	<data name="MSG2013" xml:space="preserve">
+    <value>{0}行目のこのフィールドが入力必須項目： {1}</value>
+  </data>
+	<data name="MSG2014" xml:space="preserve">
+    <value>アラーム／売却商品レンタル契約以外に対して見積は生成できません。</value>
+  </data>
+	<data name="MSG2015" xml:space="preserve">
+    <value>機器コード {0} のマスタデータが見つからないため、見積を生成できません。</value>
+  </data>
+	<data name="MSG2016" xml:space="preserve">
+    <value>機器コード {0} のレンタル単価が見つからないため、見積を生成できません。</value>
+  </data>
+	<data name="MSG2017" xml:space="preserve">
+    <value>ファイル名が正しくありません。</value>
+  </data>
+	<data name="MSG2018" xml:space="preserve">
+    <value>インポートする前にソースファイルを指定してください。</value>
+  </data>
+	<data name="MSG2019" xml:space="preserve">
+    <value>ファイル種類が正しくありません。</value>
+  </data>
+	<data name="MSG2020" xml:space="preserve">
+    <value>ファイルフォーマットが正しくありません。</value>
+  </data>
+	<data name="MSG2021" xml:space="preserve">
+    <value>顧客データが正しくありません。顧客コードと顧客明細を同時に指定することはできません。</value>
+  </data>
+	<data name="MSG2022" xml:space="preserve">
+    <value>物件／納入先データが正しくありません。物件コードと物件／納入先明細を同時に指定することはできません。</value>
+  </data>
+	<data name="MSG2023" xml:space="preserve">
+    <value>このデータをインポートする権限がありません。</value>
+  </data>
+	<data name="MSG2024" xml:space="preserve">
+    <value>インポートファイル上の契約先／納入先データが存在しません。</value>
+  </data>
+	<data name="MSG2025" xml:space="preserve">
+    <value>顧客ロール区分コードが間違っています。</value>
+  </data>
+	<data name="MSG2026" xml:space="preserve">
+    <value>顧客データ数が間違っています。</value>
+  </data>
+	<data name="MSG2027" xml:space="preserve">
+    <value>機器コード{0}の設置数が前の機器明細と一致しません。</value>
+  </data>
+	<data name="MSG2028" xml:space="preserve">
+    <value>ファイルサイズは最大3MBまでです。</value>
+  </data>
+	<data name="MSG2029" xml:space="preserve">
+    <value>プランチェック日は未来日付ではいけません。</value>
+  </data>
+	<data name="MSG2030" xml:space="preserve">
+    <value>お客様の顧客コードが指定されていないため、物件／納入先情報が取得できません。</value>
+  </data>
+	<data name="MSG2031" xml:space="preserve">
+    <value>プラン承認日は未来日付ではいけません。</value>
+  </data>
+	<data name="MSG2032" xml:space="preserve">
+    <value>機器コード{0}の変更前設置数、及び撤去数は0にしなければなりません。</value>
+  </data>
+	<data name="MSG2033" xml:space="preserve">
+    <value>紹介元コードは、お客様紹介、社内紹介の取得タイプに対してのみ使用します。</value>
+  </data>
+	<data name="MSG2034" xml:space="preserve">
+    <value>旧契約コードは、売却の商品種類の場合指定できません。</value>
+  </data>
+	<data name="MSG2035" xml:space="preserve">
+    <value>物件コードが指定されていますが、お客様の顧客コードは指定されていません。</value>
+  </data>
+	<data name="MSG2036" xml:space="preserve">
+    <value>物件／納入先データが存在しません。</value>
+  </data>
+	<data name="MSG2037" xml:space="preserve">
+    <value>見積社員番号が存在しません。</value>
+  </data>
+	<data name="MSG2038" xml:space="preserve">
+    <value>旧契約コードが存在しません。</value>
+  </data>
+	<data name="MSG2039" xml:space="preserve">
+    <value>旧契約コードはアラーム／売却オンライン／売却商品レンタル契約コードでなければなりません。</value>
+  </data>
+	<data name="MSG2040" xml:space="preserve">
+    <value>旧契約コードは巡回／常駐契約コードでなければなりません。</value>
+  </data>
+	<data name="MSG2041" xml:space="preserve">
+    <value>旧契約コードは保守契約コードでなければなりません。</value>
+  </data>
+	<data name="MSG2042" xml:space="preserve">
+    <value>保守の対象として指定した契約コードのお客様／物件と本見積先コードに登録されているお客様／物件が異なっています。本見積先コードのお客様／物件の登録が間違である場合は、見積先コードの取り直しを行ってください。</value>
+  </data>
+	<data name="MSG2043" xml:space="preserve">
+    <value>売買契約、またはアラーム契約／売却オンライン／売却商品レンタル契約コードを指定してください。</value>
+  </data>
+	<data name="MSG2044" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2045" xml:space="preserve">
+    <value>指定された契約コードが既に保守対象契約コード一覧に存在しています。</value>
+  </data>
+	<data name="MSG2046" xml:space="preserve">
+    <value>この商品にはデフォルト機器が登録されていません。</value>
+  </data>
+	<data name="MSG2047" xml:space="preserve">
+    <value>システムは、入力された全ての機器明細をクリアし、デフォルト機器を表示します。よろしいですか？</value>
+  </data>
+	<data name="MSG2048" xml:space="preserve">
+    <value>商品コードを指定してください。</value>
+  </data>
+	<data name="MSG2049" xml:space="preserve">
+    <value>この商品にはデフォルト設備が登録されていません。</value>
+  </data>
+	<data name="MSG2050" xml:space="preserve">
+    <value>システムは、入力された全ての設備明細をクリアし、デフォルトの設備を表示します。よろしいですか？</value>
+  </data>
+	<data name="MSG2051" xml:space="preserve">
+    <value>お客様が指定されていませんが、メモに登録があります。</value>
+  </data>
+	<data name="MSG2052" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2053" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2054" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2055" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2056" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2057" xml:space="preserve">
+    <value>連係元売買契約コードを指定してください。</value>
+  </data>
+	<data name="MSG2058" xml:space="preserve">
+    <value>見積先コードを指定してください。</value>
+  </data>
+	<data name="MSG2059" xml:space="preserve">
+    <value>設置機器数の合計＞「0」でなければなりません。</value>
+  </data>
+	<data name="MSG2060" xml:space="preserve">
+    <value>指定された見積先コードは成約承認されています。契約コードを指定してください。</value>
+  </data>
+	<data name="MSG2061" xml:space="preserve">
+    <value>指定された契約コードは取消されています。他の契約コードを指定してください。</value>
+  </data>
+	<data name="MSG2062" xml:space="preserve">
+    <value>少なくとも1つのレコードに機器個数＞0を指定してください。</value>
+  </data>
+	<data name="MSG2063" xml:space="preserve">
+    <value>警備面積（終了）＞警備面積（開始）を指定してください。</value>
+  </data>
+	<data name="MSG2064" xml:space="preserve">
+    <value>一時採用、または仮採用機器が入力されているので、決裁番号が入力必須項目になります。</value>
+  </data>
+	<data name="MSG2065" xml:space="preserve">
+    <value>機器コード{0}は個数＞0でなければなりません。</value>
+  </data>
+	<data name="MSG2069" xml:space="preserve">
+    <value>機器コード {0} は商品コード {1} に使用できません。</value>
+  </data>
+	<data name="MSG2074" xml:space="preserve">
+    <value>{0}行目の月間日数が存在しません。</value>
+  </data>
+	<data name="MSG2075" xml:space="preserve">
+    <value>{0}行目の次の設備明細は入力必須項目です：{1}</value>
+  </data>
+	<data name="MSG2080" xml:space="preserve">
+    <value>商品コード {0} は存在しません。</value>
+  </data>
+	<data name="MSG2081" xml:space="preserve">
+    <value>商品コード {0} は販売適用期間を過ぎました。処理を進めますか？</value>
+  </data>
+	<data name="MSG2082" xml:space="preserve">
+    <value>契約コード {0} は1回以上指定されています。</value>
+  </data>
+	<data name="MSG2066" xml:space="preserve">
+    <value>機器コード{0}は追加設置数＞0でなければなりません。</value>
+  </data>
+	<data name="MSG2067" xml:space="preserve">
+    <value>機器コード{0}の撤去数は変更前設置数以下で指定しなければなりません。</value>
+  </data>
+	<data name="MSG2068" xml:space="preserve">
+    <value>{0}行目の常駐区分が存在しません。</value>
+  </data>
+	<data name="MSG2070" xml:space="preserve">
+    <value>保険金額と月額保険料を指定するために、保険種類を指定してください。</value>
+  </data>
+	<data name="MSG2071" xml:space="preserve">
+    <value>設備コード {0} は個数＞0で指定しなければなりません。</value>
+  </data>
+	<data name="MSG2072" xml:space="preserve">
+    <value>設備コード {0} は商品 {1} に対して使用できません。</value>
+  </data>
+	<data name="MSG2073" xml:space="preserve">
+    <value>商品コードは、旧契約と同じく{0}を設定しなければなりません。</value>
+  </data>
+	<data name="MSG2083" xml:space="preserve">
+    <value>新築管理費は、新築で、かつ新築管理区分が「要」の場合のみ入力対象となります。</value>
+  </data>
+	<data name="MSG2079" xml:space="preserve">
+    <value>{0}行目の次の機器明細は入力必須項目です：{1}</value>
+  </data>
+	<data name="MSG2076" xml:space="preserve">
+    <value>保守対象商品は、旧契約と同じ商品を設定しなければなりません。</value>
+  </data>
+	<data name="MSG2077" xml:space="preserve">
+    <value>売却オンライン契約コードは、旧契約と同じく{0}を設定しなければなりません。</value>
+  </data>
+	<data name="MSG2078" xml:space="preserve">
+    <value>{0}行目の次の常駐明細は入力必須項目です：{1}</value>
+  </data>
+	<data name="MSG2093" xml:space="preserve">
+    <value>顧客ロール区分コードが重複しています。</value>
+  </data>
+	<data name="MSG2086" xml:space="preserve">
+    <value>機器コード {0} が1回以上指定されています。</value>
+  </data>
+	<data name="MSG2087" xml:space="preserve">
+    <value>{0}は範囲外({1}~{2})。</value>
+  </data>
+	<data name="MSG2088" xml:space="preserve">
+    <value>機器コード {0} の{1}は範囲外({2}~{3})。</value>
+  </data>
+	<data name="MSG2090" xml:space="preserve">
+    <value>設備コード {0} が1回以上指定されています。</value>
+  </data>
+	<data name="MSG2091" xml:space="preserve">
+    <value>設備コード {0} の{1}は範囲外({2}~{3}).</value>
+  </data>
+	<data name="MSG2089" xml:space="preserve">
+    <value>{0}行目の{1}は範囲外({2}~{3}).</value>
+  </data>
+	<data name="MSG2084" xml:space="preserve">
+    <value>次のデータ種類は正しくありません：{0}</value>
+  </data>
+	<data name="MSG2085" xml:space="preserve">
+    <value>次の契約データが見つかりません：{0}</value>
+  </data>
+	<data name="MSG2092" xml:space="preserve">
+    <value>設置済み機器コード {0} が当該機器明細に入っていません。</value>
+  </data>
+</root>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="PaymentTransNo" width="100" type="ro" align="center" sort="str_custom">gridHeaderPaymentTransNo</column>
+    <column id="PaymentType" width="70" type="ro" align="center"  sort="str_custom">gridHeaderPaymentType</column>
+    <column id="PaymentDate" width="90" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date" >gridHeaderPaymentDate</column>
+    <column id="PayerAndMatchR" width="*" type="ro" align="left" sort="str_custom">gridHeaderPayerName</column>
+    <column id="PaymentAmountShow" width="160" type="edn" align="right" sort="int">gridHeaderFirstPaymentAmount</column>
+    <column id="MatchableBalanceShow" width="160" type="edn" align="right" sort="int">gridHeaderMatchableBalance</column>
+    <column id="InvoiceReceiptGrid" width="130" type="ro" align="left" sort="str_custom">gridHeaderInvoiceReceipt</column>
+    <column id="PromissoryNoteGrid" width="100" type="ro" align="left" sort="str_custom">gridHeaderPromissoryNoteGrid</column>
+    <column id="SendingBankName" width="80" type="ro" align="left" sort="str_custom">gridHeaderSendingBank</column>
+    <column id="Memo" width="80" type="ro" align="left" sort="str_custom">gridHeaderMemo</column>
+    <column id="Select" width="30" type="link" align="center" sort="na">gridHeaderSelect</column>
+   
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+    <column id="DeleteFlag" width="30" type="ch" hidden="true"></column>
+    <column id="RefInvoiceNo" width="30" type="ro" hidden="true"></column>
+    <column id="MatchableBalanceVal" width="30" type="ro" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+
+
+
+
+
+
+
+
+

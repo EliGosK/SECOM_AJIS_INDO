@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column width="30" type="ro" align="center" sort="na">headerNo</column>
+    <column id="OCC" width="45" type="ro"  sort="int" align="left">headerOcc</column>
+    <column id="RegistrationDate" width="100" type="dhxCalendar" format="%d-%b-%Y"   align="left" sort="date">headerReg</column>
+    <column id="OperationDueDate" width="130" type="dhxCalendar" format="%d-%b-%Y"  align="left" sort="date">headerOpDatDueDat</column>
+    <!--<column id="DueDate_ApproveNo" width="130" type="ro" align="left" sort="str_custom">headerOpDatDueDat</column>-->
+    <!--<column id="ChangeType_View" width="*" type="ro"  sort="str_custom" align="left">headerChgTypeIncdArType</column>-->
+    <column id="ChangeType_ApproveNo" width="*" type="ro"  sort="str_custom" align="left">headerChgTypeIncdArType</column>
+
+    <column id="FEE_View" width="205" type="ro"  sort="na" align="left">headerFeeTHB</column>
+    <column id="DocAudit_View" width="120" type="ro"  sort="str_custom" align="left">headerDocAudResult</column>
+    <column id="DocumentName_View" width="120" type="ro"  sort="str_custom" align="left">headerContDocType</column>
+
+    <column id="SecurityBasic" width="35" type="ro"  sort="na" align="center">headerSecBasc</column>
+    <column id="SecurityDetail" width="35" type="ro"  sort="na" align="center">headerSecDtl</column>
+    <column id="IncidentAR" width="35" type="ro"  sort="na" align="center">headerIncdAR</column>
+
+
+
+
+    <!-- Hidden 11 -->
+    <column id="ChangeIncidentARtype" width="*" type="ro" hidden="true"></column>
+    
+    <column id="ContractType" width="*"  hidden="true" type="ro"></column>
+    <column id="IncidentID" width="*"  hidden="true" type="ro"></column>
+    <column id="RequestNo" width="*" hidden="true"  type="ro"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

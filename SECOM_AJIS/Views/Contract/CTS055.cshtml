@@ -1,0 +1,18 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+
+
+@section page_header{
+ 
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS055.js")" ></script>
+}
+
+<div class="table-header">
+    <form id="CTS055_Search" action='#' >
+        @Html.Partial("_ContractCancel")
+    </form>
+</div>

@@ -1,0 +1,2593 @@
+﻿//*********************************
+// Create by Songwut Chitipanich: 
+// Create date: /AUG/2010
+// Update date: /AUG/2010
+//*********************************
+
+using System;
+using System.Web;
+using System.Web.Mvc;
+
+using System.Data.Objects;
+using System.Collections.Generic;
+using System.Linq;
+using System.IO;
+using System.Text;
+using System.Xml;
+
+using CSI.WindsorHelper;
+using SECOM_AJIS.Presentation.Contract.Models;
+
+using SECOM_AJIS.Common.ActionFilters;
+using SECOM_AJIS.Common.Util;
+using SECOM_AJIS.Common.Models;
+using SECOM_AJIS.Common.Util.ConstantValue;
+using SECOM_AJIS.Common.Controllers;
+
+using SECOM_AJIS.DataEntity.Contract;
+using SECOM_AJIS.DataEntity.Common;
+using SECOM_AJIS.DataEntity.Master;
+using SECOM_AJIS.DataEntity.Quotation;
+using SECOM_AJIS.Common.Helpers;
+using SECOM_AJIS.DataEntity.Billing;
+
+namespace SECOM_AJIS.Presentation.Contract.Controllers
+{
+    public partial class ContractController : BaseController
+    {
+        private const int C_EMAIL_LENGTH = 50;
+        private string emailSuffix = null;
+
+        public ActionResult CTS053_Authority(CTS053_ScreenParameter param)
+        {
+            ObjectResultData res = new ObjectResultData();
+            try {
+                CommonUtil util = new CommonUtil();
+                ICommonHandler commonHandler = ServiceContainer.GetService<ICommonHandler>() as ICommonHandler;
+                IRentralContractHandler renderHandler = ServiceContainer.GetService<IRentralContractHandler>() as IRentralContractHandler;
+
+                //1.1 Check suspending
+                if (commonHandler.IsSystemSuspending())
+                {
+                    res.AddErrorMessage("Common", MessageUtil.MessageList.MSG0049, null, null);
+                    return Json(res);
+                }
+
+                //1.2 Check user's permission
+                if (!CheckUserPermission(ScreenID.C_SCREEN_ID_CP12_CHANGE_FEE, FunctionID.C_FUNC_ID_OPERATE))
+                {
+                    res.AddErrorMessage("Common", MessageUtil.MessageList.MSG0053, null, null);
+                    return Json(res);
+                }
+
+                // Check parameter
+                if ((param == null)
+                    || (String.IsNullOrEmpty(param.ContractCode)))
+                {
+                    // Not valid
+                    //res.AddErrorMessage("Common", MessageUtil.MessageList.MSG0011, new string[] { "Contract Code" }, null);
+                    res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0147, null, null);
+                    return Json(res);
+                }
+
+                // Check is contact exists
+                var contractObj = renderHandler.GetTbt_RentalContractBasic(util.ConvertContractCode(param.ContractCode, CommonUtil.CONVERT_TYPE.TO_LONG), null);
+                if ((contractObj == null)
+                    || (contractObj.Count == 0))
+                {
+                    // Not found
+                    //res.AddErrorMessage("Common", MessageUtil.MessageList.MSG0011, new string[] { String.Format("Contract Code: {0}", param.ContractCode) }, null);
+                    res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0124, null, null);
+                    return Json(res);
+                }
+
+                if (CommonUtil.dsTransData.dtOfficeData.FindAll(delegate(OfficeDataDo s) { return s.OfficeCode == contractObj[0].ContractOfficeCode; }).Count == 0)
+                {
+                    res.AddErrorMessage("Common", MessageUtil.MessageList.MSG0063, null, null);
+                    return Json(res);
+                }
+
+                if (CommonUtil.dsTransData.dtOfficeData.FindAll(delegate(OfficeDataDo s) { return s.OfficeCode == contractObj[0].OperationOfficeCode; }).Count == 0)
+                {
+                    res.AddErrorMessage("Common", MessageUtil.MessageList.MSG0063, null, null);
+                    return Json(res);
+                }
+
+                string strOcc = renderHandler.GetLastUnimplementedOCC(contractObj[0].ContractCode);
+                if (String.IsNullOrEmpty(strOcc))
+                    strOcc = renderHandler.GetLastImplementedOCC(contractObj[0].ContractCode);
+
+                if (String.IsNullOrEmpty(strOcc))
+                {
+                    res.AddErrorMessage("Contract", MessageUtil.MessageList.MSG3053, null, null);
+                    return Json(res);
+                }
+
+                var rentralContractOcc = renderHandler.GetEntireContract(contractObj[0].ContractCode, strOcc);
+                if (rentralContractOcc.dtTbt_RentalSecurityBasic[0].ImplementFlag == FlagType.C_FLAG_OFF)
+                {
+                    res.AddErrorMessage("Contract", MessageUtil.MessageList.MSG3039, null, null);
+                    return Json(res);
+                }
+
+                if ((rentralContractOcc.dtTbt_RentalSecurityBasic[0].ChangeType == RentalChangeType.C_RENTAL_CHANGE_TYPE_ALTERNATIVE_START ||
+                    rentralContractOcc.dtTbt_RentalSecurityBasic[0].ChangeType == RentalChangeType.C_RENTAL_CHANGE_TYPE_END_CONTRACT ||
+                    rentralContractOcc.dtTbt_RentalSecurityBasic[0].ChangeType == RentalChangeType.C_RENTAL_CHANGE_TYPE_CANCEL ||
+                    rentralContractOcc.dtTbt_RentalSecurityBasic[0].ChangeType == RentalChangeType.C_RENTAL_CHANGE_TYPE_TERMINATED) &&
+                    rentralContractOcc.dtTbt_RentalContractBasic[0].ContractStatus == ContractStatus.C_CONTRACT_STATUS_AFTER_START)
+                {
+                    res.AddErrorMessage("Contract", MessageUtil.MessageList.MSG3042, null, null);
+                    return Json(res);
+                }
+
+                InitialScreenSession_CTS053(param);
+                param.ContractCode = util.ConvertContractCode(param.ContractCode, CommonUtil.CONVERT_TYPE.TO_LONG);
+
+                return InitialScreenEnvironment<CTS053_ScreenParameter>("CTS053", param, res);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        #region Event
+
+        public ActionResult RemoveMailClick_CTS053(CTS053_DOEmailData doCTS053Email)
+        {
+            List<CTS053_DOEmailData> listEmailDelete;
+            ObjectResultData res = new ObjectResultData();
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                listEmailDelete = session.ListDOEmail.FindAll(delegate(CTS053_DOEmailData s) { return s.EmailAddress == doCTS053Email.EmailAddress; });
+                if (listEmailDelete.Count() != 0)
+                    session.ListDOEmail.Remove(listEmailDelete[0]);
+
+                res.ResultData = CommonUtil.ConvertToXml<CTS053_DOEmailData>(session.ListDOEmail, "Contract\\CTS053Email", CommonUtil.GRID_EMPTY_TYPE.INSERT);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex); ;
+            }
+
+            if (!res.HasResultData)
+            {
+                res.ResultData = CommonUtil.ConvertToXml<Object>(null, "Contract\\CTS053Email", CommonUtil.GRID_EMPTY_TYPE.INSERT);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult RemoveChangePlanGridBilling_CTS053(string sequence)
+        {
+            ObjectResultData res = new ObjectResultData();
+            CTS053_DOBillingTargetDetailData doBillingTargetDetail;
+            List<CTS053_DOBillingTargetGridData> listDoChangePlanGrid;
+            List<dtBillingTempChangePlanData> listBillingTemp;
+            dsRentalContractData dsRentalContract;
+
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                doBillingTargetDetail = new CTS053_DOBillingTargetDetailData();
+                listDoChangePlanGrid = session.ListDOBillingTargetGrid;
+                listBillingTemp = session.ListDTBillingTempChangePlan;
+
+                foreach (var item in listDoChangePlanGrid)
+                {
+                    if (item.Sequence == sequence)
+                    {
+                        listDoChangePlanGrid.Remove(item);
+                        break;
+                    }
+                }
+
+                foreach (var item in listBillingTemp)
+                {
+                    if (item.Sequence == sequence)
+                    {
+                        item.Status = "Delete";
+                    }
+                }
+
+                dsRentalContract = session.DSRentalContract;
+                if (dsRentalContract.dtTbt_RentalContractBasic[0].ContractStatus == SECOM_AJIS.Common.Util.ConstantValue.ContractStatus.C_CONTRACT_STATUS_BEF_START)
+                    res.ResultData = CommonUtil.ConvertToXml<CTS053_DOBillingTargetGridData>(listDoChangePlanGrid, "Contract\\CTS053BillingBeforeStart", CommonUtil.GRID_EMPTY_TYPE.SEARCH);
+                else
+                    res.ResultData = CommonUtil.ConvertToXml<CTS053_DOBillingTargetGridData>(listDoChangePlanGrid, "Contract\\CTS053BillingAfterStart", CommonUtil.GRID_EMPTY_TYPE.SEARCH);
+
+                session.ListDOBillingTargetGrid = listDoChangePlanGrid;
+            }
+            catch (Exception ex)
+            {                
+                res.AddErrorMessage(ex);
+            }
+
+            if (!res.HasResultData)
+            {
+                res.ResultData = CommonUtil.ConvertToXml<Object>(null, "Contract\\CTS053BillingBeforeStart", CommonUtil.GRID_EMPTY_TYPE.SEARCH);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult RetrieveBillingTargetClick_CTS053(CTS053_DORetrieveBillingTargetData doRetrieveBillingTarget)
+        {
+            CommonUtil common;
+            ObjectResultData res = new ObjectResultData();
+            IBillingInterfaceHandler billinginterfacehandler = ServiceContainer.GetService<IBillingInterfaceHandler>() as IBillingInterfaceHandler;
+            //TemporaryBilling.BillingTarget billingTarget;
+            IBillingMasterHandler billingHandler;
+
+            tbt_BillingTarget dtBillingTarget = null;
+            CTS053_DTBillingClientDetailData dtBillingClientDetail;
+            dtBillingClientData dtBillingClientDetailTemporary;
+            CTS053_DOBillingTargetDetailData doBillingTargetDetail;
+
+            CTS053_ScreenParameter session;
+            try
+            {
+                common = new CommonUtil();
+                session = CTS053_GetImportData();
+                billingHandler = ServiceContainer.GetService<IBillingMasterHandler>() as IBillingMasterHandler;
+
+                doBillingTargetDetail = new CTS053_DOBillingTargetDetailData();
+                
+                //dtBillingTarget = billinginterfacehandler.GetBillingTarget(common.ConvertBillingTargetCode(doRetrieveBillingTarget.BillingTargetCode, CommonUtil.CONVERT_TYPE.TO_LONG));
+                List<tbt_BillingTarget> dtBillingTargetList = billinginterfacehandler.GetBillingTarget(common.ConvertBillingTargetCode(doRetrieveBillingTarget.BillingTargetCode, CommonUtil.CONVERT_TYPE.TO_LONG));
+                if (dtBillingTargetList != null && dtBillingTargetList.Count > 0)
+                    dtBillingTarget = dtBillingTargetList[0];
+
+                if (dtBillingTarget == null)
+                {
+                    string[] param = { "Billing target code" };
+                    res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                    res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0011, "Billing target code");
+                    res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0011, param, null);
+                }
+                else
+                {
+                    dtBillingClientDetail = new CTS053_DTBillingClientDetailData();
+                    dtBillingClientDetailTemporary = billingHandler.GetBillingClient(dtBillingTarget.BillingClientCode)[0];
+                    dtBillingClientDetail.BillingClientCode = dtBillingClientDetailTemporary.BillingClientCode;
+                    dtBillingClientDetail.BillingOffice = dtBillingTarget.BillingOfficeCode; //รอถามอีกทีนึง;
+                    dtBillingClientDetail.FullNameEN = dtBillingClientDetailTemporary.FullNameEN;
+                    dtBillingClientDetail.BranchNameEN = dtBillingClientDetailTemporary.BranchNameEN;
+                    dtBillingClientDetail.AddressEN = dtBillingClientDetailTemporary.AddressEN;
+                    dtBillingClientDetail.FullNameLC = dtBillingClientDetailTemporary.FullNameLC;
+                    dtBillingClientDetail.BranchNameLC = dtBillingClientDetailTemporary.BranchNameLC;
+                    dtBillingClientDetail.AddressLC = dtBillingClientDetailTemporary.AddressLC;
+                    dtBillingClientDetail.NationalityEN = dtBillingClientDetailTemporary.NationalityEN; //Wait for edit to Nationality which follow culture from billingTemp;
+                    dtBillingClientDetail.PhoneNo = dtBillingClientDetailTemporary.PhoneNo;
+                    dtBillingClientDetail.BusinessTypeNameEN = dtBillingClientDetailTemporary.BusinessTypeNameEN; //Wait for edit to BusinessTypeName which follow culture from billingTemp;
+                    dtBillingClientDetail.IDNo = dtBillingClientDetailTemporary.IDNo;
+
+                    doBillingTargetDetail.BillingTargetCodeDetail = doRetrieveBillingTarget.BillingTargetCode;
+                    doBillingTargetDetail.BillingClientCodeDetail = dtBillingClientDetailTemporary.BillingClientCode;
+                    doBillingTargetDetail.BillingOffice = dtBillingTarget.BillingOfficeCode;
+                    doBillingTargetDetail.FullNameEN = dtBillingClientDetail.FullNameEN;
+                    doBillingTargetDetail.BranchNameEN = dtBillingClientDetail.BranchNameEN;
+                    doBillingTargetDetail.AddressEN = dtBillingClientDetail.AddressEN;
+                    doBillingTargetDetail.FullNameLC = dtBillingClientDetail.FullNameLC;
+                    doBillingTargetDetail.BranchNameLC = dtBillingClientDetail.BranchNameLC;
+                    doBillingTargetDetail.AddressLC = dtBillingClientDetail.AddressLC;
+                    doBillingTargetDetail.Nationality = dtBillingClientDetail.NationalityEN; //Wait for edit to Nationality which follow culture from billingTemp;
+                    doBillingTargetDetail.PhoneNo = dtBillingClientDetail.PhoneNo;
+                    doBillingTargetDetail.BusinessType = dtBillingClientDetail.BusinessTypeNameEN; //Wait for edit to BusinessTypeName which follow culture from billingTemp;
+                    doBillingTargetDetail.IDNo = dtBillingClientDetail.IDNo;
+
+                    if (doRetrieveBillingTarget.Mode == "Update")
+                    {
+                        doBillingTargetDetail.Sequence = session.DOBillingTargetDetail.Sequence;
+                        dtBillingClientDetail.Sequence = session.DOBillingTargetDetail.Sequence;
+                    }
+                    else
+                        dtBillingClientDetail.BillingClientCode = "";
+
+                    session.DOBillingTargetDetail = doBillingTargetDetail;
+                    session.DTBillingClientDetail = dtBillingClientDetail;
+
+                    return Json(doBillingTargetDetail);
+                }
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult RetrieveBillingClientClick_CTS053(CTS053_DORetrieveBillingClientData doRetrieveBillingClient)
+        {
+            CommonUtil common;
+            ObjectResultData res = new ObjectResultData();
+            IBillingMasterHandler billingHandler;
+
+            List<dtBillingClientData> dtBillingClientDetailTemporary;
+            CTS053_DTBillingClientDetailData dtBillingClientDetail;
+            CTS053_DOBillingTargetDetailData doBillingTargetDetail;
+            CTS053_ScreenParameter session;
+            try
+            {
+                common = new CommonUtil();
+                session = CTS053_GetImportData();
+                billingHandler = ServiceContainer.GetService<IBillingMasterHandler>() as IBillingMasterHandler;
+
+                doBillingTargetDetail = new CTS053_DOBillingTargetDetailData();
+                dtBillingClientDetail = new CTS053_DTBillingClientDetailData();
+                dtBillingClientDetailTemporary = billingHandler.GetBillingClient(common.ConvertBillingClientCode(doRetrieveBillingClient.BillingClientCode, CommonUtil.CONVERT_TYPE.TO_LONG));
+
+                if (dtBillingClientDetailTemporary.Count() == 0)
+                {
+                    string[] param = { "Billing client code" };
+                    res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                    res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0011, "Billing client code");
+                    res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0011, param, null);
+                }
+                else
+                {
+                    dtBillingClientDetail.BillingClientCode = dtBillingClientDetailTemporary[0].BillingClientCode;
+                    dtBillingClientDetail.BillingOffice = ""; //รอถามอีกทีนึง;
+                    dtBillingClientDetail.FullNameEN = dtBillingClientDetailTemporary[0].FullNameEN;
+                    dtBillingClientDetail.BranchNameEN = dtBillingClientDetailTemporary[0].BranchNameEN;
+                    dtBillingClientDetail.AddressEN = dtBillingClientDetailTemporary[0].AddressEN;
+                    dtBillingClientDetail.FullNameLC = dtBillingClientDetailTemporary[0].FullNameLC;
+                    dtBillingClientDetail.BranchNameLC = dtBillingClientDetailTemporary[0].BranchNameLC;
+                    dtBillingClientDetail.AddressLC = dtBillingClientDetailTemporary[0].AddressLC;
+                    dtBillingClientDetail.NationalityEN = dtBillingClientDetailTemporary[0].NationalityEN; //Wait for edit to Nationality which follow culture from billingTemp;
+                    dtBillingClientDetail.PhoneNo = dtBillingClientDetailTemporary[0].PhoneNo;
+                    dtBillingClientDetail.BusinessTypeNameEN = dtBillingClientDetailTemporary[0].BusinessTypeNameEN; //Wait for edit to BusinessTypeName which follow culture from billingTemp;
+                    dtBillingClientDetail.IDNo = dtBillingClientDetailTemporary[0].IDNo;
+                    doBillingTargetDetail.BillingTargetCodeDetail = "";
+
+                    if (doRetrieveBillingClient.Mode == "Update")
+                    {
+                        doBillingTargetDetail.Sequence = session.DOBillingTargetDetail.Sequence;
+                        dtBillingClientDetail.Sequence = session.DOBillingTargetDetail.Sequence;
+                    }
+                    else
+                    {
+                        dtBillingClientDetail.BillingClientCode = doRetrieveBillingClient.BillingClientCode;
+                        doBillingTargetDetail.BillingClientCodeDetail = doRetrieveBillingClient.BillingClientCode;
+                    }
+
+                    doBillingTargetDetail.FullNameEN = dtBillingClientDetail.FullNameEN;
+                    doBillingTargetDetail.BranchNameEN = dtBillingClientDetail.BranchNameEN;
+                    doBillingTargetDetail.AddressEN = dtBillingClientDetail.AddressEN;
+                    doBillingTargetDetail.FullNameLC = dtBillingClientDetail.FullNameLC;
+                    doBillingTargetDetail.BranchNameLC = dtBillingClientDetail.BranchNameLC;
+                    doBillingTargetDetail.AddressLC = dtBillingClientDetail.AddressLC;
+                    doBillingTargetDetail.Nationality = dtBillingClientDetail.NationalityEN; //Wait for edit to Nationality which follow culture from billingTemp;
+                    doBillingTargetDetail.PhoneNo = dtBillingClientDetail.PhoneNo;
+                    doBillingTargetDetail.BusinessType = dtBillingClientDetail.BusinessTypeNameEN; //Wait for edit to BusinessTypeName which follow culture from billingTemp;
+                    doBillingTargetDetail.IDNo = dtBillingClientDetail.IDNo;
+
+                    session.DOBillingTargetDetail = doBillingTargetDetail;
+                    session.DTBillingClientDetail = dtBillingClientDetail;
+
+                    return Json(doBillingTargetDetail);
+                }
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult NewClick_CTS053()
+        {
+            ObjectResultData res = new ObjectResultData();
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                //ทำการ Clear ค่าในส่วนของ BillingClient เเละ Detail ที่อาจจะมีการเก็บไว้จาก Flow อื่น
+                session = CTS053_GetImportData();
+                session.DOBillingTargetDetail = null;
+                session.DTBillingClientDetail = null;
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult CopyNameClick_CTS053(CTS053_DOCopyNameCondition doCopyNameCondition)
+        {
+            ObjectResultData res = new ObjectResultData();
+
+            IMasterHandler masterHandler;
+            CTS053_DOBillingTargetDetailData doBillingTargetDetail;
+            dsRentalContractData dsRentalContract;
+
+            List<tbm_Customer> listCustomer;
+            CTS053_DTBillingClientDetailData dtBillingClientDetail;
+            List<doGetTbm_Site> listSite;
+
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                masterHandler = ServiceContainer.GetService<IMasterHandler>() as IMasterHandler;
+                dsRentalContract = session.DSRentalContract;
+
+                if (doCopyNameCondition.Mode == "Update")
+                {
+                    session.DOBillingTargetDetailCopy = CommonUtil.CloneObject<CTS053_DOBillingTargetDetailData, CTS053_DOBillingTargetDetailData>(session.DOBillingTargetDetail);
+                    session.DTBillingClientDetailCopy = CommonUtil.CloneObject<CTS053_DTBillingClientDetailData, CTS053_DTBillingClientDetailData>(session.DTBillingClientDetail);
+
+                    doBillingTargetDetail = session.DOBillingTargetDetailCopy;
+                    dtBillingClientDetail = session.DTBillingClientDetailCopy;
+                }
+                else
+                {
+                    doBillingTargetDetail = new CTS053_DOBillingTargetDetailData();
+                    dtBillingClientDetail = new CTS053_DTBillingClientDetailData();
+                }
+
+                if (doBillingTargetDetail.Status == "ADD")
+                {
+                    doBillingTargetDetail.BillingClientCodeDetail = "";
+                    doBillingTargetDetail.BillingTargetCodeDetail = "";
+                }
+
+                if (doCopyNameCondition.RdoType == "0")
+                {
+                    if (dsRentalContract.dtTbt_RentalContractBasic != null)
+                    {
+                        listCustomer = masterHandler.GetTbm_Customer(dsRentalContract.dtTbt_RentalContractBasic[0].ContractTargetCustCode);
+                        dtBillingClientDetail.NameEN = listCustomer[0].CustNameEN;
+                        dtBillingClientDetail.NameLC = listCustomer[0].CustNameLC;
+                        dtBillingClientDetail.FullNameEN = listCustomer[0].CustFullNameEN;
+                        dtBillingClientDetail.FullNameLC = listCustomer[0].CustFullNameLC;
+                        dtBillingClientDetail.AddressEN = listCustomer[0].AddressFullEN;
+                        dtBillingClientDetail.AddressLC = listCustomer[0].AddressFullLC;
+                        dtBillingClientDetail.RegionCode = listCustomer[0].RegionCode;
+                        dtBillingClientDetail.PhoneNo = listCustomer[0].PhoneNo;
+                        dtBillingClientDetail.BusinessTypeCode = listCustomer[0].BusinessTypeCode;
+                        dtBillingClientDetail.IDNo = listCustomer[0].IDNo;
+                        dtBillingClientDetail.CustTypeCode = listCustomer[0].CustTypeCode;
+
+                        doBillingTargetDetail.FullNameEN = dtBillingClientDetail.FullNameEN;
+                        doBillingTargetDetail.FullNameLC = dtBillingClientDetail.FullNameLC;
+                        doBillingTargetDetail.AddressEN = dtBillingClientDetail.AddressEN;
+                        doBillingTargetDetail.AddressLC = dtBillingClientDetail.AddressLC;
+                        doBillingTargetDetail.PhoneNo = dtBillingClientDetail.PhoneNo;
+                        doBillingTargetDetail.BusinessType = dtBillingClientDetail.BusinessTypeNameEN; //Wait for edit to BusinessTypeName which follow culture from billingTemp;
+                        doBillingTargetDetail.IDNo = dtBillingClientDetail.IDNo;
+                    }
+                }
+
+                if (doCopyNameCondition.RdoType == "1")
+                {
+                    if (dsRentalContract.dtTbt_RentalContractBasic != null)
+                    {
+                        listCustomer = masterHandler.GetTbm_Customer(dsRentalContract.dtTbt_RentalContractBasic[0].ContractTargetCustCode);
+                        dtBillingClientDetail.NameEN = listCustomer[0].CustNameEN;
+                        dtBillingClientDetail.NameLC = listCustomer[0].CustNameLC;
+                        dtBillingClientDetail.FullNameEN = listCustomer[0].CustFullNameEN;
+                        dtBillingClientDetail.FullNameLC = listCustomer[0].CustFullNameLC;
+                        dtBillingClientDetail.BranchNameEN = dsRentalContract.dtTbt_RentalContractBasic[0].BranchNameEN;
+                        dtBillingClientDetail.BranchNameLC = dsRentalContract.dtTbt_RentalContractBasic[0].BranchNameLC;
+                        dtBillingClientDetail.AddressEN = dsRentalContract.dtTbt_RentalContractBasic[0].BranchAddressEN;
+                        dtBillingClientDetail.AddressLC = dsRentalContract.dtTbt_RentalContractBasic[0].BranchAddressLC;
+                        dtBillingClientDetail.RegionCode = listCustomer[0].RegionCode;
+                        dtBillingClientDetail.BusinessTypeCode = listCustomer[0].BusinessTypeCode;
+                        dtBillingClientDetail.IDNo = listCustomer[0].IDNo;
+                        dtBillingClientDetail.CustTypeCode = listCustomer[0].CustTypeCode;
+
+                        doBillingTargetDetail.FullNameEN = dtBillingClientDetail.FullNameEN;
+                        doBillingTargetDetail.FullNameLC = dtBillingClientDetail.FullNameLC;
+                        doBillingTargetDetail.BranchNameEN = dtBillingClientDetail.BranchNameEN;
+                        doBillingTargetDetail.BranchNameLC = dtBillingClientDetail.BranchNameLC;
+                        doBillingTargetDetail.AddressEN = dtBillingClientDetail.AddressEN;
+                        doBillingTargetDetail.AddressLC = dtBillingClientDetail.AddressLC;
+                        doBillingTargetDetail.BusinessType = dtBillingClientDetail.BusinessTypeNameEN; //Wait for edit to BusinessTypeName which follow culture from billingTemp;
+                        doBillingTargetDetail.IDNo = dtBillingClientDetail.IDNo;
+                    }
+                }
+
+                if (doCopyNameCondition.RdoType == "2")
+                {
+                    if (dsRentalContract.dtTbt_RentalContractBasic != null)
+                    {
+                        listCustomer = masterHandler.GetTbm_Customer(dsRentalContract.dtTbt_RentalContractBasic[0].RealCustomerCustCode);
+                        dtBillingClientDetail.NameEN = listCustomer[0].CustNameEN;
+                        dtBillingClientDetail.NameLC = listCustomer[0].CustNameLC;
+                        dtBillingClientDetail.FullNameEN = listCustomer[0].CustFullNameEN;
+                        dtBillingClientDetail.FullNameLC = listCustomer[0].CustFullNameLC;
+                        dtBillingClientDetail.AddressEN = dsRentalContract.dtTbt_RentalContractBasic[0].BranchAddressEN;
+                        dtBillingClientDetail.AddressLC = dsRentalContract.dtTbt_RentalContractBasic[0].BranchAddressLC;
+                        dtBillingClientDetail.RegionCode = listCustomer[0].RegionCode;
+                        dtBillingClientDetail.PhoneNo = listCustomer[0].PhoneNo;
+                        dtBillingClientDetail.BusinessTypeCode = listCustomer[0].BusinessTypeCode;
+                        dtBillingClientDetail.IDNo = listCustomer[0].IDNo;
+                        dtBillingClientDetail.CustTypeCode = listCustomer[0].CustTypeCode;
+
+                        doBillingTargetDetail.FullNameEN = dtBillingClientDetail.FullNameEN;
+                        doBillingTargetDetail.FullNameEN = dtBillingClientDetail.FullNameEN;
+                        doBillingTargetDetail.AddressEN = dtBillingClientDetail.AddressEN;
+                        doBillingTargetDetail.AddressLC = dtBillingClientDetail.AddressLC;
+                        doBillingTargetDetail.PhoneNo = dtBillingClientDetail.PhoneNo;
+                        doBillingTargetDetail.BusinessType = dtBillingClientDetail.BusinessTypeNameEN; //Wait for edit to BusinessTypeName which follow culture from billingTemp;
+                        doBillingTargetDetail.IDNo = dtBillingClientDetail.IDNo;
+                    }
+                }
+
+                if (doCopyNameCondition.RdoType == "3")
+                {
+                    if (dsRentalContract.dtTbt_RentalContractBasic != null)
+                    {
+                        listCustomer = masterHandler.GetTbm_Customer(dsRentalContract.dtTbt_RentalContractBasic[0].RealCustomerCustCode);
+                        listSite = masterHandler.GetTbm_Site(dsRentalContract.dtTbt_RentalContractBasic[0].SiteCode);
+                        dtBillingClientDetail.NameEN = listCustomer[0].CustNameEN;
+                        dtBillingClientDetail.NameLC = listCustomer[0].CustNameLC;
+                        dtBillingClientDetail.FullNameEN = listCustomer[0].CustFullNameEN;
+                        dtBillingClientDetail.FullNameLC = listCustomer[0].CustFullNameLC;
+                        dtBillingClientDetail.BranchNameEN = listSite[0].SiteNameEN;
+                        dtBillingClientDetail.BranchNameLC = listSite[0].SiteNameLC;
+                        dtBillingClientDetail.AddressEN = listSite[0].AddressFullEN;
+                        dtBillingClientDetail.AddressLC = listSite[0].AddressFullLC;
+                        dtBillingClientDetail.RegionCode = listCustomer[0].RegionCode;
+                        dtBillingClientDetail.PhoneNo = listCustomer[0].PhoneNo;
+                        dtBillingClientDetail.BusinessTypeCode = listCustomer[0].BusinessTypeCode;
+                        dtBillingClientDetail.IDNo = listCustomer[0].IDNo;
+                        dtBillingClientDetail.CustTypeCode = listCustomer[0].CustTypeCode;
+
+                        doBillingTargetDetail.FullNameEN = dtBillingClientDetail.FullNameEN;
+                        doBillingTargetDetail.FullNameLC = dtBillingClientDetail.FullNameLC;
+                        doBillingTargetDetail.AddressEN = dtBillingClientDetail.AddressEN;
+                        doBillingTargetDetail.AddressLC = dtBillingClientDetail.AddressLC;
+                        doBillingTargetDetail.PhoneNo = dtBillingClientDetail.PhoneNo;
+                        doBillingTargetDetail.BusinessType = dtBillingClientDetail.BusinessTypeNameEN; //Wait for edit to BusinessTypeName which follow culture from billingTemp;
+                        doBillingTargetDetail.IDNo = dtBillingClientDetail.IDNo;
+                    }
+                }
+
+                if (doCopyNameCondition.Mode != "Update")
+                {
+                    session.DOBillingTargetDetail = doBillingTargetDetail;
+                    session.DTBillingClientDetail = dtBillingClientDetail;
+                }
+
+                return LoadMasterData_CTS051(doBillingTargetDetail);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult AddUpdateClick_CTS053(CTS053_DOValidateAddUpdateRequireFieldData doValidateAddUpdateRequireField)
+        {
+            ObjectResultData res = new ObjectResultData();
+            CTS053_DOBillingTargetDetailData doBillingTargetDetail;
+            CommonUtil comU = new CommonUtil();
+
+            List<CTS053_DOBillingTargetDetailData> listDoBillingTargetDetail;
+            List<dtBillingTempChangePlanData> listBillingTemp;
+            List<dtBillingTempChangePlanData> listBillingTempEdit;
+            List<dtBillingTempChangePlanData> listBillingTempNew;
+            List<CTS053_DTBillingClientDetailData> listBillingClientData;
+
+            dtBillingTempChangePlanData dtBillingTempListForView;
+            dsRentalContractData dsRentalContract;
+            int sequenceNo = 0;
+            string sequence = "0";
+
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                listBillingTemp = session.ListDTBillingTempChangePlan;
+                Guid uidGen = Guid.NewGuid();
+
+                if (session.DOBillingTargetDetailCopy != null)
+                {
+                    doBillingTargetDetail = session.DOBillingTargetDetailCopy;
+                    session.DTBillingClientDetail = session.DTBillingClientDetailCopy;
+                    session.DOBillingTargetDetailCopy = null;
+                    session.DTBillingClientDetailCopy = null;
+                }
+                else
+                    doBillingTargetDetail = session.DOBillingTargetDetail;
+
+                dsRentalContract = session.DSRentalContract;
+                if (session.ListDOBillingTargetDetail == null)
+                {
+                    listDoBillingTargetDetail = new List<CTS053_DOBillingTargetDetailData>();
+                    session.ListDOBillingTargetDetail = listDoBillingTargetDetail;
+                }
+                else
+                {
+                    listDoBillingTargetDetail = session.ListDOBillingTargetDetail;
+                }
+
+                if (session.ListDTBillingClientDetail == null)
+                    listBillingClientData = new List<CTS053_DTBillingClientDetailData>();
+                else
+                    listBillingClientData = session.ListDTBillingClientDetail;
+
+                if (doBillingTargetDetail.BillingClientCodeDetail == "-")
+                {
+                    doBillingTargetDetail.BillingClientCodeDetail = "";
+                }
+
+                if (doBillingTargetDetail.BillingClientCodeDetail != "" && doBillingTargetDetail.BillingClientCodeDetail != null)
+                    listBillingTemp = listBillingTemp.FindAll(delegate(dtBillingTempChangePlanData s) { return s.BillingClientCode == doBillingTargetDetail.BillingClientCodeDetail; });
+                else
+                    listBillingTemp = listBillingTemp.FindAll(delegate(dtBillingTempChangePlanData s) { return s.Sequence == doBillingTargetDetail.Sequence; });
+
+                if (doValidateAddUpdateRequireField.Mode.Trim() != "Update")
+                {
+                    if (listBillingTemp.Count() != 0)
+                    {
+                        if (listBillingTemp[0].BillingClientCode != null)
+                        {
+                            res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                            res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3032, "");
+                            res.AddErrorMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3032);
+                            return Json(res);   
+                        }                        
+                    }
+                }
+
+                if (doValidateAddUpdateRequireField.Mode == "Update")
+                {
+                    listBillingTempEdit = new List<dtBillingTempChangePlanData>();
+
+                    #region สร้าง billing temp ตาม billing type เเละ billing timing
+
+                    if (listBillingTemp.FindAll(delegate(dtBillingTempChangePlanData s)
+                    {
+                        return s.BillingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_CONTRACT_FEE ||
+                               s.BillingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_STOP_FEE ||
+                               s.BillingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_CON ||
+                               s.BillingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_ONE;
+                    }).Count() == 0)
+                    {
+
+                        if (decimal.Parse(doValidateAddUpdateRequireField.BillingContractFeeDetail) != 0)
+                        {
+                            sequenceNo += 1;
+
+                            dtBillingTempListForView = new dtBillingTempChangePlanData();
+                            dtBillingTempListForView.ContractCode = dsRentalContract.dtTbt_RentalContractBasic[0].ContractCode;
+                            dtBillingTempListForView.SequenceNo = sequenceNo;
+                            dtBillingTempListForView.BillingOCC = doBillingTargetDetail.BillingOCC;
+                            dtBillingTempListForView.BillingClientCode = "";
+                            dtBillingTempListForView.BillingTargetCode = doBillingTargetDetail.BillingTargetCodeDetail;
+                            dtBillingTempListForView.BillingOfficeCode = doValidateAddUpdateRequireField.BillingOfficeCode;
+                            
+                            if (dsRentalContract.dtTbt_RentalContractBasic[0].ContractStatus == SECOM_AJIS.Common.Util.ConstantValue.ContractStatus.C_CONTRACT_STATUS_BEF_START ||
+                                dsRentalContract.dtTbt_RentalContractBasic[0].ContractStatus == SECOM_AJIS.Common.Util.ConstantValue.ContractStatus.C_CONTRACT_STATUS_AFTER_START)
+                                dtBillingTempListForView.BillingType = SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_CONTRACT_FEE;
+
+                            if (dsRentalContract.dtTbt_RentalContractBasic[0].ContractStatus == SECOM_AJIS.Common.Util.ConstantValue.ContractStatus.C_CONTRACT_STATUS_STOPPING)
+                                dtBillingTempListForView.BillingType = SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_STOP_FEE;
+
+                            if (dsRentalContract.dtTbt_RentalContractBasic[0].ProductTypeCode == SECOM_AJIS.Common.Util.ConstantValue.ProductType.C_PROD_TYPE_MA)
+                                dtBillingTempListForView.BillingType = SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_CON;
+
+                            dtBillingTempListForView.BillingAmt = decimal.Parse(doValidateAddUpdateRequireField.BillingContractFeeDetail);
+                            dtBillingTempListForView.CreateBy = CommonUtil.dsTransData.dtUserData.EmpNo;
+                            dtBillingTempListForView.CreateDate = CommonUtil.dsTransData.dtOperationData.ProcessDateTime;
+                            dtBillingTempListForView.UpdateBy = CommonUtil.dsTransData.dtUserData.EmpNo;
+                            dtBillingTempListForView.UpdateDate = CommonUtil.dsTransData.dtOperationData.ProcessDateTime;
+                            dtBillingTempListForView.Sequence = doBillingTargetDetail.Sequence;
+                            dtBillingTempListForView.uIDNew = uidGen.ToString();
+                            dtBillingTempListForView.Status = "ADD";
+                            session.ListDTBillingTempChangePlan.Add(dtBillingTempListForView);
+                        }
+                    }
+
+                    #endregion
+
+                    foreach (dtBillingTempChangePlanData item in listBillingTemp)
+                    {
+                        if ((item.BillingTargetCode == comU.ConvertBillingTargetCode(doValidateAddUpdateRequireField.BillingTargetCode, CommonUtil.CONVERT_TYPE.TO_LONG))
+                            && (item.BillingClientCode == comU.ConvertBillingClientCode(doValidateAddUpdateRequireField.BillingClientCode, CommonUtil.CONVERT_TYPE.TO_LONG))
+                            && (item.BillingOCC == doValidateAddUpdateRequireField.BillingOCC))
+                        {
+                            dtBillingTempListForView = item;
+                            dtBillingTempListForView.BillingTargetCode = doBillingTargetDetail.BillingTargetCodeDetail;
+                            dtBillingTempListForView.BillingClientCode = doBillingTargetDetail.BillingClientCodeDetail;
+                            dtBillingTempListForView.BillingOfficeCode = doValidateAddUpdateRequireField.BillingOfficeCode;
+                            GetBillingTempAmtFollowCondition_CTS053(ref dtBillingTempListForView, item.BillingType, item.BillingTiming, doValidateAddUpdateRequireField);
+                        }
+                    }
+
+                    // Update temp client tartget -------
+
+                    foreach (var item in session.ListDOBillingTargetDetail)
+                    {
+                        if (item.Sequence == doBillingTargetDetail.Sequence)
+                        {
+                            session.ListDOBillingTargetDetail.Remove(item);
+                            session.ListDOBillingTargetDetail.Add(session.DOBillingTargetDetail);
+                            break;
+                        }
+                    }
+
+                    foreach (var item in session.ListDTBillingClientDetail)
+                    {
+                        if (item.Sequence == doBillingTargetDetail.Sequence)
+                        {
+                            session.ListDTBillingClientDetail.Remove(item);
+                            session.ListDTBillingClientDetail.Add(session.DTBillingClientDetail);
+                            break;
+                        }
+                    }
+
+                    // ----------------------------------
+
+                    session.ListDTBillingClientDetail = listBillingClientData;
+                    session.ListDOBillingTargetDetail = listDoBillingTargetDetail;
+                }
+                else
+                {
+                    listBillingTempNew = session.ListDTBillingTempChangePlan;
+                    if (listBillingTempNew.Count() == 0)
+                        sequence = "1";
+                    else
+                    {
+                        //if (listBillingTempNew.Max(t => t.Sequence)[0].ToString() == "0")
+                        //    sequence = "0";
+                        //else
+                            sequence = (int.Parse(listBillingTempNew.Max(t => t.Sequence)[0].ToString()) + 1).ToString();
+                    }
+
+
+                    #region สร้าง billing temp ตาม billing type เเละ billing timing
+                    if (decimal.Parse(doValidateAddUpdateRequireField.BillingContractFeeDetail) != 0)
+                    {
+                        sequenceNo += 1;
+                        dtBillingTempListForView = new dtBillingTempChangePlanData();
+                        dtBillingTempListForView.ContractCode = dsRentalContract.dtTbt_RentalContractBasic[0].ContractCode;
+                        dtBillingTempListForView.SequenceNo = sequenceNo;
+                        dtBillingTempListForView.BillingOCC = doBillingTargetDetail.BillingOCC;
+                        dtBillingTempListForView.BillingClientCode = doBillingTargetDetail.BillingClientCodeDetail;
+                        dtBillingTempListForView.BillingTargetCode = doBillingTargetDetail.BillingTargetCodeDetail;
+                        dtBillingTempListForView.BillingOfficeCode = doValidateAddUpdateRequireField.BillingOfficeCode;
+                        //dtBillingTempListForView.PayMethod = doValidateAddUpdateRequireField.PayMethodContractFeeDetail;
+
+                        if (dsRentalContract.dtTbt_RentalContractBasic[0].ContractStatus == SECOM_AJIS.Common.Util.ConstantValue.ContractStatus.C_CONTRACT_STATUS_BEF_START ||
+                            dsRentalContract.dtTbt_RentalContractBasic[0].ContractStatus == SECOM_AJIS.Common.Util.ConstantValue.ContractStatus.C_CONTRACT_STATUS_AFTER_START)
+                            dtBillingTempListForView.BillingType = SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_CONTRACT_FEE;
+
+                        if (dsRentalContract.dtTbt_RentalContractBasic[0].ContractStatus == SECOM_AJIS.Common.Util.ConstantValue.ContractStatus.C_CONTRACT_STATUS_STOPPING)
+                            dtBillingTempListForView.BillingType = SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_STOP_FEE;
+
+                        if (dsRentalContract.dtTbt_RentalContractBasic[0].ProductTypeCode == SECOM_AJIS.Common.Util.ConstantValue.ProductType.C_PROD_TYPE_MA)
+                            dtBillingTempListForView.BillingType = SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_CON;
+
+                        dtBillingTempListForView.BillingAmt = decimal.Parse(doValidateAddUpdateRequireField.BillingContractFeeDetail);
+                        dtBillingTempListForView.CreateBy = CommonUtil.dsTransData.dtUserData.EmpNo;
+                        dtBillingTempListForView.CreateDate = CommonUtil.dsTransData.dtOperationData.ProcessDateTime;
+                        dtBillingTempListForView.UpdateBy = CommonUtil.dsTransData.dtUserData.EmpNo;
+                        dtBillingTempListForView.UpdateDate = CommonUtil.dsTransData.dtOperationData.ProcessDateTime;
+                        dtBillingTempListForView.Sequence = sequence;
+                        dtBillingTempListForView.Status = "ADD";
+                        dtBillingTempListForView.uIDNew = uidGen.ToString();
+                        listBillingTempNew.Add(dtBillingTempListForView);
+                    }
+
+                    #endregion
+
+                    //ทำการเพิ่มข้อมูลเข้าไปใน List session เเต่ละตัว                  
+                    session.DOBillingTargetDetail.Sequence = sequence;
+                    session.ListDOBillingTargetDetail.Add(session.DOBillingTargetDetail);
+
+                    session.DTBillingClientDetail.Sequence = sequence;
+                    session.ListDTBillingClientDetail.Add(session.DTBillingClientDetail);
+                    session.ListDTBillingTempChangePlan = listBillingTempNew;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult RegisterClick_CTS053(CTS053_DOValidateBusinessData doValidateBusiness)
+        {
+            ObjectResultData res = new ObjectResultData();
+            ObjectResultData resBusiness = new ObjectResultData();
+            ICommonHandler commonHandler;
+            IRentralContractHandler rentralHandler;
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                if (ModelState.IsValid == false)
+                {
+                    ValidatorUtil.BuildErrorMessage(res, this);
+                    if (res.IsError)
+                    {
+                        res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                        res.ResultData = false;
+                        return Json(res);
+                    }
+                }
+
+                session = CTS053_GetImportData();
+                commonHandler = ServiceContainer.GetService<ICommonHandler>() as ICommonHandler;
+                rentralHandler = ServiceContainer.GetService<IRentralContractHandler>() as IRentralContractHandler;
+
+                //14.1
+                if (commonHandler.IsSystemSuspending())
+                {
+                    res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                    res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0049, "");
+                    res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0049);
+                    return Json(res);
+                }
+
+                //14.5
+                resBusiness = ValidateBusiness_CTS053(doValidateBusiness);
+                if (resBusiness != null)
+                    return Json(resBusiness);
+            }
+            catch (Exception ex)
+            {
+                res.ResultData = false;
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult ConfirmClick_CTS053(CTS053_DOValidateBusinessData doValidateBusiness)
+        {
+            ObjectResultData res = new ObjectResultData();
+            ObjectResultData resBusiness = new ObjectResultData();
+            IRentralContractHandler rentralHandler;
+            List<dtBillingClientData> listBillingClient;
+            ICommonHandler commomHandler;
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                listBillingClient = new List<dtBillingClientData>();
+                rentralHandler = ServiceContainer.GetService<IRentralContractHandler>() as IRentralContractHandler;
+                commomHandler = ServiceContainer.GetService<ICommonHandler>() as ICommonHandler;
+
+                if (ModelState.IsValid == false)
+                {
+                    ValidatorUtil.BuildErrorMessage(res, this);
+                    if (res.IsError)
+                    {
+                        res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                        res.ResultData = false;
+                        return Json(res);
+                    }
+                }
+
+                if (commomHandler.IsSystemSuspending())
+                {
+                    res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                    res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0049);
+                    res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0049, "");
+                    return Json(res);
+                }
+
+                if (session.DSRentalContract.dtTbt_RentalContractBasic[0].ContractStatus == ContractStatus.C_CONTRACT_STATUS_STOPPING)
+                    session.DSRentalContract.dtTbt_RentalSecurityBasic[0].ContractFeeOnStop = decimal.Parse(doValidateBusiness.ChangeContractFee);
+                else
+                    session.DSRentalContract.dtTbt_RentalSecurityBasic[0].OrderContractFee = decimal.Parse(doValidateBusiness.ChangeContractFee);
+
+                foreach (var item in session.ListDTBillingClientDetail)
+                {
+                    if (item.BillingClientCode == "" || item.BillingClientCode == null)
+                        item.BillingClientCode = item.Sequence;
+                    listBillingClient.Add(item);
+                }
+
+                bool registerResult;
+                dtEmailAddress itemEmail;
+                List<dtEmailAddress> listDTEmailAddress = new List<dtEmailAddress>();
+                foreach (var item in session.ListDOEmail)
+                {
+                    itemEmail = CommonUtil.CloneObject<CTS053_DOEmailData, dtEmailAddress>(item);
+                    listDTEmailAddress.Add(itemEmail);
+                }
+
+                foreach (var item in session.ListDTBillingTempChangePlan)
+                {
+                    item.ContractCode = session.DSRentalContract.dtTbt_RentalContractBasic[0].ContractCode;
+                    item.OCC = session.DSRentalContract.dtTbt_RentalSecurityBasic[0].OCC;
+                }
+                registerResult = rentralHandler.RegisterChangeContractFee(session.DSRentalContract, listDTEmailAddress, session.ListDTBillingTempChangePlan,
+                listBillingClient);
+
+                if (registerResult == true)
+                    res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0046, "");
+                else
+                    res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3043, "");
+            }
+            catch (Exception ex)
+            {
+                res.ResultData = false;
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        #endregion
+
+        #region Method
+
+        [Initialize("CTS053")]
+        public ActionResult CTS053()
+        {
+            ObjectResultData res = new ObjectResultData();
+
+            try
+            {
+                CTS053_ScreenParameter session = GetScreenObject<CTS053_ScreenParameter>();
+                CommonUtil util = new CommonUtil();
+                ViewBag.ContractCode = util.ConvertContractCode(session.ContractCode, CommonUtil.CONVERT_TYPE.TO_SHORT);
+                ViewBag.ImportantCustomer = false;
+                InitialScreen_CTS053(session.ContractCode);
+
+                ICommonHandler cHand = ServiceContainer.GetService<ICommonHandler>() as ICommonHandler;
+                emailSuffix = cHand.GetSystemStatusValue(ConfigName.C_EMAIL_SUFFIX);
+                ViewBag.EmailSuffix = emailSuffix;
+                ViewBag.EmailLength = C_EMAIL_LENGTH - emailSuffix.Length;
+
+                return View("CTS053");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return Json(res);
+        }
+
+        //Email----------------------------------------------------------
+
+        public ActionResult GetEmail_CTS053(CTS053_DOEmailData doCTS053Email)
+        {
+            ObjectResultData res = new ObjectResultData();
+            ObjectResultData resEmail = new ObjectResultData();
+            CTS053_DOEmailData doCTS053EmailADD;
+            List<CTS053_DOEmailData> listEmail;
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                doCTS053EmailADD = new CTS053_DOEmailData();
+                if (session.ListDOEmail == null)
+                    listEmail = new List<CTS053_DOEmailData>();
+                else
+                    listEmail = session.ListDOEmail;
+
+                doCTS053EmailADD.EmpNo = session.DOEmail.EmpNo;
+                doCTS053EmailADD.EmailAddress = doCTS053Email.EmailAddress;
+
+                if (listEmail.FindAll(delegate(CTS053_DOEmailData s) { return s.EmpNo == doCTS053EmailADD.EmpNo; }).Count() == 0)
+                    listEmail.Add(doCTS053EmailADD);
+
+                session.DOEmail = null;
+                session.ListDOEmail = listEmail;
+                res.ResultData = CommonUtil.ConvertToXml<CTS053_DOEmailData>(session.ListDOEmail, "Contract\\CTS053Email", CommonUtil.GRID_EMPTY_TYPE.INSERT);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            if (!res.HasResultData)
+            {
+                res.ResultData = CommonUtil.ConvertToXml<Object>(null, "Contract\\CTS053Email", CommonUtil.GRID_EMPTY_TYPE.SEARCH);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult GetEmailList_CTS053(List<CTS053_DOEmailData> listEmailAdd)
+        {
+            ObjectResultData res = new ObjectResultData();
+            ObjectResultData resEmail = new ObjectResultData();
+            List<CTS053_DOEmailData> listEmail;
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                if (listEmailAdd != null)
+                {
+                    session = CTS053_GetImportData();
+                    if (session.ListDOEmail == null)
+                        listEmail = new List<CTS053_DOEmailData>();
+                    else
+                        listEmail = session.ListDOEmail;
+
+                    foreach (var item in listEmailAdd)
+                    {
+                        if (listEmail.FindAll(delegate(CTS053_DOEmailData s) { return s.EmpNo == item.EmpNo; }).Count() == 0)
+                            listEmail.Add(item);
+                    }
+
+                    session.ListDOEmail = listEmail;
+                    res.ResultData = CommonUtil.ConvertToXml<CTS053_DOEmailData>(session.ListDOEmail, "Contract\\CTS053Email", CommonUtil.GRID_EMPTY_TYPE.INSERT);
+                }
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            if (!res.HasResultData)
+            {
+                res.ResultData = CommonUtil.ConvertToXml<Object>(null, "Contract\\CTS053Email", CommonUtil.GRID_EMPTY_TYPE.SEARCH);
+            }
+
+            return Json(res);
+        }
+
+        //Billing --------------------------------------------------------------
+
+        private CTS053_DOBillingTargetGridData CreateGridListObject_CTS053(dtBillingTempChangePlanData item)
+        {
+            CommonUtil comU = new CommonUtil();
+            CTS053_DOBillingTargetGridData result = new CTS053_DOBillingTargetGridData();
+
+            if (item.BillingClientCode != "" && item.BillingClientCode != null)
+                result.BillingClientCode = comU.ConvertBillingClientCode(item.BillingClientCode, CommonUtil.CONVERT_TYPE.TO_SHORT).Trim();
+
+            result.BillingClientCodeLong = item.BillingClientCode;
+            result.BillingTargetCode = item.BillingTargetCode;
+            result.BillingOffice = item.BillingOfficeCode;
+            result.Sequence = item.Sequence;
+            result.StatusGid = item.Status;
+            result.BillingOCC = item.BillingOCC;
+            result.uIDNew = item.uIDNew;
+
+            return result;
+        }
+
+        public ActionResult GetBillingTargetInformation_CTS053(bool displayAll, string mode = "")
+        {
+            ObjectResultData res = new ObjectResultData();
+            dsRentalContractData dsRentalContract;
+            List<dtBillingClientData> dtBillingClientTemporary = null;
+
+            List<string> listClientOCC;
+            CTS053_DTBillingClientDetailData dtBillingClient = null;
+            List<CTS053_DTBillingClientDetailData> listBillingClient;
+
+            CTS053_DOBillingTargetGridData doBillingTargetGrid;
+            List<CTS053_DOBillingTargetGridData> listDoBillingTargetGrid;
+            List<CTS053_DOBillingTargetDetailData> listDOBillingTargetDetail;
+
+            List<CTS053_DOBillingTargetGridData> listDistinctSequence;
+            List<tbt_BillingTarget> listBillingTarget;
+            List<dtBillingTempChangePlanData> listBillingTemp;
+            List<dtBillingTempChangePlanData> dtTbt_billingTemporary;
+
+            ICommonContractHandler commonContractHandler;
+            IMasterHandler masterHandler;
+            IBillingMasterHandler billingMasterHandler;
+            IUserControlHandler userHandler;
+            IBillingInterfaceHandler billinginterfacehandler;
+
+            CTS053_ScreenParameter session;
+            CommonUtil comU;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                comU = new CommonUtil();
+
+                if (mode == "RESET")
+                {
+                    session.ListDTBillingTempChangePlan = new List<dtBillingTempChangePlanData>();
+                    session.ListDTBillingClientDetail = new List<CTS053_DTBillingClientDetailData>();
+                }
+
+                listClientOCC = new List<string>();
+                listDistinctSequence = new List<CTS053_DOBillingTargetGridData>();
+
+                //เก็บเรคคอด ที่เเสดงในกริดโดยมีการยุบ billing temp ตาม billing client code เเละ billing officecode เเล้ว
+                listDoBillingTargetGrid = new List<CTS053_DOBillingTargetGridData>();
+
+                //เก็บเรคคอด ที่เเสดงรายละเอียดของกริดโดยมีการยุบ billing temp ตาม billing client code เเละ billing officecode เเล้ว
+                listDOBillingTargetDetail = new List<CTS053_DOBillingTargetDetailData>();
+
+                listBillingTarget = new List<tbt_BillingTarget>();
+                billingMasterHandler = ServiceContainer.GetService<IBillingMasterHandler>() as IBillingMasterHandler;
+                billinginterfacehandler = ServiceContainer.GetService<IBillingInterfaceHandler>() as IBillingInterfaceHandler;
+                commonContractHandler = ServiceContainer.GetService<ICommonContractHandler>() as ICommonContractHandler;
+
+
+                dsRentalContract = session.DSRentalContract;
+
+                //ในกรณีที่เคยทำการโหลด BillingTemp เเล้วให้ใช้ของเก่าใน SessionGetDTBillingTempDataObjectBilling                
+                if (session.ListDTBillingTempChangePlan.Count() == 0)
+                {
+                    //ทำการสร้าง BillingTemp ใหม่
+                    //1.5.1	Get billing temp of current contract OCC
+                    List<dtTbt_BillingTempListForView> listTbtBillingTemp;
+                    listTbtBillingTemp = commonContractHandler.GetTbt_BillingTempListForView(session.DSRentalContract.dtTbt_RentalSecurityBasic[0].ContractCode, session.DSRentalContract.dtTbt_RentalSecurityBasic[0].OCC);
+                    listBillingTemp = CommonUtil.ClonsObjectList<dtTbt_BillingTempListForView, dtBillingTempChangePlanData>(listTbtBillingTemp);
+                    listBillingTemp = listBillingTemp.FindAll(delegate(dtBillingTempChangePlanData s)
+                    {
+                        return
+                            s.BillingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_CONTRACT_FEE ||
+                            s.BillingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_STOP_FEE ||
+                            s.BillingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_CON ||
+                            s.BillingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_ONE;
+                    });
+
+                    //สร้างหมายเลข Sequence ให้กับเเต่ละ BillingTemp เเละปรับสถานะเเต่ละ row เป็น Update
+                    GetBillingTempSequence_CTS053(ref listBillingTemp);
+                    session.ListDTBillingTempChangePlan = listBillingTemp;
+                }
+                else
+                    listBillingTemp = session.ListDTBillingTempChangePlan;
+
+                if (session.ListDTBillingClientDetail.Count() == 0)
+                    listBillingClient = new List<CTS053_DTBillingClientDetailData>();
+                else
+                    listBillingClient = session.ListDTBillingClientDetail;
+
+                //Collect distinct of each sequence in billingTemp                                 
+                foreach (var item in listBillingTemp)
+                {
+                    if (item.Status != "Delete")
+                    {
+                        var duplicateItem = from a in listDistinctSequence
+                                            where
+                                                ((String.IsNullOrEmpty(a.BillingClientCode) ? "" : a.BillingClientCode) == (String.IsNullOrEmpty(item.BillingClientCode) ? "" : comU.ConvertBillingClientCode(item.BillingClientCode, CommonUtil.CONVERT_TYPE.TO_SHORT).Trim()))
+                                                && ((String.IsNullOrEmpty(a.BillingOCC) ? "" : a.BillingOCC) == (String.IsNullOrEmpty(item.BillingOCC) ? "" : item.BillingOCC))
+                                                && (((String.IsNullOrEmpty(a.BillingTargetCode) ? "" : a.BillingTargetCode) == (String.IsNullOrEmpty(item.BillingTargetCode) ? "" : item.BillingTargetCode)))
+                                                && (((String.IsNullOrEmpty(a.uIDNew) ? "" : a.uIDNew) == (String.IsNullOrEmpty(item.uIDNew) ? "" : item.uIDNew)))
+                                            select a;
+
+                        if ((duplicateItem == null) || (duplicateItem.Count() == 0))
+                        {
+                            listDistinctSequence.Add(CreateGridListObject_CTS053(item));
+                        }
+                    }
+                }
+
+                foreach (var itemOcc in listDistinctSequence)
+                {
+                    doBillingTargetGrid = new CTS053_DOBillingTargetGridData();
+                    doBillingTargetGrid.ContractFee = "0.00";
+                    doBillingTargetGrid.InstallationFee = "(1) {0} <br/> (2) {1} <br/> (3) {2} <br/>";
+
+                    foreach (var itemTemp in listBillingTemp)
+                    {
+                        if (itemTemp.Status != "Delete")
+                        {
+                            if (itemTemp.Sequence == itemOcc.Sequence)
+                            {
+                                doBillingTargetGrid.BillingOCC = itemTemp.BillingOCC;
+                                if (itemTemp.BillingClientCode != "" && itemTemp.BillingClientCode != null)
+                                    doBillingTargetGrid.BillingClientCode = comU.ConvertBillingClientCode(itemTemp.BillingClientCode, CommonUtil.CONVERT_TYPE.TO_SHORT).Trim();
+
+                                doBillingTargetGrid.ContractFee = CommonUtil.TextNumeric(itemTemp.BillingAmt);
+                                doBillingTargetGrid.BillingOffice = itemTemp.BillingOfficeCode;
+
+                                IOfficeMasterHandler handler = ServiceContainer.GetService<IOfficeMasterHandler>() as IOfficeMasterHandler;
+                                List<doFunctionBilling> clst = handler.GetFunctionBilling();
+                                clst = CommonUtil.ConvertObjectbyLanguage<doFunctionBilling, doFunctionBilling>(clst, "OfficeName");
+                                doBillingTargetGrid.BillingOfficeName = clst.FindAll(delegate(doFunctionBilling s) { return s.OfficeCode == itemTemp.BillingOfficeCode; })[0].OfficeName;
+
+                                doBillingTargetGrid.BillingTargetCode = itemTemp.BillingTargetCode;
+                                doBillingTargetGrid.StatusGid = itemTemp.Status;
+
+                                #region Create Billing Target Name of each billing client code and billing office code
+                                //Checking that this client code used to add or not.
+                                if (!listClientOCC.Contains(itemTemp.Sequence))
+                                {
+                                    listClientOCC.Add(itemTemp.Sequence);
+                                    if (session.ListDTBillingClientDetail != null)
+                                    {
+                                        if (listBillingClient.FindAll(delegate(CTS053_DTBillingClientDetailData s) { return s.Sequence == itemTemp.Sequence; }).Count() != 0)
+                                            dtBillingClient = listBillingClient.FindAll(delegate(CTS053_DTBillingClientDetailData s) { return s.Sequence == itemTemp.Sequence; })[0];
+                                        else
+                                        {
+                                            //1.5.2	Initial billing client
+                                            dtBillingClientTemporary = billingMasterHandler.GetBillingClient(itemTemp.BillingClientCode);
+                                            listBillingClient.Add(CreateNewBillingClient_CTS053(ref dtBillingClient, dtBillingClientTemporary, itemTemp));
+                                        }
+                                    }
+                                    else
+                                    {
+                                        dtBillingClientTemporary = billingMasterHandler.GetBillingClient(itemTemp.BillingClientCode);
+                                        listBillingClient.Add(CreateNewBillingClient_CTS053(ref dtBillingClient, dtBillingClientTemporary, itemTemp));
+                                    }
+
+                                    doBillingTargetGrid.Sequence = itemTemp.Sequence;
+                                    if (dtBillingClient != null)
+                                    {
+                                        if (doBillingTargetGrid.BillingTargetName != "" && doBillingTargetGrid.BillingTargetName != null)
+                                            doBillingTargetGrid.BillingTargetName += "<br/>";
+
+                                        doBillingTargetGrid.BillingTargetName += "(1) " + dtBillingClient.FullNameEN + "<br/>" +
+                                                                              "(2) " + dtBillingClient.FullNameLC;
+                                    }
+                                }
+                                #endregion
+
+                                if (itemTemp.BillingAmt != null)
+                                    GetBillingTargetAmountFollowCondition_CTS053(ref doBillingTargetGrid, itemTemp.BillingType, itemTemp.BillingTiming, itemTemp.BillingAmt);
+                                else
+                                    GetBillingTargetAmountFollowCondition_CTS053(ref doBillingTargetGrid, itemTemp.BillingType, itemTemp.BillingTiming, 0);
+                            }
+                        }
+                    }
+
+                    doBillingTargetGrid.InstallationFee = doBillingTargetGrid.InstallationFee.Replace(" ", "").Replace("(1){0}<br/>", "");
+                    doBillingTargetGrid.InstallationFee = doBillingTargetGrid.InstallationFee.Replace(" ", "").Replace("(2){1}<br/>", "");
+                    doBillingTargetGrid.InstallationFee = doBillingTargetGrid.InstallationFee.Replace(" ", "").Replace("(3){2}<br/>", "");
+                    doBillingTargetGrid.InstallationFee = doBillingTargetGrid.InstallationFee.Replace("(1)", "(1) ");
+                    doBillingTargetGrid.InstallationFee = doBillingTargetGrid.InstallationFee.Replace("(2)", "(2) ");
+                    doBillingTargetGrid.InstallationFee = doBillingTargetGrid.InstallationFee.Replace("(3)", "(3) ");
+
+                    //Check display all condtion -----------------------------------------------------
+
+                    if (displayAll != true)
+                    {
+                        if (doBillingTargetGrid.BillingTargetCode == "" || doBillingTargetGrid.BillingTargetCode == null)
+                        {
+                            if (doBillingTargetGrid.ContractFee == "" || doBillingTargetGrid.ContractFee == null)
+                                doBillingTargetGrid.Show = false;
+                            else
+                                doBillingTargetGrid.Show = true;
+                        }
+                        else
+                        {
+                            if (doBillingTargetGrid.BillingOCC == "" || doBillingTargetGrid.BillingOCC == null)
+                                doBillingTargetGrid.Show = false;
+                            else
+                                doBillingTargetGrid.Show = true;
+
+                            if (dsRentalContract.dtTbt_RentalSecurityBasic[0].InstallationCompleteFlag == SECOM_AJIS.Common.Util.ConstantValue.FlagType.C_FLAG_OFF)
+                            {
+                                if (doBillingTargetGrid.BillingOCC == "" || doBillingTargetGrid.BillingOCC == null)
+                                    doBillingTargetGrid.Show = false;
+                                else
+                                    doBillingTargetGrid.Show = true;
+                            }
+                        }
+                    }
+                    else
+                        doBillingTargetGrid.Show = true;
+
+                    //--------------------------------------------------------------------------------
+                    listDoBillingTargetGrid.Add(doBillingTargetGrid);
+                }
+
+                foreach (var item in listDoBillingTargetGrid)
+                {
+                    if (item.BillingClientCode == null || item.BillingClientCode == "")
+                    {
+                        item.BillingClientCode = "-";
+                    }
+
+                    if (item.BillingOCC == null || item.BillingOCC == "")
+                    {
+                        item.BillingOCC = "-";
+                    }
+
+                    if (item.BillingOffice == null || item.BillingOffice == "")
+                    {
+                        item.BillingOffice = "-";
+                    }
+
+                    if (item.BillingTargetCode == null || item.BillingTargetCode == "")
+                    {
+                        item.BillingTargetCode = "-";
+                    }
+
+                    if (item.BillingTargetName == null || item.BillingTargetName == "")
+                    {
+                        item.BillingTargetName = "-";
+                    }
+
+                    if (item.ContractFee == null || item.ContractFee == "")
+                    {
+                        item.ContractFee = "-";
+                    }
+                }
+
+                if (dsRentalContract.dtTbt_RentalContractBasic[0].ContractStatus == SECOM_AJIS.Common.Util.ConstantValue.ContractStatus.C_CONTRACT_STATUS_BEF_START)
+                    res.ResultData = CommonUtil.ConvertToXml<CTS053_DOBillingTargetGridData>(listDoBillingTargetGrid, "Contract\\CTS053BillingBeforeStart", CommonUtil.GRID_EMPTY_TYPE.SEARCH);
+                else
+                    res.ResultData = CommonUtil.ConvertToXml<CTS053_DOBillingTargetGridData>(listDoBillingTargetGrid, "Contract\\CTS053BillingAfterStart", CommonUtil.GRID_EMPTY_TYPE.SEARCH);
+
+                session.ListDOBillingTargetGrid = listDoBillingTargetGrid;
+                session.ListDTBillingClientDetail = listBillingClient;
+
+                foreach (var item in session.ListDTBillingClientDetail)
+                {
+                    GetBillingTargetInformationDetail_CTS053(item.BillingClientCode, item.BillingOffice, item.Sequence);
+                    session.DOBillingTargetDetail.Sequence = item.Sequence;
+                    if (session.DOBillingTargetDetail.BillingClientCodeDetail != null && session.DOBillingTargetDetail.BillingClientCodeDetail != "")
+                        session.DOBillingTargetDetail.BillingClientCodeDetail = comU.ConvertBillingClientCode(session.DOBillingTargetDetail.BillingClientCodeDetail, CommonUtil.CONVERT_TYPE.TO_LONG);
+                   
+                    listDOBillingTargetDetail.Add(session.DOBillingTargetDetail);
+                    
+                    //listBillingTarget.Add(billinginterfacehandler.GetBillingTarget(item.BillingClientCode));
+                    List<tbt_BillingTarget> dtBillingTargetList = billinginterfacehandler.GetBillingTarget(item.BillingClientCode);
+                    if (dtBillingTargetList != null && dtBillingTargetList.Count > 0)
+                        listBillingTarget.Add(dtBillingTargetList[0]);
+                }
+
+                session.ListDOBillingTargetDetail = listDOBillingTargetDetail;
+                //SessionGetListDTBillingTargetDataObjectBilling = listBillingTarget;
+                session.DOBillingTargetDetail = null;
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+                return Json(res);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult GetBillingTargetInformationDetail_CTS053(string billingClientCode, string billingOffice, string sequence, bool fromGrid = false)
+        {
+            ObjectResultData res = new ObjectResultData();
+            IBillingMasterHandler billingHandler;
+            CTS053_DOBillingTargetDetailData doBillingTargetDetail = new CTS053_DOBillingTargetDetailData();
+
+            List<dtBillingTempChangePlanData> listBillingTemp;
+            CTS053_DTBillingClientDetailData dtBillingClient;
+
+            CTS053_ScreenParameter session;
+            CommonUtil comU;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                comU = new CommonUtil();
+                billingHandler = ServiceContainer.GetService<IBillingMasterHandler>() as IBillingMasterHandler;
+                dtBillingClient = new CTS053_DTBillingClientDetailData();
+                listBillingTemp = session.ListDTBillingTempChangePlan;
+                listBillingTemp = listBillingTemp.FindAll(delegate(dtBillingTempChangePlanData s) { return s.Sequence == sequence; });
+                dtBillingClient = session.ListDTBillingClientDetail.FindAll(delegate(CTS053_DTBillingClientDetailData s) { return s.Sequence == sequence; })[0];
+
+                if (listBillingTemp.Count() != 0)
+                {
+                    doBillingTargetDetail.BillingTargetCodeDetail = listBillingTemp[0].BillingTargetCode;
+                    doBillingTargetDetail.BillingOCC = listBillingTemp[0].BillingOCC;
+                    doBillingTargetDetail.Status = listBillingTemp[0].Status;
+                }
+
+                if (dtBillingClient != null)
+                {
+                    doBillingTargetDetail.BillingClientCodeDetail = dtBillingClient.BillingClientCode;
+                    doBillingTargetDetail.FullNameEN = dtBillingClient.FullNameEN;
+                    doBillingTargetDetail.BranchNameEN = dtBillingClient.BranchNameEN;
+                    doBillingTargetDetail.AddressEN = dtBillingClient.AddressEN;
+                    doBillingTargetDetail.FullNameLC = dtBillingClient.FullNameLC;
+                    doBillingTargetDetail.BranchNameLC = dtBillingClient.BranchNameLC;
+                    doBillingTargetDetail.AddressLC = dtBillingClient.AddressLC;
+                    doBillingTargetDetail.Nationality = dtBillingClient.NationalityEN; //Wait for edit to Nationality which follow culture from billingTemp;
+                    doBillingTargetDetail.PhoneNo = dtBillingClient.PhoneNo;
+                    doBillingTargetDetail.BusinessType = dtBillingClient.BusinessTypeNameEN; //Wait for edit to BusinessTypeName which follow culture from billingTemp;
+                    doBillingTargetDetail.IDNo = dtBillingClient.IDNo;
+                }
+
+                //if (billingClientCode != "-" && billingClientCode != "")                
+                //    doBillingTargetDetail.BillingClientCodeDetail = comU.ConvertBillingClientCode(billingClientCode, CommonUtil.CONVERT_TYPE.TO_LONG);
+
+                doBillingTargetDetail.BillingClientCodeDetail = billingClientCode;
+                doBillingTargetDetail.BillingOffice = billingOffice;
+                doBillingTargetDetail.Sequence = sequence;
+
+                if (fromGrid)
+                {
+                    doBillingTargetDetail.BillingClientCodeDetail = billingClientCode;
+                }
+                else
+                {
+                    doBillingTargetDetail.BillingClientCodeDetail = comU.ConvertBillingClientCode(billingClientCode, CommonUtil.CONVERT_TYPE.TO_SHORT);
+                }
+
+                session.DTBillingClientDetail = dtBillingClient;
+                session.DOBillingTargetDetail = doBillingTargetDetail;
+
+                return Json(doBillingTargetDetail);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+                return Json(res);
+            }
+        }
+
+        public ActionResult GetBillingTargetInformationDetailGrid_CTS053(string contractStatus, string sequence)
+        {
+            ObjectResultData res = new ObjectResultData();
+            CTS053_DOBillingTargetDetailData doBillingTargetDetail;
+            CTS053_DOBillingTargetDetailGridData doBillingTargetDetailGrid;
+
+            List<dtBillingTempChangePlanData> listBillingTemp;
+            List<CTS053_DOBillingTargetDetailGridData> listBillingTargetDetailGrid;
+            dsRentalContractData dsRentalContract;
+
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                doBillingTargetDetail = new CTS053_DOBillingTargetDetailData();
+                listBillingTemp = session.ListDTBillingTempChangePlan;
+                listBillingTemp = listBillingTemp.FindAll(delegate(dtBillingTempChangePlanData s) { return s.Sequence == sequence; });
+                listBillingTargetDetailGrid = new List<CTS053_DOBillingTargetDetailGridData>();
+                dsRentalContract = session.DSRentalContract;
+
+                doBillingTargetDetailGrid = new CTS053_DOBillingTargetDetailGridData();
+                doBillingTargetDetailGrid.Case = "Billing contract fee";
+                foreach (var item in listBillingTemp)
+                {
+                    GetBillingDetailAmtFollowCondition_CTS053(ref doBillingTargetDetail, item.BillingType, item.BillingTiming, item.BillingAmt, item.PayMethod);
+                }
+
+                doBillingTargetDetailGrid.Amount = doBillingTargetDetail.BillingContractFeeDetail;
+                doBillingTargetDetailGrid.PayMethod = doBillingTargetDetail.PayMethodContractFeeDetail;
+                doBillingTargetDetailGrid.Show = true;
+
+                listBillingTargetDetailGrid.Add(doBillingTargetDetailGrid);
+                //res.ResultData = CommonUtil.ConvertToXml<CTS053_DOBillingTargetDetailGridData>(listBillingTargetDetailGrid, "Contract\\CTS053BillingDetail", CommonUtil.GRID_EMPTY_TYPE.SEARCH);
+                res.ResultData = listBillingTargetDetailGrid;
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public void GetBillingTargetAmountFollowCondition_CTS053(ref CTS053_DOBillingTargetGridData doBillingTargetGridData, string billingType, string billingTiming, decimal? billingAmt)
+        {
+            CTS053_ScreenParameter session;
+            dsRentalContractData dsRentalContract;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                dsRentalContract = session.DSRentalContract;
+
+                if (dsRentalContract.dtTbt_RentalContractBasic != null)
+                {
+                    if (billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_CANCEL_CONTRACT_FEE ||
+                        billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_STOP_FEE ||
+                        billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_CON ||
+                        billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_ONE)
+                    {
+                        if (decimal.Parse(billingAmt.ToString()) != 0)
+                            doBillingTargetGridData.ContractFee = decimal.Parse(billingAmt.ToString()).ToString("#,##0.00");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void GetBillingDetailAmtFollowCondition_CTS053(ref CTS053_DOBillingTargetDetailData doBillingTargetDetail, string billingType, string billingTiming, decimal? billingAmt, string payMethod)
+        {
+            dsRentalContractData dsRentalContract;
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                dsRentalContract = session.DSRentalContract;
+
+                if (dsRentalContract.dtTbt_RentalContractBasic != null)
+                {
+                    if (billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_CONTRACT_FEE ||
+                       billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_STOP_FEE ||
+                       billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_CON ||
+                       billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_ONE)
+                    {
+                        doBillingTargetDetail.BillingContractFeeDetail = decimal.Parse(billingAmt.ToString()).ToString("#,##0.00");
+                        doBillingTargetDetail.PayMethodContractFeeDetail = payMethod;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void GetBillingTempAmtFollowCondition_CTS053(ref dtBillingTempChangePlanData dtBillingTempListForView, string billingType, string billingTiming, object billingAmt)
+        {
+            decimal? billingAmtContract = 0;
+            string payMethodContract = "0";
+
+            CTS053_DOValidateAddUpdateRequireFieldData doValidateAddUpdateRequireFieldData;
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                doValidateAddUpdateRequireFieldData = billingAmt as CTS053_DOValidateAddUpdateRequireFieldData;
+                billingAmtContract = decimal.Parse(doValidateAddUpdateRequireFieldData.BillingContractFeeDetail);
+                payMethodContract = doValidateAddUpdateRequireFieldData.PayMethodContractFeeDetail;
+
+                if (billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_CONTRACT_FEE ||
+                    billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_STOP_FEE ||
+                    billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_CON ||
+                    billingType == SECOM_AJIS.Common.Util.ConstantValue.ContractBillingType.C_CONTRACT_BILLING_TYPE_MAINTENANCE_FEE_ONE)
+                {
+                    dtBillingTempListForView.BillingAmt = billingAmtContract;
+                    dtBillingTempListForView.PayMethod = doValidateAddUpdateRequireFieldData.PayMethodContractFeeDetail;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void GetBillingTempSequence_CTS053(ref List<dtBillingTempChangePlanData> listBillingTemp)
+        {
+            int sequence = 0;
+            List<dtBillingTempChangePlanData> listDistinct;
+            List<dtBillingTempChangePlanData> listUnique;
+
+            try
+            {
+                listDistinct = new List<dtBillingTempChangePlanData>();
+
+                foreach (var item in listBillingTemp)
+                {
+                    item.Status = "Update";
+                    if (listDistinct.FindAll(delegate(dtBillingTempChangePlanData s) { return s.BillingClientCode == item.BillingClientCode && s.BillingOfficeCode == item.BillingOfficeCode; }).Count() == 0)
+                    {
+                        dtBillingTempChangePlanData doChangePlanGridCheckDistinct = new dtBillingTempChangePlanData();
+                        doChangePlanGridCheckDistinct.BillingClientCode = item.BillingClientCode;
+                        doChangePlanGridCheckDistinct.BillingOfficeCode = item.BillingOfficeCode;
+                        listDistinct.Add(doChangePlanGridCheckDistinct);
+                    }
+                }
+
+                foreach (var item in listDistinct)
+                {
+                    sequence += 1;
+                    listUnique = listBillingTemp.FindAll(delegate(dtBillingTempChangePlanData s) { return s.BillingClientCode == item.BillingClientCode && s.BillingOfficeCode == item.BillingOfficeCode; });
+                    foreach (var itemTemp in listUnique)
+                    {
+                        if (itemTemp.Sequence == "" || itemTemp.Sequence == null)
+                            itemTemp.Sequence = sequence.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public ActionResult GetIsDisableDivideContract_CTS053()
+        {
+            ObjectResultData res = new ObjectResultData();
+            IRentralContractHandler rentralContractHandler;
+            List<tbt_RentalMaintenanceDetails> ListRentalMaintenanceDetails;
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                rentralContractHandler = ServiceContainer.GetService<IRentralContractHandler>() as IRentralContractHandler;
+                ListRentalMaintenanceDetails = rentralContractHandler.GetTbt_RentalMaintenanceDetails(session.DSRentalContract.dtTbt_RentalSecurityBasic[0].ContractCode, session.DSRentalContract.dtTbt_RentalSecurityBasic[0].OCC);
+                if (ListRentalMaintenanceDetails.Count != 0)
+                {
+                    if (ListRentalMaintenanceDetails[0].MaintenanceFeeTypeCode == MAFeeType.C_MA_FEE_TYPE_RESULT_BASED)
+                        return Json(true);
+                    else
+                        return Json(false);
+                }
+                else
+                    return Json(false);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult LoadMasterData_CTS051(CTS053_DOBillingTargetDetailData doBillingTargetDetail)
+        {
+            ObjectResultData res = new ObjectResultData();
+            List<CTS053_DTBillingClientDetailData> listBillingClient;
+            IMasterHandler masterHandler;
+            ICommonHandler commonHandler;
+            List<tbm_Region> listRegion;
+
+            try
+            {
+                masterHandler = ServiceContainer.GetService<IMasterHandler>() as IMasterHandler;
+                commonHandler = ServiceContainer.GetService<ICommonHandler>() as ICommonHandler;
+
+                listRegion = masterHandler.GetTbm_Region();
+                masterHandler.GetTbm_BusinessType();
+
+                return Json(doBillingTargetDetail);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public CTS053_DTBillingClientDetailData CreateNewBillingClient_CTS053(ref CTS053_DTBillingClientDetailData dtBillingClient, List<dtBillingClientData> dtBillingClientTemporary, dtBillingTempChangePlanData itemTemp)
+        {
+            dtBillingClient = new CTS053_DTBillingClientDetailData();
+
+            if (dtBillingClientTemporary.Count > 0)
+            {
+                dtBillingClient.AddressEN = dtBillingClientTemporary[0].AddressEN;
+                dtBillingClient.AddressLC = dtBillingClientTemporary[0].AddressLC;
+                dtBillingClient.BillingClientCode = dtBillingClientTemporary[0].BillingClientCode;
+                //dtBillingClient.BillingOffice = dtBillingClientTemporary[0].BillingOffice;
+                dtBillingClient.BranchNameEN = dtBillingClientTemporary[0].BranchNameEN;
+                dtBillingClient.BranchNameLC = dtBillingClientTemporary[0].BranchNameLC;
+                dtBillingClient.BusinessTypeCode = dtBillingClientTemporary[0].BusinessTypeCode;
+                dtBillingClient.BusinessTypeNameEN = dtBillingClientTemporary[0].BusinessTypeNameEN;
+                dtBillingClient.BusinessTypeNameJP = dtBillingClientTemporary[0].BusinessTypeNameJP;
+                dtBillingClient.BusinessTypeNameLC = dtBillingClientTemporary[0].BusinessTypeNameLC;
+                dtBillingClient.CompanyTypeCode = dtBillingClientTemporary[0].CompanyTypeCode;
+                dtBillingClient.CompanyTypeNameEN = dtBillingClientTemporary[0].CompanyTypeNameEN;
+                dtBillingClient.CompanyTypeNameLC = dtBillingClientTemporary[0].CompanyTypeNameLC;
+                dtBillingClient.CreateBy = dtBillingClientTemporary[0].CreateBy;
+                dtBillingClient.CreateDate = dtBillingClientTemporary[0].CreateDate;
+                dtBillingClient.CustTypeCode = dtBillingClientTemporary[0].CustTypeCode;
+                dtBillingClient.CustTypeNameEN = dtBillingClientTemporary[0].CustTypeNameEN;
+                dtBillingClient.CustTypeNameJP = dtBillingClientTemporary[0].CustTypeNameJP;
+                dtBillingClient.CustTypeNameLC = dtBillingClientTemporary[0].CustTypeNameLC;
+                dtBillingClient.FullNameEN = dtBillingClientTemporary[0].FullNameEN;
+                dtBillingClient.FullNameLC = dtBillingClientTemporary[0].FullNameLC;
+                dtBillingClient.IDNo = dtBillingClientTemporary[0].IDNo;
+                dtBillingClient.NameEN = dtBillingClientTemporary[0].NameEN;
+                dtBillingClient.NameLC = dtBillingClientTemporary[0].NameLC;
+                dtBillingClient.NationalityEN = dtBillingClientTemporary[0].NationalityEN;
+                dtBillingClient.NationalityJP = dtBillingClientTemporary[0].NationalityJP;
+                dtBillingClient.NationalityLC = dtBillingClientTemporary[0].NationalityLC;
+                dtBillingClient.PhoneNo = dtBillingClientTemporary[0].PhoneNo;
+                dtBillingClient.RegionCode = dtBillingClientTemporary[0].RegionCode;
+                //dtBillingClient.Sequence = dtBillingClientTemporary[0].Sequence;
+                dtBillingClient.UpdateBy = dtBillingClientTemporary[0].UpdateBy;
+                dtBillingClient.UpdateDate = dtBillingClientTemporary[0].UpdateDate;
+                dtBillingClient.BillingOffice = itemTemp.BillingOfficeCode;
+                dtBillingClient.Sequence = itemTemp.Sequence;
+            }
+
+            return dtBillingClient;
+        }
+
+        //Initial--------------------------------------------------------------
+
+        public ActionResult InitialScreen_CTS053(string contractCode)
+        {
+            ObjectResultData res = new ObjectResultData();
+            ICommonHandler commonHandler;
+            IUserControlHandler userHandler;
+            IRentralContractHandler renderHandler;
+            IBillingMasterHandler billingMasterHandler;
+
+            CommonUtil comU = new CommonUtil();
+            dsRentalContractData dsRentalContract;
+            List<CTS053_DTBillingClientDetailData> listDTBillingClientDetail;
+
+            List<string> listFieldName = new List<string>();
+            List<doMiscTypeCode> listMistTypeCode;
+            List<doMiscTypeCode> listMistTypeCodeNew;
+
+            string occCode;
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                commonHandler = ServiceContainer.GetService<ICommonHandler>() as ICommonHandler;
+                userHandler = ServiceContainer.GetService<IUserControlHandler>() as IUserControlHandler;
+                renderHandler = ServiceContainer.GetService<IRentralContractHandler>() as IRentralContractHandler;
+                billingMasterHandler = ServiceContainer.GetService<IBillingMasterHandler>() as IBillingMasterHandler;
+                listDTBillingClientDetail = new List<CTS053_DTBillingClientDetailData>();
+                HasAuthority_CTS053(contractCode);
+
+                //1.1.1 Get last OCC for create change
+                //1.1.1.1 Get last unimplemented OCC
+                occCode = renderHandler.GetLastUnimplementedOCC(contractCode);
+
+                //1.1.1.2 If strLastOCC  is null, Get last implemented OCC
+                if (occCode == null || occCode == "")
+                    occCode = renderHandler.GetLastImplementedOCC(contractCode);
+
+                ViewBag.OCCCode = occCode;
+
+                //1.1.2 Get entire contract data
+                dsRentalContract = renderHandler.GetEntireContract(contractCode, occCode);
+
+                //1.1.3 Set dsRentalContractOLD = dsRentalContract //for validation with old data
+                session.DSRentalContract = dsRentalContract;
+                session.ListRentalMaintenanceDetails = renderHandler.GetTbt_RentalMaintenanceDetails(contractCode, occCode);
+
+                //1.2 Validate entering conditions
+                //1.2.1	Contract must have no unimplemented data
+                if (dsRentalContract.dtTbt_RentalSecurityBasic[0].ImplementFlag == FlagType.C_FLAG_OFF)
+                    ViewBag.ContractUnimplemented = true;
+
+                //1.2.2	Contract must have no installation data
+                //รอ Modules
+
+                //1.2.3 Contract must operated
+                if ((dsRentalContract.dtTbt_RentalSecurityBasic[0].ChangeType == RentalChangeType.C_RENTAL_CHANGE_TYPE_ALTERNATIVE_START ||
+                    dsRentalContract.dtTbt_RentalSecurityBasic[0].ChangeType == RentalChangeType.C_RENTAL_CHANGE_TYPE_END_CONTRACT ||
+                    dsRentalContract.dtTbt_RentalSecurityBasic[0].ChangeType == RentalChangeType.C_RENTAL_CHANGE_TYPE_CANCEL ||
+                    dsRentalContract.dtTbt_RentalSecurityBasic[0].ChangeType == RentalChangeType.C_RENTAL_CHANGE_TYPE_TERMINATED) &&
+                    dsRentalContract.dtTbt_RentalContractBasic[0].ContractStatus == ContractStatus.C_CONTRACT_STATUS_AFTER_START)
+                    ViewBag.ContractMustOperated = true;
+
+                //1.3 Get data for uctRentalContractBasicInformation
+                session.DORentalContractBasicInformation = userHandler.GetRentalContactBasicInformationData(contractCode.Trim());
+
+                listFieldName.Add(MiscType.C_PAYMENT_METHOD);
+                listMistTypeCode = commonHandler.GetMiscTypeCodeListByFieldName(listFieldName);
+                listMistTypeCodeNew = new List<doMiscTypeCode>();
+                foreach (var item in listMistTypeCode)
+                {
+                    if (item.ValueCode == MethodType.C_PAYMENT_METHOD_BANK_TRANSFER ||
+                        item.ValueCode == MethodType.C_PAYMENT_METHOD_AUTO_TRANSFER ||
+                        item.ValueCode == MethodType.C_PAYMENT_METHOD_CREDIT_CARD ||
+                        item.ValueCode == MethodType.C_PAYMENT_METHOD_MESSENGER)
+                        listMistTypeCodeNew.Add(item);
+                }
+
+                session.ListDOMiscTypeCode = listMistTypeCodeNew;
+                InitialScreenData_CTS053(contractCode, occCode);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public void InitialScreenData_CTS053(string contractCode, string occ)
+        {
+            IUserControlHandler userHandler;
+            IRentralContractHandler renderHandler;
+            dtTbt_RentalSecurityBasicForView dtTbt_RentalSecurityBasicForView;
+
+            try
+            {
+                userHandler = ServiceContainer.GetService<IUserControlHandler>() as IUserControlHandler;
+                renderHandler = ServiceContainer.GetService<IRentralContractHandler>() as IRentralContractHandler;
+
+                doRentalContractBasicInformation doRental = userHandler.GetRentalContactBasicInformationData(contractCode.Trim());
+                dtTbt_RentalSecurityBasicForView = renderHandler.GetTbt_RentalSecurityBasicForView(contractCode.Trim(), occ.Trim())[0];
+                if (dtTbt_RentalSecurityBasicForView != null)
+                    ViewBag.ChangeImplementDate = CommonUtil.TextDate(dtTbt_RentalSecurityBasicForView.ChangeImplementDate);
+
+                Bind_CTS053(doRental);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void InitialScreenSession_CTS053(CTS053_ScreenParameter importData)
+        {
+            try
+            {
+                importData.DOEmail = new CTS053_DOEmailData();
+                importData.ListDOEmail = new List<CTS053_DOEmailData>();
+                importData.DOBillingTargetDetailGrid = new CTS053_DOBillingTargetDetailGridData();
+                importData.ListDOBillingTargetDetailGrid = new List<CTS053_DOBillingTargetDetailGridData>();
+                importData.DOGetActiveEmployee = new CTS053_DOGetActiveEmployeeData();
+                importData.DOBillingTargetGrid = new CTS053_DOBillingTargetGridData();
+                importData.DTBillingClientDetail = new CTS053_DTBillingClientDetailData();
+                importData.ListDTBillingClientDetail = new List<CTS053_DTBillingClientDetailData>();
+                importData.DOBillingTargetDetail = new CTS053_DOBillingTargetDetailData();
+                importData.DSRentalContract = new dsRentalContractData();
+                importData.ListRentalMaintenanceDetails = new List<tbt_RentalMaintenanceDetails>();
+                importData.DORentalContractBasicInformation = new doRentalContractBasicInformation();
+                importData.ListDOMiscTypeCode = new List<doMiscTypeCode>();
+                importData.ListDTBillingTempChangePlan = new List<dtBillingTempChangePlanData>();
+
+                CTS053_SetImportData(importData);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        //Session--------------------------------------------------------------
+
+        private CTS053_ScreenParameter CTS053_GetImportData(string key = null)
+        {
+            try
+            {
+                return GetScreenObject<CTS053_ScreenParameter>(key);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void CTS053_SetImportData(CTS053_ScreenParameter import, string key = null)
+        {
+            try
+            {
+                UpdateScreenObject(import, key);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        public ActionResult CTS053_ClearSession()
+        {
+            ObjectResultData res = new ObjectResultData();
+            try
+            {
+                UpdateScreenObject(null);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        //---------------------------------------------------------------------
+
+        public ActionResult ClearBillingDetailClick_CTS053()
+        {
+            ObjectResultData res = new ObjectResultData();
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                //ทำการ Clear ค่าในส่วนของ BillingClient เเละ Detail ที่อาจจะมีการเก็บไว้จาก Flow อื่น
+                session = CTS053_GetImportData();
+                session.DOBillingTargetDetail = null;
+                session.DTBillingClientDetail = null;
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public void Bind_CTS053(doRentalContractBasicInformation doRental)
+        {
+            CTS053_ScreenParameter session;
+            CommonUtil comU;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                comU = new CommonUtil();
+
+                ViewBag.ContractCodeLong = ViewBag.ContractCode;
+                ViewBag.ContractCode = doRental.ContractCodeShort;
+                ViewBag.UserCode = doRental.UserCode;
+                ViewBag.CustomerCode = doRental.ContractTargetCustCodeShort;
+                ViewBag.RealCustomerCode = comU.ConvertCustCode(doRental.RealCustomerCustCode, CommonUtil.CONVERT_TYPE.TO_SHORT);
+                ViewBag.SiteCode = doRental.SiteCodeShort;
+                if (doRental.ContractTargetCustomerImportant == null)
+                    ViewBag.ImportantCustomer = false;
+                else
+                    ViewBag.ImportantCustomer = doRental.ContractTargetCustomerImportant;
+
+                ViewBag.CustFullNameEN = doRental.ContractTargetNameEN;
+                ViewBag.CustFullNameLC = doRental.ContractTargetNameLC;
+                ViewBag.AddressFullEN = doRental.ContractTargetAddressEN;
+                ViewBag.AddressFullLC = doRental.ContractTargetAddressLC;
+                ViewBag.SiteNameEN = doRental.SiteNameEN;
+                ViewBag.SiteNameLC = doRental.SiteNameLC;
+                ViewBag.SiteAddressEN = doRental.SiteAddressEN;
+                ViewBag.SiteAddressLC = doRental.SiteAddressLC;
+                ViewBag.InstallationStatus = doRental.InstallationStatusCode + ":" + doRental.InstallationStatusName;
+                ViewBag.InstallationStatusCode = doRental.InstallationStatusCode;
+                ViewBag.OperationOffice = doRental.OperationOfficeCode;
+                ViewBag.OfficeName = doRental.OperationOfficeCode + ":" + doRental.OperationOfficeName;
+
+                if (session.DSRentalContract.dtTbt_RentalSecurityBasic[0].OrderContractFee != null)
+                    ViewBag.ContractFee = decimal.Parse(session.DSRentalContract.dtTbt_RentalSecurityBasic[0].OrderContractFee.ToString()).ToString("#,##0.00");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public string CreateEmptyText_CTS053(string value)
+        {
+            if (value == "" || value == null)
+                value = "-";
+
+            return value;
+        }
+
+        public ActionResult GetActiveEmployee_CTS053(CTS053_DOGetActiveEmployeeData doCTS053GetActiveEmployee)
+        {
+            ObjectResultData res = new ObjectResultData();
+            IMasterHandler masterHandler;
+            IEmployeeMasterHandler employeeHandler;
+            List<tbm_Employee> listEmployee;
+            List<dtEmpNo> listEmpNo;
+
+            try
+            {
+                masterHandler = ServiceContainer.GetService<IMasterHandler>() as IMasterHandler;
+                employeeHandler = ServiceContainer.GetService<IEmployeeMasterHandler>() as IEmployeeMasterHandler;
+
+                listEmployee = masterHandler.GetActiveEmployee(doCTS053GetActiveEmployee.EmpNo);
+
+                if (listEmployee.Count() == 0)
+                {
+                    //res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0012, "");
+                    return Json(res);
+                }
+
+                listEmpNo = employeeHandler.GetEmployeeNameByEmpNo(doCTS053GetActiveEmployee.EmpNo);
+                if (listEmpNo.Count() != 0)
+                    doCTS053GetActiveEmployee.EmpName = listEmpNo[0].EmployeeNameDisplay;
+
+                return Json(doCTS053GetActiveEmployee);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult GetComboBoxPaymentMethod_CTS053(string id)
+        {
+            List<doMiscTypeCode> lst = new List<doMiscTypeCode>();
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                List<doMiscTypeCode> miscs = new List<doMiscTypeCode>()
+                {
+                    new doMiscTypeCode()
+                    {
+                        FieldName = MiscType.C_PAYMENT_METHOD,
+                        ValueCode = "%"
+                    }
+                };
+
+                ICommonHandler hand = ServiceContainer.GetService<ICommonHandler>() as ICommonHandler;
+                lst = hand.GetMiscTypeCodeList(session.ListDOMiscTypeCode);
+            }
+            catch
+            {
+            }
+
+            if (lst == null)
+                lst = new List<doMiscTypeCode>();
+
+            string display = "ValueCodeDisplay";
+
+            return Json(CommonUtil.CommonComboBox<doMiscTypeCode>(id, lst, display, "ValueCode", null, true).ToString().Replace("----Select----", "None"));
+        }
+
+        public ActionResult GetMAS030Object_CTS053()
+        {
+            ObjectResultData res = new ObjectResultData();
+            CTS053_ScreenParameter session;
+            CTS053_MAS030Object mas030Object;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                mas030Object = new CTS053_MAS030Object();
+                if (session.DOBillingTargetDetail != null)
+                {
+                    mas030Object.AddressEN = session.DOBillingTargetDetail.AddressEN;
+                    mas030Object.AddressLC = session.DOBillingTargetDetail.AddressLC;
+                    mas030Object.BillingClientCode = session.DOBillingTargetDetail.BillingClientCodeDetail;
+                    mas030Object.BranchNameEN = session.DOBillingTargetDetail.BranchNameEN;
+                    mas030Object.BranchNameLC = session.DOBillingTargetDetail.BranchNameLC;
+                    mas030Object.BusinessTypeCode = session.DOBillingTargetDetail.BusinessType;
+                    mas030Object.CompanyTypeCode = session.DOBillingTargetDetail.BillingOffice;
+                    mas030Object.CustTypeCode = session.DTBillingClientDetail.CustTypeCode;
+                }
+
+                return Json(mas030Object);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult UpdateDataFromMAS030Object_CTS053(CTS053_MAS030Object mas030Object)
+        {
+            ObjectResultData res = new ObjectResultData();
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                session.DOBillingTargetDetail = new CTS053_DOBillingTargetDetailData();
+                session.DOBillingTargetDetail.AddressEN = mas030Object.AddressEN;
+                session.DOBillingTargetDetail.AddressLC = mas030Object.AddressLC;
+                session.DOBillingTargetDetail.BillingClientCodeDetail = mas030Object.BillingClientCode;
+                session.DOBillingTargetDetail.BranchNameEN = mas030Object.BranchNameEN;
+                session.DOBillingTargetDetail.BranchNameLC = mas030Object.BranchNameLC;
+                session.DOBillingTargetDetail.BusinessType = mas030Object.BusinessTypeCode;
+                session.DOBillingTargetDetail.IDNo = mas030Object.IDNo;
+                session.DOBillingTargetDetail.FullNameEN = mas030Object.NameEN;
+                session.DOBillingTargetDetail.FullNameLC = mas030Object.NameLC;
+                session.DOBillingTargetDetail.PhoneNo = mas030Object.PhoneNo;
+                session.DOBillingTargetDetail.Nationality = mas030Object.RegionCode;
+
+                session.DTBillingClientDetail = new CTS053_DTBillingClientDetailData();
+                session.DTBillingClientDetail.AddressEN = mas030Object.AddressEN;
+                session.DTBillingClientDetail.AddressLC = mas030Object.AddressLC;
+                session.DTBillingClientDetail.BillingClientCode = mas030Object.BillingClientCode;
+                session.DTBillingClientDetail.BranchNameEN = mas030Object.BranchNameEN;
+                session.DTBillingClientDetail.BranchNameLC = mas030Object.BranchNameLC;
+                session.DTBillingClientDetail.BusinessTypeCode = mas030Object.BusinessTypeCode;
+                session.DTBillingClientDetail.CompanyTypeCode = mas030Object.CompanyTypeCode;
+                session.DTBillingClientDetail.CustTypeCode = mas030Object.CustTypeCode;
+                session.DTBillingClientDetail.IDNo = mas030Object.IDNo;
+                session.DTBillingClientDetail.FullNameEN = mas030Object.NameEN;
+                session.DTBillingClientDetail.FullNameLC = mas030Object.NameLC;
+                session.DTBillingClientDetail.PhoneNo = mas030Object.PhoneNo;
+                session.DTBillingClientDetail.Nationality = mas030Object.RegionCode;
+
+                return Json(session.DOBillingTargetDetail);
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult ResetData_CTS053()
+        {
+            ObjectResultData res = new ObjectResultData();
+
+            try
+            {
+                CTS053_ScreenParameter session = GetScreenObject<CTS053_ScreenParameter>();
+                InitialScreen_CTS053(session.ContractCode);
+                session = GetScreenObject<CTS053_ScreenParameter>();
+
+                CTS053_ScreenOutputObject outObj = new CTS053_ScreenOutputObject()
+                {
+                    AddressFullEN = session.DORentalContractBasicInformation.ContractTargetAddressEN,
+                    AddressFullLC = session.DORentalContractBasicInformation.ContractTargetAddressLC,
+                    Alphabet = "",
+                    ContractCode = session.DORentalContractBasicInformation.ContractCode,
+                    ContractCodeShort = session.DORentalContractBasicInformation.ContractCodeShort,
+                    CustFullNameEN = session.DORentalContractBasicInformation.ContractTargetNameEN,
+                    CustFullNameLC = session.DORentalContractBasicInformation.ContractTargetNameLC,
+                    CustomerCode = session.DORentalContractBasicInformation.ContractTargetCustCodeShort,
+                    RealCustomerCode = session.DORentalContractBasicInformation.RealCustomerCustCodeShort,
+                    DisplayAll = "",
+                    SiteAddress = session.DORentalContractBasicInformation.SiteAddressEN,
+                    SiteAddressLC = session.DORentalContractBasicInformation.SiteAddressLC,
+                    SiteCode = session.DORentalContractBasicInformation.SiteCodeShort,
+                    SiteName = session.DORentalContractBasicInformation.SiteNameEN,
+                    SiteNameLC = session.DORentalContractBasicInformation.SiteNameLC,
+                    InstallationStatus = String.Format("{0}:{1}", session.DORentalContractBasicInformation.InstallationStatusCode, session.DORentalContractBasicInformation.InstallationStatusName),
+                    InstallationStatusCode = session.DORentalContractBasicInformation.InstallationStatusCode,
+                    OfficeName = String.Format("{0}:{1}", session.DORentalContractBasicInformation.OperationOfficeCode, session.DORentalContractBasicInformation.OperationOfficeName),
+                    EndContractDate = CommonUtil.TextDate(session.DSRentalContract.dtTbt_RentalSecurityBasic[0].ContractEndDate),
+                    ImportantFlag = session.DORentalContractBasicInformation.ContractTargetCustomerImportant.GetValueOrDefault(),
+                    UserCode = session.DORentalContractBasicInformation.UserCode,
+                    ServiceTypeCode = ServiceType.C_SERVICE_TYPE_RENTAL,
+                    TargetCodeType = TargetCodeType.C_TARGET_CODE_TYPE_CONTRACT_CODE,
+                    Sequence = "",
+                    OCC = session.DSRentalContract.dtTbt_RentalContractBasic[0].LastOCC,
+                    QuotationTargetCode = session.DORentalContractBasicInformation.ContractCodeShort,
+                    ContractStatus = session.DSRentalContract.dtTbt_RentalContractBasic[0].ContractStatus,
+                    ExpectOperationDate = CommonUtil.TextDate(session.DSRentalContract.dtTbt_RentalSecurityBasic[0].ExpectedOperationDate),
+                    BillingClientCode = "",
+                    BillingOffice = "",
+                    EmpName = "",
+                    EmpNo = "",
+                    NegotiationStaffEmpNo1 = "",
+                    PaymentMethod = ""
+                };
+
+                res.ResultData = outObj;
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        #endregion
+
+        #region Validate
+
+        public ActionResult ValidateRetrieveBillingTarget_CTS053(CTS053_DORetrieveBillingTargetData doRetrieveBillingTarget)
+        {
+            ObjectResultData res = new ObjectResultData();
+            IBillingInterfaceHandler billinginterfacehandler;
+            tbt_BillingTarget listBillingTarget = null;
+            CommonUtil common;
+
+            try
+            {
+                common = new CommonUtil();
+                billinginterfacehandler = ServiceContainer.GetService<IBillingInterfaceHandler>() as IBillingInterfaceHandler;
+
+                if (ModelState.IsValid == false)
+                {
+                    ValidatorUtil.BuildErrorMessage(res, this);
+                    if (res.IsError)
+                    {
+                        res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                        res.ResultData = false;
+                        return Json(res);
+                    }
+                }
+
+                //listBillingTarget = billinginterfacehandler.GetBillingTarget(common.ConvertBillingTargetCode(doRetrieveBillingTarget.BillingTargetCode, CommonUtil.CONVERT_TYPE.TO_LONG));
+                List<tbt_BillingTarget> dtBillingTargetList = billinginterfacehandler.GetBillingTarget(common.ConvertBillingTargetCode(doRetrieveBillingTarget.BillingTargetCode, CommonUtil.CONVERT_TYPE.TO_LONG));
+                if (dtBillingTargetList != null && dtBillingTargetList.Count > 0)
+                    listBillingTarget = dtBillingTargetList[0];
+                
+                if (listBillingTarget == null)
+                {
+                    string[] param = { "Billing target code" };
+                    res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                    res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0011, "Billing target code");
+                    res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0011, param, null);
+                    return Json(res);
+                }
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult ValidateRetrieveBillingClient_CTS053(CTS053_DORetrieveBillingClientData doRetrieveBillingClient)
+        {
+            ObjectResultData res = new ObjectResultData();
+
+            try
+            {
+                if (ModelState.IsValid == false)
+                {
+                    res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                    ValidatorUtil.BuildErrorMessage(res, this);
+                    if (res.IsError)
+                    {
+                        res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                        res.ResultData = false;
+                        return Json(res);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return Json(res);
+        }
+
+        public ActionResult ValidateAddUpdateRequireField_CTS053(CTS053_DOValidateAddUpdateRequireFieldData doValidateAddUpdateRequireField)
+        {
+            ObjectResultData res = new ObjectResultData();
+
+            try
+            {
+                if (ModelState.IsValid == false)
+                {
+                    ValidatorUtil.BuildErrorMessage(res, this);
+                    if (res.IsError)
+                    {
+                        res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                        res.ResultData = false;
+                        return Json(res);
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return Json(res);
+        }
+
+        public ObjectResultData ValidateBusiness_CTS053(CTS053_DOValidateBusinessData doValidateBusiness)
+        {
+            IEmployeeMasterHandler employeeMasterHandler;
+            ObjectResultData res = new ObjectResultData();
+
+            List<dtEmpNo> listEmpNo;
+            List<string> listSequenceApproveNo;
+            int countBillingTemp = 0;
+            decimal? totalOrderContractFee = 0;
+
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                listSequenceApproveNo = new List<string>();
+                employeeMasterHandler = ServiceContainer.GetService<IEmployeeMasterHandler>() as IEmployeeMasterHandler;
+
+                if (doValidateBusiness.ChangeImplementDate.Value.Date > DateTime.Now.Date)
+                {
+                    string[] param = { "Change date of contract fee" };
+                    res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                    res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0009, param, null);
+                    res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0009, "Change date of contract fee");
+                    return res;
+                }
+
+                foreach (var item in session.ListDTBillingTempChangePlan)
+	            {
+		            if (item.BillingOCC == null ||  item.BillingOCC == "")
+	                {
+		                if (item.BillingType == ContractBillingType.C_CONTRACT_BILLING_TYPE_CONTRACT_FEE && item.BillingAmt == 0)
+	                    {
+                            res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                            res.AddErrorMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3230);
+                            res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3230);
+                            return res;
+	                    }
+	                }
+	            }
+
+                if (session.DSRentalContract.dtTbt_RentalContractBasic[0].LastChangeImplementDate != null)
+                {
+                    if (doValidateBusiness.ChangeImplementDate.Value.Date < session.DSRentalContract.dtTbt_RentalContractBasic[0].LastChangeImplementDate.Value.Date)
+                    {
+                        res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                        res.AddErrorMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3045, null, null);
+                        res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3045, null);
+                        return res;
+                    }
+                }
+
+                if (doValidateBusiness.ChangeFeeNoExpiration == false)
+                {
+                    if (doValidateBusiness.ReturnToOriginalFeeDate != null)
+                    {
+                        if (doValidateBusiness.ReturnToOriginalFeeDate.Value.Date <= doValidateBusiness.ChangeImplementDate.Value.Date)
+                        {
+                            res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                            res.AddErrorMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3046, null, null);
+                            res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3046, null);
+                            return res;
+                        }
+                    }
+
+                    if (session.ListDOEmail.Count() == 0)
+                    {
+                        res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                        res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0088, null, null);
+                        res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0088, null);
+                        return res;
+                    }
+                }
+
+                if (session.DSRentalContract.dtTbt_RentalSecurityBasic[0].ReturnToOriginalFeeDate == null &&
+                    session.DSRentalContract.dtTbt_RentalSecurityBasic[0].OrderContractFee == decimal.Parse(doValidateBusiness.ChangeContractFee))
+                {
+                    res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                    res.AddErrorMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3047, null, null);
+                    res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3047, null);
+                    return res;
+                }
+
+                if (session.DSRentalContract.dtTbt_RentalSecurityBasic[0].ReturnToOriginalFeeDate != null &&
+                    session.DSRentalContract.dtTbt_RentalSecurityBasic[0].OrderContractFee.Value.ToString("#,##0.00") != decimal.Parse(doValidateBusiness.ChangeContractFee).ToString("#,##0.00"))
+                {
+                    res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                    res.AddErrorMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3048, null, null);
+                    res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3048, null);
+                    return res;
+                }
+
+                if (doValidateBusiness.NegotiationStaffEmpNo1 != "" &&
+                    doValidateBusiness.NegotiationStaffEmpNo1 != null)
+                {
+                    listEmpNo = employeeMasterHandler.GetEmployeeNameByEmpNo(doValidateBusiness.NegotiationStaffEmpNo1);
+                    if (listEmpNo == null)
+                    {
+                        if (listEmpNo.Count() == 0)
+                        {
+                            string[] param = { doValidateBusiness.NegotiationStaffEmpNo1 };
+                            res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                            res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0012, param, null);
+                            res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0012, doValidateBusiness.NegotiationStaffEmpNo1);
+                            return res;
+                        }
+                    }
+                }
+
+                if (doValidateBusiness.NegotiationStaffEmpNo2 != "" &&
+                    doValidateBusiness.NegotiationStaffEmpNo2 != null)
+                {
+                    listEmpNo = employeeMasterHandler.GetEmployeeNameByEmpNo(doValidateBusiness.NegotiationStaffEmpNo2);
+                    if (listEmpNo == null)
+                    {
+                        if (listEmpNo.Count() == 0)
+                        {
+                            string[] param = { doValidateBusiness.NegotiationStaffEmpNo2 };
+                            res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                            res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0012, param, null);
+                            res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0012, doValidateBusiness.NegotiationStaffEmpNo2);
+                            return res;
+                        }
+                    }
+                }
+
+                if (doValidateBusiness != null)
+                {
+                    listSequenceApproveNo.Add(doValidateBusiness.ApproveNo1);
+                    listSequenceApproveNo.Add(doValidateBusiness.ApproveNo2);
+                    listSequenceApproveNo.Add(doValidateBusiness.ApproveNo3);
+                    listSequenceApproveNo.Add(doValidateBusiness.ApproveNo4);
+                    listSequenceApproveNo.Add(doValidateBusiness.ApproveNo5);
+                }
+
+                for (int i = 0; i <= listSequenceApproveNo.Count - 1; i++)
+                {
+                    if (listSequenceApproveNo[i] != null)
+                    {
+                        if (listSequenceApproveNo[i] != null)
+                        {
+                            if (i != 0)
+                            {
+                                for (int j = i - 1; j >= 0; j--)
+                                {
+                                    if (listSequenceApproveNo[j] == null)
+                                    {
+                                        res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                                        res.AddErrorMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3009, null, null);
+                                        res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3009, "");
+                                        return res;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                foreach (var item in session.ListDTBillingTempChangePlan)
+                {
+                    if (item.BillingAmt > 0)
+                        countBillingTemp += 1;
+                }
+
+                if (session.DOBillingTargetDetailGrid != null)
+                {
+                    if (session.ListDOBillingTargetDetailGrid.Count() != 0)
+                    {
+                        //4.6.1
+                        if (doValidateBusiness.ChangeContractFee != null)
+                        {
+                            if (decimal.Parse(doValidateBusiness.ChangeContractFee) > 0 &&
+                                doValidateBusiness.DivideBillingContractFee == true && countBillingTemp <= 1)
+                            {
+                                res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                                res.AddErrorMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3010, null);
+                                res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3010, "");
+                                return res;
+                            }
+                        }
+
+                        //4.6.2
+                        if (doValidateBusiness.ChangeContractFee != null)
+                        {
+                            if (decimal.Parse(doValidateBusiness.ChangeContractFee) > 0 &&
+                                doValidateBusiness.DivideBillingContractFee == false && countBillingTemp > 1)
+                            {
+                                res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                                res.AddErrorMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3011, null);
+                                res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3011, "");
+                                return res;
+                            }
+                        }
+                    }
+                }
+
+                //4.6.3
+                if (session.ListRentalMaintenanceDetails != null)
+                {
+                    if (session.ListRentalMaintenanceDetails.Count() != 0)
+                    {
+                        if (session.ListRentalMaintenanceDetails[0].MaintenanceFeeTypeCode == MAFeeType.C_MA_FEE_TYPE_RESULT_BASED &&
+                            countBillingTemp > 1)
+                        {
+                            res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                            res.AddErrorMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3150, null);
+                            res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3150, "");
+                            return res;
+                        }
+                    }
+                }
+
+                foreach (var item in session.ListDTBillingTempChangePlan)
+                {
+                    totalOrderContractFee += item.BillingAmt;
+                }
+
+                if (totalOrderContractFee != decimal.Parse(doValidateBusiness.ChangeContractFee))
+                {
+                    res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                    res.AddErrorMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3012, null);
+                    res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_CONTRACT, MessageUtil.MessageList.MSG3012, "");
+                    return res;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+
+            return res;
+        }
+
+        public ActionResult ValidateEmail_CTS053(CTS053_DOEmailData doCTS053Email)
+        {
+            List<dtGetEmailAddress> dtEmail;
+            CTS053_DOEmailData doCTS053EmailADD;
+            IEmployeeMasterHandler employeeMasterHandler;
+            ObjectResultData res = new ObjectResultData();
+            CTS053_ScreenParameter session;
+
+            try
+            {
+                session = CTS053_GetImportData();
+                employeeMasterHandler = ServiceContainer.GetService<IEmployeeMasterHandler>() as IEmployeeMasterHandler;
+                doCTS053Email.EmailAddress = doCTS053Email.EmailAddress;
+
+                if (ModelState.IsValid == false)
+                {
+                    ValidatorUtil.BuildErrorMessage(res, this);
+                    if (res.IsError)
+                    {
+                        res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                        res.ResultData = false;
+                        return Json(res);
+                    }
+                }
+
+                dtEmail = employeeMasterHandler.GetEmailAddress(null, doCTS053Email.EmailAddress, null, null);
+                if (dtEmail != null)
+                {
+                    if (dtEmail.Count() == 0)
+                    {
+                        string[] param = { doCTS053Email.EmailAddress };
+                        res.MessageType = MessageModel.MESSAGE_TYPE.WARNING;
+                        res.ResultData = MessageUtil.GetMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0011, doCTS053Email.EmailAddress);
+                        res.AddErrorMessage(MessageUtil.MODULE_COMMON, MessageUtil.MessageList.MSG0011, param, null);
+                    }
+                    else
+                    {
+                        doCTS053EmailADD = new CTS053_DOEmailData();
+                        doCTS053EmailADD.EmpNo = dtEmail[0].EmpNo;
+                        doCTS053EmailADD.EmailAddress = dtEmail[0].EmailAddress;
+                        session.DOEmail = doCTS053EmailADD;
+
+                        //doCTS053EmailADD = new CTS053_DOEmailData();
+                        //doCTS053EmailADD.EmpNo = "540886";
+                        //doCTS053EmailADD.EmailAddress = "Nattapong@csithai.com";
+                        //session.DOEmail = doCTS053EmailADD;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            return Json(res);
+        }
+
+        public void HasAuthority_CTS053(string contractCode)
+        {
+            ObjectResultData res = new ObjectResultData();
+            ICommonHandler commonHandler;
+            IRentralContractHandler renderHandler;
+            List<tbt_RentalContractBasic> listRentalContractBasic;
+
+            try
+            {
+                commonHandler = ServiceContainer.GetService<ICommonHandler>() as ICommonHandler;
+                renderHandler = ServiceContainer.GetService<IRentralContractHandler>() as IRentralContractHandler;
+                listRentalContractBasic = renderHandler.GetTbt_RentalContractBasic(contractCode, null);
+
+                if (commonHandler.IsSystemSuspending())
+                    ViewBag.IsSystemSuspending = true;
+                else
+                    ViewBag.IsSystemSuspending = false;
+
+                //1.2 Check user's permission
+                if (!CheckUserPermission(ScreenID.C_SCREEN_ID_CP12_CHANGE_FEE, FunctionID.C_FUNC_ID_OPERATE))
+                    ViewBag.Permission = false;
+                else
+                    ViewBag.Permission = true;
+
+                //1.3 Check user's authority to view data
+                if (CommonUtil.dsTransData.dtOfficeData.FindAll(delegate(OfficeDataDo s) { return s.OfficeCode == listRentalContractBasic[0].ContractOfficeCode; }).Count == 0)
+                    ViewBag.HasAuthorityContract = false;
+                else
+                    ViewBag.HasAuthorityContract = true;
+
+                if (CommonUtil.dsTransData.dtOfficeData.FindAll(delegate(OfficeDataDo s) { return s.OfficeCode == listRentalContractBasic[0].OperationOfficeCode; }).Count == 0)
+                    ViewBag.HasAuthorityOperation = false;
+                else
+                    ViewBag.HasAuthorityOperation = true;
+            }
+            catch (Exception ex)
+            {
+                res.AddErrorMessage(ex);
+            }
+        }
+
+        #endregion
+    }
+
+}

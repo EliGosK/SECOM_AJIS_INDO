@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="30" type="ro" align="center" sort="na"></column>
+    <column id="WHTNo" width="120" type="ro" align="left" sort="str_custom">headerWHTNo</column>
+    <column id="PaymentTransNo" width="100" type="ro" align="left" sort="str_custom">headerPaymentTransNo</column>
+    <column id="Payer" width="*" type="ro" align="left" sort="str_custom">headerPayerName</column>
+    <column id="VATRegistantName" width="200" type="ro" align="left" sort="str_custom">headerVATRegistantName</column>
+    <column id="DocumentDate" width="110" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerDocumentDate</column>
+    <column id="Status" width="100" type="ro" align="left" sort="str_custom">headerStatus</column>
+    <column id="SelectButton" width="30" type="ro" align="center" sort="na"></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,174 @@
+﻿@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+<!-- ======== Html content ======== --->
+
+
+@* --- Contract Information ---  *@
+
+<div id="divRegisterComplete" class="main-table" style="margin-top:5px;">
+<form id="form1"  >
+    <div class="usr-row">
+        <div class="table-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS060.lblHeaderRegisterComplete
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>   
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS060.lblInstallationStartDate
+            
+        </div>
+        <div class="usr-object" style="width:250px; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object" >
+            <input type="text" id="InstallStartDate" name="InstallStartDate" style="width:100px;" />
+            @Html.RequireFiled()
+            </div>
+            @Html.LabelDateFormat("InstallStartDate")
+        </div>
+        
+        <div class="usr-label" style="width:190px;">
+            @Resources.ISS060.lblInstallationFinishDate
+        </div>
+        <div class="usr-object" style="width:250px; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+            <input type="text" id="InstallFinishDate" name="InstallFinishDate" style="width:100px;" />
+            @Html.RequireFiled()
+            </div>
+            @Html.LabelDateFormat("InstallFinishDate")
+        </div>
+        
+    </div>   
+    <div class="usr-row">
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS060.lblInstallationCompleteDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            <input type="text" id="InstallCompleteDate" name="InstallCompleteDate" style="width:100px;" />
+            @Html.RequireFiled()
+        </div>
+        @Html.LabelDateFormat("InstallCompleteDate")
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">           
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        </div>
+    </div> 
+      
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS060.lblNormalContractFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+            @*@Html.NumericTextBox("NewNormalContractFee", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("NewNormalContractFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+            </div> @*@Html.LabelCurrencyUnit("")*@
+        </div>  
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS060.lblNormalInstallationFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @*@Html.NumericTextBox("NewNormalInstallFee", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })*@
+            @Html.NumericTextBoxWithMultipleCurrency("NewNormalInstallFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+        </div> @*@Html.LabelCurrencyUnit("NewNormalInstallFeeTHB")*@ &nbsp; @Html.RequireFiled()
+        
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS060.lblInstallFeeBilling
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("NewInstallFeeBillingName", null, new { style = "width:250px;", @readonly = true })
+           <div style="display:none"> @Html.FeeBillingTypeComboBox("NewInstallFeeBillingType", new { style = "width: 250px;" })</div> 
+        </div>  
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS060.lblBillingInstallFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @*@Html.NumericTextBox("NewBillingInstallFee", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })*@
+            @Html.NumericTextBoxWithMultipleCurrency("NewBillingInstallFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+            
+        </div> @*@Html.LabelCurrencyUnit("")*@     
+    </div>
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS060.lblBillingOCC
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.InstallBillingOCCComboBox("NewBillingOCC", (string)@ViewBag.ContractCodeLong, new { style = "width: " + @ViewBag.ObjectCol1Width + ";" }, true)
+        </div>  
+        
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.ISS060.lblSECOMPaymentFee
+        </div>
+        <div class="usr-object" style="width:220px; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">
+            @*@Html.NumericTextBox("NewSECOMPaymentFee", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("NewSECOMPaymentFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+            </div>
+            @*@Html.LabelCurrencyUnit("")*@
+        </div> 
+        
+        <div class="usr-label" style="width:220px;">
+            @Resources.ISS060.lblSECOMRevenueFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            
+
+            <div class="usr-object">
+            @*@Html.NumericTextBox("NewSECOMRevenueFee", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("NewSECOMRevenueFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+           </div>
+            @*@Html.LabelCurrencyUnit("")*@
+        </div>      
+        
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS060.lblApproveNo1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText2; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("NewApproveNo1", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })
+        </div>
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS060.lblApproveNo2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("NewApproveNo2", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "15" })
+        </div>
+    </div>    
+     
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth; height:60px;">@Resources.ISS060.lblInstallationMemo</div>
+        <div class="usr-object" style="margin-right:5px;width:580px; ">
+            @Html.CommonTextArea("NewMemo", null, new { style = "width:577px; height:60px;" })
+        </div>   
+    </div> 
+</form>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    
+    <br />
+ 
+</div>
+

@@ -1,0 +1,79 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "181px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol12_SWidth = "369px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMerge12Width = "280px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.ObjectColCustNameWidth = "200px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS010/CTS010_05.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("C_PROD_TYPE_SALE", SECOM_AJIS.Common.Util.ConstantValue.ProductType.C_PROD_TYPE_SALE)
+    @Html.Hidden("C_MA_FEE_TYPE_RESULT_BASED", SECOM_AJIS.Common.Util.ConstantValue.MAFeeType.C_MA_FEE_TYPE_RESULT_BASED)
+</div>
+<div id="divMaintenanceInfo_MA" class="main-table">
+    <div class="table-header">@Resources.CTS010.lblMaintenanceInformation_MA</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblMaintenanceTargetProduct
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+            @Html.CommonTextBox("MaintenanceTargetProductTypeCodeName", (string)@ViewBag.MaintenanceTargetProductTypeCodeName, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblMaintenanceType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MaintenanceTypeCodeName", (string)@ViewBag.MaintenanceTypeCodeName, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblMaintenanceCycle
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+            @Html.NumericTextBox("MaintenanceCycle", (string)@ViewBag.MaintenanceCycle, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblExpectedMainteanceContract
+        </div>
+        <div class="usr-object" style="width:210px;">
+            @Html.MonthComboBox("MaintenanceContractStartMonth", new { selected = @ViewBag.MaintenanceContractStartMonth, style = "width:100px;" })
+            @Html.YearComboBox("MaintenanceContractStartYear", new { selected = @ViewBag.MaintenanceContractStartYear, style = "width:100px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblMaintenanceFeeType
+        </div>
+        <div class="usr-object">
+            @Html.MaintenanceFeeTypeComboBox("MaintenanceFeeTypeCode", new { selected = @ViewBag.MaintenanceFeeTypeCode, style = "width:185px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblMemo_OtherCompanyFacility
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextArea("MaintenanceMemo", (string)@ViewBag.MaintenanceMemo, new { style = "width:700px;height:45px;" })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div style="float:left;width:@ViewBag.ObjectColMergeWidth;">
+            <div id="gridMaintenanceList" style="width:400px;"></div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

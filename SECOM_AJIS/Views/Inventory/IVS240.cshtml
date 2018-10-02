@@ -1,0 +1,129 @@
+﻿<!--
+//*********************************
+// Create by: Non A.
+// Create date: 12/Mar/2012
+// Update date: 12/Mar/2012
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+@{
+    ViewBag.SearchCol1Width = "180px";
+    ViewBag.SearchCol2Width = "180px";
+    ViewBag.SearchCol2WidthCbo = "184px";
+    ViewBag.SearchCol3Width = "180px";
+    ViewBag.SearchCol4Width = "180px";
+    ViewBag.SearchCol4WidthCbo = "184px";
+    ViewBag.SearchWidthButton1 = "80px";
+    ViewBag.SearchWidthButton2 = "80px";
+    ViewBag.DatePickerWidth = "95px";
+
+    ViewBag.DetailCol1Width = "180px";
+    ViewBag.DetailCol2WidthFull = "650px";
+
+    ViewBag.SLWidthCol1 = "250px;";
+    ViewBag.SLWidthCol2 = "200px;";
+    ViewBag.SLWidthCol3 = "150px;";
+    ViewBag.SLWidthCol4 = "150px;";
+}
+
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Inventory/IVS240.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/number-functions.js")"></script>
+    
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/Inventory/ivs240.css")" />
+}
+
+<div id="divSearchCriteria" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.IVS240.lblSearchCriteria</div>
+    <form name="formSearch" id="formSearch" action="#">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.SearchCol1Width;">@Resources.IVS240.lblInstallationSlipNo</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtSearchInstallSlipNo", null, new { style = "width:" + ViewBag.SearchCol2Width, maxlength = 16 })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.SearchCol3Width;">@Resources.IVS240.lblExpectedStockOutDate</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtSearchDateFrom", null, new { style = "width:" + ViewBag.DatePickerWidth })
+                <span> ~ </span>
+                @Html.CommonTextBox("txtSearchDateTo", null, new { style = "width:" + ViewBag.DatePickerWidth })
+            </div>
+            <div class="usr-object">
+                @Html.LabelDateFormat("lblDateFormat")
+            </div>
+        </div>
+        
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.SearchCol1Width;">@Resources.IVS240.lblContractCode</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtSearchContractCode", null, new { style = "width:" + ViewBag.SearchCol2Width, maxlength = 12 })
+            </div> 
+            <div class="usr-label" style="width:@ViewBag.SearchCol3Width;">@Resources.IVS240.lblProjectCode</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtSearchProjectCode", null, new { style = "width:" + ViewBag.SearchCol4Width, maxlength = 8 })
+            </div> 
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.SearchCol1Width;">@Resources.IVS240.lblOperationOffice</div>
+            <div class="usr-object">
+                @Html.IVS240OperationOfficeCbo("cboSearchOperationOffice", new { style = "width:" + ViewBag.SearchCol2WidthCbo })
+            </div> 
+            <div class="usr-label" style="width:@ViewBag.SearchCol3Width;">@Resources.IVS240.lblSubContractor</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtSearchSubContractor", null, new { style = "width:" + ViewBag.SearchCol4Width, maxlength = 100 })
+            </div> 
+        </div>
+
+    </form>
+
+    <div class="usr-clear-style">&nbsp;</div>
+    <div class="usr-row" style="margin-top: 5px">
+        <div style="text-align: right; float: right; width:@ViewBag.ObjectColMergeWidth; margin-right: 4px;">
+            @Html.CommonButton("btnSearch", (string)@Resources.IVS240.btnSearch, new { style = "width:" + @ViewBag.SearchWidthButton1 })
+            @Html.CommonButton("btnClear", (string)@Resources.IVS240.btnClear, new { style = "width:" + @ViewBag.SearchWidthButton2 })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+
+    <div id="divSearchResultGrid" style="width: 99%; margin-left: 4px; margin-top:5px;">
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="divDetail" class="main-table" style="margin-top:5px; visibility: hidden">
+    <div class="table-header">@Resources.IVS240.lblPickingListDetail</div>
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.DetailCol1Width;">@Resources.IVS240.lblInstallationSlipNo</div>
+        <div class="usr-datalist" style="height: 100px; width: @ViewBag.DetailCol2WidthFull;" >
+            <dl id="dlInstallSlipNo" >
+            </dl>
+        </div>
+    </div>
+
+    <div id="divDetailResultGrid" style="width: 99%; margin-left: 4px;">
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div class="main-table" id="divShowSlip" style="visibility: hidden">
+    <div class="table-header">
+        @Resources.IVS240.lblHeaderShowSlipNo
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SLWidthCol1">@Resources.IVS240.lblSlipNo</div>
+        <div class="usr-object" style="width:@ViewBag.SLWidthCol2">@Html.CommonTextBox("txtShowSlipNo", null, new { style = "width:95%" })</div>
+        @Html.CommonButton("btnDownloadSlip", @Resources.IVS240.lblBtnDownloadSlip, new { style = "width:" + ViewBag.SLWidthCol3 }) 
+        @Html.CommonButton("btnNewRegister", @Resources.IVS240.lblBtnNewRegister, new { style = "width:" + ViewBag.SLWidthCol4 }) 
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

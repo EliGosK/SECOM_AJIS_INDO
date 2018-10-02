@@ -1,0 +1,148 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    /* --- Before use this control, You must declare
+     *      1.) ViewBag.dtSite (SECOM_AJIS.DataEntity.Master.dtSite)
+     *      2.) ViewBag.LabelWidth (string)
+     *      3.) ViewBag.IsViewMode (bool)
+     *      4.) ViewBag.SiteCustCode (string)
+     */
+
+    if (ViewBag.dtSite == null)
+    {
+        ViewBag.dtSite = new SECOM_AJIS.DataEntity.Master.View_dtSite();
+    }
+    if (ViewBag.IsViewMode == null)
+    {
+        ViewBag.IsViewMode = true;
+    }
+    if (ViewBag.IsViewMode)
+    {
+        ViewBag.ViewClass = "label-view";
+    }
+    else
+    {
+        ViewBag.ViewClass = "";
+    }
+}
+
+@if (@ViewBag.IsViewMode == false)
+{
+    <div class="usr-row" style="height:120px;">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+        <div class="usr-object">
+            <div id="divSpecifySite" class="sub-table" style="float:left;width:280px;margin-right:10px;">
+                <div class="table-header">
+                    @Resources._SiteUserControl.lblSpecifyCode
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:100px;">
+                        @Resources._SiteUserControl.lblSiteCode
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("txtSpecifySiteCustCode", (string)@ViewBag.SiteCustCode, new { @readonly = "readonly", style = "width:80px;" })&nbsp;-&nbsp;
+                        @Html.CommonTextBox("txtSpecifySiteNo", null, new { style = "width:50px;" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-object">&nbsp;</div>
+                </div>
+                <div class="usr-row">
+                    <div style="float:right;">
+                        <div class="usr-object" style="padding-right:11px;">
+                            @Html.CommonButton("btnRetrieveSiteData", @Resources._SiteUserControl.btnRetrieve, new { style = "width:80px;" })&nbsp;
+                            @Html.CommonButton("btnSearchSite", @Resources._SiteUserControl.btnSearchSite, new { style = "width:120px;" })
+                        </div>
+                    </div>
+                </div>
+                <div class="usr-footer-row">&nbsp;</div>
+            </div>
+            <div class="sub-table" style="float:left;width:330px;">
+                <div class="table-header">
+                    @Resources._SiteUserControl.lblCopyNameAddrInfo
+                </div>
+                <div class="usr-row">
+                    <div class="usr-object"  style="margin-left:5px;">
+                        @Html.CommonRadioButton("rdoContractTarget", @Resources._SiteUserControl.rdoContractTarget, "1", true, "CopyNameAddrInfoGroup")
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-object"  style="margin-left:5px;">
+                        @Html.CommonRadioButton("rdoRealCustomer", @Resources._SiteUserControl.rdoRealCustomer, "2", false, "CopyNameAddrInfoGroup")
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div style="float:right;">
+                        <div class="usr-object" style="padding-right:11px;">
+                            @Html.CommonButton("btnCopy", @Resources._SiteUserControl.btnCopy, new { style = "width:80px;" })
+                        </div>
+                    </div>
+                </div>
+                <div class="usr-footer-row">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div id="dlgCMS260" class="main-popup-dialog">
+        <div class="popup-dialog"></div>
+    </div>
+}    
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._SiteUserControl.lblMainSiteCode
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("SiteCode", (string)@ViewBag.dtSite.SiteCode, new { @class = @ViewBag.ViewClass, style = "width:120px;" })
+    </div>
+    <div class="usr-object" style="margin-left:10px;margin-top:-1px;">
+        @if (@ViewBag.IsViewMode == false)
+        {
+            @Html.CommonButton("btnNewEditSiteInfo", @Resources._SiteUserControl.btnNewEditSiteInfo, new { style = "width:150px;" })<span>&nbsp;</span>
+            @Html.CommonButton("btnClearSiteInfo", @Resources._SiteUserControl.btnClearSiteInfo, new { style = "width:150px;" })
+        }
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._SiteUserControl.lblNameEng
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("SiteNameEN", (string)@ViewBag.dtSite.SiteNameEN, new { @class = @ViewBag.ViewClass, style = "width:600px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._SiteUserControl.lblAddrEng
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("AddressFullEN", (string)@ViewBag.dtSite.AddressFullEN, new { @class = @ViewBag.ViewClass, style = "width:600px;" })
+    </div>
+</div>
+<div class="usr-row" style="margin-top:10px;">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._SiteUserControl.lblNameLocal
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("SiteNameLC", (string)@ViewBag.dtSite.SiteNameLC, new { @class = @ViewBag.ViewClass, style = "width:600px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._SiteUserControl.lblAddrLocal
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("AddressFullLC", (string)@ViewBag.dtSite.AddressFullLC, new { @class = @ViewBag.ViewClass, style = "width:600px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._SiteUserControl.lblTel
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("PhoneNo", (string)@ViewBag.dtSite.PhoneNo, new { @class = @ViewBag.ViewClass, style = "width:120px;" })
+    </div>
+    <div class="usr-label" style="width:200px;">
+        @Resources._SiteUserControl.lblUsage
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("BuildingUsageName", (string)@ViewBag.dtSite.BuildingUsageName, new { @class = @ViewBag.ViewClass, style = "width:120px;" })
+    </div>
+</div>

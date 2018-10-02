@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="CheckingYearMonth" width="150" type="ro"  sort="na">headerCheckingYearMonth</column>
+    <column id="CheckingStartDate" width="210" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="na" >headerStartCheckingDate</column>
+    <column id="CheckingFinishDate" width="210" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="na" >headerStopCheckingDate</column>
+    <column id="CheckingStatusName" width="*" type="ro" align="center" sort="na">headerCheckingStatus</column>
+    
+   
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="headerInstrumentArea" xml:space="preserve">
+    <value>Equipment area</value>
+  </data>
+  <data name="headerInstrumentCode" xml:space="preserve">
+    <value>Equipment code</value>
+  </data>
+  <data name="headerInstrumentName" xml:space="preserve">
+    <value>Equipment name</value>
+  </data>
+  <data name="headerPurchaseOrderNo" xml:space="preserve">
+    <value>Purchase order no.</value>
+  </data>
+  <data name="headerPurchaseOrderStatus" xml:space="preserve">
+    <value>Purchase order status</value>
+  </data>
+  <data name="headerPurchaseQty" xml:space="preserve">
+    <value>Purchase qty</value>
+  </data>
+  <data name="headerReceiveQty" xml:space="preserve">
+    <value>Receive qty</value>
+  </data>
+  <data name="headerRemainQty" xml:space="preserve">
+    <value>Remain qty</value>
+  </data>
+  <data name="headerRemove" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;Remove&lt;/div&gt;</value>
+  </data>
+  <data name="headerSelect" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;Select&lt;div&gt;</value>
+  </data>
+  <data name="headerStockInInstrumentQty" xml:space="preserve">
+    <value>Stock-in equipment qty.</value>
+  </data>
+  <data name="headerSupplierCode" xml:space="preserve">
+    <value>Supplier code</value>
+  </data>
+  <data name="headerSupplierName" xml:space="preserve">
+    <value>Supplier name</value>
+  </data>
+  <data name="headerTotalReceiveQty" xml:space="preserve">
+    <value>Total receive qty</value>
+  </data>
+  <data name="headerTransportType" xml:space="preserve">
+    <value>Transport type</value>
+  </data>
+  <data name="lblApproveNo" xml:space="preserve">
+    <value>Approve no.</value>
+  </data>
+  <data name="lblBtnAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="lblBtnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="lblBtnClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="lblBtnDownloadSlip" xml:space="preserve">
+    <value>Download slip</value>
+  </data>
+  <data name="lblBtnNewRegister" xml:space="preserve">
+    <value>New register</value>
+  </data>
+  <data name="lblBtnSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="lblBtnSearchInstrument" xml:space="preserve">
+    <value>Search equipment</value>
+  </data>
+  <data name="lblBtnSelectType" xml:space="preserve">
+    <value>Select type</value>
+  </data>
+  <data name="lblCurrency" xml:space="preserve">
+    <value>Currency</value>
+  </data>
+  <data name="lblInstrumentArea" xml:space="preserve">
+    <value>Equipment area</value>
+  </data>
+  <data name="lblInstrumentCode" xml:space="preserve">
+    <value>Equipment code</value>
+  </data>
+  <data name="lblMemo" xml:space="preserve">
+    <value>Memo</value>
+  </data>
+  <data name="lblPurchaseOrderDetail" xml:space="preserve">
+    <value>Purchase order detail</value>
+  </data>
+  <data name="lblPurchaseOrderNo" xml:space="preserve">
+    <value>Purchase order no.</value>
+  </data>
+  <data name="lblPurchaseOrderStatus" xml:space="preserve">
+    <value>Purchase order status</value>
+  </data>
+  <data name="lblPurchasing" xml:space="preserve">
+    <value>0: Purchasing</value>
+  </data>
+  <data name="lblSearchPurchaseOrder" xml:space="preserve">
+    <value>Search purchase order</value>
+  </data>
+  <data name="lblShowSlipNo" xml:space="preserve">
+    <value>Show slip no.</value>
+  </data>
+  <data name="lblSlipNo" xml:space="preserve">
+    <value>Slip no.</value>
+  </data>
+  <data name="lblSpecialStockIn" xml:space="preserve">
+    <value>1: Special stock-in</value>
+  </data>
+  <data name="lblSpecifySpecialStockIn" xml:space="preserve">
+    <value>Specify special stock-in</value>
+  </data>
+  <data name="lblSpecifyStockInType" xml:space="preserve">
+    <value>Specify stock-in type</value>
+  </data>
+  <data name="lblStockInDate" xml:space="preserve">
+    <value>Stock-in date</value>
+  </data>
+  <data name="lblStockInInstrumentPurchaseOrder" xml:space="preserve">
+    <value>Stock-in equipment (Purchase order)</value>
+  </data>
+  <data name="lblStockInInstrumentQty" xml:space="preserve">
+    <value>Stock-in equipment qty.</value>
+  </data>
+  <data name="lblStockInInstrumentSpecialStockIn" xml:space="preserve">
+    <value>Stock-in equipment (Special stock-in)</value>
+  </data>
+  <data name="lblStockInType" xml:space="preserve">
+    <value>Stock-in type</value>
+  </data>
+  <data name="lblSupplierCode" xml:space="preserve">
+    <value>Supplier code</value>
+  </data>
+  <data name="lblSupplierDeliveryOrderNo" xml:space="preserve">
+    <value>Supplier delivery order no.</value>
+  </data>
+  <data name="lblSupplierName" xml:space="preserve">
+    <value>Supplier name</value>
+  </data>
+  <data name="lblSupplierNation" xml:space="preserve">
+    <value>Supplier nationality</value>
+  </data>
+  <data name="lblTransportType" xml:space="preserve">
+    <value>Transport type</value>
+  </data>
+  <data name="lblVoucherDate" xml:space="preserve">
+    <value>Voucher date</value>
+  </data>
+  <data name="lblVoucherNo" xml:space="preserve">
+    <value>Voucher no.</value>
+  </data>
+</root>

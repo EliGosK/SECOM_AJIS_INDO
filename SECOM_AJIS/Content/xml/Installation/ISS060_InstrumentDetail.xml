@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>	  
+    <column id="InstrumentCode" width="*" type="ro" align="left" sort="str_custom">lblInstrumentCode</column>
+	<!--<column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">lblInstrumentName</column>-->
+	  <column id="ContractInstalledQTY" width="80" type="ro" align="right" sort="na">lblInstQuan</column>
+	  <column id="TotalStockedOut" width="80" type="ro" align="right" sort="na">#cspan</column>
+	  <!--<column id="AddInstalledQTY" width="90" type="ro"  align="center" >#cspan</column>-->
+	  <column id="UnusedQTY" width="80" type="ro"  align="right" format="0,000" >#cspan</column>
+	  <!--<column id="ReturnQTY" width="90" type="ro"  align="center" >#cspan</column>-->
+	  <column id="AddRemovedQTY" width="80" type="link"  align="right" >#cspan</column>
+	  <column id="ContractInstalledAfterChange" width="80" format="0,000" type="ro" align="right" sort="na">#cspan</column>
+	  <column id="RemovedQTY" width="80" type="ro"  align="right" format="0,000" >#cspan</column>
+	  <column id="MovedQTY" width="80" type="link"  align="right"  sort="na">#cspan</column>
+	  <column id="MAExchangeQTY" width="90" type="link"  align="right" sort="na">#cspan</column>
+	  <column id="NotInstallQTY" width="80" type="link"  align="right"  sort="na">#cspan</column>
+	  <column id="UnremovableQTY" width="90" type="link"  align="right"  sort="na">#cspan</column>
+	  <column id="OLDMovedQTY" width="0" type="ro"  align="center" hidden="true"  sort="na">#cspan</column>
+	  <column id="OLDMAExchangeQTY" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+	  
+	  <column id="ParentCode" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+	  <column id="IsUnremovable" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+	  <column id="IsParent" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+	  <column id="HiddenInstrumentCode" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+
+	  <column id="OLDUnusedQty" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+	  <column id="OLDNotInstalledQty" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+	  <column id="OLDRemovedQty" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+	  <column id="OLDAddRemovedQty" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+	  <column id="OLDContractInstalledAfterChange" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+	  <column id="OLDContractInstalled" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+	  <column id="OLDTotalStockout" width="0" type="ro"  align="center" hidden="true" sort="na">#cspan</column>
+	  <column id="InstrumentPrice" width="0" type="ro" align="left" hidden="true" sort="na"></column>
+	  <!--<column id="LineUpTypeCode" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+	  <column id="InstrumentTypeCode" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+	  <column id="RentalFlag" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+	  <column id="SaleFlag" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+	  <column id="ExpansionTypeCode" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+	  <column id="Description" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+	  <column id="RentalUnitPrice" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+	  <column id="PartialStockout" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>-->
+	  <afterInit>
+		  <call command="attachHeader">
+			  <param>#rspan,lblContractInstalledQTY,lblTotalStockedOut,lblUnused,lblAddRemoved,lblContractInstalledAfterChange,lblRemoved,lblMoveQTY,lblMAExchangeQTY,lblNotInstalled,lblUnremovable,,</param>
+		  </call>
+	  </afterInit>
+	  <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

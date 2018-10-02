@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="ID" width="198" type="ro" align="right" sort="str_custom">headerSalePrice</column>
+    <column id="Amount" width="150" type="ro" align="right" sort="str_custom">headerAmount</column>
+    <column id="PayMethod" width="150" type="ro" align="left" sort="str_custom">headerPaymentMethod</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

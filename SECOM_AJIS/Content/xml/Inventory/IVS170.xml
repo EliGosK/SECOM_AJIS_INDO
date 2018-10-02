@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <!--<column id="OfficeName" width="50" type="ro"  sort="na">headerOffice</column>
+    <column id="LocationName" width="70" type="ro"  sort="na">headerLocation</column>-->
+    <column id="GroupingKey" width="0" type="ro" align="center"  sort="na" ></column>
+    <column id="InstrumentCode" width="150" type="ro" align="left" sort="na">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="na">headerInstrumentName</column>
+    <column id="ShelfNo" width="150" type="ro"  sort="na">headerShelfNo</column>
+
+    <column id="InstrumentQty" width="100" type="edn" align="right" format="0,000" sort="na">headerLogicalStockQty</column>
+    <column id="CheckingQty" width="100" type="edn" align="right" format="0,000" sort="na">headerActualStockQty</column>
+    <column id="DiffQty" width="85" type="dyn" align="right" sort="na">headerStockDiffQty</column>
+
+    <column id="UpdateDate" width="110" type="dhxCalendar" format="%d-%b-%Y" align="center" sort="na" >headerLastcheckingDate</column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

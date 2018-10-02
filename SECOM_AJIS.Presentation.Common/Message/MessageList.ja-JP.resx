@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG0001" xml:space="preserve">
+    <value>データが見つかりません。</value>
+  </data>
+  <data name="MSG0006" xml:space="preserve">
+    <value>いずれかの検索条件を入力してください。</value>
+  </data>
+  <data name="MSG0007" xml:space="preserve">
+    <value>次のフィールドは必須項目です：{0}</value>
+  </data>
+  <data name="MSG0011" xml:space="preserve">
+    <value>{0}は存在しません。</value>
+  </data>
+  <data name="MSG0013" xml:space="preserve">
+    <value>バッチ処理中のため、サービス開始を行うことができません。</value>
+  </data>
+  <data name="MSG0019" xml:space="preserve">
+    <value>他のユーザーによってデータが更新されました。</value>
+  </data>
+  <data name="MSG0021" xml:space="preserve">
+    <value>{0}を更新できません：{1} </value>
+  </data>
+  <data name="MSG0028" xml:space="preserve">
+    <value>{0}します。よろしいですか？</value>
+  </data>
+  <data name="MSG0029" xml:space="preserve">
+    <value>オンライン終了時間とオンライン開始時間を同じ時間に設定することはできません。</value>
+  </data>
+  <data name="MSG0030" xml:space="preserve">
+    <value>オンライン開始時間とオンライン終了時間を同じ時間に設定することはできません。</value>
+  </data>
+  <data name="MSG0031" xml:space="preserve">
+    <value>次のバッチを実行することができません: {0}</value>
+  </data>
+  <data name="MSG0033" xml:space="preserve">
+    <value>ユーザーは使用権限を持っておりません。</value>
+  </data>
+  <data name="MSG0038" xml:space="preserve">
+    <value>ページをリセットします。よろしいですか？この処理を進めると登録したデータがクリアされます。</value>
+  </data>
+  <data name="MSG0040" xml:space="preserve">
+    <value>この画面を開くことができません。</value>
+  </data>
+  <data name="MSG0046" xml:space="preserve">
+    <value>保存完了しました。</value>
+  </data>
+  <data name="MSG0047" xml:space="preserve">
+    <value>削除完了しました。</value>
+  </data>
+  <data name="MSG0049" xml:space="preserve">
+    <value>オンライン終了時間中にデータは登録できません。</value>
+  </data>
+  <data name="MSG0052" xml:space="preserve">
+    <value>検索結果に該当するレコードが{0}件を超えています。検索条件を変更して絞込みを行ってください。</value>
+  </data>
+  <data name="MSG0053" xml:space="preserve">
+    <value>この画面を操作する権限がありません。</value>
+  </data>
+  <data name="MSG0054" xml:space="preserve">
+    <value>少なくとも1つの顧客状態を選択してください。</value>
+  </data>
+  <data name="MSG0055" xml:space="preserve">
+    <value>少なくとも1つの顧客タイプを選択してください。</value>
+  </data>
+  <data name="MSG0056" xml:space="preserve">
+    <value>オンライン終了します。よろしいですか？</value>
+  </data>
+  <data name="MSG0057" xml:space="preserve">
+    <value>オンライン開始します。よろしいですか？</value>
+  </data>
+  <data name="MSG0058" xml:space="preserve">
+    <value>次のシステムコンフィグレーションを更新できません: {0} </value>
+  </data>
+  <data name="MSG0059" xml:space="preserve">
+    <value>全バッチ実行を行います。よろしいですか？</value>
+  </data>
+  <data name="MSG0060" xml:space="preserve">
+    <value>{0}バッチ実行を行います。よろしいですか？</value>
+  </data>
+  <data name="MSG0061" xml:space="preserve">
+    <value>次のバッチコードを更新できません: {0} </value>
+  </data>
+  <data name="MSG0064" xml:space="preserve">
+    <value>{0}の文書種類のレポートへのパスが見つかりません。</value>
+  </data>
+  <data name="MSG0065" xml:space="preserve">
+    <value>{0}が見つかりません。システム管理者に連絡してください。</value>
+  </data>
+  <data name="MSG0066" xml:space="preserve">
+    <value>次のフィールドのデータが間違っています：{0}</value>
+  </data>
+  <data name="MSG0067" xml:space="preserve">
+    <value>契約先／発注元の顧客コードを指定してください。</value>
+  </data>
+  <data name="MSG0068" xml:space="preserve">
+    <value>契約先／発注元の顧客コードが存在しません。</value>
+  </data>
+  <data name="MSG0069" xml:space="preserve">
+    <value>お客様の顧客コードを指定してください。</value>
+  </data>
+  <data name="MSG0070" xml:space="preserve">
+    <value>物件コードを指定してください。</value>
+  </data>
+  <data name="MSG0071" xml:space="preserve">
+    <value>物件コードが存在しません。</value>
+  </data>
+  <data name="MSG0072" xml:space="preserve">
+    <value>物件コードのメイン部分が存在しないため、物件情報を取得できません。</value>
+  </data>
+  <data name="MSG0073" xml:space="preserve">
+    <value>コピー対象の契約先／発注元情報がありません。</value>
+  </data>
+  <data name="MSG0074" xml:space="preserve">
+    <value>コピー対象のお客様情報がありません。</value>
+  </data>
+  <data name="MSG0078" xml:space="preserve">
+    <value>お客様の顧客コードが存在しません。</value>
+  </data>
+  <data name="MSG0079" xml:space="preserve">
+    <value>少なくとも1つの{0}を選択してください。 </value>
+  </data>
+  <data name="MSG0080" xml:space="preserve">
+    <value>指定した検索条件に矛盾があります。</value>
+  </data>
+  <data name="MSG0081" xml:space="preserve">
+    <value>機器コードを指定してください。</value>
+  </data>
+  <data name="MSG0082" xml:space="preserve">
+    <value>機器コード{0}が存在しません。 </value>
+  </data>
+  <data name="MSG0083" xml:space="preserve">
+    <value>機器コード{0}が既に機器明細に存在しています。</value>
+  </data>
+  <data name="MSG0084" xml:space="preserve">
+    <value>「機器個数＞0」を設定してください。</value>
+  </data>
+  <data name="MSG0085" xml:space="preserve">
+    <value>機器コード {0} は、レンタル許可機器ではありません。</value>
+  </data>
+  <data name="MSG0086" xml:space="preserve">
+    <value>機器コード {0} は取消されました。</value>
+  </data>
+  <data name="MSG0089" xml:space="preserve">
+    <value>顧客ロールを指定してください。</value>
+  </data>
+  <data name="MSG0090" xml:space="preserve">
+    <value>検索条件の指定が正しくありません。日付（終了）≧日付（開始）で指定してください。</value>
+  </data>
+  <data name="MSG0093" xml:space="preserve">
+    <value>売買契約コード{0}が存在しません。</value>
+  </data>
+  <data name="MSG0098" xml:space="preserve">
+    <value>文書種類、及び文書名を指定してください。</value>
+  </data>
+  <data name="MSG0099" xml:space="preserve">
+    <value>社員番号、またはパスワードが間違っています。</value>
+  </data>
+  <data name="MSG0102" xml:space="preserve">
+    <value>この契約コードは存在しません。</value>
+  </data>
+  <data name="MSG0103" xml:space="preserve">
+    <value>言語を切り替えると、照会画面を除き、画面はリセットされます。よろしいですか？</value>
+  </data>
+  <data name="MSG0107" xml:space="preserve">
+    <value>メール {0} が既に存在しています。</value>
+  </data>
+  <data name="MSG0012" xml:space="preserve">
+    <value>折衝担当者に存在しない社員番号（{0}）が登録されています。</value>
+  </data>
+  <data name="MSG0096" xml:space="preserve">
+    <value>この操作をキャンセルします。よろしいですか？編集されたデータは失われます。</value>
+  </data>
+  <data name="MSG0063" xml:space="preserve">
+    <value>このデータへのアクセス権限を持っておりません。</value>
+  </data>
+  <data name="MSG0095" xml:space="preserve">
+    <value>次の社員番号が存在しません：{0}</value>
+  </data>
+  <data name="MSG0062" xml:space="preserve">
+    <value>検索条件が間違っています。{0}の数は{1}以下で入力しなければなりません。</value>
+  </data>
+  <data name="MSG0094" xml:space="preserve">
+    <value>{0}を削除できません : {1}</value>
+  </data>
+  <data name="MSG0009" xml:space="preserve">
+    <value>{0} には未来日付を登録できません。</value>
+  </data>
+  <data name="MSG0109" xml:space="preserve">
+    <value>データ無し</value>
+  </data>
+  <data name="MSG0110" xml:space="preserve">
+    <value>データ未入力</value>
+  </data>
+  <data name="MSG0112" xml:space="preserve">
+    <value>データが見つかりません</value>
+  </data>
+  <data name="MSG0113" xml:space="preserve">
+    <value>----選択----</value>
+  </data>
+  <data name="MSG0101" xml:space="preserve">
+    <value>期間（開始）は期間（終了）以前でなければなりません。</value>
+  </data>
+  <data name="MSG0105" xml:space="preserve">
+    <value>契約コード {0} が存在しません。</value>
+  </data>
+  <data name="MSG0087" xml:space="preserve">
+    <value>{0} はフォーマットが正しくありません。</value>
+  </data>
+  <data name="MSG0043" xml:space="preserve">
+    <value>{0}を{1}に変更します。よろしいですか？（編集されたデータは失われます）</value>
+  </data>
+  <data name="MSG0097" xml:space="preserve">
+    <value>データを消去します。よろしいですか？データは失われます。</value>
+  </data>
+  <data name="MSG0114" xml:space="preserve">
+    <value>文書作成できません。文書番号 {0} 及び文書OCC {1} が存在しません。</value>
+  </data>
+  <data name="MSG0088" xml:space="preserve">
+    <value>メール通知先を指定してください。</value>
+  </data>
+  <data name="MSG0092" xml:space="preserve">
+    <value>保証金スライド元契約コード {0} が存在しません。</value>
+  </data>
+  <data name="MSG0117" xml:space="preserve">
+    <value>一つの条件のみ入力してください。</value>
+  </data>
+  <data name="MSG0076" xml:space="preserve">
+    <value>5ファイルを超えて添付することができません。</value>
+  </data>
+  <data name="MSG0115" xml:space="preserve">
+    <value>資料名 {0} は既に一覧上に存在しています。</value>
+  </data>
+  <data name="MSG0091" xml:space="preserve">
+    <value>プロジェクトコード{0}が存在しません。</value>
+  </data>
+  <data name="MSG0120" xml:space="preserve">
+    <value>----全て----</value>
+  </data>
+  <data name="MSG0121" xml:space="preserve">
+    <value>オンライン</value>
+  </data>
+  <data name="MSG0122" xml:space="preserve">
+    <value>オフライン</value>
+  </data>
+  <data name="MSG0123" xml:space="preserve">
+    <value>アラーム定期保守</value>
+  </data>
+  <data name="MSG0106" xml:space="preserve">
+    <value>契約OCC {0}が存在しません。</value>
+  </data>
+  <data name="MSG0044" xml:space="preserve">
+    <value>このページをクリアします。よろしいですか？</value>
+  </data>
+  <data name="MSG0116" xml:space="preserve">
+    <value>期間を指定してください。</value>
+  </data>
+  <data name="MSG0118" xml:space="preserve">
+    <value>結線先コード{0}は存在しません。</value>
+  </data>
+  <data name="MSG0119" xml:space="preserve">
+    <value>分散元コード{0}が存在しません。</value>
+  </data>
+  <data name="MSG0075" xml:space="preserve">
+    <value>このファイル種類は添付することができません。</value>
+  </data>
+  <data name="MSG0077" xml:space="preserve">
+    <value>添付ファイルの合計ファイルサイズは5MBを超えることができません。</value>
+  </data>
+  <data name="MSG0100" xml:space="preserve">
+    <value>URLを直接指定してシステムにアクセスすることができません。</value>
+  </data>
+  <data name="MSG0104" xml:space="preserve">
+    <value>{0}の次の連番が取得できません。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG0108" xml:space="preserve">
+    <value>取消処理が完了しました。</value>
+  </data>
+  <data name="MSG0111" xml:space="preserve">
+    <value>内部エラーが発生しました。システム管理者に連絡してください。 {0}</value>
+  </data>
+  <data name="MSG0124" xml:space="preserve">
+    <value>この契約コードは、存在しない、または本画面で使用することができません。</value>
+  </data>
+  <data name="MSG0125" xml:space="preserve">
+    <value>ファイル名に次の文字を含めることはできません。 \ / : * ? " &lt; &gt; |</value>
+  </data>
+  <data name="MSG0126" xml:space="preserve">
+    <value>契約先／発注元データが正しくありません。詳細については契約先／発注元情報セクション上の「顧客登録／編集」ボタンをクリックしてください。</value>
+  </data>
+  <data name="MSG0127" xml:space="preserve">
+    <value>お客様データが正しくありません。詳細についてはお客様（最終設置先）情報セクション上の「顧客登録／編集」ボタンをクリックしてください。</value>
+  </data>
+  <data name="MSG0128" xml:space="preserve">
+    <value>物件／納入先データが正しくありません。詳細については物件／納入先情報セクション上の「物件／納入先登録／編集」ボタンをクリックしてください。</value>
+  </data>
+  <data name="MSG0131" xml:space="preserve">
+    <value>この社員はメールアドレス情報が存在しないため選択できません。</value>
+  </data>
+  <data name="MSG0129" xml:space="preserve">
+    <value>コピー対象の支店、または契約先／発注元情報が存在しません。</value>
+  </data>
+  <data name="MSG0130" xml:space="preserve">
+    <value>コピー対象の物件／納入先、またはお客様情報が存在しません。</value>
+  </data>
+  <data name="MSG0134" xml:space="preserve">
+    <value>「VAT登録先」の必須項目が入力されていません。「VAT登録先登録／編集」ボタンをクリックして登録してください。</value>
+  </data>
+  <data name="MSG0135" xml:space="preserve">
+    <value>入力された次の数値（コード）の桁数に誤りがあります。{0}</value>
+  </data>
+  <data name="MSG0136" xml:space="preserve">
+    <value>システムエラーが発生しました。連番が定義されていません。</value>
+  </data>
+  <data name="MSG0139" xml:space="preserve">
+    <value>顧客コードが存在しません。</value>
+  </data>
+  <data name="MSG0137" xml:space="preserve">
+    <value>見積コードが存在しません。</value>
+  </data>
+  <data name="MSG0138" xml:space="preserve">
+    <value>VAT登録先コードが存在しません。</value>
+  </data>
+  <data name="MSG0132" xml:space="preserve">
+    <value>アラーム／売却オンライン／売却商品レンタル契約を売買契約と同時に指定することができません。</value>
+  </data>
+  <data name="MSG0133" xml:space="preserve">
+    <value>この契約コード、またはユーザーコードは存在しません。</value>
+  </data>
+  <data name="MSG0140" xml:space="preserve">
+    <value>キャンセルします。よろしいですか？</value>
+  </data>
+  <data name="MSG0141" xml:space="preserve">
+    <value>消去します。よろしいですか？</value>
+  </data>
+  <data name="MSG0142" xml:space="preserve">
+    <value>削除します。よろしいですか？</value>
+  </data>
+  <data name="MSG0143" xml:space="preserve">
+    <value>オンライン終了時間を更新しました。</value>
+  </data>
+  <data name="MSG0144" xml:space="preserve">
+    <value>オンライン開始時間を更新しました。</value>
+  </data>
+  <data name="MSG0145" xml:space="preserve">
+    <value>オンライン終了時間の更新に失敗しました。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG0146" xml:space="preserve">
+    <value>オンライン開始時間の更新に失敗しました。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG0051" xml:space="preserve">
+    <value>お客様の顧客コードが指定されていない場合は「物件／納入先検索」ボタン及び「取得」ボタンは使用できません。「物件／納入先登録／編集」ボタンを押して物件／納入先登録を行ってください。</value>
+  </data>
+  <data name="MSG0014" xml:space="preserve">
+    <value>機器コード {0} は、一般用ではありません。</value>
+  </data>
+  <data name="MSG0015" xml:space="preserve">
+    <value>機器コード {0} は、親機器ではありません。</value>
+  </data>
+  <data name="MSG0016" xml:space="preserve">
+    <value>機器コード {0} は、売却許可機器ではありません。</value>
+  </data>
+  <data name="MSG0022" xml:space="preserve">
+    <value>設備コードを指定してください。</value>
+  </data>
+  <data name="MSG0023" xml:space="preserve">
+    <value>設備コード {0} が存在しません。</value>
+  </data>
+  <data name="MSG0024" xml:space="preserve">
+    <value>設備コード {0} が設備明細に既に存在しています。</value>
+  </data>
+  <data name="MSG0025" xml:space="preserve">
+    <value>「設備個数＞0」を設定してください。</value>
+  </data>
+  <data name="MSG0026" xml:space="preserve">
+    <value>設備コード {0} は、モニタリングではありません。</value>
+  </data>
+  <data name="MSG0147" xml:space="preserve">
+    <value>契約コードが指定されていないため、画面を開くことができません。</value>
+  </data>
+  <data name="MSG0148" xml:space="preserve">
+    <value>{0}の更新対象レコードは0件です。</value>
+  </data>
+  <data name="MSG0050" xml:space="preserve">
+    <value>添付書類が選択されていません。追加ボタンをクリックする前に添付ファイルを選択してください。</value>
+  </data>
+  <data name="MSG0149" xml:space="preserve">
+    <value>ログ削除を行います。よろしいですか？</value>
+  </data>
+  <data name="MSG0032" xml:space="preserve">
+    <value>契約を追加できません。アラーム契約／売却オンライン契約／売却商品レンタル契約が既に保守対象契約として選択されました。</value>
+  </data>
+  <data name="MSG0017" xml:space="preserve">
+    <value>保守点検票の打ち出し対象のレコードを選択してください。（既に打ち出し済みの場合は、レコードを選択することができません。「文書の再打出」より行ってください。）</value>
+  </data>
+  <data name="MSG0018" xml:space="preserve">
+    <value>文書テンプレートが見つかりません。</value>
+  </data>
+  <data name="MSG0151" xml:space="preserve">
+    <value>選択したメールアドレスがシステムコンフィグと一致しません。</value>
+  </data>
+  <data name="MSG0045" xml:space="preserve">
+    <value>機器コード {0} は売却／レンタル用として使用することはできません。</value>
+  </data>
+  <data name="MSG0152" xml:space="preserve">
+    <value>金額データが最大桁を超えるため、処理できません。システム管理者に連絡してください。</value>
+  </data>
+  <data name="MSG0153" xml:space="preserve">
+    <value>処理が完了しました。</value>
+  </data>
+  <data name="MSG0150" xml:space="preserve">
+    <value>請求書番号{0}は存在しません。</value>
+  </data>
+  <data name="MSG0034" xml:space="preserve">
+    <value>この画面は、アラームまたは売却の契約コード以外では開くことは出来ません。</value>
+  </data>
+  <data name="MSG0154" xml:space="preserve">
+    <value>請求先コードが指定されていないため、画面を開くことができません。</value>
+  </data>
+  <data name="MSG0155" xml:space="preserve">
+    <value>請求コードが指定されていないため、画面を開くことができません。</value>
+  </data>
+  <data name="MSG0156" xml:space="preserve">
+    <value>請求先コード又は請求コード又は請求書番号が指定されていないため、画面を開くことができません。</value>
+  </data>
+  <data name="MSG0157" xml:space="preserve">
+    <value>このユーザーコードは複数の契約コードに登録されているため、検索できません。登録されている契約コードを調べたい場合は、情報検索画面で確認してください。</value>
+  </data>
+  <data name="MSG0158" xml:space="preserve">
+    <value>少なくとも工事ステータス／工事伝票ステータス／工事監理ステータスのいずれかを選択してください。</value>
+  </data>
+  <data name="MSG0159" xml:space="preserve">
+    <value>サーバーにアクセスが集中し過ぎています。もう一度お試しください。</value>
+  </data>
+  <data name="MSG0160" xml:space="preserve">
+    <value>他の印刷サービスが起動中のため、処理を開始できません。</value>
+  </data>
+  <data name="MSG0161" xml:space="preserve">
+    <value>Please check at least 1 items.</value>
+  </data>
+  <data name="MSG0162" xml:space="preserve">
+    <value>Document no. {0} does not exist.JP</value>
+  </data>
+  <data name="MSG0163" xml:space="preserve">
+    <value>This Document no., {0}, has been canceled.JP</value>
+  </data>
+  <data name="MSG0164" xml:space="preserve">
+    <value>There are many billing customer in the document. Please correct billing customer before re-issue document.JP</value>
+  </data>
+  <data name="MSG0165" xml:space="preserve">
+    <value>Currency type not match.</value>
+  </data>
+  <data name="MSG0334" xml:space="preserve">
+    <value>入庫日の為替レートが登録されていないため、ドルの機器総額は直前の為替レートで計算されました。</value>
+  </data>
+  <data name="MSG0PWL" xml:space="preserve">
+    <value>この社員番号はロックされています。</value>
+  </data>
+</root>

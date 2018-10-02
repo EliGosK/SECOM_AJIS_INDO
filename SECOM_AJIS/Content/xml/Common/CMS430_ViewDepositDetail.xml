@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+	  <column id="No" width="30" type="ro" align="center" sort="na">No.</column>	  
+	  <column id="ProcessDate" width="110" type="dhxCalendar"  align="left" sort="date" format="%d-%b-%Y">headerProcessDate</column>
+	  <column id="DepositStatusName" width="110" type="ro" align="left" sort="str_custom" >headerDetail</column>	
+	  <column id="TextTransferProcessAmount" width="130" type="ro" align="right">headerProcessAmountThb</column>	  
+	  <column id="TextTransferReceivedFee" width="140" type="ro" align="right">headerBalanceOfDepositFeeThb</column>
+	  <column id="InvoiceNo" width="110" type="ro" align="left" sort="str_custom">headerInvoiceNo</column>	  	  
+	  <column id="ReceiptNo" width="110" type="ro"  align="left" sort="str_custom" >headerReceiptNo</column>
+	  <column id="CreditNoteNo" width="110" type="ro"  align="left" sort="str_custom" >headerCreditNoteNo</column>
+	  <column id="BillingTargetCodeForSlide" width="*" type="ro"  align="left" sort="str_custom" >headerTargetBillingCodeForSlide</column>
+	  <column id="DepositStatus" width="0" type="ro"  align="left" sort="str_custom" hidden="true" ></column>
+    <column id="BillingTargetCode_short" width="0" type="ro"  align="left" sort="str_custom" hidden="true" ></column>
+	  <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

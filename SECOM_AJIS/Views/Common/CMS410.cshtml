@@ -1,0 +1,361 @@
+﻿<!--
+//*********************************
+// Create by: Fikree S.
+// Create date: 13/Jan/2012
+// Update date: 13/Jan/2012
+//*********************************
+-->
+
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.LabelWidth2 = "220px";
+    ViewBag.LabelWidth3 = "120px";
+    
+    ViewBag.ObjectWidth = "170px";
+    ViewBag.ObjectWidth2 = "250px";
+    ViewBag.ObjectWidth3 = "120px";
+
+    ViewBag.ObjectWidthLong = "700px";
+    
+    
+    ViewBag.isViewMode = true;
+    
+    // for debug
+    ViewBag.txtBackgroundColor = "none";  // Lime none
+}
+
+
+@section page_header{
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS410.js")" ></script>
+    <script type="text/javascript">
+        var CMS410 = { BillingTargetCode: "@ViewBag.BillingTargetCode"};
+    </script>
+
+}
+
+
+
+<div id="divAll">
+
+<!-- Billing Information SECTION ==================================================================================================================== -->
+<div id="BillingInformation" class="main-table">
+    <div class="table-header">
+       @Resources.CMS410.lblBillingTargetInformation
+    </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblBillingTargetCode
+            </div>
+            <div class="usr-object" style="width:300px; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("BillingTargetCode", (string)@ViewBag.txtBillingTargetCode, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            
+                <div style="text-align:right; margin-top:-5px;">
+                    @Html.CommonButton("btnBillingBasicList", @Resources.CMS410.btnBillingBasicList, new { type = "button"  ,style = "width:120px;"})
+                    @Html.CommonButton("btnInvoiceList", @Resources.CMS410.btnInvoiceList, new { type = "button", style = "width:120px;" })
+                    @Html.CommonButton("btnBillingDetailList", @Resources.CMS410.btnBillingDetailList, new { type = "button", style = "width:120px;" })
+                </div>
+           
+        </div>
+
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblBillingOffice
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("BillingOffice", (string)@ViewBag.txtBillingOffice, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblCustomerType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("CustomerType", (string)@ViewBag.txtCustomerType, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("NameEN", (string)@ViewBag.txtNameEN, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblBranchNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("BranchNameEN", (string)@ViewBag.txtBranchNameEN, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblAddressEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("AddressEN", (string)@ViewBag.txtAddressEN, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                <br />
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("NameLC", (string)@ViewBag.txtNameLC, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblBranchNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("BranchNameLC", (string)@ViewBag.txtBranchNameLC, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblAddressLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("AddressLC", (string)@ViewBag.txtAddressLC, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblNationality
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("Nationality", (string)@ViewBag.txtNationality, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS410.lblTelephoneNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth2; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("PhoneNo", (string)@ViewBag.txtPhoneNo, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblIdNoTaxIdNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("IDNo", (string)@ViewBag.txtIDNo, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS410.lblBusinessType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth2; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("BusinessType", (string)@ViewBag.txtBusinessType, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+
+    <div class="usr-row" style="height:5px"></div>
+    <hr />
+    <div class="usr-row" style="height:5px"></div>
+
+    <div class="table-header">
+       @Resources.CMS410.lblBillingTargetSupplementaryInformation
+    </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblBillingClientContractPerson
+            </div>
+            <div class="usr-object" style="width:400px; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("ContactPersonName", (string)@ViewBag.txtContactPersonName, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div style="text-align: right; margin-top:-5px">
+                @Html.CommonButton("btnEditInformation", @Resources.CMS410.btnEditInformation, new { type = "button" ,style="width:120px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblMemo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("Memo", (string)@ViewBag.txtMemo, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+   
+</div>
+
+
+<!-- Invoice Information SECTION ====================================================================================================================== -->
+
+<div id="InvoiceInformation" class="main-table">
+    <div class="table-header">
+       @Resources.CMS410.lblInvoiceInformation
+    </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblIssueInvoiceTiming
+            </div>
+            <div style="float:left ;width:260px; background-color:@ViewBag.txtBackgroundColor;">
+                <div class="usr-object">
+                    @Html.CommonTextBox("IssueInvoiceTiming", (string)@ViewBag.txtIssueInvoiceTiming, new { isViewMode = @ViewBag.isViewMode })
+                </div>
+                <div class="usr-label">
+                    &nbsp;@Resources.CMS410.lblMonths
+                </div>
+            </div>
+            <div class="usr-label" style="width:130px;">
+                @Resources.CMS410.lblIssueInvoiceDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth2; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("IssueInvoiceDate", (string)@ViewBag.txtIssueInvoiceDate, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblInvoiceFormat
+            </div>
+            <div class="usr-object" style="width:260px; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("InvoiceFormat", (string)@ViewBag.txtInvoiceFormat, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:130px;">
+                @Resources.CMS410.lblSignatureType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("SignatureType", (string)@ViewBag.txtSignatureType, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:125px;">
+                @Resources.CMS410.lblDisplayLanguage
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("DisplayLanguage", (string)@ViewBag.txtDisplayLanguage, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblShowPaymentDueDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("ShowPaymentDueDate", (string)@ViewBag.txtShowPaymentDueDate, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS410.lblIssueTaxInvoiceReceiptTiming
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth2; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("IssueTaxInvoiceReceiptTiming", (string)@ViewBag.txtIssueTaxInvoiceReceiptTiming, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblShowAutoTransferAccount
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("ShowAutoTransferAccount", (string)@ViewBag.txtShowAutoTransferAccount, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS410.lblAutoTransferWhtDeductionType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("AutoTransferWhtDeductionType", (string)@ViewBag.txtAutoTransferWhtDeductionType, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:150px;; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonCheckButton("PrintInvoiceWHT", @Resources.CMS410.lblPrintInvoiceWHT, "True", (bool)@ViewBag.PrintInvoiceWHTFlag, new { disabled = "disabled" })
+            </div> 
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblPrintIssueDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("PrintIssueDate", (string)@ViewBag.txtPrintIssueDate, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+               &nbsp;
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth2; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonCheckButton("PayByChequeViaMail", @Resources.CMS410.lblPayByChequeViaMall, "True", (bool)@ViewBag.PayByChequeFlag, new { disabled = "disabled" })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblSeparateInvoiceType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("SeparateInvoiceType", (string)@ViewBag.txtSeparateInvoiceType, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblSupplementaryInvoiceAddress
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("SupplementaryInvoiceAddress", (string)@ViewBag.txtSupplementaryInvoiceAddress, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+       <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+</div>
+
+<div id="BillingClientInformation" class="main-table">
+    <div class="table-header">
+       @Resources.CMS410.lblBillingClientInfo
+    </div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("RealBillingClientNameEN", (string)@ViewBag.txtRealBillingClientNameEN, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+    </div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblAddressEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("RealBillingClientAddressEN", (string)@ViewBag.txtRealBillingClientAddressEN, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+    </div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("RealBillingClientNameLC", (string)@ViewBag.txtRealBillingClientNameLC, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+    </div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS410.lblAddressLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("RealBillingClientAddressLC", (string)@ViewBag.txtRealBillingClientAddressLC, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+    </div>
+
+    <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+</div>
+
+</div>
+<!---------------------------------- End   Attached Document list---------------------------------------------->

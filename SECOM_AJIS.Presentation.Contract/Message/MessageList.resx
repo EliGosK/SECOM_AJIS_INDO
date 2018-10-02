@@ -1,0 +1,1241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG3001" xml:space="preserve">
+    <value>Contract no. is registered as "Contract canceled before start" or "Contract canceled after start". Please check again.</value>
+  </data>
+  <data name="MSG3002" xml:space="preserve">
+    <value>The selected quotation code cannot be used.</value>
+  </data>
+  <data name="MSG3003" xml:space="preserve">
+    <value>The order service fee is registered as 0. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3004" xml:space="preserve">
+    <value>The order service fee is greatly adjusted. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3005" xml:space="preserve">
+    <value>Service fee is adjusted. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3006" xml:space="preserve">
+    <value>The current contract is in between change fee with expiration. Cannot register change by the amount which does not same as fee during such change fee with expiration. Please register change installation information again after register CP12 (change fee) to be change fee without expiration by the same amount of current fee during change.</value>
+  </data>
+  <data name="MSG3007" xml:space="preserve">
+    <value>Installation fee has been adjusted. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3008" xml:space="preserve">
+    <value>Deposit fee has been adjusted. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3009" xml:space="preserve">
+    <value>Approve No. must be input sequentially from approve no. 1.</value>
+  </data>
+  <data name="MSG3010" xml:space="preserve">
+    <value>A Divide billing service fee option is selected, Please register a billing customer to pay service fee at lease two person.</value>
+  </data>
+  <data name="MSG3011" xml:space="preserve">
+    <value>A Divide billing service fee option is not selected, Please register only once billing customer to pay service fee.</value>
+  </data>
+  <data name="MSG3012" xml:space="preserve">
+    <value>The summary of billing service fee is not equal to an order service fee. Please revise again.
+</value>
+  </data>
+  <data name="MSG3013" xml:space="preserve">
+    <value>The summary of billing installation fee is not equal to an order installation fee. Please revise again.</value>
+  </data>
+  <data name="MSG3014" xml:space="preserve">
+    <value>The summary of billing deposit fee is not equal to an order deposit fee. Please revise again.</value>
+  </data>
+  <data name="MSG3015" xml:space="preserve">
+    <value>The expected operation date is registered with a date in the past. Please check again.</value>
+  </data>
+  <data name="MSG3016" xml:space="preserve">
+    <value>Cannot generate incident no. because the number reach maximum, please contact administrator.</value>
+  </data>
+  <data name="MSG3017" xml:space="preserve">
+    <value>Cannot generate request no. because the number reach maximum, please contact administrator.</value>
+  </data>
+  <data name="MSG3018" xml:space="preserve">
+    <value>Cannot generate approve no. because the number reach maximum, please contact administrator.</value>
+  </data>
+  <data name="MSG3019" xml:space="preserve">
+    <value>Cannot assign this person. Because the employee not belong in selected department or office.</value>
+  </data>
+  <data name="MSG3020" xml:space="preserve">
+    <value>Cannot assign this person. Control chief must be  only one person.</value>
+  </data>
+  <data name="MSG3021" xml:space="preserve">
+    <value>This person is already assigned to another role.</value>
+  </data>
+  <data name="MSG3022" xml:space="preserve">
+    <value>Cannot generate the contract no.. Contract prefix does not exist.</value>
+  </data>
+  <data name="MSG3023" xml:space="preserve">
+    <value>Cannot generate the security occurrence. The number reach minimum.</value>
+  </data>
+  <data name="MSG3024" xml:space="preserve">
+    <value>Cannot generate the contract counter. The number reach maximum.</value>
+  </data>
+  <data name="MSG3025" xml:space="preserve">
+    <value>Cannot generate the contract document occurrence. The number reach maximum.</value>
+  </data>
+  <data name="MSG3026" xml:space="preserve">
+    <value>Cannot generate the sale contract occurrence. The number reach minimum.</value>
+  </data>
+  <data name="MSG3027" xml:space="preserve">
+    <value>The summary of billing installation fee at complete installation is not equal to an order installation fee at complete installation. Please revise again.</value>
+  </data>
+  <data name="MSG3028" xml:space="preserve">
+    <value>The summary of billing installation fee at start service is not equal to an order installation fee at start service Please revise again.</value>
+  </data>
+  <data name="MSG3029" xml:space="preserve">
+    <value>Please select the payment method of billing installation fee at complete installation.</value>
+  </data>
+  <data name="MSG3030" xml:space="preserve">
+    <value>Please select the payment method of billing installation fee at start service.</value>
+  </data>
+  <data name="MSG3031" xml:space="preserve">
+    <value>Please select the payment method of billing deposit fee.</value>
+  </data>
+  <data name="MSG3032" xml:space="preserve">
+    <value>Billing customer with the same billing client code and billing office exists in billing customer list.</value>
+  </data>
+  <data name="MSG3033" xml:space="preserve">
+    <value>Cannot input "Contract period (months)" with "End contract date".</value>
+  </data>
+  <data name="MSG3034" xml:space="preserve">
+    <value>Cannot input "Contract period (months)" without "Auto-renew (months)".</value>
+  </data>
+  <data name="MSG3035" xml:space="preserve">
+    <value>Cannot leave both "Contract period (months)" and "End contract date" as empty.</value>
+  </data>
+  <data name="MSG3036" xml:space="preserve">
+    <value>Cannot assign this role. Approver and auditor of each role assign to 1 person only.</value>
+  </data>
+  <data name="MSG3037" xml:space="preserve">
+    <value>Please select the payment method of billing installation fee.</value>
+  </data>
+  <data name="MSG3038" xml:space="preserve">
+    <value>The selected quotation code consists of equipment of which line-up flag is "Stop sale" or "Logical delete". You must be aware of using this quotation.</value>
+  </data>
+  <data name="MSG3039" xml:space="preserve">
+    <value>There is the unoperated data or the processing installation data. Please operate again after the process is canceled or finished.</value>
+  </data>
+  <data name="MSG3040" xml:space="preserve">
+    <value>This contract no. is not in service.</value>
+  </data>
+  <data name="MSG3041" xml:space="preserve">
+    <value>The real investigation date must not be less than change operation date.</value>
+  </data>
+  <data name="MSG3042" xml:space="preserve">
+    <value>Cannot operate 'Change fee' process when status is 'Contract canceled' or 'During alternative service'.</value>
+  </data>
+  <data name="MSG3043" xml:space="preserve">
+    <value>Save completely, but the notify email cannot be sent. Please remember about expiration date of service fee.</value>
+  </data>
+  <data name="MSG3044" xml:space="preserve">
+    <value>Contract no., {0}, is stopped. Please process again when contract is started.</value>
+  </data>
+  <data name="MSG3045" xml:space="preserve">
+    <value>‘Change date of service fee’ must greater than or equal to ‘Last date of changed’.</value>
+  </data>
+  <data name="MSG3046" xml:space="preserve">
+    <value>'Return date to original fee' must be greater than 'Change date of service fee'.</value>
+  </data>
+  <data name="MSG3047" xml:space="preserve">
+    <value>Service fee is still equal to the last service fee, please adjust service fee.</value>
+  </data>
+  <data name="MSG3048" xml:space="preserve">
+    <value>The current contract is in between change fee with expiration. Cannot register change by the amount which does not same as fee during such change fee with expiration. If you want to register change fee for this time, please register again after register CP12 (change fee) to be change fee without expiration by the same amount of current fee during change and by last change operate date.</value>
+  </data>
+  <data name="MSG3049" xml:space="preserve">
+    <value>Contract condition of change plan is completely registered.</value>
+  </data>
+  <data name="MSG3050" xml:space="preserve">
+    <value>Contract condition of change plan is completely registered. When installation is complete, the system will do process of billing installation fee, changing service fee, issuing invoice for amount difference, and adjusting amount of next invoice.</value>
+  </data>
+  <data name="MSG3051" xml:space="preserve">
+    <value>Contract condition of change plan is completely registered. The system will immediately do process of changing service fee, issuing invoice for amount difference, and adjusting amunt of next invoice.</value>
+  </data>
+  <data name="MSG3052" xml:space="preserve">
+    <value>There is no equipment in this contract. The modification of equipment is not permitted.</value>
+  </data>
+  <data name="MSG3053" xml:space="preserve">
+    <value>There is no unoperated data for changing the expected operation date.</value>
+  </data>
+  <data name="MSG3054" xml:space="preserve">
+    <value>Cannot cancel the occurrence of contract which under installation or installation completed.</value>
+  </data>
+  <data name="MSG3055" xml:space="preserve">
+    <value>Cannot cancel the first occurrence of contract being new start.</value>
+  </data>
+  <data name="MSG3056" xml:space="preserve">
+    <value>There is no unoperated for cancel.</value>
+  </data>
+  <data name="MSG3057" xml:space="preserve">
+    <value>Delete unoperated occurrence completed.</value>
+  </data>
+  <data name="MSG3058" xml:space="preserve">
+    <value>Cannot register because the installation was completed.</value>
+  </data>
+  <data name="MSG3059" xml:space="preserve">
+    <value>The order sale price is not equal to summary of all sale price in billing timing.</value>
+  </data>
+  <data name="MSG3060" xml:space="preserve">
+    <value>Sale price has been adjusted, please register an approve no.</value>
+  </data>
+  <data name="MSG3061" xml:space="preserve">
+    <value>The expected installation complete date is registered with a date in the past.</value>
+  </data>
+  <data name="MSG3062" xml:space="preserve">
+    <value>Please specify distributed origin code.</value>
+  </data>
+  <data name="MSG3063" xml:space="preserve">
+    <value>Distributed code {0} does not exist.</value>
+  </data>
+  <data name="MSG3064" xml:space="preserve">
+    <value>The payment method is not a bank transfer or auto transfer. Please register approve no.</value>
+  </data>
+  <data name="MSG3065" xml:space="preserve">
+    <value>The order sale price is registered as 0. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3066" xml:space="preserve">
+    <value>The order sale price is greatly adjusted. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3067" xml:space="preserve">
+    <value>There is existing new rental contract data.</value>
+  </data>
+  <data name="MSG3068" xml:space="preserve">
+    <value>This quotation code status is not 'Returned'.</value>
+  </data>
+  <data name="MSG3069" xml:space="preserve">
+    <value>Expected operation date cannot be in the past.</value>
+  </data>
+  <data name="MSG3070" xml:space="preserve">
+    <value>Cannot register the expected operation date with a future date more than 3 years</value>
+  </data>
+  <data name="MSG3071" xml:space="preserve">
+    <value>Expected installation date cannot be in the past.</value>
+  </data>
+  <data name="MSG3072" xml:space="preserve">
+    <value>Cannot register the expected installation date with a future date more than 3 years</value>
+  </data>
+  <data name="MSG3073" xml:space="preserve">
+    <value>The expected complete installation date is registered with a date in the past.</value>
+  </data>
+  <data name="MSG3074" xml:space="preserve">
+    <value>Cannot register approval request with quotation target code which already approved contract. </value>
+  </data>
+  <data name="MSG3075" xml:space="preserve">
+    <value>This project code is already registered project last complete so cannnot change project data.</value>
+  </data>
+  <data name="MSG3076" xml:space="preserve">
+    <value>This project code is already registered cancel so cannnot change project data.</value>
+  </data>
+  <data name="MSG3077" xml:space="preserve">
+    <value>CTP060: Cannot send email because the employee no. {0} is not existing in the system.</value>
+  </data>
+  <data name="MSG3078" xml:space="preserve">
+    <value>CTP060: Fail in sending {0} email repeatedly.</value>
+  </data>
+  <data name="MSG3079" xml:space="preserve">
+    <value>Out of regulations about contract period is selected. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3080" xml:space="preserve">
+    <value>End contract date cannot be in the past or today.</value>
+  </data>
+  <data name="MSG3081" xml:space="preserve">
+    <value>Contract period (months) is less than 36. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3082" xml:space="preserve">
+    <value>Auto renew (months) is less than 12. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3083" xml:space="preserve">
+    <value>The order service fee is registered as 0. Please make sure that an Approve No. is input correctly.</value>
+  </data>
+  <data name="MSG3084" xml:space="preserve">
+    <value>The order service fee is greatly adjusted. Please make sure that an Approve No. is input correctly.</value>
+  </data>
+  <data name="MSG3085" xml:space="preserve">
+    <value>Contract period (months) is greater than 36. Or Auto renew (months) is greater than 12. Please make sure that an Approve No. is input correctly.</value>
+  </data>
+  <data name="MSG3086" xml:space="preserve">
+    <value>Calculation daily fee is not '30.4'. Please make sure that it is selected correctly.</value>
+  </data>
+  <data name="MSG3087" xml:space="preserve">
+    <value>Billing fee must be inputted at least one item.</value>
+  </data>
+  <data name="MSG3088" xml:space="preserve">
+    <value>Order installation fee is not equal summary of order installation fee of all billing timing.</value>
+  </data>
+  <data name="MSG3089" xml:space="preserve">
+    <value>The summary of billing installation fee at approval is not equal to an order installation fee at approval. Please revise again.</value>
+  </data>
+  <data name="MSG3090" xml:space="preserve">
+    <value>Order deposit fee is greater than zero. Billing timing of deposit fee must be selected.</value>
+  </data>
+  <data name="MSG3091" xml:space="preserve">
+    <value>Order deposit fee is equal to zero. Billing timing of deposit fee must not be selected.</value>
+  </data>
+  <data name="MSG3092" xml:space="preserve">
+    <value>Origin contract no. for slide deposit fee is selected. Contract no. must be inputted.</value>
+  </data>
+  <data name="MSG3093" xml:space="preserve">
+    <value>All premises of the maintenance target contracts must be the same.</value>
+  </data>
+  <data name="MSG3094" xml:space="preserve">
+    <value>There are some equipment of which type line-up type is "Stop sale" or "Logical delete".</value>
+  </data>
+  <data name="MSG3095" xml:space="preserve">
+    <value>Selected quotation target code does not have the same value as edited quotation target code.</value>
+  </data>
+  <data name="MSG3096" xml:space="preserve">
+    <value>Approve completely, Contract no. is {0}.</value>
+  </data>
+  <data name="MSG3097" xml:space="preserve">
+    <value>Are you sure to delete the maintenance check-up no. {0} of contract no. {1}.</value>
+  </data>
+  <data name="MSG3098" xml:space="preserve">
+    <value>Cannot register. There is installation basic data of contract no., {0}.</value>
+  </data>
+  <data name="MSG3099" xml:space="preserve">
+    <value>There is existing new sale contract data.</value>
+  </data>
+  <data name="MSG3100" xml:space="preserve">
+    <value>New sale contract status is not 'Returned'.</value>
+  </data>
+  <data name="MSG3101" xml:space="preserve">
+    <value>Please register the location of problem equipment.</value>
+  </data>
+  <data name="MSG3102" xml:space="preserve">
+    <value>The maintenance check-up data of contract no.: {0} and product code {1} and instruction date {2} is not exist.</value>
+  </data>
+  <data name="MSG3103" xml:space="preserve">
+    <value>Cannot register. There is installation basic data that is not removal of contract no., {0}.</value>
+  </data>
+  <data name="MSG3104" xml:space="preserve">
+    <value>Cannot register. Contract has already been started but is not stopped.</value>
+  </data>
+  <data name="MSG3105" xml:space="preserve">
+    <value>Contract no., {0}, has already been ended. Please confirm again.</value>
+  </data>
+  <data name="MSG3106" xml:space="preserve">
+    <value>There is unoperated rental contract data.</value>
+  </data>
+  <data name="MSG3107" xml:space="preserve">
+    <value>Cannot cancel installation because installation already completed or customer acceptance already registered.</value>
+  </data>
+  <data name="MSG3108" xml:space="preserve">
+    <value>Duplicate period of service fee.</value>
+  </data>
+  <data name="MSG3109" xml:space="preserve">
+    <value>Cannot add service fee. There is maintenance fee.</value>
+  </data>
+  <data name="MSG3110" xml:space="preserve">
+    <value>Duplicate period of maintenance fee.</value>
+  </data>
+  <data name="MSG3111" xml:space="preserve">
+    <value>Cannot add maintenance fee. There is service fee.</value>
+  </data>
+  <data name="MSG3112" xml:space="preserve">
+    <value>There is duplicate fee type.</value>
+  </data>
+  <data name="MSG3113" xml:space="preserve">
+    <value>There is no fee information on list. Do you want to continue?</value>
+  </data>
+  <data name="MSG3115" xml:space="preserve">
+    <value>Cannot register. Contract is not cancelled.</value>
+  </data>
+  <data name="MSG3116" xml:space="preserve">
+    <value>Contract no., {0}, has already been fixed cancel.</value>
+  </data>
+  <data name="MSG3117" xml:space="preserve">
+    <value>Removal installation is not completed.</value>
+  </data>
+  <data name="MSG3118" xml:space="preserve">
+    <value>Invalid contract no., {0}. Maintenance target contract no. must be a sale or alarm/sale online/rental sale product contract.</value>
+  </data>
+  <data name="MSG3119" xml:space="preserve">
+    <value>Contract no., {0}, is not started.</value>
+  </data>
+  <data name="MSG3120" xml:space="preserve">
+    <value>Contract no., {0}, has already been related to the contract {1}.</value>
+  </data>
+  <data name="MSG3121" xml:space="preserve">
+    <value>The range of specified period is overlap with the registered period. Please specify the different period.</value>
+  </data>
+  <data name="MSG3122" xml:space="preserve">
+    <value>Unable to register the removal fee because current contract is not contains removal fee before.</value>
+  </data>
+  <data name="MSG3123" xml:space="preserve">
+    <value>Cannot register {0} because the {1} is registered.</value>
+  </data>
+  <data name="MSG3124" xml:space="preserve">
+    <value>Removal fee is changed. Do you want to save this change to billing data?</value>
+  </data>
+  <data name="MSG3125" xml:space="preserve">
+    <value>Removal is completed, The changed removal fee will not effect to billing data.</value>
+  </data>
+  <data name="MSG3126" xml:space="preserve">
+    <value>{0} must be today or the past date.</value>
+  </data>
+  <data name="MSG3127" xml:space="preserve">
+    <value>Contract period end date must greater than contract period start date</value>
+  </data>
+  <data name="MSG3128" xml:space="preserve">
+    <value>The introducer code must be an {0} and exist in the system.</value>
+  </data>
+  <data name="MSG3129" xml:space="preserve">
+    <value>End contract date cannot be less than Operation date.</value>
+  </data>
+  <data name="MSG3130" xml:space="preserve">
+    <value>Can not get next running no. of contract no.. Please contact administrator.</value>
+  </data>
+  <data name="MSG3131" xml:space="preserve">
+    <value>Can not get next running no. of project code. Please contact administrator.</value>
+  </data>
+  <data name="MSG3132" xml:space="preserve">
+    <value>This is not operated occurrence.</value>
+  </data>
+  <data name="MSG3133" xml:space="preserve">
+    <value>Cannot insert OCC because the specified contract no. doesn't have OCC which is bigger or smaller than the specified OCC. Please check the specified occurrence.</value>
+  </data>
+  <data name="MSG3134" xml:space="preserve">
+    <value>The selected occurrence must not be an alternative start or new start.</value>
+  </data>
+  <data name="MSG3135" xml:space="preserve">
+    <value>There is processing installation data in the specified contract no.. Please delete OCC after checking installation details and canceling installation.</value>
+  </data>
+  <data name="MSG3136" xml:space="preserve">
+    <value>This subcontractor is existing in the list. Please select another subcontractor.</value>
+  </data>
+  <data name="MSG3137" xml:space="preserve">
+    <value>Are you sure to delete the operated occurrence.</value>
+  </data>
+  <data name="MSG3138" xml:space="preserve">
+    <value>The change operation date must greater than or equal to the value of previous occurrence.</value>
+  </data>
+  <data name="MSG3139" xml:space="preserve">
+    <value>The change operation date must less than or equal to the value of next occurrence.</value>
+  </data>
+  <data name="MSG3140" xml:space="preserve">
+    <value>The expected reactivate service date must greater than or equal to the change operation date.</value>
+  </data>
+  <data name="MSG3141" xml:space="preserve">
+    <value>The return date to original fee must greater than or equal to today.</value>
+  </data>
+  <data name="MSG3142" xml:space="preserve">
+    <value>Approval request status is “Returned request” wait for requester update, can view only.</value>
+  </data>
+  <data name="MSG3143" xml:space="preserve">
+    <value>Approval request status is “Wait for approval” wait for approver update, can view only.</value>
+  </data>
+  <data name="MSG3144" xml:space="preserve">
+    <value>Approval request status is “Auditing” wait for auditor update, can view only.</value>
+  </data>
+  <data name="MSG3145" xml:space="preserve">
+    <value>Approval request status is “Approved” except administrator, other user can view only.</value>
+  </data>
+  <data name="MSG3146" xml:space="preserve">
+    <value>Approval request status is “Instructed” except administrator, other user can view only.</value>
+  </data>
+  <data name="MSG3147" xml:space="preserve">
+    <value>Approval request status is “Rejected” except administrator, other user can view only.</value>
+  </data>
+  <data name="MSG3148" xml:space="preserve">
+    <value>Service fee is changed.</value>
+  </data>
+  <data name="MSG3149" xml:space="preserve">
+    <value>Approver must be specify.</value>
+  </data>
+  <data name="MSG3150" xml:space="preserve">
+    <value>There must be only one billing customer for the maintenance fee payment.</value>
+  </data>
+  <data name="MSG3151" xml:space="preserve">
+    <value>Maintenance fee type is changed. Don't forget to change the fee in the billing module manually.</value>
+  </data>
+  <data name="MSG3152" xml:space="preserve">
+    <value>You do not have a permission to open "Administrator list" screen.</value>
+  </data>
+  <data name="MSG3153" xml:space="preserve">
+    <value>Maintenance fee has been adjusted. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3154" xml:space="preserve">
+    <value>Cancel date must not be in the future.</value>
+  </data>
+  <data name="MSG3155" xml:space="preserve">
+    <value>Cancel date must not be less than change implement date.</value>
+  </data>
+  <data name="MSG3156" xml:space="preserve">
+    <value>Contract no., {0}, has already been stopped.</value>
+  </data>
+  <data name="MSG3157" xml:space="preserve">
+    <value>Stop date must not be in the future.</value>
+  </data>
+  <data name="MSG3158" xml:space="preserve">
+    <value>Stop date must date back from today less than 1 year.</value>
+  </data>
+  <data name="MSG3159" xml:space="preserve">
+    <value>Expected resume operation date is more than stop date &lt;= 6 months. Do you want to continue?</value>
+  </data>
+  <data name="MSG3160" xml:space="preserve">
+    <value>Cannot register. Contract is not approved.</value>
+  </data>
+  <data name="MSG3161" xml:space="preserve">
+    <value>Cannot generate schedule because product type is not maintenance or alarm contract.</value>
+  </data>
+  <data name="MSG3162" xml:space="preserve">
+    <value>There is no data to register on list.</value>
+  </data>
+  <data name="MSG3163" xml:space="preserve">
+    <value>The equipment code {0} is duplicated. Please select another equipment.</value>
+  </data>
+  <data name="MSG3164" xml:space="preserve">
+    <value>Salesman must be input sequentially.</value>
+  </data>
+  <data name="MSG3165" xml:space="preserve">
+    <value>'Warrantee period from' must more than or equal to the customer acceptance date.</value>
+  </data>
+  <data name="MSG3166" xml:space="preserve">
+    <value>'Warrantee period to' must more than 'Warrantee period from'.</value>
+  </data>
+  <data name="MSG3167" xml:space="preserve">
+    <value>Contract status cannot perform start or reactivate service.</value>
+  </data>
+  <data name="MSG3168" xml:space="preserve">
+    <value>Sale contract data of last OCC must be ‘New sale’ or ‘Add sale’.</value>
+  </data>
+  <data name="MSG3169" xml:space="preserve">
+    <value>Start/resume operation date must not be in the past more than one year.</value>
+  </data>
+  <data name="MSG3170" xml:space="preserve">
+    <value>For maintenance contract, start/resume operation date must be current month.</value>
+  </data>
+  <data name="MSG3171" xml:space="preserve">
+    <value>Cannot start service because installation is not complete.</value>
+  </data>
+  <data name="MSG3172" xml:space="preserve">
+    <value>Cannot start service because PO or contract is not receive and approve no. is not inputted.</value>
+  </data>
+  <data name="MSG3173" xml:space="preserve">
+    <value>Cannot start service because any target maintenance have not be started service.</value>
+  </data>
+  <data name="MSG3174" xml:space="preserve">
+    <value>Cannot alternative start service because contract is not alarm contract.</value>
+  </data>
+  <data name="MSG3175" xml:space="preserve">
+    <value>Cannot reactivate service because installation is not complete.</value>
+  </data>
+  <data name="MSG3176" xml:space="preserve">
+    <value>Cannot reactivate service because contract is not stopped.</value>
+  </data>
+  <data name="MSG3177" xml:space="preserve">
+    <value>You input start/resume operation date with old  date more than 3 months, do you want to continue ?</value>
+  </data>
+  <data name="MSG3179" xml:space="preserve">
+    <value>Cannot receive contract document that is not issued.</value>
+  </data>
+  <data name="MSG3180" xml:space="preserve">
+    <value>The expected maintenance date must be greater than or equal to today.</value>
+  </data>
+  <data name="MSG3181" xml:space="preserve">
+    <value>Maintenance fee is change after sent to billing. Don't forget to change the fee in the billing module manually.</value>
+  </data>
+  <data name="MSG3182" xml:space="preserve">
+    <value>Expected resume operation date must be greater than or equal to Stop date.</value>
+  </data>
+  <data name="MSG3183" xml:space="preserve">
+    <value>Department person in charge was registered more than one person. Please inform managing department (HR).</value>
+  </data>
+  <data name="MSG3184" xml:space="preserve">
+    <value>Department person in charge is not assigned. Please inform managing department (HR).</value>
+  </data>
+  <data name="MSG3185" xml:space="preserve">
+    <value>Stop date must not be less than last change operation date.</value>
+  </data>
+  <data name="MSG3186" xml:space="preserve">
+    <value>Company name, {0} already exist in list.</value>
+  </data>
+  <data name="MSG3187" xml:space="preserve">
+    <value>System (product) name, {0} already exist in list.</value>
+  </data>
+  <data name="MSG3188" xml:space="preserve">
+    <value>Support staff, {0} already exist in list.</value>
+  </data>
+  <data name="MSG3189" xml:space="preserve">
+    <value>Are you sure to reject contract?</value>
+  </data>
+  <data name="MSG3190" xml:space="preserve">
+    <value>Cannot generate the incident no. Contract data does not exist.</value>
+  </data>
+  <data name="MSG3191" xml:space="preserve">
+    <value>Are you sure to return the approve request?</value>
+  </data>
+  <data name="MSG3192" xml:space="preserve">
+    <value>Cannot generate the approval request request no. Contract data does not exist.</value>
+  </data>
+  <data name="MSG3193" xml:space="preserve">
+    <value>Cannot delete the maintenance check-up schedule because there is some registered results in the same cycle.</value>
+  </data>
+  <data name="MSG3194" xml:space="preserve">
+    <value>This user code/contract no. : {0} is existing in the list. Please select another contract.</value>
+  </data>
+  <data name="MSG3195" xml:space="preserve">
+    <value>Invalid billing customer information. One billing customer must be registered to pay in the result based fee.</value>
+  </data>
+  <data name="MSG3196" xml:space="preserve">
+    <value>Cannot input the expected reactivate service date when the change type of contract is not suspension.</value>
+  </data>
+  <data name="MSG3197" xml:space="preserve">
+    <value>Cannot input the return to original fee date when the change type of contract is not change fee.</value>
+  </data>
+  <data name="MSG3198" xml:space="preserve">
+    <value>Cannot register last complete project because contract no.: {0} is not started service.</value>
+  </data>
+  <data name="MSG3199" xml:space="preserve">
+    <value>This project code is already registered project last complete so cannnot project last complete.</value>
+  </data>
+  <data name="MSG3200" xml:space="preserve">
+    <value>This project code is already registered cancel so cannnot project last complete.</value>
+  </data>
+  <data name="MSG3201" xml:space="preserve">
+    <value>Cannot cancel project because contract no.: {0} is not cancelled.</value>
+  </data>
+  <data name="MSG3202" xml:space="preserve">
+    <value>This project code is already registered project last complete so cannnot cancel project.</value>
+  </data>
+  <data name="MSG3203" xml:space="preserve">
+    <value>This project code is already registered cancel so  cannnot cancel project.</value>
+  </data>
+  <data name="MSG3204" xml:space="preserve">
+    <value>Quotation: {0} does not have the same premise's code of Contract: {1}.</value>
+  </data>
+  <data name="MSG3205" xml:space="preserve">
+    <value>Expected complete installation date cannot be in the past.</value>
+  </data>
+  <data name="MSG3206" xml:space="preserve">
+    <value>Cannot register the expected complete installation date with a future date more than 3 years</value>
+  </data>
+  <data name="MSG3207" xml:space="preserve">
+    <value>Expected customer acceptance date cannot be in the past.</value>
+  </data>
+  <data name="MSG3208" xml:space="preserve">
+    <value>Cannot register the expected customer acceptance date with a future date more than 3 years</value>
+  </data>
+  <data name="MSG3209" xml:space="preserve">
+    <value>The following fields of premise's information are required: {0}.</value>
+  </data>
+  <data name="MSG3210" xml:space="preserve">
+    <value>Please select the payment method of billing sale price at approval.</value>
+  </data>
+  <data name="MSG3211" xml:space="preserve">
+    <value>Please select the payment method of billing partial fee.</value>
+  </data>
+  <data name="MSG3212" xml:space="preserve">
+    <value>Please select the payment method of billing sale price at customer acceptance.</value>
+  </data>
+  <data name="MSG3213" xml:space="preserve">
+    <value>Connect to online flag is selected. Contract no. must be inputted.</value>
+  </data>
+  <data name="MSG3214" xml:space="preserve">
+    <value>Distributed target is selected. Distributed origin code must be inputted.</value>
+  </data>
+  <data name="MSG3215" xml:space="preserve">
+    <value>Distributed origin contract has already been cancelled.</value>
+  </data>
+  <data name="MSG3216" xml:space="preserve">
+    <value>Please specify project code at main menu before open this screen.</value>
+  </data>
+  <data name="MSG3217" xml:space="preserve">
+    <value>There is duplicate contract document data.</value>
+  </data>
+  <data name="MSG3218" xml:space="preserve">
+    <value>Some error is occurred.&lt;br/&gt;
+Saved completely contract documents:&lt;br/&gt; {0}&lt;br/&gt;
+Not saved contract documents:&lt;br/&gt; {1}.</value>
+  </data>
+  <data name="MSG3219" xml:space="preserve">
+    <value>There is removal installation. Removal fee is required.</value>
+  </data>
+  <data name="MSG3220" xml:space="preserve">
+    <value>Are you sure to update last complete for this project ?</value>
+  </data>
+  <data name="MSG3221" xml:space="preserve">
+    <value>Are you sure to cancel this project ?</value>
+  </data>
+  <data name="MSG3222" xml:space="preserve">
+    <value>Update last complete project completely.</value>
+  </data>
+  <data name="MSG3223" xml:space="preserve">
+    <value>Cancel project completely.</value>
+  </data>
+  <data name="MSG3224" xml:space="preserve">
+    <value>There must be only one maintenance target code for alarm or sale online or rental sale product.</value>
+  </data>
+  <data name="MSG3225" xml:space="preserve">
+    <value>There is a processing installation. Please process after the installation is complete or cancelled.</value>
+  </data>
+  <data name="MSG3226" xml:space="preserve">
+    <value>NPWP of customer is changed but branch name/branch building/contact point are same value, do you want to continue ?</value>
+  </data>
+  <data name="MSG3227" xml:space="preserve">
+    <value>Cannot cancel select this approval request type because approval request title of this type not found.</value>
+  </data>
+  <data name="MSG3228" xml:space="preserve">
+    <value>Real customer has the same NPWP as Contract target but any other information are different.</value>
+  </data>
+  <data name="MSG3229" xml:space="preserve">
+    <value>Real customer has the same NPWP as Purchaser but any other information are different.</value>
+  </data>
+  <data name="MSG3230" xml:space="preserve">
+    <value>Cannot register the newly billing customer to pay a zero service fee.</value>
+  </data>
+  <data name="MSG3231" xml:space="preserve">
+    <value>Cannot register. There is no fee information on list.</value>
+  </data>
+  <data name="MSG3232" xml:space="preserve">
+    <value>Save completely, but the notify email cannot be sent.</value>
+  </data>
+  <data name="MSG3233" xml:space="preserve">
+    <value>Cannot save sale price. The amount reach maximum.</value>
+  </data>
+  <data name="MSG3234" xml:space="preserve">
+    <value>Please specify contract document occurrence.</value>
+  </data>
+  <data name="MSG3235" xml:space="preserve">
+    <value>Order sale price is not equal to summary of order product price and installation fee.</value>
+  </data>
+  <data name="MSG3236" xml:space="preserve">
+    <value>Cannot register CP-15 because the contract status is not a before start</value>
+  </data>
+  <data name="MSG3237" xml:space="preserve">
+    <value>Cannot register CP-14 because the contract status is not an after start</value>
+  </data>
+  <data name="MSG3238" xml:space="preserve">
+    <value>The security occurrence {0} is existing, Please select another security occurrence that not existing in the system</value>
+  </data>
+  <data name="MSG3239" xml:space="preserve">
+    <value>The order sale price is greatly adjusted. Please make sure that an Approve No. is input correctly.</value>
+  </data>
+  <data name="MSG3240" xml:space="preserve">
+    <value>Cannot register new branch because no data in project WIP W/H equipment detail.
+</value>
+  </data>
+  <data name="MSG3241" xml:space="preserve">
+    <value>Cannot register new branch because no remain equipment quantity data in project WIP W/H equipment detail.
+</value>
+  </data>
+  <data name="MSG3242" xml:space="preserve">
+    <value>There is no billing basic data to register.</value>
+  </data>
+  <data name="MSG3243" xml:space="preserve">
+    <value>Cannot use this quotation target code because it is wait for approve. For revising data, please return draft contract before editing.</value>
+  </data>
+  <data name="MSG3244" xml:space="preserve">
+    <value>Cannot use this quotation target code because it is rejected.</value>
+  </data>
+  <data name="MSG3245" xml:space="preserve">
+    <value>Cannot use this quotation target code because it is returned.</value>
+  </data>
+  <data name="MSG3246" xml:space="preserve">
+    <value>Cannot use this quotation target code because it is approved.</value>
+  </data>
+  <data name="MSG3247" xml:space="preserve">
+    <value>Salesman is duplicated.</value>
+  </data>
+  <data name="MSG3248" xml:space="preserve">
+    <value>Premise registered as SECOM product is different. Please check the real customer information/premise's information.</value>
+  </data>
+  <data name="MSG3249" xml:space="preserve">
+    <value>The order sale price is registered as 0. Please make sure that an Approve No. is input correctly.</value>
+  </data>
+  <data name="MSG3250" xml:space="preserve">
+    <value>If you click [Yes], contract no. will be generated. Do you want to continue?</value>
+  </data>
+  <data name="MSG3251" xml:space="preserve">
+    <value>Payment term is less than 3 months. Please input Approve no.</value>
+  </data>
+  <data name="MSG3252" xml:space="preserve">
+    <value>Cannot save {0}. The amount reach maximum.</value>
+  </data>
+  <data name="MSG3253" xml:space="preserve">
+    <value>Billing customer is registering or editing. Please click [Add/update] or [Cancel] on billing customer detail section before.</value>
+  </data>
+  <data name="MSG3254" xml:space="preserve">
+    <value>Cannot register Q code in 'Origin contract no. for slide deposit fee'.</value>
+  </data>
+  <data name="MSG3255" xml:space="preserve">
+    <value>Credit term is greater than zero. Please input Approve no.</value>
+  </data>
+  <data name="MSG3256" xml:space="preserve">
+    <value>The required item of 'Customer' is not inputted. Please click [New/Edit customer info.] button to register that item.</value>
+  </data>
+  <data name="MSG3257" xml:space="preserve">
+    <value>The required item of 'Real customer' is not inputted. Please click [New/Edit customer info.] button to register that item.</value>
+  </data>
+  <data name="MSG3258" xml:space="preserve">
+    <value>The required item of 'Premise' is not inputted. Please click [New/Edit premise's info.] button to register that item.</value>
+  </data>
+  <data name="MSG3259" xml:space="preserve">
+    <value>Several billing customer of service fee/maintenance check-up fee/security guard service fee are registered for this contract; please register start service data by leave Adjust billing term date as blank.</value>
+  </data>
+  <data name="MSG3260" xml:space="preserve">
+    <value>Project code {0} is not register last complete. Please input other project code.</value>
+  </data>
+  <data name="MSG3261" xml:space="preserve">
+    <value>The premise of maintenance target contract is not the same as premise of maintenance contract. Please select another contract no.</value>
+  </data>
+  <data name="MSG3262" xml:space="preserve">
+    <value>Program is not allow to change premise of maintenance contract or maintenance contract target.</value>
+  </data>
+  <data name="MSG3263" xml:space="preserve">
+    <value>Cannot register Q code/MA code/SG code in 'Connection target code'.</value>
+  </data>
+  <data name="MSG3264" xml:space="preserve">
+    <value>Register new rental contract completely</value>
+  </data>
+  <data name="MSG3265" xml:space="preserve">
+    <value>Register new sale contract completely</value>
+  </data>
+  <data name="MSG3266" xml:space="preserve">
+    <value>Please input the value of {0} more than zero</value>
+  </data>
+  <data name="MSG3267" xml:space="preserve">
+    <value>Save completely, but the email cannot be sent.</value>
+  </data>
+  <data name="MSG3268" xml:space="preserve">
+    <value>Cannot alternative start service because contract already registered start/alternative service</value>
+  </data>
+  <data name="MSG3269" xml:space="preserve">
+    <value>An error occured. The generating process for maintenance check-up slip is stopped. System will generate the slips till the error point. Please click [Detail &gt;&gt;] button to see the error details.</value>
+  </data>
+  <data name="MSG3270" xml:space="preserve">
+    <value>Order service fee is registered as 0. Please check again. If an approval is already gotten, it will be able to update</value>
+  </data>
+  <data name="MSG3271" xml:space="preserve">
+    <value>Service fee is greatly adjusted. Please check again. If an approval is already gotten, it will be able to update</value>
+  </data>
+  <data name="MSG3272" xml:space="preserve">
+    <value>This contract no. is during alternative start. Cannot modify equipment quantity by investigation during alternative start</value>
+  </data>
+  <data name="MSG3273" xml:space="preserve">
+    <value>Negotiation staff is duplicated</value>
+  </data>
+  <data name="MSG3274" xml:space="preserve">
+    <value>Cannot change project code. There is installation of this contract.</value>
+  </data>
+  <data name="MSG3275" xml:space="preserve">
+    <value>Cannot assign this person. Control chief must be specified first.</value>
+  </data>
+  <data name="MSG3276" xml:space="preserve">
+    <value>Cannot specify other person in charge because incident control cheif is not specified.</value>
+  </data>
+  <data name="MSG3277" xml:space="preserve">
+    <value>Cannot register incident. You must specify new incident control cheif.</value>
+  </data>
+  <data name="MSG3278" xml:space="preserve">
+    <value>Cannot open screen because specified 
+contract no. is sale contract</value>
+  </data>
+  <data name="MSG3279" xml:space="preserve">
+    <value>Connection target code {0} is not existing. Please specify other contract no.</value>
+  </data>
+  <data name="MSG3280" xml:space="preserve">
+    <value>Connection target code {0} is not sale-online contract. Please specify other contract no.</value>
+  </data>
+  <data name="MSG3281" xml:space="preserve">
+    <value>Contract no. for slide fee cannot be the same as the specifed contract no..</value>
+  </data>
+  <data name="MSG3282" xml:space="preserve">
+    <value>The range of specified period is overlap with the registered period. Do you want to continue?</value>
+  </data>
+  <data name="MSG3283" xml:space="preserve">
+    <value>This contract no. is not during operation.</value>
+  </data>
+  <data name="MSG3284" xml:space="preserve">
+    <value>Expected installation information has already been registered. If you want to modify equipment qty by real investigation, Please cancel it or complete that installation information in advance.</value>
+  </data>
+  <data name="MSG3285" xml:space="preserve">
+    <value>Expected change plan information has already been registered. If you want to modify equipment qty by real investigation, Please cancel it or complete that installation information in advance.</value>
+  </data>
+  <data name="MSG3286" xml:space="preserve">
+    <value>Cannot modify equipment quantity by investigation with MA-Code, SG-Code.</value>
+  </data>
+  <data name="MSG3287" xml:space="preserve">
+    <value>Value of monthly fee is more than maximum input value ({0})</value>
+  </data>
+  <data name="MSG3288" xml:space="preserve">
+    <value>Cannot perform this operation during alternative start</value>
+  </data>
+  <data name="MSG3289" xml:space="preserve">
+    <value>Cannot delete last OCC with this function, because there is un-operated OCC. If you need to cancel an un-operated contract, Please use CP-12 cancel un-operated contract</value>
+  </data>
+  <data name="MSG3290" xml:space="preserve">
+    <value>Please specify billing customer for the removal fee payment.</value>
+  </data>
+  <data name="MSG3291" xml:space="preserve">
+    <value>Data must be edited at least one item.</value>
+  </data>
+  <data name="MSG3292" xml:space="preserve">
+    <value>Please confirm whether you need to change billing data or not.</value>
+  </data>
+  <data name="MSG3293" xml:space="preserve">
+    <value>There is processing installation data in the specified contract no.. Please delete OCC after checking installation details and canceling installation.</value>
+  </data>
+  <data name="MSG3294" xml:space="preserve">
+    <value>Negotiation staff must be input sequentially from Negotiation staff 1.</value>
+  </data>
+  <data name="MSG3295" xml:space="preserve">
+    <value>There are some equipment of which the line-up type is "Logical delete".</value>
+  </data>
+  <data name="MSG3296" xml:space="preserve">
+    <value>There are some equipment of which the line-up type is "Temporary", "One time" or "Stop sale". Do you want to continue?</value>
+  </data>
+  <data name="MSG3297" xml:space="preserve">
+    <value>Cannot register operation data because installation of Linkage sale contract no. has not completed.</value>
+  </data>
+  <data name="MSG3298" xml:space="preserve">
+    <value>Expected operation date must be equal or greater than last operation date.</value>
+  </data>
+  <data name="MSG3299" xml:space="preserve">
+    <value>Expected operation date cannot be future date.</value>
+  </data>
+  <data name="MSG3300" xml:space="preserve">
+    <value>Contract no., {0}, has already been ended. Please confirm again.</value>
+  </data>
+  <data name="MSG3301" xml:space="preserve">
+    <value>Cannot register only auditor, must register Approver at least</value>
+  </data>
+  <data name="MSG3302" xml:space="preserve">
+    <value>Cannot add more than 8 recipients.</value>
+  </data>
+  <data name="MSG3303" xml:space="preserve">
+    <value>Cannot register by 'Audit request', must register Auditor at least</value>
+  </data>
+  <data name="MSG3304" xml:space="preserve">
+    <value>E-mail of {0} who is person in charge of important incidence does not found. Please contact system administrator to register E-mail of person in charge of important incidence or click 'Yes' button to register this incident without sending e-mail to person in charge who has no e-mail.</value>
+  </data>
+  <data name="MSG3305" xml:space="preserve">
+    <value>The e-mail of specified person in charge {0} is not found. Please contact system administrator to register E-mail of person in charge or click 'Yes' button to register this approval request without sending e-mail to person in charge who has no e-mail.
+</value>
+  </data>
+  <data name="MSG3306" xml:space="preserve">
+    <value>Cannot register complete termination because contract has been canceled before start service.</value>
+  </data>
+  <data name="MSG3307" xml:space="preserve">
+    <value>Start memorandum is not received, do you want to continue ?</value>
+  </data>
+  <data name="MSG3308" xml:space="preserve">
+    <value>Adjust billing term can not be less than start/resume operation date.</value>
+  </data>
+  <data name="MSG3309" xml:space="preserve">
+    <value>Cannot register because the installation status is not '00: Installation not registered'.</value>
+  </data>
+  <data name="MSG3310" xml:space="preserve">
+    <value>First operation date must not be more than change operation date of next OCC ({0})</value>
+  </data>
+  <data name="MSG3311" xml:space="preserve">
+    <value>Month of first operation date must not be changed.</value>
+  </data>
+  <data name="MSG3312" xml:space="preserve">
+    <value>You are not approver.</value>
+  </data>
+  <data name="MSG3313" xml:space="preserve">
+    <value>Are you sure to remove yourself from approver?</value>
+  </data>
+  <data name="MSG3314" xml:space="preserve">
+    <value>Currency of billing amount of installation fee at complete installation is different from the currency of the order installation fee.
+Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3315" xml:space="preserve">
+    <value>Currency of billing amount of installation fee at starting service is different from the currency of the order installation fee.
+Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3316" xml:space="preserve">
+    <value>Currency of billing installation fee approval is different from the currency of the order installation fee approve contract. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3317" xml:space="preserve">
+    <value>Currency of billing installation fee complete installation is different from the currency of the order installation fee complete install. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3318" xml:space="preserve">
+    <value>Currency of billing installation fee start service is different from the currency of the order installation fee start service. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3319" xml:space="preserve">
+    <value>Currency of billing deposit fee is different from the currency of the order deposit fee. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3320" xml:space="preserve">
+    <value>Cannot register. Contract no. {0} is one-shot.</value>
+  </data>
+  <data name="MSG3321" xml:space="preserve">
+    <value>Cannot register. Quotation no. {0} is one-shot.</value>
+  </data>
+  <data name="MSG3322" xml:space="preserve">
+    <value>The order product price is registered as 0. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3323" xml:space="preserve">
+    <value>The order product price is not equal to summary of all product price in billing timing.</value>
+  </data>
+  <data name="MSG3324" xml:space="preserve">
+    <value>Product price has been adjusted, please register an approve no.</value>
+  </data>
+  <data name="MSG3325" xml:space="preserve">
+    <value>Please select the payment method of billing product price at approval.</value>
+  </data>
+  <data name="MSG3326" xml:space="preserve">
+    <value>Please select the payment method partial fee.</value>
+  </data>
+  <data name="MSG3327" xml:space="preserve">
+    <value>Please select the payment method of billing product price at customer acceptance.</value>
+  </data>
+  <data name="MSG3328" xml:space="preserve">
+    <value>The payment method is not a bank transfer or bank transfer (other account). Please register approve no.</value>
+  </data>
+  <data name="MSG3329" xml:space="preserve">
+    <value>The order installation fee is registered as 0. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3330" xml:space="preserve">
+    <value>The order installation fee is not equal to summary of all installation fee in billing timing.</value>
+  </data>
+  <data name="MSG3331" xml:space="preserve">
+    <value>Installation fee has been adjusted, please register an approve no.</value>
+  </data>
+  <data name="MSG3332" xml:space="preserve">
+    <value>Please select the payment method of billing installation fee at approval.</value>
+  </data>
+  <data name="MSG3333" xml:space="preserve">
+    <value>Please select the payment method of billing partial fee for installation fee.</value>
+  </data>
+  <data name="MSG3334" xml:space="preserve">
+    <value>Please select the payment method of billing installation fee at customer acceptance.</value>
+  </data>
+  <data name="MSG3335" xml:space="preserve">
+    <value>The order product price is greatly adjusted. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3336" xml:space="preserve">
+    <value>The order installation fee is greatly adjusted. Please register an Approve No.</value>
+  </data>
+  <data name="MSG3337" xml:space="preserve">
+    <value>The order product price is registered as 0. Please make sure that an Approve No. is input correctly.</value>
+  </data>
+  <data name="MSG3338" xml:space="preserve">
+    <value>The order installation fee is registered as 0. Please make sure that an Approve No. is input correctly.</value>
+  </data>
+  <data name="MSG3340" xml:space="preserve">
+    <value>Currency of billing service fee is different from the currency of the order service fee. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3341" xml:space="preserve">
+    <value>Currency of billing amount of installation fee at approve contract is different from the currency of the order installation fee.
+Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3342" xml:space="preserve">
+    <value>Sum of billing installation fee must equal to Order installation fee</value>
+  </data>
+  <data name="MSG3343" xml:space="preserve">
+    <value>Currency of after change fee is different from the currency of the Current fee.&lt;br /&gt;Please make sure the amount is correct.&lt;br /&gt;If there is any changes for invoice amount, please issue invoice based on calculation manually</value>
+  </data>
+  <data name="MSG3344" xml:space="preserve">
+    <value>Currency of installation fee at complete installation is different from the currency of the order installation fee.</value>
+  </data>
+  <data name="MSG3345" xml:space="preserve">
+    <value>Currency of installation fee at starting service is different from the currency of the order installation fee.</value>
+  </data>
+  <data name="MSG3346" xml:space="preserve">
+    <value>Currency of billing installation fee is different from the currency of the order installation fee.
+Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3347" xml:space="preserve">
+    <value>Currency of order service fee is different from the currency of the normal service fee.
+Please make sure the amount is correct.
+If there is any changes for invoice amount, please issue invoice based on calculation manually</value>
+  </data>
+  <data name="MSG3348" xml:space="preserve">
+    <value>Currency of order installation fee is different from the currency of normal installation fee.
+Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3349" xml:space="preserve">
+    <value>Currency of order service fee is different from the currency of current service fee（change fee with expiration）.
+Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3350" xml:space="preserve">
+    <value>Payment date (Incentive) must be today or the past date.</value>
+  </data>
+  <data name="MSG3351" xml:space="preserve">
+    <value>Currency of installation fee at approve contract is different from the currency of the order installation fee.</value>
+  </data>
+  <data name="MSG3352" xml:space="preserve">
+    <value>The order product price is greatly adjusted. Please make sure that an Approve No. is input correctly.</value>
+  </data>
+  <data name="MSG3353" xml:space="preserve">
+    <value>The order installation fee is greatly adjusted. Please make sure that an Approve No. is input correctly.</value>
+  </data>
+  <data name="MSG3354" xml:space="preserve">
+    <value>Currency of billing product price at approval is different from currency of order product price. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3355" xml:space="preserve">
+    <value>Currency of partial fee for product price is different from currency of order product price. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3356" xml:space="preserve">
+    <value>Currency of billing product price at customer acceptance is different from currency of order product price. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3357" xml:space="preserve">
+    <value>Currency of billing installation fee at approval is different from currency of order installation fee. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3358" xml:space="preserve">
+    <value>Currency of partial fee for installation fee is different from currency of order installation fee. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3359" xml:space="preserve">
+    <value>Currency of billing installation fee at customer acceptance is different from currency of order installation fee. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3360" xml:space="preserve">
+    <value>Currency of order service fee is different from the currency of current service fee（change fee with expiration）.
+Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3361" xml:space="preserve">
+    <value>Currency of after change fee is different from the currency of current service fee（change fee with expiration）.
+Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3362" xml:space="preserve">
+    <value>The order product price is greatly adjusted. Please make sure that an Approve No. is input correctly.</value>
+  </data>
+  <data name="MSG3363" xml:space="preserve">
+    <value>The order installation fee is greatly adjusted. Please make sure that an Approve No. is input correctly.</value>
+  </data>
+  <data name="MSG3364" xml:space="preserve">
+    <value>Currency of order product price is different from the currency of the normal product price. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3365" xml:space="preserve">
+    <value>Currency of billing amount of product price at approve contract is different from the currency of the order product price. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3366" xml:space="preserve">
+    <value>Currency of billing amount of product price at partial fee is different from the currency of the order product price. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3367" xml:space="preserve">
+    <value>Currency of billing amount of product price at customer acceptance is different from the currency of the order product price. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3368" xml:space="preserve">
+    <value>Currency of order installation fee is different from the currency of the normal installation fee. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3369" xml:space="preserve">
+    <value>Currency of billing amount of installation fee at approve contract is different from the currency of the order installation fee. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3370" xml:space="preserve">
+    <value>Currency of billing amount of installation fee at partial fee is different from the currency of the order installation fee. Please make sure the amount is correct.</value>
+  </data>
+  <data name="MSG3371" xml:space="preserve">
+    <value>Currency of billing amount of installation fee at customer acceptance is different from the currency of the order installation fee. Please make sure the amount is correct.</value>
+  </data>
+</root>

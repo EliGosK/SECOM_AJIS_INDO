@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="btnClear1" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="btnSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="btnSearch1" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="cboContractOffice" xml:space="preserve">
+    <value>Contract office</value>
+  </data>
+  <data name="cboDueDateDeadline" xml:space="preserve">
+    <value>Due date/Deadline</value>
+  </data>
+  <data name="cboIncidentOffice" xml:space="preserve">
+    <value>Incident office</value>
+  </data>
+  <data name="cboIncidentRole" xml:space="preserve">
+    <value>Incident role</value>
+  </data>
+  <data name="cboIncidentStatus" xml:space="preserve">
+    <value>Incident status</value>
+  </data>
+  <data name="cboIncidentType" xml:space="preserve">
+    <value>Incident type</value>
+  </data>
+  <data name="cboOperationOffice" xml:space="preserve">
+    <value>Operation office</value>
+  </data>
+  <data name="cboSpecifyPeriod" xml:space="preserve">
+    <value>Specify period</value>
+  </data>
+  <data name="chkIncidentStatus" xml:space="preserve">
+    <value>Incident status</value>
+  </data>
+  <data name="headerChief" xml:space="preserve">
+    <value>Control&lt;br /&gt;chief</value>
+  </data>
+  <data name="headerCorrespondent" xml:space="preserve">
+    <value>Corres-&lt;br /&gt;pondent</value>
+  </data>
+  <data name="headerDueDateDeadline" xml:space="preserve">
+    <value>Due date/&lt;br /&gt;Deadline</value>
+  </data>
+  <data name="headerIncidentNo" xml:space="preserve">
+    <value>Incident no.</value>
+  </data>
+  <data name="headerIncidentTitle" xml:space="preserve">
+    <value>Incident title</value>
+  </data>
+  <data name="headerIncidentType" xml:space="preserve">
+    <value>Incident type</value>
+  </data>
+  <data name="headerOverNewIncident" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;Detail&lt;/div&gt;</value>
+  </data>
+  <data name="headerRealCustomer" xml:space="preserve">
+    <value>&lt;div&gt;Customer name &lt;br /&gt;(1) English&lt;br /&gt;(2) Local&lt;/div&gt;</value>
+  </data>
+  <data name="headerSiteName" xml:space="preserve">
+    <value>&lt;div&gt;Premise's name &lt;br /&gt;(1) English&lt;br /&gt;(2) Local&lt;/div&gt;</value>
+  </data>
+  <data name="headerStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="hideIncidentID" xml:space="preserve">
+    <value>Incident ID</value>
+  </data>
+  <data name="lblAL" xml:space="preserve">
+    <value>AL</value>
+  </data>
+  <data name="lblAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="lblAll1" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="lblAssistant" xml:space="preserve">
+    <value>Assistant</value>
+  </data>
+  <data name="lblCancelFinish" xml:space="preserve">
+    <value>Termination</value>
+  </data>
+  <data name="lblChief" xml:space="preserve">
+    <value>Chief</value>
+  </data>
+  <data name="lblCompleted" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="lblContractStatus" xml:space="preserve">
+    <value>Contract status</value>
+  </data>
+  <data name="lblContractTargetPurchaserName" xml:space="preserve">
+    <value>Customer name (Contract/Purchaser)</value>
+  </data>
+  <data name="lblContractType" xml:space="preserve">
+    <value>Contract type</value>
+  </data>
+  <data name="lblCorrespondent" xml:space="preserve">
+    <value>Correspondent</value>
+  </data>
+  <data name="lblCustomerGroupName" xml:space="preserve">
+    <value>Customer group name</value>
+  </data>
+  <data name="lblCustomerName" xml:space="preserve">
+    <value>Customer name (Client)</value>
+  </data>
+  <data name="lblddMMyyyy" xml:space="preserve">
+    <value>(ddMMyyyy)</value>
+  </data>
+  <data name="lblHandling" xml:space="preserve">
+    <value>Handling</value>
+  </data>
+  <data name="lblImplemented" xml:space="preserve">
+    <value>Operated</value>
+  </data>
+  <data name="lblIncidentNo" xml:space="preserve">
+    <value>Incident no.</value>
+  </data>
+  <data name="lblIncidentTitle" xml:space="preserve">
+    <value>Incident title</value>
+  </data>
+  <data name="lblMaintenance" xml:space="preserve">
+    <value>Maintenance</value>
+  </data>
+  <data name="lblProjectName" xml:space="preserve">
+    <value>Project name</value>
+  </data>
+  <data name="lblRegistrant" xml:space="preserve">
+    <value>Registrant</value>
+  </data>
+  <data name="lblSales" xml:space="preserve">
+    <value>Sales</value>
+  </data>
+  <data name="lblSentryGuard" xml:space="preserve">
+    <value>Security guard</value>
+  </data>
+  <data name="lblSiteName" xml:space="preserve">
+    <value>Premise's name</value>
+  </data>
+  <data name="lblStopService" xml:space="preserve">
+    <value>Suspension</value>
+  </data>
+  <data name="lblUnimplemented" xml:space="preserve">
+    <value>Un-operated</value>
+  </data>
+  <data name="lblUserCodeContractCode" xml:space="preserve">
+    <value>User code/Contract no. </value>
+  </data>
+  <data name="sectionIncidentListByRole" xml:space="preserve">
+    <value>Incident list by role</value>
+  </data>
+  <data name="sectionIncidentResultList" xml:space="preserve">
+    <value>Incident result list</value>
+  </data>
+  <data name="sectionSearchIncident" xml:space="preserve">
+    <value>Search incident</value>
+  </data>
+  <data name="cellNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="cellOver" xml:space="preserve">
+    <value>Over!</value>
+  </data>
+  <data name="headerOverNewAR" xml:space="preserve">
+    <value>Over/New</value>
+  </data>
+  <data name="lblControlChief" xml:space="preserve">
+    <value>Control chief</value>
+  </data>
+  <data name="lblComment" xml:space="preserve">
+    <value>* In order to search incidents related to Customer or Premises, please do not use these criteria</value>
+  </data>
+  <data name="txtAdmin" xml:space="preserve">
+    <value>Administrator</value>
+  </data>
+  <data name="lblNA" xml:space="preserve">
+    <value>N/A</value>
+  </data>
+  <data name="headerReasonType" xml:space="preserve">
+    <value>Reason type</value>
+  </data>
+</root>

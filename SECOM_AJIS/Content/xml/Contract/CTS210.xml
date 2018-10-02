@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+	<head>
+		<!--<column id="GenerateDate" width="150"  type="ro"   align="left" sort="str_custom">headerGenerateDate</column>-->
+    <column id="GenerateDateDisplay" width="150"  type="ro"   align="left" sort="date_custom">headerGenerateDate</column>
+		<column id="OccAlphabet" width="200" type="ro" align="left" sort="str_custom">headerOccAlphabet</column>
+		<column id="ContractDocOCC" width="150" type="ro" align="left" sort="str_custom">headerContractDocOcc</column>
+		<column id="DocumentName" width="*" type="ro" align="left" sort="str_custom">headerContractDocName</column>
+		<column id="Issued" width="150" type="ro" align="left" sort="str_custom">headerIssued</column>		
+		<column id="Download" width="30" type="link" align="center" sort="na">headerDownload</column>
+		<column id="IsEnableDownload" width="74" type="ro" hidden="true"></column>		
+		<column id="DocID" width="74" type="ro" hidden="true"></column>
+		<settings>
+			<colwidth>px</colwidth>
+		</settings>
+	</head>
+</rows>

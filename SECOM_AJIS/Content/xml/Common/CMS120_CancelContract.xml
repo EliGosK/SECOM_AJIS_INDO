@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="BillingTypeValueDisplay" width="130" type="ro" align="left" sort="str_custom">headerFee_type</column>
+    <column id="HandlingTypeValueDisplay" width="150" type="ro" align="left" sort="str_custom">headerHandling_type</column>
+    <column id="FeeAmount" width="110" type="edn" format="0,000.00" align="right" sort="int">headerFee_THB</column>
+    <column id="TaxAmount" width="110" type="edn" format="0,000.00" align="right" sort="int">headerTax_THB</column>
+    <column id="Period_Extra" width="200" type="ro" align="left" sort="str_custom" >headerPeriod</column>
+    <column id="Remark" width="*" type="ro" align="left" sort="str_custom">headerRemark</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

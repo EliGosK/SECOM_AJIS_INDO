@@ -1,0 +1,234 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Inventory.Helpers
+@section page_header{
+    <script src="../../Scripts/jquery.maskedinput-1.3.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <link rel="STYLESHEET" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")" />
+    <link rel="STYLESHEET" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid_skins.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+    <link rel="STYLESHEET" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_skyblue.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script src="../../Scripts/Contract/Dialog.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <script src="../../Scripts/Inventory/IVS030.js" type="text/javascript"></script>
+    <script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        var AreaSample = "@ViewBag.AreaSample";
+    </script>
+}
+@{
+    ViewBag.Col1 = "210px";
+    ViewBag.Col2 = "260px";
+    ViewBag.NormalTxt = "200px";
+    ViewBag.NormalCbo = "204px";
+    ViewBag.ProjPurSortObj = "120px";
+    ViewBag.LongTxt = "720px";
+    ViewBag.Midtxt = "220px";
+    ViewBag.SysProdTxt = "300px";
+    ViewBag.SiteNameTxt = "620px";
+
+    ViewBag.WidthButton1 = "80px";
+    ViewBag.WidthDatePicker = "90px";
+    ViewBag.WidthNormalTxt = "180px";
+    ViewBag.SearchSlipCol1 = "180px";
+    ViewBag.SearchSlipCol2 = "200px";
+    ViewBag.SearchSlipCol3 = "180px";
+    ViewBag.SearchSlipCol4 = "380px";
+}
+@*
+<!-- ===================================== Retrieve slip no  =========================================== -->
+<div class="main-table" id="RetrieveSlipNo">
+    <div class="table-header">
+        @Resources.IVS030.lblRetrieveSlipNo</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 207px;">
+        </div>
+        <div class="usr-object" style="width: 300px;">
+            @Html.CommonRadioButton("rdoInstallationReturn", @Resources.IVS030.lblInstallationSlip, "1", true, "type")  
+        </div>
+        <div class="usr-label" style="width: 21px;">
+        </div>
+        <div class="usr-object" style="width:@ViewBag.NormalTxt">
+            @Html.CommonTextBox("InstallationReturnSlipNo", null, new { style = "width:" + ViewBag.NormalTxt, maxlength = "16" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 207px;">
+        </div>
+        <div class="usr-object" style="width: 300px;">
+            @Html.CommonRadioButton("rdoProjectReturn", @Resources.IVS030.lblSlipNoOfReturn, "2", false, "type")
+        </div>
+        <div class="usr-label" style="width: 21px;">
+        </div>
+        <div class="usr-object" style="width:@ViewBag.NormalTxt">
+            @Html.CommonTextBox("ProjectReturnSlipNo", null, new { style = "width:" + ViewBag.NormalTxt, maxlength = "16" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-object" style="float: right;">
+            @Html.CommonButton("btnRetrieve", @Resources.IVS030.lblBtnRetrieve)
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<!-- ===================================== End Retrieve slip no =========================================== -->
+*@
+<!-- ===================================== Search slip no  =========================================== -->
+<div class="main-table" id="RetrieveSlipNo">
+    <form id="frmSearchSlipNo" action="#">
+    <div class="table-header">
+        @Resources.IVS030.lblSearchReturnSlip
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SearchSlipCol1">
+            @Resources.IVS030.lblContractcode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.SearchSlipCol2">
+            @Html.CommonTextBox("txtSearchContractCode", null, new { style = "width:" + ViewBag.WidthNormalTxt, maxlength = "16", name = "ContractCode" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.SearchSlipCol3">
+            @Resources.IVS030.lblCompleteCancelDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.SearchSlipCol4">
+            @Html.CommonTextBox("txtSearchCompleteDateFrom", null, new { style = "width:" + ViewBag.WidthDatePicker, name = "CompleteDateFrom" })
+            <label>
+                ~
+            </label>
+            @Html.CommonTextBox("txtSearchCompleteDateTo", null, new { style = "width:" + ViewBag.WidthDatePicker, name = "CompleteDateTo" })
+            <label id="lblddmmyyyy">
+                (ddMMyyyy)
+            </label>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SearchSlipCol1">
+            @Resources.IVS030.lblInstallationSlip
+        </div>
+        <div class="usr-object" style="width:@ViewBag.SearchSlipCol2">
+            @Html.CommonTextBox("txtSearchInstallationSlipNo", null, new { style = "width:" + ViewBag.WidthNormalTxt, maxlength = "16", name = "InstallationSlipNo" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.SearchSlipCol3">
+            @Resources.IVS030.lblSubContractorName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.SearchSlipCol4">
+            @Html.CommonTextBox("txtSearchSubContractorName", null, new { style = "width:" + ViewBag.WidthNormalTxt, maxlength = "16", name = "SubContractorName" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SearchSlipCol1">
+            @Resources.IVS030.lblProjectCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.SearchSlipCol2">
+            @Html.CommonTextBox("txtSearchProjectCode", null, new { style = "width:" + ViewBag.WidthNormalTxt, maxlength = "8", name = "ProjectCode" })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+    <div class="usr-row" style="margin-top: 5px">
+        <div style="text-align: right; float: right; margin-right: 4px;">
+            @Html.CommonButton("btnSearch", (string)@Resources.IVS030.btnSearch, new { style = "width:" + @ViewBag.WidthButton1 })
+            @Html.CommonButton("btnClear", (string)@Resources.IVS030.btnClear, new { style = "width:" + @ViewBag.WidthButton1 })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+    </form>
+    <div class="usr-row" id="divSearchResult">
+        <div id="divSearchResultGrid" style="width: 99%; margin-left: 4px; margin-top: 5px;">
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+</div>
+<!-- ===================================== End Retrieve slip no =========================================== -->
+<!-- ===================================== Receiving Return Instrument detail  =========================================== -->
+<div class="main-table" id="ReceivingReturnInstrument">
+    <div class="table-header">
+        @Resources.IVS030.lblReceiveReturn</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS030.lblContractcode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ContractCode", null, new { style = "width:" + ViewBag.NormalTxt, @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS030.lblSiteName
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("SiteName", null, new { style = "width:" + ViewBag.SiteNameTxt, @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS030.lblInstallationType
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("InstallationType", null, new { style = "width:" + ViewBag.SiteNameTxt, @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS030.lblApproveNo1
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ApproveNo1", null, new { style = "width:" + ViewBag.NormalTxt, @readonly = "readonly" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS030.lblApproveNo2
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ApproveNo2", null, new { style = "width:" + ViewBag.NormalTxt, @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div id="InstrumentGrid" style="width: 99%; margin-left: 7px;">
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS030.lblApproveNo
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtApproveNo", null, new { style = "width:" + ViewBag.NormalTxt, maxlength = "15" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS030.lblMemo
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextArea("Detmemo", null, new { style = "width:618px; height:80px", maxlength = "1000" })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<!-- ===================================== Show slip no =========================================== -->
+<div class="main-table" id="ShowSlipNo" style="margin-top: 5px; display: none">
+    <div class="table-header">
+        @Resources.IVS010.lblShowSlipNo</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 265px;">@Resources.IVS010.lblSlipNo
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("SlipNo", null, new { style = "width:" + @ViewBag.NormalTxt + ";" })
+            @Html.CommonButton("DownloadInvSlip", @Resources.IVS010.lblBtnDownloadSlip)
+            @Html.CommonButton("NewRegister", @Resources.IVS010.lblBtnNewRegister)
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+</div>
+<!-- ===================================== End Show slip no =========================================== -->
+<!-- ===================================== End Receiving Return Instrument detail =========================================== -->
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog">
+    </div>
+</div>

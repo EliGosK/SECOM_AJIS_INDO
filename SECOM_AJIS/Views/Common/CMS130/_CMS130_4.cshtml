@@ -1,0 +1,93 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+
+<div id="divQuotationInformation" class="main-table">
+    <div class="table-header">@Resources.CMS130.lblQuotation_information</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblQuotation_code
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonLink("lnkQuotationCode", (string)@ViewBag.lnkQuotationCode)&nbsp;
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblPlan_code
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtPlan_code",(string)@ViewBag.txtPlan_code , new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblQuatationNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtQuatationNo", (string)@ViewBag.txtQuatationNo, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblPlan_approving_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtPlan_approving_date",(string)@ViewBag.txtPlan_approving_date , new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblPlan_approver
+        </div>
+        <div class="usr-object" style="width:250pxt; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtPlan_approver",(string)@ViewBag.txtPlan_approver , new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblNormal_contract_fee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtNormal_contract_fee",(string)@ViewBag.txtNormal_contract_fee , new { isViewMode = @ViewBag.isViewMode }) </div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblOutsourcing_fee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtOutsourcing_fee",(string)@ViewBag.txtOutsourcing_fee , new { isViewMode = @ViewBag.isViewMode }) </div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblAdditional_contract_fee1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtAdditional_contract_fee1",(string)@ViewBag.txtAdditional_contract_fee1 , new { isViewMode = @ViewBag.isViewMode })</div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblAdditional_contract_fee2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtAdditional_contract_fee2",(string)@ViewBag.txtAdditional_contract_fee2 , new { isViewMode = @ViewBag.isViewMode }) </div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblAdditional_contract_fee3
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtAdditional_contract_fee3", (string)@ViewBag.txtAdditional_contract_fee3, new { isViewMode = @ViewBag.isViewMode })</div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

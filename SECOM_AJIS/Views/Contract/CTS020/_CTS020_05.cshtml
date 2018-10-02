@@ -1,0 +1,40 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "130px";
+    ViewBag.ObjectCol3Width = "200px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS020/CTS020_05.js")"></script>
+<div id="divEmailInfo" class="main-table">
+    <div class="table-header">@Resources.CTS020.lblRecipientAboutApproveContractResult</div>
+    <div id="divEmailInput" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblMailAddress</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("EmailAddress", null, new { maxlength = "50", style = "width:130px;" })
+            <span>@ViewBag.EmailAddress</span>
+        </div>
+        <div class="usr-object" style="margin-left:10px;">
+            @Html.CommonButton("btnAddEmail", (string)@Resources.CTS020.btnAdd, new { style = "width:100px;" })
+            @Html.CommonButton("btnClearEmail", (string)@Resources.CTS020.btnClear, new { style = "width:100px;" })
+            @Html.CommonButton("btnSearchEmail", (string)@Resources.CTS020.btnSearchEmail, new { style = "width:150px;" })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div style="float:left;width:310px;">
+            <div id="gridEmailList" style="width:300px;"></div>
+        </div>
+        <div style="float:left;width:10px;margin-top:30px;">
+            @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnCallScreenToSelectCombileDetail" xml:space="preserve">
+    <value>結合明細選択画面呼び出し</value>
+  </data>
+  <data name="btnRetrieve" xml:space="preserve">
+    <value>取得</value>
+  </data>
+  <data name="chkComNotChangeInvoiceNo" xml:space="preserve">
+    <value>請求書番号変更しない</value>
+  </data>
+  <data name="chkSepNotChangeInvoiceNo" xml:space="preserve">
+    <value>請求書番号変更しない</value>
+  </data>
+  <data name="dtpCustomerAcceptanceDate" xml:space="preserve">
+    <value>客先引渡日</value>
+  </data>
+  <data name="lblComBillingTargetCode" xml:space="preserve">
+    <value>請求先コード</value>
+  </data>
+  <data name="lblComBliiingClientNameEN" xml:space="preserve">
+    <value>請求先名称 (英語)</value>
+  </data>
+  <data name="lblComBliiingClientNameLC" xml:space="preserve">
+    <value>請求先名称 (現地語)</value>
+  </data>
+  <data name="lblComInvoiceNo" xml:space="preserve">
+    <value>請求書番号</value>
+  </data>
+  <data name="lblHeader1AftAmount" xml:space="preserve">
+    <value>金額</value>
+  </data>
+  <data name="lblHeader1AfterSeparate" xml:space="preserve">
+    <value>分離後</value>
+  </data>
+  <data name="lblHeader1AftNumberOfDetail" xml:space="preserve">
+    <value>明細数</value>
+  </data>
+  <data name="lblHeader1BefAmount" xml:space="preserve">
+    <value>金額</value>
+  </data>
+  <data name="lblHeader1BefNumberOfDetail" xml:space="preserve">
+    <value>明細数</value>
+  </data>
+  <data name="lblHeader1BeforeSeparate" xml:space="preserve">
+    <value>分離前</value>
+  </data>
+  <data name="lblHeader2BillingAmount" xml:space="preserve">
+    <value>請求金額</value>
+  </data>
+  <data name="lblHeader2BillingCode" xml:space="preserve">
+    <value>請求コード</value>
+  </data>
+  <data name="lblHeader2BillingType" xml:space="preserve">
+    <value>請求種別</value>
+  </data>
+  <data name="lblHeader2IssueInvoiceofSeparateDetail" xml:space="preserve">
+    <value>分離明細請求書発行</value>
+  </data>
+  <data name="lblHeader2RunningNo" xml:space="preserve">
+    <value>発行連番</value>
+  </data>
+  <data name="lblHeader2SelectSeparateDetail" xml:space="preserve">
+    <value>分離明細&lt;BR&gt;選択</value>
+  </data>
+  <data name="lblHeader2SiteName" xml:space="preserve">
+    <value>物件／納入先名称 &lt;BR&gt; (1) 英語 &lt;BR&gt; (2) 現地語</value>
+  </data>
+  <data name="lblHeader3AftAmount" xml:space="preserve">
+    <value>金額</value>
+  </data>
+  <data name="lblHeader3AfterSeparate" xml:space="preserve">
+    <value>分離後</value>
+  </data>
+  <data name="lblHeader3AftNumberOfDetail" xml:space="preserve">
+    <value>明細数</value>
+  </data>
+  <data name="lblHeader3BefAmount" xml:space="preserve">
+    <value>金額</value>
+  </data>
+  <data name="lblHeader3BefNumberOfDetail" xml:space="preserve">
+    <value>明細数</value>
+  </data>
+  <data name="lblHeader3BeforeSeparate" xml:space="preserve">
+    <value>分離前</value>
+  </data>
+  <data name="lblHeader4BillingAmount" xml:space="preserve">
+    <value>請求金額</value>
+  </data>
+  <data name="lblHeader4BillingCode" xml:space="preserve">
+    <value>請求コード</value>
+  </data>
+  <data name="lblHeader4BillingType" xml:space="preserve">
+    <value>請求種別</value>
+  </data>
+  <data name="lblHeader4RunningNo" xml:space="preserve">
+    <value>発行連番</value>
+  </data>
+  <data name="lblHeader4SiteName" xml:space="preserve">
+    <value>&lt;div&gt;物件／納入先名称 &lt;BR&gt; (1) 英語 &lt;BR&gt; (2) 現地語&lt;/div&gt;</value>
+  </data>
+  <data name="lblIssueInvoiceAfterCombine" xml:space="preserve">
+    <value>結合後請求書発行</value>
+  </data>
+  <data name="lblIssueInvoiceAfterSeparate" xml:space="preserve">
+    <value>分離後請求書発行</value>
+  </data>
+  <data name="lblPaymentMethodsOfCombineToInvoice" xml:space="preserve">
+    <value>結合先請求書支払方法</value>
+  </data>
+  <data name="lblPaymentMethodsOfSeparateFrom" xml:space="preserve">
+    <value>分離元請求書支払方法</value>
+  </data>
+  <data name="lblSelCombineToInvoiceNo" xml:space="preserve">
+    <value>結合先請求書番号</value>
+  </data>
+  <data name="lblSelContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+  <data name="lblSelSaleOCC" xml:space="preserve">
+    <value>売却OCC</value>
+  </data>
+  <data name="lblSelSeparateFromInvoiceNo" xml:space="preserve">
+    <value>分離元請求書番号</value>
+  </data>
+  <data name="lblSepBillingTargetCode" xml:space="preserve">
+    <value>請求先コード</value>
+  </data>
+  <data name="lblSepBliiingClientNameEN" xml:space="preserve">
+    <value>請求先名称 (英語)</value>
+  </data>
+  <data name="lblSepBliiingClientNameLC" xml:space="preserve">
+    <value>請求先名称 (現地語)</value>
+  </data>
+  <data name="lblSepInvoiceNo" xml:space="preserve">
+    <value>請求書番号</value>
+  </data>
+  <data name="lblTableHeader1" xml:space="preserve">
+    <value>請求書情報管理（CF-15）</value>
+  </data>
+  <data name="lblTableHeader2" xml:space="preserve">
+    <value>処理選択</value>
+  </data>
+  <data name="lblTableHeader3" xml:space="preserve">
+    <value>請求書分離</value>
+  </data>
+  <data name="lblTableHeader4" xml:space="preserve">
+    <value>分離元請求書</value>
+  </data>
+  <data name="lblTableHeader5" xml:space="preserve">
+    <value>請求書結合</value>
+  </data>
+  <data name="lblTableHeader6" xml:space="preserve">
+    <value>結合先請求書</value>
+  </data>
+  <data name="lblTableHeader7" xml:space="preserve">
+    <value>客先引渡日登録（売却請求書発行）</value>
+  </data>
+  <data name="rdoCombineInvoice" xml:space="preserve">
+    <value>請求書結合</value>
+  </data>
+  <data name="rdoIssueSaleInvoice" xml:space="preserve">
+    <value>客先引渡日登録（売却請求書発行）</value>
+  </data>
+  <data name="rdoSeparateInvoice" xml:space="preserve">
+    <value>請求書分離</value>
+  </data>
+  <data name="txtBillingAmount" xml:space="preserve">
+    <value>請求金額</value>
+  </data>
+  <data name="txtIssContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+  <data name="txtIssSaleOCC" xml:space="preserve">
+    <value>売却OCC</value>
+  </data>
+  <data name="txtVATAmount" xml:space="preserve">
+    <value>VAT税額</value>
+  </data>
+  <data name="txtWHTAmount" xml:space="preserve">
+    <value>WHT税額</value>
+  </data>
+  <data name="headerAfterCombine" xml:space="preserve">
+    <value>結合後</value>
+  </data>
+  <data name="headerBeforeCombine" xml:space="preserve">
+    <value>結合前</value>
+  </data>
+</root>

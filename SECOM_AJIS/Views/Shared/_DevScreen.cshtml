@@ -1,0 +1,547 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+<script src="@Url.Content("~/Scripts/Quotation/Dialog.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Master/Dialog.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Billing/Dialog.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Common/Dialog.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Contract/Dialog.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Income/Dialog.js")" type="text/javascript"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Test/DevScreen.js")"></script>
+<style type="text/css">
+    .dev-section
+    {
+        float: left;
+        width: 150px;
+        border-right: 1px dotted;
+        margin-left: 5px;
+    }
+    .dev-section .dev-header
+    {
+        margin-bottom: 5px;
+    }
+    .dev-section .dev-row
+    {
+        line-height: 21px;
+    }
+    .dev-condition
+    {
+        float: left;
+        margin-left: 5px;
+    }
+    .dev-condition .dev-header
+    {
+        margin-bottom: 5px;
+    }
+    .dev-condition .dev-row
+    {
+        clear: both;
+    }
+    .dev-condition .dev-label
+    {
+        float: left;
+        width: 180px;
+        line-height: 21px;
+    }
+    .dev-condition .dev-object
+    {
+        float: left;
+        line-height: 23px;
+    }
+</style>
+<div style="height: 100px;">
+    &nbsp;</div>
+<hr />
+<div>
+    <div style="margin-bottom: 5px;">
+        Help</div>
+    <div>
+        <a href="javascript:ajax_method.CallScreenControllerWithAuthority('/Test/HtmlHelper', '')">
+            HtmlHelper</a> @*ajax_method.CallScreenControllerWithAuthority("/Common/CMS160", obj, true)*@
+        <a href="javascript:ajax_method.CallScreenControllerWithAuthority('/Test/AjaxCall', '')">
+            AjaxCall</a> <a href="javascript:ajax_method.CallScreenControllerWithAuthority('/Common/TestUpload', '')">
+                Upload</a> <a href="javascript:ajax_method.CallScreenControllerWithAuthority('/Test/TestControl', '')">
+                    AjaxCall</a>
+        @Html.ActionLink("Controls", "TestControl", "Test")
+        @Html.ActionLink("Pop-up", "TestPopupDialog", "Test")
+        @Html.ActionLink("Dialog", "Dialog", "Test")
+        @Html.ActionLink("TestGrid", "TestGrid", "Test")
+        @Html.ActionLink("Custom Grid", "TestGrid", "Test")
+        <a href="javascript:ajax_method.CallScreenControllerWithAuthority('/Billing/TestBilling', '')">
+            Test Billing</a> <a href="javascript:ajax_method.CallScreenControllerWithAuthority('/Income/TestIncome', '')">
+                Test Income</a> <a href="javascript:ajax_method.CallScreenControllerWithAuthority('/Common/TestSendMail', '')">
+                    Test Send Mail</a>
+    </div>
+</div>
+<hr />
+<div id="divModule">
+    <div id="Common" class="dev-section">
+        <div class="dev-header">
+            Common</div>
+        <div class="dev-row">
+            CMS010&nbsp;(Ball)</div>
+        <div class="dev-row">
+            CMS020&nbsp;(Ball)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS021", "CMS021")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS022", "CMS022")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS023", "CMS023")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS024", "CMS024")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS025", "CMS025")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS030", "CMS030")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS040", "CMS040")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS050", "CMS050")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS060", "CMS060")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS070", "CMS070")&nbsp;(Fah)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS080", "CMS080")&nbsp;(Fah)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS090", "CMS090")&nbsp;(Fah)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS100", "CMS100")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS120", "CMS120")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS130", "CMS130")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS131", "CMS131")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS140", "CMS140")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS150", "CMS150")&nbsp;(Ball)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS160", "CMS160")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS170", "CMS170")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS180", "CMS180")&nbsp;(Neung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS190", "CMS190")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS200", "CMS200")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS210", "CMS210")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS220", "CMS220")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS240", "CMS240")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS250", "CMS250")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS260", "CMS260")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS270", "CMS270")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS280", "CMS280")&nbsp;(Ball)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS290", "CMS290")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS300", "CMS300")&nbsp;(Fah)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS310", "CMS310")&nbsp;(Ton)</div>        
+        <div class="dev-row">@Html.CommonLink("ID_CMS400", "CMS400")&nbsp;(Neung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS410", "CMS410")&nbsp;(Fik)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS420", "CMS420")&nbsp;(Fik)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS421", "CMS421")&nbsp;(Fik)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS430", "CMS430")&nbsp;(Neung)</div>       
+        <div class="dev-row">@Html.CommonLink("ID_CMS422", "CMS422")&nbsp;(Neung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS450", "CMS450")&nbsp;(Neung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS460", "CMS460")&nbsp;(Neung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CMS470", "CMS470")&nbsp;(Neung)</div>
+         <div class="dev-row">@Html.CommonLink("ID_CMS999", "CMS999")&nbsp;(-)</div>
+        <div class="dev-row">
+            &nbsp;</div>
+    </div>
+    <div id="Master" class="dev-section">
+        <div class="dev-header">
+            Master</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS010", "MAS010")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS030", "MAS030")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS040", "MAS040")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS050", "MAS050")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS060", "MAS060")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS070", "MAS070")&nbsp;(Fah)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS080", "MAS080")&nbsp;(Fah)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS090", "MAS090")&nbsp;(Fah)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS100", "MAS100")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS110", "MAS110")&nbsp;(Fik)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS130", "MAS130")&nbsp;(Fik)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS120", "MAS120")&nbsp;(Fik)</div>
+        <div class="dev-row">@Html.CommonLink("ID_MAS020", "MAS020")&nbsp;(Fik)</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+    </div>
+    <div id="Contract" class="dev-section">
+        <div class="dev-header">
+            Contract</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS010", "CTS010")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS020", "CTS020")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS030", "CTS030")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS040", "CTS040")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS051", "CTS051")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS052", "CTS052")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS053", "CTS053")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS054", "CTS054")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS055", "CTS055")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS061", "CTS061")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS062", "CTS062")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS070", "CTS070")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS080", "CTS080")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS090", "CTS090")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS100", "CTS100")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS110", "CTS110")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS120", "CTS120")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS130", "CTS130")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS140", "CTS140")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS150", "CTS150")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS160", "CTS160")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS180", "CTS180")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS190", "CTS190")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS210", "CTS210")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS220", "CTS220")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS230", "CTS230")&nbsp;(Ball)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS240", "CTS240")&nbsp;(Ball)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS260", "CTS260")&nbsp;(Ball)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS261", "CTS261")&nbsp;(Ball)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS270", "CTS270")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS280", "CTS280")&nbsp;(Mim)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS290", "CTS290")&nbsp;(NoNae)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS300", "CTS300")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS310", "CTS310")&nbsp;(Fah)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS320", "CTS320")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS330", "CTS330")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS340", "CTS340")&nbsp;(Fah)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS350", "CTS350")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS360", "CTS360")&nbsp;(Fah)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS370", "CTS370")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS380", "CTS380")&nbsp;(Jay)</div>
+        <div class="dev-row">@Html.CommonLink("ID_CTS390", "CTS390")&nbsp;(Fah)</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+    </div>
+    <div id="Quotation" class="dev-section">
+        <div class="dev-header">
+            Quotation</div>
+        <div class="dev-row">@Html.CommonLink("ID_QUS010", "QUS010")&nbsp;(Ball)</div>
+        <div class="dev-row">@Html.CommonLink("ID_QUS011", "QUS011")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_QUS012", "QUS012")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_QUS020", "QUS020")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_QUS030", "QUS030")&nbsp;(Fung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_QUS040", "QUS040")&nbsp;(Ball)</div>
+        <div class="dev-row">@Html.CommonLink("ID_QUS050", "QUS050")&nbsp;(Ball)</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+    </div>
+    <div id="Installation" class="dev-section">
+        <div class="dev-header">
+            Installation</div>
+        <div class="dev-row">@Html.CommonLink("ID_ISS010", "ISS010")&nbsp;(Lieng)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ISS030", "ISS030")&nbsp;(Lieng)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ISS050", "ISS050")&nbsp;(Lieng)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ISS060", "ISS060")&nbsp;(Lieng)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ISS061", "ISS061")&nbsp;(Lieng)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ISS070", "ISS070")&nbsp;(Lieng)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ISS080", "ISS080")&nbsp;(Lieng)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ISS090", "ISS090")&nbsp;(Lieng)</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+    </div>
+    <div id="Inventory" class="dev-section">
+        <div class="dev-header">
+            Inventory</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS010", "IVS010")&nbsp;(Ball)</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS011", "IVS011")&nbsp;(Ball) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS012", "IVS012")&nbsp;(Ball) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS020", "IVS020")&nbsp;(Non) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS021", "IVS021")&nbsp;(Non) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS030", "IVS030")&nbsp;(Dang) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS040", "IVS040")&nbsp;(Ball) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS050", "IVS050")&nbsp;(Ball) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS060", "IVS060")&nbsp;(Ball) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS070", "IVS070")&nbsp;(Ball) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS080", "IVS080")&nbsp;(Dang) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS090", "IVS090")&nbsp;(Dang) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS100", "IVS100")&nbsp;(Dang) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS110", "IVS110")&nbsp;(Dang) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS120", "IVS120")&nbsp;(Dang) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS130", "IVS130")&nbsp;(Dang) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS140", "IVS140")&nbsp;(Ton) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS150", "IVS150")&nbsp;(Ton) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS160", "IVS160")&nbsp;(Ton) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS170", "IVS170")&nbsp;(Ton) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS180", "IVS180")&nbsp;(Ton) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS190", "IVS190")&nbsp;(Ton) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS200", "IVS200")&nbsp;(Jay) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS201", "IVS201")&nbsp;(Non) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS210", "IVS210")&nbsp;(Dang) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS220", "IVS220")&nbsp;(Non) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS230", "IVS230")&nbsp;(Non) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS240", "IVS240")&nbsp;(Non) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS250", "IVS250")&nbsp;(Ball) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS260", "IVS260")&nbsp;(Ball) &nbsp;</div>
+        <div class="dev-row">@Html.CommonLink("ID_IVS270", "IVS270")&nbsp;(Non) &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+    </div>
+    <div id="Billing" class="dev-section">
+        <div class="dev-header">
+            Billing</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS010", "BLS010")&nbsp;(Neung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS020", "BLS020")&nbsp;(Neung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS030", "BLS030")&nbsp;(Lieng)</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS031", "BLS031")&nbsp;(Neung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS032", "BLS032")&nbsp;(Neung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS040", "BLS040")&nbsp;(Lieng)</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS050", "BLS050")&nbsp;(Waroon)</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS060", "BLS060")&nbsp;(Waroon)</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS070", "BLS070")&nbsp;(Waroon)</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS071", "BLS071")&nbsp;(Neung)</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS080", "BLS080")&nbsp;(Ton)</div>
+        <div class="dev-row">@Html.CommonLink("ID_BLS090", "BLS090")&nbsp;(Ton)</div>
+    </div>
+    <div id="Income" class="dev-section">
+        <div class="dev-header">
+            Income</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS010", "ICS010")&nbsp;(Budd)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS020", "ICS020")&nbsp;(Budd)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS030", "ICS030")&nbsp;(Waroon)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS031", "ICS031")&nbsp;(Waroon)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS032", "ICS032")&nbsp;(Waroon)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS033", "ICS033")&nbsp;(Waroon)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS040", "ICS040")&nbsp;(Budd)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS050", "ICS050")&nbsp;(Budd)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS060", "ICS060")&nbsp;(Budd)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS070", "ICS070")&nbsp;(Waroon)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS080", "ICS080")&nbsp;(Budd)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS090", "ICS090")&nbsp;(Budd)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS100", "ICS100")&nbsp;(Waroon)</div>
+        <div class="dev-row">@Html.CommonLink("ID_ICS101", "ICS101")&nbsp;(Waroon)</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+        <div class="dev-row">
+            &nbsp;</div>
+    </div>
+</div>
+<div class="dev-condition">
+    <div class="dev-header">
+        Condition</div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Mode</div>
+        <div class="dev-object">
+            <input id="Mode" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Caller Screen</div>
+        <div class="dev-object">
+            <input id="CallerScreen" type="text" style="width: 100px;" value="CMS020" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Contract code</div>
+        <div class="dev-object">
+            <input id="ContractCode" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            OCC</div>
+        <div class="dev-object">
+            <input id="OCC" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Service type code</div>
+        <div class="dev-object">
+            <input id="ServiceTypeCode" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Incedent relevant type</div>
+        <div class="dev-object">
+            <input id="IncedentRelevantType" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Incedent relevant code</div>
+        <div class="dev-object">
+            <input id="IncedentRelevantCode" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Incedent id</div>
+        <div class="dev-object">
+            <input id="IncidentID" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            AR relevant type</div>
+        <div class="dev-object">
+            <input id="ARRelevantType" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            AR relevant code</div>
+        <div class="dev-object">
+            <input id="ARRelevantCode" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Request no.</div>
+        <div class="dev-object">
+            <input id="RequestNo" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Site code</div>
+        <div class="dev-object">
+            <input id="SiteCode" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Customer code</div>
+        <div class="dev-object">
+            <input id="CustomerCode" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Customer role</div>
+        <div class="dev-object">
+            <input id="CustomerRole" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Contract target code</div>
+        <div class="dev-object">
+            <input id="ContractTargetCode" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            MA target contract code</div>
+        <div class="dev-object">
+            <input id="MATargetContractCode" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Product code</div>
+        <div class="dev-object">
+            <input id="ProductCode" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Project code</div>
+        <div class="dev-object">
+            <input id="strProjectCode" type="text" style="width: 100px;" /></div>
+    </div>
+    <div class="dev-row">
+        <div class="dev-label">
+            Billing Target Code</div>
+        <div class="dev-object">
+            <input id="BillingTargetCode" type="text" style="width: 100px;" /></div>
+    </div>
+</div>
+<div style="clear: both;">
+    &nbsp;</div>
+<hr />
+<div id="dlgTest" class="main-popup-dialog">
+    <div class="popup-dialog">
+    </div>
+</div>

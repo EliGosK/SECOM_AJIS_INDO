@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+	<head>
+		<column id="AdvancePaymentFlag" width="65" type="ro" align="center" sort="na">lblAdvancePayment</column>
+		<column id="SubConName" width="*" type="ro" align="left" sort="str_custom">lblSubContractorName</column>
+		<column id="SubConGroupName" width="180" type="ro" align="left" sort="na">lblSubContractorGroupName</column>
+		
+		<column id="InstallDateDisplay" width="130" type="ro"  align="left" sort="na">lblInstallDateDisplay</column>
+		<column id="InstallStartDate" width="0" hidden="true" type="ro" align="left" sort="na"></column>
+		<column id="InstallCompleteDate" width="0" hidden="true" type="ro" align="left" sort="na"></column>
+		
+		<column id="IEDateDisplay" width="130" type="ro" align="left" sort="na">lblIEDateDisplay</column>
+		<column id="IEFirstCheckDate" width="0" hidden="true" type="ro" align="left" sort="na"></column>
+		<column id="IELastInspectionDate" width="0" hidden="true" type="ro" align="left" sort="na"></column>
+		
+		<column id="LastInstallationFee" width="185" type="ro" align="right" sort="na">headerLastInstallFee</column>
+		<column id="ManPower" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+		<column id="ComplainCode" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+		<column id="CheckChargeIEEmpNo" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+		<column id="EmpName" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+		<column id="IEEvaluationCode" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+		<column id="AdjustmentCode" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+		<column id="AdjustmentContentCode" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+		<column id="SubConCode" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+		<column id="PaidFlag" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+		<column id="NormalSubPOAmount" width="0" hidden="true" type="ro" sort="na"></column>
+
+		<column id="NoCheckFlag" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="LastPaidDate" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="IMFee" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="OtherFee" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="IMRemark" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="InstallationFee1" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="ApproveNo1" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="PaidDate1" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="InstallationFee2" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="ApproveNo2" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="PaidDate2" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="InstallationFee3" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="ApproveNo3" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="PaidDate3" width="0" hidden="true" type="ro" sort="na"></column>
+		<column id="ActualPOAmount" width="0" hidden="true" type="ro" sort="na"></column>
+		
+		<column id="ButtonEdit" width="45" type="ro" align="center" sort="na">headerEdit</column>
+		<column id="ButtonPaid" width="75" type="ro" align="center" sort="na"></column>
+		<column id="ButtonIssue" width="55" type="ro" align="center" sort="na">lblAcceptInspectNotice</column>
+    <column id="ExpectInstallStartDate" width="0" hidden="true" type="ro" align="left" sort="na"></column>
+    <column id="ExpectInstallCompleteDate" width="0" hidden="true" type="ro" align="left" sort="na"></column>
+		<column id="TempColumn" width="0" type="ro"  hidden="true" sort="na"></column>
+		<settings>
+			<colwidth>px</colwidth>
+		</settings>
+	</head>
+</rows>

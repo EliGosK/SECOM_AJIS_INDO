@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="Select" width="80" type="link" align="center" sort="na" >headerSelect</column>
+    <column id="BillingCode_Short" width="100" type="ro" align="left" sort="str_custom" >lblBillingCode</column>
+    <column id="BillingDetailNo" width="70" type="ro" align="right" sort="str_custom" >lblRunningNo</column>
+    <column id="BillingType" width="150" type="ro" align="left" sort="str_custom" >lblBillingType</column>
+    <column id="BillingAmountNumeric" width="140" type="ro" align="right" sort="str_custom" >lblBillingAmount</column>
+    <column id="SiteName" width="*" type="ro"  sort="str_custom">lblSiteName</column>
+    <column id="InvoiceNo"   hidden ="true" width="0" type="ro"  align="left" sort="na" ></column>
+    <column id="BillingCode"  width="0" hidden="true"  type="ro"  align="left" sort="na" ></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAutoTransferInformation" xml:space="preserve">
+    <value>自振情報</value>
+  </data>
+  <data name="btnBillingDetail" xml:space="preserve">
+    <value>請求明細</value>
+  </data>
+  <data name="btnCreditCardInformation" xml:space="preserve">
+    <value>クレジットカード情報</value>
+  </data>
+  <data name="btnDepositInformation" xml:space="preserve">
+    <value>保証金情報</value>
+  </data>
+  <data name="btnEditInformation" xml:space="preserve">
+    <value>情報編集</value>
+  </data>
+  <data name="HeaderBillingBasic" xml:space="preserve">
+    <value>請求基本</value>
+  </data>
+  <data name="HeaderBillingClientName" xml:space="preserve">
+    <value>&lt;div&gt;VAT登録先名称&lt;br/&gt;(1) 英語&lt;br/&gt;(2) 現地語&lt;/div&gt;</value>
+  </data>
+  <data name="HeaderBillingOCC" xml:space="preserve">
+    <value>請求OCC</value>
+  </data>
+  <data name="HeaderBillingOffice" xml:space="preserve">
+    <value>請求事業所</value>
+  </data>
+  <data name="HeaderBillingTargetCode" xml:space="preserve">
+    <value>請求先コード</value>
+  </data>
+  <data name="HeaderBillingType" xml:space="preserve">
+    <value>請求種別</value>
+  </data>
+  <data name="HeaderInvoiceDescription" xml:space="preserve">
+    <value>&lt;div&gt;請求書摘要&lt;br/&gt;(1) 英語&lt;br/&gt;(2) 現地語&lt;/div&gt;</value>
+  </data>
+  <data name="HeaderMonthlyBillingAmountTHB" xml:space="preserve">
+    <value>請求月額（THB）</value>
+  </data>
+  <data name="lblAdjustBillingAmount" xml:space="preserve">
+    <value>次回調整本体金額</value>
+  </data>
+  <data name="lblAdjustBillingPeriodDate" xml:space="preserve">
+    <value>次回調整期間</value>
+  </data>
+  <data name="lblAdjustEndingDateOfBillingPeriod" xml:space="preserve">
+    <value>定時発行調整日</value>
+  </data>
+  <data name="lblAdjustOnNextPeriodInformation" xml:space="preserve">
+    <value>次回調整情報</value>
+  </data>
+  <data name="lblAdjustVatAmount" xml:space="preserve">
+    <value>次回調整VAT税額</value>
+  </data>
+  <data name="lblAdjustWHTAmount" xml:space="preserve">
+    <value>次回調整WHT税額</value>
+  </data>
+  <data name="lblApproveNo" xml:space="preserve">
+    <value>決裁番号</value>
+  </data>
+  <data name="lblBalanceOfDepositFee" xml:space="preserve">
+    <value>保証金現預り額</value>
+  </data>
+  <data name="lblBillingBasicInformation" xml:space="preserve">
+    <value>請求基本情報</value>
+  </data>
+  <data name="lblBillingClientAddressEN" xml:space="preserve">
+    <value>VAT登録先住所（英語）</value>
+  </data>
+  <data name="lblBillingClientAddressLC" xml:space="preserve">
+    <value>VAT登録先住所（現地語）</value>
+  </data>
+  <data name="lblBillingClientBranchNameEN" xml:space="preserve">
+    <value>VAT登録先支店名称（英語）</value>
+  </data>
+  <data name="lblBillingClientBranchNameLC" xml:space="preserve">
+    <value>VAT登録先支店名称（現地語）</value>
+  </data>
+  <data name="lblBillingClientNameEN" xml:space="preserve">
+    <value>VAT登録先名称（英語）</value>
+  </data>
+  <data name="lblBillingClientNameLC" xml:space="preserve">
+    <value>VAT登録先名称（現地語）</value>
+  </data>
+  <data name="lblBillingCode" xml:space="preserve">
+    <value>請求コード</value>
+  </data>
+  <data name="lblBillingCycle" xml:space="preserve">
+    <value>請求サイクル</value>
+  </data>
+  <data name="lblBillingFlag" xml:space="preserve">
+    <value>請求区分</value>
+  </data>
+  <data name="lblBillingHistory" xml:space="preserve">
+    <value>請求履歴</value>
+  </data>
+  <data name="lblBillingOccurrenceList" xml:space="preserve">
+    <value>請求オカーレンス一覧</value>
+  </data>
+  <data name="lblBillingOffice" xml:space="preserve">
+    <value>請求事業所</value>
+  </data>
+  <data name="lblBillingTargetCode" xml:space="preserve">
+    <value>請求先コード</value>
+  </data>
+  <data name="lblCalculationDailyFee" xml:space="preserve">
+    <value>日割方法</value>
+  </data>
+  <data name="lblContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+  <data name="lblCreditTerm" xml:space="preserve">
+    <value>後納月数</value>
+  </data>
+  <data name="lblCustomerType" xml:space="preserve">
+    <value>顧客タイプ</value>
+  </data>
+  <data name="lblDateBeforeChanging1" xml:space="preserve">
+    <value>変更前適用日1</value>
+  </data>
+  <data name="lblDateBeforeChanging2" xml:space="preserve">
+    <value>変更前適用日2</value>
+  </data>
+  <data name="lblDateBeforeChanging3" xml:space="preserve">
+    <value>変更前適用日3</value>
+  </data>
+  <data name="lblDateBeforeChanging4" xml:space="preserve">
+    <value>変更前適用日4</value>
+  </data>
+  <data name="lblDateBeforeChanging5" xml:space="preserve">
+    <value>変更前適用日5</value>
+  </data>
+  <data name="lblDebtTracingOffice" xml:space="preserve">
+    <value>督促事業所</value>
+  </data>
+  <data name="lblDocumentReceiving" xml:space="preserve">
+    <value>文書回収</value>
+  </data>
+  <data name="lblFeeInformationSpecialCareful" xml:space="preserve">
+    <value>料金情報（指示物件）</value>
+  </data>
+  <data name="lblLastBillingDate" xml:space="preserve">
+    <value>請求最終日</value>
+  </data>
+  <data name="lblLastDate" xml:space="preserve">
+    <value>最新適用日</value>
+  </data>
+  <data name="lblLastMonthlyBillingAmount" xml:space="preserve">
+    <value>最新請求月額</value>
+  </data>
+  <data name="lblLastPaymentConditionChangingDate" xml:space="preserve">
+    <value>最新支払条件変更日</value>
+  </data>
+  <data name="lblManagementCodeForSortDetails" xml:space="preserve">
+    <value>明細ソート用管理コード</value>
+  </data>
+  <data name="lblMonthlyBillingAmount" xml:space="preserve">
+    <value>請求月額</value>
+  </data>
+  <data name="lblMonthlyBillingAmountBeforeChanging1" xml:space="preserve">
+    <value>変更前請求月額1</value>
+  </data>
+  <data name="lblMonthlyBillingAmountBeforeChanging2" xml:space="preserve">
+    <value>変更前請求月額2</value>
+  </data>
+  <data name="lblMonthlyBillingAmountBeforeChanging3" xml:space="preserve">
+    <value>変更前請求月額3</value>
+  </data>
+  <data name="lblMonthlyBillingAmountBeforeChanging4" xml:space="preserve">
+    <value>変更前請求月額4</value>
+  </data>
+  <data name="lblMonthlyBillingAmountBeforeChanging5" xml:space="preserve">
+    <value>変更前請求月額5</value>
+  </data>
+  <data name="lblMonthlyFeeBeforeStop" xml:space="preserve">
+    <value>業務停止前月額</value>
+  </data>
+  <data name="lblPaymentConditionChangeInformation" xml:space="preserve">
+    <value>支払条件変更情報</value>
+  </data>
+  <data name="lblPaymentMethod" xml:space="preserve">
+    <value>支払方法</value>
+  </data>
+  <data name="lblPreviousBillingTargetCode" xml:space="preserve">
+    <value>前請求先コード</value>
+  </data>
+  <data name="lblRegisteringDateOfLastChanging" xml:space="preserve">
+    <value>最新変更登録日</value>
+  </data>
+  <data name="lblResultBasedMaintenanceBillingFlag" xml:space="preserve">
+    <value>出来高保守請求フラグ</value>
+  </data>
+  <data name="lblTHB" xml:space="preserve">
+    <value>THB</value>
+  </data>
+  <data name="lblVATUnchargedBillingTarget" xml:space="preserve">
+    <value>VAT非課税請求先</value>
+  </data>
+  <data name="lblFeeInformation" xml:space="preserve">
+    <value>料金情報</value>
+  </data>
+  <data name="lblIDNo" xml:space="preserve">
+    <value>ID番号／納税者番号</value>
+  </data>
+</root>

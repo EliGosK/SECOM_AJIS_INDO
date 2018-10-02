@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="Title" width="*" type="ro" align="right" sort="na" ></column>
+    <column id="txtNormalAmt" width="200" type="ro" align="right" sort="na">headerNormal</column>
+    <column id="txtOrderAmt" width="200" type="ro" align="right" sort="na">headerOrder</column>
+    <column id="DiscountName" width="170" type="ro" align="left" sort="na">headerDiscount</column>
+    <column id="DiscountRate" width="110" type="ro" align="right" sort="na">#cspan</column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

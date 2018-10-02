@@ -1,0 +1,97 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+
+<div id="divMaintenanceInfo" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS150.lblMaintenanceInfo</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblMaintenanceContractCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MaintenanceContractCode", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblMaintenanceTargetProduct
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MaintenanceTargetProduct", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblMaintenanceType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MaintenanceType", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblMaintenanceCycle
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MaintenanceCycle", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblMaintenanceContractStart
+        </div>
+        <div class="usr-object" style="margin-right:6px;">
+            @Html.CommonTextBox("MaintenanceStartMonth", null, new { style = "width:55px;", @readonly = true })
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("MaintenanceStartYear", null, new { style = "width:55px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblMaintenanceFeeType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MaintenanceFeeType", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; height:60px;">
+            @Resources.CTS150.lblMaintenanceMemo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextArea("MaintenanceMemo", null, new { style = "width:565px; height:60px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblContractDuration
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ContractDuration", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblEndContractDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("EndContractDate", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblAutoRenew
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("AutoRenew", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblStartMaintenanceDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("StartMaintenanceDate", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblEndMaintenanceDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("EndMaintenanceDate", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

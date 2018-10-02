@@ -1,0 +1,16 @@
+.flow-table .section-gray
+{
+}
+
+.section-gray .left
+{
+	background: #fff url(section_l.png) 100% 100% no-repeat;
+}
+.section-gray .center
+{
+	background: #fff url(section_c.png) 100% 100% no-repeat;
+}
+.section-gray .right
+{
+	background: #fff url(section_r.png) 100% 100% no-repeat;
+}

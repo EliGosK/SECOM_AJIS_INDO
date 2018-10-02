@@ -1,0 +1,85 @@
+﻿
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@{
+    ViewBag.SearchWidthCol1 = "160px;";
+    ViewBag.SearchWidthCol2 = "170px;";
+    ViewBag.SearchWidthCol3 = "240px;";
+    ViewBag.SearchWidthCol4 = "80px;";
+    ViewBag.SearchWidthButton = "90px";
+
+    ViewBag.ProductTypeCboWidth = "120px";
+    ViewBag.MonthCboWidth = "120px";
+    ViewBag.YearCboWidth = "120px";
+    ViewBag.ContractCodeWidth = "100px";
+    ViewBag.BillingOCC = "30px";
+    ViewBag.DatePickerWidth = "95px;";
+}
+
+
+@section page_header{
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS480.js")"></script>
+    <style>
+        #divSearchCarryOverAndProfitGrid .gridbox_dhx_secom {
+            overflow: visible;
+            width: 1465px !important;
+        }
+    </style>
+}
+
+
+
+<!-- Specify location -->
+<div class="main-table" id="divSearchCarryOverAndProfit" style="visibility: visible">
+    <div class="table-header">
+        @Resources.CMS480.lblHeaderSearchCarryOverAndProfit
+    </div>
+    <div id="divSearchCarryOverAndProfitCriteria">
+        <form id="formSearch" action="#" style="margin: 0;">
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.SearchWidthCol1">@Resources.CMS480.lblProductType</div>
+                <div class="usr-object">
+                    @Html.GetManageCarryOverProfitProductType("cboSearchProductType", new { style = "width:" + ViewBag.ProductTypeCboWidth })
+                    @Html.RequireFiled()
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.SearchWidthCol1">@Resources.CMS480.lblMonthYear</div>
+                <div class="usr-object">
+                    @Html.GetMonthOfCarryOverProfitComboBox("cboSearchMonth", new { style = "width:" + ViewBag.MonthCboWidth }) @Html.GetYearOfCarryOverProfitComboBox("cboSearchYear", new { style = "width:" + ViewBag.YearCboWidth })
+                    @Html.RequireFiled()
+                </div>
+                <div class="usr-label" style="width:@ViewBag.SearchWidthCol3">@Resources.CMS480.lblBillingCode</div>
+                <div class="usr-object">@Html.CommonTextBox("txtSearchContractCode", null, new { style = "width:" + ViewBag.ContractCodeWidth, maxlength = 9 }) - @Html.CommonTextBox("txtSearchBillingOCC", null, new { style = "width:" + ViewBag.BillingOCC, maxlength = 2 })</div>
+            </div>
+            <div class="usr-clear-style">&nbsp;</div>
+            <div class="usr-row" style="margin-top: 5px">
+                <div class="usr-object" style="float: right; margin-right: 4px;">
+                @Html.CommonButton("btnSearch", @Resources.CMS480.btnSearch, new { style = "width:" + ViewBag.SearchWidthButton }) 
+                @Html.CommonButton("btnClear", @Resources.CMS480.btnClear, new { style = "width:" + ViewBag.SearchWidthButton })
+                </div>
+            </div>
+            <div class="usr-clear-style">&nbsp;</div>
+        </form>
+    </div>
+    
+</div>
+<div>
+    <div class="usr-row" style="float: right; margin-right: 4px;">
+         @Html.CommonButton("btnEdit", @Resources.CMS480.btnEdit, new { style = "width:" + ViewBag.SearchWidthButton }) 
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+    <div class="usr-clear-style">&nbsp;</div>
+    <div class="usr-object" id="divSearchCarryOverProfitList" style="margin-top: 5px">
+        <div id="divSearchCarryOverAndProfitGrid" style="width: 99%; margin-left: 4px; overflow-x: scroll;"></div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</div>
+
+

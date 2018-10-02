@@ -1,0 +1,253 @@
+﻿<!--
+//*********************************
+// Create by: Siripoj S.
+// Create date: 12/Mar/2012
+// Update date: 12/Mar/2012
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+   
+    //Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.LabelWidth = "240px";
+    ViewBag.LabelWidth2 = "270px";
+
+    ViewBag.ObjectWidth = "150px";
+    ViewBag.ObjectWidth2 = "250px";
+
+    ViewBag.ObjectWidthLong = "150px";
+    ViewBag.ObjectWidthLong2 = "650px";
+
+    ViewBag.spaceWidth = "170px";
+
+    ViewBag.isViewMode = true;
+
+    // for debug
+    ViewBag.txtBackgroundColor = "none";  // Lime
+
+    ViewBag.C_SCREEN_ID_VIEW_BILLING_TARGET_INFORMATION = ScreenID.C_SCREEN_ID_VIEW_BILLING_TARGET_INFORMATION;
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS400.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript">
+        var objCMS400Conts = {
+            C_SCREEN_ID_VIEW_BILLING_TARGET_INFORMATION: "@ViewBag.C_SCREEN_ID_VIEW_BILLING_TARGET_INFORMATION",
+            ShowInvoiceList: "@ViewBag.txtShowInvoiceList",
+
+            FirstIssueInvFlagDone: "@Resources.CMS400.FirstIssueInvFlagDone",
+            FirstIssueInvFlagNotYet: "@Resources.CMS400.FirstIssueInvFlagNotYet"
+        };
+    </script>
+}
+<!-- Specify Search Information ==================================================================================================================== -->
+<div id="divSpecifySearchInformation" class="main-table">
+    <div class="table-header">
+        @Resources.CMS400.lblSpecifySearchInformation
+    </div>
+    <div style="text-align: center">
+        @Html.CommonRadioButton("SpecifySearchCustomer", @Resources.CMS400.lblCustomer, "customer", false, "SpecifySearchInformationGroup")
+        <span style="width:@ViewBag.spaceWidth;">&nbsp;</span>
+        @Html.CommonRadioButton("SpecifySearchContract", @Resources.CMS400.lblContract, "contract", false, "SpecifySearchInformationGroup")
+        <span style="width:@ViewBag.spaceWidth;">&nbsp;</span>
+        @Html.CommonRadioButton("SpecifySearchBilling", @Resources.CMS400.lblBilling, "billing", true, "SpecifySearchInformationGroup")
+        @Html.Hidden("CMS400_CallerScreenId", (string)@ViewBag.txtCallerScreenId)
+    </div>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+<!-- Specify Search Billing Information ==================================================================================================================== -->
+<div id="divSpecifySearchBillingInformation" class="main-table">
+    <div class="table-header">
+        @Resources.CMS400.lblSpecifySearchBillingInformation
+    </div>
+    <div style="text-align: center">
+        @Html.CommonRadioButton("SpecifySearchBillingTargetInfo", @Resources.CMS400.lblBillingTargetInformation, "BilliingTarget", true, "SpecifySearchBillingInformationGroup")
+        <span style="width:@ViewBag.spaceWidth;">&nbsp;</span>
+        @Html.CommonRadioButton("SpecifySearchBillingBasicInfo", @Resources.CMS400.lblBillingBasicInformation, "BilliingBasic", false, "SpecifySearchBillingInformationGroup")
+        <span style="width:@ViewBag.spaceWidth;">&nbsp;</span>
+        @Html.CommonRadioButton("SpecifySearchInvoiceInfo", @Resources.CMS400.lblInvoiceInformation, "Invoice", false, "SpecifySearchBillingInformationGroup")
+    </div>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+<!-- Specify Search By Condition ==================================================================================================================== -->
+<form id="form1" action="#">
+<div id="divSearchByCondition" class="main-table">
+    <div class="table-header">
+        @Resources.CMS400.lblSearchByCondition
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS400.lblBillingClientCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("BillingClientCode", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = CommonValue.C_MAXLENGTH_BILLING_CLIENT_CODE })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS400.lblBillingTargetCode
+        </div>
+        <div class="usr-object" style="width: 157px;">
+            @Html.CommonTextBox("BillingClientCode2", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = CommonValue.C_MAXLENGTH_BILLING_CLIENT_CODE })
+        </div>
+        <div class="usr-label">
+            -
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("BillingTargetNo", null, new { style = "width:100px", maxlength = "3" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS400.lblBillingClientName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2;">
+            @Html.CommonTextBox("BillingClientName", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", maxlength = "400" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS400.lblBillingClientAddress
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2;">
+            @Html.CommonTextBox("BillingClientAddress", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", maxlength = "3200" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS400.lblInvoiceNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("InvoiceNo", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "12" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS400.lblTaxIDNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("TaxIDNo", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "20" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div style="text-align: right;">
+            @Html.CommonButton("btnSearch", @Resources.CMS400.lblBtnSearch, new { type = "button" })
+            @Html.CommonButton("btnClear", @Resources.CMS400.lblBtnClear, new { type = "button" })
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+</form>
+<!-- Billing Target Information ==================================================================================================================== -->
+<div id="divBillingtargetInformation" class="main-table">
+    <div class="table-header">
+        @Resources.CMS400.lblBillingTargetInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS400.lblBillingTargetCode2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("BillingTargetCode2", (string)@ViewBag.txtBillingTargetCode2, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS400.lblBillingClientNameEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("BillingClientNameEnglish", (string)@ViewBag.txtBillingClientNameEnglish, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS400.lblBillingClientAddressEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("BillingClientAddressEnglish", (string)@ViewBag.txtBillingClientAddressEnglish, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS400.lblBillingClientNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("BillingClientNameLocal", (string)@ViewBag.txtBillingClientNameLocal, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS400.lblBillingClientAddressLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("BillingClientAddressLocal", (string)@ViewBag.txtBillingClientAddressLocal, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+<!-- Billing Target Information Search Result ==================================================================================================================== -->
+<div id="divBillingTargetInformationSearchResult" class="main-table">
+    <div class="table-header">
+        @Resources.CMS400.lblBillingTargetInformationSearchResultList
+    </div>
+    <div class="usr-row">
+        <div id="gridBillingTarget" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+<!-- Billing Basic Information Search Result ==================================================================================================================== -->
+<div id="divBillingBasicInformationSearchResult" class="main-table">
+    <div class="table-header">
+        @Resources.CMS400.lblBillingBasicInformationSearchResultList
+    </div>
+    <div class="usr-row">
+        <div id="gridBillingBasic" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+<!-- Un cancel Invoice Information Search Result ==================================================================================================================== -->
+<div id="divuncancelInvoiceInformationSearchResult" class="main-table">
+    <div class="table-header">
+        @Resources.CMS400.lblUncanceledinvoiceinformationSearchresultlist
+    </div>
+    <div class="usr-row">
+        <div class="usr-object" style="margin-left: 4px;">
+            <img src='../../Content/images/icon/creditNote.png'  width='16px' height = '16px'>
+        </div>
+        <div class="usr-object" style="width: 200px">
+            @Resources.CMS400.lblCreditNoteInvoice
+        </div>
+    </div>
+    <div class="usr-row">
+        <div id="gridInvoice" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+<!--<div id="dlgCMS400" class="main-popup-dialog">
+            <div class="popup-dialog">
+            </div>
+ </div>-->

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="No"  width="30" type="ro" align="center"  sort="na"></column>
+    <column id="ContractCode_Short"  width="120" type="ro" align="left" sort="str_custom">headerContractCode</column>
+    <column id="ProductCodeName"  width="*"  type="ro" align="left"  sort="str_custom">headerSysPDName</column>
+    <column id ="Fee_View"   width="180" type="ro" align="right" sort="int">headerSalePriceInstFee</column>
+    <column id ="DocAuditCodeName"  width="250" type="ro" align="left"  sort="str_custom">headerDocAuditResult</column>
+    <column id ="View" width="30" type="ro" align="center"  sort="na">headerContractDigest</column>
+
+    <!--Hidden-->
+    <column id="ServiceTypeCode" type="ro" width="*"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

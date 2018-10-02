@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnRegisAR" xml:space="preserve">
+    <value>Register approval request</value>
+  </data>
+  <data name="btnRegistIncident" xml:space="preserve">
+    <value>Register incident</value>
+  </data>
+  <data name="btnViewARList" xml:space="preserve">
+    <value>View approval request list</value>
+  </data>
+  <data name="btnViewIncidentList" xml:space="preserve">
+    <value>View incident list</value>
+  </data>
+  <data name="headerAddress" xml:space="preserve">
+    <value>&lt;div&gt;Address&lt;br /&gt;(1) English&lt;br /&gt;(2) Local&lt;/div&gt;</value>
+  </data>
+  <data name="headerBtnGroupinformation" xml:space="preserve">
+    <value>Group information</value>
+  </data>
+  <data name="headerBtnSiteinformation" xml:space="preserve">
+    <value>Premise's information</value>
+  </data>
+  <data name="headerGroupcode" xml:space="preserve">
+    <value>Group code</value>
+  </data>
+  <data name="headerGroupNameEN" xml:space="preserve">
+    <value>Group name (English)</value>
+  </data>
+  <data name="headerGroupNameLC" xml:space="preserve">
+    <value>Group name (Local)</value>
+  </data>
+  <data name="headerNumberOfContact" xml:space="preserve">
+    <value>Number of contract</value>
+  </data>
+  <data name="headerRENT" xml:space="preserve">
+    <value>Rental</value>
+  </data>
+  <data name="headerSALE" xml:space="preserve">
+    <value>Sale</value>
+  </data>
+  <data name="headerSitecode" xml:space="preserve">
+    <value>Premise's code</value>
+  </data>
+  <data name="headerSitename" xml:space="preserve">
+    <value>&lt;div&gt;Premise's name&lt;br /&gt;(1) English&lt;br/&gt;(2) Local&lt;/div&gt;</value>
+  </data>
+  <data name="lblBusinesstype" xml:space="preserve">
+    <value>Business category</value>
+  </data>
+  <data name="lblContactpersonname" xml:space="preserve">
+    <value>Customer PIC</value>
+  </data>
+  <data name="lblCustomerAddressEN" xml:space="preserve">
+    <value>Customer address (English)</value>
+  </data>
+  <data name="lblCustomerAddressLC" xml:space="preserve">
+    <value>Customer address (Local)</value>
+  </data>
+  <data name="lblCustomercode" xml:space="preserve">
+    <value>Customer code</value>
+  </data>
+  <data name="lblCustomerNameEN" xml:space="preserve">
+    <value>Customer name (English)</value>
+  </data>
+  <data name="lblCustomerNameLC" xml:space="preserve">
+    <value>Customer name (Local)</value>
+  </data>
+  <data name="lblCustomertype" xml:space="preserve">
+    <value>Customer type</value>
+  </data>
+  <data name="lblFaxno" xml:space="preserve">
+    <value>Fax no.</value>
+  </data>
+  <data name="lblFinancialmarkettype" xml:space="preserve">
+    <value>Financial market type</value>
+  </data>
+  <data name="lblIDnoTaxIDno" xml:space="preserve">
+    <value>NPWP</value>
+  </data>
+  <data name="lblNationality" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="lblRepresentativepersonname" xml:space="preserve">
+    <value>President director's name</value>
+  </data>
+  <data name="lblSECOMcontactperson" xml:space="preserve">
+    <value>SECOM PIC</value>
+  </data>
+  <data name="lblSection_Customer_information" xml:space="preserve">
+    <value>Customer information</value>
+  </data>
+  <data name="lblSection_Gruop_List" xml:space="preserve">
+    <value>Group list</value>
+  </data>
+  <data name="lblSection_Site_List" xml:space="preserve">
+    <value>Premise’s list</value>
+  </data>
+  <data name="lblTelephoneno" xml:space="preserve">
+    <value>Telephone no.</value>
+  </data>
+  <data name="lblURL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="headerNo" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;No.&lt;/div&gt;</value>
+  </data>
+  <data name="lblDeleted" xml:space="preserve">
+    <value>(Deleted)</value>
+  </data>
+  <data name="txtRole" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="txtRoleAll" xml:space="preserve">
+    <value>All</value>
+  </data>
+</root>

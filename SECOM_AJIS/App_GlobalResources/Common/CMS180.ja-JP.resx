@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="chkApproved" xml:space="preserve">
+    <value>03: 承認 </value>
+  </data>
+  <data name="chkCanceled" xml:space="preserve">
+    <value>06: 取消 </value>
+  </data>
+  <data name="chkCompleted" xml:space="preserve">
+    <value>05: 完了済</value>
+  </data>
+  <data name="chkInstallationCancelled" xml:space="preserve">
+    <value>06: 工事取消 </value>
+  </data>
+  <data name="chkInstallationCompleted" xml:space="preserve">
+    <value>05: 工事完了済</value>
+  </data>
+  <data name="chkInstallationNotRegistered" xml:space="preserve">
+    <value>00: 工事未登録</value>
+  </data>
+  <data name="chkInstallationNotRequest" xml:space="preserve">
+    <value>01: 工事未依頼</value>
+  </data>
+  <data name="chkInstallationRequestButPoNotRegistered" xml:space="preserve">
+    <value>02: 工事依頼済未発注</value>
+  </data>
+  <data name="chkInstallationRequestedAndPoRegistered" xml:space="preserve">
+    <value>03: 工事依頼済発注済</value>
+  </data>
+  <data name="chkInstallationSlipCanceled" xml:space="preserve">
+    <value>05: 伝票取消済 </value>
+  </data>
+  <data name="chkNoNeedToReturn" xml:space="preserve">
+    <value>08: 返却機器なし</value>
+  </data>
+  <data name="chkNoNeedToStockOut" xml:space="preserve">
+    <value>04: 出庫なし</value>
+  </data>
+  <data name="chkNotStockOut" xml:space="preserve">
+    <value>01: 未出庫</value>
+  </data>
+  <data name="chkPartialStockOut" xml:space="preserve">
+    <value>02: 部分出庫中</value>
+  </data>
+  <data name="headerInstallationname" xml:space="preserve">
+    <value>&lt;div&gt;（1）契約先／発注元名称（英語）&lt;br/&gt;（2）契約先／発注元名称（現地語）&lt;br/&gt;（3）物件／納入先名称（英語）&lt;br/&gt;（4）物件／納入先名称（現地語）&lt;/div&gt;</value>
+  </data>
+  <data name="chkProcessing" xml:space="preserve">
+    <value>01: 進行中 </value>
+  </data>
+  <data name="chkRejected" xml:space="preserve">
+    <value>04: 差し戻し</value>
+  </data>
+  <data name="chkReplaced" xml:space="preserve">
+    <value>09: 差替済</value>
+  </data>
+  <data name="chkRequestApprove" xml:space="preserve">
+    <value>02: 承認依頼済</value>
+  </data>
+  <data name="chkReturned" xml:space="preserve">
+    <value>07: 返却受領済</value>
+  </data>
+  <data name="chkStockOut" xml:space="preserve">
+    <value>03: 出庫済</value>
+  </data>
+  <data name="chkWaitForReturn" xml:space="preserve">
+    <value>06: 返却受領待</value>
+  </data>
+  <data name="lblApproveNo1" xml:space="preserve">
+    <value>決裁番号1</value>
+  </data>
+  <data name="lblApproveNo2" xml:space="preserve">
+    <value>決裁番号2</value>
+  </data>
+  <data name="lblBillingInstallationFee" xml:space="preserve">
+    <value>請求工事料金</value>
+  </data>
+  <data name="lblBillingOcc" xml:space="preserve">
+    <value>請求OCC</value>
+  </data>
+  <data name="lblChangeCustomerReson" xml:space="preserve">
+    <value>お客様理由</value>
+  </data>
+  <data name="lblChangeReason" xml:space="preserve">
+    <value>変更理由</value>
+  </data>
+  <data name="lblChangeSecomReason" xml:space="preserve">
+    <value>セコム理由</value>
+  </data>
+  <data name="lblClear" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+  <data name="lblContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+  <data name="lblContractTargetNamePurchaserName" xml:space="preserve">
+    <value>契約先／発注元名称</value>
+  </data>
+  <data name="lblContractTargetPurchaserNameEnglish" xml:space="preserve">
+    <value>契約先／発注元名称（英語）</value>
+  </data>
+  <data name="lblContractTargetPurchaserNameLocal" xml:space="preserve">
+    <value>契約先／発注元名称（現地語）</value>
+  </data>
+  <data name="lblDownloadCsvOfInstallationBasic" xml:space="preserve">
+    <value>工事未登録データCSV出力</value>
+  </data>
+  <data name="lblInstallationCauseReason" xml:space="preserve">
+    <value>工事起因理由</value>
+  </data>
+  <data name="lblInstallationCompleteDate" xml:space="preserve">
+    <value>工事完了日</value>
+  </data>
+  <data name="lblInstallationFeeBillingFlag" xml:space="preserve">
+    <value>工事料金請求区分</value>
+  </data>
+  <data name="lblInstallationMaintenanceNo" xml:space="preserve">
+    <value>工事管理番号</value>
+  </data>
+  <data name="lblInstallationManagementStatus" xml:space="preserve">
+    <value>工事監理ステータス</value>
+  </data>
+  <data name="lblInstallationMemoList" xml:space="preserve">
+    <value>工事メモ一覧</value>
+  </data>
+  <data name="lblInstallationSlipHistory" xml:space="preserve">
+    <value>工事伝票履歴</value>
+  </data>
+  <data name="lblInstallationSlipIssueDate" xml:space="preserve">
+    <value>工事伝票発行日</value>
+  </data>
+  <data name="lblInstallationSlipIssueDateFrom" xml:space="preserve">
+    <value>工事伝票発行日（開始）</value>
+  </data>
+  <data name="lblInstallationSlipIssueDateTo" xml:space="preserve">
+    <value>工事伝票発行日（終了）</value>
+  </data>
+  <data name="lblInstallationSlipNo" xml:space="preserve">
+    <value>工事伝票番号</value>
+  </data>
+  <data name="lblInstallationSlipStatus" xml:space="preserve">
+    <value>工事伝票ステータス</value>
+  </data>
+  <data name="lblInstallationStatus" xml:space="preserve">
+    <value>工事ステータス</value>
+  </data>
+  <data name="lblInstallationType" xml:space="preserve">
+    <value>工事種類</value>
+  </data>
+  <data name="lblInstrumentStockOutDate" xml:space="preserve">
+    <value>機器出庫日</value>
+  </data>
+  <data name="lblNormalContractFee" xml:space="preserve">
+    <value>正規契約料金</value>
+  </data>
+  <data name="lblNormalInstallationFee" xml:space="preserve">
+    <value>正規工事料金</value>
+  </data>
+  <data name="lblOperationOffice" xml:space="preserve">
+    <value>実施事業所</value>
+  </data>
+  <data name="lblPlanCode" xml:space="preserve">
+    <value>プランコード</value>
+  </data>
+  <data name="lblResultlist" xml:space="preserve">
+    <value>検索結果一覧</value>
+  </data>
+  <data name="lblReturnedInstrumentReceiveDate" xml:space="preserve">
+    <value>繰入機器受領日</value>
+  </data>
+  <data name="lblSalesmanName1" xml:space="preserve">
+    <value>営業社員1</value>
+  </data>
+  <data name="lblSalesmanName2" xml:space="preserve">
+    <value>営業社員2</value>
+  </data>
+  <data name="lblSearch" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="lblSearchCriteria" xml:space="preserve">
+    <value>検索条件</value>
+  </data>
+  <data name="lblSECOMrevenue" xml:space="preserve">
+    <value>当社収納</value>
+  </data>
+  <data name="lblSECOMpayment" xml:space="preserve">
+    <value>当社負担</value>
+  </data>
+  <data name="lblShowDetailInformation" xml:space="preserve">
+    <value>詳細情報表示</value>
+  </data>
+  <data name="lblSiteAddress" xml:space="preserve">
+    <value>物件／納入先住所</value>
+  </data>
+  <data name="lblSiteAddressEnglish" xml:space="preserve">
+    <value>物件／納入先住所（英語）</value>
+  </data>
+  <data name="lblSiteAddressLocal" xml:space="preserve">
+    <value>物件／納入先住所（現地語）</value>
+  </data>
+  <data name="lblSiteCode" xml:space="preserve">
+    <value>物件コード</value>
+  </data>
+  <data name="lblSiteInformationForInstallation" xml:space="preserve">
+    <value>工事対象物件／納入先情報</value>
+  </data>
+  <data name="lblSiteName" xml:space="preserve">
+    <value>物件／納入先名称</value>
+  </data>
+  <data name="lblSiteNameEnglish" xml:space="preserve">
+    <value>物件／納入先名称（英語）</value>
+  </data>
+  <data name="lblSiteNameLocal" xml:space="preserve">
+    <value>物件／納入先名称（現地語）</value>
+  </data>
+  <data name="lblSlipIssueDate" xml:space="preserve">
+    <value>出庫予定日</value>
+  </data>
+  <data name="lblUserCode" xml:space="preserve">
+    <value>ユーザーコード</value>
+  </data>
+  <data name="lblSalesmanCode" xml:space="preserve">
+    <value>営業社員番号</value>
+  </data>
+  <data name="lblInstallationSubContractor" xml:space="preserve">
+    <value>工事業者</value>
+  </data>
+  <data name="lblInstrumentDetail" xml:space="preserve">
+    <value>機器明細</value>
+  </data>
+  <data name="headerContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+  <data name="headerDetail" xml:space="preserve">
+    <value>&lt;div style = "display:none;"&gt;詳細&lt;/div&gt;</value>
+  </data>
+  <data name="headerInstallationManagementStatus" xml:space="preserve">
+    <value>&lt;div&gt;&lt;center&gt;工事監理&lt;br/&gt;ステータス&lt;/div&gt;</value>
+  </data>
+  <data name="headerInstallationStatus" xml:space="preserve">
+    <value>工事ステータス</value>
+  </data>
+  <data name="headerInstallationType" xml:space="preserve">
+    <value>工事種類</value>
+  </data>
+  <data name="headerRegister" xml:space="preserve">
+    <value>登録</value>
+  </data>
+  <data name="headerSlipStatus" xml:space="preserve">
+    <value>伝票ステータス</value>
+  </data>
+  <data name="headerSlipType" xml:space="preserve">
+    <value>&lt;div&gt;伝票&lt;br/&gt;種類&lt;/div&gt;</value>
+  </data>
+  <data name="headerSubcontractorCode" xml:space="preserve">
+    <value>業者コード</value>
+  </data>
+  <data name="headerSubcontractorEnglish" xml:space="preserve">
+    <value>業者（英語） </value>
+  </data>
+  <data name="headerSubcontractorLocal" xml:space="preserve">
+    <value>業者（現地語）</value>
+  </data>
+  <data name="headerAdditionalInstalled" xml:space="preserve">
+    <value>追加設置</value>
+  </data>
+  <data name="headerContractInstalledAfterChange" xml:space="preserve">
+    <value>変更後契約設置</value>
+  </data>
+  <data name="headerTotalStockOut" xml:space="preserve">
+    <value>累計出庫</value>
+  </data>
+  <data name="headerContractInstalledCurrent" xml:space="preserve">
+    <value>現契約設置</value>
+  </data>
+  <data name="headerInstrumentCode" xml:space="preserve">
+    <value>機器コード</value>
+  </data>
+  <data name="headerInstrumentName" xml:space="preserve">
+    <value>機器名称</value>
+  </data>
+  <data name="headerInstrumentQuantity" xml:space="preserve">
+    <value>機器個数</value>
+  </data>
+  <data name="headerMaintenanceExchange" xml:space="preserve">
+    <value>保守交換</value>
+  </data>
+  <data name="headerMoved" xml:space="preserve">
+    <value>移設</value>
+  </data>
+  <data name="headerRemoved" xml:space="preserve">
+    <value>撤去</value>
+  </data>
+  <data name="headerReturn" xml:space="preserve">
+    <value>繰入</value>
+  </data>
+  <data name="lblContractOffice" xml:space="preserve">
+    <value>成約事業所</value>
+  </data>
+  <data name="lblExpected" xml:space="preserve">
+    <value>実施予定日</value>
+  </data>
+  <data name="lblsaleman1CSV" xml:space="preserve">
+    <value>営業社員1 社員番号／名称</value>
+  </data>
+  <data name="lblsaleman2CSV" xml:space="preserve">
+    <value>営業社員2 社員番号／名称</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="btnComplete" xml:space="preserve">
+    <value>完了</value>
+  </data>
+  <data name="btnPO" xml:space="preserve">
+    <value>発注</value>
+  </data>
+  <data name="btnRegister" xml:space="preserve">
+    <value>登録</value>
+  </data>
+  <data name="btnRequest" xml:space="preserve">
+    <value>依頼</value>
+  </data>
+  <data name="btnSlip" xml:space="preserve">
+    <value>伝票</value>
+  </data>
+  <data name="lblRemark1" xml:space="preserve">
+    <value>ステータスについては、いずれかに該当するものが検索されます。</value>
+  </data>
+  <data name="lblRemark2" xml:space="preserve">
+    <value>下記の項目で絞り込むことができます。</value>
+  </data>
+  <data name="lblNotRegistered" xml:space="preserve">
+    <value>未登録</value>
+  </data>
+  <data name="chkInstallationUnderInstall" xml:space="preserve">
+    <value>04: 工事中</value>
+  </data>
+  <data name="headerDocumentName" xml:space="preserve">
+    <value>Document name</value>
+  </data>
+  <data name="lblAttachedDocList" xml:space="preserve">
+    <value>Attached document list</value>
+  </data>
+  <data name="headerSubContractorName" xml:space="preserve">
+    <value>SubContractor Name</value>
+  </data>
+  <data name="lblSubContractorName" xml:space="preserve">
+    <value>SubContractor Name</value>
+  </data>
+</root>

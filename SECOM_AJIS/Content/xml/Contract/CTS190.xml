@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    
+    <column id="ContractCode_QuotationTargetCode" width="170" type="ro" align="left" sort="na">headerContractCodeQuotationTargetCode</column>
+    <column id="OCC_Alphabet" width="130" type="ro" align="left" sort="na">headerOCC_Alphabet</column>
+    <column id="ContractDocOCC" width="120" type="ro" align="left" sort="na">headerContractDocOCC</column>
+    <column id="DocAuditResultCodeName" width="200" type="ro" align="left" sort="na">headerDocAuditResult</column>
+    <column id="DocumentName" width="*" type="ro" align="left" sort="na">headerContractDocumentName</column>
+
+    <!--Hiddle-->
+    <column id="my_checked_id_by_ct" width="0" type="ro" align="center"  hidden="true"></column>
+    <column id="my_checked_id_by_quo" width="0" type="ro" align="center"  hidden="true"></column>
+    <column id="my_checked_id" width="0" type="ro" align="center"  hidden="true"></column>
+    <column id="IsContractFlag" width="0" type="ro" align="center"  hidden="true"></column>
+    
+    <column id="Button" width="30" type="ro" align="center" sort="na">headerRemoveButton</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

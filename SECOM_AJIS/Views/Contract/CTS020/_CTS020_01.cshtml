@@ -1,0 +1,44 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+<div id="divSpecifyProcessType" class="main-table" style="display:none;">
+    <div class="table-header">
+        @Resources.CTS020.lblSpecifyProcessType
+    </div>
+    <div id="divProcessEditMode">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblProcessType</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonRadioButton("rdoProcessTypeNew", (string)@Resources.CTS020.lblNewSale, "1", true, "ProcessTypeGroup")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                @Html.CommonRadioButton("rdoProcessTypeAdd", (string)@Resources.CTS020.lblAddSale, "2", false, "ProcessTypeGroup")
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblContractCode</div>
+            <div class="usr-object" style="width:@ViewBag.LabelCol3Width;">
+                @Html.CommonTextBox("ContractCode", null, new { maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE, style = "width:" + @ViewBag.ObjectCol3Width + "px;" })
+            </div>
+        </div>
+        <div class="usr-row usr-row-space-2x">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonButton("btnSelectProcess", (string)@Resources.CTS020.btnSelectProcess, new { style = "width:120px;" })
+            </div>
+        </div>
+    </div>
+    <div id="divProcessViewMode" style="display:none;">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblProcessType</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                <div id="ProcessTypeView" class="label-edit-view"></div>
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS020.lblContractCode</div>
+            <div class="usr-object" style="width:@ViewBag.LabelCol3Width;">
+                <div id="ContractCodeView" class="label-edit-view"></div>
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

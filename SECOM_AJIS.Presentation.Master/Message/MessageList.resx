@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG1001" xml:space="preserve">
+    <value>Cannot remove premise, {0}.</value>
+  </data>
+  <data name="MSG1002" xml:space="preserve">
+    <value>Premise's information is duplicate in this customer.</value>
+  </data>
+  <data name="MSG1003" xml:space="preserve">
+    <value>NPWP has already been registered.</value>
+  </data>
+  <data name="MSG1004" xml:space="preserve">
+    <value>Customer name has already been registered. Do you want to continue this process?</value>
+  </data>
+  <data name="MSG1005" xml:space="preserve">
+    <value>Are you sure to delete customer, {0}?</value>
+  </data>
+  <data name="MSG1006" xml:space="preserve">
+    <value>Cannot delete customer, {0}.</value>
+  </data>
+  <data name="MSG1007" xml:space="preserve">
+    <value>Group code has already been registered in this customer.</value>
+  </data>
+  <data name="MSG1008" xml:space="preserve">
+    <value>Are you sure to delete group, {0}?</value>
+  </data>
+  <data name="MSG1009" xml:space="preserve">
+    <value>Cannot delete group code, {0}.</value>
+  </data>
+  <data name="MSG1010" xml:space="preserve">
+    <value>Group name (Local) is duplicate in customer group.</value>
+  </data>
+  <data name="MSG1011" xml:space="preserve">
+    <value>Office and Department are duplicate in belonging</value>
+  </data>
+  <data name="MSG1012" xml:space="preserve">
+    <value>Are you sure to delete user, {0}?</value>
+  </data>
+  <data name="MSG1013" xml:space="preserve">
+    <value>Employee no. is duplicate.</value>
+  </data>
+  <data name="MSG1014" xml:space="preserve">
+    <value>Primary belonging is duplicate in belonging master information.</value>
+  </data>
+  <data name="MSG1015" xml:space="preserve">
+    <value>Employee have no data in belonging master information.</value>
+  </data>
+  <data name="MSG1016" xml:space="preserve">
+    <value>Are you sure to delete permission type 'Office/Department', {0}?</value>
+  </data>
+  <data name="MSG1017" xml:space="preserve">
+    <value>Are you sure to delete permission type 'Individual', {0}?</value>
+  </data>
+  <data name="MSG1018" xml:space="preserve">
+    <value>Office, Department and Position are duplicate in permission group</value>
+  </data>
+  <data name="MSG1019" xml:space="preserve">
+    <value>Equipment code is duplicate.</value>
+  </data>
+  <data name="MSG1020" xml:space="preserve">
+    <value>Equipment code is not child equipment.</value>
+  </data>
+  <data name="MSG1021" xml:space="preserve">
+    <value>Child equipment code are duplicate in equipment expansion information: {0}.</value>
+  </data>
+  <data name="MSG1022" xml:space="preserve">
+    <value>Equipment code already have in equipment expansion, cannot change expansion type.</value>
+  </data>
+  <data name="MSG1023" xml:space="preserve">
+    <value>Customer status is not 'New customer'.</value>
+  </data>
+  <data name="MSG1024" xml:space="preserve">
+    <value>SECOM person in charge does not exist in employee master information.</value>
+  </data>
+  <data name="MSG1025" xml:space="preserve">
+    <value>Employee has already been registered.</value>
+  </data>
+  <data name="MSG1026" xml:space="preserve">
+    <value>Child equipment code has already been registered.</value>
+  </data>
+  <data name="MSG1027" xml:space="preserve">
+    <value>Are you sure to delete billing client code, {0}?</value>
+  </data>
+  <data name="MSG1028" xml:space="preserve">
+    <value>Cannot delete billing client code, {0}.</value>
+  </data>
+  <data name="MSG1029" xml:space="preserve">
+    <value>Billing client code, {0}, was deleted.</value>
+  </data>
+  <data name="MSG1030" xml:space="preserve">
+    <value>Are you sure to delete subcontractor code: '{0}'?</value>
+  </data>
+  <data name="MSG1031" xml:space="preserve">
+    <value>Cannot delete subcontractor code: "{0}'</value>
+  </data>
+  <data name="MSG1032" xml:space="preserve">
+    <value>Subcontractor: {0} was deleted.</value>
+  </data>
+  <data name="MSG1033" xml:space="preserve">
+    <value>Are you sure to delete rack no: '{0}'?</value>
+  </data>
+  <data name="MSG1034" xml:space="preserve">
+    <value>Cannot delete rack no.: '{0}'</value>
+  </data>
+  <data name="MSG1035" xml:space="preserve">
+    <value>Rack no.: {0} was deleted.</value>
+  </data>
+  <data name="MSG1036" xml:space="preserve">
+    <value>Cannot delete safety stock.</value>
+  </data>
+  <data name="MSG1037" xml:space="preserve">
+    <value>Safety stock already exists for equipment code: {0}.</value>
+  </data>
+  <data name="MSG1038" xml:space="preserve">
+    <value>Department person in charge is duplicate in the same office and department.</value>
+  </data>
+  <data name="MSG1039" xml:space="preserve">
+    <value>Please specify customer code.</value>
+  </data>
+  <data name="MSG1040" xml:space="preserve">
+    <value>Please specify parent equipment code.</value>
+  </data>
+  <data name="MSG1041" xml:space="preserve">
+    <value>Customer information is used in other contract.</value>
+  </data>
+  <data name="MSG1042" xml:space="preserve">
+    <value>Please specify primary belonging.</value>
+  </data>
+  <data name="MSG1043" xml:space="preserve">
+    <value>Equipment code is not parent in equipment information.</value>
+  </data>
+  <data name="MSG1044" xml:space="preserve">
+    <value>Please specify employee at least 1 record.</value>
+  </data>
+  <data name="MSG1045" xml:space="preserve">
+    <value>Please specify billing client code.</value>
+  </data>
+  <data name="MSG1046" xml:space="preserve">
+    <value>Cannot change rack type for this rack.</value>
+  </data>
+  <data name="MSG1047" xml:space="preserve">
+    <value>This employee no. is logically deleted. If proceed, system will recover and update it with on-screen information.</value>
+  </data>
+  <data name="MSG1048" xml:space="preserve">
+    <value>This rack no. is already exist.</value>
+  </data>
+  <data name="MSG1049" xml:space="preserve">
+    <value>Cannot delete this rack because quantity is not zero.</value>
+  </data>
+  <data name="MSG1050" xml:space="preserve">
+    <value>Valid period must not be older than Start date.</value>
+  </data>
+  <data name="MSG1051" xml:space="preserve">
+    <value>Valid period must not be more than Resign date.</value>
+  </data>
+  <data name="MSG1052" xml:space="preserve">
+    <value>This customer name (Local) is the same name as those used in other customer code. If you want to continue, please press "Yes". If it's a different customer, please change to other name.</value>
+  </data>
+  <data name="MSG1055" xml:space="preserve">
+    <value>This rack no is logically deleted. If proceed, system will recover and update it with on-screen information</value>
+  </data>
+  <data name="MSG1056" xml:space="preserve">
+    <value>This subcontract no. is already exist.</value>
+  </data>
+  <data name="MSG1057" xml:space="preserve">
+    <value>This subcontract no. is logically deleted. If proceed, system will recover and update it with on-screen information.</value>
+  </data>
+  <data name="MSG1058" xml:space="preserve">
+    <value>Billing client code does not exist.</value>
+  </data>
+  <data name="MSG1059" xml:space="preserve">
+    <value>You cannot delete customer, {0}, because contract has already used.</value>
+  </data>
+  <data name="MSG1060" xml:space="preserve">
+    <value>The number of digits of Tax ID number must be 15 digits</value>
+  </data>
+  <data name="MSG1061" xml:space="preserve">
+    <value>The number of digits of Branch no. must be 5 digits</value>
+  </data>
+  <data name="MSG1062" xml:space="preserve">
+    <value>Branch no. 00000 reserved for head office only.
+</value>
+  </data>
+</root>

@@ -1,0 +1,6 @@
+﻿INPUT[type=password][readonly] {
+    background-color: #dfdfdf;
+    color: #000000;
+    border: 1px solid #707070;
+}
+

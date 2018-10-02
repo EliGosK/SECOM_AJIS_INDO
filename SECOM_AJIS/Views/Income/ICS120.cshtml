@@ -1,0 +1,103 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Income.Helpers;
+@using SECOM_AJIS.Presentation.Income.Controllers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_ron2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Income/ICS120.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/number-functions.js")"></script>
+    <script type="text/javascript">
+        var MATCHSTATUS_PARTIAL = "@Resources.ICS120.MatchStatusPartial"
+        var MATCHSTATUS_COMPLETED = "@Resources.ICS120.MatchStatusCompleted"
+    </script>
+}
+@{
+    ViewBag.Col1 = "200px;";
+    ViewBag.Col2 = "250px;";
+    ViewBag.Col3 = "180px;";
+    ViewBag.Col4 = "250px;";
+
+    ViewBag.Col2Txt = "140px;";
+    ViewBag.Col4Txt = "140px;";
+
+    ViewBag.DatePickerWidth = "95px;";
+}
+<div class="main-table" id="divSearchWHT">
+    <div class="table-header">
+        @Resources.ICS120.lblSearchWHT</div>
+    <form name="formSearch" id="formSearchWHT" action="#">
+    <div id="divSearchWHTHeader">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">
+                @Resources.ICS120.lblWHTNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col2">
+                @Html.CommonTextBox("txtWHTNo", null, new { style = "width:" + @ViewBag.Col2Txt, maxlength = "15", name = "WHTNo" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3">
+                @Resources.ICS120.lblPaymentTransactionNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col4">
+                @Html.CommonTextBox("txtPaymentTransNo", null, new { style = "width:" + @ViewBag.Col4Txt, maxlength = "20", name = "PaymentTransNo" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>        
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">
+                @Resources.ICS120.lblPayerName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col2">
+                @Html.CommonTextBox("txtPayerName", null, new { style = "width:" + @ViewBag.Col2Txt, maxlength = "200", name = "PayerName" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3">
+                @Resources.ICS120.lblVatRegistantName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col4">
+                @Html.CommonTextBox("txtVATRegistantName", null, new { style = "width:" + @ViewBag.Col4Txt, maxlength = "400", name = "VATRegistantName" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">
+                @Resources.ICS120.lblDocumentDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.SearchPaymentCol2">
+                @Html.CommonTextBox("txtDocumentDateFrom", null, new { style = "width:" + @ViewBag.DatePickerWidth, name = "DocumentDateFrom" })
+                <span>~ </span>
+                @Html.CommonTextBox("txtDocumentDateTo", null, new { style = "width:" + @ViewBag.DatePickerWidth, name = "DocumentDateTo" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+        <div class="usr-row" style="margin-top: 5px">
+            <div class="usr-object" style="float: right; margin-right: 4px;">
+                @Html.CommonButton("btnSearch", @Resources.ICS120.lblBtnSearch, new { type = "button" })
+                @Html.CommonButton("btnClear", @Resources.ICS120.lblBtnClear, new { type = "button" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+    </div>
+    </form>
+    <div class="usr-row" id="divSearchResult">
+        <div class="usr-row">
+            <div id="divSearchResultGrid" style="width: 99%; margin-left: 4px;">
+            </div>
+            <div class="usr-clear-style">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>

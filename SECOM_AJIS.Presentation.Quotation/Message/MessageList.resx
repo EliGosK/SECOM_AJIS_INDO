@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG2001" xml:space="preserve">
+    <value>Invalid search criteria. Please input Date to &gt; Date from</value>
+  </data>
+  <data name="MSG2002" xml:space="preserve">
+    <value>Invalid search criteria. Please specify Quotation target code of the alphabet.</value>
+  </data>
+  <data name="MSG2003" xml:space="preserve">
+    <value>Quotation target code, {0}, does not exist.</value>
+  </data>
+  <data name="MSG2004" xml:space="preserve">
+    <value>Specified quotation target code has been rejectted. Please try another quotation target code.</value>
+  </data>
+  <data name="MSG2005" xml:space="preserve">
+    <value>Security guard detail is being edited. Please confirm or cancel changes then try to register again.</value>
+  </data>
+  <data name="MSG2006" xml:space="preserve">
+    <value>Quotation code, {0}, does not exist.</value>
+  </data>
+  <data name="MSG2007" xml:space="preserve">
+    <value>The selected alphabet is locked, please select the new alphabet.</value>
+  </data>
+  <data name="MSG2008" xml:space="preserve">
+    <value>Cannot generate the alphabet. Digit count &lt;&gt; 2.</value>
+  </data>
+  <data name="MSG2009" xml:space="preserve">
+    <value>Cannot generate the alphabet. Invalid character is found.</value>
+  </data>
+  <data name="MSG2010" xml:space="preserve">
+    <value>Cannot generate the alphabet. The top boundary of the alphabet is reached.</value>
+  </data>
+  <data name="MSG2011" xml:space="preserve">
+    <value>Cannot generate the quotation target code. Quotation prefix does not exist.</value>
+  </data>
+  <data name="MSG2012" xml:space="preserve">
+    <value>Not exist quotation detail for specified quotation target code, {0}.</value>
+  </data>
+  <data name="MSG2013" xml:space="preserve">
+    <value>Line {0}, these field was required: {1}.</value>
+  </data>
+  <data name="MSG2014" xml:space="preserve">
+    <value>Cannot generate quotation for not alarm/rental sale product contract.</value>
+  </data>
+  <data name="MSG2015" xml:space="preserve">
+    <value>Cannot generate quotation. Master data of the equipment code, {0}, does not exist.</value>
+  </data>
+  <data name="MSG2016" xml:space="preserve">
+    <value>Cannot generate quotation. Rental unit price of the equipment code, {0}, does not exist.</value>
+  </data>
+  <data name="MSG2017" xml:space="preserve">
+    <value>File name is invalid.</value>
+  </data>
+  <data name="MSG2018" xml:space="preserve">
+    <value>Please specify source file before import.</value>
+  </data>
+  <data name="MSG2019" xml:space="preserve">
+    <value>File type is invalid.</value>
+  </data>
+  <data name="MSG2020" xml:space="preserve">
+    <value>File format is invalid.</value>
+  </data>
+  <data name="MSG2021" xml:space="preserve">
+    <value>Invalid customer data. Customer code must not exist with other customer details.</value>
+  </data>
+  <data name="MSG2022" xml:space="preserve">
+    <value>Invalid premise data. Premise's code must not exist with other premise details.</value>
+  </data>
+  <data name="MSG2023" xml:space="preserve">
+    <value>You do not have an authorization to import this data. </value>
+  </data>
+  <data name="MSG2024" xml:space="preserve">
+    <value>Customer data in import file does not exist.</value>
+  </data>
+  <data name="MSG2025" xml:space="preserve">
+    <value>Invalid customer part type data.</value>
+  </data>
+  <data name="MSG2026" xml:space="preserve">
+    <value>Invalid number of customer data.</value>
+  </data>
+  <data name="MSG2027" xml:space="preserve">
+    <value>The installed qty of the equipment code, {0}, does not match with the former equipment details.</value>
+  </data>
+  <data name="MSG2028" xml:space="preserve">
+    <value>File size is invalid. Maximum file size is 3 MB.</value>
+  </data>
+  <data name="MSG2029" xml:space="preserve">
+    <value>Plan checking date must not be date in future.</value>
+  </data>
+  <data name="MSG2030" xml:space="preserve">
+    <value>Cannot retrieve premise data because customer code of real customer is not specified.</value>
+  </data>
+  <data name="MSG2031" xml:space="preserve">
+    <value>Plan approving date must not be date in future.</value>
+  </data>
+  <data name="MSG2032" xml:space="preserve">
+    <value>Installed qty before change and removal quantity of the equipment code, {0}, must be = 0.</value>
+  </data>
+  <data name="MSG2033" xml:space="preserve">
+    <value>Introducer code is for acquisition type introduced by customer and inside company only.</value>
+  </data>
+  <data name="MSG2034" xml:space="preserve">
+    <value>Old contract no. is not for product type sale.</value>
+  </data>
+  <data name="MSG2035" xml:space="preserve">
+    <value>Premise's code is found without specifying real customer code.</value>
+  </data>
+  <data name="MSG2036" xml:space="preserve">
+    <value>Premise's code does not exist.</value>
+  </data>
+  <data name="MSG2037" xml:space="preserve">
+    <value>Quotation staff (Sales admin) code does not exist.</value>
+  </data>
+  <data name="MSG2038" xml:space="preserve">
+    <value>Old contract no. does not exist.</value>
+  </data>
+  <data name="MSG2039" xml:space="preserve">
+    <value>Old contract no. must be alarm/sale online/rental sale product contract no..</value>
+  </data>
+  <data name="MSG2040" xml:space="preserve">
+    <value>Old contract no. must be beat/security guard contract no..</value>
+  </data>
+  <data name="MSG2041" xml:space="preserve">
+    <value>Old contract no. must be maintenance contract no..</value>
+  </data>
+  <data name="MSG2042" xml:space="preserve">
+    <value>Real customer/Premise of contract no. specified as maintenance target is different from real customer/premise registered in this quotation target code. If real customer/premise in this quotation target code is not registered correctly, please change quotation target code.</value>
+  </data>
+  <data name="MSG2043" xml:space="preserve">
+    <value>Please specify sale or alarm/sale online/rental sale product contract no..</value>
+  </data>
+  <data name="MSG2044" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG2045" xml:space="preserve">
+    <value>Specified contract no. alreadly exists in maintenance target contract no. list.</value>
+  </data>
+  <data name="MSG2046" xml:space="preserve">
+    <value>There is no default equipment registered for this product.</value>
+  </data>
+  <data name="MSG2047" xml:space="preserve">
+    <value>System will clear all entered equipment details to show default equipment. Do you want to proceed?</value>
+  </data>
+  <data name="MSG2048" xml:space="preserve">
+    <value>Please specify product code.</value>
+  </data>
+  <data name="MSG2049" xml:space="preserve">
+    <value>There is no default facility registered for this product.</value>
+  </data>
+  <data name="MSG2050" xml:space="preserve">
+    <value>System will clear all entered facility details to show default facilities. Do you want to proceed?</value>
+  </data>
+  <data name="MSG2051" xml:space="preserve">
+    <value>Memo of real customer is found without specifying real customer information.</value>
+  </data>
+  <data name="MSG2052" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG2053" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG2054" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG2055" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG2056" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG2057" xml:space="preserve">
+    <value>Please specify linkage sale contract no..</value>
+  </data>
+  <data name="MSG2058" xml:space="preserve">
+    <value>Please specify quotation target code.</value>
+  </data>
+  <data name="MSG2059" xml:space="preserve">
+    <value>Total installed equipment quantity must be &gt; 0.</value>
+  </data>
+  <data name="MSG2060" xml:space="preserve">
+    <value>Specified quotation target code has been approved to be a contract. Please specify contract no. instead.</value>
+  </data>
+  <data name="MSG2061" xml:space="preserve">
+    <value>Specified contract no. has been cancelled. Please try another contract no..</value>
+  </data>
+  <data name="MSG2062" xml:space="preserve">
+    <value>Please specify equipment qty &gt; 0 at least one row.</value>
+  </data>
+  <data name="MSG2063" xml:space="preserve">
+    <value>Security area size to must be &gt; Security area size from.</value>
+  </data>
+  <data name="MSG2064" xml:space="preserve">
+    <value>An one-time or temporary equipment is found, approve no. is required.</value>
+  </data>
+  <data name="MSG2065" xml:space="preserve">
+    <value>Quantity of the equipment code, {0}, must be &gt; 0.</value>
+  </data>
+  <data name="MSG2066" xml:space="preserve">
+    <value>Addition quantity of the equipment code, {0}, must be &gt; 0.</value>
+  </data>
+  <data name="MSG2067" xml:space="preserve">
+    <value>Removal quantity of the equipment code, {0}, must be &lt;= installed quantity before change.</value>
+  </data>
+  <data name="MSG2068" xml:space="preserve">
+    <value>Line {0}, Security guard type does not exist.</value>
+  </data>
+  <data name="MSG2069" xml:space="preserve">
+    <value>The equipment, {0}, cannot used with the product code, {1}.</value>
+  </data>
+  <data name="MSG2070" xml:space="preserve">
+    <value>Please select insurance type, so that insurance coverage amount and monthly insurance fee can be specifed.</value>
+  </data>
+  <data name="MSG2071" xml:space="preserve">
+    <value>Quantity of the facility code, {0}, must be &gt; 0.</value>
+  </data>
+  <data name="MSG2072" xml:space="preserve">
+    <value>Facility code, {0}, cannot used with the product code, {1}.</value>
+  </data>
+  <data name="MSG2073" xml:space="preserve">
+    <value>Product code must be {0}, the same as the former contract.</value>
+  </data>
+  <data name="MSG2074" xml:space="preserve">
+    <value>Line {0}, Number of date does not exist.</value>
+  </data>
+  <data name="MSG2075" xml:space="preserve">
+    <value>Line {0}, Facility detail requires: {1}.</value>
+  </data>
+  <data name="MSG2076" xml:space="preserve">
+    <value>Maintenance target product must be the same as the former contract.</value>
+  </data>
+  <data name="MSG2077" xml:space="preserve">
+    <value>Sale online contract no. must be {0}, the same as the former contract.</value>
+  </data>
+  <data name="MSG2078" xml:space="preserve">
+    <value>Line {0}, Security guard detail requires: {1}.</value>
+  </data>
+  <data name="MSG2079" xml:space="preserve">
+    <value>Line {0}, equipment detail requires: {1}.</value>
+  </data>
+  <data name="MSG2080" xml:space="preserve">
+    <value>Product code, {0}, does not exist.</value>
+  </data>
+  <data name="MSG2081" xml:space="preserve">
+    <value>Product code, {0}, is out of sale period. Do you want to proceed anyway?</value>
+  </data>
+  <data name="MSG2082" xml:space="preserve">
+    <value>Contract no., {0}, is specified more than once.</value>
+  </data>
+  <data name="MSG2083" xml:space="preserve">
+    <value>New building mgmt. cost is applied for the new building and new building mgmt. type is "Need" only.</value>
+  </data>
+  <data name="MSG2084" xml:space="preserve">
+    <value>Data type is invalid: {0}.</value>
+  </data>
+  <data name="MSG2085" xml:space="preserve">
+    <value>Contract data not found, {0}.</value>
+  </data>
+  <data name="MSG2086" xml:space="preserve">
+    <value>Equipment code, {0}, is specified more than once.</value>
+  </data>
+  <data name="MSG2087" xml:space="preserve">
+    <value>{0} is out of range ({1}~{2}).</value>
+  </data>
+  <data name="MSG2088" xml:space="preserve">
+    <value>Equipment code, {0}, {1} is out range ({2}~{3}).</value>
+  </data>
+  <data name="MSG2089" xml:space="preserve">
+    <value>Line no. {0}, {1} is out of range ({2}~{3}).</value>
+  </data>
+  <data name="MSG2090" xml:space="preserve">
+    <value>Facility code, {0}, is specified more than once.</value>
+  </data>
+  <data name="MSG2091" xml:space="preserve">
+    <value>Facility code, {0}, {1} is out range ({2}~{3}).</value>
+  </data>
+  <data name="MSG2092" xml:space="preserve">
+    <value>The installed equipment code, {0}, is not in the current equipment details.</value>
+  </data>
+  <data name="MSG2093" xml:space="preserve">
+    <value>Customer part type data is duplicated.</value>
+  </data>
+</root>

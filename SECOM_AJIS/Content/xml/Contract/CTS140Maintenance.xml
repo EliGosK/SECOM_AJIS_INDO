@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+	<head>
+		<column id="ContractCode" width="165" type="ro" align="left" sort="na">headerContractCode</column>
+		<column id="ProductName" width="*" type="ro" align="left" sort="na">headerProductName</column>
+		<column id="Detail" width="30" type="ro" align="center" sort="na">headerDetail</column>
+		<column id="Remove" width="30" type="ro" align="center" sort="na">headerRemove</column>
+		<settings>
+			<colwidth>px</colwidth>
+		</settings>
+	</head>
+</rows>

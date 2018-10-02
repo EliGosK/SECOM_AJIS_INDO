@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na">headerNo</column>
+
+    <column id="QuotationDate" width="98" type="dhxCalendar" format="%d-%b-%Y" align="center" sort="date">headerRegDate</column>
+    <column id="Lock_View" width="55" type="ro" align="left" sort="str_custom">headerLockStatus</column>
+    <column id="Quotation_View" width="122" type="ro" align="left" sort="str_custom">headerQuotationCode</column>
+    <column id="ContTarPurData_View" width="*" type="ro" align="left" sort="str_custom">headerContTargetPurName</column>
+    <column id="SiteData_View" width="170" type="ro" align="left" sort="str_custom">headerSite</column>
+
+    <column id="Office_View" width="120" type="ro" align="left" sort="str_custom">headerOfficeName</column>
+    <column id="EmpFullName" width="90" type="ro" align="left" sort="str_custom">headerSalesman1</column>
+    <column id="Detail" width="30" align="center" type="ro" sort="na">headerDetail</column>
+    <column id="Select" width="30" align="center" type="ro" sort="na">headerSelect</column>
+    <!-- Hidden-->
+    <column id="QuotationCode_Short" width="0" hidden="true" type="ro"></column>
+    <column id="Alphabet" width="0" hidden="true" type="ro"></column>
+    <column id="ProductTypeCode" width="0" hidden="true" type="ro"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

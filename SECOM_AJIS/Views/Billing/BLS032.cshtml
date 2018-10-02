@@ -1,0 +1,133 @@
+﻿@using SECOM_AJIS.DataEntity.Billing;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers
+@{     
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.lbWidth = "220px";  /* ViewBag.LabelWidth */
+    ViewBag.lbWidth2 = "280px";     
+    ViewBag.ObjectWidth1 = "154px";
+    ViewBag.ObjectWidth2 = "350px";
+    ViewBag.ObjectWidth3 = "354px";
+    ViewBag.UserObjectWidth1 = "400px";
+  }
+  @section page_header{
+   
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Billing/BLS032.js")"></script>        
+   <script src="../../Scripts/Base/ComboBox.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/AutoComplete.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/ComboBox.js" type="text/javascript"></script>
+    <script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    
+        var objBLS032 = {
+            "ContractCode": "@ViewBag.ContractCode",
+            "BillingClientCode": "@ViewBag.BillingClientCode",
+            "BillingClientNameEN": "@ViewBag.BillingClientNameEN",
+            "BillingClientNameLC": "@ViewBag.BillingClientNameLC",
+            "CreditCardType": "@ViewBag.CreditCardType",
+            "CardName": "@ViewBag.CardName",
+            "CreditCardCompanyCode": "@ViewBag.CreditCardCompanyCode",
+            "CreditCardNo1": "@ViewBag.CreditCardNo1",
+            "CreditCardNo2": "@ViewBag.CreditCardNo2",
+            "CreditCardNo3": "@ViewBag.CreditCardNo3",
+            "CreditCardNo4": "@ViewBag.CreditCardNo4",
+            "ExpYear": "@ViewBag.ExpYear",
+            "ExpMonth": "@ViewBag.ExpMonth"
+        };
+    </script>    
+}
+<div style="display:none;"> 
+    @Html.Hidden("btnOK", (string)@Resources._ButtonControl.btnCommandOK)
+    @Html.Hidden("btnCancel", (string)@Resources._ButtonControl.btnCommandCancel)
+</div>
+<form id = "CreditCard" action="#">
+<div id="divRegisterCreditCardInfo" class="main-table" style="margin-top:5px;">        
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS032.lblBillingCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.UserObjectWidth1;">
+            @Html.CommonTextBox("BLS032_ContractCode", null, new { style = "width:" + @ViewBag.ObjectWidth1 + ";", @readonly = true })
+        </div>        
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS032.lblBillingClientCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.UserObjectWidth1;">
+            @Html.CommonTextBox("BLS032_BillingClientCode", null, new { style = "width:" + @ViewBag.ObjectWidth1 + ";", @readonly = true })
+        </div>        
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS032.lblBillingClientNameEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.UserObjectWidth1;">
+            @Html.CommonTextBox("BLS032_BillingClientNameEN", null, new { style = "width:" + @ViewBag.ObjectWidth2 + ";", @readonly = true })
+        </div>        
+    </div>
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS032.lblBillingClientNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.UserObjectWidth1;">
+            @Html.CommonTextBox("BLS032_BillingClientNameLC", null, new { style = "width:" + @ViewBag.ObjectWidth2 + ";", @readonly = true })
+        </div>        
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS032.lblCreditCardType
+        </div>              
+         <div class="usr-object" style="width:200px;">
+             @Html.CreditCardTypeComboBox("BLS032_CreditCardType", new { style = "width:158px;" })
+             @Html.RequireFiled()              
+        </div> 
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS032.lblCardHolderName
+        </div>              
+        <div class="usr-object" style="width:@ViewBag.UserObjectWidth1;">
+            @Html.CommonTextBox("BLS032_CardName", null, new { style = "width:" + @ViewBag.ObjectWidth2 + ";", maxlength = "100" })
+             @Html.RequireFiled()              
+        </div> 
+    </div>
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS032.lblCreditCardCompany             
+        </div>      
+        <div class="usr-object" style="width:@ViewBag.UserObjectWidth1;">
+             @Html.CreditCardCompanyComboBox("BLS032_CreditCardCompanyCode", new { style = "width:" + @ViewBag.ObjectWidth3 + ";" })
+             @Html.RequireFiled()              
+        </div>          
+    </div>
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS032.lblCreditCardNo
+        </div>              
+         <div class="usr-object" style="width:@ViewBag.UserObjectWidth1;">             
+              @Html.CommonTextBox("BLS032_CreditCardNo1", null, new { style = "width:45px; text-align:left", maxlength = "4" }) 
+              @Html.CommonTextBox("BLS032_CreditCardNo2", null, new { style = "width:45px; text-align:left", maxlength = "4" }) 
+              @Html.CommonTextBox("BLS032_CreditCardNo3", null, new { style = "width:45px; text-align:left", maxlength = "4" }) 
+              @Html.CommonTextBox("BLS032_CreditCardNo4", null, new { style = "width:45px; text-align:left", maxlength = "4" }) 
+              @Html.RequireFiled()  
+        </div> 
+    </div>
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS032.lblExpireDate           
+        </div>        
+        <div class="usr-object" style="width:@ViewBag.UserObjectWidth1;">
+             @Html.MonthComboBoxDispalyAsNumber("BLS032_ExpMonth", new { style = "width:49px;" }, true)
+             @*@Html.YearComboBox("BLS032_ExpYear", new { style = "width:55px;" }, true)*@
+             @Html.CommonTextBox("BLS032_ExpYear", null, new { style = "width:45px; text-align:left", maxlength = "4" }) 
+             @Html.RequireFiled() 
+             @Resources.BLS032.lblYearFormat               
+        </div>       
+    </div>
+    <div class="usr-clear-style">&nbsp;</div> 
+</div>
+</form>

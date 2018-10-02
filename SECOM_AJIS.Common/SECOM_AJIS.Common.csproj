@@ -1,0 +1,416 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.Common</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXssLibrary">
+      <HintPath>..\SECOM_AJIS\DLL\AntiXssLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=1.2.0.0, Culture=neutral, PublicKeyToken=af08829b84f0328e" />
+    <Reference Include="itextsharp, Version=4.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" />
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL" />
+    <Reference Include="PDFSplitMergeLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Quartz, Version=1.0.3.3, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL" />
+    <Reference Include="SECOM_AJIS.DataEntity.Common">
+      <HintPath>..\SECOM_AJIS\Bin\SECOM_AJIS.DataEntity.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionFilters\AutoRetryAttribute.cs" />
+    <Compile Include="ActionFilters\PermissionOperationAttibute.cs" />
+    <Compile Include="ActionFilters\ScreenSessionAttribute.cs" />
+    <Compile Include="ActionFilters\InitializeAttribute.cs" />
+    <Compile Include="ActionFilters\LocalizationAttribute.cs" />
+    <Compile Include="ActionFilters\XmlResult.cs" />
+    <Compile Include="Attributes\FixedGridToolTipAttribute.cs" />
+    <Compile Include="Attributes\GridToolTipAttribute.cs" />
+    <Compile Include="Attributes\CSVAttribute.cs" />
+    <Compile Include="Attributes\EmployeeAttribute.cs" />
+    <Compile Include="Attributes\InstrumentAttribute.cs" />
+    <Compile Include="Attributes\LanguageAttribute.cs" />
+    <Compile Include="Attributes\MiscTypeAttribute.cs" />
+    <Compile Include="Attributes\ValidatorAttribute.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\TestShareController.cs" />
+    <Compile Include="Controllers\SharedController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Helpers\ButtonHelper.cs" />
+    <Compile Include="Helpers\CustomHelper.cs" />
+    <Compile Include="Helpers\ComboBoxHelper.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Helpers\LabelHelper.cs" />
+    <Compile Include="Helpers\LanguageHelper.cs" />
+    <Compile Include="Helpers\TextBoxHelper.cs" />
+    <Compile Include="Models\ApplicationErrorException.cs" />
+    <Compile Include="Models\ComboBoxModel.cs" />
+    <Compile Include="Models\doDirectScreen.cs" />
+    <Compile Include="Models\EmailTemplates\doRegisterInstallationRequest.cs" />
+    <Compile Include="Models\EmailTemplates\doChangeFeeTemplate.cs" />
+    <Compile Include="Models\EmailTemplates\doEmailContentRequestApprrove.cs" />
+    <Compile Include="Models\EmailTemplates\doEmailContentSlip.cs" />
+    <Compile Include="Models\EmailTemplates\doEmailWithURL.cs" />
+    <Compile Include="Models\EmailTemplates\doNotifyChangeFeeContract.cs" />
+    <Compile Include="Models\EmailTemplates\doRegisterInstallationPO.cs" />
+    <Compile Include="Models\EmailTemplates\doApproveContractTemplate.cs" />
+    <Compile Include="Models\EmailTemplates\doRejectContractTemplate.cs" />
+    <Compile Include="Models\EmailTemplates\doTemplate.cs" />
+    <Compile Include="Models\ItemValue.cs" />
+    <Compile Include="Models\MandatoryField.cs" />
+    <Compile Include="Models\Menu.cs" />
+    <Compile Include="Models\MessageModel.cs" />
+    <Compile Include="Models\ObjectResultData.cs" />
+    <Compile Include="Models\RedirectObject.cs" />
+    <Compile Include="Models\ScreenParameter.cs" />
+    <Compile Include="Models\SystemStatusModel.cs" />
+    <Compile Include="Models\TestModel.cs" />
+    <Compile Include="Util\BatchProcessUtil.cs" />
+    <Compile Include="Util\CommonExtension.cs" />
+    <Compile Include="Util\CommonUtil.cs" />
+    <Compile Include="Util\Common\Connection.cs" />
+    <Compile Include="Util\Common\ControlCreator.cs" />
+    <Compile Include="Util\Common\Convertor.cs" />
+    <Compile Include="Util\Common\TextCreator.cs" />
+    <Compile Include="Util\Common\Language.cs" />
+    <Compile Include="Util\Common\Object.cs" />
+    <Compile Include="Util\Common\Session.cs" />
+    <Compile Include="Util\Constants\AccountingConfig.cs" />
+    <Compile Include="Util\Constants\AddressFull.cs" />
+    <Compile Include="Util\Constants\AdvanceReceiptStatus.cs" />
+    <Compile Include="Util\Constants\ARPermissionType.cs" />
+    <Compile Include="Util\Constants\ARTitle.cs" />
+    <Compile Include="Util\Constants\ARType.cs" />
+    <Compile Include="Util\Constants\AttachDocumentCondition.cs" />
+    <Compile Include="Util\Constants\AutoTransferBillingType.cs" />
+    <Compile Include="Util\Constants\BankTransferBillingType.cs" />
+    <Compile Include="Util\Constants\BillingCycle.cs" />
+    <Compile Include="Util\Constants\BillingInvFormatType.cs" />
+    <Compile Include="Util\Constants\BillingType.cs" />
+    <Compile Include="Util\Constants\BillingTiming.cs" />
+    <Compile Include="Util\Constants\BillingTypeGroup.cs" />
+    <Compile Include="Util\Constants\CalculationDailyFeeType.cs" />
+    <Compile Include="Util\Constants\ContractBillingType.cs" />
+    <Compile Include="Util\Constants\AdjustmentType.cs" />
+    <Compile Include="Util\Constants\CheckingStatus.cs" />
+    <Compile Include="Util\Constants\BillingServiceTypeCode.cs" />
+    <Compile Include="Util\Constants\AutoTransferResult.cs" />
+    <Compile Include="Util\Constants\AdjustType.cs" />
+    <Compile Include="Util\Constants\ChangeReasonType.cs" />
+    <Compile Include="Util\Constants\AutoTransferResultWord.cs" />
+    <Compile Include="Util\Constants\CancelReceiptTarget.cs" />
+    <Compile Include="Util\Constants\CreditOutPutTax.cs" />
+    <Compile Include="Util\Constants\CurrencyUtil.cs" />
+    <Compile Include="Util\Constants\DebitOutPutTax.cs" />
+    <Compile Include="Util\Constants\OfficeName.cs" />
+    <Compile Include="Util\Constants\SecomAccountID.cs" />
+    <Compile Include="Util\Constants\EncashedFlagByte.cs" />
+    <Compile Include="Util\Constants\EncashedFlag.cs" />
+    <Compile Include="Util\Constants\DebtTracingResult.cs" />
+    <Compile Include="Util\Constants\DebtTracingSubStatus.cs" />
+    <Compile Include="Util\Constants\InventoryStartType.cs" />
+    <Compile Include="Util\Constants\StockReportType.cs" />
+    <Compile Include="Util\Constants\EventID.cs" />
+    <Compile Include="Util\Constants\OfficeDummy.cs" />
+    <Compile Include="Util\Constants\PrintingFlag.cs" />
+    <Compile Include="Util\Constants\RentalCoverLetterDocCode.cs" />
+    <Compile Include="Util\Constants\CreditNoteType.cs" />
+    <Compile Include="Util\Constants\FlagDisplay.cs" />
+    <Compile Include="Util\Constants\IncomeMiscWord.cs" />
+    <Compile Include="Util\Constants\GroupProductType.cs" />
+    <Compile Include="Util\Constants\InstallationComplain.cs" />
+    <Compile Include="Util\Constants\InvoiceProcessType.cs" />
+    <Compile Include="Util\Constants\PermissionType.cs" />
+    <Compile Include="Util\Constants\RegionCode.cs" />
+    <Compile Include="Util\Constants\ReportDocLanguage.cs" />
+    <Compile Include="Util\Constants\CorrectionReason.cs" />
+    <Compile Include="Util\Constants\InvoiceType.cs" />
+    <Compile Include="Util\Constants\ReceiptDocument.cs" />
+    <Compile Include="Util\Constants\OCC.cs" />
+    <Compile Include="Util\Constants\PaymentStatusSearch.cs" />
+    <Compile Include="Util\Constants\IncidentReceivedMethod.cs" />
+    <Compile Include="Util\Constants\InvoiceDocument.cs" />
+    <Compile Include="Util\Constants\PaymentMatchingDesc.cs" />
+    <Compile Include="Util\Constants\ProcessID.cs" />
+    <Compile Include="Util\Constants\BillingIncomeDocPrefix.cs" />
+    <Compile Include="Util\Constants\PaymentMatchingStatus.cs" />
+    <Compile Include="Util\Constants\InstallationBeforeChangeRequester.cs" />
+    <Compile Include="Util\Constants\InstallationBeforeChangeReason.cs" />
+    <Compile Include="Util\Constants\PickingListNo.cs" />
+    <Compile Include="Util\Constants\PositionCode.cs" />
+    <Compile Include="Util\Constants\PaymentSystemMethod.cs" />
+    <Compile Include="Util\Constants\RunningType.cs" />
+    <Compile Include="Util\Constants\CurrencyType.cs" />
+    <Compile Include="Util\Constants\DepositStatus.cs" />
+    <Compile Include="Util\Constants\Paid.cs" />
+    <Compile Include="Util\Constants\Issued.cs" />
+    <Compile Include="Util\Constants\SpecialCareful.cs" />
+    <Compile Include="Util\Constants\InventoryCheckingSlipStatus.cs" />
+    <Compile Include="Util\Constants\Instrument.cs" />
+    <Compile Include="Util\Constants\PaymentType.cs" />
+    <Compile Include="Util\Constants\StopBillingFlag.cs" />
+    <Compile Include="Util\Constants\UsedPaymentMethod.cs" />
+    <Compile Include="Util\Constants\ValidationImportResult.cs" />
+    <Compile Include="Util\Constants\FunctionDebtTracing.cs" />
+    <Compile Include="Util\Constants\ReportID.cs" />
+    <Compile Include="Util\Constants\DeductType.cs" />
+    <Compile Include="Util\Constants\InventoryAccountCode.cs" />
+    <Compile Include="Util\Constants\CreditTerm.cs" />
+    <Compile Include="Util\Constants\InvFormatType.cs" />
+    <Compile Include="Util\Constants\IssueRecieptTime.cs" />
+    <Compile Include="Util\Constants\LotNo.cs" />
+    <Compile Include="Util\Constants\IssueInv.cs" />
+    <Compile Include="Util\Constants\IssueInvDate.cs" />
+    <Compile Include="Util\Constants\IssueInvTime.cs" />
+    <Compile Include="Util\Constants\OfficeCode.cs" />
+    <Compile Include="Util\Constants\InventorySlipStatus.cs" />
+    <Compile Include="Util\Constants\DepartmentMaster.cs" />
+    <Compile Include="Util\Constants\LogisticFunction.cs" />
+    <Compile Include="Util\Constants\PaymentMethodType.cs" />
+    <Compile Include="Util\Constants\PaymentStatus.cs" />
+    <Compile Include="Util\Constants\PurchaseOrderType.cs" />
+    <Compile Include="Util\Constants\SaleProcessType.cs" />
+    <Compile Include="Util\Constants\NationCode.cs" />
+    <Compile Include="Util\Constants\InventoryConfig.cs" />
+    <Compile Include="Util\Constants\InstrumentArea.cs" />
+    <Compile Include="Util\Constants\SendToBillingTiming.cs" />
+    <Compile Include="Util\Constants\SeparateInvType.cs" />
+    <Compile Include="Util\Constants\ShowBankAccType.cs" />
+    <Compile Include="Util\Constants\ShowDueDate.cs" />
+    <Compile Include="Util\Constants\ShowIssueDate.cs" />
+    <Compile Include="Util\Constants\SigType.cs" />
+    <Compile Include="Util\Constants\StockInType.cs" />
+    <Compile Include="Util\Constants\RegisterAssetFlag.cs" />
+    <Compile Include="Util\Constants\TransferType.cs" />
+    <Compile Include="Util\Constants\PurchaseOrderStatus.cs" />
+    <Compile Include="Util\Constants\ShelfNo.cs" />
+    <Compile Include="Util\Constants\InstrumentLocation.cs" />
+    <Compile Include="Util\Constants\ShelfType.cs" />
+    <Compile Include="Util\Constants\SlipID.cs" />
+    <Compile Include="Util\Constants\DocLanguage.cs" />
+    <Compile Include="Util\Constants\InstallChangeReason.cs" />
+    <Compile Include="Util\Constants\InstallationBy.cs" />
+    <Compile Include="Util\Constants\CustomerReason.cs" />
+    <Compile Include="Util\Constants\LastChangeType.cs" />
+    <Compile Include="Util\Constants\SlipStatus.cs" />
+    <Compile Include="Util\Constants\StockOutType.cs" />
+    <Compile Include="Util\Constants\InstallFeeBillingType.cs" />
+    <Compile Include="Util\Constants\InteractionTypeControlChief.cs" />
+    <Compile Include="Util\Constants\InteractionTypeCorrespondent.cs" />
+    <Compile Include="Util\Constants\CompleteInstallFlag.cs" />
+    <Compile Include="Util\Constants\CompleteInstallationProcessFlag.cs" />
+    <Compile Include="Util\Constants\ContractDocStatus.cs" />
+    <Compile Include="Util\Constants\ContractEmailType.cs" />
+    <Compile Include="Util\Constants\ARRole.cs" />
+    <Compile Include="Util\Constants\ARSearchStatus.cs" />
+    <Compile Include="Util\Constants\ARSearchPeriod.cs" />
+    <Compile Include="Util\Constants\CompanyType.cs" />
+    <Compile Include="Util\Constants\ARStatus.cs" />
+    <Compile Include="Util\Constants\ContractPrefix.cs" />
+    <Compile Include="Util\Constants\ARSummaryPeriod.cs" />
+    <Compile Include="Util\Constants\ARSearchDuedate.cs" />
+    <Compile Include="Util\Constants\EmailSenderName.cs" />
+    <Compile Include="Util\Constants\Department.cs" />
+    <Compile Include="Util\Constants\IncidentInteractionType.cs" />
+    <Compile Include="Util\Constants\InstallationManagementStatus.cs" />
+    <Compile Include="Util\Constants\InstallationSlipNo.cs" />
+    <Compile Include="Util\Constants\InstallationMANo.cs" />
+    <Compile Include="Util\Constants\DateType.cs" />
+    <Compile Include="Util\Constants\DistributeType.cs" />
+    <Compile Include="Util\Constants\DocAuditResult.cs" />
+    <Compile Include="Util\Constants\EmailTemplateName.cs" />
+    <Compile Include="Util\Constants\IncidentType.cs" />
+    <Compile Include="Util\Constants\IncidentSummaryPeriod.cs" />
+    <Compile Include="Util\Constants\GroupCode.cs" />
+    <Compile Include="Util\Constants\IncidentPermissionType.cs" />
+    <Compile Include="Util\Constants\HandlingType.cs" />
+    <Compile Include="Util\Constants\IncidentSearchPeriod.cs" />
+    <Compile Include="Util\Constants\IncidentStatus.cs" />
+    <Compile Include="Util\Constants\IncidentSearchStatus.cs" />
+    <Compile Include="Util\Constants\IncidentSearchDuedate.cs" />
+    <Compile Include="Util\Constants\DocumentCode.cs" />
+    <Compile Include="Util\Constants\IncidentRole.cs" />
+    <Compile Include="Util\Constants\InteractionTypeAdministrator.cs" />
+    <Compile Include="Util\Constants\InteractionTypeChief.cs" />
+    <Compile Include="Util\Constants\InteractionTypeMax.cs" />
+    <Compile Include="Util\Constants\InventoryHeadOffice.cs" />
+    <Compile Include="Util\Constants\ModuleID.cs" />
+    <Compile Include="Util\Constants\NotifyType.cs" />
+    <Compile Include="Util\Constants\ParticularOCC.cs" />
+    <Compile Include="Util\Constants\PaymentMethod.cs" />
+    <Compile Include="Util\Constants\ProcAfterCounterBalanceType.cs" />
+    <Compile Include="Util\Constants\ProjectOwnerType.cs" />
+    <Compile Include="Util\Constants\RentalImplementType.cs" />
+    <Compile Include="Util\Constants\RelatedContractType.cs" />
+    <Compile Include="Util\Constants\MAFeeType.cs" />
+    <Compile Include="Util\Constants\RegisterMAProcessType.cs" />
+    <Compile Include="Util\Constants\MethodType.cs" />
+    <Compile Include="Util\Constants\InstallationStatus.cs" />
+    <Compile Include="Util\Constants\SaleInstallationType.cs" />
+    <Compile Include="Util\Constants\InsuranceType.cs" />
+    <Compile Include="Util\Constants\ProjectStatus.cs" />
+    <Compile Include="Util\Constants\ReceivedRate.cs" />
+    <Compile Include="Util\Constants\GenerateMAProcessType.cs" />
+    <Compile Include="Util\Constants\ProjectCode.cs" />
+    <Compile Include="Util\Constants\OCCType.cs" />
+    <Compile Include="Util\ConvertUtil.cs" />
+    <Compile Include="Util\PathUtil.cs" />
+    <Compile Include="Util\CSVImportUtil.cs" />
+    <Compile Include="Util\CSVReportUtil.cs" />
+    <Compile Include="Util\IBatchProcess.cs" />
+    <Compile Include="Util\LargeJsonResult.cs" />
+    <Compile Include="Util\ReportUtil.cs" />
+    <Compile Include="Util\TemplateUtil.cs" />
+    <Compile Include="Util\ValidatorUtil.cs" />
+    <Compile Include="Util\Common\XmlCreator.cs" />
+    <Compile Include="Util\Constants\AcquisitionType.cs" />
+    <Compile Include="Util\Constants\ActionType.cs" />
+    <Compile Include="Util\Constants\ApprovalStatus.cs" />
+    <Compile Include="Util\Constants\Common.cs" />
+    <Compile Include="Util\Constants\ContractStatus.cs" />
+    <Compile Include="Util\Constants\ContractTransferStatus.cs" />
+    <Compile Include="Util\Constants\ConfigName.cs" />
+    <Compile Include="Util\Constants\BatchStatus.cs" />
+    <Compile Include="Util\Constants\ContractType.cs" />
+    <Compile Include="Util\Constants\ARInteractionType.cs" />
+    <Compile Include="Util\Constants\ARApproveNo.cs" />
+    <Compile Include="Util\Constants\ARRelevant.cs" />
+    <Compile Include="Util\Constants\ARNo.cs" />
+    <Compile Include="Util\Constants\BillingTemp.cs" />
+    <Compile Include="Util\Constants\ExpansionType.cs" />
+    <Compile Include="Util\Constants\IncidentRelevant.cs" />
+    <Compile Include="Util\Constants\IncidentNo.cs" />
+    <Compile Include="Util\Constants\LineUpType.cs" />
+    <Compile Include="Util\Constants\LogType.cs" />
+    <Compile Include="Util\Constants\RelationType.cs" />
+    <Compile Include="Util\Constants\CustRoleType.cs" />
+    <Compile Include="Util\Constants\EventType.cs" />
+    <Compile Include="Util\Constants\CustomerCode.cs" />
+    <Compile Include="Util\Constants\FunctionLogistic.cs" />
+    <Compile Include="Util\Constants\FunctionBilling.cs" />
+    <Compile Include="Util\Constants\FunctionSale.cs" />
+    <Compile Include="Util\Constants\DocumentType.cs" />
+    <Compile Include="Util\Constants\CustomerType.cs" />
+    <Compile Include="Util\Constants\CustomerStatus.cs" />
+    <Compile Include="Util\Constants\FlagType.cs" />
+    <Compile Include="Util\Constants\FunctionQuotation.cs" />
+    <Compile Include="Util\Constants\FunctionSecurity.cs" />
+    <Compile Include="Util\Constants\InstrumentType.cs" />
+    <Compile Include="Util\Constants\LogMessage.cs" />
+    <Compile Include="Util\Constants\MaintenanceTargetProductType.cs" />
+    <Compile Include="Util\Constants\MiscType.cs" />
+    <Compile Include="Util\Constants\CustPartType.cs" />
+    <Compile Include="Util\Constants\FunctionID.cs" />
+    <Compile Include="Util\Constants\LockStatus.cs" />
+    <Compile Include="Util\Constants\LockStyle.cs" />
+    <Compile Include="Util\Constants\NameCode.cs" />
+    <Compile Include="Util\Constants\ProductType.cs" />
+    <Compile Include="Util\Constants\Quotation.cs" />
+    <Compile Include="Util\Constants\RentalChangeType.cs" />
+    <Compile Include="Util\Constants\RentalInstallationType.cs" />
+    <Compile Include="Util\Constants\SaleChangeType.cs" />
+    <Compile Include="Util\Constants\SaleProcessManageStatus.cs" />
+    <Compile Include="Util\Constants\ScreenID.cs" />
+    <Compile Include="Util\Constants\ServiceType.cs" />
+    <Compile Include="Util\Constants\SiteCode.cs" />
+    <Compile Include="Util\Constants\StartType.cs" />
+    <Compile Include="Util\Constants\TableName.cs" />
+    <Compile Include="Util\Constants\TargetCodeType.cs" />
+    <Compile Include="Util\Constants\TransactionType.cs" />
+    <Compile Include="Util\ConstantUtil.cs" />
+    <Compile Include="Models\dsTransDataModel.cs" />
+    <Compile Include="Models\LanguageModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\MessageUtil.cs" />
+    <Compile Include="Util\XmlResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_ExtLib\PDFSplitMergeLib.tlb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="_ExtLib\Common.Logging.dll" />
+    <Content Include="_ExtLib\NLog.dll" />
+    <Content Include="_ExtLib\PDFSplitMergeLib.dll" />
+    <Content Include="_ExtLib\Quartz.dll" />
+    <None Include="ConstantValues.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="_ExtLib\itextsharp.dll" />
+    <Content Include="_ExtLib\Castle.Core.dll" />
+    <Content Include="_ExtLib\Castle.Windsor.dll" />
+    <Content Include="_ExtLib\CSI.WindsorHelper.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

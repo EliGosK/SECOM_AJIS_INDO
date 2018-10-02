@@ -1,0 +1,359 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Income.Helpers;
+@using SECOM_AJIS.Presentation.Income.Controllers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    // template width please don't change 
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "130px";
+    ViewBag.LabelCol3Width = "100px";
+    ViewBag.ObjectCol1Width = "120px";
+    ViewBag.ObjectCol2Width = "140px";
+    ViewBag.ObjectCol3Width = "220px";
+    ViewBag.ObjectCol4Width = "550px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+
+    ViewBag.lbWidth = "220px";  /* ViewBag.LabelWidth */
+    ViewBag.lbWidth2 = "234px";
+    ViewBag.ObjectCol1Div = "140px";
+    ViewBag.Div1Width = "160px";  
+
+}
+@section page_header{
+
+<script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+ 
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/MessageDialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Income/Dialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Master/Dialog.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/Dialog.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Income/ICS030.js")"></script>
+    <script type="text/javascript">
+        ICS030_ViewBag = {
+            lblTotal: "@Resources.ICS030.lblTotal",
+            C_CURRENCY_LOCAL: '@CurrencyUtil.C_CURRENCY_LOCAL',
+            C_CURRENCY_US: '@CurrencyUtil.C_CURRENCY_US'
+        };
+    </script>
+}
+
+
+    <form id="form1" action="#">
+    <!-- Form 1 -->
+
+        <!-- divDebtActualSummary -->
+        <div class="main-table" id="divDebtActualSummary">
+            <div class="table-header">
+                @Resources.ICS030.lblHeaderDebtActualSummary
+            </div>
+
+            <div id="divDebtActualSummaryBody">
+                <div class="usr-row">
+                    <div align="center">
+ 
+                            @Resources.ICS030.lblMonthYear
+                            @Html.MonthYearComboBox("cboMonthYear", new { style = "width:180px;" })
+ 
+                    </div>
+                </div>
+            </div>
+
+            <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+        </div>
+
+
+        <!-- divDebtActualTable -->
+        <div class="main-table" id="divDebtActualTable" style="display:none;">
+            <div class="table-header">
+                 @Resources.ICS030.lblHeaderDebtActualTable
+            </div>
+
+            <div id="divDebtActualTableBody">
+                <div class="usr-row">
+                    <div id="ICS030_DebtActualTableGrid" style="width: 99% ; margin: 0px auto; margin-bottom: 4px; "></div>
+                </div>
+            </div>
+
+            <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+        </div>
+
+        <!-- divListOfUnPaidBillingTargetByBillingOffice -->
+        <div class="main-table" id="divListOfUnPaidBillingTargetByBillingOffice" style="display:none;">
+            <div class="table-header">
+                @Resources.ICS030.lblHeaderListOfUnPaidBillingTargetByBillingOffice
+            </div>
+
+            <div id="divListOfUnPaidBillingTargetByBillingOfficeBody">
+
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.ICS030.lblUnPaidBillingBillingOffice
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                        @Html.CommonTextBox("txtUnPaidBillingBillingOffice", null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                    <div class="usr-label" style="width:160px;">  
+                        @Resources.ICS030.lblUnPaidBillingBillingOfficeCode
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;"> 
+                        @Html.CommonTextBox("txtUnPaidBillingBillingOfficeCode", null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                    <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                    </div>
+                </div>
+                <div class="usr-row">
+
+                </div>
+                <div class="usr-row">
+                    <div id="ICS030_ListOfUnPaidBillingTargetByBillingOfficeGrid" style="width: 99% ; margin-left: 4px;"></div>
+                </div>
+            </div>
+
+            <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+        </div>
+
+        <!-- divListOfUnPaidInvoiceByBillingTarget -->
+        <div class="main-table" id="divListOfUnPaidInvoiceByBillingTarget" style="display:none;">
+            <div class="table-header">
+                @Resources.ICS030.lblHeaderListOfUnPaidInvoiceByBillingTarget
+            </div>
+
+            <div id="divListOfUnPaidInvoiceByBillingTargetBody">
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.ICS030.lblUnPaidInvoiceBillingTargetCode
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                        @Html.CommonTextBox("txtUnPaidInvoiceBillingTargetCode", null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                    <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+                        @Resources.ICS030.lblUnPaidInvoiceBillingOffice
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+                        @Html.CommonTextBox("txtUnPaidInvoiceBillingOffice", null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                    <div class="usr-label" style="width:265px;">
+                         @Resources.ICS030.lblUnPaidInvoiceBillingOfficeCode
+                    </div>
+                    <div class="usr-object" style="width:60px;">
+                         @Html.CommonTextBox("txtUnPaidInvoiceBillingOfficeCode", null, new { style = "width:50px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.ICS030.lblUnPaidInvoiceBillingClientNameEN
+                    </div>
+                    <div class="usr-object" style="width:730px;">
+                        @Html.CommonTextBox("txtUnPaidInvoiceBillingClientNameEN", null, new { style = "width:715px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                         @Resources.ICS030.lblUnPaidInvoiceBillingClientNameLC
+                    </div>
+                    <div class="usr-object" style="width:730px;">
+                         @Html.CommonTextBox("txtUnPaidInvoiceBillingClientNameLC", null, new { style = "width:715px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.ICS030.lblUnPaidInvoiceBillingClientAddressEN
+                    </div>
+                    <div class="usr-object" style="width:730px;">
+                         @Html.CommonTextBox("txtUnPaidInvoiceBillingClientAddressEN", null, new { style = "width:715px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.ICS030.lblUnPaidInvoiceBillingClientAddressLC
+                    </div>
+                    <div class="usr-object" style="width:730px;">
+                         @Html.CommonTextBox("txtUnPaidInvoiceBillingClientAddressLC", null, new { style = "width:715px;", @readonly = true })
+                    </div>
+                </div>
+
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.ICS030.lblUnPaidInvoiceBillingClientTelNo
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                        @Html.CommonTextBox("txtUnPaidInvoiceBillingClientTelNo", null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                    <div class="usr-label" style="width:440px;">
+                        @Resources.ICS030.lblUnPaidInvoiceBillingClientContactPerson
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+                        @Html.CommonTextBox("txtUnPaidInvoiceBillingClientContactPerson", null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                </div>
+                <div style="height:30px;">
+                    &nbsp
+                </div>
+                <div class="usr-row">
+                    <div style="width:@ViewBag.LabelCol1Width; font-size: 12pt; font-weight: bold; text-align: right; float:left; margin-right:5px; height:100%;  margin-top: 3px; line-height: 14px; padding-bottom: 4px;">
+                        @Resources.ICS030.lblUnPaidInvoiceTotalUnpaidAmount
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.SubTableWidth;">
+                         @*@Html.NumericTextBoxWithUnit("txtUnPaidInvoiceTotalUnpaidAmount", null, new { style = "width:150px;", @readonly = true }, TextBoxHelper.NUMERIC_UNIT_TYPE.CURRENCY)*@
+                        @Html.NumericTextBoxWithMultipleCurrency("txtUnPaidInvoiceTotalUnpaidAmount", null, null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div style="width:@ViewBag.LabelCol1Width; font-size: 12pt; font-weight: bold; text-align: right; float:left; margin-right:5px; height:100%;  margin-top: 3px; line-height: 14px; padding-bottom: 4px;">
+                        @*@Resources.ICS030.lblUnPaidInvoiceTotalUnpaidAmount*@
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.SubTableWidth;">
+                        @Html.NumericTextBoxWithMultipleCurrency("txtUnPaidInvoiceTotalUnpaidAmountUsd", null, null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    &nbsp
+                </div>
+                <div class="usr-row">
+                </div>
+                <div class="usr-row">
+                    <div id="ICS030_ListOfUnPaidInvoiceByBillingTargetGrid" style="width: 99% ; margin-left: 4px;"></div>
+                </div>
+            </div>
+
+            <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+        </div>
+
+
+        <!-- divListOfUnPaidByBillingTarget -->
+        <div class="main-table" id="divListOfUnPaidByBillingTarget" style="display:none;">
+
+            <div class="table-header" id="divListOfUnPaidByBillingTargetLabel1">
+                @Resources.ICS030.lblHeaderListOfUnPaidByBillingTarget
+            </div>
+            <div class="table-header" id="divListOfUnPaidByBillingTargetLabel2">
+                @Resources.ICS030.lblHeaderListOfUnPaidBySelectedInvoice
+            </div>
+
+            <div id="divListOfUnPaidByBillingTargetBody">
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.ICS030.lblUnPaidByBillingBillingTargetCode
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                        @Html.CommonTextBox("txtUnPaidByBillingBillingTargetCode", null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                    <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+                        @Resources.ICS030.lblUnPaidByBillingBillingOffice
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+                        @Html.CommonTextBox("txtUnPaidByBillingBillingOffice", null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                    <div class="usr-label" style="width:265px;">
+                         @Resources.ICS030.lblUnPaidByBillingBillingOfficeCode
+                    </div>
+                    <div class="usr-object" style="width:60px;">
+                         @Html.CommonTextBox("txtUnPaidByBillingBillingOfficeCode", null, new { style = "width:50px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.ICS030.lblUnPaidByBillingBillingClientNameEN
+                    </div>
+                    <div class="usr-object" style="width:730px;">
+                        @Html.CommonTextBox("txtUnPaidByBillingBillingClientNameEN", null, new { style = "width:715px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                         @Resources.ICS030.lblUnPaidByBillingBillingClientNameLC
+                    </div>
+                    <div class="usr-object" style="width:730px;">
+                         @Html.CommonTextBox("txtUnPaidByBillingBillingClientNameLC", null, new { style = "width:715px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.ICS030.lblUnPaidByBillingBillingClientAddressEN
+                    </div>
+                    <div class="usr-object" style="width:730px;">
+                         @Html.CommonTextBox("txtUnPaidByBillingBillingClientAddressEN", null, new { style = "width:715px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.ICS030.lblUnPaidByBillingBillingClientAddressLC
+                    </div>
+                    <div class="usr-object" style="width:730px;">
+                         @Html.CommonTextBox("txtUnPaidByBillingBillingClientAddressLC", null, new { style = "width:715px;", @readonly = true })
+                    </div>
+                </div>
+
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.ICS030.lblUnPaidByBillingBillingClientTelNo
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                        @Html.CommonTextBox("txtUnPaidByBillingBillingClientTelNo", null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                    <div class="usr-label" style="width:440px;">
+                        @Resources.ICS030.lblUnPaidByBillingBillingClientContactPerson
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+                        @Html.CommonTextBox("txtUnPaidByBillingBillingClientContactPerson", null, new { style = "width:150px;", @readonly = true })
+                    </div>
+ 
+                </div>
+                <div style="height:30px;">
+                    &nbsp
+                </div>
+                <div class="usr-row">
+                    <div style="width:@ViewBag.LabelCol1Width; font-size: 12pt; font-weight: bold; text-align: right; float:left; margin-right:5px; height:100%;  margin-top: 3px; line-height: 14px; padding-bottom: 4px;">
+                        @Resources.ICS030.lblUnPaidByBillingTotalUnpaidAmount
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.SubTableWidth;">
+                         @*@Html.NumericTextBoxWithUnit("txtUnPaidByBillingTotalUnpaidAmount", null, new { style = "width:150px;", @readonly = true }, TextBoxHelper.NUMERIC_UNIT_TYPE.CURRENCY)*@
+                        @Html.NumericTextBoxWithMultipleCurrency("txtUnPaidByBillingTotalUnpaidAmount", null, null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div style="width:@ViewBag.LabelCol1Width; font-size: 12pt; font-weight: bold; text-align: right; float:left; margin-right:5px; height:100%;  margin-top: 3px; line-height: 14px; padding-bottom: 4px;">
+                        @*@Resources.ICS030.lblUnPaidByBillingTotalUnpaidAmount*@
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.SubTableWidth;">
+                        @Html.NumericTextBoxWithMultipleCurrency("txtUnPaidByBillingTotalUnpaidAmountUsd", null, null, new { style = "width:150px;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    &nbsp
+                </div>
+                <div class="usr-row">
+                </div>
+                <div class="usr-row">
+                     <img alt='FirstFeeDetail' src='../../Content/images/icon/firstFee.png' style='margin-top:0px;' /> = @Resources.ICS030.lblIconFirstFeeDetail,
+                     <img alt='CreditNoteIssueDetail' src='../../Content/images/icon/creditNote.png' style='margin-top:0px;' /> = @Resources.ICS030.lblIconCreditNoteIssuedDetail
+                </div>
+                <div class="usr-row">
+                    <div id="ICS030_ListOfUnPaidByBillingTargetGrid" style="width: 99% ; margin-left: 4px;"></div>
+                </div>
+            </div>
+
+            <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+        </div>
+
+    <!-- End Form 1 -->
+    </form>

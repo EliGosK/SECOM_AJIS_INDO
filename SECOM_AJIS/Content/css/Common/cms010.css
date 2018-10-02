@@ -1,0 +1,37 @@
+#LoginPanel
+{
+    background-color: #00257E;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    margin: 250px auto auto;
+    padding: 10px;
+    width: 268px;
+}
+#LoginPanel .usr-row
+{
+    clear: both;
+    width: 100%;
+    height: 100%;
+    padding-top: 2px;
+    font-size:12px;
+}
+#LoginPanel .usr-object
+{
+    float: left;
+    height: 100%;
+    word-wrap: break-word;
+}
+#LoginPanel .usr-label
+{
+    text-align: right;
+    float: left;
+    margin-right: 5px;
+    height: 100%;
+    line-height: 13px;
+}
+#LoginPanel .usr-clear-style
+{
+    clear:both;
+    width:100%;
+    height:0px;
+}

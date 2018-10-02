@@ -1,0 +1,42 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.ObjectCol1Width = "140px";
+}
+<script type="text/javascript">
+    C_CURRENCY_LOCAL =  '@SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL'
+</script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS030/QUS030_13.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("DisabledProductPrice", (bool)ViewBag.DisabledProductPrice)
+    @Html.Hidden("DisabledInstallationFee", (bool)ViewBag.DisabledInstallationFee)
+    @Html.Hidden("DisabledProductPriceCurrencyType", (bool)ViewBag.DisabledProductPriceCurrencyType)
+    @Html.Hidden("DisabledInstallationFeeCurrencyType", (bool)ViewBag.DisabledInstallationFeeCurrencyType)
+</div>
+<form id="formFeeInfo_Sale">
+    <div id="divFeeInfo_Sale" class="main-table">
+        <div class="table-header">
+            @Resources.QUS030.lblFeeInformation_Sale
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblProductPrice
+            </div>
+            <div class="usr-object" style="margin-right:5px;">
+                @Html.NumericTextBoxWithMultipleCurrency("ProductPrice", (string)@ViewBag.ProductPrice, (string)@ViewBag.ProductPriceCurrencyType, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblInstallationFee
+            </div>
+            <div class="usr-object" style="margin-right:5px;">
+                @Html.NumericTextBoxWithMultipleCurrency("InstallationFee", (string)@ViewBag.InstallationFee, (string)@ViewBag.InstallationFeeCurrencyType, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</form>

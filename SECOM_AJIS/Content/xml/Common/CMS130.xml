@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column> <!--headerNo-->
+
+    <column id="SubcontractorCode" width="170" type="ro" align="left" sort="str_custom">headerSubcontractor_code</column>
+    <column id="SubContractorNameEN_SubCont" width="360" type="ro" align="left" sort="str_custom">headerSubcontractor_English</column>
+    <column id="SubContractorNameLC_SubCont" width="*" type="ro" align="left" sort="str_custom">headerSubcontractor_Local</column>
+  
+    <column id="Object" width="0" type="ro" align="center"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+	  <column id="No" width="30" type="ro" align="center" sort="str_custom">headerNo</column>
+	  <column id="ContractQuatationCode" width="95" type="ro" align="left" sort="str_custom">headerContractQuatationCode</column>
+	  <column id="OCCAlphabet" width="70" type="ro" align="left" sort="str_custom">headerOCCAlphabet</column>    
+	  <column id="ContractTarget" width="145" type="ro" align="left" sort="str_custom">headerContractTarget</column>
+	  <column id="Site" width="145" type="ro" align="left" sort="str_custom">headerSite</column>
+	  <column id="ContractDocOCC" width="40" type="ro" align="left" sort="str_custom">headerContractDocumentOCC</column>    
+	  
+    <!--<column id="DocumentName" width="75" type="ro" align="left" sort="str_custom">headerDocumentName</column>
+	  <column id="DocStatusName" width="75" type="ro" align="left" sort="str_custom">headerDocumentStatus</column>
+	  <column id="DocAuditResultName" width="75" type="ro" align="left" sort="str_custom">headerDocumentAuditResult</column>-->
+    <column id="Document" width="*" type="ro" align="left" sort="str_custom">headerDocument</column>
+    
+	  <column id="Office" width="110" type="ro" align="left" sort="str_custom">headerOffice</column>	  
+	  <column id="NegotiationStaffEmpName" width="85" type="ro" align="left" sort="str_custom">headerNegotiationStaff1Name</column>		  
+	  <column id="Select" width="30" type="link" align="center" sort="na">headerSelect</column>
+	  <column id="IsEnableSelect" width="0" type="ro" hidden="true"></column>
+	  <column id="DocID" width="0" type="ro" hidden="true"></column>
+	  <column id="DocumentCode" width="0" type="ro" hidden="true"></column>
+	  <settings>
+		  <colwidth>px</colwidth>
+	  </settings>
+  </head>
+</rows>

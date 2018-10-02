@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="btnCancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+	<data name="btnClear" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+	<data name="btnConfirm" xml:space="preserve">
+    <value>確定</value>
+  </data>
+	<data name="btnNew" xml:space="preserve">
+    <value>新規</value>
+  </data>
+	<data name="btnSearch" xml:space="preserve">
+    <value>検索</value>
+  </data>
+	<data name="lblAddUnitPrice" xml:space="preserve">
+    <value>増設工事単価</value>
+  </data>
+	<data name="lblApproveNo" xml:space="preserve">
+    <value>決裁番号</value>
+  </data>
+	<data name="lblController" xml:space="preserve">
+    <value>コントローラー区分</value>
+  </data>
+	<data name="lblDefaultSupplier" xml:space="preserve">
+    <value>デフォルト仕入先</value>
+  </data>
+	<data name="lblDescription" xml:space="preserve">
+    <value>備考</value>
+  </data>
+	<data name="lblExpansionType" xml:space="preserve">
+    <value>機器展開種類</value>
+  </data>
+	<data name="lblInstallTime" xml:space="preserve">
+    <value>工事時間</value>
+  </data>
+	<data name="lblInstallUnitPrice" xml:space="preserve">
+    <value>工事単価</value>
+  </data>
+	<data name="lblInstrumentCategory" xml:space="preserve">
+    <value>機器カテゴリー</value>
+  </data>
+	<data name="lblInstrumentCode" xml:space="preserve">
+    <value>機器コード</value>
+  </data>
+	<data name="lblInstrumentFlag" xml:space="preserve">
+    <value>機器区分</value>
+  </data>
+	<data name="lblInstrumentName" xml:space="preserve">
+    <value>機器名称</value>
+  </data>
+	<data name="lblInstrumentType" xml:space="preserve">
+    <value>機器種類区分</value>
+  </data>
+	<data name="lblLineUpType" xml:space="preserve">
+    <value>採用区分</value>
+  </data>
+	<data name="lblMaintenance" xml:space="preserve">
+    <value>機能維持要保守区分</value>
+  </data>
+	<data name="lblMaintianInstrument" xml:space="preserve">
+    <value>機器情報メンテナンス</value>
+  </data>
+	<data name="lblMaker" xml:space="preserve">
+    <value>メーカー</value>
+  </data>
+	<data name="lblMoveUnitPrice" xml:space="preserve">
+    <value>移設工事単価</value>
+  </data>
+	<data name="lblName" xml:space="preserve">
+    <value>名称</value>
+  </data>
+	<data name="lblNameForCustEng" xml:space="preserve">
+    <value>顧客向け名称（英語）</value>
+  </data>
+	<data name="lblNameForCustLocal" xml:space="preserve">
+    <value>顧客向け名称（現地語）</value>
+  </data>
+	<data name="lblNameForSupplier" xml:space="preserve">
+    <value>仕入先向け名称</value>
+  </data>
+	<data name="lblNameInfo" xml:space="preserve">
+    <value>名称情報</value>
+  </data>
+	<data name="lblNumOfInstallStaff" xml:space="preserve">
+    <value>工事人員数</value>
+  </data>
+	<data name="lblOtherInfo" xml:space="preserve">
+    <value>その他の情報</value>
+  </data>
+	<data name="lblParentInstrumentCode" xml:space="preserve">
+    <value>親機器コード</value>
+  </data>
+	<data name="lblPriceInfo" xml:space="preserve">
+    <value>単価情報</value>
+  </data>
+	<data name="lblRatioWorkerTime" xml:space="preserve">
+    <value>労働者／ 時間の比率</value>
+  </data>
+	<data name="lblRegistrationDate" xml:space="preserve">
+    <value>登録日</value>
+  </data>
+	<data name="lblRemUnitPrice" xml:space="preserve">
+    <value>撤去工事単価</value>
+  </data>
+	<data name="lblRental" xml:space="preserve">
+    <value>アラーム</value>
+  </data>
+	<data name="lblRentUnitPrice" xml:space="preserve">
+    <value>レンタル単価</value>
+  </data>
+	<data name="lblResultList" xml:space="preserve">
+    <value>検索結果一覧</value>
+  </data>
+	<data name="lblSale" xml:space="preserve">
+    <value>売却</value>
+  </data>
+	<data name="lblSaleUnitPrice" xml:space="preserve">
+    <value>売却単価</value>
+  </data>
+	<data name="lblSearchInstrument" xml:space="preserve">
+    <value>機器情報検索</value>
+  </data>
+	<data name="lblZeroBaht" xml:space="preserve">
+    <value>入庫時0バーツ登録許可フラグ</value>
+  </data>
+	<data name="headerDetail" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;編集&lt;/div&gt;</value>
+  </data>
+	<data name="headerInstrumentCat1" xml:space="preserve">
+    <value>機器カテゴリー1</value>
+  </data>
+	<data name="headerInstrumentCat2" xml:space="preserve">
+    <value>機器カテゴリー2</value>
+  </data>
+	<data name="headerInstrumentCat3" xml:space="preserve">
+    <value>機器カテゴリー3</value>
+  </data>
+	<data name="headerInstrumentCode" xml:space="preserve">
+    <value>機器コード</value>
+  </data>
+	<data name="headerInstrumentName" xml:space="preserve">
+    <value>機器名称</value>
+  </data>
+	<data name="headerInstrumentNameForSupp" xml:space="preserve">
+    <value>仕入先向け機器名称</value>
+  </data>
+	<data name="headerLineUpType" xml:space="preserve">
+    <value>採用区分</value>
+  </data>
+	<data name="lblMain" xml:space="preserve">
+    <value>主要機器</value>
+  </data>
+	<data name="lblMinuite" xml:space="preserve">
+    <value>分</value>
+  </data>
+	<data name="lblOption" xml:space="preserve">
+    <value>付属機器</value>
+  </data>
+	<data name="lblAllowFor" xml:space="preserve">
+		<value>商品種類</value>
+	</data>
+</root>

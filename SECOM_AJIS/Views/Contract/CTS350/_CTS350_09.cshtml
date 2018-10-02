@@ -1,0 +1,23 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+
+<div id="divResultRegister" class="main-table">
+    <div class="table-header">@Resources.CTS350.lblResultRegisterAR</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS350.lblRequestNo</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("RequestNo", null, new { style = "width:150px;", @readonly = true })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnViewEditARDetail", (string)@Resources.CTS350.btnViewEditARDetail, new { style = "width:200px;", @type = "button" })
+            @Html.CommonButton("btnRegisterNextAR", (string)@Resources.CTS350.btnRegisterNextAR, new { style = "width:250px;", @type = "button" })
+            @Html.Hidden("hidViewARID")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS350.lblStatus</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("ARStatus", null, new { style = "width:610px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>

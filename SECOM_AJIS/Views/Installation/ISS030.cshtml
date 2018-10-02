@@ -1,0 +1,237 @@
+﻿@using SECOM_AJIS.DataEntity.Installation
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Installation.Controllers 
+@using SECOM_AJIS.Common.Util.ConstantValue
+@using SECOM_AJIS.DataEntity.Common
+@using CSI.WindsorHelper
+@{
+    
+ 
+
+    ViewBag.lbWidth = "220px";  /* ViewBag.LabelWidth */
+    ViewBag.lbWidth2 = "260px";  
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectCol4Width = "180px";
+    ViewBag.ObjectColMergeWidth = "720px";
+    ViewBag.headText2 = "260px";  
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+
+    ViewBag.C_RENTAL_INSTALL_TYPE_NEW = RentalInstallationType.C_RENTAL_INSTALL_TYPE_NEW;
+    ViewBag.C_SALE_INSTALL_TYPE_NEW = SaleInstallationType.C_SALE_INSTALL_TYPE_NEW;
+    ViewBag.C_CUSTOMER_REASON_NEW_WORK = CustomerReason.C_CUSTOMER_REASON_NEW_WORK;
+    ViewBag.C_SERVICE_TYPE_RENTAL = ServiceType.C_SERVICE_TYPE_RENTAL;
+    ViewBag.C_SERVICE_TYPE_SALE = ServiceType.C_SERVICE_TYPE_SALE;
+    ViewBag.C_CONTRACT_STATUS_BEF_START = ContractStatus.C_CONTRACT_STATUS_BEF_START;
+    ViewBag.C_CUSTOMER_REASON = MiscType.C_CUSTOMER_REASON;
+    ViewBag.C_SECOM_REASON = MiscType.C_SECOM_REASON;
+    ViewBag.C_LINE_UP_TYPE_STOP_SALE = LineUpType.C_LINE_UP_TYPE_STOP_SALE;
+    ViewBag.C_LINE_UP_TYPE_LOGICAL_DELETE = LineUpType.C_LINE_UP_TYPE_LOGICAL_DELETE;
+    ViewBag.C_INST_TYPE_GENERAL = InstrumentType.C_INST_TYPE_GENERAL;
+    ViewBag.C_EXPANSION_TYPE_PARENT = ExpansionType.C_EXPANSION_TYPE_PARENT;
+    ViewBag.C_EXPANSION_TYPE_CHILD = ExpansionType.C_EXPANSION_TYPE_CHILD;  
+    
+    ViewBag.C_RENTAL_INSTALL_TYPE_CHANGE_WIRING = RentalInstallationType.C_RENTAL_INSTALL_TYPE_CHANGE_WIRING;
+    ViewBag.C_RENTAL_INSTALL_TYPE_CHANGEPLAN_AFTER_NEW = RentalInstallationType.C_RENTAL_INSTALL_TYPE_CHANGEPLAN_AFTER_NEW;
+    ViewBag.C_RENTAL_INSTALL_TYPE_CHANGEPLAN_NEW = RentalInstallationType.C_RENTAL_INSTALL_TYPE_CHANGEPLAN_NEW;
+    ViewBag.C_RENTAL_INSTALL_TYPE_MAINTENANCE_EXCHANGE = RentalInstallationType.C_RENTAL_INSTALL_TYPE_MAINTENANCE_EXCHANGE;
+    ViewBag.C_RENTAL_INSTALL_TYPE_MOVE = RentalInstallationType.C_RENTAL_INSTALL_TYPE_MOVE;
+    ViewBag.C_RENTAL_INSTALL_TYPE_NEW = RentalInstallationType.C_RENTAL_INSTALL_TYPE_NEW;
+    ViewBag.C_RENTAL_INSTALL_TYPE_PERIODICAL_MAINTENANCE = RentalInstallationType.C_RENTAL_INSTALL_TYPE_PERIODICAL_MAINTENANCE;
+    ViewBag.C_RENTAL_INSTALL_TYPE_REMOVE_ALL = RentalInstallationType.C_RENTAL_INSTALL_TYPE_REMOVE_ALL;
+    ViewBag.C_RENTAL_INSTALL_TYPE_REMOVE_DURING_STOP_PARTIAL = RentalInstallationType.C_RENTAL_INSTALL_TYPE_REMOVE_DURING_STOP_PARTIAL;
+    ViewBag.C_RENTAL_INSTALL_TYPE_REMOVE_DURING_STOP_REMOVE_ALL = RentalInstallationType.C_RENTAL_INSTALL_TYPE_REMOVE_DURING_STOP_REMOVE_ALL;
+    
+    ViewBag.C_SALE_INSTALL_TYPE_ADD = SaleInstallationType.C_SALE_INSTALL_TYPE_ADD;
+    ViewBag.C_SALE_INSTALL_TYPE_CHANGE_WIRING = SaleInstallationType.C_SALE_INSTALL_TYPE_CHANGE_WIRING;
+    ViewBag.C_SALE_INSTALL_TYPE_MAINTENANCE_EXCHANGE = SaleInstallationType.C_SALE_INSTALL_TYPE_MAINTENANCE_EXCHANGE;
+    ViewBag.C_SALE_INSTALL_TYPE_MOVE = SaleInstallationType.C_SALE_INSTALL_TYPE_MOVE; 
+    ViewBag.C_SALE_INSTALL_TYPE_NEW = SaleInstallationType.C_SALE_INSTALL_TYPE_NEW;
+    ViewBag.C_SALE_INSTALL_TYPE_PARTIAL_REMOVE = SaleInstallationType.C_SALE_INSTALL_TYPE_PARTIAL_REMOVE;
+    ViewBag.C_SALE_INSTALL_TYPE_REMOVE_ALL = SaleInstallationType.C_SALE_INSTALL_TYPE_REMOVE_ALL;
+    ViewBag.C_LAST_CHANGE_TYPE_CHANGE_PLAN = LastChangeType.C_LAST_CHANGE_TYPE_CHANGE_PLAN;
+    ViewBag.C_RENTAL_CHANGE_TYPE_PLAN_CHANGE = RentalChangeType.C_RENTAL_CHANGE_TYPE_PLAN_CHANGE;    
+    ViewBag.C_LINE_UP_TYPE_ONE_TIME = LineUpType.C_LINE_UP_TYPE_ONE_TIME;
+    ViewBag.C_LINE_UP_TYPE_TEMPORARY = LineUpType.C_LINE_UP_TYPE_TEMPORARY;
+    ViewBag.C_SLIP_STATUS_NOT_STOCK_OUT = SlipStatus.C_SLIP_STATUS_NOT_STOCK_OUT;
+    ViewBag.C_SLIP_STATUS_STOCK_OUT = SlipStatus.C_SLIP_STATUS_STOCK_OUT;
+    ViewBag.C_SLIP_STATUS_PARTIAL_STOCK_OUT = SlipStatus.C_SLIP_STATUS_PARTIAL_STOCK_OUT;
+    ViewBag.C_INSTALL_CHANGE_REASON_CUS = InstallChangeReason.C_INSTALL_CHANGE_REASON_CUS;
+    ViewBag.C_INSTALL_CHANGE_REASON_SECOM = InstallChangeReason.C_INSTALL_CHANGE_REASON_SECOM;
+    ViewBag.C_INSTALLATION_BY_OTHER = InstallationBy.C_INSTALLATION_BY_OTHER;
+    ViewBag.C_CUSTOMER_REASON_OTHER = CustomerReason.C_CUSTOMER_REASON_OTHER;
+
+
+    ViewBag.C_FLAG_ON = FlagType.C_FLAG_ON;
+    ViewBag.C_FLAG_OFF = FlagType.C_FLAG_OFF;
+
+    ViewBag.C_SALE_CHANGE_TYPE_NEW_SALE = SaleChangeType.C_SALE_CHANGE_TYPE_NEW_SALE;
+    ViewBag.C_SALE_CHANGE_TYPE_ADD_SALE = SaleChangeType.C_SALE_CHANGE_TYPE_ADD_SALE;
+
+
+    ICommonHandler chandler = ServiceContainer.GetService<ICommonHandler>() as ICommonHandler;
+    List<doSystemConfig> lst = chandler.GetSystemConfig("EmailSuffix");
+    if (lst.Count > 0)
+    {
+        ViewBag.EmailSuffix = lst[0].ConfigValue;
+    }
+
+    ViewBag.lblEmailAddress = Resources.ISS030.lblEmailNoticeTarget;
+    
+    ViewBag.C_RENTAL_CHANGE_TYPE_CANCEL = RentalChangeType.C_RENTAL_CHANGE_TYPE_CANCEL;
+    ViewBag.C_RENTAL_CHANGE_TYPE_STOP = RentalChangeType.C_RENTAL_CHANGE_TYPE_STOP;
+    ViewBag.C_RENTAL_CHANGE_TYPE_CHANGE_INSTRU_DURING_STOP = RentalChangeType.C_RENTAL_CHANGE_TYPE_CHANGE_INSTRU_DURING_STOP;
+    ViewBag.C_RENTAL_CHANGE_TYPE_CANCEL_BEFORE_START = RentalChangeType.C_RENTAL_CHANGE_TYPE_CANCEL_BEFORE_START;
+ }
+
+@section page_header{
+
+<script type="text/javascript" >
+     var _attach_k = "@ViewBag.AttachKey";
+    var C_RENTAL_INSTALL_TYPE_NEW = "@ViewBag.C_RENTAL_INSTALL_TYPE_NEW";
+    var C_SALE_INSTALL_TYPE_NEW = "@ViewBag.C_SALE_INSTALL_TYPE_NEW";
+    var C_CUSTOMER_REASON_NEW_WORK = "@ViewBag.C_CUSTOMER_REASON_NEW_WORK";
+    var C_SERVICE_TYPE_RENTAL = "@ServiceType.C_SERVICE_TYPE_RENTAL";
+    var C_SERVICE_TYPE_SALE = "@ServiceType.C_SERVICE_TYPE_SALE";
+    var C_CONTRACT_STATUS_BEF_START = "@ViewBag.C_CONTRACT_STATUS_BEF_START";
+    var C_CUSTOMER_REASON = "@ViewBag.C_CUSTOMER_REASON";
+    var C_SECOM_REASON = "@ViewBag.C_SECOM_REASON";
+    var C_LINE_UP_TYPE_STOP_SALE = "@ViewBag.C_LINE_UP_TYPE_STOP_SALE";
+    var C_LINE_UP_TYPE_LOGICAL_DELETE = "@ViewBag.C_LINE_UP_TYPE_LOGICAL_DELETE";
+    var C_INST_TYPE_GENERAL = "@ViewBag.C_INST_TYPE_GENERAL";
+    var C_EXPANSION_TYPE_PARENT = "@ViewBag.C_EXPANSION_TYPE_PARENT";
+    var C_EXPANSION_TYPE_CHILD = "@ViewBag.C_EXPANSION_TYPE_CHILD";
+    var C_RENTAL_INSTALL_TYPE_CHANGE_WIRING = "@ViewBag.C_RENTAL_INSTALL_TYPE_CHANGE_WIRING";
+    var C_RENTAL_INSTALL_TYPE_CHANGEPLAN_AFTER_NEW = "@ViewBag.C_RENTAL_INSTALL_TYPE_CHANGEPLAN_AFTER_NEW";
+    var C_RENTAL_INSTALL_TYPE_CHANGEPLAN_NEW = "@ViewBag.C_RENTAL_INSTALL_TYPE_CHANGEPLAN_NEW";
+    var C_RENTAL_INSTALL_TYPE_MAINTENANCE_EXCHANGE = "@ViewBag.C_RENTAL_INSTALL_TYPE_MAINTENANCE_EXCHANGE";
+    var C_RENTAL_INSTALL_TYPE_MOVE = "@ViewBag.C_RENTAL_INSTALL_TYPE_MOVE";
+    var C_RENTAL_INSTALL_TYPE_NEW = "@ViewBag.C_RENTAL_INSTALL_TYPE_NEW";
+    var C_RENTAL_INSTALL_TYPE_PERIODICAL_MAINTENANCE = "@ViewBag.C_RENTAL_INSTALL_TYPE_PERIODICAL_MAINTENANCE";
+    var C_RENTAL_INSTALL_TYPE_REMOVE_ALL = "@ViewBag.C_RENTAL_INSTALL_TYPE_REMOVE_ALL";
+    var C_RENTAL_INSTALL_TYPE_REMOVE_DURING_STOP_PARTIAL = "@ViewBag.C_RENTAL_INSTALL_TYPE_REMOVE_DURING_STOP_PARTIAL";
+    var C_RENTAL_INSTALL_TYPE_REMOVE_DURING_STOP_REMOVE_ALL = "@ViewBag.C_RENTAL_INSTALL_TYPE_REMOVE_DURING_STOP_REMOVE_ALL";
+
+    var C_SALE_INSTALL_TYPE_ADD = "@ViewBag.C_SALE_INSTALL_TYPE_ADD";
+    var C_SALE_INSTALL_TYPE_CHANGE_WIRING = "@ViewBag.C_SALE_INSTALL_TYPE_CHANGE_WIRING";
+    var C_SALE_INSTALL_TYPE_MAINTENANCE_EXCHANGE = "@ViewBag.C_SALE_INSTALL_TYPE_MAINTENANCE_EXCHANGE";
+    var C_SALE_INSTALL_TYPE_MOVE = "@ViewBag.C_SALE_INSTALL_TYPE_MOVE";
+    var C_SALE_INSTALL_TYPE_NEW = "@ViewBag.C_SALE_INSTALL_TYPE_NEW";
+    var C_SALE_INSTALL_TYPE_PARTIAL_REMOVE = "@ViewBag.C_SALE_INSTALL_TYPE_PARTIAL_REMOVE";
+    var C_SALE_INSTALL_TYPE_REMOVE_ALL = "@ViewBag.C_SALE_INSTALL_TYPE_REMOVE_ALL";
+    var C_LAST_CHANGE_TYPE_CHANGE_PLAN = "@ViewBag.C_LAST_CHANGE_TYPE_CHANGE_PLAN";
+    var C_RENTAL_CHANGE_TYPE_PLAN_CHANGE = "@ViewBag.C_RENTAL_CHANGE_TYPE_PLAN_CHANGE";
+
+    var C_LINE_UP_TYPE_ONE_TIME = "@ViewBag.C_LINE_UP_TYPE_ONE_TIME";
+    var C_LINE_UP_TYPE_TEMPORARY = "@ViewBag.C_LINE_UP_TYPE_TEMPORARY";
+    var C_SLIP_STATUS_NOT_STOCK_OUT = "@ViewBag.C_SLIP_STATUS_NOT_STOCK_OUT";
+    var C_SLIP_STATUS_STOCK_OUT = "@ViewBag.C_SLIP_STATUS_STOCK_OUT";
+    var C_SLIP_STATUS_PARTIAL_STOCK_OUT = "@ViewBag.C_SLIP_STATUS_PARTIAL_STOCK_OUT";
+    var C_INSTALL_CHANGE_REASON_CUS = "@ViewBag.C_INSTALL_CHANGE_REASON_CUS";
+    var C_INSTALL_CHANGE_REASON_SECOM = "@ViewBag.C_INSTALL_CHANGE_REASON_SECOM";
+    var C_INSTALLATION_BY_OTHER = "@ViewBag.C_INSTALLATION_BY_OTHER";
+    var C_CUSTOMER_REASON_OTHER = "@ViewBag.C_CUSTOMER_REASON_OTHER";
+
+    var C_FLAG_ON = @Convert.ToString(ViewBag.C_FLAG_ON).ToLower();
+
+    var C_FLAG_OFF = @Convert.ToString(ViewBag.C_FLAG_OFF).ToLower();
+
+    var C_SALE_CHANGE_TYPE_NEW_SALE = "@ViewBag.C_SALE_CHANGE_TYPE_NEW_SALE";
+    var C_SALE_CHANGE_TYPE_ADD_SALE = "@ViewBag.C_SALE_CHANGE_TYPE_ADD_SALE";
+
+    var C_RENTAL_CHANGE_TYPE_CANCEL = "@ViewBag.C_RENTAL_CHANGE_TYPE_CANCEL";
+    var C_RENTAL_CHANGE_TYPE_STOP = "@ViewBag.C_RENTAL_CHANGE_TYPE_STOP";
+    var C_RENTAL_CHANGE_TYPE_CHANGE_INSTRU_DURING_STOP = "@ViewBag.C_RENTAL_CHANGE_TYPE_CHANGE_INSTRU_DURING_STOP";
+    var C_RENTAL_CHANGE_TYPE_CANCEL_BEFORE_START = "@ViewBag.C_RENTAL_CHANGE_TYPE_CANCEL_BEFORE_START";
+
+    var strEmailSuffix = "@ViewBag.EmailSuffix";
+
+    var lblEmailAddress = "@ViewBag.lblEmailAddress";
+    var lblFacilityCode = "@Resources.ISS030.lblFacilityCode";
+    var lblFacilityQty = "@Resources.ISS030.lblQuantity";
+    var C_INST_TYPE_MONITOR = "@InstrumentType.C_INST_TYPE_MONITOR";
+    var C_CONTRACT_STATUS_CANCEL = "@ContractStatus.C_CONTRACT_STATUS_CANCEL";
+    var C_CONTRACT_STATUS_END = "@ContractStatus.C_CONTRACT_STATUS_END";
+</script>
+<script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Installation/ISS030.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/MessageDialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Master/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/Dialog.js")"></script>
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Scripts/Upload/jquery.fileupload-ui.css")" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/Upload/jquery.fileupload.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Upload/jquery.fileupload-ui.js")"></script>
+
+
+}
+
+
+<!-- Html content --->
+<div style="display:none;">
+
+    <div style="display:none;">
+        @Resources.ISS010.lblHeaderSpecified
+    </div>
+    <div  >
+        <div style="display:none;">
+            @Resources.ISS010.lblContractProjectCode
+        </div>
+        <div  style="display:none;">
+           @Html.CommonTextBox("ContractCodeProjectCode", (string)@ViewBag.ContractProjectCode, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+        </div>          
+        <div style="display:none;">
+            @Html.CommonButton("btnRetrieveInstallation", (string)@Resources.ISS010.btnRetrieve, new { style = "width:100px;" })
+            @Html.CommonButton("btnClearInstallation", (string)@Resources.ISS010.btnClear, new { style = "width:100px;" })
+        </div>
+        <div style="display:none;">
+            
+        </div>     
+    </div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+ </div>
+ @*<form id="form1"  >*@
+    @Html.Hidden("ServiceTypeCode")
+    @Html.Partial("ISS030/_ISS030_01")
+    @Html.Partial("ISS030/_ISS030_02")
+    @Html.Partial("ISS030/_ISS030_03")
+    @Html.Partial("ISS030/_ISS030_04")
+    <br />
+    <div id="divResultRegisSlip" class="main-table" style="margin-top: 5px;">
+        <div class="table-header">@Resources.ISS030.lblHeaderName5</div>
+        <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                 @Resources.ISS030.lblInstallationSlipNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("InstallationSlipNo", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+
+    <div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>
+
+@*</form>*@

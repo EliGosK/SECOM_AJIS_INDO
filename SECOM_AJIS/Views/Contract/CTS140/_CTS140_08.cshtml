@@ -1,0 +1,69 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<div id="divSiteInformation" class="main-table">
+    <div class="usr-row">
+        <div class="table-header">
+            @Resources.CTS140.lblSiteInformation
+        </div>              
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblNewOldBuilding
+            </div>
+            <div class="usr-object" style="width: 200px">
+                @Html.BuildingTypeComboBox("BuildingTypeCode", null, new { style = "width:200px;", selected = (string)@ViewBag.BuildingTypeCode })                         
+            </div>
+            <div class="usr-label" style="width: 100px">
+                @Resources.CTS140.lblSiteBulidingArea
+            </div>
+            <div class="usr-object">   
+                @Html.CommonTextBox("SiteBulidingArea", (string)@ViewBag.SiteBuildingArea, new { style = "width:100px;text-align:right", maxlength = "50" })
+            </div>
+        </div>
+        
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblNumberOfBuilding
+            </div>
+            <div class="usr-object" style="width: 160px;">
+                @Html.CommonTextBox("NumberOfBuilding", (string)@ViewBag.NumOfBuilding, new { style = "width:160px;text-align:right", maxlength = "50" })                      
+            </div>
+            <div class="usr-label" style="width: 240px">
+                @Resources.CTS140.lblSecurityArea
+            </div>
+            <div class="usr-object">   
+                @Html.CommonTextBox("SecurityAreaFrom", (string)@ViewBag.SecurityAreaFrom, new { style = "width:100px;text-align:right", maxlength = "50" })
+            </div>
+            <div class="usr-object">-</div>
+            <div class="usr-object">   
+                @Html.CommonTextBox("SecurityAreaTo", (string)@ViewBag.SecurityAreaTo, new { style = "width:100px;text-align:right", maxlength = "50" })
+            </div>
+        </div>
+        
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblNumberOfFloor
+            </div>
+            <div class="usr-object" style="width: 160px">
+                @Html.CommonTextBox("NumOfFloor", (string)@ViewBag.NumOfFloor, new { style = "width:160px;text-align:right", maxlength = "50" })                      
+            </div>
+            <div class="usr-label" style="width: 240px">
+                @Resources.CTS140.lblMainStructureType
+            </div>
+            <div class="usr-object">   
+                @Html.MainStructureTypeComboBox("MainStructureTypeCode", null, new { style = "width:200px;", selected = (string)@ViewBag.MainStructureTypeCode })              
+            </div>
+        </div>          
+    </div>    
+    <div class="usr-clear-style">&nbsp;</div>
+</div>   

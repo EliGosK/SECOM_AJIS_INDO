@@ -1,0 +1,108 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+<div id="divChangeInfo" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS150.lblChangeInstallAfterStart</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblInstallType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("InstallationType", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblInstallSlipNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            <div style="margin-top: 3px;">
+                @Html.CommonLink("InstallSlipNo2", null, new { @tabindex = "56" })
+                @Html.Hidden("HidInstallSlipNo1")
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblCompleteInstallDate
+        </div>
+        <div class="usr-object" style="width: 250px;">
+            <div class="object-unit">
+                @Html.CommonTextBox("CompleteInstallDate2", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+            </div>
+            @Html.LabelDateFormat("CompleteInstallDate2")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblNormalInstallFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("NormalInstallFee", null, null, new { style = "width:140px;" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblOrderInstallFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("OrderInstallFee", null, null, new { style = "width:140px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblSecomPayment
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("SecomPayment", null, null, new { style = "width:140px;" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblSecomRevenue
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("SecomRevenue", null, null, new { style = "width:140px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblApproveNo1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ChangeApproveNo1", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @tabindex = "60", @maxlength = "15" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblNagotiateStaff
+        </div>
+        <div class="usr-object" style="width:265px;">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("NegotiationStaffCode", null, new { style = "width:80px;", maxlength = 10 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("NegotiationStaffName", null, new { style = "width:150px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblApproveNo2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ChangeApproveNo2", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @tabindex = "62", @maxlength = "15" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS150.lblCompleteRegis
+        </div>
+        <div class="usr-object" style="width:265px;">
+            <div style="float:left;margin-right:5px;">
+                @Html.CommonTextBox("CompleteRegistrantCode", null, new { style = "width:80px;", maxlength = 7 })
+            </div>
+            <div style="float:left;">
+                @Html.CommonTextBox("CompleteRegistrantName", null, new { style = "width:150px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object">
+            <div style="font-weight: bold;">@Resources.CTS150.lblInstallSubContract</div>
+            <div id="InstallSubCTGrid2" style="width: 580px;">
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

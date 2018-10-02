@@ -1,0 +1,47 @@
+
+
+#SelectedEmailList
+{
+    width: 100%;
+    height: 100px;
+    overflow: auto;
+   
+}
+#selectedemail
+{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#selectedemail dt  /*old: li*/
+{
+    margin: 3px 3px 3px 0;
+    padding: 2px;
+    float: left;
+    text-align: center;
+    border: 1px solid #B1C6F3;
+    background-color: #D0DFFC;
+    
+    
+}
+
+.email
+{
+    font-family: Tahoma;
+    font-size:11px;
+}
+
+dt.email a.remove /* span.email a.remove */
+{
+    margin: 1px;
+    padding: 0px 4px;
+    color: #008;
+    text-decoration: none;
+    background-color: #B1C6F3;
+    width: 5px;
+    
+    font-family: "arial";
+    font-size: 0.9em;
+    font-weight: bold;
+
+}

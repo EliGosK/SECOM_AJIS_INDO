@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="InstrumentCode"  width="200" type="ro" align="left" sort="na">HgridInstrumentCode</column>
+    <column id="InstrumentName"  width="*" type="ro" align="left" sort="na">HgridInstrumentName</column>
+    <column id="InstrumentQty"  width="120" type="link" align="right" sort="na">HgridQuantity</column>
+    <column id="Remove"  width="30" type="link" align="center">HgridRemove</column>
+    <!-- Hidden -->
+    <column id="tmpCol" width="*" hidden="true" type="ro" align="center"></column>
+    <column id="LineUpTypeCode" width="*" hidden="true" type="ro" align="center"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

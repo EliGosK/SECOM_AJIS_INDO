@@ -1,0 +1,283 @@
+﻿<!--
+//*********************************
+// Create by: Siripoj S.
+// Create date: 05/Mar/2012
+// Update date: 05/Mar/2012
+//*********************************
+-->
+@using SECOM_AJIS.DataEntity.Billing;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Common.Util;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+   
+    //Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.LabelWidth = "240px";
+    ViewBag.LabelWidth2 = "190px";
+
+    ViewBag.ObjectWidth = "200px";
+    ViewBag.ObjectWidth2 = "250px";
+
+    ViewBag.ObjectWidthLong = "620px";
+
+
+    ViewBag.isViewMode = true;
+
+    // for debug
+    ViewBag.txtBackgroundColor = "none";  // Lime
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript">
+        var CMS450_ViewBag =
+         {
+             FlagSection: "@ViewBag.FlagSection",
+             C_REPORT_ID_INVOICE: "@ReportID.C_REPORT_ID_INVOICE",
+             C_REPORT_ID_TAX_INVOICE: "@ReportID.C_REPORT_ID_TAX_INVOICE",
+             C_REPORT_ID_RECEIPT: "@ReportID.C_REPORT_ID_RECEIPT"
+         };
+    </script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS450.js")"></script>
+}
+
+<div style="display:none">
+    @Html.Hidden("lblFirstFeeDetail", (string)@Resources.CMS450.lblFirstFeeDetail)
+    @Html.Hidden("lblCreditNote", (string)@Resources.CMS450.lblCreditNote)
+</div>
+
+@if (CommonUtil.IsNullOrEmpty(ViewBag._BillingTargetCode) == false)
+{
+    <!-- BillingTargetInformation  -->
+    <div id="divBillingTargetInformation" class="main-table">
+        <div class="table-header">
+            @Resources.CMS450.lblBillingTargetInformation
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingTargetCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; ">
+                @Html.CommonTextBox("CMS450_BillingTargetCode", (string)@ViewBag.txtBillingTargetCode, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; ">
+                @Html.CommonTextBox("CMS450_BillingTarget_ClientNameEnglish", (string)@ViewBag.txtBillingClientNameEnglish, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientAddressEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_BillingTarget_ClientAddressEnglish", (string)@ViewBag.txtBillingClientAddressEnglish, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_BillingTarget_ClientNameLocal", (string)@ViewBag.txtBillingClientNameLocal, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientAddressLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_BillingTarget_ClientAddressLocal", (string)@ViewBag.txtBillingClientAddressLocal, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-clear-style" style="height: 0px">
+            &nbsp;</div>
+    </div>
+    
+
+}
+else if (CommonUtil.IsNullOrEmpty(ViewBag._ContractCode) == false && CommonUtil.IsNullOrEmpty(ViewBag._BillingOCC) == false)
+{
+    <!-- BillingBasicInformation  -->
+    <div id="divBillingBasicInformation" class="main-table">
+        <div class="table-header">
+            @Resources.CMS450.lblBillingBasicInformation
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; ">
+                @Html.CommonTextBox("CMS450_BillingCode", (string)@ViewBag.txtBillingCode, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingOffice
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; ">
+                @Html.CommonTextBox("CMS450_BillingOffice", (string)@ViewBag.txtBillingOffice, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingTargetCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_BillinBasic_BillingTargetCode", (string)@ViewBag.txtBillingTargetCode, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_BillingBasic_ClientNameEnglish", (string)@ViewBag.txtBillingClientNameEnglish, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientAddressEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_BillingBasic_ClientAddressEnglish", (string)@ViewBag.txtBillingClientAddressEnglish, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_BillingBasic_ClientNameLocal", (string)@ViewBag.txtBillingClientNameLocal, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientAddressLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_BillingBasic_ClientAddressLocal", (string)@ViewBag.txtBillingClientAddressLocal, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-clear-style" style="height: 0px">
+            &nbsp;</div>
+    </div>
+
+}
+else if (CommonUtil.IsNullOrEmpty(ViewBag._InvoiceNo) == false)
+{
+    
+    <!-- Invoice Information  -->
+    <div id="divInvoiceInformation" class="main-table">
+        <div class="table-header">
+            @Resources.CMS450.lblInvoiceInformation
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblInvoiceNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; ">
+                @Html.CommonTextBox("CMS450_InvoiceNo", (string)@ViewBag.txtInvoiceNo, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingTargetCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_Invoice_BillingTargetCode", (string)@ViewBag.txtBillingTargetCode, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_Invoice_ClientNameEnglish", (string)@ViewBag.txtBillingClientNameEnglish, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientAddressEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_Invoice_ClientAddressEnglish", (string)@ViewBag.txtBillingClientAddressEnglish, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_Invoice_ClientNameLocal", (string)@ViewBag.txtBillingClientNameLocal, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS450.lblBillingClientAddressLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS450_Invoice_ClientAddressLocal", (string)@ViewBag.txtBillingClientAddressLocal, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-clear-style" style="height: 0px">
+            &nbsp;</div>
+    </div>
+
+}
+<!-- Billing Detail List -->
+<div id="divBillingDetailList" class="main-table">
+    <div class="table-header">
+        @Resources.CMS450.lblBillingDetailList
+    </div>
+    <div class="usr-row">
+        <div class="usr-object" style="margin-left: 4px;">
+            <img src='../../Content/images/icon/F.png' width='16px' height = '16px'>
+        </div>
+        <div class="usr-object" style="width: 125px">
+           <span> = </span> @Resources.CMS450.lblFirstFeeDetail,
+        </div>
+        <div class="usr-object" style="margin-left: 4px;">
+            <img src='../../Content/images/icon/T.png' width='16px' height = '16px'>
+        </div>
+        <div class="usr-object" style="margin-left: 4px;">
+           <span> = </span> @Resources.CMS450.lblNotUse,
+        </div>
+        <div class="usr-object" style="margin-left: 4px;">
+            <img src='../../Content/images/icon/R.png' width='16px' height = '16px'>
+        </div>
+        <div class="usr-object" style="width: 170px">
+           <span> = </span> @Resources.CMS450.lblReceiptIssueDetail,
+        </div>
+        <div class="usr-object">
+            <img src='../../Content/images/icon/C.png'  width='16px' height = '16px'>
+        </div>
+        <div class="usr-object" style="width: 220px">            
+           <span> = </span>  @Resources.CMS450.lblNotUse
+        </div>
+    </div>
+    <div class="usr-row">
+        <div id="gridBillingDetail" style="width: 99%; margin-left: 4px; overflow-x: auto;">
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height: 0px">
+        &nbsp;</div>
+</div>

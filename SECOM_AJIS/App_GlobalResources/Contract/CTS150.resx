@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAddInstrument" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnClearInstrument" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="btnRetrieve" xml:space="preserve">
+    <value>Retrieve</value>
+  </data>
+  <data name="btnSearchInstrument" xml:space="preserve">
+    <value>Search equipment</value>
+  </data>
+  <data name="chkContractTargetFlag" xml:space="preserve">
+    <value>Important customer</value>
+  </data>
+  <data name="lblAcquisitionType" xml:space="preserve">
+    <value>Acquisition type</value>
+  </data>
+  <data name="lblAddedQty" xml:space="preserve">
+    <value>Added quantity</value>
+  </data>
+  <data name="lblApproveContractDate" xml:space="preserve">
+    <value>Approve contract date</value>
+  </data>
+  <data name="lblApproveNo1" xml:space="preserve">
+    <value>Approve no. 1</value>
+  </data>
+  <data name="lblApproveNo2" xml:space="preserve">
+    <value>Approve no. 2</value>
+  </data>
+  <data name="lblAutoRenew" xml:space="preserve">
+    <value>Auto renew (months)</value>
+  </data>
+  <data name="lblBidAmount1" xml:space="preserve">
+    <value>Bid guarantee amount 1</value>
+  </data>
+  <data name="lblBidAmount2" xml:space="preserve">
+    <value>Bid guarantee amount 2</value>
+  </data>
+  <data name="lblBidReturnDate1" xml:space="preserve">
+    <value>Bid guarantee return date 1</value>
+  </data>
+  <data name="lblBidReturnDate2" xml:space="preserve">
+    <value>Bid guarantee return date 2</value>
+  </data>
+  <data name="lblChangeInstallAfterStart" xml:space="preserve">
+    <value>Change installation after start operation</value>
+  </data>
+  <data name="lblChangeType" xml:space="preserve">
+    <value>Change type</value>
+  </data>
+  <data name="lblCompleteInstallDate" xml:space="preserve">
+    <value>Complete installation date</value>
+  </data>
+  <data name="lblCompleteRegis" xml:space="preserve">
+    <value>Complete registrant</value>
+  </data>
+  <data name="lblContractDuration" xml:space="preserve">
+    <value>Contract period (months)</value>
+  </data>
+  <data name="lblContractOffice" xml:space="preserve">
+    <value>Contract office</value>
+  </data>
+  <data name="lblContractTargetAddressEN" xml:space="preserve">
+    <value>Customer address (English)</value>
+  </data>
+  <data name="lblContractTargetAddressLOC" xml:space="preserve">
+    <value>Customer address (Local)</value>
+  </data>
+  <data name="lblContractTargetNameEN" xml:space="preserve">
+    <value>Customer name (English)</value>
+  </data>
+  <data name="lblContractTargetNameLOC" xml:space="preserve">
+    <value>Customer name (Local)</value>
+  </data>
+  <data name="lblCustAccept" xml:space="preserve">
+    <value>Customer acceptance date</value>
+  </data>
+  <data name="lblCustomerCode" xml:space="preserve">
+    <value>Customer code (Customer)</value>
+  </data>
+  <data name="lblDeliveryDocRecieve" xml:space="preserve">
+    <value>Delivery document recieve date</value>
+  </data>
+  <data name="lblDistributeOriginCode" xml:space="preserve">
+    <value>Distributed origin code</value>
+  </data>
+  <data name="lblDistributeType" xml:space="preserve">
+    <value>Distributed type</value>
+  </data>
+  <data name="lblDocAuditResult" xml:space="preserve">
+    <value>Document audit result</value>
+  </data>
+  <data name="lblDocRecieveDate" xml:space="preserve">
+    <value>Document recieve date</value>
+  </data>
+  <data name="lblEndContractDate" xml:space="preserve">
+    <value>End contract date</value>
+  </data>
+  <data name="lblEndMaintenanceDate" xml:space="preserve">
+    <value>End maintenance date</value>
+  </data>
+  <data name="lblEntryContractCode" xml:space="preserve">
+    <value>Contract no.</value>
+  </data>
+  <data name="lblEntryOccurrenceCode" xml:space="preserve">
+    <value>Occurrence</value>
+  </data>
+  <data name="lblExpectCompleteInstall" xml:space="preserve">
+    <value>Expected complete installation date</value>
+  </data>
+  <data name="lblExpectCustAccept" xml:space="preserve">
+    <value>Expected customer acceptance date</value>
+  </data>
+  <data name="lblIEInCharge" xml:space="preserve">
+    <value>Technical in charge</value>
+  </data>
+  <data name="lblInstallInfo" xml:space="preserve">
+    <value>Installation information</value>
+  </data>
+  <data name="lblInstallSlipNo" xml:space="preserve">
+    <value>Installation slip no.</value>
+  </data>
+  <data name="lblInstallSubContract" xml:space="preserve">
+    <value>Installation subcontractor</value>
+  </data>
+  <data name="lblInstallType" xml:space="preserve">
+    <value>Installation type</value>
+  </data>
+  <data name="lblInstrumentCode" xml:space="preserve">
+    <value>Equipment code</value>
+  </data>
+  <data name="lblInstrumentInfo" xml:space="preserve">
+    <value>Equipment detail</value>
+  </data>
+  <data name="lblInstrumentMaker" xml:space="preserve">
+    <value>Maker</value>
+  </data>
+  <data name="lblIntroducerCode" xml:space="preserve">
+    <value>Introducer code</value>
+  </data>
+  <data name="lblLess" xml:space="preserve">
+    <value>Less &lt;&lt;</value>
+  </data>
+  <data name="lblMaintenanceContractCode" xml:space="preserve">
+    <value>Maintenance contract no.</value>
+  </data>
+  <data name="lblMaintenanceContractStart" xml:space="preserve">
+    <value>Maintenance contract start month</value>
+  </data>
+  <data name="lblMaintenanceCycle" xml:space="preserve">
+    <value>Maintenance cycle (months)</value>
+  </data>
+  <data name="lblMaintenanceFeeType" xml:space="preserve">
+    <value>Maintenance fee type</value>
+  </data>
+  <data name="lblMaintenanceInfo" xml:space="preserve">
+    <value>Maintenance information</value>
+  </data>
+  <data name="lblMaintenanceMemo" xml:space="preserve">
+    <value>Memo</value>
+  </data>
+  <data name="lblMaintenanceTargetProduct" xml:space="preserve">
+    <value>Maintenance target product</value>
+  </data>
+  <data name="lblMaintenanceType" xml:space="preserve">
+    <value>Maintenance type</value>
+  </data>
+  <data name="lblMore" xml:space="preserve">
+    <value>More &gt;&gt;</value>
+  </data>
+  <data name="lblNagotiateStaff" xml:space="preserve">
+    <value>Negotiation staff</value>
+  </data>
+  <data name="lblNewBuildMgmtCost" xml:space="preserve">
+    <value>New building mgmt. cost</value>
+  </data>
+  <data name="lblNewBuildMgmtType" xml:space="preserve">
+    <value>New building mgmt. type</value>
+  </data>
+  <data name="lblNewBuildMgmtTypeNeed" xml:space="preserve">
+    <value>Need</value>
+  </data>
+  <data name="lblNewBuildMgmtTypeNoNeed" xml:space="preserve">
+    <value>No need</value>
+  </data>
+  <data name="lblNewOldBuilding" xml:space="preserve">
+    <value>New/Old building</value>
+  </data>
+  <data name="lblNormalInstallFee" xml:space="preserve">
+    <value>Normal installation fee</value>
+  </data>
+  <data name="lblOnlineContractCode" xml:space="preserve">
+    <value>Connection target code</value>
+  </data>
+  <data name="lblOperationOffice" xml:space="preserve">
+    <value>Operation office</value>
+  </data>
+  <data name="lblOrderInstallFee" xml:space="preserve">
+    <value>Order installation fee</value>
+  </data>
+  <data name="lblPlanCode" xml:space="preserve">
+    <value>Planning no.</value>
+  </data>
+  <data name="lblProcessMgrStatus" xml:space="preserve">
+    <value>Process management status</value>
+  </data>
+  <data name="lblProductName" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="lblProjectCode" xml:space="preserve">
+    <value>Project code</value>
+  </data>
+  <data name="lblPurchaseReasonType" xml:space="preserve">
+    <value>Purchase reason type</value>
+  </data>
+  <data name="lblQuotationCode" xml:space="preserve">
+    <value>Quotation code</value>
+  </data>
+  <data name="lblRealCustomerCode" xml:space="preserve">
+    <value>Customer code (Real customer (End user))</value>
+  </data>
+  <data name="lblSaleContractBasicInfo" xml:space="preserve">
+    <value>Sale contract basic information</value>
+  </data>
+  <data name="lblSaleContractDetailInfo" xml:space="preserve">
+    <value>Sale contract detail information</value>
+  </data>
+  <data name="lblSaleOffice" xml:space="preserve">
+    <value>Sales office</value>
+  </data>
+  <data name="lblSalesman" xml:space="preserve">
+    <value>Salesman</value>
+  </data>
+  <data name="lblSaleType" xml:space="preserve">
+    <value>Sale type</value>
+  </data>
+  <data name="lblSecomPayment" xml:space="preserve">
+    <value>SECOM's payment</value>
+  </data>
+  <data name="lblSecomRevenue" xml:space="preserve">
+    <value>SECOM's revenue</value>
+  </data>
+  <data name="lblSiteAddressEN" xml:space="preserve">
+    <value>Premise’s address (English)</value>
+  </data>
+  <data name="lblSiteAddressLOC" xml:space="preserve">
+    <value>Premise’s address (Local)</value>
+  </data>
+  <data name="lblSiteCode" xml:space="preserve">
+    <value>Premise’s code</value>
+  </data>
+  <data name="lblSiteNameEN" xml:space="preserve">
+    <value>Premise’s name (English)</value>
+  </data>
+  <data name="lblSiteNameLOC" xml:space="preserve">
+    <value>Premise’s name (Local)</value>
+  </data>
+  <data name="lblSpecifyContractCode" xml:space="preserve">
+    <value>Specify sale occurrence</value>
+  </data>
+  <data name="lblStartMaintenanceDate" xml:space="preserve">
+    <value>Start maintenance date</value>
+  </data>
+  <data name="lblStockOutDate" xml:space="preserve">
+    <value>Equipment stock-out date</value>
+  </data>
+  <data name="lblSubcontractCompleteInstall" xml:space="preserve">
+    <value>Subcontract complete installation date</value>
+  </data>
+  <data name="lblWarranteePeriodFrom" xml:space="preserve">
+    <value>Warranty period (from)</value>
+  </data>
+  <data name="lblWarranteePeriodTo" xml:space="preserve">
+    <value>Warranty period (to)</value>
+  </data>
+  <data name="headerSubcontractorCode" xml:space="preserve">
+    <value>Subcontractor code</value>
+  </data>
+  <data name="headerSubcontractorNameEN" xml:space="preserve">
+    <value>Subcontractor name (English)</value>
+  </data>
+  <data name="headerSubcontractorNameLC" xml:space="preserve">
+    <value>Subcontractor name (Local)</value>
+  </data>
+  <data name="headerBillingAmount" xml:space="preserve">
+    <value>Billing amount</value>
+  </data>
+  <data name="headerDCOC" xml:space="preserve">
+    <value>Discount/Over-recieved rate</value>
+  </data>
+  <data name="headerNormalAmount" xml:space="preserve">
+    <value>Normal amount</value>
+  </data>
+  <data name="lblInstallationFee" xml:space="preserve">
+    <value>Installation fee (2)</value>
+  </data>
+  <data name="lblProductPrice" xml:space="preserve">
+    <value>Product price (1)</value>
+  </data>
+  <data name="lblSalePrice" xml:space="preserve">
+    <value>Sale price (1) + (2)</value>
+  </data>
+  <data name="lblDiscount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="lblOverRecieve" xml:space="preserve">
+    <value>Over-recieved</value>
+  </data>
+  <data name="headerInstrumentCode" xml:space="preserve">
+    <value>Equipment code</value>
+  </data>
+  <data name="headerInstrumentName" xml:space="preserve">
+    <value>Equipment name</value>
+  </data>
+  <data name="headerMakerName" xml:space="preserve">
+    <value>Maker</value>
+  </data>
+  <data name="headerQty" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="headerQtyAdded" xml:space="preserve">
+    <value>Added</value>
+  </data>
+  <data name="headerQtyRemoved" xml:space="preserve">
+    <value>Removed</value>
+  </data>
+  <data name="headerQtyTotal" xml:space="preserve">
+    <value>Total quantity</value>
+  </data>
+  <data name="lblApproveNo3" xml:space="preserve">
+    <value>Approve no. 3</value>
+  </data>
+  <data name="lblApproveNo4" xml:space="preserve">
+    <value>Approve no. 4</value>
+  </data>
+  <data name="lblApproveNo5" xml:space="preserve">
+    <value>Approve no. 5</value>
+  </data>
+  <data name="lblPaymentDateIncentive" xml:space="preserve">
+    <value>Payment date (Incentive)</value>
+  </data>
+  <data name="lblQuotationNo" xml:space="preserve">
+    <value>Quotation no.</value>
+  </data>
+</root>

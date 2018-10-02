@@ -1,0 +1,114 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+<div class="main-table" id="saleSection">
+    <div class="table-header">@Resources.CMS150.SubTblHeaderSaleContInfo</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">@Resources.CMS150.lblContractCode</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("ContractCode", (string)@ViewBag.ContractCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 220px;">@Resources.CMS150.lblCustomercodePurchaser</div>
+        <div class="usr-object" style="width: 150px;">
+            @Html.CommonLink("lnkSaleCustCodePur", (string)ViewBag.CustCodePur)&nbsp;
+        </div>
+        <div class="usr-label" style="width: 220px;">@Resources.CMS150.lblCustCodeRC</div>
+        <div class="usr-object" style="width: 150px;">
+            @Html.CommonLink("lnkSaleCustCodeRC", (string)ViewBag.CustCodeRC)&nbsp;
+        </div>
+        <div class="usr-label" style="width: 70px;">@Resources.CMS150.lblSiteCode</div>
+        <div class="usr-object" style="width: 120px;">
+            @Html.CommonLink("lnkSaleSiteCode", (string)ViewBag.SiteCode)
+        </div>
+    </div>
+    @* ====================================================================================================================== *@
+    <div class="usr-row" style="height: 20px">
+        &nbsp;</div>
+    @* ====================================================================================================================== *@
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">@Resources.CMS150.lblPurchasernameEN</div>
+        <div class="usr-object" style="width:@ViewBag.longTxtWidth;">
+            @Html.CommonTextBox("PurchaserNameEN", (string)ViewBag.PurNameEn, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">@Resources.CMS150.lblPurchaseraddressEN</div>
+        <div class="usr-object" style="width:@ViewBag.longTxtWidth;">
+            @Html.CommonTextBox("PurchaserAddrEn", (string)ViewBag.PurAddrEn, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">@Resources.CMS150.lblSitenameEN_Sales</div>
+        <div class="usr-object" style="width:@ViewBag.longTxtWidth;">
+            @Html.CommonTextBox("SiteNamEn", (string)ViewBag.SiteNamEn, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">@Resources.CMS150.lblSiteaddressEN_Sales</div>
+        <div class="usr-object" style="width:@ViewBag.longTxtWidth;">
+            @Html.CommonTextBox("SiteAddrEn", (string)ViewBag.SiteAddrEn, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    @* ====================================================================================================================== *@
+    <div class="usr-row" style="height: 20px">
+        &nbsp;</div>
+    @* ====================================================================================================================== *@
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">@Resources.CMS150.lblPurchasernameLC</div>
+        <div class="usr-object" style="width:@ViewBag.longTxtWidth;">
+            @Html.CommonTextBox("PurchaserNamLC", (string)ViewBag.PurchaserNamLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">@Resources.CMS150.lblPurchaseraddressLC</div>
+        <div class="usr-object" style="width:@ViewBag.MidTxtSize;">
+            @Html.CommonTextBox("PurchaserAddrLC", (string)ViewBag.PurchaserAddrLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">@Resources.CMS150.lblSiteNamLC_Sales</div>
+        <div class="usr-object" style="width:@ViewBag.MidTxtSize;">
+            @Html.CommonTextBox("SiteNamLC", (string)ViewBag.SiteNamLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">@Resources.CMS150.lblSiteAddrLC_Sales</div>
+        <div class="usr-object" style="width:@ViewBag.MidTxtSize;">
+            @Html.CommonTextBox("SiteAddrLC", (string)ViewBag.SiteAddrLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+          
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;color:#ff7700">
+            @Html.CommonCheckButton("ChkSaleAttachImportanceFlag", @Resources.CMS150.lblAttachImportanceFlag, null, null, new { isViewMode = @ViewBag.isViewMode,disabled = true })
+        </div>
+    </div>
+    @* ====================================================================================================================== *@
+    <div class="usr-row" style="height: 20px">
+        &nbsp;</div>
+    @* ====================================================================================================================== *@
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">@Resources.CMS150.lblContactPoint</div>
+        <div class="usr-object" style="width:@ViewBag.MidTxtSize; ">
+            @Html.CommonTextBox("ContPoint", (string)ViewBag.ContPoint, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+    <div style="width: 185px; float: right; margin-top: -100px;">
+        <div class="usr-row">
+            @Html.CommonButton("btnViewIncdList", Resources.CMS280.btnViewincidentlist, new { style = "width: " + ViewBag.btnRightSet + ";", type = "button" })</div>
+        <div class="usr-row">
+            @Html.CommonButton("btnViewARlist", Resources.CMS280.btnViewARlist, new { style = "width: " + ViewBag.btnRightSet + ";", type = "button" })</div>
+        <div class="usr-row">
+            @Html.CommonButton("btnRegIncd", Resources.CMS280.btnRegisterincident, new { style = "width: " + ViewBag.btnRightSet + ";", type = "button" })</div>
+        <div class="usr-row">
+            @Html.CommonButton("btnRegAR", Resources.CMS280.btnRegisterAR, new { style = "width: " + ViewBag.btnRightSet + ";", type = "button" })</div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>

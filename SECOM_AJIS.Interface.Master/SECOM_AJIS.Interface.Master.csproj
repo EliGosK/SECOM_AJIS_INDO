@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0AC1F756-B4CC-4386-B6A3-C58F555E953B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.DataEntity.Master</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Interface.Master</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IBillingClientMasterHandler.cs" />
+    <Compile Include="IShelfMasterHandler.cs" />
+    <Compile Include="ISafetyStockMasterHandler.cs" />
+    <Compile Include="ISubcontractorMasterHandler.cs" />
+    <Compile Include="ISupplierMasterHandler.cs" />
+    <Compile Include="IPermissionMasterHandler.cs" />
+    <Compile Include="IProductMasterHandler.cs" />
+    <Compile Include="ISiteMasterHandler.cs" />
+    <Compile Include="IUserHandler.cs" />
+    <Compile Include="IOfficeMasterHandler.cs" />
+    <Compile Include="IMasterHandler.cs" />
+    <Compile Include="IInstrumentMasterHandler.cs" />
+    <Compile Include="IGroupMasterHandler.cs" />
+    <Compile Include="IEmployeeMasterHandler.cs" />
+    <Compile Include="ICustomerMasterHandler.cs" />
+    <Compile Include="IAutoCompleteHandler.cs" />
+    <Compile Include="IBillingMasterHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Common\SECOM_AJIS.Entity.Common.csproj">
+      <Project>{527A7562-621E-47CD-92CB-E0FA26660A4E}</Project>
+      <Name>SECOM_AJIS.Entity.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Master\SECOM_AJIS.Entity.Master.csproj">
+      <Project>{65F28583-CF30-4765-A871-E97D2AE7F9B9}</Project>
+      <Name>SECOM_AJIS.Entity.Master</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

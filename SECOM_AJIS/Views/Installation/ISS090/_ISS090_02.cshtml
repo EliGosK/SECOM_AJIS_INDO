@@ -1,0 +1,88 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+
+<!-- ======== Html content ======== --->
+
+
+@* --- Contract Information ---  *@
+<div id="divProjectInfo" class="main-table" style="margin-top:5px;">
+
+    <div class="usr-row">
+        <div class="table-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS050.lblHeaderName2
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>   
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS090.lblProjectCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ProjectCode", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>   
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblProjectName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ProjectName", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>   
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblProjectAddress
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ProjectAddress", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>  
+    @*<div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS090.lblProjectrepresentAddress
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ProjectRepresentativeAddress", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>   *@
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblProjectPurchaserName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ProjectPurchaserNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>   
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblProjectPurchaserNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ProjectPurchaserNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>      
+    <div class="usr-row">
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth; height:60px;">
+        @Resources.ISS090.lblInstallMemoHistory
+        </div>
+        <div class="usr-object" style="margin-right:5px;width:720px;">
+            @Html.CommonTextArea("InstallationMemoProjectHistory", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + "; height:60px;", maxlength = "4000", @readonly = true })
+        </div>
+    </div> 
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>   
+     
+
+ 
+</div>
+

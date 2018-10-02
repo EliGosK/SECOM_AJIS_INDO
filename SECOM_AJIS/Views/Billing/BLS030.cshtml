@@ -1,0 +1,61 @@
+﻿@using SECOM_AJIS.DataEntity.Billing;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Controllers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Common.Util;
+@{
+    
+ 
+
+    ViewBag.lbWidth = "220px";  /* ViewBag.LabelWidth */
+    ViewBag.lbWidth2 = "234px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "750px";
+    ViewBag.Div1Width = "160px";
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+
+    ViewBag.C_PAYMENT_METHOD_AUTO_TRANSFER = PaymentMethod.C_PAYMENT_METHOD_AUTO_TRANSFER;
+    ViewBag.C_PAYMENT_METHOD_CREDIT_CARD_TRANSFER = PaymentMethod.C_PAYMENT_METHOD_CREDIT_CARD_TRANSFER;
+ 
+   
+
+    
+}
+@section page_header{
+    <script type="text/javascript">
+        var C_PAYMENT_METHOD_AUTO_TRANSFER = @ViewBag.C_PAYMENT_METHOD_AUTO_TRANSFER;
+        var C_PAYMENT_METHOD_CREDIT_CARD_TRANSFER = @ViewBag.C_PAYMENT_METHOD_CREDIT_CARD_TRANSFER;
+        var BLS030_ViewBag = {
+            ContractProjectCode: "@ViewBag.ContractProjectCode" ,
+            BillingClientCode : "@ViewBag.BillingClientCode" ,
+            BillingTargetRunningNo : "@ViewBag.BillingTargetRunningNo"
+        } ;
+    </script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/number-functions.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Billing/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Master/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Billing/BLS030.js")"></script> 
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Scripts/Upload/jquery.fileupload-ui.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Upload/jquery.fileupload.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Upload/jquery.fileupload-ui.js")"></script>
+}
+<!-- Html content --->
+@Html.Hidden("ServiceTypeCode")
+@Html.Partial("BLS030/_BLS030_01")
+@Html.Partial("BLS030/_BLS030_02")
+@Html.Partial("BLS030/_BLS030_03")
+<div id="dlgBLS030" class="main-popup-dialog">
+    <div class="popup-dialog">
+    </div>
+</div>

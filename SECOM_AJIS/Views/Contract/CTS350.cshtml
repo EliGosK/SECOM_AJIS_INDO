@@ -1,0 +1,113 @@
+﻿<!--
+//*********************************
+// Create by: Natthavat S.
+// Create date: 30/Nov/2010
+// Update date:  30/Nov/2010
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelCol1Width = "240px";
+    ViewBag.LabelCol2Width = "150px";
+    ViewBag.LabelCol3Width = "90px";
+    ViewBag.LabelCol4Width = "100px";
+    ViewBag.LabelCol5Width = "140px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+
+@section page_header{
+    <style>
+        .lbl-remark
+        {
+            font-size: 0.8em;
+            color: rgb(119, 119, 119);
+            margin: 0px 0px 0px 5px;
+        }
+    </style>
+    <script type="text/javascript">
+        var CTS350_BlankComboBox = '@Html.BlankComboBox("{BLANK_ID}", new { style = "width:260px;" })';
+        var CTS350_RequireElement = '@Html.RequireFiled()';
+        var CTS350_AskARTitleLbl = '@Resources.CTS350.lblAskChangeARTitle';
+        var CTS350_AskARTypeLbl = '@Resources.CTS350.lblAskChangeARType';
+        var CTS350_DefaultCBBWidth = "260px";
+        var lblDC = '@Resources.CTS350.lblDC';
+        var lblOR = '@Resources.CTS350.lblOR';
+        var _arType_Customer = '@ARRelevant.C_AR_RELEVANT_TYPE_CUSTOMER';
+        var _arType_Site = '@ARRelevant.C_AR_RELEVANT_TYPE_SITE';
+        var _arType_Project = '@ARRelevant.C_AR_RELEVANT_TYPE_PROJECT';
+        var _arType_Contract = '@ARRelevant.C_AR_RELEVANT_TYPE_CONTRACT';
+        var _arType_Quotation = '@ARRelevant.C_AR_RELEVANT_TYPE_QUOTATION';
+        var _attach_k = '@ViewBag.AttachKey';
+
+        var _C_AR_ROLE_AUDITOR = '@ARRole.C_AR_ROLE_AUDITOR';
+        var _C_AR_ROLE_RECEIPIENT = '@ARRole.C_AR_ROLE_RECEIPIENT';
+        var _C_AR_ROLE_REQUESTER = '@ARRole.C_AR_ROLE_REQUESTER';
+        var _C_AR_ROLE_APPROVER = '@ARRole.C_AR_ROLE_APPROVER';
+        var _C_AR_MAXIMUM_RECEIPIENT = '@CommonValue.C_AR_MAXIMUM_RECEIPIENT';
+    </script>
+
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid_skins.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_skyblue.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS350.js")" ></script>
+}
+
+@Html.Partial("CTS350/_CTS350_01")
+
+@Html.Partial("CTS350/_CTS350_02")
+
+@Html.Partial("CTS350/_CTS350_03")
+
+@Html.Partial("CTS350/_CTS350_04")
+
+@Html.Partial("CTS350/_CTS350_05")
+
+<div id="divARForm" class="main-table" >
+    <div class="table-header">@Resources.CTS350.lblNewARInfo</div>
+
+    @Html.Partial("CTS350/_CTS350_06")
+
+    <div class="usr-clear-style" style="height:5px">&nbsp;</div>
+
+    @Html.Partial("CTS350/_CTS350_07")
+
+    <div class="usr-clear-style" style="height:5px">&nbsp;</div>
+
+    @Html.Partial("CTS350/_CTS350_08")
+
+     <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+<div class="usr-clear-style" style="height:5px">&nbsp;</div>
+
+@Html.Partial("CTS350/_CTS350_09")
+
+<div class="usr-clear-style" style="height:0px">&nbsp;</div>
+
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="CustCode" width="100" type="ro" align="left" sort="str_custom">headerCustomerCode</column>
+    <column id="CustNameDisplay" width="200" type="ro" align="left" sort="str_custom">headerCustomerName</column>
+    <column id="CustAddressDisplay" width="*" type="ro" align="left" sort="str_custom">headerAddress</column>
+    <column id="NumofSite_Rental" width="100" type="price" align="right" sort="int">headerNumberOfSite</column>
+    <column id="NumofSite_Sale" width="100" type="price" align="right" sort="int">#cspan</column>
+    <column id="Detail" width="100" type="link" align="center" sort="na">headerCustomerInformation</column>
+    <!--column id="Detail" width="0" type="link" align="center">headerCustomerInformation</column-->
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,#rspan,headerRentalContract,headerSaleContract,#rspan</param>
+      </call>
+    </afterInit>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

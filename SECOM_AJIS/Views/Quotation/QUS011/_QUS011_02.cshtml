@@ -1,0 +1,333 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers
+@{
+    Layout = "";
+
+    ViewBag.LabelCol1Width = "190px";
+    ViewBag.ObjectCol1Width = "225px";
+    ViewBag.LabelCol2Width = "190px";
+    ViewBag.ObjectCol2Width = "225px";
+    ViewBag.ObjectColMergeWidth = "630px";
+    ViewBag.isViewMode = true;
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS011/QUS011_02.js")"></script>
+<div id="divQuotationDetailInformation" class="main-table">
+    <div class="table-header">
+        @Resources.QUS011.lblQuotationDetailInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblProductCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ProductCode", (string)@ViewBag.ProductCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS011.lblContractTransferStatus
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("ContractTransferStatus", (string)@ViewBag.ContractTransferStatus, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblProductPrice
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("ProductPrice", (string)@ViewBag.ProductPrice, (string)@ViewBag.ProductPriceCurrencyType, new { isViewMode = @ViewBag.isViewMode })
+            @* @Html.NumericTextBoxWithUnit("ProductPrice", (string)@ViewBag.ProductPrice, new { isViewMode = @ViewBag.isViewMode })*@
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS011.lblInstallationFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("InstallationFee", (string)@ViewBag.InstallationFee, (string)@ViewBag.InstallationFeeCurrencyType, new { isViewMode = @ViewBag.isViewMode })
+            @* @Html.NumericTextBoxWithUnit("InstallationFee", (string)@ViewBag.InstallationFee, new { isViewMode = @ViewBag.isViewMode })*@
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblPlanCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("PlanCode", (string)@ViewBag.PlanCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS011.lblSpecialInstallation
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("SpecialInstallation", (string)@ViewBag.SpecialInstallation, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblQuotationNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("QuotationNo", (string)@ViewBag.QuotationNo, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblPlanner
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("Planner", (string)@ViewBag.Planner, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblPlanChecker
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("PlanChecker", (string)@ViewBag.PlanChecker, new { isViewMode = @ViewBag.isViewMode, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS011.lblPlanCheckingDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("PlanCheckingDate", (string)@ViewBag.PlanCheckingDate, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblPlanApprover
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("PlanApprover", (string)@ViewBag.PlanApprover, new { isViewMode = @ViewBag.isViewMode, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS011.lblPlanApprovingDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("PlanApprovingDate", (string)@ViewBag.PlanApprovingDate, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblSiteBuildingArea
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("SiteBuildingArea", (string)@ViewBag.SiteBuildingArea, new { isViewMode = @ViewBag.isViewMode, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS011.lblSecurityAreaSize
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            <div style="float:left;">@Html.CommonTextBox("SecurityAreaSizeFrom", (string)@ViewBag.SecurityAreaSizeFrom, new { isViewMode = @ViewBag.isViewMode })</div>
+            <div id="divQUS011SecurityAreaFromTo" class="label-unit">-&nbsp;</div>
+            <div style="float:left">@Html.CommonTextBox("SecurityAreaSizeTo", (string)@ViewBag.SecurityAreaSizeTo, new { isViewMode = @ViewBag.isViewMode })</div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblMainStructureType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MainStructureType", (string)@ViewBag.MainStructureType, new { isViewMode = @ViewBag.isViewMode, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS011.lblNewOldBuilding
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("NewOldBuilding", (string)@ViewBag.NewOldBuilding, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblNewBuildingMgmtType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("NewBldMgmtFlag", (string)@ViewBag.NewBldMgmtFlag, new { isViewMode = @ViewBag.isViewMode, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS011.lblNewBuildingMgmtCost
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("NewBldMgmtCost", (string)@ViewBag.NewBldMgmtCost, (string)@ViewBag.NewBldMgmtCostCurrencyType, new { isViewMode = @ViewBag.isViewMode })
+            @*@Html.NumericTextBoxWithUnit("NewBldMgmtCost", (string)@ViewBag.NewBldMgmtCost, new { isViewMode = @ViewBag.isViewMode })*@
+        </div>
+    </div>
+    @* Begin:: 2015/11/11 Added: tbt_QuotationInstallationDetail *@
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS030.lblCeilingType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonCheckButton("chkCeilingTypeTBar", @Resources.QUS030.lblCeilingTypeTBar, null, (bool?)@ViewBag.chkCeilingTypeTBar, new { @disabled = "disabled" })
+            @Html.CommonCheckButton("chkCeilingTypeSlabConcrete", @Resources.QUS030.lblCeilingTypeSlabConcrete, null, (bool?)@ViewBag.chkCeilingTypeSlabConcrete, new { style = "margin-left: 25px", @disabled = "disabled" })
+            @Html.CommonCheckButton("chkCeilingTypeMBar", @Resources.QUS030.lblCeilingTypeMBar, null, (bool?)@ViewBag.chkCeilingTypeMBar, new { style = "margin-left: 25px", @disabled = "disabled" })
+            @Html.CommonCheckButton("chkCeilingTypeSteel", @Resources.QUS030.lblCeilingTypeSteel, null, (bool?)@ViewBag.chkCeilingTypeSteel, new { style = "margin-left: 25px", @disabled = "disabled" })
+            @Html.CommonCheckButton("chkCeilingTypeNone", @Resources.QUS030.lblCeilingTypeNone, null, (bool?)@ViewBag.chkCeilingTypeNone, new { style = "margin-left: 25px", @disabled = "disabled" })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS030.lblCeilingHeight
+        </div>
+        <div class="usr-object">
+            @Html.NumericTextBox("txtCeilingHeight", (decimal?)@ViewBag.txtCeilingHeight, new { name = "CeilingHeight", isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="margin-left: 5px;">
+            @Resources.QUS030.lblCeilingHeightUnit
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS030.lblSpecialIns
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonCheckButton("chkSpecialInsPVC", @Resources.QUS030.lblSpecialInsPVC, null, (bool?)@ViewBag.chkSpecialInsPVC, new { @disabled = "disabled" })
+            @Html.CommonCheckButton("chkSpecialInsSLN", @Resources.QUS030.lblSpecialInsSLN, null, (bool?)@ViewBag.chkSpecialInsSLN, new { style = "margin-left: 25px", @disabled = "disabled" })
+            @Html.CommonCheckButton("chkSpecialInsProtector", @Resources.QUS030.lblSpecialInsProtector, null, (bool?)@ViewBag.chkSpecialInsProtector, new { style = "margin-left: 25px", @disabled = "disabled" })
+            @Html.CommonCheckButton("chkSpecialInsEMT", @Resources.QUS030.lblSpecialInsEMT, null, (bool?)@ViewBag.chkSpecialInsEMT, new { style = "margin-left: 25px", @disabled = "disabled" })
+            @Html.CommonCheckButton("chkSpecialInsPE", @Resources.QUS030.lblSpecialInsPE, null, (bool?)@ViewBag.chkSpecialInsPE, new { style = "margin-left: 25px", @disabled = "disabled" })
+            @Html.CommonCheckButton("chkSpecialInsOther", @Resources.QUS030.lblSpecialInsOther, null, (bool?)@ViewBag.chkSpecialInsOther, new { style = "margin-left: 25px", @disabled = "disabled" })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+        </div>
+        <div class="usr-object" style="margin-left: 5px">
+            @Html.CommonTextBox("txtSpecialInsOther", (string)@ViewBag.txtSpecialInsOther, new { isViewMode = @ViewBag.isViewMode, name = "SpecialInsOtherText" })
+        </div>
+    </div>
+    @* End:: 2015/11/11 Added: tbt_QuotationInstallationDetail *@
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblSaleman1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("Saleman1", (string)@ViewBag.Saleman1, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblSaleman2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("Saleman2", (string)@ViewBag.Saleman2, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            <div style="float:left;">
+                <span id="aLess" class="lbl-link">@Resources.QUS011.lblLess</span>
+                <span id="aMore" class="lbl-link">@Resources.QUS011.lblMore</span>
+            </div>
+            @Resources.QUS011.lblSaleman3
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("Saleman3", (string)@ViewBag.Saleman3, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div id="divSaleMore" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblSaleman4
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("Saleman4", (string)@ViewBag.Saleman4, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div id="divSaleMore" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblSaleman5
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("Saleman5", (string)@ViewBag.Saleman5, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div id="divSaleMore" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblSaleman6
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("Saleman6", (string)@ViewBag.Saleman6, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div id="divSaleMore" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblSaleman7
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("Saleman7", (string)@ViewBag.Saleman7, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div id="divSaleMore" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblSaleman8
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("Saleman8", (string)@ViewBag.Saleman8, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div id="divSaleMore" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblSaleman9
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("Saleman9", (string)@ViewBag.Saleman9, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div id="divSaleMore" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblSaleman10
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("Saleman10", (string)@ViewBag.Saleman10, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblBidGuaranteeAmount1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("BidGuaranteeAmount1", (string)@ViewBag.BidGuaranteeAmount1, (string)@ViewBag.BidGuaranteeAmount1CurrencyType, new { isViewMode = @ViewBag.isViewMode })
+            @*@Html.NumericTextBoxWithUnit("BidGuaranteeAmount1", (string)@ViewBag.BidGuaranteeAmount1, new { isViewMode = @ViewBag.isViewMode })*@
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS011.lblBidGuaranteeAmount2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("BidGuaranteeAmount2", (string)@ViewBag.BidGuaranteeAmount2, (string)@ViewBag.BidGuaranteeAmount2CurrencyType, new { isViewMode = @ViewBag.isViewMode })
+            @*@Html.NumericTextBoxWithUnit("BidGuaranteeAmount2", (string)@ViewBag.BidGuaranteeAmount2, new { isViewMode = @ViewBag.isViewMode })*@
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblApproveNo1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ApproveNo1", (string)@ViewBag.ApproveNo1, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS011.lblApproveNo2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("ApproveNo2", (string)@ViewBag.ApproveNo2, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblApproveNo3
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ApproveNo3", (string)@ViewBag.ApproveNo3, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS011.lblApproveNo4
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("ApproveNo4", (string)@ViewBag.ApproveNo4, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblApproveNo5
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ApproveNo5", (string)@ViewBag.ApproveNo5, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

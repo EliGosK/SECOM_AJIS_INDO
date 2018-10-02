@@ -1,0 +1,235 @@
+﻿<!--
+//*********************************
+// Create by: Fikree S.
+// Create date: 06/Fab/2012
+// Update date: 06/Fab/2012
+//*********************************
+-->
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Common.Helpers
+
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+
+
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.C_CUST_TYPE_JURISTIC = CustomerType.C_CUST_TYPE_JURISTIC;
+    
+    
+    
+}
+
+@section page_header{
+    <script type="text/javascript" src="../../Scripts/jquery.maskedinput-1.3.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Master/MAS020.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")" ></script>
+
+    <script type="text/javascript">
+        var permission =
+        {
+            EDIT: "@ViewBag.HasPermissionEdit" == "True" ? true : false,
+            DEL: "@ViewBag.HasPermissionDelete" == "True" ? true : false
+        };
+        var msgCancel = "@Resources.MAS020.msgCancel";
+        var MAS020_Constant = 
+        {
+            C_CUST_TYPE_JURISTIC: "@ViewBag.C_CUST_TYPE_JURISTIC"
+        };
+
+        var strHeadOfficeEN = '@ViewBag.HeadOfficeEN';
+        var strHeadOfficeLC = '@ViewBag.HeadOfficeLC';
+    </script>
+}
+
+<!-- SEARCH CRITERIA SECTION ==================================================================================================================== -->
+<div id="Search_Criteria" class="main-table">
+    <div class="table-header">
+       @Resources.MAS020.lblSpecifyBillingClientCode
+    </div>
+    <form id="MAS020_SearchCriteria" action='#' >
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.MAS020.lblBillingClientCode
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextBox("BillingClientCodeSearch", null, new { style = "width:170px;", maxlength = CommonValue.C_MAXLENGTH_BILLING_CLIENT_CODE })
+            &nbsp
+            </div>
+            <div class="usr-object">
+            @Html.CommonButton("btnRetrieve", @Resources.MAS020.btnRetrieve, new { type = "button", style = "width:170px;" })
+            &nbsp
+            </div>
+            <div class="usr-object">
+            @Html.CommonButton("btnSearchBillingClient", @Resources.MAS020.btnSearchBillingClient, new { type = "button", style = "width:170px;" })
+            &nbsp
+            </div>
+        </div>
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+    </form>
+</div>
+
+<!-- RESULT DETAIL SECTION ====================================================================================================================== -->
+<div id="Result_Detail" class="main-table">
+    <div class="table-header">
+       @Resources.MAS020.lblBillingClientInformation
+    </div>
+    <form id="MAS020_ResultDetail" action="#">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+            <div class="usr-object">
+                @Html.CommonCheckButton("DeleteFlag", @Resources.MAS020.chkDeleteBillingClient, "True")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.MAS020.lblBillingClientCode
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextBox("BillingClientCodeShort", null, new { style = "width:170px;", maxlength = "10", ReadOnly = "readonly" })
+            &nbsp
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.MAS020.lblCustomerType
+            </div>
+            <div class="usr-object">
+                @Html.CustomerTypeComboBox("CustTypeCode", new { style = "width: 175px;" })
+                @Html.RequireFiled()
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS020.lblCompanyType
+            </div>
+            <div class="usr-object">
+                @Html.CompanyTypeComboBox("CompanyTypeCode", new { style = "width: 273px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.MAS020.lblIDNoTaxIDNo
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextBox("IDNo", null, new { style = "width:170px;", maxlength = "15" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.MAS020.lblNameEN
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextBox("NameEN", null, new { style = "width:380px;", maxlength = "100" })
+            @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextBox("FullNameEN", null, new { style = "width:380px;", maxlength = "200" })
+            </div>
+        </div>
+         <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.MAS020.lblNameLC
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextBox("NameLC", null, new { style = "width:380px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextBox("FullNameLC", null, new { style = "width:380px;", maxlength = "200" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                &nbsp;
+            </div> 
+            <div id="divStopType" class="usr-object">
+                @Html.CommonRadioButton("rdoHeadOffice", @Resources.MAS020.lblHeadOffice, "1", true, "BranchType")
+                @Html.CommonRadioButton("rdoBranch", @Resources.MAS020.lblBranch, "2", false, "BranchType")
+            </div>                  
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.MAS020.lblBranchNo
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextBox("BranchNo", null, new { style = "width:170px;", maxlength = "5" })
+            @*@Html.RequireFiled()*@
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.MAS020.lblBranchNameEN
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextBox("BranchNameEN", null, new { style = "width:380px;", maxlength = "100" })
+            </div>
+        </div>
+         <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.MAS020.lblBranchNameLC
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextBox("BranchNameLC", null, new { style = "width:380px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.MAS020.lblAddressEN
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextArea("AddressEN", null, new { style = "width:380px; height:70px ; overflow: auto" })
+            @Html.RequireFiled()
+            </div>
+        </div>
+         <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.MAS020.lblAddressLC
+            </div>
+            <div class="usr-object">
+            @Html.CommonTextArea("AddressLC", null, new { style = "width:380px; height:70px ; overflow: auto" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS020.lblNationality
+            </div>
+            <div class="usr-object">
+                @Html.NationalityComboBox("RegionCode", new { style = "width:175px;", maxlength = "2" })
+            </div>
+            <div class="usr-label" style="width:230px;">
+                @Resources.MAS020.lblBusinessType
+            </div>
+            <div class="usr-object">
+                @Html.BusinessTypeComboBox("BusinessTypeCode", new { style = "width:273px;", maxlength = "3" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS020.lblTelephoneNo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("PhoneNo", "", new { style = "width:170px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+    </form>
+</div>
+<!---------------------------------- End   Attached Document list---------------------------------------------->
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog">
+    </div>
+</div>

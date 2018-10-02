@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG6001" xml:space="preserve">
+    <value>ไม่สามารถใส่ค่า "ช่วงเวลาออกใบแจ้งหนี้ (เดือน)" เกิน 60 เดือนได้</value>
+  </data>
+  <data name="MSG6002" xml:space="preserve">
+    <value>รหัสลูกค้าสำหรับเรียกเก็บที่คู่กับสาขาที่ออกบิลนี้มีอยู่ในรหัสลูกค้าสำหรับออกใบแจ้งหนี้ {0} แล้ว</value>
+  </data>
+  <data name="MSG6003" xml:space="preserve">
+    <value>เลขที่สัญญา/เลขที่โครงการที่คู่กับรหัสลูกค้าสำหรับออกใบแจ้งหนี้นี้มีอยู่ในเลขที่รายการเรียกเก็บ {0} แล้ว</value>
+  </data>
+  <data name="MSG6004" xml:space="preserve">
+    <value>ประเภทการเรียกเก็บ {0} มีอยู่ในลิสต์แล้ว</value>
+  </data>
+  <data name="MSG6005" xml:space="preserve">
+    <value>กรุณาเลือกประเภทการเรียกเก็บอย่างน้อย 1 ประเภท</value>
+  </data>
+  <data name="MSG6006" xml:space="preserve">
+    <value>วิธีการชำระเงินถูกเลือกเป็น "หักบัญชีอัตโนมัติ" อยู่ กรุณาใส่ข้อมูลการหักบัญชีอัตโนมัติ</value>
+  </data>
+  <data name="MSG6007" xml:space="preserve">
+    <value>วิธีการชำระเงินถูกเลือกเป็น "ชำระผ่านบัตรเครดิต" อยู่ กรุณาใส่ข้อมูลบัตรเครดิต</value>
+  </data>
+  <data name="MSG6008" xml:space="preserve">
+    <value>ไม่สามารถลบ {0} ได้</value>
+  </data>
+  <data name="MSG6009" xml:space="preserve">
+    <value>หากรอบการเรียกเก็บน้อยกว่า 2 จะต้องใส่เลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG6010" xml:space="preserve">
+    <value>ไม่สามารถเปลี่ยนวันสุดท้ายของรอบบิลเป็นวันที่ก่อนหน้าวันที่เรียกเก็บล่าสุดได้</value>
+  </data>
+  <data name="MSG6011" xml:space="preserve">
+    <value>วันที่เปลี่ยนแปลงเงื่อนไขการชำระเงินล่าสุดต้องไม่ใช่วันที่ในอนาคต</value>
+  </data>
+  <data name="MSG6012" xml:space="preserve">
+    <value>วันที่เปลี่ยนแปลงล่าสุด และ "วันที่เปลี่ยนแปลงก่อนล่าสุด 1-4" ไม่สอดคล้องกัน</value>
+  </data>
+  <data name="MSG6013" xml:space="preserve">
+    <value>วันเริ่มรอบบิลของประวัติการเรียกเก็บแรกสุดในข้อมูลพื้นฐานการเรียกเก็บต้องไม่ใช่วันที่ก่อนหน้าวันที่เปิดใช้บริการของสัญญา</value>
+  </data>
+  <data name="MSG6014" xml:space="preserve">
+    <value>"รอบบิล (เริ่มต้น)" ต้องเป็นวันเดียวกับหรือหลังจากวันอนุมัติสัญญา</value>
+  </data>
+  <data name="MSG6015" xml:space="preserve">
+    <value>หลังจากบันทึกข้อมูลแล้ว ข้อมูลทั้งหมดยกเว้น "ต้องให้ความสนใจเป็นพิเศษ" จะไม่สามารถแก้ไขได้จนกว่าจะคลิกไม่เลือกในช่อง "ต้องให้ความสนใจเป็นพิเศษ"</value>
+  </data>
+  <data name="MSG6016" xml:space="preserve">
+    <value>มีการเปลี่ยนแปลงวิธีการชำระเงินจาก "หักบัญชีอัตโนมัติ" เป็นวิธีอื่น ดังนั้นข้อมูลการหักบัญชีอัตโนมัติจะถูกลบ กรุณาตรวจสอบความถูกต้องอีกครั้ง</value>
+  </data>
+  <data name="MSG6017" xml:space="preserve">
+    <value>มีการเปลี่ยนแปลงวิธีการชำระเงินจาก "ชำระผ่านบัตรเครดิต" เป็นวิธีอื่น ดังนั้นข้อมูลบัตรเครดิตจะถูกลบ กรุณาตรวจสอบความถูกต้องอีกครั้ง</value>
+  </data>
+  <data name="MSG6018" xml:space="preserve">
+    <value>รอบการเรียกเก็บ มากกว่า 60 เดือน กรุณาตรวจสอบความถูกต้องอีกครั้ง</value>
+  </data>
+  <data name="MSG6019" xml:space="preserve">
+    <value>"ระยะเวลาการชำระเงิน" มากกว่า 12 เดือน กรุณาตรวจสอบความถูกต้องอีกครั้ง</value>
+  </data>
+  <data name="MSG6020" xml:space="preserve">
+    <value>ระบบจะหยุดการเรียกเก็บค่าใช้จ่ายต่อเนื่อง กรุณาตรวจสอบความถูกต้องอีกครั้ง</value>
+  </data>
+  <data name="MSG6021" xml:space="preserve">
+    <value>มีการเปลี่ยนแปลงข้อมูลการเรียกเก็บ ระบบจะทำการเรียกเก็บค่าใช้จ่ายต่อเนื่อง กรุณาตรวจสอบความถูกต้องอีกครั้ง</value>
+  </data>
+  <data name="MSG6022" xml:space="preserve">
+    <value>กรุณาแก้ไขข้อมูลสัญญาโดยไม่ให้ขัดแย้งกับค่าเช่า/ค่าบริการ</value>
+  </data>
+  <data name="MSG6023" xml:space="preserve">
+    <value>คุณไม่สามารถยกเลิกข้อมูลรายการเรียกเก็บได้</value>
+  </data>
+  <data name="MSG6024" xml:space="preserve">
+    <value>ข้อมูลรายการเรียกเก็บที่ยกเลิกและออกใหม่ จะต้องมีประเภทการเรียกเก็บเดียวกัน</value>
+  </data>
+  <data name="MSG6025" xml:space="preserve">
+    <value>วันที่คาดว่าจะออกใบแจ้งหนี้/หักบัญชีอัตโนมัติต้องไม่ใช่วันที่ในอดีต</value>
+  </data>
+  <data name="MSG6026" xml:space="preserve">
+    <value>วันที่คาดว่าจะออกใบแจ้งหนี้/หักบัญชีอัตโนมัติที่ระบุไว้ไม่สอดคล้องกับวันหักบัญชีที่ตั้งค่าไว้ในมาสเตอร์</value>
+  </data>
+  <data name="MSG6027" xml:space="preserve">
+    <value>วันที่คาดว่าจะออกใบแจ้งหนี้/หักบัญชีอัตโนมัติที่ระบุไว้ไม่สอดคล้องกับวันหักบัญชีบัตรเครดิตที่ตั้งค่าไว้ในมาสเตอร์</value>
+  </data>
+  <data name="MSG6028" xml:space="preserve">
+    <value>วันที่คาดว่าจะหักบัญชีนี้มีการสร้างไฟล์ข้อมูลธนาคารสำหรับหักบัญชีอัตโนมัติเรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG6029" xml:space="preserve">
+    <value>วันที่คาดว่าจะหักบัญชีนี้มีการสร้างไฟล์ข้อมูลการหักบัญชีบัตรเครดิตเรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG6030" xml:space="preserve">
+    <value>"รอบบิล (เริ่มต้น)" ต้องเป็นวันเดียวกับหรือหลังจากวันที่เปิดใช้บริการ</value>
+  </data>
+  <data name="MSG6031" xml:space="preserve">
+    <value>รอบบิล ({0}-{1}) ต้องเป็นช่วงเวลาต่อเนื่องกับรอบบิลของรายการเรียกเก็บที่อยู่ในระบบ</value>
+  </data>
+  <data name="MSG6032" xml:space="preserve">
+    <value>รอบบิล ({0}-{1}) ต้องไม่ทับซ้อนกับรอบบิลของรายการเรียกเก็บที่อยู่ในระบบ</value>
+  </data>
+  <data name="MSG6033" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลได้เนื่องจากจะทำให้ไม่มีข้อมูลตั้งแต่วันเริ่มรอบบิลแรกของประวัติการเรียกเก็บได้</value>
+  </data>
+  <data name="MSG6034" xml:space="preserve">
+    <value>ไม่สามารถสร้างข้อมูลรายการเรียกเก็บก่อนหน้าวันเริ่มรอบบิลแรกของประวัติการเรียกเก็บได้</value>
+  </data>
+  <data name="MSG6035" xml:space="preserve">
+    <value>ข้อมูลรายการเรียกเก็บนี้มีการออกใบแจ้งหนี้ซึ่งออกโดยรวมหลายข้อมูลแล้ว คุณต้องการดำเนินการยกเลิกข้อมูลหรือไม่?</value>
+  </data>
+  <data name="MSG6036" xml:space="preserve">
+    <value>มีการบันทึกข้อมูลยอดเงินที่จะเพิ่ม/ลดในรอบบิลถัดไปในข้อมูลพื้นฐานการเรียกเก็บนี้แล้ว กรุณาตรวจสอบว่ายอดเงินถูกต้องหรือไม่ และจำเป็นต้องแก้ไขหรือลบข้อมูลยอดเงินที่จะเพิ่ม/ลดในรอบบิลถัดไปหรือไม่</value>
+  </data>
+  <data name="MSG6037" xml:space="preserve">
+    <value>"รอบบิลที่ปรับยอด (เริ่มต้น)" ต้องเป็นวันเดียวกับหรือหลังจากวันที่เปิดใช้บริการ</value>
+  </data>
+  <data name="MSG6038" xml:space="preserve">
+    <value>"รอบบิลที่ปรับยอด (เริ่มต้น)" ต้องเป็นวันเดียวกับหรือหลังจากวันที่เปิดใช้บริการ</value>
+  </data>
+  <data name="MSG6039" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะเปลี่ยนแปลงข้อมูลยอดเงินที่จะเพิ่ม/ลดในรอบบิลถัดไป?</value>
+  </data>
+  <data name="MSG6040" xml:space="preserve">
+    <value>ลูกค้าสำหรับออกใบแจ้งหนี้นี้ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG6041" xml:space="preserve">
+    <value>ข้อมูลพื้นฐานการเรียกเก็บนี้ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG6042" xml:space="preserve">
+    <value>รายการเรียกเก็บนี้ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG6043" xml:space="preserve">
+    <value>ใบแจ้งหนี้นี้ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG6044" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการหักบัญชีอัตโนมัติ/หักบัญชีบัตรเครดิตได้เนื่องจากวิธีการชำระเงินไม่ใช่ "หักบัญชีอัตโนมัติ" หรือ "ชำระผ่านบัตรเครดิต"</value>
+  </data>
+  <data name="MSG6045" xml:space="preserve">
+    <value>ข้อมูลรายการเรียกเก็บนี้มีการออกใบแจ้งหนี้ซึ่งออกโดยรวมหลายข้อมูลแล้ว กรุณาดำเนินการดำเนินการหักบัญชีอัตโนมัติ/หักบัญชีบัตรเครดิตโดยแยกตามใบแจ้งหนี้</value>
+  </data>
+  <data name="MSG6046" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการหักบัญชีอัตโนมัติ/หักบัญชีบัตรเครดิตได้เนื่องจากสถานะการชำระเงินของข้อมูลนี้ไม่ใช่ "00" (ยังไม่ได้ออกใบแจ้งหนี้) หรือ "01" (ยังไม่ได้ชำระเงิน) และมีแค่ข้อมูลเดียวในใบแจ้งหนี้นี้</value>
+  </data>
+  <data name="MSG6047" xml:space="preserve">
+    <value>ไม่สามารถระงับการหักบัญชีอัตโนมัติ/หักบัญชีบัตรเครดิตได้เนื่องจากข้อมูลรายการเรียกเก็บนี้มีการออกใบแจ้งหนี้ซึ่งออกโดยรวมหลายข้อมูลแล้ว</value>
+  </data>
+  <data name="MSG6048" xml:space="preserve">
+    <value>ไม่สามารถระงับการหักบัญชีอัตโนมัติ/หักบัญชีบัตรเครดิตได้เนื่องจากสถานะการชำระเงินของข้อมูลนี้ไม่ใช่ "04" (ยังไม่ได้ออกใบแจ้งหนี้) หรือ "03" (ยังไม่ได้ชำระเงิน) และมีแค่ข้อมูลเดียวในใบแจ้งหนี้นี้</value>
+  </data>
+  <data name="MSG6049" xml:space="preserve">
+    <value>ไม่สามารถเปลี่ยนวันที่คาดว่าจะออกใบแจ้งหนี้/หักบัญชีอัตโนมัติได้เนื่องจากไม่ใช่ข้อมูลที่ยังไม่ได้ออกใบแจ้งหนี้และยังไม่ชำระเงิน</value>
+  </data>
+  <data name="MSG6050" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการหักบัญชีอัตโนมัติ/หักบัญชีบัตรเครดิตได้เนื่องจากมีเลขที่รายการเรียกเก็บที่มีข้อมูลบัญชีของการหักบัญชีอัตโนมัติ/บัตรเครดิตไม่เหมือนกัน</value>
+  </data>
+  <data name="MSG6051" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการหักบัญชีอัตโนมัติ/หักบัญชีบัตรเครดิตได้เนื่องจากสถานะการชำระเงินของข้อมูลนี้ไม่ใช่ "01" (ยังไม่ได้ชำระเงิน)</value>
+  </data>
+  <data name="MSG6052" xml:space="preserve">
+    <value>ไม่สามารถระงับการหักบัญชีอัตโนมัติ/หักบัญชีบัตรเครดิตได้เนื่องจากสถานะการชำระเงินของข้อมูลนี้ไม่ใช่ "03" (ยังไม่ได้ชำระเงิน)</value>
+  </data>
+  <data name="MSG6053" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกข้อมูลรายการเรียกเก็บที่ไม่ใช่รอบบิลล่าสุดได้</value>
+  </data>
+  <data name="MSG6054" xml:space="preserve">
+    <value>กรุณาเลือกรายการเรียกเก็บอย่างน้อย 1 รายการเพื่อทำการยกเลิก</value>
+  </data>
+  <data name="MSG6055" xml:space="preserve">
+    <value>กรุณาสร้างรายการเรียกเก็บอย่างน้อย 1 รายการ</value>
+  </data>
+  <data name="MSG6056" xml:space="preserve">
+    <value>ข้อมูลพื้นฐานการเรียกเก็บ {0} ถูกตั้งค่าให้ต้องให้ความสนใจเป็นพิเศษ ดังนั้นจึงไม่สามารถแก้ไขข้อมูลพื้นฐานการเรียกเก็บ รายการเรียกเก็บและใบแจ้งหนี้ได้</value>
+  </data>
+  <data name="MSG6057" xml:space="preserve">
+    <value>เลขที่สัญญาไม่มีในระบบ</value>
+  </data>
+  <data name="MSG6058" xml:space="preserve">
+    <value>ยอดรวมราคาที่เรียกเก็บที่กรอกไว้ต้องเท่ากับค่าเช่า/ค่าบริการล่าสุด</value>
+  </data>
+  <data name="MSG6059" xml:space="preserve">
+    <value>รายการเรียกเก็บทั้งหมดในใบแจ้งหนี้จะต้องมีประเภทการเรียกเก็บเดียวกัน</value>
+  </data>
+  <data name="MSG6060" xml:space="preserve">
+    <value>รายการเรียกเก็บทั้งหมดในใบแจ้งหนี้จะต้องมีวิธีการชำระเงินเดียวกัน</value>
+  </data>
+  <data name="MSG6061" xml:space="preserve">
+    <value>รายการเรียกเก็บทั้งหมดในใบแจ้งหนี้จะต้องมีอัตราภาษีเท่ากัน</value>
+  </data>
+  <data name="MSG6062" xml:space="preserve">
+    <value>สัญญานี้ต้องเปิดใช้บริการแล้ว</value>
+  </data>
+  <data name="MSG6063" xml:space="preserve">
+    <value>รอบบิล (ตั้งแต่-จนถึง) ต้องไม่ทับซ้อนกับรอบบิลของรายการเรียกเก็บที่อยู่ในระบบ</value>
+  </data>
+  <data name="MSG6064" xml:space="preserve">
+    <value>ไม่สามารถออกใบแจ้งหนี้งานขายขาดได้เนื่องจากสถานะการดำเนินการของลูกค้าขายขาดไม่ใช่ "2 (จัดส่งแล้ว)" หรือ "4 (ติดตั้งเสร็จสิ้นแล้ว แต่ยังไม่ตรวจรับ)"</value>
+  </data>
+  <data name="MSG6065" xml:space="preserve">
+    <value>กรุณาเลือกรายการเรียกเก็บอย่างน้อย 1 รายการเพื่อทำการแยกใบแจ้งหนี้</value>
+  </data>
+  <data name="MSG6066" xml:space="preserve">
+    <value>ช่อง "ไม่เปลี่ยนเลขที่ใบแจ้งหนี้" ในส่วนของการแยกใบแจ้งหนี้ถูกเลือกอยู่ กรุณาตรวจสอบความถูกต้องอีกครั้ง</value>
+  </data>
+  <data name="MSG6067" xml:space="preserve">
+    <value>กรุณาเลือกรายการเรียกเก็บอย่างน้อย 1 รายการเพื่อทำการรวมใบแจ้งหนี้</value>
+  </data>
+  <data name="MSG6068" xml:space="preserve">
+    <value>คุณสามารถรวมใบแจ้งหนี้ได้เฉพาะข้อมูลที่มีประเภทการเรียกเก็บเดียวกันเท่านั้น</value>
+  </data>
+  <data name="MSG6069" xml:space="preserve">
+    <value>ช่อง "ไม่เปลี่ยนเลขที่ใบแจ้งหนี้" ในส่วนของการรวมใบแจ้งหนี้ถูกเลือกอยู่ กรุณาตรวจสอบความถูกต้องอีกครั้ง</value>
+  </data>
+  <data name="MSG6070" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะแยกใบแจ้งหนี้ของข้อมูลรายการเรียกเก็บทั้งหมดออกจากใบแจ้งหนี้นี้</value>
+  </data>
+  <data name="MSG6071" xml:space="preserve">
+    <value>สัญญาขายขาดไม่มีในระบบ</value>
+  </data>
+  <data name="MSG6072" xml:space="preserve">
+    <value>ราคาแบ่งจ่ายที่ยังไม่ได้ออกใบแจ้งหนี้ จะถูกออกใบแจ้งหนี้ไปด้วยในครั้งนี้ คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG6073" xml:space="preserve">
+    <value>ไม่สามารถแยกใบแจ้งหนี้ {0} ได้เนื่องจากมีสถานะการชำระเงินเป็น {1}</value>
+  </data>
+  <data name="MSG6074" xml:space="preserve">
+    <value>ไม่สามารถรวมใบแจ้งหนี้ {0} ได้เนื่องจากมีสถานะการชำระเงินเป็น {1}</value>
+  </data>
+  <data name="MSG6075" xml:space="preserve">
+    <value>ไม่สามารถเปลี่ยนแปลงวิธีการชำระเงินแบบหักบัญชีอัตโนมัติได้เนื่องจากข้อมูลพื้นฐานการเรียกเก็บนี้ได้ออกรายการเรียกเก็บหรือใบแจ้งหนี้สำหรับหักบัญชีอัตโนมัติแล้ว</value>
+  </data>
+  <data name="MSG6076" xml:space="preserve">
+    <value>ไม่สามารถเปลี่ยนแปลงข้อมูลการหักบัญชีอัตโนมัติได้เนื่องจากข้อมูลพื้นฐานการเรียกเก็บนี้ได้ออกใบแจ้งหนี้สำหรับหักบัญชีอัตโนมัติแล้ว</value>
+  </data>
+  <data name="MSG6077" xml:space="preserve">
+    <value>ไม่สามารถเปลี่ยนแปลงวิธีการชำระเงินแบบหักผ่านบัตรเครดิตได้เนื่องจากข้อมูลพื้นฐานการเรียกเก็บนี้ได้ออกรายการเรียกเก็บหรือใบแจ้งหนี้สำหรับหักผ่านบัตรเครดิตแล้ว</value>
+  </data>
+  <data name="MSG6078" xml:space="preserve">
+    <value>ไม่สามารถเปลี่ยนแปลงข้อมูลบัตรเครดิตได้เนื่องจากข้อมูลพื้นฐานการเรียกเก็บนี้ได้ออกใบแจ้งหนี้สำหรับหักผ่านบัตรเครดิตแล้ว</value>
+  </data>
+  <data name="MSG6079" xml:space="preserve">
+    <value>ไม่สามารถแยกใบแจ้งหนี้ {0} ได้เนื่องจากมีรหัสลูกค้าสำหรับออกใบแจ้งหนี้ไม่ตรงกัน</value>
+  </data>
+  <data name="MSG6080" xml:space="preserve">
+    <value>ไม่สามารถรวมใบแจ้งหนี้ {0} ได้เนื่องจากมีรหัสลูกค้าสำหรับออกใบแจ้งหนี้ไม่ตรงกัน</value>
+  </data>
+  <data name="MSG6081" xml:space="preserve">
+    <value>ไม่สามารถสร้างใบแจ้งหนี้นี้ได้เนื่องจากมีรหัสลูกค้าสำหรับออกใบแจ้งหนี้ไม่ตรงกัน</value>
+  </data>
+  <data name="MSG6082" xml:space="preserve">
+    <value>ไม่สามารถแก้ไขค่าเช่า/ค่าบริการรายเดือนได้เนื่องจากไม่มีข้อมูลในระบบ</value>
+  </data>
+  <data name="MSG6083" xml:space="preserve">
+    <value>ไม่สามารถจัดเก็บข้อมูลรายการเรียกเก็บได้เนื่องจากราคาเรียกเก็บที่คำนวณได้เกิน 10 หลัก</value>
+  </data>
+  <data name="MSG6084" xml:space="preserve">
+    <value>ไม่สามารถจัดเก็บข้อมูลใบแจ้งหนี้ได้เนื่องจากยอดเงินในใบแจ้งหนี้ที่คำนวณได้เกิน 10 หลัก</value>
+  </data>
+  <data name="MSG6085" xml:space="preserve">
+    <value>ไม่สามารถจัดเก็บข้อมูลใบแจ้งหนี้ได้เนื่องจากภาษีมูลค่าเพิ่มที่คำนวณได้เกิน 10 หลัก</value>
+  </data>
+  <data name="MSG6086" xml:space="preserve">
+    <value>ไม่สามารถจัดเก็บข้อมูลใบแจ้งหนี้ได้เนื่องจากภาษีหัก ณ ที่จ่ายที่คำนวณได้เกิน 10 หลัก</value>
+  </data>
+  <data name="MSG6087" xml:space="preserve">
+    <value>คุณไม่มีสิทธิ์ในการใช้งานส่วนนี้</value>
+  </data>
+  <data name="MSG6088" xml:space="preserve">
+    <value>รอบบิล ({0}-{1}) ต้องไม่ทับซ้อนกับรอบบิลของรายการเรียกเก็บที่อยู่ในระบบ</value>
+  </data>
+  <data name="MSG6089" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลพื้นฐานการเรียกเก็บได้เนื่องจากจะต้องมีอย่างน้อยหนึ่ง OCC การเรียกเก็บที่วันเริ่มรอบบิลของประวัติการเรียกเก็บแรกสุดเป็นวันเดียวกับวันเริ่มเปิดใช้บริการ</value>
+  </data>
+  <data name="MSG6090" xml:space="preserve">
+    <value>กรุณาระบุประเภทการเรียกเก็บ</value>
+  </data>
+  <data name="MSG6091" xml:space="preserve">
+    <value>กรุณาระบุข้อมูลอย่างน้อย 1 รายการ</value>
+  </data>
+  <data name="MSG6092" xml:space="preserve">
+    <value>"ข้อมูลการขายใหม่ครั้งแรก" ไม่สามารถเลือกปนกับ "ข้อมูลการขายใหม่ที่ไม่ใช่ครั้งแรก" หรือ "ข้อมูลการขายเพิ่ม" เพื่อทำขั้นตอนการยกเลิกและออกใบเสร็จใหม่ได้ ให้ทำแยกทีละรายการ</value>
+  </data>
+  <data name="MSG6093" xml:space="preserve">
+    <value>ประเภทการเรียกเก็บ {0} ยัง&lt;b&gt;&lt;u&gt;ไม่มีการระบุ&lt;/u&gt;&lt;/b&gt;เป็นค่าใช้จ่ายครั้งแรกในระบบ&lt;br/&gt;ต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG6094" xml:space="preserve">
+    <value>ประเภทการเรียกเก็บ {0} มีการระบุเป็นค่าใช้จ่ายครั้งแรกแล้วในระบบ&lt;br/&gt;ต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+</root>

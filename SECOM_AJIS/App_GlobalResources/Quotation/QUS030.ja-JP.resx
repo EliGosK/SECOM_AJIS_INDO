@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAdd" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="btnAddUpdate" xml:space="preserve">
+    <value>追加／更新</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="btnClear" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+  <data name="btnImportQuotationInfo" xml:space="preserve">
+    <value>見積情報インポート</value>
+  </data>
+  <data name="btnRegisterNextQuotationDetail" xml:space="preserve">
+    <value>別の見積算定登録</value>
+  </data>
+  <data name="btnResetLinkageContract" xml:space="preserve">
+    <value>連係元契約リセット</value>
+  </data>
+  <data name="btnRetrieve" xml:space="preserve">
+    <value>取得</value>
+  </data>
+  <data name="btnSearchFacility" xml:space="preserve">
+    <value>設備検索</value>
+  </data>
+  <data name="btnSearchInstrument" xml:space="preserve">
+    <value>機器検索</value>
+  </data>
+  <data name="btnSearchQuotationTarget" xml:space="preserve">
+    <value>見積先検索</value>
+  </data>
+  <data name="btnShowDefault" xml:space="preserve">
+    <value>デフォルト表示</value>
+  </data>
+  <data name="headerAdditionalQuantity" xml:space="preserve">
+    <value>追加設置数</value>
+  </data>
+  <data name="headerBeforeQuantity" xml:space="preserve">
+    <value>変更前設置数</value>
+  </data>
+  <data name="headerChangeQuantity" xml:space="preserve">
+    <value>追加・撤去内訳</value>
+  </data>
+  <data name="headerContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+  <data name="headerCostPerHour" xml:space="preserve">
+    <value>常駐契約警備時間単価（THB）</value>
+  </data>
+  <data name="headerDetail" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;詳細&lt;/div&gt;</value>
+  </data>
+  <data name="headerEdit" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;編集&lt;/div&gt;</value>
+  </data>
+  <data name="headerFacilityCode" xml:space="preserve">
+    <value>設備コード</value>
+  </data>
+  <data name="headerFacilityName" xml:space="preserve">
+    <value>設備名称</value>
+  </data>
+  <data name="headerInstalledQuantity" xml:space="preserve">
+    <value>設置数</value>
+  </data>
+  <data name="headerInstruedQuantity" xml:space="preserve">
+    <value />
+  </data>
+  <data name="headerInstrumentCode" xml:space="preserve">
+    <value>機器コード</value>
+  </data>
+  <data name="headerInstrumentName" xml:space="preserve">
+    <value>機器名称</value>
+  </data>
+  <data name="headerLineUpType" xml:space="preserve">
+    <value>採用区分</value>
+  </data>
+  <data name="headerNoOfDate" xml:space="preserve">
+    <value>月間日数</value>
+  </data>
+  <data name="headerNoOfSG" xml:space="preserve">
+    <value>常駐ポスト数&lt;br/&gt;（人）</value>
+  </data>
+  <data name="headerProductName" xml:space="preserve">
+    <value>商品名称</value>
+  </data>
+  <data name="headerQuantity" xml:space="preserve">
+    <value>個数</value>
+  </data>
+  <data name="headerRemovalQuantity" xml:space="preserve">
+    <value>撤去数</value>
+  </data>
+  <data name="headerRemove" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;消去&lt;/div&gt;</value>
+  </data>
+  <data name="headerSecurityTime" xml:space="preserve">
+    <value>常駐契約時間 (HH:MM)</value>
+  </data>
+  <data name="headerSecurityTimeFinish" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="headerSecurityTimeStart" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="headerSentryGuardType" xml:space="preserve">
+    <value>常駐区分</value>
+  </data>
+  <data name="headerWorkingHour" xml:space="preserve">
+    <value>常駐契約警備&lt;br/&gt;延べ時間</value>
+  </data>
+  <data name="lblAcquisitionType" xml:space="preserve">
+    <value>取得タイプ</value>
+  </data>
+  <data name="lblAdditionalApproveNo1" xml:space="preserve">
+    <value>加算決裁番号1</value>
+  </data>
+  <data name="lblAdditionalApproveNo2" xml:space="preserve">
+    <value>加算決裁番号2</value>
+  </data>
+  <data name="lblAdditionalApproveNo3" xml:space="preserve">
+    <value>加算決裁番号3</value>
+  </data>
+  <data name="lblAdditionalContractFee1" xml:space="preserve">
+    <value>加算料1</value>
+  </data>
+  <data name="lblAdditionalContractFee2" xml:space="preserve">
+    <value>加算料2</value>
+  </data>
+  <data name="lblAdditionalContractFee3" xml:space="preserve">
+    <value>加算料3</value>
+  </data>
+  <data name="lblAddressEN" xml:space="preserve">
+    <value>住所（英語）</value>
+  </data>
+  <data name="lblAddressLC" xml:space="preserve">
+    <value>住所（現地語）</value>
+  </data>
+  <data name="lblApproveNo1" xml:space="preserve">
+    <value>決裁番号1</value>
+  </data>
+  <data name="lblApproveNo2" xml:space="preserve">
+    <value>決裁番号2</value>
+  </data>
+  <data name="lblApproveNo3" xml:space="preserve">
+    <value>決裁番号3</value>
+  </data>
+  <data name="lblApproveNo4" xml:space="preserve">
+    <value>決裁番号4</value>
+  </data>
+  <data name="lblApproveNo5" xml:space="preserve">
+    <value>決裁番号5</value>
+  </data>
+  <data name="lblBeatGuardDetail" xml:space="preserve">
+    <value>巡回明細</value>
+  </data>
+  <data name="lblBidGuaranteeAmount1" xml:space="preserve">
+    <value>入札保証金1</value>
+  </data>
+  <data name="lblBidGuaranteeAmount2" xml:space="preserve">
+    <value>入札保証金2</value>
+  </data>
+  <data name="lblBranchAddressEN" xml:space="preserve">
+    <value>支店住所（英語）</value>
+  </data>
+  <data name="lblBranchAddressLC" xml:space="preserve">
+    <value>支店住所（現地語）</value>
+  </data>
+  <data name="lblBranchNameEN" xml:space="preserve">
+    <value>支店名称（英語）</value>
+  </data>
+  <data name="lblBranchNameLC" xml:space="preserve">
+    <value>支店名称（現地語）</value>
+  </data>
+  <data name="lblContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+  <data name="lblContractFee" xml:space="preserve">
+    <value>契約料金</value>
+  </data>
+  <data name="lblCostPerHour" xml:space="preserve">
+    <value>常駐契約警備時間単価</value>
+  </data>
+  <data name="lblCustomerCode" xml:space="preserve">
+    <value>顧客コード</value>
+  </data>
+  <data name="lblDepositFee" xml:space="preserve">
+    <value>保証金</value>
+  </data>
+  <data name="lblDisconnectionMonitoring" xml:space="preserve">
+    <value>断線監視用</value>
+  </data>
+  <data name="lblDisconnectLineOwnerType" xml:space="preserve">
+    <value>断線監視用回線名義</value>
+  </data>
+  <data name="lblDisconnectLineType" xml:space="preserve">
+    <value>断線監視用回線種類</value>
+  </data>
+  <data name="lblDispatchType" xml:space="preserve">
+    <value>対処区分</value>
+  </data>
+  <data name="lblFacilityCode" xml:space="preserve">
+    <value>設備コード</value>
+  </data>
+  <data name="lblFacilityDetail" xml:space="preserve">
+    <value>設備明細</value>
+  </data>
+  <data name="lblFeeInformation_AL" xml:space="preserve">
+    <value>料金情報</value>
+  </data>
+  <data name="lblFeeInformation_OTHER" xml:space="preserve">
+    <value>料金情報</value>
+  </data>
+  <data name="lblFeeInformation_Sale" xml:space="preserve">
+    <value>料金情報</value>
+  </data>
+  <data name="lblFrequencyOfGateUsage" xml:space="preserve">
+    <value>門扉使用回数</value>
+  </data>
+  <data name="lblImageLineOwnerType" xml:space="preserve">
+    <value>画像監視用回線名義</value>
+  </data>
+  <data name="lblImageLineType" xml:space="preserve">
+    <value>画像監視用回線種類</value>
+  </data>
+  <data name="lblImageMonitoring" xml:space="preserve">
+    <value>画像監視用</value>
+  </data>
+  <data name="lblInstallationFee" xml:space="preserve">
+    <value>工事料金</value>
+  </data>
+  <data name="lblInstrumentCode" xml:space="preserve">
+    <value>機器コード</value>
+  </data>
+  <data name="lblInstrumentDetail_01" xml:space="preserve">
+    <value>機器明細</value>
+  </data>
+  <data name="lblInstrumentDetail_02" xml:space="preserve">
+    <value>機器明細</value>
+  </data>
+  <data name="lblInstrumentDetail_03" xml:space="preserve">
+    <value>機器明細</value>
+  </data>
+  <data name="lblInsuranceCoverageAmount" xml:space="preserve">
+    <value>保険金額</value>
+  </data>
+  <data name="lblInsuranceType" xml:space="preserve">
+    <value>保険種類</value>
+  </data>
+  <data name="lblIntroducerCode" xml:space="preserve">
+    <value>紹介元コード</value>
+  </data>
+  <data name="lblLess" xml:space="preserve">
+    <value>&lt;&lt;たたむ</value>
+  </data>
+  <data name="lblLineNo" xml:space="preserve">
+    <value>列番号</value>
+  </data>
+  <data name="lblLineType" xml:space="preserve">
+    <value>回線種類</value>
+  </data>
+  <data name="lblLinkageSaleContractCode_1" xml:space="preserve">
+    <value>連係元売買契約コード</value>
+  </data>
+  <data name="lblLinkageSaleContractCode_2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLinkageSaleContractInformation" xml:space="preserve">
+    <value>連係元売買契約情報</value>
+  </data>
+  <data name="lblMainStructureType" xml:space="preserve">
+    <value>主体構造</value>
+  </data>
+  <data name="lblMaintenaceCycle" xml:space="preserve">
+    <value>保守サイクル（月数）</value>
+  </data>
+  <data name="lblMaintenanceDetail" xml:space="preserve">
+    <value>保守明細</value>
+  </data>
+  <data name="lblMaintenanceTargetContractCode" xml:space="preserve">
+    <value>保守対象契約コード</value>
+  </data>
+  <data name="lblMaintenanceTargetProduct" xml:space="preserve">
+    <value>保守対象商品</value>
+  </data>
+  <data name="lblMaintenanceType" xml:space="preserve">
+    <value>保守タイプ</value>
+  </data>
+  <data name="lblMAList" xml:space="preserve">
+    <value>保守対象契約コード一覧</value>
+  </data>
+  <data name="lblMemo" xml:space="preserve">
+    <value>メモ</value>
+  </data>
+  <data name="lblMonthlyInsuranceFee" xml:space="preserve">
+    <value>月額保険料</value>
+  </data>
+  <data name="lblMore" xml:space="preserve">
+    <value>展開&gt;&gt;</value>
+  </data>
+  <data name="lblMoreInformation" xml:space="preserve">
+    <value>(4) 詳細情報</value>
+  </data>
+  <data name="lblNameEN" xml:space="preserve">
+    <value>名称（英語）</value>
+  </data>
+  <data name="lblNameLC" xml:space="preserve">
+    <value>名称（現地語）</value>
+  </data>
+  <data name="lblNecessary" xml:space="preserve">
+    <value>: 商品の機能維持のため、要保守</value>
+  </data>
+  <data name="lblNewBuildingMgmtCost" xml:space="preserve">
+    <value>新築管理費</value>
+  </data>
+  <data name="lblNewBuildingMgmtType" xml:space="preserve">
+    <value>新築管理区分</value>
+  </data>
+  <data name="lblNewOldBuilding" xml:space="preserve">
+    <value>新築・既築区分</value>
+  </data>
+  <data name="lblNormalLineOwnerType" xml:space="preserve">
+    <value>通常信号用回線名義</value>
+  </data>
+  <data name="lblNormalLineType" xml:space="preserve">
+    <value>通常信号用回線種類</value>
+  </data>
+  <data name="lblNormalSignal" xml:space="preserve">
+    <value>通常信号用</value>
+  </data>
+  <data name="lblNotifyTime" xml:space="preserve">
+    <value>連絡時間 (HHMM)</value>
+  </data>
+  <data name="lblNumberOfBuildings" xml:space="preserve">
+    <value>棟数</value>
+  </data>
+  <data name="lblNumberOfClockKey" xml:space="preserve">
+    <value>刻時鍵数</value>
+  </data>
+  <data name="lblNumberOfDate" xml:space="preserve">
+    <value>月間日数</value>
+  </data>
+  <data name="lblNumberOfFloors" xml:space="preserve">
+    <value>階数</value>
+  </data>
+  <data name="lblNumerOfBeatGuardSteps" xml:space="preserve">
+    <value>巡回歩数</value>
+  </data>
+  <data name="lblNumerOfSentryGuard" xml:space="preserve">
+    <value>常駐ポスト数</value>
+  </data>
+  <data name="lblOldContractCode" xml:space="preserve">
+    <value>旧契約コード</value>
+  </data>
+  <data name="lblOperationOffice" xml:space="preserve">
+    <value>実施事業所</value>
+  </data>
+  <data name="lblOperationType" xml:space="preserve">
+    <value>運用区分</value>
+  </data>
+  <data name="lblOtherItemFee" xml:space="preserve">
+    <value>その他使用用具月間費</value>
+  </data>
+  <data name="lblOutsourcingFee" xml:space="preserve">
+    <value>外注委託料金</value>
+  </data>
+  <data name="lblPhoneLineOwnerTypeCode1" xml:space="preserve">
+    <value>通常信号用回線名義</value>
+  </data>
+  <data name="lblPhoneLineOwnerTypeCode2" xml:space="preserve">
+    <value>画像監視用回線名義</value>
+  </data>
+  <data name="lblPhoneLineOwnerTypeCode3" xml:space="preserve">
+    <value>断線監視用回線名義</value>
+  </data>
+  <data name="lblPhoneLineTypeCode1" xml:space="preserve">
+    <value>通常信号用回線種類</value>
+  </data>
+  <data name="lblPhoneLineTypeCode2" xml:space="preserve">
+    <value>画像監視用回線種類</value>
+  </data>
+  <data name="lblPhoneLineTypeCode3" xml:space="preserve">
+    <value>断線監視用回線種類</value>
+  </data>
+  <data name="lblPlanApprover" xml:space="preserve">
+    <value>プラン承認社員</value>
+  </data>
+  <data name="lblPlanApprovingDate" xml:space="preserve">
+    <value>プラン承認日</value>
+  </data>
+  <data name="lblPlanChecker" xml:space="preserve">
+    <value>プランチェック社員</value>
+  </data>
+  <data name="lblPlanCheckingDate" xml:space="preserve">
+    <value>プランチェック日</value>
+  </data>
+  <data name="lblPlanCode" xml:space="preserve">
+    <value>プランコード</value>
+  </data>
+  <data name="lblPlanner" xml:space="preserve">
+    <value>プランナー</value>
+  </data>
+  <data name="lblProductCode" xml:space="preserve">
+    <value>商品コード</value>
+  </data>
+  <data name="lblProductPrice" xml:space="preserve">
+    <value>商品代金</value>
+  </data>
+  <data name="lblProductType" xml:space="preserve">
+    <value>商品種類</value>
+  </data>
+  <data name="lblProvidedServiceType" xml:space="preserve">
+    <value>提供サービス種類</value>
+  </data>
+  <data name="lblPurchaseReasonMotivationType" xml:space="preserve">
+    <value>購入／導入動機</value>
+  </data>
+  <data name="lblPurchaserInformation" xml:space="preserve">
+    <value>(1) 契約先／発注元情報</value>
+  </data>
+  <data name="lblQuantity" xml:space="preserve">
+    <value>個数</value>
+  </data>
+  <data name="lblQuotationCode" xml:space="preserve">
+    <value>見積コード</value>
+  </data>
+  <data name="lblQuotationDetailInformation_AL" xml:space="preserve">
+    <value>見積算定情報</value>
+  </data>
+  <data name="lblQuotationDetailInformation_ONLINE" xml:space="preserve">
+    <value>見積算定情報</value>
+  </data>
+  <data name="lblQuotationDetailInformation_OTHER" xml:space="preserve">
+    <value>見積算定情報</value>
+  </data>
+  <data name="lblQuotationDetailInformation_SALE" xml:space="preserve">
+    <value>見積算定情報</value>
+  </data>
+  <data name="lblQuotationOffice" xml:space="preserve">
+    <value>見積事業所</value>
+  </data>
+  <data name="lblQuotationStaff" xml:space="preserve">
+    <value>見積社員</value>
+  </data>
+  <data name="lblQuotationTargetCode" xml:space="preserve">
+    <value>見積先コード</value>
+  </data>
+  <data name="lblQuotationTargetInformation" xml:space="preserve">
+    <value>見積先情報</value>
+  </data>
+  <data name="lblRealCustomerInformation" xml:space="preserve">
+    <value>(2) お客様（最終設置先）情報</value>
+  </data>
+  <data name="lblRegisterSentryGuardInformation" xml:space="preserve">
+    <value>常駐情報登録</value>
+  </data>
+  <data name="lblResultOfRegisterQuotationDetail" xml:space="preserve">
+    <value>見積算定登録結果</value>
+  </data>
+  <data name="lblSaleman1" xml:space="preserve">
+    <value>営業社員1</value>
+  </data>
+  <data name="lblSaleman10" xml:space="preserve">
+    <value>営業社員10</value>
+  </data>
+  <data name="lblSaleman2" xml:space="preserve">
+    <value>営業社員2</value>
+  </data>
+  <data name="lblSaleman3" xml:space="preserve">
+    <value>営業社員3</value>
+  </data>
+  <data name="lblSaleman4" xml:space="preserve">
+    <value>営業社員4</value>
+  </data>
+  <data name="lblSaleman5" xml:space="preserve">
+    <value>営業社員5</value>
+  </data>
+  <data name="lblSaleman6" xml:space="preserve">
+    <value>営業社員6</value>
+  </data>
+  <data name="lblSaleman7" xml:space="preserve">
+    <value>営業社員7</value>
+  </data>
+  <data name="lblSaleman8" xml:space="preserve">
+    <value>営業社員8</value>
+  </data>
+  <data name="lblSaleman9" xml:space="preserve">
+    <value>営業社員9</value>
+  </data>
+  <data name="lblSalesSupporter" xml:space="preserve">
+    <value>営業貢献者</value>
+  </data>
+  <data name="lblSaturdayDayTime" xml:space="preserve">
+    <value>土曜昼間巡回数</value>
+  </data>
+  <data name="lblSaturdayNightTime" xml:space="preserve">
+    <value>土曜夜間巡回数</value>
+  </data>
+  <data name="lblSecurityAreaSize" xml:space="preserve">
+    <value>警備面積（平方メートル）</value>
+  </data>
+  <data name="lblSecurityAreaSizeFrom" xml:space="preserve">
+    <value>警備面積（開始）（平方メートル）</value>
+  </data>
+  <data name="lblSecurityAreaSizeTo" xml:space="preserve">
+    <value>警備面積（終了）（平方メートル）</value>
+  </data>
+  <data name="lblSecurityFinishTime" xml:space="preserve">
+    <value>常駐契約終了時間 (HHMM)</value>
+  </data>
+  <data name="lblSecurityItemFee" xml:space="preserve">
+    <value>用具費</value>
+  </data>
+  <data name="lblSecurityStartTime" xml:space="preserve">
+    <value>常駐契約開始時間 (HHMM)</value>
+  </data>
+  <data name="lblSecurityTypeCode" xml:space="preserve">
+    <value>警備種類コード</value>
+  </data>
+  <data name="lblSentryGuardAreaType" xml:space="preserve">
+    <value>常駐地域区分</value>
+  </data>
+  <data name="lblSentryGuardDetail" xml:space="preserve">
+    <value>常駐明細</value>
+  </data>
+  <data name="lblSentryGuardType" xml:space="preserve">
+    <value>常駐区分</value>
+  </data>
+  <data name="lblSGList" xml:space="preserve">
+    <value>常駐明細一覧</value>
+  </data>
+  <data name="lblSiteBuildingArea" xml:space="preserve">
+    <value>物件建物延床面積 （平方メートル）</value>
+  </data>
+  <data name="lblSiteCode" xml:space="preserve">
+    <value>物件コード</value>
+  </data>
+  <data name="lblSiteInformation" xml:space="preserve">
+    <value>(3) 物件／納入先情報</value>
+  </data>
+  <data name="lblSpecialInstallation" xml:space="preserve">
+    <value>特殊工事</value>
+  </data>
+  <data name="lblSundayDayTime" xml:space="preserve">
+    <value>日曜昼間巡回数</value>
+  </data>
+  <data name="lblSundayNightTime" xml:space="preserve">
+    <value>日曜夜間巡回数</value>
+  </data>
+  <data name="lblTelephoneLineInformation" xml:space="preserve">
+    <value>回線情報</value>
+  </data>
+  <data name="lblTelephoneLineInformationError" xml:space="preserve">
+    <value>回線情報（いずれか）</value>
+  </data>
+  <data name="lblTelephoneOwner" xml:space="preserve">
+    <value>回線名義</value>
+  </data>
+  <data name="lblWeekdayDayTime" xml:space="preserve">
+    <value>平日昼間巡回数</value>
+  </data>
+  <data name="lblWeekdayNightTime" xml:space="preserve">
+    <value>平日夜間巡回数</value>
+  </data>
+  <data name="lblWorkingHoursPerMonth" xml:space="preserve">
+    <value>常駐契約警備延べ時間</value>
+  </data>
+  <data name="rdoNewBuildingMgmtTypeFlagNeed" xml:space="preserve">
+    <value>要</value>
+  </data>
+  <data name="rdoNewBuildingMgmtTypeFlagNoNeed" xml:space="preserve">
+    <value>不要</value>
+  </data>
+  <data name="rdoSpecialInstall_No" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="rdoSpecialInstall_Yes" xml:space="preserve">
+    <value>あり</value>
+  </data>
+  <data name="lblCeilingHeight" xml:space="preserve">
+    <value>天井の高さ</value>
+  </data>
+  <data name="lblCeilingHeightUnit" xml:space="preserve">
+    <value>メートル</value>
+  </data>
+  <data name="lblCeilingType" xml:space="preserve">
+    <value>天井種類</value>
+  </data>
+  <data name="lblCeilingTypeMBar" xml:space="preserve">
+    <value>Ｍバー</value>
+  </data>
+  <data name="lblCeilingTypeSlabConcrete" xml:space="preserve">
+    <value>スラブコンクリート</value>
+  </data>
+  <data name="lblCeilingTypeSteel" xml:space="preserve">
+    <value>鉄骨</value>
+  </data>
+  <data name="lblCeilingTypeTBar" xml:space="preserve">
+    <value>Ｔバー</value>
+  </data>
+  <data name="lblSpecialIns" xml:space="preserve">
+    <value>電線管種類</value>
+  </data>
+  <data name="lblSpecialInsEMT" xml:space="preserve">
+    <value>EMT</value>
+  </data>
+  <data name="lblSpecialInsOther" xml:space="preserve">
+    <value>その他</value>
+  </data>
+  <data name="lblSpecialInsPE" xml:space="preserve">
+    <value>PE</value>
+  </data>
+  <data name="lblSpecialInsProtector" xml:space="preserve">
+    <value>プロテクター</value>
+  </data>
+  <data name="lblSpecialInsPVC" xml:space="preserve">
+    <value>PVC</value>
+  </data>
+  <data name="lblSpecialInsSLN" xml:space="preserve">
+    <value>SLN</value>
+  </data>
+  <data name="lblCeilingTypeNone" xml:space="preserve">
+    <value>なし</value>
+  </data>
+</root>

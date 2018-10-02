@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SECOM_AJISModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SECOM_AJISModelStoreContainer">
+          <EntitySet Name="tbs_ProductType" EntityType="SECOM_AJISModel.Store.tbs_ProductType" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+        <EntityType Name="tbs_ProductType">
+          <Key>
+            <PropertyRef Name="ProductTypeCode" />
+          </Key>
+          <Property Name="ProductTypeCode" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="ProductTypeNameEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductTypeNameLC" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductTypeNameJP" Type="nvarchar" MaxLength="50" />
+          <Property Name="ServiceTypeCode" Type="char" MaxLength="1" />
+          <Property Name="ProvideServiceNameEN" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProvideServiceNameLC" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProvideServiceNameJP" Type="nvarchar" MaxLength="100" />
+          <Property Name="QuotationPrefix" Type="varchar" MaxLength="3" />
+          <Property Name="ContractPrefix" Type="varchar" MaxLength="3" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="varchar" MaxLength="10" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <Function Name="sp_CM_GetTbs_ProductType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_CM_GetUserEmailAddressDataList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvEmployeeName" Type="varchar" Mode="In" />
+          <Parameter Name="pchvnEmailAddress" Type="nvarchar" Mode="In" />
+          <Parameter Name="pchvOfficeCode" Type="varchar" Mode="In" />
+          <Parameter Name="pchrDepartmentCode" Type="char" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SECOM_AJISModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="CMEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <FunctionImport Name="GetProductType" EntitySet="tbs_ProductType" ReturnType="Collection(SECOM_AJISModel.tbs_ProductType)" />
+          <FunctionImport Name="GetUserEmailAddressDataList" ReturnType="Collection(SECOM_AJISModel.dtEmailAddress)">
+            <Parameter Name="pchvEmployeeName" Mode="In" Type="String" />
+            <Parameter Name="pchvnEmailAddress" Mode="In" Type="String" />
+            <Parameter Name="pchvOfficeCode" Mode="In" Type="String" />
+            <Parameter Name="pchrDepartmentCode" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="tbs_ProductType" EntityType="SECOM_AJISModel.tbs_ProductType" />
+        </EntityContainer>
+        <ComplexType Name="GetProductType_Result">
+          <Property Type="String" Name="ProductTypeCode" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="ProductTypeNameEN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProductTypeNameLC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ProductTypeNameJP" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="ServiceTypeCode" Nullable="true" MaxLength="1" />
+          <Property Type="String" Name="ProvideServiceNameEN" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ProvideServiceNameLC" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="ProvideServiceNameJP" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="QuotationPrefix" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="ContractPrefix" Nullable="true" MaxLength="3" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CreateBy" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UpdateBy" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="dtEmailAddress">
+          <Property Type="String" Name="EmpNo" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="EmpFirstNameEN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EmpLastNameEN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EmpFirstNameLC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EmpLastNameLC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="EmailAddress" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DepartmentCode" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="DepartmentName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OfficeCode" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="OfficeNameEN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OfficeNameJP" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OfficeNameLC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Button" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="EmpNameEN" Nullable="true" MaxLength="101" />
+          <Property Type="String" Name="EmpNameLC" Nullable="true" MaxLength="101" />
+          <Property Type="String" Name="OfficeName" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <EntityType Name="tbs_ProductType">
+          <Key>
+            <PropertyRef Name="ProductTypeCode" />
+          </Key>
+          <Property Type="String" Name="ProductTypeCode" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="ProductTypeNameEN" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductTypeNameLC" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductTypeNameJP" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ServiceTypeCode" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="ProvideServiceNameEN" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProvideServiceNameLC" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProvideServiceNameJP" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QuotationPrefix" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="ContractPrefix" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="String" Name="CreateBy" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UpdateDate" />
+          <Property Type="String" Name="UpdateBy" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SECOM_AJISModelStoreContainer" CdmEntityContainer="CMEntities">
+          <FunctionImportMapping FunctionImportName="GetProductType" FunctionName="SECOM_AJISModel.Store.sp_CM_GetTbs_ProductType">
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetUserEmailAddressDataList" FunctionName="SECOM_AJISModel.Store.sp_CM_GetUserEmailAddressDataList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SECOM_AJISModel.dtEmailAddress">
+                <ScalarProperty Name="EmpNo" ColumnName="EmpNo" />
+                <ScalarProperty Name="EmpFirstNameEN" ColumnName="EmpFirstNameEN" />
+                <ScalarProperty Name="EmpLastNameEN" ColumnName="EmpLastNameEN" />
+                <ScalarProperty Name="EmpFirstNameLC" ColumnName="EmpFirstNameLC" />
+                <ScalarProperty Name="EmpLastNameLC" ColumnName="EmpLastNameLC" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="OfficeCode" ColumnName="OfficeCode" />
+                <ScalarProperty Name="OfficeNameEN" ColumnName="OfficeNameEN" />
+                <ScalarProperty Name="OfficeNameJP" ColumnName="OfficeNameJP" />
+                <ScalarProperty Name="OfficeNameLC" ColumnName="OfficeNameLC" />
+                <ScalarProperty Name="Button" ColumnName="Button" />
+                <ScalarProperty Name="EmpNameEN" ColumnName="EmpNameEN" />
+                <ScalarProperty Name="EmpNameLC" ColumnName="EmpNameLC" />
+                <ScalarProperty Name="OfficeName" ColumnName="OfficeName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tbs_ProductType">
+            <EntityTypeMapping TypeName="SECOM_AJISModel.tbs_ProductType">
+              <MappingFragment StoreEntitySet="tbs_ProductType">
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ContractPrefix" ColumnName="ContractPrefix" />
+                <ScalarProperty Name="QuotationPrefix" ColumnName="QuotationPrefix" />
+                <ScalarProperty Name="ProvideServiceNameJP" ColumnName="ProvideServiceNameJP" />
+                <ScalarProperty Name="ProvideServiceNameLC" ColumnName="ProvideServiceNameLC" />
+                <ScalarProperty Name="ProvideServiceNameEN" ColumnName="ProvideServiceNameEN" />
+                <ScalarProperty Name="ServiceTypeCode" ColumnName="ServiceTypeCode" />
+                <ScalarProperty Name="ProductTypeNameJP" ColumnName="ProductTypeNameJP" />
+                <ScalarProperty Name="ProductTypeNameLC" ColumnName="ProductTypeNameLC" />
+                <ScalarProperty Name="ProductTypeNameEN" ColumnName="ProductTypeNameEN" />
+                <ScalarProperty Name="ProductTypeCode" ColumnName="ProductTypeCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="CommonEntityModel">
+        <EntityTypeShape EntityType="SECOM_AJISModel.tbs_ProductType" Width="1.5" PointX="0.75" PointY="0.75" Height="3.2357796223958335" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

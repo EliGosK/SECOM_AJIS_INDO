@@ -1,0 +1,185 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue
+@using System.Configuration;
+
+@{
+    ViewBag.SecomVersion = ConfigurationManager.AppSettings["SecomVersion"];
+    ViewBag.SecomCopyright = ConfigurationManager.AppSettings["SecomCopyright"];
+
+    //ViewBag.C_MAXLENGTH_CUSTOMER_CODE = (CommonValue.CUST_CODE_SHORT_DIGIT + 1).ToString();
+    //ViewBag.C_MAXLENGTH_SITE_CODE =  (CommonValue.SITE_CODE_SHORT_DIGIT + 6).ToString();
+    //ViewBag.C_MAXLENGTH_CONTRACT_CODE =  (CommonValue.CONTRACT_CODE_SHORT_DIGIT + 2).ToString();
+    //ViewBag.C_MAXLENGTH_QUTTATION_TARGE_CODE = (CommonValue.CONTRACT_CODE_SHORT_DIGIT + 3).ToString();
+    //ViewBag.C_MAXLENGTH_BILLING_CLIENT_CODE =  (CommonValue.BILLING_CLIENT_CODE_SHORT_DIGIT + 0).ToString();
+    //ViewBag.C_MAXLENGTH_BILLING_TARGE_CODE =  (CommonValue.BILLING_TARGET_CODE_SHORT_DIGIT + 4).ToString();
+    //ViewBag.C_MAXLENGTH_BILLING_CODE = (CommonValue.BILLING_CODE_SHORT_DIGIT + 5).ToString();
+
+    SECOM_AJIS.DataEntity.Common.ICommonHandler handler = CSI.WindsorHelper.ServiceContainer.GetService<SECOM_AJIS.DataEntity.Common.ICommonHandler>() as SECOM_AJIS.DataEntity.Common.ICommonHandler;
+    List<SECOM_AJIS.DataEntity.Common.doMiscTypeCode> currencies = handler.GetMiscTypeCodeList(new List<SECOM_AJIS.DataEntity.Common.doMiscTypeCode>()
+                                                    {
+                                                        new SECOM_AJIS.DataEntity.Common.doMiscTypeCode()
+                                                        {
+                                                            FieldName = MiscType.C_CURRENCT,
+                                                            ValueCode = "%"
+                                                        }
+                                                    }).ToList();
+    ViewBag.CurrencyJson = System.Web.Helpers.Json.Encode(currencies);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Enable IE8 Standards mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=8" >
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.13.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/json.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/superfish/hoverIntent.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/superfish/superfish.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_srnd.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_link.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxMenu/codebase/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxMenu/codebase/dhtmlxmenu.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxMenu/codebase/ext/dhtmlxmenu_ext.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_mcol.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/MessageDialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/control_events.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/object/master_event.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/object/ajax_method.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/object/command_event.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/Master.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/multi_load.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/download_method.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jss.js")"></script>
+
+    @if(ConfigurationManager.AppSettings["ThemeMode"] == "Test")
+    {
+    <link href="@Url.Content("~/Content/css/main_layout_test.css")" rel="stylesheet" type="text/css" />
+    }
+    else if (ConfigurationManager.AppSettings["ThemeMode"] == "Production")
+    {
+    <link href="@Url.Content("~/Content/css/main_layout.css")" rel="stylesheet" type="text/css" />
+    }
+    else if (ConfigurationManager.AppSettings["ThemeMode"].EndsWith(".css"))
+    {
+    <link href="@Url.Content("~/Content/css/" + ConfigurationManager.AppSettings["ThemeMode"])" rel="stylesheet" type="text/css" />
+    }
+    else
+    {
+    <link href="@Url.Content("~/Content/css/main_layout.css")" rel="stylesheet" type="text/css" />
+    }
+
+    <link href="@Url.Content("~/Content/themes/custom-theme/jquery-ui-1.8.14.custom.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/table_style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/superfish/superfish.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/superfish/custom.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/js/dhtmlxMenu/codebase/skins/dhtmlxmenu_dhx_skyblue.css")" rel="stylesheet" type="text/css" />
+    
+    
+    
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS020.js")" ></script>
+
+    <script type="text/javascript">
+
+        var ROWS_PER_PAGE_FOR_SEARCHPAGE = "@ViewBag.ROWS_PER_PAGE_FOR_SEARCHPAGE";
+        var ROWS_PER_PAGE_FOR_VIEWPAGE = "@ViewBag.ROWS_PER_PAGE_FOR_VIEWPAGE";
+        var ROWS_PER_PAGE_FOR_INVENTORY_CHECKING = "@ViewBag.ROWS_PER_PAGE_FOR_INVENTORY_CHECKING";
+
+        var C_LOCAL_LANGUAGE = "@Resources.CommonResources.lblLocalLanguage";
+        var C_JAPANESE_LANGUAGE = "@Resources.CommonResources.lblJapaneseLanguage";
+        var C_ENGLISH_LANGUAGE = "@Resources.CommonResources.lblEnglishLanguage";
+        var C_CURRENCY_UNIT = "@Resources.CommonResources.lblTHB";
+
+        var C_CALCULATE_TITLE = "@Resources.CommonResources.headerCalculate";
+
+        var C_CURRENCY_US = "@SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_US";
+        var C_CURRENCY_LOCAL = "@SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL";
+        var C_CURRENCY_LIST = JSON.parse('@Html.Raw(ViewBag.CurrencyJson)');
+        
+    </script>
+
+    @RenderSection("page_header", required: false)
+</head>
+<body>
+    @Html.Hidden("DEF_LANG_EN", CommonValue.DEFAULT_SHORT_LANGUAGE_EN)
+    @Html.Hidden("DEF_LANG_JP", CommonValue.DEFAULT_SHORT_LANGUAGE_JP)
+    @Html.Hidden("DEF_LANG_LC", CommonValue.DEFAULT_SHORT_LANGUAGE_LC)
+    <div id="bgNull" style="width:100%;height:100%;z-index:9999;position:absolute;top:0;left:0;">
+        <div style="background-color:#EFEFEF;opacity:0.5;filter:alpha(opacity=50);width:100%;height:75px;">&nbsp;</div>
+        <div style="background-color:#EFEFEF;opacity:0.5;filter:alpha(opacity=50);height:100%;">&nbsp;</div>
+        
+    </div>
+    <div class="page">
+        <div class="pageheader">
+            <div class="topbar">
+                <img alt="" id="systemlogo" src = "@Url.Content("~/Content/images/logo3.png")" />
+                <div class="languagesection">
+                    @*@Html.LanguageSelectorImageLink("LC_ChangeLang", @CommonValue.DEFAULT_SHORT_LANGUAGE_LC, @Url.Content("~/Content/images/th.png"), "")*@
+                    @Html.LanguageSelectorImageLink("EN_ChangeLang", @CommonValue.DEFAULT_SHORT_LANGUAGE_EN, @Url.Content("~/Content/images/gb.png"), "")
+                    @Html.LanguageSelectorImageLink("JP_ChangeLang", @CommonValue.DEFAULT_SHORT_LANGUAGE_JP, @Url.Content("~/Content/images/jp.png"), "")
+                </div>
+                <div class="logindisplay">
+                    @Html.Partial("_LogOnPartial")
+                </div>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        @*<div class="section_a">
+         @Html.Partial("_SearchBar")
+            <div style="cursor:pointer;color: White; margin-right: 20px;" id="SearchBarToggle">Hide search bar</div> 
+        </div>*@
+        <div class="clear">&nbsp;</div>
+        <div class="section_menu">
+            @Html.Partial("_MenuControl")
+            @Html.Partial("_SearchBar")
+        </div>
+        <div class="clear">&nbsp;</div>
+        <div class="content">
+            <div class="content-body">
+                <div id="divMainTitleScreen" class="title">
+                    <div class="screen-name">@ViewBag.ScreenName</div>
+                    <div class="screen-code">@ViewBag.ScreenCode</div>
+                </div>
+                <div class="render-body">
+                    @RenderBody()
+                </div>
+            </div>
+            <div class="table-line">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="pagefooter">
+            <div id="divloading" class="form-loading">
+                <div id="divLoadingDefault">Loading&nbsp;<img src="../../Content/images/loading.gif" /></div>
+                <div id="divLoadStatus" style="display:none;">
+                    <div>Initialize screen&nbsp;<span id="spanScreenPersent">[0%]</span>&nbsp;<img src='../../Content/images/loading.gif' /></div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                @ViewBag.SecomVersion <br />
+                @ViewBag.SecomCopyright
+            </div>
+            <div class="command">
+                @RenderSection("command", required: false)
+                @Html.Partial("_CommandButton")
+            </div>
+        </div>
+        @Html.Partial("_MessageDialog")
+    </div>
+</body>
+</html>

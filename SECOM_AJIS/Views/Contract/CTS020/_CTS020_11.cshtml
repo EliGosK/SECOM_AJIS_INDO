@@ -1,0 +1,36 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.ObjectCol1Width = "130px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS020/CTS020_11.js")"></script>
+<div id="divResultRegisterQuotationDetail" class="main-table">
+    <div class="table-header">
+        @Resources.CTS020.lblRegisterNewSaleContract
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS020.lblQuotationCode
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            <div style="float:left;">
+                
+            </div>
+            <div class="usr-object" style="margin-right:5px;">
+                <div style="float:left">@Html.CommonTextBox("QuotationTargetCode", (string)@ViewBag.QuotationTargetCodeFull, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })</div>
+            </div>
+            <div class="usr-object">
+                @if (ViewBag.ShowButtonRegisterNext == true)
+                {
+                    @Html.CommonButton("btnRegisterNextNewRentalContract", (string)@Resources.CTS020.btnRegisterNextNEwSaleContract, new { style = "width:250px;" })
+                }
+                @if (ViewBag.ShowButtonEditNext == true)
+                {
+                    @Html.CommonButton("btnEditNextNewrentalContract", (string)@Resources.CTS020.btnEditNextNewSaleContract, new { style = "width:250px;" })
+                }
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

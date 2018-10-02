@@ -1,0 +1,51 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+
+<!-- ======== Html content ======== --->
+
+
+@* --- Contract Information ---  *@
+<div id="divCancelCondition" class="main-table" style="margin-top:5px;vertical-align:middle;">  
+ <div class="usr-row">
+        <div class="table-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS070.lblSelectCondition
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>   
+    <table>
+        <tr>
+            <td style="text-align:right;width:@ViewBag.lbWidth;">
+                @Resources.ISS070.lblCancelCond
+            </td>
+            <td style="width:500px">
+                <div class="main-table" style="margin-top:5px;">
+                    @Html.CommonRadioButton("CancelConditionAllInstall", @Resources.ISS070.lblCancelAllInstallation, null, false, "CancelCondition")
+                    
+                    <div style="font-size: 0.8em; color: rgb(119, 119, 119);">&nbsp;&nbsp;&nbsp;@Resources.ISS070.lblCancelAllInstallationRemark</div>
+                   
+                    @Html.CommonRadioButton("CancelConditionPO", @Resources.ISS070.lblCancelInstallPO, null, false, "CancelCondition")
+                    
+                    <div style="font-size: 0.8em; color: rgb(119, 119, 119);">&nbsp;&nbsp;&nbsp;@Resources.ISS070.lblCancelInstallPORemark</div>
+                  
+                    @Html.CommonRadioButton("CancelConditionPOAndSlip", @Resources.ISS070.lblCancelInstallPOAndSlip, null, false, "CancelCondition")
+                    
+                    <div style="font-size: 0.8em; color: rgb(119, 119, 119);">&nbsp;&nbsp;&nbsp;@Resources.ISS070.lblCancelInstallPOAndSlipRemark</div>
+                   
+                    @Html.CommonRadioButton("CancelConditionSlip", @Resources.ISS070.lblCancelSlip, null, false, "CancelCondition")
+                    
+                    <div style="font-size: 0.8em; color: rgb(119, 119, 119);">&nbsp;&nbsp;&nbsp;@Resources.ISS070.lblCancelSlipRemark</div>
+                   
+                    @Html.CommonRadioButton("CancelConditionPrevious", @Resources.ISS070.lblCancelSlipUsePrevious, null, false, "CancelCondition")
+                    
+                    <div style="font-size: 0.8em; color: rgb(119, 119, 119);">&nbsp;&nbsp;&nbsp;@Resources.ISS070.lblCancelSlipUsePreviousRemark</div>
+                </div>
+            </td>
+        </tr>
+    </table>  
+    
+      
+</div>
+

@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32EDCE9B-1B94-41E3-A56D-4341BE6101AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.DataEntity.Accounting</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Entity.Accounting</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomEntity\doSearchInfoCondition.cs" />
+    <Compile Include="CustomEntity\dtAccountDataOfAgingReport.cs" />
+    <Compile Include="CustomEntity\dtAccountDataOfPaymentInfo.cs" />
+    <Compile Include="CustomEntity\dtAccountDataOfPaymentMatchingInfo.cs" />
+    <Compile Include="CustomEntity\dtAccountDataOfVATReport.cs" />
+    <Compile Include="CustomEntity\dtAccountingDocumentList.cs" />
+    <Compile Include="doAccountingDocumentList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doDocumentTiming.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC009.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC010.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC011_Sheet1.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC011_Sheet2.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC011_Sheet3.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC011_Sheet4.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC011_Sheet5.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC011_Sheet6.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC012_Sheet1.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC012_Sheet2.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC012_Sheet3.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC012_Sheet4.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC012_Sheet5.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtACC012_Sheet6.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountDataOfAgingReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountDataOfPaymentInfo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountDataOfPaymentMatchingInfo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountDataOfVATReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountingBusinessDateOfAgingReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountingBusinessDateOfPaymentInfo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountingBusinessDateOfPaymentMatchingInfo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountingBusinessDateOfVATReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountingConfig.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountingDocument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountingDocumentList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SECOM_AJIS.Entity.Accounting.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Accounting.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_AccountingDocument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_AccountingDocumentList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="SECOM_AJIS.Entity.Accounting.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Accounting.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SECOM_AJIS.Entity.Accounting.edmx.diagram">
+      <DependentUpon>SECOM_AJIS.Entity.Accounting.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SECOM_AJIS.Entity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SECOM_AJIS.Entity.Accounting.edmx</DependentUpon>
+      <LastGenOutput>SECOM_AJIS.Entity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="SECOM_AJIS.Entity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SECOM_AJIS.Entity.Accounting.edmx</DependentUpon>
+      <LastGenOutput>SECOM_AJIS.Entity.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3a5b1a39-b295-4d51-833c-37cf1e7f081e}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Common\SECOM_AJIS.Entity.Common.csproj">
+      <Project>{527a7562-621e-47cd-92cb-e0fa26660a4e}</Project>
+      <Name>SECOM_AJIS.Entity.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

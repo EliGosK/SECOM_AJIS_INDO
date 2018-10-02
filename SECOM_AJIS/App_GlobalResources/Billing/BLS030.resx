@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnAutoTransferInfo" xml:space="preserve">
+    <value>Register bank transfer account information</value>
+  </data>
+  <data name="btnRegisterEditCreditCardInfo" xml:space="preserve">
+    <value>Register/Edit credit card info.</value>
+  </data>
+  <data name="btnRetrieve" xml:space="preserve">
+    <value>Retrieve</value>
+  </data>
+  <data name="btnSearchBillingTarget" xml:space="preserve">
+    <value>Search billing customer</value>
+  </data>
+  <data name="lblAccountNo" xml:space="preserve">
+    <value>Account no.</value>
+  </data>
+  <data name="lblAccountType" xml:space="preserve">
+    <value>Account type</value>
+  </data>
+  <data name="lblAutoTransferAccountName" xml:space="preserve">
+    <value>Account name</value>
+  </data>
+  <data name="lblAutoTransferDate" xml:space="preserve">
+    <value>Bank transfer account date</value>
+  </data>
+  <data name="lblAutoTransferInformation" xml:space="preserve">
+    <value>Bank transfer (other account) information</value>
+  </data>
+  <data name="lblBank" xml:space="preserve">
+    <value>Bank</value>
+  </data>
+  <data name="lblBillingClientAddressEN" xml:space="preserve">
+    <value>Address (English)</value>
+  </data>
+  <data name="lblBillingClientAddressLC" xml:space="preserve">
+    <value>Address (Local)</value>
+  </data>
+  <data name="lblBillingClientBranchNameEN" xml:space="preserve">
+    <value>Branch name (English)</value>
+  </data>
+  <data name="lblBillingClientBranchNameLC" xml:space="preserve">
+    <value>Branch name (Local)</value>
+  </data>
+  <data name="lblBillingClientNameEN" xml:space="preserve">
+    <value>Billing customer name (English)</value>
+  </data>
+  <data name="lblBillingClientNameLC" xml:space="preserve">
+    <value>Billing customer name (Local)</value>
+  </data>
+  <data name="lblBillingOffice" xml:space="preserve">
+    <value>Billing office</value>
+  </data>
+  <data name="lblBillingTargetCode" xml:space="preserve">
+    <value>Billing customer code</value>
+  </data>
+  <data name="lblBillingType" xml:space="preserve">
+    <value>Billing type</value>
+  </data>
+  <data name="lblBranch" xml:space="preserve">
+    <value>Branch</value>
+  </data>
+  <data name="lblCardHolderName" xml:space="preserve">
+    <value>Card holder name</value>
+  </data>
+  <data name="lblContractProjectCode" xml:space="preserve">
+    <value>Contract no./Project code</value>
+  </data>
+  <data name="lblCreditCardCompany" xml:space="preserve">
+    <value>Credit card company</value>
+  </data>
+  <data name="lblCreditCardInformation" xml:space="preserve">
+    <value>Credit card information</value>
+  </data>
+  <data name="lblCreditCardNo" xml:space="preserve">
+    <value>Credit card no.</value>
+  </data>
+  <data name="lblCreditCardType" xml:space="preserve">
+    <value>Credit card type</value>
+  </data>
+  <data name="lblCustomerType" xml:space="preserve">
+    <value>Customer type</value>
+  </data>
+  <data name="lblDebtTracingOffice" xml:space="preserve">
+    <value>Debt tracing office</value>
+  </data>
+  <data name="lblExpiredate" xml:space="preserve">
+    <value>Expire date</value>
+  </data>
+  <data name="lblExpiredateM" xml:space="preserve">
+    <value>Expire date (month)</value>
+  </data>
+  <data name="lblExpiredateY" xml:space="preserve">
+    <value>Expire date (year)</value>
+  </data>
+  <data name="lblInvoiceDescription" xml:space="preserve">
+    <value>&lt;div&gt;Invoice description&lt;br /&gt;(1) English&lt;br /&gt; (2) Local&lt;/div&gt;</value>
+  </data>
+  <data name="lblLastestAutoTransferResult" xml:space="preserve">
+    <value>Latest bank transfer account result</value>
+  </data>
+  <data name="lblManageCodeForSortDetails" xml:space="preserve">
+    <value>Code for sort details</value>
+  </data>
+  <data name="lblPaymentMethod" xml:space="preserve">
+    <value>Payment method</value>
+  </data>
+  <data name="lblRemark" xml:space="preserve">
+    <value>If billing customer code is unknown, use Search billing customer. Moreover, in case it isn't retrieved, please register billing customer information of CF17A (billing customer information) first.</value>
+  </data>
+  <data name="lblRunningNo" xml:space="preserve">
+    <value>Running no.</value>
+  </data>
+  <data name="lblSpecifyCode" xml:space="preserve">
+    <value>Specify code</value>
+  </data>
+</root>

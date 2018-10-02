@@ -1,0 +1,151 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Presentation.Accounting.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.DataEntity.Accounting;
+
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Accounting/ACS010.js")"></script>
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")" />
+
+}
+
+@{
+
+    ViewBag.LabelWidth = "220px";
+    ViewBag.Label2Width = "130px";
+    ViewBag.ObjectWidth = "300px";
+
+
+}
+
+
+<div class="main-table-accounting">
+    <!-- ===== Specify report ===== -->
+    <div id="Specify_Report" class="main-table">
+        <div class="table-header">
+            @Resources.ACS010.lblSpecifyReport
+        </div>
+        <div class="usr-row" style="">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; ">
+                @Resources.ACS010.lblReportName
+            </div>
+            <div class="user-object">
+                @Html.AccountingReportCombobox("accoountingDocumentReport", new { required = "true", style = "width: 650px;" }, "Select")
+                @Html.RequireFiled()
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Generate criteria ===== -->
+    <div id="Generate_Criteria" class="main-table" style="display: none;">
+        <div class="table-header">
+            @Resources.ACS010.lblGenerateCriteria
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; ">
+                @Resources.ACS010.lblTimingType
+            </div>
+                <div class="usr-label" id="documentTimingType">
+                </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth; ">
+                    @Resources.ACS010.lblTargetPeriod
+                </div>
+                <div class="usr-object" id="GenerateTargetPeriod">
+                    <span id="GenerateTargetPeriodFrom">
+                    @Html.CommonTextBox("GenerateTargetFrom", null, new { style = "width:100px;" })
+                    <label id="GenerateTargetDateRangeMark"> ~ </label>
+                    </span>
+                    @Html.CommonTextBox("GenerateTargetTo", null, new { style = "width:100px;" })
+                    <label id="lblddmmyyyy"> (ddMMyyyy) </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div style="text-align: right;">
+                @Html.CommonButton("btnRun", @Resources.ACS010.lblRun, new { style = "width: 100px;", type = "button" })
+            </div>
+        </div>
+    </div>
+
+    <div id="Search_Criteria" class="main-table" style="display: none;">
+        <div class="table-header">
+            @Resources.ACS010.lblSearchCriteria
+        </div>
+        <div class="usr-row">
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth; ">
+                    @Resources.ACS010.lblTargetPeriod
+                </div>
+                <div class="usr-object" id="SearchTargetPeriod">
+                    @Html.CommonTextBox("SearchTargetFrom", null, new { style = "width:100px;" })
+                    <label> ~ </label>
+                    @Html.CommonTextBox("SearchTargetTo", null, new { style = "width:100px;" })
+                    <label id="lblddmmyyyy"> (ddMMyyyy) </label>
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth; ">
+                    @Resources.ACS010.lblGenerateDate
+                </div>
+                <div class="usr-object" id="SearchGenerateDate">
+                    @Html.CommonTextBox("SearchGenerateFrom", null, new { style = "width:100px;" })
+                    <label> ~ </label>
+                    @Html.CommonTextBox("SearchGenerateTo", null, new { style = "width:100px;" })
+                    <label id="lblddmmyyyy"> (ddMMyyyy) </label>
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth; ">
+                    @Resources.ACS010.lblMonthYear
+                </div>
+                <div class="usr-object">
+                    @Html.MonthComboBox("SearchMonth", new { style = "height: 22px; width: 100px;" }, true, "All")
+                    @Html.YearComboBox("SearchYear", new { style = "height: 22px; width: 100px;" }, true, "All")
+                </div>
+                <div class="usr-label" style="width:110px;">
+                    @Resources.ACS010.lblDocumentNo
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("SearchDocumentNo", null, new { style = "width:200px;" })
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div align="right">
+                @Html.CommonButton("btnSearch", @Resources.ACS010.lblSearch, new { style = "width: 100px;", type = "button" })
+            </div>
+        </div>
+    </div>
+    <!-- ===== Search result ===== -->
+    <div id="divSearchResult" class="main-table">
+        <div class="table-header">
+            @Resources.ACS010.lblResultList
+        </div>
+        <div id="mygrid_container" style="width: 99%; height: 100px;">
+        </div>
+        <iframe id="ifDownload" style="visibility: hidden; width: 0px; height: 0px;"></iframe>
+        <div class="usr-clear-style" style="height:0px;">&nbsp;</div>
+    </div>
+</div>
+

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Template>
+  <AdminEmail></AdminEmail>
+  <AdminSubject></AdminSubject>
+  <AdminContent></AdminContent>
+  <TemplateSubject>[SIMS]CP-12,CQ-12 Registration  มีการบันทึกเปลี่ยนแปลน/เปลี่ยนค่าเช่า กรณีก่อนเปิดระบบ</TemplateSubject>
+  <TemplateContent>
+    <![CDATA[
+    <html>
+      <body style="font-family: tahoma; font-size: 10pt;">
+        เนื่องจากมีการบันทึกเปลี่ยนแปลน/เปลี่ยนค่าเช่า กรณีก่อนเปิดระบบ<br/>
+        จึงขอให้ผู้รับผิดชอบตรวจสอบข้อมูล และบันทึกสลิปติดตั้งของสัญญาตามรายละเอียดด้านล่าง โดยเร็วที่สุด<br/>
+        <br/>
+        เลขที่สัญญา : [ContractCodeDisplay]<br/>
+        ชื่อผู้ทำสัญญา : [CustName]<br/>
+        ชื่อสถานที่ติดตั้ง : [SiteName]<br/>
+        สาขาบริการ : [OperationOfficeName]<br/>
+        วันที่บันทึก : [CurrentDateDisplay]<br/>
+        ผู้บันทึก : [CreateBy]<br/>
+        <br/>
+        ขอแสดงความนับถือ<br/>
+        SIMS ADMINISTRATOR<br/>
+      </body>
+    </html>
+    ]]>
+  </TemplateContent>
+</Template>

@@ -1,0 +1,182 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelWidth1 = "300px";
+    ViewBag.LabelWidth = "180px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "150px";
+    ViewBag.ObjectComboWidth = "154px";
+    ViewBag.RightObjectWidth = "180px";
+}
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS180/CTS180_01.js")" ></script>
+
+<div class="table-header">
+    <form id="formCTS180" action='#' >
+        <div id="divSpecifySearchCondition" class="main-table" >
+            <div class="table-header">
+                <div class="usr-label">
+                    @Resources.CTS180.lblTitleSpecifySearchCondition
+                </div>                                  
+            </div>
+            <div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:5px"> 
+                        &nbsp;</div>
+                    <div id="divDocumentStatus" class="usr-object">
+                      <fieldset id="DocumentStatus">
+                            <legend>@Resources.CTS180.lblDocumentStatus</legend>
+ 
+                            <div class="usr-row" style="height: 1px">
+                            </div>
+                            <div class="usr-row">
+                                <div class="usr-label">
+                                    &nbsp;
+                                </div>
+                                <div class="usr-object" style="width:200px; text-align:left">
+                                    @Html.CommonCheckButton("chkNotIssued", @Resources.CTS180.lblNotIssued, (string)ContractDocStatus.C_CONTRACT_DOC_STATUS_NOT_ISSUED, false)
+                                </div>
+                            </div>
+                            <div class="usr-row">
+                                <div class="usr-label">
+                                    &nbsp;
+                                </div>
+                                <div class="usr-object" style="width:300px; text-align:left">
+                                    @Html.CommonCheckButton("chkIssuedButNoRegist", @Resources.CTS180.lblIssuedButCollectionNoRegistered, (string)ContractDocStatus.C_CONTRACT_DOC_STATUS_ISSUED, false)
+                                </div>
+                            </div>
+                            <div class="usr-row">
+                                <div class="usr-label">
+                                    &nbsp;
+                                </div>
+                                <div class="usr-object" style="width:200px; text-align:left">
+                                    @Html.CommonCheckButton("chkCollectionRegist", @Resources.CTS180.lblCollectionRegistered, (string)ContractDocStatus.C_CONTRACT_DOC_STATUS_COLLECTED, false)
+                                </div>
+                            </div>
+                            <div class="usr-row">
+                                <div class="usr-label">
+                                    &nbsp;
+                                </div>
+                                <div class="usr-object" style="width:200px; text-align:left">
+                                    @Html.CommonCheckButton("chkIssuedButNotUsed", @Resources.CTS180.lblIssuedButNotUsed, (string)ContractDocStatus.C_CONTRACT_DOC_STATUS_NOT_USED, false)
+                                </div>
+                            </div>
+                            <div class="usr-row">
+                            </div>
+                      </fieldset>
+                    </div>
+
+                    <div class="usr-label" style="width:5px;">
+                        &nbsp;</div>
+                    <div class="usr-object">
+                        <div class="main-table" style="border-width:0px">
+                            <div class="usr-row" style="height: 1px">
+                            </div>
+                            <div class="usr-row">
+                                <div class="usr-label" style="width:@ViewBag.LabelWidth1;">
+                                    @Resources.CTS180.lblContractQuotationProjectCode
+                                </div>
+                                <div class="usr-object" style="width:155px;">
+                                    @Html.CommonTextBox("txtContQuotProjCode", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = CommonValue.C_MAXLENGTH_QUOTATION_TARGE_CODE })
+                                </div>
+
+                                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                                    @Resources.CTS180.lblOCCAlphabet
+                                </div>
+                                <div class="usr-object" style="width:155px;">
+                                    @Html.CommonTextBox("txtOCCAlphabet", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "4" })
+                                </div>
+                            </div>
+                            <div class="usr-row">
+                                <div class="usr-label" style="width:@ViewBag.LabelWidth1;">
+                                    &nbsp;
+                                </div>
+                                <div class="usr-object" style="width:250px;">
+                                    <label style="text-align:right;font-size:x-small;color:Gray;">
+                                        @Resources.CTS180.lblCommentSpecifyingProjectCode
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="usr-row" style="height:10px;"></div>
+                            <div class="usr-row">
+                                <div class="usr-label" style="width:@ViewBag.LabelWidth1;">
+                                    @Resources.CTS180.lblContractOffice
+                                </div>
+                                <div class="usr-object" style="width:155px;">
+                                    @Html.ContractOfficeAuthorityCbo("cboContractOffice", new { style = "height: 22px; width:" + @ViewBag.ObjectComboWidth + ";" }, true, "ALL")
+                                </div>
+
+                                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                                    @Resources.CTS180.lblOperationOffice
+                                </div>
+                                <div class="usr-object" style="width:155px;">
+                                    @Html.OperationOfficeAuthorityCbo("cboOperationOffice", new { style = "height: 22px; width:" + @ViewBag.ObjectComboWidth + ";" }, true, "ALL")
+                                </div>
+                            </div>
+                            <div class="usr-row" style="height:5px;"></div>
+                            <div class="usr-row">
+                                <div class="usr-label" style="width:@ViewBag.LabelWidth1;">
+                                    @Resources.CTS180.lblNegotiationStaff1Code
+                                </div>
+                                <div class="usr-object" style="width:155px;">
+                                    @Html.CommonTextBox("txtNegotiationStaff1Code", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "10" })
+                                </div>
+
+                                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                                    @Resources.CTS180.lblNegotiationStaff1Name
+                                </div>
+                                <div class="usr-object" style="width:155px;">
+                                    @Html.CommonTextBox("txtNegotiationStaff1Name", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "50" })
+                                </div>
+                            </div>
+                            <div class="usr-row" style="height:5px;"></div>
+                            <div class="usr-row">
+                                <div class="usr-label" style="width:@ViewBag.LabelWidth1;">
+                                    @Resources.CTS180.lblDocumentName
+                                </div>
+                                <div class="usr-object" style="width:280px;">
+                                    @*@Html.DocumentNameComboBox("cboDocumentCode", (string)DocumentType.C_DOCUMENT_TYPE_CONTRACT, new { style = "height: 22px; width: 280px;" }, FlagType.C_FLAG_ON, "ALL")*@
+                                    @Html.DocumentNameMaintainContractComboBox("cboDocumentCode", (string)DocumentType.C_DOCUMENT_TYPE_CONTRACT, new { style = "height: 22px; width: 280px;" }, FlagType.C_FLAG_ON, "ALL")                               
+                                </div>
+                            </div>
+                            <div class="usr-row"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="usr-row"></div>
+
+                <div class="usr-row">
+                    <div class="usr-label" style="width:745px;">&nbsp;</div>  
+                    <div class="usr-object">
+                            @Html.CommonButton("btnSearch", @Resources.CTS180.lblSearch, new { style = "width:100px;", type = "button" }) 
+                    </div>    
+                    <div class="usr-label" style="width:1px;">&nbsp;</div> 
+                    <div class="usr-object">
+                            @Html.CommonButton("btnClear", @Resources.CTS180.lblClear, new { style = "width:100px;", type = "button" }) 
+                    </div>                                
+                </div> 
+                <div class="usr-row"></div>
+            </div>
+        </div>
+
+        <div id="divDocumentList" class="main-table" style="display:none">
+            <div class="table-header">
+                <div class="usr-label">
+                    @Resources.CTS180.lblTitleContractDocumentList
+                </div>                                  
+            </div>
+            <div class="usr-row" style="height:5px"></div>
+
+            <div class="usr-row" id="gridDocumentList" style="width: 99%; margin-left: 5px;"></div>
+            <div class="usr-row" style="height:5px"></div>
+        </div>
+
+        <div class="usr-row"></div>
+
+    </form>
+</div>    
+

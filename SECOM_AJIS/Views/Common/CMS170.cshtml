@@ -1,0 +1,146 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Presentation.Master.Helpers
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.LabelWidth = "187px";
+}
+@section page_header{
+    <script type="text/javascript" src="../../Scripts/Base/AutoComplete.js" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS170.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+}
+<div id="cms170_HiddenData" style="display: none">
+    @Html.Hidden("cms170_btnCancel", (string)@Resources.CMS170.btnCancel)
+    @Html.Hidden("cms170_DisableExpType", (string)@ViewBag.DisableExpType)
+    @Html.Hidden("cms170_DisableProdType", (string)@ViewBag.DisableProdType)
+    @Html.Hidden("cms170_DisableInstType", (string)@ViewBag.DisableInstType)
+</div>
+
+<div id="CMS170_SearchCriteria" class="main-table">
+    <div class="table-header">
+        @Resources.CMS170.lblHeader
+    </div>
+    <form id="CMS170_SearchCondition" action="#">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS170.lblInstruCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("cms170_InstrumentCode", "", new { style = "width:650px;", maxlength = "50" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS170.lblInstruName
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("cms170_InstrumentName", "", new { style = "width:650px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS170.lblMaker
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("cms170_Maker", "", new { style = "width:650px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS170.lblSupplier
+            </div>
+            <div class="usr-object">
+                @Html.SupplierComboBox("cms170_SupplierType", new { style = "width:174px;" },"ALL")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS170.lblLineUp
+            </div>
+            <div class="usr-object">
+                @Html.LineUpTypeComboBox("cms170_LineUpType", new { style = "width:174px;" },true,"ALL")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS170.lblInstruFlag
+                @*@Html.RequireFiled()*@
+            </div>
+            <div class="usr-object" style="height: 100%; width: 650px">
+                <div class="sub-table">
+                    @Html.CommonCheckButton("cms170_InstFlagMain", (string)@Resources.CMS170.chkInstFlagMain, "1", false, new { width = "650px", height = "50px" })
+                    <br />
+                    @Html.CommonCheckButton("cms170_InstFlagOption", (string)@Resources.CMS170.chkInstFlagOption, "0", false, new { width = "650px", height = "50px" })
+                    <div class="usr-clear-style">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS170.lblExpanFlag
+                @*@Html.RequireFiled()*@
+            </div>
+            <div class="usr-object" style="height: 100%; width: 650px">
+                <div class="sub-table">
+                    @Html.CommonCheckButton("cms170_ExpTypeHas", (string)@Resources.CMS170.chkExpTypeHas, (string)@SECOM_AJIS.Common.Util.ConstantValue.ExpansionType.C_EXPANSION_TYPE_PARENT, (bool?)ViewBag.bExpTypeHas, new { width = "600px", height = "50px" })
+                    <br />
+                    @Html.CommonCheckButton("cms170_ExpTypeNo", (string)@Resources.CMS170.chkExpTypeNo, (string)@SECOM_AJIS.Common.Util.ConstantValue.ExpansionType.C_EXPANSION_TYPE_CHILD, (bool?)ViewBag.bExpTypeNo, new { width = "600px", height = "50px" })
+                    <div class="usr-clear-style">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS170.lblProductType
+                @*@Html.RequireFiled()*@
+            </div>
+            <div class="usr-object" style="height: 100%; width: 650px">
+                <div class="sub-table">
+                    @Html.CommonCheckButton("cms170_ProdTypeSale", (string)@Resources.CMS170.chkProdTypeSale, "0", (bool?)ViewBag.bProdTypeSale, new { width = "600px", height = "50px" })
+                    <br />
+                    @Html.CommonCheckButton("cms170_ProdTypeAlarm", (string)@Resources.CMS170.chkProdTypeAlarm, "1", (bool?)ViewBag.bProdTypeAlarm, new { width = "600px", height = "50px" })
+                    <div class="usr-clear-style">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS170.lblInstruType
+                @Html.RequireFiled()
+            </div>
+            <div class="usr-object" style="height: 100%; width: 650px">
+                <div class="sub-table">
+                    @Html.CommonCheckButton("cms170_InstTypeGen", (string)@Resources.CMS170.chkInstTypeGen, (string)@SECOM_AJIS.Common.Util.ConstantValue.InstrumentType.C_INST_TYPE_GENERAL, (bool?)ViewBag.bInstTypeGen, new { width = "600px", height = "50px" })
+                    <br />
+                    @Html.CommonCheckButton("cms170_InstTypeMon", (string)@Resources.CMS170.chkInstTypeMon, (string)@SECOM_AJIS.Common.Util.ConstantValue.InstrumentType.C_INST_TYPE_MONITOR, (bool?)ViewBag.bInstTypeMonitoring, new { width = "600px", height = "50px" })
+                    <br />
+                    @Html.CommonCheckButton("cms170_InstTypeMat", (string)@Resources.CMS170.chkInstTypeMat, (string)@SECOM_AJIS.Common.Util.ConstantValue.InstrumentType.C_INST_TYPE_MATERIAL, (bool?)ViewBag.bInstTypeMat, new { width = "600px", height = "50px" })
+                    <div class="usr-clear-style">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-object" style="float: right; margin-right: 5px; margin-top:5px">
+                @Html.CommonButton("cms170_btnSearch", @Resources.CMS170.btnSearch, new { style = "width:100px;", type = "button" })
+                @Html.CommonButton("cms170_btnClear", @Resources.CMS170.btnClear, new { style = "width:100px;", type = "button" })
+            </div>
+        </div>
+    </form>
+    <div class="usr-clear-style" style="height: 0%">&nbsp;</div>
+</div>
+<!-- SEARCH RESULT SECTION ====================================================================================================================== -->
+<div class="table-line">
+</div>
+<div id="CMS170_SearchResult">
+    <div class="main-table">
+        <div class="table-header">
+            @Resources.CMS170.lblResultList
+        </div>
+        <div class="usr-row">
+            <div id="cms170_grid_result" style="width: 99%; margin-left: 4px;">
+            </div>
+        </div>
+        <div class="table-line"></div>
+    </div>
+</div>

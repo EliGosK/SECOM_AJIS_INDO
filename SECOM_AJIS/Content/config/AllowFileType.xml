@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extension>
+  <ext>DOC</ext>
+  <ext>DOCX</ext>
+  <ext>XLS</ext>
+  <ext>XLSX</ext>
+  <ext>PPT</ext>
+  <ext>PPTX</ext>
+  <ext>VSD</ext>
+  <ext>MPP</ext>
+  <ext>PDF</ext>
+  <ext>TXT</ext>
+  <ext>RTF</ext>
+  <ext>TIFF</ext>
+  <ext>JPG</ext>
+  <ext>JPEG</ext>
+  <ext>BMP</ext>
+  <ext>PNG</ext>
+  <ext>GIF</ext>
+  <ext>ZIP</ext>
+  <ext>LZH</ext>
+  <ext>RAR</ext>
+  <ext>7Z</ext>
+  <ext>S7Z</ext>
+  <ext>ZIPX</ext>
+</extension>

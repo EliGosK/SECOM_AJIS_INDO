@@ -1,0 +1,26 @@
+﻿<div id="divAttachedDoclist" class="sub-table" style="margin-top:10px">
+    <div class="table-sub-header">@Resources.CTS330.lblAttachedDocumentList</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div style="float:left;">
+            <div id="CTS330_gridAttachDocList" style="width:400px;"></div>
+            <iframe id="ifDownload" style="visibility: hidden; width: 0px; height: 0px;"></iframe>
+        </div>
+    </div>
+    <div class="usr-row usr-row-space" id="divAttachFrame">
+        <iframe width="100%" height="25px" marginwidth="0" marginheight="0" id="frmAttach"
+                vspace="0" hspace="0" frameborder="0" align="middle" scrolling="no"></iframe>
+    </div>
+
+    <div class="usr-row" id="divAttachRemark">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+            @Resources.CTS330.lblPleasePayAttention
+        </div>
+        <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                @Resources.CTS330.lblRemarkAttachFileSize
+            </div>
+    </div>
+
+<div class="usr-clear-style">&nbsp;</div>
+</div>

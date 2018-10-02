@@ -1,0 +1,123 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@{
+    ViewBag.LabelWidth = "215px";
+    ViewBag.RightLabelWidth = "245px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<div id="divContractRelation" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS140.lblContractRelated
+        </div>
+        <div class="usr-row">
+             <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblFirstOperationDate
+            </div>
+            <div class="usr-object" style = "width:235px;">
+                <div class="object-unit">
+                    @Html.CommonTextBox("FirstSecurityStartDate", (string)@ViewBag.FirstSecurityStartDate, new { style = "width:100px;", maxlength = "15" })
+                </div>
+                @Html.LabelDateFormat("FirstSecurityStartDate")&nbsp;
+                @if (@ViewBag.RequiredDate == true)
+                {
+                    @Html.RequireFiled()
+                }
+            </div>
+
+            <div class="usr-label" style="width:160px;">
+                @Resources.CTS140.lblStartDealDate
+            </div>
+            <div class="usr-object" style = "width:235px;">
+                <div class="object-unit">
+                    @Html.CommonTextBox("StartDealDate", (string)@ViewBag.StartDealDate, new { style = "width:100px;", maxlength = "15" })
+                </div>
+                @Html.LabelDateFormat("StartDealDate")&nbsp;
+                @if (@ViewBag.RequiredDate == true)
+                {
+                    @Html.RequireFiled()
+                }
+            </div> 
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblContractFee
+            </div>
+            <div class="usr-object" style="width: 205px;">
+                @Html.NumericTextBoxWithMultipleCurrency("LastOrderContractFee", (string)@ViewBag.LastOrderContractFee, (string)@ViewBag.LastOrderContractFeeCurrencyType, new { style = "width:140px;", @readonly = true })
+            </div>
+
+            <div class="usr-label" style="width:190px;">
+                @Resources.CTS140.lblContractDuration
+                @if (@ViewBag.RequiredDate == true)
+                {
+                    @Html.RequireFiled()
+                }
+            </div>
+            <div class="usr-object">
+                <div class="object-unit">
+                    <div class="usr-object">
+                        @Html.CommonTextBox("ContractStartDate", (string)@ViewBag.ContractStartDate, new { style = "width:100px;", maxlength = "15" })                        
+                    </div>
+                    <div class="usr-label" style="width:15px;">
+                        @Resources.CTS140.lblTo
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("ContractEndDate", (string)@ViewBag.ContractEndDate, new { style = "width:100px;", maxlength = "15" })                        
+                    </div>
+
+                </div>
+                @Html.LabelDateFormat("ContractEndDate")
+            </div>     
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblLastChangeType
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("LastChangeType", (string)@ViewBag.LastChangeType, new { style = "width:120px;", @readonly = true })
+            </div>
+            <div class="usr-label" style="width: 190px;">
+                @Resources.CTS140.lblContractDurationMonth
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("ContractDurationMonth", (string)@ViewBag.ContractDurationMonth, new { style = "width:120px; text-align:right" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblLastOperationDate
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("LastChangeImplementDate", (string)@ViewBag.LastChangeImplementDate, new { style = "width:120px;", @readonly = true })
+            </div>
+            <div class="usr-label" style="width: 190px;">
+                @Resources.CTS140.lblAutoRenewMonth
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("AutoRenewMonth", (string)@ViewBag.AutoRenewMonth, new { style = "width:120px; text-align:right" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblLastOccurence
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.CommonTextBox("LastOCC", (string)@ViewBag.LastOCC, new { style = "width:120px;", @readonly = true })
+            </div>
+            <div class="usr-label" style="width: 190px;">
+                @Resources.CTS140.lblProjectCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("ProjectCode", (string)@ViewBag.ProjectCode, new { style = "width:120px;", maxlength = "8" })
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

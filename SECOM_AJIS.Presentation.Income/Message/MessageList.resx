@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG7001" xml:space="preserve">
+    <value>Payment amount is not equal to invoice amount.</value>
+  </data>
+  <data name="MSG7002" xml:space="preserve">
+    <value>Cannot register because the receipt no. : {0} already exists in list waiting for registration.</value>
+  </data>
+  <data name="MSG7003" xml:space="preserve">
+    <value>This {0} does not exist.</value>
+  </data>
+  <data name="MSG7004" xml:space="preserve">
+    <value>Cannot register payment with receipt no. {0} because this receipt no. is receipt issued after payment.</value>
+  </data>
+  <data name="MSG7005" xml:space="preserve">
+    <value>Cannot register payment with receipt no. {0} because this receipt no. is already registered payment.</value>
+  </data>
+  <data name="MSG7006" xml:space="preserve">
+    <value>Cannot register debt tracing information. Please try again later.</value>
+  </data>
+  <data name="MSG7007" xml:space="preserve">
+    <value>Cannot register billing exemption for invoice no. {0} because it is not unpaid invoice which can be registered billing exemption.</value>
+  </data>
+  <data name="MSG7008" xml:space="preserve">
+    <value>Operation completed.</value>
+  </data>
+  <data name="MSG7009" xml:space="preserve">
+    <value>Invoice no. {0} has been already issued a receipt.</value>
+  </data>
+  <data name="MSG7010" xml:space="preserve">
+    <value>Cannot issue receipt. Please try again.</value>
+  </data>
+  <data name="MSG7011" xml:space="preserve">
+    <value>File does not exist.</value>
+  </data>
+  <data name="MSG7012" xml:space="preserve">
+    <value>This auto transfer file is already imported.</value>
+  </data>
+  <data name="MSG7013" xml:space="preserve">
+    <value>Invalid invoice and amount.</value>
+  </data>
+  <data name="MSG7014" xml:space="preserve">
+    <value>Invalid invoice.</value>
+  </data>
+  <data name="MSG7015" xml:space="preserve">
+    <value>Payment information has been imported for this invoice already.</value>
+  </data>
+  <data name="MSG7016" xml:space="preserve">
+    <value>Invoice has been paid.</value>
+  </data>
+  <data name="MSG7017" xml:space="preserve">
+    <value>Invalid file content.</value>
+  </data>
+  <data name="MSG7018" xml:space="preserve">
+    <value>Invalid file format.</value>
+  </data>
+  <data name="MSG7019" xml:space="preserve">
+    <value>Inconsistent payment type in payment data file.</value>
+  </data>
+  <data name="MSG7020" xml:space="preserve">
+    <value>Incorrect payment type.</value>
+  </data>
+  <data name="MSG7021" xml:space="preserve">
+    <value>Missing required fields.</value>
+  </data>
+  <data name="MSG7022" xml:space="preserve">
+    <value>Inconsistent payment date in payment data file.</value>
+  </data>
+  <data name="MSG7023" xml:space="preserve">
+    <value>Cannot register payment.</value>
+  </data>
+  <data name="MSG7024" xml:space="preserve">
+    <value>Payment registered but payment matching failed.</value>
+  </data>
+  <data name="MSG7025" xml:space="preserve">
+    <value>Payment transaction information is registered but need to match payment manually.</value>
+  </data>
+  <data name="MSG7026" xml:space="preserve">
+    <value>Cannot update payment status.</value>
+  </data>
+  <data name="MSG7027" xml:space="preserve">
+    <value>Cannot generate bank transfer invoice for invoice no. {0} which auto transfer failed.</value>
+  </data>
+  <data name="MSG7028" xml:space="preserve">
+    <value>This receipt no. {0} is not advance issued receipt.</value>
+  </data>
+  <data name="MSG7029" xml:space="preserve">
+    <value>This receipt is already cancelled.</value>
+  </data>
+  <data name="MSG7030" xml:space="preserve">
+    <value>In cancelling this receipt, payment matching must be cancelled also. Please cancel payment matching after this process.</value>
+  </data>
+  <data name="MSG7031" xml:space="preserve">
+    <value>Cannot cancel receipt.</value>
+  </data>
+  <data name="MSG7032" xml:space="preserve">
+    <value>Cannot cancel tax invoice.</value>
+  </data>
+  <data name="MSG7033" xml:space="preserve">
+    <value>Cannot delete payment transaction.</value>
+  </data>
+  <data name="MSG7034" xml:space="preserve">
+    <value>Invalid search criteria. Please 
+input {0} 'to' equal to or greater than {0} 'from'.</value>
+  </data>
+  <data name="MSG7035" xml:space="preserve">
+    <value>No invoice is selected.</value>
+  </data>
+  <data name="MSG7036" xml:space="preserve">
+    <value>Cannot match payment because 'Balance after processing' is minus.</value>
+  </data>
+  <data name="MSG7037" xml:space="preserve">
+    <value>Cannot register 'Match payment amount (including WHT)' that is more than 'Unpaid amount'.</value>
+  </data>
+  <data name="MSG7038" xml:space="preserve">
+    <value>'Balance after processing' is not '0'. It is able to process. Please confirm whether it is correct.</value>
+  </data>
+  <data name="MSG7039" xml:space="preserve">
+    <value>This will be partial payment matching for the invoice. Please confirm whether it is correct.</value>
+  </data>
+  <data name="MSG7040" xml:space="preserve">
+    <value>WHT is not registered, proceed anyway?</value>
+  </data>
+  <data name="MSG7041" xml:space="preserve">
+    <value>The receipt for this invoice has been issued. Please cancel receipt before cancel payment matching.</value>
+  </data>
+  <data name="MSG7042" xml:space="preserve">
+    <value>Cannot cancel payment matching.</value>
+  </data>
+  <data name="MSG7043" xml:space="preserve">
+    <value>Cannot issue new invoice.</value>
+  </data>
+  <data name="MSG7044" xml:space="preserve">
+    <value>Credit note no. {0} not found.</value>
+  </data>
+  <data name="MSG7045" xml:space="preserve">
+    <value>This Tax invoice no. doesn't exist. Please check it again. If it's correct, please put a checkmark on 'Not retrieve' and continue registration.</value>
+  </data>
+  <data name="MSG7046" xml:space="preserve">
+    <value>This billing code doesn't exist.</value>
+  </data>
+  <data name="MSG7047" xml:space="preserve">
+    <value>'Credit note amount (including VAT)' must be more than 0.</value>
+  </data>
+  <data name="MSG7048" xml:space="preserve">
+    <value>'Credit note amount (including VAT)' must not exceed tax invoice amount.</value>
+  </data>
+  <data name="MSG7049" xml:space="preserve">
+    <value>'Credit note amount (including VAT)' 
+must not exceed 'Tax invoice amount – Accumulated paid amount'.</value>
+  </data>
+  <data name="MSG7050" xml:space="preserve">
+    <value>Credit note VAT amount cannot be the same amount or more than credit note amount (including VAT).</value>
+  </data>
+  <data name="MSG7051" xml:space="preserve">
+    <value>Credit note date must not be a future date.</value>
+  </data>
+  <data name="MSG7052" xml:space="preserve">
+    <value>Credit note VAT amount is different from VAT calculated at least ±10. Continue?</value>
+  </data>
+  <data name="MSG7053" xml:space="preserve">
+    <value>System cannot retrieve data because this tax invoice is combined from many billing details. If you want to proceed, please put a checkmark in 'Not retrieve' and continue registration.</value>
+  </data>
+  <data name="MSG7054" xml:space="preserve">
+    <value>'Refund deposit fee (including VAT)' must be more than 0.</value>
+  </data>
+  <data name="MSG7055" xml:space="preserve">
+    <value>Refund deposit fee (including VAT) 
+must not exceed Balance of deposit fee.</value>
+  </data>
+  <data name="MSG7056" xml:space="preserve">
+    <value>Cannot register refund amount more than 
+balance of deposit fee and accumulated payment amount. If there is mistake in deposit fee data, please correct data first and register again.</value>
+  </data>
+  <data name="MSG7057" xml:space="preserve">
+    <value>Credit note VAT amount cannot be the same 
+amount or more than refund deposit fee (including VAT).</value>
+  </data>
+  <data name="MSG7058" xml:space="preserve">
+    <value>'Revenue deposit fee (including VAT)' must be more than 0.</value>
+  </data>
+  <data name="MSG7059" xml:space="preserve">
+    <value>Revenue VAT amount cannot be the same 
+amount or more than revenue deposit fee (including VAT).</value>
+  </data>
+  <data name="MSG7060" xml:space="preserve">
+    <value>Cannot cancel this credit note since it has been used.</value>
+  </data>
+  <data name="MSG7061" xml:space="preserve">
+    <value>Are you sure to cancel credit note?</value>
+  </data>
+  <data name="MSG7062" xml:space="preserve">
+    <value>Cancelled successfully.</value>
+  </data>
+  <data name="MSG7063" xml:space="preserve">
+    <value>Error in cancelling credit note.</value>
+  </data>
+  <data name="MSG7064" xml:space="preserve">
+    <value>Error saving credit note information.</value>
+  </data>
+  <data name="MSG7065" xml:space="preserve">
+    <value>Error registering revenue.</value>
+  </data>
+  <data name="MSG7066" xml:space="preserve">
+    <value>Error while registering payments. All transactions are rolled back.</value>
+  </data>
+  <data name="MSG7067" xml:space="preserve">
+    <value>Please specify a search method.</value>
+  </data>
+  <data name="MSG7068" xml:space="preserve">
+    <value>Please select a type of code to search.</value>
+  </data>
+  <data name="MSG7069" xml:space="preserve">
+    <value>Amount of auto transfer does not match to invoice amount.</value>
+  </data>
+  <data name="MSG7070" xml:space="preserve">
+    <value>Cannot register because the invoice no. : {0} already exists in list waiting for registration.</value>
+  </data>
+  <data name="MSG7071" xml:space="preserve">
+    <value>Please register data.</value>
+  </data>
+  <data name="MSG7072" xml:space="preserve">
+    <value>This invoice is deposit fee. Please use 'Register refund credit note (Deposit fee)' instead.</value>
+  </data>
+  <data name="MSG7073" xml:space="preserve">
+    <value>This invoice is not deposit fee. Please use 
+'Register refund credit note (Except deposit fee)' instead.</value>
+  </data>
+  <data name="MSG7074" xml:space="preserve">
+    <value>No file content to be imported. Please select a file and show content.</value>
+  </data>
+  <data name="MSG7075" xml:space="preserve">
+    <value>File type is invalid. Please import csv file.</value>
+  </data>
+  <data name="MSG7076" xml:space="preserve">
+    <value>Payment date must not be a future date.</value>
+  </data>
+  <data name="MSG7077" xml:space="preserve">
+    <value>Account no. is not completely input.</value>
+  </data>
+  <data name="MSG7078" xml:space="preserve">
+    <value>Payment matching failed. Error occurs in the process of inserting payment matching header information.</value>
+  </data>
+  <data name="MSG7079" xml:space="preserve">
+    <value>Payment matching failed. Error occurs in the process of inserting payment matching detail information.</value>
+  </data>
+  <data name="MSG7080" xml:space="preserve">
+    <value>Payment matching failed. Error occurs in the process of updating invoice information.</value>
+  </data>
+  <data name="MSG7081" xml:space="preserve">
+    <value>Payment matching failed. Error occurs in the process of updating receipt information.</value>
+  </data>
+  <data name="MSG7082" xml:space="preserve">
+    <value>Payment matching failed. Error occurs in the process of updating deposit information.</value>
+  </data>
+  <data name="MSG7083" xml:space="preserve">
+    <value>Payment matching failed. Error occurs in the process of updating payment information.</value>
+  </data>
+  <data name="MSG7084" xml:space="preserve">
+    <value>Cannot match payment to 
+invoice no. {0} because the invoice is target of credit note when registering refund credit note.</value>
+  </data>
+  <data name="MSG7085" xml:space="preserve">
+    <value>Cannot delete because the data has been update by another process or user. Please try again later.</value>
+  </data>
+  <data name="MSG7086" xml:space="preserve">
+    <value>Error occured. Cannot register unpaid target. Please try again later.</value>
+  </data>
+  <data name="MSG7087" xml:space="preserve">
+    <value>Error occured. Cannot register billing exemption. Please try again later.</value>
+  </data>
+  <data name="MSG7088" xml:space="preserve">
+    <value>Cannot register billing exemption for this invoice because it has been registered billing exemption.</value>
+  </data>
+  <data name="MSG7089" xml:space="preserve">
+    <value>Invoice no. {0} has already been cancelled.</value>
+  </data>
+  <data name="MSG7090" xml:space="preserve">
+    <value>Invoice no. {0} has been registered as exemption.</value>
+  </data>
+  <data name="MSG7091" xml:space="preserve">
+    <value>The amount is now more than Balance of deposit fee. Please check it again. If there is mistake in deposit fee data, please correct data first and register again.</value>
+  </data>
+  <data name="MSG7092" xml:space="preserve">
+    <value>For this payment transaction, bank fee has already been registered in payment matching process. Bank fee can be registered only one time per one payment transaction.</value>
+  </data>
+  <data name="MSG7093" xml:space="preserve">
+    <value>For this payment transaction, other expense has already been registered in payment matching process. Other expense can be registered only one time per one payment transaction.</value>
+  </data>
+  <data name="MSG7094" xml:space="preserve">
+    <value>For this payment transaction, other income has already been registered in payment matching process. Other income can be registered only one time per one payment transaction.</value>
+  </data>
+  <data name="MSG7095" xml:space="preserve">
+    <value>Cannot cancel payment matching for this invoice because this invoice has not been registered any payment matching.</value>
+  </data>
+  <data name="MSG7096" xml:space="preserve">
+    <value>Cancel payment matching failed. Error occurs in the process of update payment matching detail information.</value>
+  </data>
+  <data name="MSG7097" xml:space="preserve">
+    <value>Cancel payment matching failed. Error occurs in the process of update payment matching header information.</value>
+  </data>
+  <data name="MSG7098" xml:space="preserve">
+    <value>Cancel payment matching failed. Error occurs in the process of update payment transaction information.</value>
+  </data>
+  <data name="MSG7099" xml:space="preserve">
+    <value>Cancel payment matching failed. Error occurs in the process of update invoice information.</value>
+  </data>
+  <data name="MSG7100" xml:space="preserve">
+    <value>Cancel payment matching failed. Error occurs in the process of update deposit information.</value>
+  </data>
+  <data name="MSG7101" xml:space="preserve">
+    <value>There is no match unpaid data in billing customer searched by using the specified code.</value>
+  </data>
+  <data name="MSG7102" xml:space="preserve">
+    <value>Special process is checked, but Approve no. and Other expense/Other income are not registered. To cancel special process, please remove Special process checkmark.</value>
+  </data>
+  <data name="MSG7103" xml:space="preserve">
+    <value>Cannot register because the tax invoice no. {0} already exists in list waiting for registration.</value>
+  </data>
+  <data name="MSG7104" xml:space="preserve">
+    <value>Error occured. Payment data file import failed.</value>
+  </data>
+  <data name="MSG7105" xml:space="preserve">
+    <value>Business validation error. Cannot import payment data file.</value>
+  </data>
+  <data name="MSG7106" xml:space="preserve">
+    <value>Receipt no. {0} does not exist.</value>
+  </data>
+  <data name="MSG7107" xml:space="preserve">
+    <value>Cannot register because the billing code {0} already exists in list waiting for registration.</value>
+  </data>
+  <data name="MSG7108" xml:space="preserve">
+    <value>Cannot delete this payment transaction by this process because this payment transaction is generated by 'Register decreased credit note' process. This payment transaction can be deleted by 'Cancel credit note' process.</value>
+  </data>
+  <data name="MSG7109" xml:space="preserve">
+    <value>This receipt no. has been registered with payment transaction information. Please delete payment transaction information before cancel receipt.</value>
+  </data>
+  <data name="MSG7110" xml:space="preserve">
+    <value>This billing customer is VAT-uncharged billing customer but VAT amount is registered. Please confirm whether it is correct or not. Do you want to continue?</value>
+  </data>
+  <data name="MSG7111" xml:space="preserve">
+    <value>Cannot perform this operation because balance of deposit fee will be less than zero.</value>
+  </data>
+  <data name="MSG7112" xml:space="preserve">
+    <value>This invoice is auto transfer invoice.</value>
+  </data>
+  <data name="MSG7113" xml:space="preserve">
+    <value>The auto transfer date is not matched.</value>
+  </data>
+  <data name="MSG7114" xml:space="preserve">
+    <value>The file is not complete (contain only a part of generated auto transfer file).</value>
+  </data>
+  <data name="MSG7115" xml:space="preserve">
+    <value>Encash error.</value>
+  </data>
+  <data name="MSG7116" xml:space="preserve">
+    <value>Cancel encash error.</value>
+  </data>
+  <data name="MSG7117" xml:space="preserve">
+    <value>Incorrect auto transfer bank code in payment data file.</value>
+  </data>
+  <data name="MSG7118" xml:space="preserve">
+    <value>Auto transfer bank code is not matched.</value>
+  </data>
+  <data name="MSG7119" xml:space="preserve">
+    <value>Only payment matching of full amount can be done. Matching payment of partial amount cannot be done for promissory note/post dated cheque.</value>
+  </data>
+  <data name="MSG7120" xml:space="preserve">
+    <value>Error while registering payment matching. All transactions are rolled back.</value>
+  </data>
+  <data name="MSG7121" xml:space="preserve">
+    <value>Error while registering debt target.</value>
+  </data>
+  <data name="MSG7122" xml:space="preserve">
+    <value>Error while registering expected money collection.</value>
+  </data>
+  <data name="MSG7123" xml:space="preserve">
+    <value>Cannot register credit note because auto transfer bank data/credit card data was generated.</value>
+  </data>
+  <data name="MSG7124" xml:space="preserve">
+    <value>Cannot generate credit note that exceed remaining amount of tax invoice.</value>
+  </data>
+  <data name="MSG7125" xml:space="preserve">
+    <value>There are no matched amount in the system!!
+Please use 'Register decreased credit note'' function in order to change/cancel tax invoice</value>
+  </data>
+  <data name="MSG7126" xml:space="preserve">
+    <value>Cannot input Matched amount more than WHT amount.</value>
+  </data>
+  <data name="MSG7127" xml:space="preserve">
+    <value>Please input Payment date and Group name.</value>
+  </data>
+  <data name="MSG7128" xml:space="preserve">
+    <value>Currency type not match invoid currency type</value>
+  </data>
+  <data name="MSG7129" xml:space="preserve">
+    <value>You cannot input exchange loss or exchange gain EXCEPT rupiah payment for dollar-base invoice.</value>
+  </data>
+  <data name="MSG7130" xml:space="preserve">
+    <value>You cannot input exchange loss and exchange gain both at the same time.</value>
+  </data>
+  <data name="MSG7131" xml:space="preserve">
+    <value>Not support: Ref. Q&amp;A No. 57</value>
+  </data>
+</root>

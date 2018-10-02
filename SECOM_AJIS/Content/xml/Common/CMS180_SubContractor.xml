@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+	<head>
+				
+		<column id="SubcontractorCode_Text" width="*" type="ro" align="center" sort="str_custom" >headerSubcontractorCode</column>
+		<column id="SubContractorNameEN_Text" width="240" type="ro" align="left" sort="str_custom">headerSubcontractorEnglish</column>		
+		<column id="SubContractorNameLC_Text" width="240" type="ro" align="left" sort="str_custom" >headerSubcontractorLocal</column>
+		
+		<settings>
+			<colwidth>px</colwidth>
+		</settings>
+	</head>
+</rows>

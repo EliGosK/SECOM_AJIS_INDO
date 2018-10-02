@@ -1,0 +1,534 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.ComponentModel.DataAnnotations;
+
+using SECOM_AJIS.Common.Util;
+using SECOM_AJIS.Common.CustomAttribute;
+using SECOM_AJIS.DataEntity.Contract.MetaData;
+using SECOM_AJIS.Presentation.Contract.Models;
+using SECOM_AJIS.DataEntity.Contract;
+using SECOM_AJIS.DataEntity.Master;
+using SECOM_AJIS.DataEntity.Quotation;
+using SECOM_AJIS.Common.Models;
+using SECOM_AJIS.DataEntity.Common;
+
+namespace SECOM_AJIS.Presentation.Contract.Models
+{
+    public class CTS051_ScreenParameter : ScreenParameter
+    {
+        [KeepSession]
+        public string ContractCode { get; set; }
+
+        //public CTS051_ScreenParameter ScreenParameter { get; set; }
+        public doRentalContractBasicInformation DORentalContractBasicInformation { get; set; }
+        public dsRentalContractData DSRentalContract { get; set; }
+        public dsQuotationData DSQuotationData { get; set; }
+
+        public dtBillingTempChangePlanData DTBillingTempChangePlan { get; set; }
+        public List<dtBillingTempChangePlanData> ListDTBillingTempChangePlan { get; set; }
+
+        public CTS051_DOChangePlanAndBillingTargetGridData DOChangePlanAndBillingTargetGrid { get; set; }
+        public List<CTS051_DOChangePlanAndBillingTargetGridData> ListDOChangePlanAndBillingTargetGrid { get; set; }
+
+        public CTS051_DOBillingTargetDetailData DOBillingTargetDetail { get; set; }
+        public CTS051_DOBillingTargetDetailData DOBillingTargetDetailCopy { get; set; }
+        public List<CTS051_DOBillingTargetDetailData> ListDOBillingTargetDetail { get; set; }
+
+        public CTS051_DOBillingTargetDetailGridData DOBillingTargetDetailGrid { get; set; }
+        public List<CTS051_DOBillingTargetDetailGridData> ListDOBillingTargetDetailGrid { get; set; }
+
+        public CTS051_DTBillingClientDetailData DTBillingClientDetail { get; set; }
+        public CTS051_DTBillingClientDetailData DTBillingClientDetailCopy { get; set; }
+        public List<CTS051_DTBillingClientDetailData> ListDTBillingClientDetail { get; set; }
+        public List<doMiscTypeCode> ListDOMiscTypeCode { get; set; }
+    }
+
+    public class CTS051_ScreenOutputObject
+    {
+        public string ContractCodeShort { get; set; }
+        public string ContractCode { get; set; }
+        public string OCC { get; set; }
+        public string ContractStatus { get; set; }
+        public string Alphabet { get; set; }
+        public string EmpNo { get; set; }
+        public string EmpName { get; set; }
+        public string DisplayAll { get; set; }
+        public string BillingClientCode { get; set; }
+        public string BillingOffice { get; set; }
+        public string PaymentMethod { get; set; }
+        public string Sequence { get; set; }
+        public string ServiceTypeCode { get; set; }
+        public string TargetCodeType { get; set; }
+        public string EndContractDate { get; set; }
+        public string InstallationStatusCode { get; set; }
+        public string UserCode { get; set; }
+        public string CustomerCode { get; set; }
+        public string RealCustomerCode { get; set; }
+        public string SiteCode { get; set; }
+        public string CustFullNameEN { get; set; }
+        public string AddressFullEN { get; set; }
+        public string SiteName { get; set; }
+        public string SiteAddress { get; set; }
+        public string CustFullNameLC { get; set; }
+        public string AddressFullLC { get; set; }
+        public string SiteNameLC { get; set; }
+        public string SiteAddressLC { get; set; }
+        public string InstallationStatus { get; set; }
+        public string OfficeName { get; set; }
+        public string QuotationTargetCode { get; set; }
+        public string ExpectOperationDate { get; set; }
+        public string NegotiationStaffEmpNo1 { get; set; }
+        public bool ImportantFlag { get; set; }
+
+    }
+
+    public class CTS051_OptionalData
+    {
+        public bool IsMAContract { get; set; }
+        public string PaymentMethodCBB { get; set; }
+    }
+
+    [MetadataType(typeof(CTS051_DORetrieveData_Meta))]
+    public class CTS051_DORetrieveData
+    {
+        public string ContractCode { get; set; }
+        public string OCC { get; set; }
+        public string QuotationTargetCode { get; set; }
+        public string Alphabet { get; set; }
+    }
+
+    [MetadataType(typeof(CTS051_DORetrieveBillingTargetData_Meta))]
+    public class CTS051_DORetrieveBillingTargetData
+    {
+        public string BillingTargetCode { get; set; }
+        public string Mode { get; set; }
+    }
+
+    [MetadataType(typeof(CTS051_DORetrieveBillingClientData_Meta))]
+    public class CTS051_DORetrieveBillingClientData
+    {
+        public string BillingClientCode { get; set; }
+        public string Mode { get; set; }
+    }
+
+    [MetadataType(typeof(CTS051_DOValidateAddUpdateRequireFieldAfterStartData_Meta))]
+    public class CTS051_DOValidateAddUpdateRequireFieldAfterStartData
+    {
+        public string BillingContractFeeDetail { get; set; }
+        public string BillingInstallationCompleteFee { get; set; }
+        public string BillingDepositFee { get; set; }
+        public string BillingOfficeCode { get; set; }
+
+        public string PayMethodCompleteFee { get; set; }
+        public string PayMethodDepositFee { get; set; }
+        public string Mode { get; set; }
+        public string FullNameEN { get; set; }
+        public string AddressEN { get; set; }
+        public string FullNameLC { get; set; }
+        public string AddressLC { get; set; }
+
+        public string BillingOCC { get; set; }
+        public string BillingClientCode { get; set; }
+        public string BillingTargetCode { get; set; }
+    }
+
+    [MetadataType(typeof(CTS051_DOValidateAddUpdateRequireFieldBeforeStartData_Meta))]
+    public class CTS051_DOValidateAddUpdateRequireFieldBeforeStartData
+    {
+        public string BillingContractFeeDetail { get; set; }
+        public string BillingInstallationCompleteFee { get; set; }
+        public string BillingInstallationStartServiceFee { get; set; }
+        public string BillingDepositFee { get; set; }
+        public string BillingInstallationApproveFee { get; set; }
+        public string BillingOfficeCode { get; set; }
+
+        public string PayMethodCompleteFee { get; set; }
+        public string PayMethodDepositFee { get; set; }
+        public string PayMethodStartServiceFee { get; set; }
+        public string Mode { get; set; }
+        public string FullNameEN { get; set; }
+        public string AddressEN { get; set; }
+        public string FullNameLC { get; set; }
+        public string AddressLC { get; set; }
+
+        public string BillingOCC { get; set; }
+        public string BillingTargetCode { get; set; }
+        public string BillingClientCode { get; set; }
+    }
+
+    [MetadataType(typeof(CTS051_DOValidateRegisterRequireFieldData_Meta))]
+    public class CTS051_DOValidateRegisterRequireFieldData
+    {
+        public string ChangePlanNormalContractFee { get; set; }
+        public string ChangePlanNormalInstallationFee { get; set; }
+        public string ChangePlanNormalDepositFee { get; set; }
+
+        public string ChangePlanOrderContractFee { get; set; }
+        public string ChangePlanOrderInstallationFee { get; set; }
+        public string ChangePlanOrderDepositFee { get; set; }
+
+        public string ChangePlanApproveInstallationFee { get; set; }
+        public string ChangePlanCompleteInstallationFee { get; set; }
+        public string ChangePlanStartInstallationFee { get; set; }
+
+        public string NegotiationStaffEmpNo1 { get; set; }
+        public string NegotiationStaffEmpNo2 { get; set; }
+
+        public string ApproveNo1 { get; set; }
+        public string ApproveNo2 { get; set; }
+        public string ApproveNo3 { get; set; }
+        public string ApproveNo4 { get; set; }
+        public string ApproveNo5 { get; set; }
+
+        public string BillingContractFeeDetail { get; set; }
+        public string BillingDepositFee { get; set; }
+        public string BillingApproveInstallationFee { get; set; }
+        public string BillingCompleteInstallationFee { get; set; }
+        public string BillingStartInstallationFee { get; set; }
+        public string BillingTotalFee { get; set; }
+
+        public string PayMethodCompleteFee { get; set; }
+        public string PayMethodStartServiceFee { get; set; }
+        public string PayMethodDepositFee { get; set; }
+        public bool ContractDurationFlag { get; set; }
+        public string ContractDurationMonth { get; set; }
+        public string AutoRenewMonth { get; set; }
+        public DateTime? EndContractDate { get; set; }
+        public DateTime? ExpectedOperationDate { get; set; }        
+        public bool DivideContractFeeBillingFlag { get; set; }
+
+        public string BillingTimingType { get; set; }
+    }
+
+    public class CTS051_DOChangePlanAndBillingTargetGridData
+    {
+        //For condition ------------------------------------------
+
+        public string ProductTypeCode { get; set; }
+        public string ContractStatus { get; set; }
+
+        //For change plan grid-------------------------------------
+
+        public string ID { get; set; }                       //column
+        public decimal? Normal { get; set; }                 //column
+        public decimal? Order { get; set; }                  //column
+        public decimal? ApproveContract { get; set; }        //column
+        public decimal? CompleteInstallation { get; set; }   //column
+        public decimal? StartService { get; set; }           //column
+
+        public string NegotiationStaffEmpNo1 { get; set; }
+        public string NegotiationStaffEmpName1 { get; set; }
+        public string NegotiationStaffEmpNo2 { get; set; }
+        public string NegotiationStaffEmpName2 { get; set; }
+
+        public string ApproveNo1 { get; set; }
+        public string ApproveNo2 { get; set; }
+        public string ApproveNo3 { get; set; }
+        public string ApproveNo4 { get; set; }
+        public string ApproveNo5 { get; set; }
+
+        public DateTime ExpectOperationDate { get; set; }
+        public bool IsChangeContractDuration { get; set; }
+        public int? ContractDurationMonth { get; set; }
+        public int? AutoRenewMonth { get; set; }
+        public DateTime? ContractEndDate { get; set; }
+
+        public string EmpNo { get; set; }
+        public string EmpName { get; set; }
+
+        public decimal? NormalContractFee { get; set; }
+        public decimal? OrderContractFee { get; set; }
+        public decimal? NormalInstallationFee { get; set; }
+        public decimal? OrderInstallationFee { get; set; }
+        public decimal? NormalDepositFee { get; set; }
+        public decimal? OrderDepositFee { get; set; }
+
+        public decimal? CompleteInstallationFee { get; set; }
+        public decimal? StartInstallationFee { get; set; }
+
+        //For billing target grid---------------------------------- 
+
+        public bool DivideContractFeeBillingFlag { get; set; }
+        public string DisplayAll { get; set; }
+
+        public string BillingOCC { get; set; }         //column
+        public string BillingClientCode { get; set; }  //column
+        public string BillingOffice { get; set; }      //column
+        public string BillingOfficeName { get; set; }      //column
+        public string BillingTargetCode { get; set; }  //column
+        public string BillingTargetName { get; set; }  //column
+        public string ContractFee { get; set; }        //column
+        public string InstallationFee { get; set; }    //column
+        public string DepositFee { get; set; }         //column
+        public string PayMethod { get; set; }          //column
+        public string Sequence { get; set; }           //column
+        public string Status { get; set; }             //column
+        public bool Show { get; set; }                 //column
+        public bool CanDelete { get; set; }
+
+        public string uIDNew { get; set; }
+        public string BillingClientCodeLong { get; set; }
+        
+        //----------------------------------------------------------       
+    }
+
+    public class CTS051_DOBillingTargetDetailData
+    {
+        //For billing target detail---------------------------------
+        public string BillingTargetCode { get; set; }
+        public string BillingClientCode { get; set; }
+
+        public string BillingTargetCodeDetail { get; set; }
+        public string BillingTargetCodeDetailLong { get; set; }
+        public string BillingClientCodeDetail { get; set; }
+        public string BillingClientCodeDetailLong { get; set; }
+        public string FullNameEN { get; set; }
+        public string BranchNameEN { get; set; }
+        public string AddressEN { get; set; }
+        public string FullNameLC { get; set; }
+        public string BranchNameLC { get; set; }
+        public string AddressLC { get; set; }
+        public string Nationality { get; set; }
+        public string PhoneNo { get; set; }
+        public string BusinessType { get; set; }
+        public string IDNo { get; set; }
+        public string BillingOfficeCode { get; set; }
+        public string BillingOCC { get; set; }
+        public string Sequence { get; set; }
+        public string Status { get; set; }
+
+        public string BillingContractFeeDetail { get; set; }
+        public string BillingDepositFee { get; set; }
+        public string BillingInstallationApprovalFee { get; set; }
+        public string BillingInstallationCompleteFee { get; set; }
+        public string BillingInstallationStartServiceFee { get; set; }
+        public string BillingTotalFee { get; set; }
+
+        public string PayMethodCompleteFee { get; set; }
+        public string PayMethodStartServiceFee { get; set; }
+        public string PayMethodDepositFee { get; set; }
+        //----------------------------------------------------------
+    }
+
+    public class CTS051_DOBillingTargetDetailGridData
+    {
+        //For billing target detail grid---------------------------------
+
+        public string Case { get; set; }
+        public string Amount { get; set; }
+        public string PayMethod { get; set; }
+        public string Total { get; set; }
+        public bool Show { get; set; }
+        //----------------------------------------------------------
+    }
+
+    public class CTS051_DTBillingClientDetailData : dtBillingClientData
+    {
+        public string BillingOffice { get; set; }
+        public string Sequence { get; set; }
+    }
+
+    public class CTS051_DOCopyNameCondition
+    {
+        //For copy name click---------------------------------
+
+        public string EventCopyNameComeFrom { get; set; }
+        public string RdoType { get; set; }
+        public string Mode { get; set; }
+
+        //----------------------------------------------------------
+    }
+
+    public class CTS051_DOChangePlanEnableDisable
+    {
+        public string ProductTypeCode { get; set; }
+        public string ContractStatus { get; set; }
+
+        public string Alarm { get; set; }
+        public string SaleOnline { get; set; }
+        public string Maintenance { get; set; }
+        public string SentryGuard { get; set; }
+
+        public string BeforeStart { get; set; }
+        public string AfterStart { get; set; }
+    }
+
+    public class CTS051_DOContractStatus
+    {
+        public string ContractStatusName { get; set; }
+        public string ContractStatusCode { get; set; }
+    }
+
+    public class CTS051_MAS030Object
+    {
+        public string BillingClientCode { get; set; }
+        public string CustTypeCode { get; set; }
+        public string CompanyTypeCode { get; set; }
+        public string IDNo { get; set; }
+        public string NameEN { get; set; }
+        public string NameLC { get; set; }
+        public string BranchNameEN { get; set; }
+        public string BranchNameLC { get; set; }
+        public string AddressEN { get; set; }
+        public string AddressLC { get; set; }
+        public string RegionCode { get; set; }
+        public string BusinessTypeCode { get; set; }
+        public string PhoneNo { get; set; }
+    }   
+}
+
+namespace SECOM_AJIS.DataEntity.Contract.MetaData
+{
+    public class CTS051_DORetrieveData_Meta : CTS051_DORetrieveData
+    {
+        [NotNullOrEmpty]
+        public string ContractCode { get; set; }
+
+        [NotNullOrEmpty()]
+        public string OCC { get; set; }
+
+        [NotNullOrEmpty(ControlName = "QuotationTargetCode", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Quotation target code")]
+        public string QuotationTargetCode { get; set; }
+
+        [NotNullOrEmpty(ControlName = "Alphabet", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Alphabet")]
+        public string Alphabet { get; set; }
+    }
+
+    public class CTS051_DORetrieveBillingTargetData_Meta
+    {
+        [NotNullOrEmpty(ControlName = "BillingTargetCode", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing target code")]
+        public string BillingTargetCode { get; set; }
+    }
+
+    public class CTS051_DORetrieveBillingClientData_Meta
+    {
+        [NotNullOrEmpty(ControlName = "BillingClientCode", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing client code")]
+        public string BillingClientCode { get; set; }
+    }
+
+    public class CTS051_DOValidateAddUpdateRequireFieldAfterStartData_Meta
+    {
+        [NotNullOrEmpty(ControlName = "txtBillingContractFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing contract fee")]
+        public string BillingContractFeeDetail { get; set; }
+
+        [NotNullOrEmpty(ControlName = "txtAmountInstallationCompleteFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing installation fee")]
+        public string BillingInstallationCompleteFee { get; set; }
+
+        [NotNullOrEmpty(ControlName = "txtBillingDepositFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing deposit fee")]
+        public string BillingDepositFee { get; set; }
+
+        [NotNullOrEmpty(ControlName = "BillingOffice", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing office")]
+        public string BillingOfficeCode { get; set; }
+
+        [NotNullOrEmpty(ControlName = "PaymentMethodInstallationFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Payment method installation fee")]
+        public string PayMethodCompleteFee { get; set; }
+
+        [NotNullOrEmpty(ControlName = "PaymentMethodDepositFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Payment method deposit fee")]
+        public string PayMethodDepositFee { get; set; }
+
+        [NotNullOrEmpty(ControlName = "FullNameEN", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Name (English)")]
+        public string FullNameEN { get; set; }
+
+        [NotNullOrEmpty(ControlName = "AddressEN", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Address (English)")]
+        public string AddressEN { get; set; }
+
+        [NotNullOrEmpty(ControlName = "FullNameLC", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Name (Local)")]
+        public string FullNameLC { get; set; }
+
+        [NotNullOrEmpty(ControlName = "AddressLC", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Address (Local)")]
+        public string AddressLC { get; set; }
+    }
+
+    public class CTS051_DOValidateAddUpdateRequireFieldBeforeStartData_Meta
+    {
+        [NotNullOrEmpty(ControlName = "txtBillingContractFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing contract fee")]
+        public string BillingContractFeeDetail { get; set; }
+
+        [NotNullOrEmpty(ControlName = "txtBillingInstallationFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Complete installation")]
+        public string BillingInstallationCompleteFee { get; set; }
+
+        [NotNullOrEmpty(ControlName = "txtBillingStartInstallationFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Start service")]
+        public string BillingInstallationStartServiceFee { get; set; }
+
+        [NotNullOrEmpty(ControlName = "txtBillingDepositFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing deposit fee")]
+        public string BillingDepositFee { get; set; }
+
+        [NotNullOrEmpty(ControlName = "BillingOffice", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing office")]
+        public string BillingOfficeCode { get; set; }
+
+        [NotNullOrEmpty(ControlName = "CompleteInstallationFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Payment method complete installation")]
+        public string PayMethodCompleteFee { get; set; }
+
+        [NotNullOrEmpty(ControlName = "StartServiceInstallationFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Payment method start service")]
+        public string PayMethodStartServiceFee { get; set; }
+
+        [NotNullOrEmpty(ControlName = "DepositInstallationFee", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Payment method deposit fee")]
+        public string PayMethodDepositFee { get; set; }
+
+        [NotNullOrEmpty(ControlName = "FullNameEN", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Name (English)")]
+        public string FullNameEN { get; set; }
+
+        [NotNullOrEmpty(ControlName = "AddressEN", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Address (English)")]
+        public string AddressEN { get; set; }
+
+        [NotNullOrEmpty(ControlName = "FullNameLC", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Name (Local)")]
+        public string FullNameLC { get; set; }
+
+        [NotNullOrEmpty(ControlName = "AddressLC", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Address (Local)")]
+        public string AddressLC { get; set; }
+    }
+
+    public class CTS051_DOValidateRegisterRequireFieldData_Meta
+    {
+  
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Normal contract fee after change")]
+        public string ChangePlanNormalContractFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Normal installation fee after change")]
+        public string ChangePlanNormalInstallationFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Normal additional billing deposit fee")]
+        public string ChangePlanNormalDepositFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Order contract fee after change")]
+        public string ChangePlanOrderContractFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Order installation fee after change")]
+        public string ChangePlanOrderInstallationFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Order additional billing deposit fee")]
+        public string ChangePlanOrderDepositFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Complete installation fee after change")]
+        public string ChangePlanCompleteInstallationFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Start service installation fee after change")]
+        public string ChangePlanStartInstallationFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Negotiation staff 1")]
+        public string NegotiationStaffEmpNo1 { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing contract amount")]
+        public string BillingContractFeeDetail { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing deposit amount")]
+        public string BillingDepositFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing installation complete amount")]
+        public string BillingCompleteInstallationFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Billing installation start service amount")]
+        public string BillingStartInstallationFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Payment method complete installation")]
+        public string PayMethodCompleteFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Payment method start service")]
+        public string PayMethodStartServiceFee { get; set; }
+
+        //[NotNullOrEmpty(ControlName = "", Module = MessageUtil.MODULE_COMMON, MessageCode = MessageUtil.MessageList.MSG0007, Parameter = "Payment method deposit fee")]
+        public string PayMethodDepositFee { get; set; }
+    }
+}

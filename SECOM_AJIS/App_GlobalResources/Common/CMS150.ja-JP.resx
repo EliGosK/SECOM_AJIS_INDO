@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BtnContractBasic" xml:space="preserve">
+    <value>契約基本</value>
+  </data>
+  <data name="BtnContractBillingTransfer" xml:space="preserve">
+    <value>請求受渡</value>
+  </data>
+  <data name="BtnDtl" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="BtnHistoryDigest" xml:space="preserve">
+    <value>ヒストリーダイジェスト</value>
+  </data>
+  <data name="BtnSaleContractBasic" xml:space="preserve">
+    <value>売買契約基本</value>
+  </data>
+  <data name="BtnSecurityBasic" xml:space="preserve">
+    <value>警備基本</value>
+  </data>
+  <data name="BtnSecurityDetail" xml:space="preserve">
+    <value>警備明細</value>
+  </data>
+  <data name="headerChgTypeIncdArType" xml:space="preserve">
+    <value>&lt;div&gt;(1) 変更種類／事案／上申内容&lt;br&gt;(2) 決裁番号&lt;/div&gt;</value>
+  </data>
+  <data name="headerContDocType" xml:space="preserve">
+    <value>契約文書種類</value>
+  </data>
+  <data name="headerDocAudResult" xml:space="preserve">
+    <value>文書審査結果</value>
+  </data>
+  <data name="headerFeeTHB" xml:space="preserve">
+    <value>&lt;div&gt;料金（THB）&lt;br&gt;(1) 契約料金&lt;br&gt;(2) 工事料金&lt;/div&gt;</value>
+  </data>
+  <data name="headerIncdAR" xml:space="preserve">
+    <value>I/A</value>
+  </data>
+  <data name="headerNo" xml:space="preserve">
+    <value>&lt;div style='display:none;'&gt;No.&lt;/div&gt;</value>
+  </data>
+  <data name="headerOcc" xml:space="preserve">
+    <value>OCC</value>
+  </data>
+  <data name="headerOpDatDueDat" xml:space="preserve">
+    <value>ステータス変更日／期日</value>
+  </data>
+  <data name="headerReg" xml:space="preserve">
+    <value>登録日</value>
+  </data>
+  <data name="headerSecBasc" xml:space="preserve">
+    <value>BAS</value>
+  </data>
+  <data name="headerSecDtl" xml:space="preserve">
+    <value>DTL</value>
+  </data>
+  <data name="lblBtnClear" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+  <data name="lblBtnRegAr" xml:space="preserve">
+    <value>上申登録</value>
+  </data>
+  <data name="lblBtnRegIncd" xml:space="preserve">
+    <value>事案登録</value>
+  </data>
+  <data name="lblBtnSearch" xml:space="preserve">
+    <value>検索</value>
+  </data>
+  <data name="lblBtnViewIncdList" xml:space="preserve">
+    <value>事案一覧照会</value>
+  </data>
+  <data name="lblBtnVwArList" xml:space="preserve">
+    <value>上申一覧照会</value>
+  </data>
+  <data name="lblContractCode" xml:space="preserve">
+    <value>契約コード</value>
+  </data>
+  <data name="lblContactPoint" xml:space="preserve">
+    <value>連絡先</value>
+  </data>
+  <data name="lblContractTGaddrEn" xml:space="preserve">
+    <value>契約先住所（英語）</value>
+  </data>
+  <data name="lblContractTGaddrLC" xml:space="preserve">
+    <value>契約先住所（現地語）</value>
+  </data>
+  <data name="lblContractTGnamEn" xml:space="preserve">
+    <value>契約先名称（英語）</value>
+  </data>
+  <data name="lblContractTGnamLC" xml:space="preserve">
+    <value>契約先名称（現地語）</value>
+  </data>
+  <data name="lblCustCodeCT" xml:space="preserve">
+    <value>顧客コード（契約先）</value>
+  </data>
+  <data name="lblCustCodeRC" xml:space="preserve">
+    <value>顧客コード（お客様（最終設置先））</value>
+  </data>
+  <data name="lblSiteAddrLC_Rental" xml:space="preserve">
+    <value>物件住所（現地語）</value>
+  </data>
+  <data name="lblSiteCode" xml:space="preserve">
+    <value>物件コード</value>
+  </data>
+  <data name="lblSiteNamLC_Rental" xml:space="preserve">
+    <value>物件名称（現地語）</value>
+  </data>
+  <data name="lblSpecChgType" xml:space="preserve">
+    <value>変更種類指定</value>
+  </data>
+  <data name="lblSpecIncdARtype" xml:space="preserve">
+    <value>事案／上申内容指定</value>
+  </data>
+  <data name="lblUserCode" xml:space="preserve">
+    <value>ユーザーコード</value>
+  </data>
+  <data name="SubTblHeaderContractBasicInformation" xml:space="preserve">
+    <value>契約基本情報</value>
+  </data>
+  <data name="lblCustomercodePurchaser" xml:space="preserve">
+    <value>顧客コード（発注元）</value>
+  </data>
+  <data name="lblPurchaseraddressEN" xml:space="preserve">
+    <value>発注元住所（英語）</value>
+  </data>
+  <data name="lblPurchaseraddressLC" xml:space="preserve">
+    <value>発注元住所（現地語）</value>
+  </data>
+  <data name="lblPurchasernameEN" xml:space="preserve">
+    <value>発注元名称（英語）</value>
+  </data>
+  <data name="lblPurchasernameLC" xml:space="preserve">
+    <value>発注元名称（現地語）</value>
+  </data>
+  <data name="lblSiteaddressEN_Rental" xml:space="preserve">
+    <value>物件住所（英語）</value>
+  </data>
+  <data name="lblSitenameEN_Rental" xml:space="preserve">
+    <value>物件名称（英語）</value>
+  </data>
+  <data name="headerSaleBasic" xml:space="preserve">
+    <value>BAS</value>
+  </data>
+  <data name="headerSalePrice" xml:space="preserve">
+    <value>売却システム料金（THB）</value>
+  </data>
+  <data name="SubTblHeaderSaleContInfo" xml:space="preserve">
+    <value>売買契約基本情報</value>
+  </data>
+  <data name="lblSiteaddressEN_Sales" xml:space="preserve">
+    <value>納入先住所（英語）</value>
+  </data>
+  <data name="lblSiteAddrLC_Sales" xml:space="preserve">
+    <value>納入先住所（現地語）</value>
+  </data>
+  <data name="lblSitenameEN_Sales" xml:space="preserve">
+    <value>納入先名称（英語）</value>
+  </data>
+  <data name="lblSiteNamLC_Sales" xml:space="preserve">
+    <value>納入先名称（現地語）</value>
+  </data>
+  <data name="lblAll" xml:space="preserve">
+    <value>全て</value>
+  </data>
+  <data name="lblSelect" xml:space="preserve">
+    <value>選択</value>
+  </data>
+  <data name="lbl_ext_headerIncdAR" xml:space="preserve">
+    <value>事案／上申</value>
+  </data>
+  <data name="lbl_ext_headerSaleBasic" xml:space="preserve">
+    <value>売買契約基本</value>
+  </data>
+  <data name="lbl_ext_headerSecBasc" xml:space="preserve">
+    <value>警備基本</value>
+  </data>
+  <data name="lbl_ext_headerSecDtl" xml:space="preserve">
+    <value>警備明細</value>
+  </data>
+  <data name="lblAttachImportanceFlag" xml:space="preserve">
+    <value>重点管理フラグ</value>
+  </data>
+</root>

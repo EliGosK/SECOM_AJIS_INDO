@@ -1,0 +1,51 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelWidth = "215px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<div id="divDepositInformation" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS140.lblDepositInformation
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblNormalDepositFee
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.NumericTextBoxWithMultipleCurrency("NormalDepositFee", (string)@ViewBag.NormalDepositFee, (string)@ViewBag.NormalDepositFeeCurrencyType, new { style = "width:140px;" })
+            </div> 
+            <div class="usr-label" style="width: 190px">
+                @Resources.CTS140.lblBillingDepositFee
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.NumericTextBoxWithMultipleCurrency("OrderDepositFee", (string)@ViewBag.OrderDepositFee, (string)@ViewBag.OrderDepositFeeCurrencyType, new { style = "width:140px;" })
+            </div> 
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblExemptedDepositFee
+            </div>
+            <div class="usr-object" style="width: 205px">
+                @Html.NumericTextBoxWithMultipleCurrency("ExemptedDepositFee", (string)@ViewBag.ExemptedDepositFee, (string)@ViewBag.ExemptedDepositFeeCurrencyType, new { style = "width:140px;", @readonly = true })
+            </div> 
+            <div class="usr-label" style="width: 190px">
+                @Resources.CTS140.lblOriginContractCodeForSlide
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("CounterBalanceOriginContractCode", (string)@ViewBag.CounterBalanceOriginContractCode, new { style = "width:120px;", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+

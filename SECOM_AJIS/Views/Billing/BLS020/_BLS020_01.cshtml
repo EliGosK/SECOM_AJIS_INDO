@@ -1,0 +1,150 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+<!-- ======== Html content ======== --->
+@* --- Billint Target Information ---  *@
+<div id="divBillingTargetInfo" class="main-table" style="margin-top: 5px;">
+    <div class="table-header">
+        @Resources.BLS020.headerBillingTargetInformation
+    </div>
+    
+    <form id="formBillingInfo">
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblBillingTargetCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox; ">
+            @Html.CommonTextBox("BillingClientCode", null, new { style = "width:" + @ViewBag.Textbox + ";", maxlength = CommonValue.C_MAXLENGTH_BILLING_CLIENT_CODE })
+        </div>  
+        <div class="usr-object" style="width:65px ">
+            @Html.CommonTextBox("BillingTargetNo", null, new { style = "width:40px", maxlength = "3" })
+             @Html.RequireFiled()
+        </div>       
+        <div class="usr-object" style="width:@ViewBag.ObjectButton;">
+            @Html.CommonButton("btnRetrieve", (string)@Resources.BLS020.btnRetrieve, new { style = "width:" + @ViewBag.Button + ";", type = "button" })
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectButton2;">
+              @Html.CommonButton("btnSearchBillingTarget", (string)@Resources.BLS020.btnSearchBillingTarget, new { style = "width:" + @ViewBag.Button2 + ";", type = "button" })
+         </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblCustomerType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox;">
+            @Html.CommonTextBox("CustTypeName", null, new { style = "width:" + @ViewBag.Textbox + ";", @readonly = true })
+        </div>
+           <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS010.lblCompanyType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("CompanyTypeName", null, new { style = "width:" + @ViewBag.Textbox + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblNameEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox3; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("FullNameEN", null, new { style = "width:" + @ViewBag.Textbox3 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblBranchNameEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox3; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("BranchNameEN", null, new { style = "width:" + @ViewBag.Textbox3 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblAddressEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox3; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("AddressEN", null, new { style = "width:" + @ViewBag.Textbox3 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row"></div>
+<div class="usr-row"></div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox3; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("FullNameLC", null, new { style = "width:" + @ViewBag.Textbox3 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblBranchNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox3; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("BranchNameLC", null, new { style = "width:" + @ViewBag.Textbox3 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblAddressLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox3; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("AddressLC", null, new { style = "width:" + @ViewBag.Textbox3 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblNationality
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("Nationality", null, new { style = "width:" + @ViewBag.Textbox + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblTelephoneNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("PhoneNo", null, new { style = "width:" + @ViewBag.Textbox + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblIdNoTaxIdNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectTextbox; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("IDNo", null, new { style = "width:" + @ViewBag.Textbox + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblBusinessType
+        </div>
+        <div class="usr-object" style="width:325px">
+            @Html.CommonTextBox("BusinessTypeName", null, new { style = "width:325px", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblBillingOffice
+        </div>
+        <div class="usr-object" style="width: 180px;">
+            @Html.BillingOfficeWithSpecialConditionCbo("BillingOfficeCode", new { style = "width:154px;" }, true)
+            @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblContactPerson
+        </div>
+        <div class="usr-object" style="width: 650px">
+            @Html.CommonTextBox("ContactPersonName", null, new { style = "width:650px", maxlength = "100" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS020.lblMemo
+        </div>
+        <div class="usr-object" style="width: 650px">
+            @Html.CommonTextArea("Memo", null, new { style = "width:650px; height:60px;", maxlength = "4000" })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+    </form>
+</div>

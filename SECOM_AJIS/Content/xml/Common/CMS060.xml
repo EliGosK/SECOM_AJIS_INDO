@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="EmpNo" width="0" type="ro" hidden="true"></column>
+    <column id="EmpFirstNameEN" width="0" type="ro" hidden="true"></column>
+    <column id="EmpLastNameEN" width="0" type="ro" hidden="true"></column>
+    <column id="EmpFirstNameLC" width="0" type="ro" hidden="true"></column>
+    <column id="EmpLastNameLC" width="0" type="ro" hidden="true"></column>
+    <column id="EmpNameEN" width="170" type="ro" align="left" sort="str_custom">headerEmpName_Eng</column>
+    <column id="EmpNameLC" width="170" type="ro" align="left" sort="str_custom">headerEmpName_local</column>
+    <column id="EmailAddress" width="180" type="ro" align="left" sort="str_custom">headerEmailAddress</column>
+
+   
+    
+    <column id="OfficeCode" width="0" type="ro" hidden="true"></column>
+    <column id="OfficeNameEN" width="0" type="ro" hidden="true"></column>
+    <column id="OfficeNameJP" width="0" type="ro" hidden="true"></column>
+    <column id="OfficeNameLC" width="0" type="ro"  hidden="true"></column>
+    
+    <column id="OfficeName" width="120" type="ro" align="left"  sort="str_custom">headerOffice</column>
+    
+    <column id="DepartmentCode" width="0" type="ro"  hidden="true"></column>
+    <column id="DepartmentName" width="*" type="ro" align="left" sort="str_custom">headerDepartment</column>
+    <column id="Button" width="30" type="ro" align="center" sort="na">headerButton</column>
+    <column id="Object" width="0" type="ro"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

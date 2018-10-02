@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="BillingType" width="200" type="ro" align="left" sort="str_custom">HeaderBillingType</column>
+    <column id="InvoiceDescription" width="*" type="ro" align="left" sort="str_custom">HeaderInvoiceDescription</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

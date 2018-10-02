@@ -1,0 +1,34 @@
+/* reduce menu item size */
+
+.sf-menu
+{
+    font-size:0.9 em;
+    /*font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; */
+    /*font-weight: bold; */
+    font-family: Verdana ,"MS UI Gothic" ;
+}
+
+
+.sf-menu a.m-header{
+    padding-right: 5px !important;
+    padding-left: 5px !important; 
+    
+}
+
+
+.sf-menu a.m-header span.sf-sub-indicator{
+    display: none;
+}
+
+
+.sf-menu .has_submenu
+{
+    /*
+    background-image: url(./images/right_arrow.png);
+    background-position: 320px 7px;
+    background-repeat: no-repeat;
+    cursor:pointer;
+    
+    */
+
+}

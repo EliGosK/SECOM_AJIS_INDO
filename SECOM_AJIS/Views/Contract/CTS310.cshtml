@@ -1,0 +1,317 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    ViewBag.LabelWidth = "180px";
+    ViewBag.RightLabelWidth = "100px";
+    ViewBag.ObjectWidth = "250px";
+    ViewBag.RightObjectWidth = "180px";
+}
+@section page_header{
+    <script src="../../Scripts/jquery.maskedinput-1.3.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS310.js")" ></script>
+    <script type="text/javascript">
+        var screen_mode = '@ViewBag.ScreenMode';
+        var default_role = '@ViewBag.DefaultRole';
+        var default_duedate = '@ViewBag.DefaultDueDate';
+        var default_status = '@ViewBag.DefaultStatus';
+        var incident_office_code = '@ViewBag.IncidentOfficeCode';
+
+        var c_duedate_1week = '@ViewBag.DueDate1Week';
+        var c_duedate_2week = '@ViewBag.DueDate2Week';
+        var c_duedate_1month = '@ViewBag.DueDate1Month';
+
+        var c_unimplemented = '@ViewBag.UnImplemented';
+        var c_implemented = '@ViewBag.Implemented';
+        var c_stopservice = '@ViewBag.StopService';
+        var c_cancel = '@ViewBag.Cancel';
+
+        var c_al = '@ViewBag.AL';
+        var c_sales = '@ViewBag.Sales';
+        var c_maintenance = '@ViewBag.Maintenance';
+        var c_sentryguard = '@ViewBag.SentryGuard';
+
+        var c_handling = '@ViewBag.Handling';
+        var c_complete = '@ViewBag.Complete';
+
+        var c_over = '@Resources.CTS310.cellOver';
+        var c_new = '@Resources.CTS310.cellNew';
+
+    </script>
+}
+<!-- INCIDENT BY ROLE =========================================================================================================================== -->
+<div id="Search_by_Role" class="main-table">
+    <div class="table-header">
+        @Resources.CTS310.sectionIncidentListByRole
+    </div>
+    <form id="CTS310_ByRole" action='#'>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.cboIncidentRole
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.IncidentRoleComboBox("cboIncidentRole", new { style = "width:164px;", maxlength = "10" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.cboDueDateDeadline
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.IncidentDueDate_DeadLineComboBox("cboDueDate", new { style = "width:164px;", maxlength = "10" }, "All")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.cboIncidentStatus
+        </div>
+        <div class="usr-object">
+            @*@Html.IncidentStatusComboBox("cboIncidentStatus", new { style = "width:164px;", maxlength = "10" }, "All")*@
+            @Html.IncidentSearchStatusComboBox("cboIncidentStatus", new { style = "width:164px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div style="text-align: right;">
+            @Html.CommonButton("btnSearchByRole", @Resources.CTS310.btnSearch, new { type = "button" })
+            @Html.CommonButton("btnClearByRole", @Resources.CTS310.btnClear, new { type = "button" })
+        </div>
+    </div>
+    </form>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+<!-- SEARCH INCIDENT ============================================================================================================================ -->
+<div id="Search_by_Condition" class="main-table">
+    <div class="table-header">
+        @Resources.CTS310.sectionSearchIncident
+    </div>
+    <form id="CTS310_SearchIncident" action='#'>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblContractTargetPurchaserName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtContractTarget", "", new { style = "width:200px;", maxlength = "200" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblIncidentNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtIncidentNo", "", new { style = "width:200px;", maxlength = "15" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblCustomerName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtCustomerName", "", new { style = "width:200px;", maxlength = "200" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblCustomerGroupName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtCustomerGroup", "", new { style = "width:200px;", maxlength = "50" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblSiteName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtSiteName", "", new { style = "width:200px;", maxlength = "200" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblProjectName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtProjectName", "", new { style = "width:200px;", maxlength = "100" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblRegistrant
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtRegistrant", "", new { style = "width:200px;", maxlength = "50" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblControlChief
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtControlChief", "", new { style = "width:200px;", maxlength = "50" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblChief
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtChief", "", new { style = "width:200px;", maxlength = "50" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblCorrespondent
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtCorrespondent", "", new { style = "width:200px;", maxlength = "50" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblAssistant
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtAssistant", "", new { style = "width:200px;", maxlength = "50" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.lblIncidentTitle
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("txtIncidentTitle", "", new { style = "width:200px;", maxlength = "500" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.chkIncidentStatus
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CheckBox("chkIncidentStatusHandling") @Resources.CTS310.lblHandling &nbsp;
+            @Html.CheckBox("chkIncidentStatusCompleted") @Resources.CTS310.lblCompleted &nbsp;
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.cboIncidentType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.IncidentTypeComboBox("cboIncidentType", new { style = "width:204px;" }, "ALL")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.cboSpecifyPeriod
+        </div>
+        <div class="usr-object">
+            @Html.IncidentPeriodComboBox("cboSpecifiedPeriod", new { style = "width:204px;" }, "ALL")
+            @Html.CommonTextBox("datePeriodFrom", "", new { style = "width:100px;" })
+            ~
+            @Html.CommonTextBox("datePeriodTo", "", new { style = "width:100px;" })
+            @Resources.CTS310.lblddMMyyyy
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.cboOperationOffice
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.OperationOfficeNormalCbo("OperationOffice", new { style = "width:204px;" }, "ALL")
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS310.cboIncidentOffice
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @*@Html.IncidentOfficeNormalCbo("cboIncidentOffice", new { style = "width:204px;" }, "ALL")*@
+            @Html.AllOfficeNormalCbo("cboIncidentOffice", new { style = "width:204px;" }, "ALL")
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+    <div class="table-line">
+        &nbsp;</div>
+    <!-- SUB SECTION ------------------------------------------------------------------------------------------ -->
+    <div id="Subsection_Contract" class="sub-table">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS310.lblUserCodeContractCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtUserCode", "", new { style = "width:200px;", maxlength = "12" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS310.cboContractOffice
+            </div>
+            <div class="usr-object">
+                @*@Html.ContractOfficeCombo("ContractOffice", new { style = "width:164px;" })*@
+                @Html.ContractOfficeNormalCbo("ContractOffice", new { style = "width:204px;" }, "ALL")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS310.lblContractStatus
+            </div>
+            <div class="usr-object">
+                @Html.CommonRadioButton("ContractStatusUnimplemented", @Resources.CTS310.lblUnimplemented, "u", false, "ContractStatusGroup")
+                @Html.CommonRadioButton("ContractStatusImplemented", @Resources.CTS310.lblImplemented, "i", false, "ContractStatusGroup")
+                @Html.CommonRadioButton("ContractStatusStopService", @Resources.CTS310.lblStopService, "s", false, "ContractStatusGroup")
+                @Html.CommonRadioButton("ContractStatusCancelFinish", @Resources.CTS310.lblCancelFinish, "c", false, "ContractStatusGroup") 
+                @Html.CommonRadioButton("ContractStatusAll", @Resources.CTS310.lblAll, "", false, "ContractStatusGroup") 
+                @Html.Hidden("rdoContractStatus")
+@*                @Html.RadioButton("ContractStatusUnimplemented", "u", false) @Resources.CTS310.lblUnimplemented
+                @Html.RadioButton("ContractStatusImplemented", "i", false) @Resources.CTS310.lblImplemented
+                @Html.RadioButton("ContractStatusStopService", "s", false) @Resources.CTS310.lblStopService
+                @Html.RadioButton("ContractStatusCancelFinish", "c", false) @Resources.CTS310.lblCancelFinish
+                @Html.RadioButton("ContractStatusAll", "", false) @Resources.CTS310.lblAll
+                @Html.Hidden("rdoContractStatus")*@
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS310.lblContractType
+            </div>
+            <div class="usr-object">
+                @Html.CommonRadioButton("ContractTypeAL", @Resources.CTS310.lblAL, "al", false, "ContractTypeGroup") 
+                @Html.CommonRadioButton("ContractTypeSales", @Resources.CTS310.lblSales, "sale", false, "ContractTypeGroup") 
+                @Html.CommonRadioButton("ContractTypeMaintenance", @Resources.CTS310.lblMaintenance, "maintenance", false, "ContractTypeGroup") 
+                @Html.CommonRadioButton("ContractTypeSentryGuard", @Resources.CTS310.lblSentryGuard, "sentryGuard", false, "ContractTypeGroup") 
+                @Html.CommonRadioButton("ContractTypeAll", @Resources.CTS310.lblAll, "all", false, "ContractTypeGroup") 
+                @Html.Hidden("rdoContractType")
+@*                @Html.RadioButton("ContractTypeAL", "al", false) @Resources.CTS310.lblAL
+                @Html.RadioButton("ContractTypeSales", "sale", false) @Resources.CTS310.lblSales
+                @Html.RadioButton("ContractTypeMaintenance", "maintenance", false) @Resources.CTS310.lblMaintenance
+                @Html.RadioButton("ContractTypeSentryGuard", "sentryGuard", false) @Resources.CTS310.lblSentryGuard
+                @Html.RadioButton("ContractTypeAll", "all", false) @Resources.CTS310.lblAll
+                @Html.Hidden("rdoContractType")*@
+            </div>
+        </div>
+        <div class="usr-clear-style" style="height: 0%">
+            &nbsp;</div>
+        <div class="table-line">
+            &nbsp;</div>
+        <div class="usr-row">
+            <div style="text-align: right; color: #AAAAAA; font-size: smaller">
+                @Resources.CTS310.lblComment
+            </div>
+        </div>
+    </div>
+    <div class="table-line">
+        &nbsp;</div>
+    <div class="usr-row">
+        <div style="text-align: right;">
+            @Html.CommonButton("btnSearchIncident", @Resources.CTS310.btnSearch, new { type = "button" })
+            @Html.CommonButton("btnClearIncident", @Resources.CTS310.btnClear, new { type = "button" })
+        </div>
+    </div>
+    </form>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+
+<!-- SEARCH RESULT SECTION ====================================================================================================================== -->
+<div id="Search_Result" class="main-table">
+    <div class="table-header">
+        @Resources.CTS310.sectionIncidentResultList
+    </div>
+    <div>
+        <div id="grid_result" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+</div>

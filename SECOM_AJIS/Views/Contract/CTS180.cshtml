@@ -1,0 +1,46 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    @*<script type="text/javascript" src="@Url.Content("~/Scripts/Base/Master.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Master/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS180.js")" ></script>
+
+<style>
+    #divProcessCounterBalance ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #divProcessCounterBalanceUsd ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+</style>
+}
+
+@Html.Partial("CTS180/_CTS180_01")
+@Html.Partial("CTS180/_CTS180_02")
+@Html.Partial("CTS180/_CTS180_03")
+@Html.Partial("CTS180/_CTS180_04")
+@Html.Partial("CTS180/_CTS180_05")
+@Html.Partial("CTS180/_CTS180_06")
+@Html.Partial("CTS180/_CTS180_07")
+
+@Html.Hidden("C_DOCUMENT_CODE_CONTRACT_EN", (string)@SECOM_AJIS.Common.Util.ConstantValue.DocumentCode.C_DOCUMENT_CODE_CONTRACT_EN)
+@Html.Hidden("C_DOCUMENT_CODE_CONTRACT_TH", (string)@SECOM_AJIS.Common.Util.ConstantValue.DocumentCode.C_DOCUMENT_CODE_CONTRACT_TH)
+@Html.Hidden("C_DOCUMENT_CODE_CHANGE_MEMO", (string)@SECOM_AJIS.Common.Util.ConstantValue.DocumentCode.C_DOCUMENT_CODE_CHANGE_MEMO)
+@Html.Hidden("C_DOCUMENT_CODE_CHANGE_NOTICE", (string)@SECOM_AJIS.Common.Util.ConstantValue.DocumentCode.C_DOCUMENT_CODE_CHANGE_NOTICE)
+@Html.Hidden("C_DOCUMENT_CODE_CONFIRM_CURRENT_INSTRUMENT_MEMO", (string)@SECOM_AJIS.Common.Util.ConstantValue.DocumentCode.C_DOCUMENT_CODE_CONFIRM_CURRENT_INSTRUMENT_MEMO)
+@Html.Hidden("C_DOCUMENT_CODE_CONCEL_CONTRACT_MEMO", (string)@SECOM_AJIS.Common.Util.ConstantValue.DocumentCode.C_DOCUMENT_CODE_CONCEL_CONTRACT_MEMO)
+@Html.Hidden("C_DOCUMENT_CODE_CANCEL_CONTRACT_QUOTATION", (string)@SECOM_AJIS.Common.Util.ConstantValue.DocumentCode.C_DOCUMENT_CODE_CANCEL_CONTRACT_QUOTATION)
+@Html.Hidden("C_DOCUMENT_CODE_CHANGE_FEE_MEMO", (string)@SECOM_AJIS.Common.Util.ConstantValue.DocumentCode.C_DOCUMENT_CODE_CHANGE_FEE_MEMO)
+
+<div class="usr-row" style="height: 5px"></div>

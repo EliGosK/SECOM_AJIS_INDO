@@ -1,0 +1,142 @@
+﻿
+@using SECOM_AJIS.Common.Helpers
+@{
+    ViewBag.Title = "CTS040 Search contract approval result";
+}
+
+<h2>CTS040_SearchContractApprovalResult</h2>
+
+
+
+
+<script  language="javascript" type="text/javascript" 
+src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")">
+</script>
+<script  language="javascript" type="text/javascript" 
+src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")">
+</script>
+<script  language="javascript" type="text/javascript" 
+src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")">
+</script>
+
+<script  language="javascript" type="text/javascript" 
+src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")">
+</script>
+
+<script  language="javascript" type="text/javascript" 
+src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")">
+</script>
+
+<!-- Commment by Narupon W. -->
+@*<script  language="javascript" type="text/javascript" 
+src="@Url.Content("~/Scripts/Base/Master.js")">
+</script>*@
+
+
+<link rel="STYLESHEET" type="text/css" 
+href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")">
+<link rel="STYLESHEET" type="text/css" 
+href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid_skins.css")">
+
+<script type="text/javascript">
+var pageRow=20;
+var mygrid;
+function loadGridData()
+{
+    mygrid = new dhtmlXGridObject('gridData');
+    mygrid.setImagePath("@Url.Content("~/Content/js/dhtmlxgrid/imgs/")");
+        
+    mygrid.setInitWidths("30,*,*,*,*,*,*,*,*,*,*")        
+    mygrid.setSkin("modern");
+
+    mygrid.xml.top = "response";
+    mygrid.xml.row = "./dtSearchDraftContractResult";
+    mygrid.setColTypes("ron,ed,ed,ed,ed,ed,ed,ed,ed,ed,ed");
+    mygrid.setColSorting("int,str,str,str,str,str,str,str,str,str,str")
+    mygrid.setHeader("No."
+    	        +", Quotation code"
+                +",Customer<br/>(1) Customer code <br/>(2) Name (English) <br/>(3) Name (Local)	<br/>"
+                +",Site <br/>(1) Site code <br/>(2) Name (English) <br/>(3) Name (Local)	<br/>"
+                +",Office <br/>(1) Contract <br/>(2) Operation<br/>"
+                +",Salesman1 <br/>(1) Code <br/>(2) Name"
+                +",App. status"
+                +",FN-99/FQ-99 registration date"
+                +",CP-01 registration date"
+                +",Contract"
+                +",code");
+    mygrid.setColumnIds("rownum,QuotationCode,ContractTargetCode,SiteCode,ContractOfficeCode,OperationOfficeCode,Salesman1Code,RegistrationDate,ApprovalStatus,ApproveContractDate,ContractCode");
+    
+    mygrid.enablePaging(true,pageRow,6,"pagingArea",true,"recinfoArea");
+   
+    //event after page change
+    mygrid.attachEvent("onPageChanged", function(ind,fInd,lInd){			
+			var rowCount=mygrid.getRowsNum()-((ind-1)*pageRow);
+			for(var i=0;i<pageRow&&i<rowCount;i++){
+					mygrid.cells2(i+fInd,0).setValue(i+1);
+			}
+			
+	});
+    //event alter load XML
+    mygrid.attachEvent("onXLE", function(){
+        
+         for(var i=0;i<20;i++){
+		    mygrid.cells2(i,0).setValue(i+1);
+		}
+    }); 
+
+    mygrid.init();
+
+    
+}
+function Search()
+{
+    alert($("#formSearch").serialize());
+    mygrid.clearAll();
+    $.ajax({
+        type:"POST"
+        ,data:$("#formSearch").serialize()
+        ,url: "@Url.Content("~/us/Contract/CTS040_Xml")?"+Math.random()*1000
+        ,success:function(data){      
+            var xml=data[0];  
+            mygrid.parse(data,"xmlB");
+           
+        }
+    });
+}
+$(document).ready(function () {  
+    loadGridData();            
+
+    $("#btnSearch").click(function(){
+        var jdata = [];
+        jdata.push({ QuotationCode: 'test2', Salesman1Code: 'black' });
+        var jdata3 = JSON.stringify(jdata);
+        $("#formSearch").bindJSON(jdata[0]);
+        Search();
+    });
+    $("#btnClear").click(function(){
+        $("#formSearch").clearForm();
+        mygrid.clearAll();
+    });
+});
+</script>
+<form id="formSearch" action="#">
+<table>
+<tr>
+<td>Quotation code</td><td>@Html.TextBox("QuotationCode")</td>
+<td>FN-99/FQ-99 registration date</td><td>@Html.TextBox("RegistrationDateFrom") ~ @Html.TextBox("RegistrationDateTo")</td>
+</tr>
+<tr>
+<td>Salesman1 code</td><td>@Html.TextBox("Salesman1Code")</td>
+<td>Salesman1 name</td><td>@Html.TextBox("Salesman1Name")</td>
+</tr>
+<tr>
+<td>Contract target / Purchaser name</td><td>@Html.TextBox("ContractTargetName")</td>
+<td>Site name</td><td>@Html.TextBox("SiteName")</td>
+</tr>
+
+</table>
+<input type="button" id="btnSearch" value="Search" /><input type="button" id="btnClear" value="Clear" />
+</form>
+<div id="recinfoArea"></div>
+<div id="gridData" style="width:1000px; height:270px; background-color:white;overflow:hidden"></div>
+<div id="pagingArea"></div>

@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{828330C8-8090-4361-865B-34988482F3D3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.Presentation.Billing</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Presentation.Billing</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CSI.WindsorHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SECOM_AJIS.Common\_ExtLib\CSI.WindsorHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\BLS010_RegisterBillingTarget.cs" />
+    <Compile Include="Controllers\BLS020_EditBillingTarget.cs" />
+    <Compile Include="Controllers\BLS030_RegisterBillingBasic.cs" />
+    <Compile Include="Controllers\BLS031_RegisterAutoTransferInformation.cs" />
+    <Compile Include="Controllers\BLS032_RegisterCreditCardInformation.cs" />
+    <Compile Include="Controllers\BLS070_ManageInvoiceInformationCF15.cs" />
+    <Compile Include="Controllers\BLS071_SelectBillingDetail.cs" />
+    <Compile Include="Controllers\BLS040_EditBillingBasic.cs" />
+    <Compile Include="Controllers\BLS050_ManageBillingDetailInfoCF14.cs" />
+    <Compile Include="Controllers\BLS060_ManageBillingInfoCF13.cs" />
+    <Compile Include="Controllers\BLS080_DownloadAutoTransferBankFile.cs" />
+    <Compile Include="Controllers\BLS090_EditLastMonthlyBillingFee.cs" />
+    <Compile Include="Controllers\TestBillingController.cs" />
+    <Compile Include="Helpers\ComboBoxHelper.cs" />
+    <Compile Include="Message\MessageList.Designer.cs">
+      <DependentUpon>MessageList.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Models\BLS010.cs" />
+    <Compile Include="Models\BLS020.cs" />
+    <Compile Include="Models\BLS030.cs" />
+    <Compile Include="Models\BLS031.cs" />
+    <Compile Include="Models\BLS032.cs" />
+    <Compile Include="Models\BLS071.cs" />
+    <Compile Include="Models\BLS040.cs" />
+    <Compile Include="Models\BLS050.cs" />
+    <Compile Include="Models\BLS060.cs" />
+    <Compile Include="Models\BLS070.cs" />
+    <Compile Include="Models\BLS080.cs" />
+    <Compile Include="Models\BLS090.cs" />
+    <Compile Include="Models\ReportModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\BLR010_Invoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BLR010_Invoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BLR020_Invoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BLR020_Invoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BLR030_Invoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BLR030_Invoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BLR030_Payment.cs">
+      <DependentUpon>BLR030_Payment.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BLR020_TaxInvoice.cs">
+      <DependentUpon>BLR020_TaxInvoice.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BLR030_Payment_Blank.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BLR030_Payment_Blank.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\BLR040_Invoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BLR040_Invoice.rpt</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\BLR050_DocumentReceipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BLR050_DocumentReceipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Billing\SECOM_AJIS.Entity.Billing.csproj">
+      <Project>{D5237D53-9467-4B1E-92D7-B91C8358402C}</Project>
+      <Name>SECOM_AJIS.Entity.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Common\SECOM_AJIS.Entity.Common.csproj">
+      <Project>{527A7562-621E-47CD-92CB-E0FA26660A4E}</Project>
+      <Name>SECOM_AJIS.Entity.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Contract\SECOM_AJIS.Entity.Contract.csproj">
+      <Project>{22F8AFE0-0CBB-4543-A703-2C29A1E2105A}</Project>
+      <Name>SECOM_AJIS.Entity.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Income\SECOM_AJIS.Entity.Income.csproj">
+      <Project>{82E5CDD0-5A70-4637-9BF2-AE7DED57B8C7}</Project>
+      <Name>SECOM_AJIS.Entity.Income</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Installation\SECOM_AJIS.Entity.Installation.csproj">
+      <Project>{E952E4EE-DD08-4187-AD89-0F56C4CF8D7D}</Project>
+      <Name>SECOM_AJIS.Entity.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Inventory\SECOM_AJIS.Entity.Inventory.csproj">
+      <Project>{DDC95591-2286-4A85-BD76-C3499101BA98}</Project>
+      <Name>SECOM_AJIS.Entity.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Master\SECOM_AJIS.Entity.Master.csproj">
+      <Project>{65F28583-CF30-4765-A871-E97D2AE7F9B9}</Project>
+      <Name>SECOM_AJIS.Entity.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Quotation\SECOM_AJIS.Entity.Quotation.csproj">
+      <Project>{E44DC4DC-CE32-4CE7-9CB6-ADDEDFDF1B23}</Project>
+      <Name>SECOM_AJIS.Entity.Quotation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Billing\SECOM_AJIS.Interface.Billing.csproj">
+      <Project>{0958FEAD-16B9-4BB9-9C1E-DA33749F7685}</Project>
+      <Name>SECOM_AJIS.Interface.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Common\SECOM_AJIS.Interface.Common.csproj">
+      <Project>{0177E9AC-5098-42BC-9AC1-9B8862FB3E3C}</Project>
+      <Name>SECOM_AJIS.Interface.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Contract\SECOM_AJIS.Interface.Contract.csproj">
+      <Project>{99F59DB1-92D2-49BB-9FCD-46D7880F089E}</Project>
+      <Name>SECOM_AJIS.Interface.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Income\SECOM_AJIS.Interface.Income.csproj">
+      <Project>{BA5911DE-A7E3-467B-8857-1528A134CE42}</Project>
+      <Name>SECOM_AJIS.Interface.Income</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Installation\SECOM_AJIS.Interface.Installation.csproj">
+      <Project>{BFF36845-756B-4D9B-A575-DEBC4099774B}</Project>
+      <Name>SECOM_AJIS.Interface.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Inventory\SECOM_AJIS.Interface.Inventory.csproj">
+      <Project>{0CB3F45D-11BB-45C1-8031-BB960C5C5B0D}</Project>
+      <Name>SECOM_AJIS.Interface.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Master\SECOM_AJIS.Interface.Master.csproj">
+      <Project>{0AC1F756-B4CC-4386-B6A3-C58F555E953B}</Project>
+      <Name>SECOM_AJIS.Interface.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Quotation\SECOM_AJIS.Interface.Quotation.csproj">
+      <Project>{1F3EE1E7-4718-4410-A396-6C7B0E5A95C5}</Project>
+      <Name>SECOM_AJIS.Interface.Quotation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Presentation.Common\SECOM_AJIS.Presentation.Common.csproj">
+      <Project>{4890E853-1C31-4230-8FA1-5D451C115875}</Project>
+      <Name>SECOM_AJIS.Presentation.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Message\MessageList.ja-JP.resx" />
+    <EmbeddedResource Include="Message\MessageList.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageList.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message\MessageList.th-TH.resx" />
+    <EmbeddedResource Include="Reports\BLR010_Invoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BLR010_Invoice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BLR020_Invoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BLR020_Invoice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BLR030_Invoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BLR030_Invoice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BLR030_Payment_Blank.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BLR030_Payment_Blank.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BLR040_Invoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BLR040_Invoice.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\BLR050_DocumentReceipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BLR050_DocumentReceipt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Reports\BLR020_TaxInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BLR020_TaxInvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\BLR030_Payment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BLR030_Payment.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,119 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol3Width = "160px";
+
+    ViewBag.ObjectCol1Width = "140px";
+    ViewBag.ObjectCol1ComboWidth = "400px";
+    ViewBag.ObjectCol12Width = "370px";
+    ViewBag.ObjectCol3Width = "198px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS030/QUS030_11.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("DisabledNumOfDayTimeWd", (bool)@ViewBag.DisabledNumOfDayTimeWd)
+    @Html.Hidden("DisabledNumOfNightTimeWd", (bool)@ViewBag.DisabledNumOfNightTimeWd)
+    @Html.Hidden("DisabledNumOfDayTimeSat", (bool)@ViewBag.DisabledNumOfDayTimeSat)
+    @Html.Hidden("DisabledNumOfNightTimeSat", (bool)@ViewBag.DisabledNumOfNightTimeSat)
+    @Html.Hidden("DisabledNumOfDayTimeSun", (bool)@ViewBag.DisabledNumOfDayTimeSun)
+    @Html.Hidden("DisabledNumOfNightTimeSun", (bool)@ViewBag.DisabledNumOfNightTimeSun)
+    @Html.Hidden("DisabledNumOfBeatStep", (bool)@ViewBag.DisabledNumOfBeatStep)
+    @Html.Hidden("DisabledFreqOfGateUsage", (bool)@ViewBag.DisabledFreqOfGateUsage)
+    @Html.Hidden("DisabledNumOfClockKey", (bool)@ViewBag.DisabledNumOfClockKey)
+    @Html.Hidden("DisabledNumOfDate", (bool)@ViewBag.DisabledNumOfDate)
+    @Html.Hidden("DisabledNotifyTime", (bool)@ViewBag.DisabledNotifyTime)
+</div>
+<form id="formBeatGuardDetail">
+    <div id="divBeatGuardDetail" class="main-table">
+        <div class="table-header">
+            @Resources.QUS030.lblBeatGuardDetail
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblWeekdayDayTime
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.NumericTextBoxWithUnit("NumOfDayTimeWd", (string)@ViewBag.NumOfDayTimeWd, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" }, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.TIMES, true)
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                @Resources.QUS030.lblWeekdayNightTime
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                @Html.NumericTextBoxWithUnit("NumOfNightTimeWd", (string)@ViewBag.NumOfNightTimeWd, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" }, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.TIMES, true)
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSaturdayDayTime
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.NumericTextBoxWithUnit("NumOfDayTimeSat", (string)@ViewBag.NumOfDayTimeSat, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" }, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.TIMES, true)
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                @Resources.QUS030.lblSaturdayNightTime
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                @Html.NumericTextBoxWithUnit("NumOfNightTimeSat", (string)@ViewBag.NumOfNightTimeSat, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" }, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.TIMES, true)
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSundayDayTime
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.NumericTextBoxWithUnit("NumOfDayTimeSun", (string)@ViewBag.NumOfDayTimeSun, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" }, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.TIMES, true)
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                @Resources.QUS030.lblSundayNightTime
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                @Html.NumericTextBoxWithUnit("NumOfNightTimeSun", (string)@ViewBag.NumOfNightTimeSun, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" }, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.TIMES, true)
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblNumerOfBeatGuardSteps
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.NumericTextBox("NumOfBeatStep", (string)@ViewBag.NumOfBeatStep, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblFrequencyOfGateUsage
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.NumericTextBox("FreqOfGateUsage", (string)@ViewBag.FreqOfGateUsage, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblNumberOfClockKey
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.NumericTextBox("NumOfClockKey", (string)@ViewBag.NumOfClockKey, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblNumberOfDate
+            </div>
+            <div class="usr-object">
+                @Html.NumberOfDateComboBox("NumOfDate", new { selected = @ViewBag.NumOfDate, style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblNotifyTime
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.CommonTextBox("NotifyTime", (string)@ViewBag.NotifyTime, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</form>

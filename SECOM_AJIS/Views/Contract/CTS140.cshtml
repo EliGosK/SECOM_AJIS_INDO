@@ -1,0 +1,100 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@{
+    ViewBag.LabelWidth = "250px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    
+    <script language="javascript" runat="server"> 
+        var objCTS140 = { 
+            ContractCode: "@ViewBag.ContractCode",
+            ProductTypeCode: "@ViewBag.ProductTypeCode" , 
+            ContractStatus: "@ViewBag.ContractStatus" ,  
+            C_BILLING_TYPE_CONTRACT_FEE: "@ViewBag.C_BILLING_TYPE_CONTRACT_FEE" , 
+            C_BILLING_TYPE_MAINTENANCE_FEE: "@ViewBag.C_BILLING_TYPE_MAINTENANCE_FEE" , 
+            C_BILLING_TYPE_DEPOSIT_FEE: "@ViewBag.C_BILLING_TYPE_DEPOSIT_FEE" , 
+            C_BILLING_TYPE_REMOVAL_INSTALLATION_FEE: "@ViewBag.C_BILLING_TYPE_REMOVAL_INSTALLATION_FEE" , 
+            C_BILLING_TYPE_CANCEL_CONTRACT_FEE: "@ViewBag.C_BILLING_TYPE_CANCEL_CONTRACT_FEE" , 
+            C_BILLING_TYPE_CHANGE_INSTALLATION_FEE: "@ViewBag.C_BILLING_TYPE_CHANGE_INSTALLATION_FEE" , 
+            C_BILLING_TYPE_CARD_FEE: "@ViewBag.C_BILLING_TYPE_CARD_FEE" ,
+            C_BILLING_TYPE_OTHER_FEE: "@ViewBag.C_BILLING_TYPE_OTHER_FEE" ,
+            C_HANDLING_TYPE_BILL_UNPAID_FEE: "@ViewBag.C_HANDLING_TYPE_BILL_UNPAID_FEE" ,
+            C_HANDLING_TYPE_EXEMPT_UNPAID_FEE: "@ViewBag.C_HANDLING_TYPE_EXEMPT_UNPAID_FEE" ,
+            C_HANDLING_TYPE_RECEIVE_AS_REVENUE: "@ViewBag.C_HANDLING_TYPE_RECEIVE_AS_REVENUE" ,
+            C_HANDLING_TYPE_REFUND: "@ViewBag.C_HANDLING_TYPE_REFUND" ,
+            C_HANDLING_TYPE_SLIDE: "@ViewBag.C_HANDLING_TYPE_SLIDE" ,
+            C_PROD_TYPE_AL: "@ViewBag.C_PROD_TYPE_AL" ,
+            C_PROD_TYPE_BE: "@ViewBag.C_PROD_TYPE_BE" ,
+            C_PROD_TYPE_MA: "@ViewBag.C_PROD_TYPE_MA" ,
+            C_PROD_TYPE_ONLINE: "@ViewBag.C_PROD_TYPE_ONLINE" ,
+            C_PROD_TYPE_SALE: "@ViewBag.C_PROD_TYPE_SALE" ,
+            C_PROD_TYPE_SG: "@ViewBag.C_PROD_TYPE_SG" , 
+            C_PROD_TYPE_RENTAL_SALE: "@ViewBag.C_PROD_TYPE_RENTAL_SALE" ,
+            C_CONTRACT_STATUS_AFTER_START: "@ViewBag.C_CONTRACT_STATUS_AFTER_START" ,
+            C_CONTRACT_STATUS_BEF_START: "@ViewBag.C_CONTRACT_STATUS_BEF_START" ,
+            C_CONTRACT_STATUS_CANCEL: "@ViewBag.C_CONTRACT_STATUS_CANCEL" ,
+            C_CONTRACT_STATUS_END: "@ViewBag.C_CONTRACT_STATUS_END" ,
+            C_CONTRACT_STATUS_FIXED_CANCEL: "@ViewBag.C_CONTRACT_STATUS_FIXED_CANCEL" ,
+            C_CONTRACT_STATUS_STOPPING: "@ViewBag.C_CONTRACT_STATUS_STOPPING" ,
+            C_ACQUISITION_TYPE_CUST: "@ViewBag.C_ACQUISITION_TYPE_CUST" ,
+            C_ACQUISITION_TYPE_INSIDE_COMPANY: "@ViewBag.C_ACQUISITION_TYPE_INSIDE_COMPANY",
+            C_ACQUISITION_TYPE_SUBCONTRACTOR: "@ViewBag.C_ACQUISITION_TYPE_SUBCONTRACTOR",
+            C_PROC_AFT_COUNTER_BALANCE_TYPE_BILL: "@ViewBag.C_PROC_AFT_COUNTER_BALANCE_TYPE_BILL",
+            C_PROC_AFT_COUNTER_BALANCE_TYPE_EXEMPT: "@ViewBag.C_PROC_AFT_COUNTER_BALANCE_TYPE_EXEMPT",
+            C_PROC_AFT_COUNTER_BALANCE_TYPE_RECEIVE: "@ViewBag.C_PROC_AFT_COUNTER_BALANCE_TYPE_RECEIVE",
+            C_PROC_AFT_COUNTER_BALANCE_TYPE_REFUND: "@ViewBag.C_PROC_AFT_COUNTER_BALANCE_TYPE_REFUND"
+        } 
+    </script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS140.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS140/CTS140_01.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS140/CTS140_02.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS140/CTS140_03.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS140/CTS140_04.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS140/CTS140_05.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS140/CTS140_06.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS140/CTS140_07.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS140/CTS140_08.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS140/CTS140_09.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS140/CTS140_10.js")"></script>
+
+<style>
+    #divProcessCounterBalance ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #divProcessCounterBalanceUsd ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+</style>
+}
+@Html.Partial("CTS140/_CTS140_01")
+<div id="divContractRelatedFeeInformationMain" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width:600px">
+             @Resources.CTS140.lblContractRelatedFeeInformation
+        </div>
+    </div>
+    @Html.Partial("CTS140/_CTS140_02")
+    @Html.Partial("CTS140/_CTS140_03")
+    @Html.Partial("CTS140/_CTS140_04")
+    @Html.Partial("CTS140/_CTS140_05")
+</div>
+@Html.Partial("CTS140/_CTS140_06")
+@Html.Partial("CTS140/_CTS140_07")
+@Html.Partial("CTS140/_CTS140_08")
+@Html.Partial("CTS140/_CTS140_09")
+@Html.Partial("CTS140/_CTS140_10")

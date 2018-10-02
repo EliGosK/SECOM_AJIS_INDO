@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="PurchaseOrderNo" width="150" type="ro"  sort="str_custom">headerPurchaseOrderNo</column>
+    <column id="SupplierCode" width="130" type="ro" align="left" sort="int">headerSupplierCode</column>
+    <column id="SupplierName" width="*" type="ro" align="left" sort="str_custom">headerSupplierName</column>
+    <column id="PurchaseOrderStatusName" width="200" type="ro" align="left" sort="str_custom">headerPurchaseOrderStatus</column>
+    <column id="TransportTypeName" width="100" type="ro" align="left"  sort="str_custom">headerTransportType</column>
+    <column id="Select" width="30" type="ro" align="center" sort="na">headerSelect</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

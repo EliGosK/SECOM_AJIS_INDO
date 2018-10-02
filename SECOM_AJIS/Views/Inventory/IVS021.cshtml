@@ -1,0 +1,198 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Controllers;
+@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.SearchWidthCol1 = "160px;";
+    ViewBag.SearchWidthCol2 = "170px;";
+    ViewBag.SearchWidthCol2Cbo = "174px;";
+    ViewBag.SearchWidthCol3 = "240px;";
+    ViewBag.SearchWidthCol4 = "200px;";
+    ViewBag.SearchWidthCol4Cbo = "320px;";
+    ViewBag.SearchWidthButton = "90px";
+    ViewBag.DatePickerWidth = "95px;";
+    ViewBag.RegWidthCol1 = "220px;";
+    ViewBag.RegWidthCol2 = "200px;";
+    ViewBag.RegWidthCol2Full = "695px;";
+    ViewBag.RegWidthCol3 = "190px;";
+    ViewBag.RegWidthCol4 = "300px;";
+    ViewBag.RegWidthCol4Short = "150px;";
+    ViewBag.RegWidthCol4Cbo = "304px;";
+    ViewBag.SLWidthCol1 = "250px;";
+    ViewBag.SLWidthCol2 = "200px;";
+    ViewBag.SLWidthCol3 = "150px;";
+    ViewBag.SLWidthCol4 = "150px;";
+}
+
+
+@section page_header{
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Inventory/IVS021.js")"></script>
+
+<script type="text/javascript">
+
+    var IVS021_InstallType = {
+        C_SALE_INSTALL_TYPE_NEW: "@SaleInstallationType.C_SALE_INSTALL_TYPE_NEW",
+        C_SALE_INSTALL_TYPE_ADD: "@SaleInstallationType.C_SALE_INSTALL_TYPE_ADD",
+        C_SALE_INSTALL_TYPE_MAINTENANCE_EXCHANGE: "@SaleInstallationType.C_SALE_INSTALL_TYPE_MAINTENANCE_EXCHANGE",
+        C_RENTAL_INSTALL_TYPE_NEW: "@RentalInstallationType.C_RENTAL_INSTALL_TYPE_NEW",
+        C_RENTAL_INSTALL_TYPE_CHANGEPLAN_NEW: "@RentalInstallationType.C_RENTAL_INSTALL_TYPE_CHANGEPLAN_NEW",
+        C_RENTAL_INSTALL_TYPE_CHANGEPLAN_AFTER_NEW: "@RentalInstallationType.C_RENTAL_INSTALL_TYPE_CHANGEPLAN_AFTER_NEW",
+        C_RENTAL_INSTALL_TYPE_MAINTENANCE_EXCHANGE: "@RentalInstallationType.C_RENTAL_INSTALL_TYPE_MAINTENANCE_EXCHANGE",
+        C_RENTAL_INSTALL_TYPE_PERIODICAL_MAINTENANCE: "@RentalInstallationType.C_RENTAL_INSTALL_TYPE_PERIODICAL_MAINTENANCE"
+    };
+
+    var IVS021_ViewBag = {
+        InvHeadOfficeCode: "@ViewBag.InventoryHeadOfficeCode",
+        InvHeadOfficeName: "@ViewBag.InventoryHeadOfficeName",
+        MINDATE: @(ViewBag.MinDate),
+        MAXDATE: @(ViewBag.MaxDate)
+    };
+
+</script>
+
+
+}
+
+
+<!-- Specify location -->
+<div class="main-table" id="divSearchInstallSlip" style="visibility: hidden">
+    <div class="table-header">
+        @Resources.IVS021.lblHeaderSearchInstallationSlip
+    </div>
+    <div id="divSearchInstallSlipCriteria">
+        <form id="formSearch" action="#" style="margin: 0;">
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.SearchWidthCol1">@Resources.IVS021.lblInstallationSlipNo</div>
+                <div class="usr-object">@Html.CommonTextBox("txtSearchInstallationSlipNo", null, new { style = "width:" + ViewBag.SearchWidthCol2, maxlength = 20 })</div>
+            </div>
+            <div class="usr-clear-style">&nbsp;</div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.SearchWidthCol1">@Resources.IVS021.lblContractCode</div>
+                <div class="usr-object">@Html.CommonTextBox("txtSearchContractCode", null, new { style = "width:" + ViewBag.SearchWidthCol2, maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })</div>
+                <div class="usr-label" style="width:@ViewBag.SearchWidthCol3">@Resources.IVS021.lblContractTargetName</div>
+                <div class="usr-object">@Html.CommonTextBox("txtSearchContractTargetName", null, new { style = "width:" + ViewBag.SearchWidthCol4, maxlength = 400 })</div>
+            </div>
+            <div class="usr-clear-style">&nbsp;</div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.SearchWidthCol1">@Resources.IVS021.lblSiteName</div>
+                <div class="usr-object">@Html.CommonTextBox("txtSearchSiteName", null, new { style = "width:" + ViewBag.SearchWidthCol2, maxlength = 400 })</div>
+                <div class="usr-label" style="width:@ViewBag.SearchWidthCol3">@Resources.IVS021.lblExpectedStockOutDate</div>
+                <div class="usr-object">
+                    <input type="text" id="txtSearchExpectedStockOutDateFrom" name="txtSearchExpectedStockOutDateFrom" style="width:@ViewBag.DatePickerWidth;" />
+                    <span> ~ </span>
+                    <input type="text" id="txtSearchExpectedStockOutDateTo" name="txtSearchExpectedStockOutDateTo" style="width:@ViewBag.DatePickerWidth;" />
+                </div>
+                <div class="usr-object">
+                    @Html.LabelDateFormat("lblDateFormat")
+                </div>
+            </div>
+            <div class="usr-clear-style">&nbsp;</div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.SearchWidthCol1">@Resources.IVS021.lblInventoryOffice</div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("txtSearchInventoryOffice", (string)ViewBag.InventoryHeadOfficeName, new { style = "width:" + ViewBag.SearchWidthCol2 })
+                </div>
+                <div class="usr-label" style="width:@ViewBag.SearchWidthCol3">@Resources.IVS021.lblInstallationType</div>
+                <div class="usr-object">@Html.InstallationTypeStockOutComboBox("cboSearchInstallationType", new { style = "width:" + ViewBag.SearchWidthCol4Cbo })</div>
+            </div>
+            <div class="usr-clear-style">&nbsp;</div>
+            <div class="usr-row" style="margin-top: 5px">
+                <div class="usr-object" style="float: right; margin-right: 4px;">
+                @Html.CommonButton("btnSearch", @Resources.IVS021.lblBtnSearch, new { style = "width:" + ViewBag.SearchWidthButton }) 
+                @Html.CommonButton("btnClear", @Resources.IVS021.lblBtnClear, new { style = "width:" + ViewBag.SearchWidthButton })
+                </div>
+            </div>
+            <div class="usr-clear-style">&nbsp;</div>
+        </form>
+    </div>
+    <div class="usr-row" id="divSearchInstallSlipList" style="margin-top: 5px">
+        <div id="divSearchInstallSlipGrid" style="width: 99%; margin-left: 4px;">
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</div>
+
+<div class="main-table" id="divRegisterStockOut" style="visibility: hidden">
+    <div class="table-header">
+        @Resources.IVS021.lblHeaderRegisterStockOut
+    </div>
+    <div id="divRegisterStockOutHeader">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.RegWidthCol1">@Resources.IVS021.lblContractCode</div>
+            <div class="usr-object" style="width:@ViewBag.RegWidthCol2">@Html.CommonTextBox("txtRegContractCode", null, new { style = "width:" + ViewBag.RegWidthCol2 })</div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.RegWidthCol1">@Resources.IVS021.lblInstallationSlipNo</div>
+            <div class="usr-object" style="width:@ViewBag.RegWidthCol2">@Html.CommonTextBox("txtRegInstallSlipNo", null, new { style = "width:" + ViewBag.RegWidthCol2 })</div>
+            <div class="usr-label" style="width:@ViewBag.RegWidthCol3">@Resources.IVS021.lblInstallationType</div>
+            <div class="usr-object" style="width:@ViewBag.RegWidthCol4">@Html.CommonTextBox("txtRegInstallType", null, new { style = "width:" + ViewBag.RegWidthCol4 })</div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.RegWidthCol1">@Resources.IVS021.lblContractTargetNameEN</div>
+            <div class="usr-object" style="width:@ViewBag.RegWidthCol2Full">@Html.CommonTextBox("txtRegContractTargetNameEN", null, new { style = "width:" + ViewBag.RegWidthCol2Full })</div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.RegWidthCol1">@Resources.IVS021.lblContractTargetNameLC</div>
+            <div class="usr-object" style="width:@ViewBag.RegWidthCol2Full">@Html.CommonTextBox("txtRegContractTargetNameLC", null, new { style = "width:" + ViewBag.RegWidthCol2Full })</div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.RegWidthCol1">@Resources.IVS021.lblSiteNameEN</div>
+            <div class="usr-object" style="width:@ViewBag.RegWidthCol2Full">@Html.CommonTextBox("txtRegSiteNameEN", null, new { style = "width:" + ViewBag.RegWidthCol2Full })</div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.RegWidthCol1">@Resources.IVS021.lblSiteNameLC</div>
+            <div class="usr-object" style="width:@ViewBag.RegWidthCol2Full">@Html.CommonTextBox("txtRegSiteNameLC", null, new { style = "width:" + ViewBag.RegWidthCol2Full })</div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.RegWidthCol1">@Resources.IVS021.lblInventoryOffice</div>
+            <div class="usr-object" style="width:@ViewBag.RegWidthCol2">@Html.CommonTextBox("txtRegInventoryOffice", null, new { style = "width:" + ViewBag.RegWidthCol2 })</div>
+            <div class="usr-label" style="width:@ViewBag.RegWidthCol3">@Resources.IVS021.lblExpectedStockOutDate</div>
+            <div class="usr-object" style="width:@ViewBag.RegWidthCol4">@Html.CommonTextBox("txtRegExpectedOutDate", null, new { style = "width:" + ViewBag.RegWidthCol4Short })</div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.RegWidthCol1">@Resources.IVS021.lblMemo</div>
+            <div class="usr-object" style="width:@ViewBag.RegWidthCol2Full">@Html.CommonTextArea("txtRegMemo", null, new { style = "width:" + ViewBag.RegWidthCol2Full + "; height:80px ;  overflow:auto; white-space:pre; word-wrap:normal", maxlength = "1000" })</div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.RegWidthCol1">@Resources.IVS021.lblStockOutDate</div>
+            <div class="usr-object" style="width:@ViewBag.RegWidthCol2">@Html.CommonTextBox("txtStockOutDate", null, new { style = "width:" + ViewBag.DatePickerWidth }) @Html.RequireFiled()</div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+    <div id="divRegisterStockOutDetail" style="margin-top: 5px">
+        <div id="divRegisterGrid" style="width: 99%; margin-left: 4px;">
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</div>
+
+<div class="main-table" id="divShowSlip" style="visibility: hidden">
+    <div class="table-header">
+        @Resources.IVS021.lblHeaderShowSlipNo
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SLWidthCol1">@Resources.IVS021.lblSlipNo</div>
+        <div class="usr-object" style="width:@ViewBag.SLWidthCol2">@Html.CommonTextBox("txtShowSlipNo", null, new { style = "width:95%" })</div>
+        @Html.CommonButton("btnDownloadSlip", @Resources.IVS021.lblBtnDownloadSlip, new { style = "width:" + ViewBag.SLWidthCol3 }) 
+        @Html.CommonButton("btnNewRegister", @Resources.IVS021.lblBtnNewRegister, new { style = "width:" + ViewBag.SLWidthCol4 }) 
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+

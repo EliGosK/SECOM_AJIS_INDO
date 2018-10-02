@@ -1,0 +1,117 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    Layout = "";
+
+    ViewBag.LabelCol1Width = "190px";
+    ViewBag.ObjectCol1Width = "225px";
+    ViewBag.LabelCol2Width = "190px";
+    ViewBag.ObjectCol2Width = "225px";
+    ViewBag.ObjectColMergeWidth = "630px";
+    ViewBag.isViewMode = true;
+}
+<div id="divBeatGuardDetail" class="main-table">
+    <div class="table-header">
+        @Resources.QUS012.lblBeatGuardDetail
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblWeekdayDayTime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            <div style="float:left;">
+                @Html.CommonTextBox("WeekdayDayTime", (string)@ViewBag.WeekdayDayTime, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            @Html.LabelTimesUnit("WeekdayDayTime")
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS012.lblWeekdayNightTime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            <div style="float:left;">
+                @Html.CommonTextBox("WeekdayNightTime", (string)@ViewBag.WeekdayNightTime, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            @Html.LabelTimesUnit("WeekdayNightTime")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblSaturdayDayTime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            <div style="float:left;">
+                @Html.CommonTextBox("SaturdayDayTime", (string)@ViewBag.SaturdayDayTime, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            @Html.LabelTimesUnit("SaturdayDayTime")
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS012.lblSaturdayNightTime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            <div style="float:left;">
+                @Html.CommonTextBox("SaturdayNightTime", (string)@ViewBag.SaturdayNightTime, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            @Html.LabelTimesUnit("SaturdayNightTime")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblSundayDayTime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            <div style="float:left;">
+                @Html.CommonTextBox("SundayDayTime", (string)@ViewBag.SundayDayTime, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            @Html.LabelTimesUnit("SundayDayTime")
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS012.lblSundayNightTime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            <div style="float:left;">
+                @Html.CommonTextBox("SundayNightTime", (string)@ViewBag.SundayNightTime, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            @Html.LabelTimesUnit("SundayNightTime")
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblNoBeatGuardSteps
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("NoBeatGuardSteps", (string)@ViewBag.NoBeatGuardSteps, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblFrequencyGateUsage
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("FrequencyGateUsage", (string)@ViewBag.FrequencyGateUsage, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblNoClockKey
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("NoClockKey", (string)@ViewBag.NoClockKey, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblNoDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("NoDate", (string)@ViewBag.NoDate, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblNotifyTime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("NotifyTime", (string)@ViewBag.NotifyTime, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Template>
+  <AdminEmail></AdminEmail>
+  <AdminSubject></AdminSubject>
+  <AdminContent></AdminContent>
+  <TemplateSubject>[SIMS] Register installation request</TemplateSubject>
+  <TemplateContent>
+    <![CDATA[
+    <html>
+      <body style="font-family: tahoma; font-size: 10pt;">
+        <b>ข้อมูลการติดตั้ง</b><br />
+        Installation information<br />
+        <br />
+        <table cellpadding="0" cellspacing="0" width="800" border="0" style="font-family: tahoma; font-size: 10pt;">
+          <tr>
+            <th width="24%" />
+            <th width="1%" />
+            <th width="75%" />
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>สัญญาเลขที่/โปรเจคเลขที่</b><br />
+              Contract no./Project code
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [ContractProjectCode]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>รหัสผู้ใช้</b><br />
+              User code
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [UserCode]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>รหัสประเภทการบริการ</b><br />
+              Security type code
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [SecurityTypeCode]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>ชื่อระบบ</b><br />
+              Product name
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [ProductNameLC]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>ชื่อผู้ทำสัญญา/ผู้ซื้อ</b><br />
+              Customer name
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [ContractPurchaserName]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>สาขาผู้เช่า</b><br />
+              Branch name
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [BranchNameLC]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>ชื่อสถานที่ติดตั้ง</b><br />
+              Site name
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [SiteNameLC]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>ที่อยู่สถานที่ติดตั้ง</b><br />
+              Site address
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [AddressFullLC]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>สาขาบริการ</b><br />
+              Operation office
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [OfficeNameLC]
+            </td>
+          </tr>
+        </table>
+        <br />
+        <br />
+        <b>ข้อมูลขอการติดตั้ง</b><br />
+        Installation request information<br />
+        <br />
+        <table cellpadding="0" cellspacing="0" width="800" border="0" style="font-family: tahoma; font-size: 10pt;">
+          <tr>
+            <th width="24%" />
+            <th width="1%" />
+            <th width="25%" />
+            <th width="29%" />
+            <th width="1%" />
+            <th width="20%" />
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>เลขที่ใบคำร้องขอติดตั้ง</b><br />
+              Installation no.
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [MaintenanceNo]
+            </td>
+            <td>
+              <b>เลขที่แปลน</b><br />
+              Plan no.
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [PlanCode]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>ประเภทคำร้องขอติดตั้ง</b><br />
+              Intallation type
+            </td>
+            <td>
+              :
+            </td>
+            <td colspan="4">
+              [InstallationTypeName]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>พนักงานขาย 1</b><br />
+              Salesman name 1
+            </td>
+            <td>
+              :
+            </td>
+            <td colspan="4">
+              [Salesman1]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>พนักงานขาย 2</b><br />
+              Salesman name 2
+            </td>
+            <td>
+              :
+            </td>
+            <td colspan="4">
+              [Salesman2]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>ประเภทอาคาร</b><br />
+              New building/Old building
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [BuildingTypeName]
+            </td>
+            <td>
+              <b>มีการจัดการอาคารกำลังก่อสร้าง</b><br />
+              New building management type
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [NewBuildingManagementType]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>วันที่ต้องการให้เริ่มงาน</b><br />
+              Proposed installation start date
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [ProposeInstallStartDate]
+            </td>
+            <td>
+              <b>วันที่ต้องการให้งานเสร็จ</b><br />
+              Proposed installation complete date
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [ProposeInstallCompleteDate]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>วันที่เปิดเบอร์โทรศัพท์ใหม่</b><br />
+              New telephone line open date
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [NewPhoneLineOpenDate]
+            </td>
+            <td>
+              <b>เบอร์โทรศัพท์ใหม่</b><br />
+              New connection telephone no.
+            </td>
+            <td>
+              :
+            </td>
+            <td>
+              [NewConnectionPhoneNo]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>เจ้าของเบอร์โทรศัพท์ใหม่</b><br />
+              New telephone line owner
+            </td>
+            <td>
+              :
+            </td>
+            <td colspan="4">
+              [NewPhoneLineOwnerTypeName]
+            </td>
+          </tr>
+          <tr valign="top">
+            <td>
+              <b>บันทึกการติดตั้ง</b><br />
+              Installation memo
+            </td>
+            <td>
+              :
+            </td>
+            <td colspan="4">
+              [RequestMemo]
+            </td>
+          </tr>
+        </table>
+      </body>
+    </html>
+    ]]>
+  </TemplateContent>
+</Template>

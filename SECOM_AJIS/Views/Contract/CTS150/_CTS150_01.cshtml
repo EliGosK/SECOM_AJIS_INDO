@@ -1,0 +1,22 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+
+<div id="divSpecifyContractCode" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS150.lblSpecifyContractCode</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; vertical-align: middle;">@Resources.CTS150.lblEntryContractCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("EntryContractCode", null, new { style = "width:120px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol4Width; margin-right:5px; vertical-align: middle;">
+            @Resources.CTS150.lblEntryOccurrenceCode
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("OccurrenceCode", null, new { style = "width:60px;", @tabindex = "1", @maxlength = "4" })
+            @Html.RequireFiled()
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnRetrieve", (string)@Resources.CTS150.btnRetrieve, new { style = "width:100px;", @tabindex = "2" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

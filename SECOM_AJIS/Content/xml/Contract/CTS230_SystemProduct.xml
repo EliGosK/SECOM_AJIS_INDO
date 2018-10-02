@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+   
+    <column id="SysProductName"  width="*" type="ro" align="left">HgridSystemProduct</column>
+    <column id="Remove"  width="30"  type="ro" align="center">HgridRemove</column>
+  
+
+    <!--Hidden-->
+    <column id="SysProductCode"  width="*" type="ro" hidden="true" align="left"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

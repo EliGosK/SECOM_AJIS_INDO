@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="BillingOCC" width="50" type="ro" align="left" sort="na">headerBillingOCC</column>
+    <column id="BillingClientCode" width="85" type="ro" align="left" sort="na">headerBillingClientCode</column>
+    <column id="BillingOfficeCode" width="0" type="ro" align="left" hidden="true" sort="na"></column>
+    <column id="BillingOfficeName" width="*" type="ro" align="left" sort="na">headerBillingOffice</column>
+    <column id="BillingTargetCode" width="110" type="ro" align="left" sort="na">headerBillingTargetCode</column>
+    <column id="BillingTargetName" width="*" type="ro" align="left" sort="na">headerBillingTargetName</column>
+    <column id="ContractFee" width="100" type="ro" align="right" sort="na">headerContractFee</column>
+    <column id="Detail" width="39" type="ro" align="left" sort="na">headerDetail</column>
+    <column id="Remove" width="30" type="ro" align="left" sort="na">headerRemove</column>
+    <column id="TmpColumn" width="0" type="ro" hidden="true" sort="na"></column>
+
+    <column id="CanDelete" width="0" type="ro" hidden="true" sort="na"></column>
+    <column id="IsNew" width="0" type="ro" hidden="true" sort="na"></column>
+    <column id="HasUpdate" width="0" type="ro" hidden="true" sort="na"></column>
+    <column id="UID" width="0" type="ro" hidden="true" sort="na"></column>
+    <column id="OriginalBillingOCC" width="0" type="ro" hidden="true" sort="na"></column>
+    <column id="OriginalBillingClientCode" width="0" type="ro" hidden="true" sort="na"></column>
+    <column id="OriginalBillingOfficeCode" width="0" type="ro" hidden="true" sort="na"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

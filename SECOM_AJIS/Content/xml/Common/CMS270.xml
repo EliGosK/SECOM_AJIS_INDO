@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center"  sort="na"></column>
+
+    <column id="BillingClientCode_Short" width="150" type="ro" align="left" sort="str_custom">headerBillingClientCode</column>
+    <column id="Name_Extra" width="210" type="ro" align="left"  sort="str_custom">headerBillingClientName</column>
+    <column id="Address_Extra" width="*" type="ro" align="left" sort="str_custom">headerAddress</column>
+    
+    <column id="Button" width="30" type="ro" align="center" sort="na">headerButton</column>
+    <column id="Object" width="0" type="ro" align="center"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column id="RowHeader" width="*" type="ro" align="left" sort="na"></column>    
+    <column id="ContractAlarm" width="145" type="ro" align="right" sort="na">headerContractTaget</column>
+    <column id="ContractMaintenance" width="145" type="ro" align="right" sort="na">#cspan</column>
+    <column id="ContractGuard" width="145" type="ro" align="right" sort="na">#cspan</column>
+    <column id="ContractSale" width="145" type="ro" align="right" sort="na">#cspan</column>
+    <column id="CustomerAlarm" width="145" type="ro" align="right" sort="na">headerRealCustomer</column>
+    <column id="CustomerMaintenance" width="145" type="ro" align="right" sort="na">#cspan</column>
+    <column id="CustomerGuard" width="145" type="ro" align="right" sort="na">#cspan</column>
+    <column id="CustomerSale" width="145" type="ro" align="right" sort="na">#cspan</column>
+    <column id="RowPrefix" width="0" type="ro" align="right" hidden="true"></column>
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,headerAlarm,headerMaintenance,headerGuard,headerSale,headerAlarm,headerMaintenance,headerGuard,headerSale</param>
+      </call>
+    </afterInit>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

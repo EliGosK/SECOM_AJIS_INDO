@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4890E853-1C31-4230-8FA1-5D451C115875}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.Presentation.Common</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Presentation.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CSI.WindsorHelper">
+      <HintPath>..\SECOM_AJIS.Common\_ExtLib\CSI.WindsorHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\SECOM_AJIS\DLL\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\CMS000_RedirectScreen.cs" />
+    <Compile Include="Controllers\CMS010_Login.cs" />
+    <Compile Include="Controllers\CMS020_Home.cs" />
+    <Compile Include="Controllers\CMS026_FlowMenuItemList.cs" />
+    <Compile Include="Controllers\CMS030_DownloadExistingDocument.cs" />
+    <Compile Include="Controllers\CMS040_SuspendResumeService.cs" />
+    <Compile Include="Controllers\CMS060_SearchEmail.cs" />
+    <Compile Include="Controllers\CMS100_ViewCustomerGroup.cs" />
+    <Compile Include="Controllers\CMS170_SearchInstrument.cs" />
+    <Compile Include="Controllers\CMS220_ViewContractCustomerInfo.cs" />
+    <Compile Include="Controllers\CMS240_Purgelog.cs" />
+    <Compile Include="Controllers\CMS250_SearchCustomer.cs" />
+    <Compile Include="Controllers\CMS260_SearchSite.cs" />
+    <Compile Include="Controllers\CMS270_SearchBillingClient.cs" />
+    <Compile Include="Controllers\CMS290_SearchProject.cs" />
+    <Compile Include="Controllers\CMS310_SearchContract.cs" />
+    <Compile Include="Controllers\CMS400_SearchBillingInformation.cs" />
+    <Compile Include="Controllers\CommonController.cs" />
+    <Compile Include="Controllers\CMS050_RunBatch.cs" />
+    <Compile Include="Controllers\CMS150_HistoryDigest.cs" />
+    <Compile Include="Controllers\CMS120_ViewContractContractBasicInfo.cs" />
+    <Compile Include="Controllers\CMS130_ViewContractSecurityBasicInfo.cs" />
+    <Compile Include="Controllers\CMS280_Viewsiteincidentdigest.cs" />
+    <Compile Include="Controllers\CMS131_ViewContractDocumnet.cs" />
+    <Compile Include="Controllers\CMS080_ViewCustomerInformation.cs" />
+    <Compile Include="Controllers\CMS140_ViewContractRelatedInformationSecurityDetail.cs" />
+    <Compile Include="Controllers\CMS160_ViewContractRelatedInformationSaleContractBasic.cs" />
+    <Compile Include="Controllers\CMS190_ViewContractDigest.cs" />
+    <Compile Include="Controllers\CMS070_SearchInformation.cs" />
+    <Compile Include="Controllers\CMS090_SearchCustomerGroupInformation.cs" />
+    <Compile Include="Controllers\CMS300_ViewCustomerHistory.cs" />
+    <Compile Include="Controllers\CMS200_ViewContractBillingTransfer.cs" />
+    <Compile Include="Controllers\CMS210_ViewMaintenanceCheckupResult.cs" />
+    <Compile Include="Controllers\CMS180_ViewInstallationInformation.cs" />
+    <Compile Include="Controllers\CMS420_ViewBillingBasicInformation.cs" />
+    <Compile Include="Controllers\CMS430_ViewDepositInformation_Backup.cs" />
+    <Compile Include="Controllers\CMS410_ViewBillingTargetInformation.cs" />
+    <Compile Include="Controllers\CMS470_SearchBillingTarget.cs" />
+    <Compile Include="Controllers\CMS450_ViewBillingInformation.cs" />
+    <Compile Include="Controllers\CMS421_ViewAutoTransferInformation.cs" />
+    <Compile Include="Controllers\CMS999_ControlTestPage.cs" />
+    <Compile Include="Controllers\CMS422_ViewCreditInformation.cs" />
+    <Compile Include="Controllers\CMS430_ViewDepositInformation.cs" />
+    <Compile Include="Controllers\CMS460_RePrintBillingRelateDocument.cs" />
+    <Compile Include="Controllers\CommonData.cs" />
+    <Compile Include="Controllers\CMS999_ProcessTest.cs" />
+    <Compile Include="Controllers\CMS021_FlowMenuSale.cs" />
+    <Compile Include="Controllers\CMS024_FlowMenuStopService.cs" />
+    <Compile Include="Controllers\CMS022_FlowMenuRental.cs" />
+    <Compile Include="Controllers\CMS023_FlowMenuChangeAfterStart.cs" />
+    <Compile Include="Controllers\CMS025_FlowMenuChangeContract.cs" />
+    <Compile Include="Controllers\CMS480_EditCarryOverAndProfit.cs" />
+    <Compile Include="Controllers\CMS490_ReIssueInvoiceTaxInvoiceReceiptCreditNote.cs" />
+    <Compile Include="Controllers\FlowMenuController.cs" />
+    <Compile Include="Helpers\ButtonHelper.cs" />
+    <Compile Include="Helpers\ComboBoxHelper.cs" />
+    <Compile Include="Helpers\SystemStatusHelper.cs" />
+    <Compile Include="Helpers\TextBoxHelper.cs" />
+    <Compile Include="Message\MessageList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MiscellaneousTypeCommon.cs" />
+    <Compile Include="Models\CMS020.cs" />
+    <Compile Include="Models\CMS026.cs" />
+    <Compile Include="Models\CMS030.cs" />
+    <Compile Include="Models\CMS070.cs" />
+    <Compile Include="Models\CMS150.cs" />
+    <Compile Include="Models\CMS240.cs" />
+    <Compile Include="Models\CMS280.cs" />
+    <Compile Include="Models\CMS170.cs" />
+    <Compile Include="Models\CMS290.cs" />
+    <Compile Include="Models\CMS260.cs" />
+    <Compile Include="Models\CMS100.cs" />
+    <Compile Include="Models\CMS080.cs" />
+    <Compile Include="Models\CMS090.cs" />
+    <Compile Include="Models\CMS310.cs" />
+    <Compile Include="Models\CMS270.cs" />
+    <Compile Include="Models\CMS250.cs" />
+    <Compile Include="Models\CMS060.cs" />
+    <Compile Include="Models\CMS040.cs" />
+    <Compile Include="Models\CMS050.cs" />
+    <Compile Include="Models\CMS300.cs" />
+    <Compile Include="Models\CMS120.cs" />
+    <Compile Include="Models\CMS130.cs" />
+    <Compile Include="Models\CMS131.cs" />
+    <Compile Include="Models\CMS140.cs" />
+    <Compile Include="Models\CMS160.cs" />
+    <Compile Include="Models\CMS190.cs" />
+    <Compile Include="Models\CMS200.cs" />
+    <Compile Include="Models\CMS210.cs" />
+    <Compile Include="Models\CMS220.cs" />
+    <Compile Include="Models\CMS420.cs" />
+    <Compile Include="Models\CMS180.cs" />
+    <Compile Include="Models\CMS430.cs" />
+    <Compile Include="Models\CMS410.cs" />
+    <Compile Include="Models\CMS400.cs" />
+    <Compile Include="Models\CMS450.cs" />
+    <Compile Include="Models\CMS421.cs" />
+    <Compile Include="Models\CMS422.cs" />
+    <Compile Include="Models\CMS999.cs" />
+    <Compile Include="Models\CMS470.cs" />
+    <Compile Include="Models\CMS460.cs" />
+    <Compile Include="Models\CMS480.cs" />
+    <Compile Include="Models\CMS490.cs" />
+    <Compile Include="Models\doCMS100_ViewCustomerGroup.cs" />
+    <Compile Include="Models\doCMS170_SearchInstrument.cs" />
+    <Compile Include="Models\doCMS290_SearchProject.cs" />
+    <Compile Include="Models\ReportModel.cs" />
+    <Compile Include="Models\View_dtGroupList.cs" />
+    <Compile Include="Models\doCMS090_SearchCondition.cs" />
+    <Compile Include="Models\doSystemStatus.cs" />
+    <Compile Include="Models\dtGetMiscTypeCode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\CMR010_IssueList.cs">
+      <DependentUpon>CMR010_IssueList.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service\DocumentOutput.cs" />
+    <Compile Include="Service\ExchangeRate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.DataEntity.Master\SECOM_AJIS.DataEntity.Master.csproj">
+      <Project>{4d7b3e4b-e965-4f31-a2dd-49b2b39badfd}</Project>
+      <Name>SECOM_AJIS.DataEntity.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Billing\SECOM_AJIS.Entity.Billing.csproj">
+      <Project>{D5237D53-9467-4B1E-92D7-B91C8358402C}</Project>
+      <Name>SECOM_AJIS.Entity.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Common\SECOM_AJIS.Entity.Common.csproj">
+      <Project>{527A7562-621E-47CD-92CB-E0FA26660A4E}</Project>
+      <Name>SECOM_AJIS.Entity.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Contract\SECOM_AJIS.Entity.Contract.csproj">
+      <Project>{22F8AFE0-0CBB-4543-A703-2C29A1E2105A}</Project>
+      <Name>SECOM_AJIS.Entity.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Income\SECOM_AJIS.Entity.Income.csproj">
+      <Project>{82E5CDD0-5A70-4637-9BF2-AE7DED57B8C7}</Project>
+      <Name>SECOM_AJIS.Entity.Income</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Installation\SECOM_AJIS.Entity.Installation.csproj">
+      <Project>{E952E4EE-DD08-4187-AD89-0F56C4CF8D7D}</Project>
+      <Name>SECOM_AJIS.Entity.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Inventory\SECOM_AJIS.Entity.Inventory.csproj">
+      <Project>{DDC95591-2286-4A85-BD76-C3499101BA98}</Project>
+      <Name>SECOM_AJIS.Entity.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Master\SECOM_AJIS.Entity.Master.csproj">
+      <Project>{65F28583-CF30-4765-A871-E97D2AE7F9B9}</Project>
+      <Name>SECOM_AJIS.Entity.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Quotation\SECOM_AJIS.Entity.Quotation.csproj">
+      <Project>{E44DC4DC-CE32-4CE7-9CB6-ADDEDFDF1B23}</Project>
+      <Name>SECOM_AJIS.Entity.Quotation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Billing\SECOM_AJIS.Interface.Billing.csproj">
+      <Project>{0958FEAD-16B9-4BB9-9C1E-DA33749F7685}</Project>
+      <Name>SECOM_AJIS.Interface.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Common\SECOM_AJIS.Interface.Common.csproj">
+      <Project>{0177E9AC-5098-42BC-9AC1-9B8862FB3E3C}</Project>
+      <Name>SECOM_AJIS.Interface.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Contract\SECOM_AJIS.Interface.Contract.csproj">
+      <Project>{99F59DB1-92D2-49BB-9FCD-46D7880F089E}</Project>
+      <Name>SECOM_AJIS.Interface.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Income\SECOM_AJIS.Interface.Income.csproj">
+      <Project>{BA5911DE-A7E3-467B-8857-1528A134CE42}</Project>
+      <Name>SECOM_AJIS.Interface.Income</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Installation\SECOM_AJIS.Interface.Installation.csproj">
+      <Project>{BFF36845-756B-4D9B-A575-DEBC4099774B}</Project>
+      <Name>SECOM_AJIS.Interface.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Inventory\SECOM_AJIS.Interface.Inventory.csproj">
+      <Project>{0CB3F45D-11BB-45C1-8031-BB960C5C5B0D}</Project>
+      <Name>SECOM_AJIS.Interface.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Master\SECOM_AJIS.Interface.Master.csproj">
+      <Project>{0AC1F756-B4CC-4386-B6A3-C58F555E953B}</Project>
+      <Name>SECOM_AJIS.Interface.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Quotation\SECOM_AJIS.Interface.Quotation.csproj">
+      <Project>{1F3EE1E7-4718-4410-A396-6C7B0E5A95C5}</Project>
+      <Name>SECOM_AJIS.Interface.Quotation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Message\MessageList.th-TH.resx" />
+    <EmbeddedResource Include="Message\MessageList.ja-JP.resx" />
+    <EmbeddedResource Include="Message\MessageList.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageList.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Reports\CMR010_IssueList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CMR010_IssueList.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

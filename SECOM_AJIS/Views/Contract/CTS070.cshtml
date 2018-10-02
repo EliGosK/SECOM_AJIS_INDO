@@ -1,0 +1,246 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    @*<script type="text/javascript" src="@Url.Content("~/Scripts/Base/Master.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS070.js")" ></script>
+
+    <script type="text/javascript">
+        var C_STARTRESUME_MINDATE = "@ViewBag.MinDate";
+        var C_STARTRESUME_MAXDATE = "@ViewBag.MaxDate";
+    </script>
+}
+
+<div class="table-header">
+    <form id="formCTS070" action='#' >
+
+        <div id="divSpecifyContractCode" class="main-table" >
+            <div class="table-header">
+                <div class="usr-label">
+                    @Resources.CTS070.lblTitleSpecifyContractCode
+                </div>                                  
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblContractCode
+                </div> 
+                <div class="usr-object">
+                        @Html.CommonTextBox("txtSpecifyContractCode", (string)@ViewBag.ContractCodeShort, new { style = "width:125px;", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+                        @Html.Hidden("ContractCode", (string)@ViewBag.ContractCodeShort)
+                </div>
+                <div class="usr-label" style="width:1px;">&nbsp;</div>  
+                <div class="usr-object">
+                        @Html.CommonButton("btnRetrieve", @Resources.CTS070.lblRetrieve, new { style = "width:100px;", type = "button" }) 
+                </div>    
+                <div class="usr-label" style="width:1px;">&nbsp;</div> 
+                <div class="usr-object">
+                        @Html.CommonButton("btnClear", @Resources.CTS070.lblClear, new { style = "width:100px;", type = "button" }) 
+                </div>                                
+            </div>
+            <div class="usr-row"></div>
+        </div>
+
+        @Html.Partial("_ContractBasicInformation")
+        @Html.Hidden("ProductTypeCode", (string)@ViewBag.ProductTypeCode)
+        @Html.Hidden("C_PROD_TYPE_AL", (string)@SECOM_AJIS.Common.Util.ConstantValue.ProductType.C_PROD_TYPE_AL)
+        @Html.Hidden("C_PROD_TYPE_ONLINE", (string)@SECOM_AJIS.Common.Util.ConstantValue.ProductType.C_PROD_TYPE_ONLINE)
+        @Html.Hidden("C_PROD_TYPE_RENTAL_SALE", (string)@SECOM_AJIS.Common.Util.ConstantValue.ProductType.C_PROD_TYPE_RENTAL_SALE)
+
+        <div id="divStartResumeOperation" class="main-table" >
+            <div class="table-header">
+                    <div class="usr-label">
+                        @Resources.CTS070.lblTitleStartResumeOperation
+                    </div>                                  
+            </div>
+            <div class="usr-row">  
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblStartType
+                </div> 
+                <div class="usr-object">
+                        @Html.StartTypeComboBox("ddlStartType", new { style = "width:204px;", maxlength = "15" }) 
+                        @Html.Hidden("C_START_TYPE_NEW_START", (string)@SECOM_AJIS.Common.Util.ConstantValue.StartType.C_START_TYPE_NEW_START)
+                        @Html.Hidden("C_START_TYPE_ALTER_START", (string)@SECOM_AJIS.Common.Util.ConstantValue.StartType.C_START_TYPE_ALTER_START)
+                        @Html.Hidden("C_START_TYPE_RESUME", (string)@SECOM_AJIS.Common.Util.ConstantValue.StartType.C_START_TYPE_RESUME)
+                </div>     
+                <div class="usr-label">
+                        @Html.RequireFiled()
+                </div>               
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblStartResumeOperationDate
+                </div> 
+                <div class="usr-object" style = "width:240px;">
+                    <div class="object-unit">
+                        @Html.CommonTextBox("dpStartResumeOperationDate", null, new { style = "width:100px;", maxlength = "15" })
+                        @Html.Hidden("CurrentDate", (DateTime)@ViewBag.CurrentDate)
+                    </div>
+                    @Html.LabelDateFormat("dpStartResumeOperationDate")
+                    &nbsp;@Html.RequireFiled()
+                </div>
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblApprove
+                </div> 
+                <div class="usr-object">
+                        @Html.CommonTextBox("txtApproveNo", null, new { style = "width:200px;", maxlength = "15" })
+                </div>
+                <div id="divRequireApproveNo" class="usr-object">
+                        @Html.RequireFiled()
+                </div>                         
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblAdjustBillingTerm
+                </div> 
+                <div class="usr-object" style = "width:240px;">
+                    <div class="object-unit">
+                        @Html.CommonTextBox("dpAdjustBillingTerm", null, new { style = "width:100px;", maxlength = "15" })
+                        @Html.Hidden("LastDate", (DateTime)@ViewBag.LastDate)
+                    </div> 
+                    @Html.LabelDateFormat("dpAdjustBillingTerm")
+                </div>
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblUserCode
+                </div> 
+                <div class="usr-object">
+                        @Html.CommonTextBox("txtUserCode", (string)@ViewBag.UserCode, new { style = "width:200px;", maxlength = "5" })
+                </div>
+                <div id="divRequireUserCode" class="usr-object">
+                        @Html.RequireFiled()
+                </div>
+                 
+            </div>
+            <div class="usr-row"></div>
+        </div>
+
+        <div id="divTelephoneLineInformation" class="main-table" >
+            <div class="table-header">
+                    <div class="usr-label">
+                        @Resources.CTS070.lblTitleTelephoneLineInformation
+                    </div>                                  
+            </div>
+
+            <div class="usr-row" style="height:5px;"></div>
+            <div class="usr-row">  
+                <div class="usr-label" style="width:20px;">&nbsp;</div> 
+                <div class="usr-label" style="font-weight:bold;">
+                        @Resources.CTS070.lblLineForNormalSignal
+                </div>                    
+            </div>
+            <div class="usr-row">  
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblLineType
+                </div> 
+                <div class="usr-object" style="width:220px;">
+                        <div class="usr-object">
+                        @Html.PhoneLineTypeComboBox("ddlLineTypeNormal", new { style = "width:204px;", maxlength = "15" }) 
+                        </div>
+                        <div class="usr-label">
+                            @Html.RequireFiled()
+                        </div>        
+                </div>     
+                <div class="usr-label" style="width:240px;">
+                        @Resources.CTS070.lblTelephoneOwner
+                </div> 
+                <div class="usr-object">
+                        <div class="usr-object">
+                        @Html.PhoneLineOwnerTypeComboBox("ddlTelephoneOwnerNormal", new { style = "width:204px;", maxlength = "100" }) 
+                        </div>
+                        <div class="usr-label">
+	                        @Html.RequireFiled()
+                        </div>  
+                </div>               
+            </div>
+            <div class="usr-row"> 
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblTelephoneNo
+                </div> 
+                <div class="usr-object">
+                        <div class="usr-object">
+                        @Html.CommonTextBox("txtTelephoneNoNormal", null, new { style = "width:200px;", maxlength = "100" })
+                        </div>
+                        <div class="usr-label">
+	                        @Html.RequireFiled()
+                        </div>  
+                </div> 
+            </div>
+
+            <div class="usr-row" style="height:5px;"></div>
+            <div class="usr-row">  
+                <div class="usr-label" style="width:20px;">&nbsp;</div>
+                <div class="usr-label" style="font-weight:bold;">
+                        @Resources.CTS070.lblLineForImageMonitoring
+                </div>                    
+            </div>
+            <div class="usr-row">  
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblLineType
+                </div>
+                <div class="usr-object" style="width:220px;">
+                        @Html.PhoneLineTypeComboBox("ddlLineTypeImage", new { style = "width:204px;", maxlength = "15" }) 
+                </div>     
+                <div class="usr-label" style="width:240px;">
+                        @Resources.CTS070.lblTelephoneOwner
+                </div> 
+                <div class="usr-object">
+                        @Html.PhoneLineOwnerTypeComboBox("ddlTelephoneOwnerImage", new { style = "width:204px;", maxlength = "100" }) 
+                </div>               
+            </div>
+            <div class="usr-row"> 
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblTelephoneNo
+                </div> 
+                <div class="usr-object">
+                        @Html.CommonTextBox("txtTelephoneNoImage", null, new { style = "width:200px;", maxlength = "100" })
+                </div> 
+            </div>
+
+            <div class="usr-row" style="height:5px;"></div>
+            <div class="usr-row"> 
+                <div class="usr-label" style="width:20px;">&nbsp;</div> 
+                <div class="usr-label" style="font-weight:bold;">
+                        @Resources.CTS070.lblLineForDisconnectionMonitoring
+                </div>                    
+            </div>
+            <div class="usr-row">  
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblLineType
+                </div> 
+                <div class="usr-object" style="width:220px;">
+                        @Html.PhoneLineTypeComboBox("ddlLineTypeDisconnection", new { style = "width:204px;", maxlength = "15" }) 
+                </div>     
+                <div class="usr-label" style="width:240px;">
+                        @Resources.CTS070.lblTelephoneOwner
+                </div> 
+                <div class="usr-object">
+                        @Html.PhoneLineOwnerTypeComboBox("ddlTelephoneOwnerDisconnection", new { style = "width:204px;", maxlength = "100" }) 
+                </div>               
+            </div>
+            <div class="usr-row"> 
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS070.lblTelephoneNo
+                </div> 
+                <div class="usr-object">
+                        @Html.CommonTextBox("txtTelephoneNoDisconnection", null, new { style = "width:200px;", maxlength = "100" })
+                </div> 
+            </div>
+
+            <div class="usr-row"></div>
+        </div>
+
+        <div class="usr-row" style="height: 5px"></div>
+    </form>
+</div>    
+

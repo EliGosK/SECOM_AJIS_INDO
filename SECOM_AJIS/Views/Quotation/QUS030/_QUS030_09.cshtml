@@ -1,0 +1,30 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS030/QUS030_09.js")"></script>
+<div id="divInstrumentDetail_01" class="main-table">
+    <div class="table-header">
+        @Resources.QUS030.lblInstrumentDetail_03
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS030.lblLinkageSaleContractCode_1<br />
+            @Resources.QUS030.lblLinkageSaleContractCode_2
+        </div>
+        <div id="divInstSaleOnlineContractCode" class="usr-object">
+            @Html.CommonTextBox("InstSaleOnlineContractCode", (string)@ViewBag.SaleOnlineContractCode, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+    </div>
+    <div style="margin-top: 20px;">
+        <div class="table-remark">
+            <img src="../../Content/images/icon/star.png"/>@Resources.QUS030.lblNecessary
+        </div>
+    </div>
+    <div class="usr-row">
+        <div id="gridInstrumentDetailONLINE" style="width:99%;margin-left:4px;"></div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

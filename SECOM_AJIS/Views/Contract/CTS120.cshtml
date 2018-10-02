@@ -1,0 +1,183 @@
+﻿<!--
+//*********************************
+// Create by: Natthavat S.
+// Create date: 03/Oct/2010
+// Update date:  03/Oct/2010
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    ViewBag.LabelCol1Width = "240px";
+    ViewBag.LabelCol2Width = "180px";
+    ViewBag.LabelCol3Width = "110px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS120.js")" ></script>
+}
+
+<div id="divSpecifyContractCode" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS120.lblSpecifyContractCode</div>
+    <div class="usr-row">
+        <div id="lblEntryContractCode" class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblEntryContractCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("EntryContractCode", null, new { style = "width:120px;", @maxlength = 12 })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnRetrieve", (string)@Resources.CTS120.btnRetrieve, new { style = "width:100px;" })
+            @Html.CommonButton("btnClear", (string)@Resources.CTS120.btnClear, new { style = "width:100px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="divContractBasicInformation" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS120.lblEntryContractCode</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblEntryContractCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("ContractCode", null, new { style = "width:120px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS120.lblUserCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("UserCode", null, new { style = "width:120px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblCustomerCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("ContractTargetCustCodeShort", null, new { style = "width:120px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS120.lblRealCustomerCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("RealCustomerCustCodeShort", null, new { style = "width:120px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">@Resources.CTS120.lblSiteCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("SiteCodeShort", null, new { style = "width:120px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp</div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonCheckButton("chkContractTargetFlag", @Resources.CTS120.chkContractTargetFlag, null, false, new { @disabled = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblContractTargetNameEN</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("ContractTargetNameEN", null, new { style = "width:700px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblContractTargetAddressEN</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("ContractTargetAddressEN", null, new { style = "width:700px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp</div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblSiteNameEN</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("SiteNameEN", null, new { style = "width:700px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblSiteAddressEN</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("SiteAddressEN", null, new { style = "width:700px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp</div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblContractTargetNameLOC</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("ContractTargetNameLC", null, new { style = "width:700px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblContractTargetAddressLOC</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("ContractTargetAddressLC", null, new { style = "width:700px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp</div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblSiteNameLOC</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("SiteNameLC", null, new { style = "width:700px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblSiteAddressLOC</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("SiteAddressLC", null, new { style = "width:700px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp</div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblOperationOffice</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("OperationOffice", null, new { @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp</div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblCancelDate</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("CancelDate", null, new { @readonly = true, style = "width:135px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblCancelReason</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("CancelReason", null, new { style = "width:350px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblMonthlyContractFee</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyContractFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { @readonly = true, style = "width:135px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS120.lblFirstOperationDate</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("FirstOperationDate", null, new { @readonly = true, style = "width:135px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="divCompleteCancelContract" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS120.lblCompleteCancelContract</div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+        <div class="usr-object">@Resources.CTS120.lblRemarkCompleteCancelContract</div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>

@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{527A7562-621E-47CD-92CB-E0FA26660A4E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.DataEntity.Common</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Entity.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomEntity\AttachmentModule.cs" />
+    <Compile Include="CustomEntity\EXT_dtAttachFileForGridView.cs" />
+    <Compile Include="CustomEntity\doResultManageCarryOverProfitForEdit.Extension.cs" />
+    <Compile Include="CustomEntity\EXT_dtRptAccountDataOfCarryOverAndProfit.cs" />
+    <Compile Include="CustomEntity\EXT_doPopupSubMenuList.cs" />
+    <Compile Include="CustomEntity\EXT_dtDocumentData.cs" />
+    <Compile Include="CustomEntity\EXT_dtDocumentListForPrining.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_DocumentTemplate.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_AttachFile.cs" />
+    <Compile Include="CustomEntity\doInstrumentParam.cs" />
+    <Compile Include="CustomEntity\EXT_dtTPL.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Supplier.cs" />
+    <Compile Include="CustomEntity\doDocumentDownloadLog.cs" />
+    <Compile Include="CustomEntity\EXT_doSearchInfoCondition.cs" />
+    <Compile Include="CustomEntity\EXT_doContractInfoCondition.cs" />
+    <Compile Include="CustomEntity\doLogin.cs" />
+    <Compile Include="CustomEntity\doSearchInfoCondition.cs" />
+    <Compile Include="CustomEntity\View_dtBatchProcess.cs" />
+    <Compile Include="CustomEntity\doBatchProcess.cs" />
+    <Compile Include="CustomEntity\doDocumentDataCondition.cs" />
+    <Compile Include="CustomEntity\doContractInfoCondition.cs" />
+    <Compile Include="CustomEntity\doContractSearchCondition.cs" />
+    <Compile Include="CustomEntity\doBillingClientSearchCondition.cs" />
+    <Compile Include="CustomEntity\doSiteSearchCondition.cs" />
+    <Compile Include="CustomEntity\doCustomerSearchCondition.cs" />
+    <Compile Include="CustomEntity\doEmailSearchCondition.cs" />
+    <Compile Include="CustomEntity\doBatchProcessResult.cs" />
+    <Compile Include="CustomEntity\doDocumentDataGenerate.cs" />
+    <Compile Include="CustomEntity\doEmailProcess.cs" />
+    <Compile Include="CustomEntity\doTransactionLog.cs" />
+    <Compile Include="CustomEntity\EXT_doMiscTypeCode.cs" />
+    <Compile Include="CustomEntity\View_dtMonthYear.cs" />
+    <Compile Include="CustomEntity\EXT_tbs_ProductType.cs" />
+    <Compile Include="doDocumentNoName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doEmpCodeName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetManageCarryOverProfitCriteria.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doMiscTypeCode.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doMisPurge.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doOperationType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doPopupSubMenuList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doReportTemplatePath.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doResultManageCarryOverProfitForEdit.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doRunningNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSystemConfig.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSystemStatus.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doxygen-DO.cs" />
+    <Compile Include="Doxygen-function.cs" />
+    <Compile Include="doYearOfCarryOverProfit.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAccountDataOfCarryOverAndProfit.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAttachFileForGridView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAttachFileNameID.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAttachFileTemporary.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBatchProcess.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBillingOffice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBusinessDateForAccountDataOfCarryOverAndProfit.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtDocumentData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtDocumentList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtDocumentListForPrining.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtDocumentNameDataList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtDocumentType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetAccumulateFileSize.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtIndividualAndGroupPermission.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtIssueListData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtMonthYear.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtPermission.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtReIssueCreditNote.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtReIssueInvoice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtReIssueReceipt.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtReIssueTaxInvoice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtRptAccountDataOfCarryOverAndProfit.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTotalAttachFileSize.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTPL.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtUserPermission.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetBatchProcessRunAll_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_CM_GetTbs_DocumentOutput_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_DocumentTemplate.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Supplier.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_BatchQueue.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_BatchSchedule.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_Configuration.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_ProductType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_AttachFile.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocumentDownloadLog.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocumentList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocumentReports.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ManageCarryOverProfit.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_PurgeLog.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="SECOM_AJIS.Entity.Common.Context.Biz.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Common.Context.tt</DependentUpon>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Common.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Common.Context.tt</DependentUpon>
+    </None>
+    <Compile Include="SECOM_AJIS.Entity.Common.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Common.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Common.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Common.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="SECOM_AJIS.Entity.Common.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Common.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SECOM_AJIS.Entity.Common.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Common.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Common.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Common.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SECOM_AJIS.Entity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Context.cs</LastGenOutput>
+      <DependentUpon>SECOM_AJIS.Entity.Common.edmx</DependentUpon>
+    </Content>
+    <Content Include="SECOM_AJIS.Entity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.cs</LastGenOutput>
+      <DependentUpon>SECOM_AJIS.Entity.Common.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

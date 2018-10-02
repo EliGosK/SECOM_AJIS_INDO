@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="BillingTargetCodeShort" width="135" type="ro" align="left" sort="str_custom">lblHeader2UnPaidBillingBillingTargetCode</column>
+    <column id="BillingClientNameGrid" width="*" type="ro" align="left" sort="str_custom">lblHeader2UnPaidBillingBillingClientName</column>
+    <column id="UnpaidAmountString" width="140" type="edn" align="right" sort="str_custom">lblHeader2UnPaidBillingUnpaidAmount</column>
+    <column id="UnpaidInvoiceString" width="135" type="ro" align="right" format="0,000" sort="int">lblHeader2UnPaidBillingNumberOfUnpaidAmount</column>
+    <column id="UnpaidDetailString" width="80" type="ro" align="right" format="0,000" sort="int">lblHeader2UnPaidBillingNumberOfBillingDetail</column>
+    <column id="IncludeFirstFeeGridFormat" width="80" type="ro" align="center" sort="str_custom">lblHeader2UnPaidBillingIncludeFirstFee</column>
+    <column id="DebtTracingRegisteredGridFormat" width="80" type="ro" align="center" sort="str_custom">lblHeader2UnPaidBillingTracingResultRegistered</column>
+    <column id="OldestDelayMonth" width="100" type="edn" align="right" format="0,000" sort="int">lblHeader2UnPaidBillingOldestBillingDetailDelayMonth</column>
+    
+    <column id="OldestBillingTargetExpectedPaymentDateFlag" width="0" type="ro" hidden="true" ></column>
+    <column id="OldestInvoiceExpectedPaymentDateFlag" width="0" type="ro" hidden="true" ></column>
+    <column id="UnpaidAmount" width="0" type="ro"  hidden="true"></column>
+    <column id="UnpaidInvoice" width="0" type="ro"  hidden="true"></column>
+    <column id="UnpaidDetail" width="0" type="ro"  hidden="true"></column>
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+
+
+
+
+
+
+
+
+

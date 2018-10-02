@@ -1,0 +1,95 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+    ViewBag.ObjectColMergeWidth = "720px";
+    
+    /*if (ViewBag.IsSystemSuspending)
+    {
+        <script language="javascript" runat="server">
+            var obj = {
+            module: "Common",
+            code: "MSG0049"
+            };
+            call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                OpenErrorMessageDialog(result.Code, result.Message,
+                function () {
+                    window.location.href = generate_url("/common/CMS020");
+                },
+                null);
+            });
+        </script>
+    }
+
+    if (ViewBag.Permission == false)
+    {
+        <script language="javascript" runat="server">
+            var obj = {
+            module: "Common",
+            code: "MSG0053"
+            };
+            call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                OpenErrorMessageDialog(result.Code, result.Message,
+                function () {
+                    window.location.href = generate_url("/common/CMS020");
+                },
+                null);
+            });
+        </script>
+    }*/
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Master/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS130.js")"></script>     
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+}
+
+<script language="javascript" runat="server"></script>
+
+@Html.Partial("CTS130/_CTS130_01")
+@Html.Partial("CTS130/_CTS130_02")
+@Html.Partial("CTS130/_CTS130_03")
+@Html.Partial("CTS130/_CTS130_04")
+@Html.Partial("CTS130/_CTS130_05")
+@Html.Partial("CTS130/_CTS130_06")
+@Html.Partial("CTS130/_CTS130_07")
+@Html.Partial("CTS130/_CTS130_08")
+@*@Html.EmptyDIVforLoadData2("CTS130_03")
+@Html.EmptyDIVforLoadData2("CTS130_04")
+@Html.EmptyDIVforLoadData2("CTS130_05")
+@Html.EmptyDIVforLoadData2("CTS130_06")
+@Html.EmptyDIVforLoadData2("CTS130_07")
+@Html.EmptyDIVforLoadData2("CTS130_08")*@
+
+@Html.Hidden("ContractCodeShort", (string)@ViewBag.ContractCodeShort)
+@Html.Hidden("ServiceTypeCode", (string)@ViewBag.ServiceTypeCode)
+@Html.Hidden("C_SERVICE_TYPE_RENTAL", (string)@SECOM_AJIS.Common.Util.ConstantValue.ServiceType.C_SERVICE_TYPE_RENTAL)
+@Html.Hidden("C_SERVICE_TYPE_SALE", (string)@SECOM_AJIS.Common.Util.ConstantValue.ServiceType.C_SERVICE_TYPE_SALE)
+
+<div id="dlgCTS130" class="main-popup-dialog">
+    <div class="popup-dialog">
+    </div>
+</div>
+
+<div class="usr-row" style="height: 5px"></div>

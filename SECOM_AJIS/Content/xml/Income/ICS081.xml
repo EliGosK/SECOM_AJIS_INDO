@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="BillingTargetNoShortFormat" width="150" type="ro" align="center" sort="str_custom">gridHeaderBillingTargetCode</column>
+    <column id="BillingClientNameGrid" width="*" type="ro" align="left"  sort="str_custom">gridHeaderBillingClientName</column>
+    <column id="UnpaidInvoice" width="100" type="ro" align="right" format="0,000" sort="int" >gridHeaderNumberOfUnpaidInvoice</column>
+    <column id="UnpaidDetail" width="100" type="ro" align="right" format="0,000" sort="int">gridHeaderNumberOfUnpaidBillingDetail</column>
+    <column id="UnpaidTotalBalanceShow" width="200" type="edn" align="right" sort="na">gridHeaderUnpaidTotalBalance</column>
+    <column id="Select" width="30" type="link" align="center" sort="na">gridHeaderSelect</column>
+
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+    <column id="BillingTargetCode" width="0" type="ro" hidden="true"></column>
+    <column id="UnpaidTotalBalance" width="0" type="ro" hidden="true"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+
+
+
+
+
+
+
+
+

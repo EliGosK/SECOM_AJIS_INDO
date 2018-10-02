@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+      <!--<column id="BeforeSeparate" width="260" type="ro" align="left" sort="na" >lblHeader1BeforeSeparate</column>-->
+      <column id="BefNumberOfDetail" width="135" type="edn" format="0,000" align="right" sort="na" >lblHeader1BeforeSeparate</column>
+      <column id="BefAmount" width="135" type="edn"   align="right" sort="na">#cspan</column>
+      <!--<column id="AfterSeparate" width="260" type="ro" align="left" sort="na" >lblHeader1AfterSeparate</column>-->
+      <column id="AftNumberOfDetail" width="135" type="edn" format="0,000" align="right" sort="na" >lblHeader1AfterSeparate</column>
+      <column id="AftAmount" width="*" type="edn"   align="right" sort="na">#cspan</column>
+
+    <afterInit>
+      <call command="attachHeader">
+        <param>lblHeader1BefNumberOfDetail,lblHeader1BefAmount,lblHeader1AftNumberOfDetail,lblHeader1AftAmount</param>
+      </call>
+    </afterInit>
+  </head>
+</rows>

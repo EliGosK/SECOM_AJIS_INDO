@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="InstrumentCode"  width="200" type="ro" align="left" sort="str_custom">HgridInstrumentCode</column>
+    <column id="InstrumentName"  width="*" type="ro" align="left"  sort="str_custom">HgridInstrumentName</column>
+    <column id="InstrumentQty"  width="100"  type="edn" align="right" format="0,000"  sort="int">HgridTotalQuantity</column>
+    <column id="RemainWIP"  width="100"  type="edn" align="right" format="0,000"  sort="int">HgridRemainQuantity</column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

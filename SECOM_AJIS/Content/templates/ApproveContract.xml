@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Template>
+  <AdminEmail></AdminEmail>
+  <AdminSubject></AdminSubject>
+  <AdminContent></AdminContent>
+  <TemplateSubject>[SECOM-SIMS] Approve contract</TemplateSubject>
+  <TemplateContent>
+    <html>
+      <body>
+        <p>
+          The contract with the details mentioned below has been registered.
+          For person in charge, please check the details before operate subsequent process.
+
+          Contract no.: [ContractCode]
+          Customer name: [CustFullNameEN]
+          Premise’s name: [SiteNameEN]
+          Product name: [ProductNameEN]
+          Salesman 1: [SalesmanEmpNameENNo1]
+          Salesman 2: [SalesmanEmpNameENNo2]
+          Contract office: [ContractOfficeNameEN]
+          Operation office: [OperationOfficeNameEN]
+
+          Best regards,
+          SIMS SYSTEM
+        </p>
+      </body>
+    </html>
+  </TemplateContent>
+</Template>

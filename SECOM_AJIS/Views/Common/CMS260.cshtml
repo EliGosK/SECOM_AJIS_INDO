@@ -1,0 +1,222 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+
+
+    ViewBag.C_CUST_STATUS_NEW = CustomerStatus.C_CUST_STATUS_NEW;
+    ViewBag.C_CUST_STATUS_EXIST = CustomerStatus.C_CUST_STATUS_EXIST;
+
+    ViewBag.isViewModeFlag = true;
+
+    ViewBag.LabelWidth = "200px";
+
+    ViewBag.ObjectWidth_S1_1 = "400px";
+
+    ViewBag.ObjectWidth_S2_1 = "300px";
+
+    ViewBag.ObjectWidth_S3_1 = "500px";
+}
+
+@section page_header{
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Custom/SearchSiteAddressControl.js")" ></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS260.js")"></script>
+
+<script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+
+}
+
+
+<div style="display:none">
+    @Html.Hidden("btnCancel_CMS260", (string)@Resources.CMS260.btnCancel)
+</div>
+
+ <!-- Search "SITE" Address Control -->
+<!-- ============== Search condition ================= -->
+
+<form id="searchCondition" style="border:0px">
+
+<div id="divSearchAddrCtrl">
+
+<div class="main-table">
+    <div class="table-header">
+        @Resources.CMS260.lblSearchCondition
+    </div>
+    <!-- ============= Section : Selected real customer =============  -->
+    <div class = "sub-table" id="SelectRealCustomer_Section">
+        <div class="table-sub-header">@Resources.CMS260.gpSelectedRealCustomer</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS260.lblCustomerCode
+            </div>
+            <div class="usr-object"  style="width:@ViewBag.ObjectWidth_S1_1;">
+                @Html.CommonTextBox("txtCustomerCode", (string)@ViewBag.CustomerCode, new { @isViewMode = @ViewBag.isViewModeFlag, style = "width:" + @ViewBag.ObjectWidth_S1_1 + ";", maxlength = CommonValue.C_MAXLENGTH_CUSTOMER_CODE })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS260.lblCustomerStatus
+            </div>
+            <div class="usr-object"  style="width:@ViewBag.ObjectWidth_S1_1;">
+                @Html.CommonTextBox("txtCustomerStatus", (string)@ViewBag.CustomerStatus, new { @isViewMode = @ViewBag.isViewModeFlag, style = "width:" + @ViewBag.ObjectWidth_S1_1 + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS260.lblCustomerName_Eng
+            </div>
+            <div class="usr-object"  style="width:@ViewBag.ObjectWidth_S1_1;">
+                @Html.CommonTextBox("txtCustomerName_Eng", (string)@ViewBag.CustomerName_Eng, new { @isViewMode = @ViewBag.isViewModeFlag, style = "width:" + @ViewBag.ObjectWidth_S1_1 + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS260.lblCustomerName_Local
+            </div>
+            <div class="usr-object"  style="width:@ViewBag.ObjectWidth_S1_1;">
+                @Html.CommonTextBox("txtCustomerName_Local", (string)@ViewBag.CustomerName_Local, new { @isViewMode = @ViewBag.isViewModeFlag, style = "width:" + @ViewBag.ObjectWidth_S1_1 + ";" })
+            </div>
+        </div>
+         <div class="usr-clear-style">&nbsp;</div>
+    </div><!-- ====== End sub table ======= -->
+
+   <div id="space1" class="usr-row" style="height: 5px;">&nbsp;</div>
+
+    <!-- =============  Section : Select by real customer =============  -->
+   <div class = "sub-table" id = "SearchByCustomer_Section">
+        <div class="table-sub-header">@Resources.CMS260.gpSearchByRealCustomer </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS260.lblCustomerCode
+            </div>
+            <div class="usr-object"  style="width:@ViewBag.ObjectWidth_S2_1;">
+                @Html.CommonTextBox("CustomerCode", null, new { style = "width:275px;", maxlength = CommonValue.C_MAXLENGTH_CUSTOMER_CODE })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; margin-top:5px" >
+                @Resources.CMS260.lblCustomerStatus @Html.RequireFiled()
+            </div>
+            <div class="usr-object"  style="height:100%; width:280px">
+                <div class="sub-table">
+                    @Html.CommonCheckButton("chkNewCustomer", @Resources.CMS260.chkNewCustomer, (string)@ViewBag.C_CUST_STATUS_NEW)
+                    &nbsp;
+                    @Html.CommonCheckButton("chkExistingCustomer", @Resources.CMS260.chkExitCustomer, (string)@ViewBag.C_CUST_STATUS_EXIST)
+                    <div class="usr-clear-style">&nbsp;</div>
+                </div>
+    
+            </div>
+            <div class="usr-clear-style">&nbsp;</div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS260.CustomerName_Eng_Local
+            </div>
+            <div class="usr-object"  style="width:@ViewBag.ObjectWidth_S2_1;">
+                @Html.CommonTextBox("CustomerName", null, new { style = "width:625px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+       
+         
+   </div>  <!-- ====== End sub table ======= -->
+   
+    <div id="space2" class="usr-row" style="height: 5px;">&nbsp;</div>
+ 
+    <!-- =============  Section : Select by site =============  -->
+    <div class = "sub-table" id = "SearchBySite_Section">
+        <div class="table-sub-header">@Resources.CMS260.gpSearchbySite </div>
+       
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS260.lblSiteCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SiteCode", null, new { style = "width:275px;", maxlength = CommonValue.C_MAXLENGTH_SITE_CODE })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS260.lblSiteName_Eng_Local
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SiteName", null, new { style = "width:625px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS260.lblUsage
+            </div>
+            <div class="usr-object">
+                @Html.UsageComboBox("BuildingUsageCode", new { style = "height: 22px; width: 324px;" },"ALL")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; ">
+                @Resources.CMS260.lblSiteAddress_Eng_Local
+            </div>
+            <div class="usr-object" style="height: 100%;">
+                @Html.Partial("_SearchAddressControl")
+
+                
+            </div>
+            
+        </div>
+       
+       
+        <div class="usr-clear-style"> &nbsp;</div>
+    </div> <!-- ====== End sub table ======= -->
+
+    <div id="space3" class="usr-row" style="height: 5px;">&nbsp;</div>
+
+
+     <div class="usr-row">
+           
+            <div class="usr-object" style=" float:right; margin-right:0px">
+                
+                    @Html.CommonButton("btnSearch", @Resources.CMS260.btnSearch, new { style = "width:100px;" ,type ="button" })
+                    @Html.CommonButton("btnClear", @Resources.CMS260.btnClear, new { style = "width:100px;", type = "button" })
+               
+            </div>
+        </div>
+
+    <div class="usr-clear-style"> &nbsp;</div>
+
+</div> <!-- ====== End main table ======= -->
+
+</div>
+
+</form>
+
+
+<div class="table-line"></div>
+
+<!-- ============== Result list ================= -->
+<div id="divSearchResult" class="main-table">
+    <div class="table-header">
+        @Resources.CMS260.lblResultList
+    </div>
+    <div>
+        <div id="mygrid_container" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div><!-- ====== End main table ======= -->

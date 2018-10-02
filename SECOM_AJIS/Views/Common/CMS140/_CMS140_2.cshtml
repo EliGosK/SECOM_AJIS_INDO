@@ -1,0 +1,115 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+
+
+@*Product information*@
+
+
+<div id="divProductInformation" class="main-table">
+    <div class="table-header">@Resources.CMS130.lblProduct_information</div>
+
+    @if ((string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_AL || (string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_RENTAL_SALE || (bool)ViewBag.isShowAll)
+    {
+
+        <div style="float: right; margin: -20px 0 0 0;">
+            <div class="fieldset-table" style="width: @ViewBag.AramWidth; height: 100%;">
+                <div class="fieldset-header">
+                    <span>@Resources.CMS130.lblAlarm_provided_service_type</span>
+                </div>
+
+                <div style="margin-left:5px" class="label-view">@Html.CommonCheckButton("chkFire_monitoring", @Resources.CMS130.chkFire_monitoring, null, (bool)@ViewBag.chkFire_monitoring, new { disabled = "disabled" })</div>
+                <div style="margin-left:5px" class="label-view">@Html.CommonCheckButton("chkCrime_prevention", @Resources.CMS130.chkCrime_prevention, null, (bool)@ViewBag.chkCrime_prevention, new { disabled = "disabled" })</div>
+                <div style="margin-left:5px" class="label-view">@Html.CommonCheckButton("chkEmergency_report", @Resources.CMS130.chkEmergency_report, null, (bool)@ViewBag.chkEmergency_report, new { disabled = "disabled" })</div>
+                <div style="margin-left:5px" class="label-view">@Html.CommonCheckButton("chkFacility_monitoring", @Resources.CMS130.chkFacility_monitoring, null, (bool)@ViewBag.chkFacility_monitoring, new { disabled = "disabled" })</div>
+            
+                <div class="usr-clear-style">&nbsp;</div>
+            </div>
+        </div>
+        
+    }    
+
+    @*===================================================================================================*@
+    @*      security type code ..                                                                              *@
+    @*===================================================================================================*@
+
+
+    <div style="float: left; width: 740px;">
+        <div class="usr-row" style="width: 740px;">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS130.lblSecurity_type_code
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtSecurity_type_code", (string)@ViewBag.txtSecurity_type_code, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:170px;">
+                @Resources.CMS130.lblProduct
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortTextPrdInfo; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtProduct", (string)@ViewBag.txtProduct, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row" style="width: 740px;">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS130.lblChange_type
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtChange_type", (string)@ViewBag.txtChange_type, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:170px;">
+                @Resources.CMS130.lblReason
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortTextPrdInfo; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtReason", (string)@ViewBag.txtReason, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-row" style="width: 740px;">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS140.lblChange_operation_date
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtChange_operation_date", (string)@ViewBag.txtChange_operation_date, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+
+
+
+<!--- Maintenance information (in case Alarm,Sale online) --->
+@if ((string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_AL || (string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_RENTAL_SALE || (string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_ONLINE || (bool)ViewBag.isShowAll)
+{
+    
+    @*<!-- ======================================================================== -->
+    <div style="height:5px">&nbsp;</div>
+    <!-- ======================================================================== -->
+    
+    <div class="main-table">
+        <div class="table-header">@Resources.CMS120.lblSectionMaintenance_information_case_Alarm_Sale_online</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS120.lblMaintenanceCycle_month
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtMaintenanceCycleMonth", (string)@ViewBag.txtMaintenanceCycleMonth, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS120.lblMaintenanceContractStart_month
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtMaintenanceContractStart_month_Online", (string)@ViewBag.txtMaintenanceContractStart_month_Online, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+
+        </div>
+
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>*@
+
+}
+

@@ -1,0 +1,45 @@
+.flow-table .section-cms025
+{
+}
+
+.section-cms025 .upper-text-lvl2
+{
+	margin:-11px 0 0 0px;
+	position:absolute;
+	right:15px;
+	Z-index: 2;
+	text-align: right;
+	color: Red;
+}
+
+.section-cms025 .line-middle
+{
+	background: #fff url(line_m.png) 100% 100% no-repeat;
+}
+.section-cms025 .line-full
+{
+	background: #fff url(line_f.png) 100% 100% no-repeat;
+}
+.section-cms025 .line-full-end
+{
+	background: #fff url(line_f2.png) 100% 100% no-repeat;
+}
+
+.section-cms025 .subject-middle
+{
+	background: #fff url(subject_m.png) 100% 100% no-repeat;
+}
+
+.section-cms025 .action-center
+{
+	background: #fff url(action_io.png) 100% 100% no-repeat;
+}
+
+.section-cms025 .non-action-left
+{
+	background: #fff url(non_action_o.png) 100% 100% no-repeat;
+}
+.section-cms025 .non-action-center
+{
+	background: #fff url(non_action_io.png) 100% 100% no-repeat;
+}

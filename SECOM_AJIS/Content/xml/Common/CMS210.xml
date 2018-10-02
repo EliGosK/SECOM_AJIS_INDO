@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+  
+    <!--type="dhxCalendar"   type="ro"-->
+    <column id="YearMonth" width="120"   type="ro" align="left" sort="str_custom">headerCheckup</column>
+    <column id="MaintenanceDate" width="110" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerMaintenanceDate</column>
+    <column id="ExpectedMaintenanceDate" width="120" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerExpectDate</column>
+    <column id="UsageTime" width="100" type="ro" align="right" sort="int">headerUsageTime</column>
+    <column id="HaveInstrumentMalfinction" width="100" type="ro" align="left" sort="str_custom" >headerHaveInstrument</column>
+    <column id="MaintenanceEmployeeName" width="*" type="ro" align="left" sort="str_custom" >headerMaintenanceEmployeeName</column>
+
+    <column id="Button" width="30" type="ro" align="center" sort="na">headerButtonDetail</column>
+    <column id="Object" width="0" type="ro" align="center"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

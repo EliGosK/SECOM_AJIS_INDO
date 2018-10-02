@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="SelectSeparateDetail" width="80" type="link" align="center" sort="na" >lblHeader2SelectSeparateDetail</column>
+    <column id="BillingCode_Short" width="110" type="ro" align="left" sort="na" >lblHeader2BillingCode</column>
+
+    <!--Hidden-->
+    <column id="BillingCode" width="0" type="ro" hidden="true" align="left" sort="na" ></column>
+    
+    <column id="RunningNo" width="70" type="ro" align="left" sort="na" >lblHeader2RunningNo</column>
+    <column id="BillingType" width="160" type="ro" align="left" sort="na" >lblHeader2BillingType</column>
+    <column id="BillingAmount" width="200" type="edn" align="right" sort="na" >lblHeader2BillingAmount</column>
+    <column id="SiteName" width="280" type="ro" align="left" sort="na" >lblHeader2SiteName</column>
+    <column id="IssueInvoiceofSeparateDetail" width="*" type="link" align="left" sort="na" >lblHeader2IssueInvoiceofSeparateDetail</column>
+
+    <!--Hidden-->
+    <column id="ContractCode" width="0" type="ro" hidden="true" align="left" sort="na" ></column>
+    <!--Hidden-->
+    <column id="BillingOCC" width="0" type="ro" hidden="true" align="left" sort="na" ></column>
+    <!--Hidden-->
+    <column id="BillingDetailNo" width="0" type="ro" hidden="true" align="left" sort="na" ></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

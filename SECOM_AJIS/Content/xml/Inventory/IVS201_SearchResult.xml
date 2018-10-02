@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="OfficeName" width="120" type="ro" align="left" sort="str_custom">headerOfficeName</column>
+    <column id="LocationName" width="120" type="ro" align="left" sort="str_custom">headerLocation</column>
+    <column id="InstrumentCode" width="120" type="ro" align="left" sort="int">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">headerInstrumentName</column>
+    <column id="AreaNameShort" width="80" type="ro" align="left" sort="str_custom">headerAreaShortName</column>
+    <column id="AreaName" width="0" type="ro" align="left" hidden="true"></column>
+    <column id="ShelfNo" width="150" type="ro" align="left" sort="str_custom">headerShelfNo</column>
+    <column id="CurrentQty" width="100" type="edn" align="right" format="0,000" sort="int">headerCurrentQty</column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

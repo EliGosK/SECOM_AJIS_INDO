@@ -1,0 +1,382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82E5CDD0-5A70-4637-9BF2-AE7DED57B8C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.DataEntity.Income</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Entity.Income</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSI.WindsorHelper">
+      <HintPath>..\SECOM_AJIS.Common\_ExtLib\CSI.WindsorHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomEntity\doMatchRReport.cs" />
+    <Compile Include="CustomEntity\dotbt_Revenue.cs" />
+    <Compile Include="CustomEntity\EXT_doDebtTracingDocNoForPrinting.cs" />
+    <Compile Include="CustomEntity\EXT_doGetUnpaidBillingTargetByCodeWithExchange.cs" />
+    <Compile Include="CustomEntity\EXT_doICR030.cs" />
+    <Compile Include="CustomEntity\doPaymentEncashParam.cs" />
+    <Compile Include="CustomEntity\EXT_doDebtTracingHistory.cs" />
+    <Compile Include="CustomEntity\doDebtTracingInput.cs" />
+    <Compile Include="CustomEntity\EXT_doDebtTracingInvoiceDetail.cs" />
+    <Compile Include="CustomEntity\EXT_doDebtTracingInvoiceList.cs" />
+    <Compile Include="CustomEntity\doDebtTracingCustListSearchCriteria.cs" />
+    <Compile Include="CustomEntity\EXT_doDebtTracingCustList.cs" />
+    <Compile Include="CustomEntity\EXT_doDebtTracingPermission.cs" />
+    <Compile Include="CustomEntity\EXT_doReturnedCheque.cs" />
+    <Compile Include="CustomEntity\EXT_doWHTReportForIMS.cs" />
+    <Compile Include="CustomEntity\EXT_doWHTReportForAccount.cs" />
+    <Compile Include="CustomEntity\EXT_doIncomeWHT.cs" />
+    <Compile Include="CustomEntity\doIncomeWHTSearchCriteria.cs" />
+    <Compile Include="CustomEntity\EXT_doMatchWHTDetail.cs" />
+    <Compile Include="CustomEntity\doPaymentForWHTSearchCriteria.cs" />
+    <Compile Include="CustomEntity\EXT_doPaymentForWHT.cs" />
+    <Compile Include="CustomEntity\EXT_doGetRegContent.cs" />
+    <Compile Include="CustomEntity\EXT_doGetCreditNote.cs" />
+    <Compile Include="CustomEntity\EXT_doPayment.cs" />
+    <Compile Include="CustomEntity\EXT_doRptCreditNote.cs" />
+    <Compile Include="CustomEntity\EXT_doGetDebtTracingMemo.cs" />
+    <Compile Include="CustomEntity\EXT_doGetBillingCodeDebtSummary.cs" />
+    <Compile Include="CustomEntity\EXT_doGetBillingOfficeDebtSummaryList.cs" />
+    <Compile Include="CustomEntity\EXT_doRptReceipt.cs" />
+    <Compile Include="CustomEntity\EXT_doGetUnpaidInvoiceDebtSummaryByBillingTarget.cs" />
+    <Compile Include="CustomEntity\EXT_doGetUnpaidDetailDebtSummary.cs" />
+    <Compile Include="CustomEntity\EXT_doGetBillingTargetDebtSummaryByOffice.cs" />
+    <Compile Include="CustomEntity\doBillingTargetDebtSummary.cs" />
+    <Compile Include="CustomEntity\EXT_doGetDebtTarget.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_tmpImportContent.cs" />
+    <Compile Include="CustomEntity\EXT_doGetMoneyCollectionManagementInfo.cs" />
+    <Compile Include="CustomEntity\EXT_doUnpaidBillingDetail.cs" />
+    <Compile Include="CustomEntity\EXT_doPaymentMatchingResultDetail.cs" />
+    <Compile Include="CustomEntity\EXT_doPaymentMatchingDesc.cs" />
+    <Compile Include="CustomEntity\EXT_doPaymentMatchingResult.cs" />
+    <Compile Include="CustomEntity\EXT_doMatchPaymentHeader.cs" />
+    <Compile Include="CustomEntity\EXT_doUnpaidInvoice.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_Payment.cs" />
+    <Compile Include="CustomEntity\doUnpaidBillingTargetSearchCriteria.cs" />
+    <Compile Include="CustomEntity\EXT_doUnpaidBillingTarget.cs" />
+    <Compile Include="CustomEntity\EXT_doReceipt.cs" />
+    <Compile Include="CustomEntity\doPaymentSearchCriteria.cs" />
+    <Compile Include="doDebtTracingCustList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doDebtTracingDocNoForGenerate.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doDebtTracingDocNoForPrinting.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doDebtTracingHistory.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doDebtTracingInvoiceDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doDebtTracingInvoiceList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doDebtTracingPermission.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGenerateDebtTracingNotice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetAccountCode.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetBillingCodeDebtSummary.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetBillingDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetBillingOfficeDebtSummary.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetBillingTargetDebtSummaryByOffice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetCreditNote.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetDebtTarget.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetDebtTracingMemo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetICR050.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetICR050_Detail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetMatchGroupNamePayment.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetMoneyCollectionManagementInfo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetRegContent.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetRentalContractBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetSaleBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetUnpaidBillingTargetByCodeWithExchange.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetUnpaidDetailDebtSummary.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetUnpaidInvoiceDebtSummaryByBillingTarget.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doICR030.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIncomeWHT.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInvoiceAdvanceReceipt.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInvoicePaymentMatchingList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doMatchPaymentDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doMatchPaymentHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doMatchWHTDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doPaidInvoiceNoReceipt.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doPayment.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doPaymentForWHT.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doPaymentMatchingDesc.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doPaymentMatchingResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doPaymentMatchingResultDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doReceipt.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doReturnedCheque.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doRptCreditNote.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doRptReceipt.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doTbm_DebtTracingPermission.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doUnpaidBillingDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doUnpaidBillingTarget.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doUnpaidInvoice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doValidateWholeFile.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doWHTReportForAccount.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doWHTReportForIMS.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doWHTYearMonth.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doxygen-DO.cs" />
+    <Compile Include="Doxygen-function.cs" />
+    <Compile Include="SECOMBankBranchData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IC_GetUnpaidBillingTargetByBillingCodeWithExchange_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IC_GetUnpaidBillingTargetByCustomerCodeWithExchange_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IC_GetUnpaidBillingTargetByInvoiceNoWithExchange_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_IC_GetUnpaidBillingTargetByReceiptNoWithExchange_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_BillingTargetDebtTracing.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_CreditNote.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DebtTarget.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DebtTracingCustCondition.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DebtTracingHistory.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DebtTracingHistoryDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_IncomeWHT.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InvoiceDebtTracing.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_MatchPaymentDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_MatchPaymentHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_MoneyCollectionInfo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_Payment.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_PaymentImportFile.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_Receipt.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_Revenue.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_SaleBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_tmpImportContent.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <None Include="SECOM_AJIS.Entity.Income.Context.Biz.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Income.Context.tt</DependentUpon>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Income.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Income.Context.tt</DependentUpon>
+    </None>
+    <Compile Include="SECOM_AJIS.Entity.Income.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Income.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Income.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Income.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="SECOM_AJIS.Entity.Income.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Income.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SECOM_AJIS.Entity.Income.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Income.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Income.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Income.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Common\SECOM_AJIS.Interface.Common.csproj">
+      <Project>{0177E9AC-5098-42BC-9AC1-9B8862FB3E3C}</Project>
+      <Name>SECOM_AJIS.Interface.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

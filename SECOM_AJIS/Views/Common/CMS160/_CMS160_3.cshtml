@@ -1,0 +1,141 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+
+<div class="main-table">
+    <div class="table-header">@Resources.CMS160.lblSection_Installation_information </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblProcess_management_status
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtProcess_management_status", (string)@ViewBag.txtProcess_management_status, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblInstallation_slip_no
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonLink("lnkInstallation_slip_no_Install", (string)@ViewBag.lnkInstallation_slip_no_Install)&nbsp;
+        </div>
+    </div>
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblExpect_complete_installation_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtExpect_complete_installation_date", (string)@ViewBag.txtExpect_complete_installation_date, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblNew_old_building
+         </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtNew_old_building", (string)@ViewBag.txtNew_old_building, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+     </div>
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblExpected_customer_acceptance_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtExpected_customer_acceptance_date", (string)@ViewBag.txtExpected_customer_acceptance_date, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblNew_building_mgmt_type
+         </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtNew_building_mgmt_type", (string)@ViewBag.txtNew_building_mgmt_type, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+     </div>
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblInstrument_stock_out_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtInstrument_stock_out_date", (string)@ViewBag.txtInstrument_stock_out_date, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblNew_building_mgmt_cost
+         </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtNew_building_mgmt_cost", (string)@ViewBag.txtNew_building_mgmt_cost, new { isViewMode = @ViewBag.isViewMode })</div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+     </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblSubcontract_complete_installation_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtSubcontract_complete_installation_date", (string)@ViewBag.txtSubcontract_complete_installation_date, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+     </div>
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblComplete_installation_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtComplete_installation_date_Install", (string)@ViewBag.txtComplete_installation_date_Install, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+     </div>
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblCustomer_acceptance_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtCustomer_acceptance_date", (string)@ViewBag.txtCustomer_acceptance_date, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+     </div>
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblDelivery_document_receive_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtDelivery_document_receive_date", (string)@ViewBag.txtDelivery_document_receive_date, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+     </div>
+
+
+
+     <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblIE_in_charge
+        </div>
+        <div class="usr-object" style="width:auto; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtIE_in_charge", (string)@ViewBag.txtIE_in_charge, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+     </div>
+
+     <div class="usr-row">
+        <div class="usr-object" style="height: 100%;">
+            <div class="fieldset-table" style="width: 945px; height: 100%; margin-left: 5px ;">
+                <div class="fieldset-header">
+                    <span>@Resources.CMS160.lblSubcontractor</span>
+                </div>
+
+                @*[GRID] SUBCONTRACTOR *@
+                <div>
+                    <div id="mygrid_subcontractor_Install" style="width: 99%; margin-left: 4px;">
+                    </div>
+                </div>
+
+                <div class="usr-clear-style">
+                    &nbsp;</div>
+            </div>
+        </div>
+    </div>
+
+     <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+

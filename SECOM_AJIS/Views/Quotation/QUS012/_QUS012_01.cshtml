@@ -1,0 +1,261 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    Layout = "";
+
+    ViewBag.LabelCol1Width = "190px";
+    ViewBag.ObjectCol1Width = "225px";
+    ViewBag.LabelCol2Width = "190px";
+    ViewBag.ObjectCol2Width = "225px";
+    ViewBag.ObjectColMergeWidth = "630px";
+    ViewBag.isViewMode = true;
+}
+<div id="divQuotationTargetInformation" class="main-table">
+    <div class="table-header">
+        @Resources.QUS012.lblQuotationTargetInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblQuotationCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("QuotationTargetCode", (string)@ViewBag.QuotationTargetCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS012.lblProductType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("ProductType", (string)@ViewBag.ProductType, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="label-header usr-row-space">
+        @Resources.QUS012.lblContractTargetInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblPCustomerCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("P_CustCode", (string)@ViewBag.ContractCustCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblPNameEng
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("P_CustFullNameEN", (string)@ViewBag.ContractCustFullNameEN, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblPAddressEng
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("P_AddressFullEN", (string)@ViewBag.ContractAddrFullEN, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row"  style="padding-top:10px;">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblPNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("P_CustFullNameLC", (string)@ViewBag.ContractCustFullNameLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblPAddressLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("P_AddressFullLC", (string)@ViewBag.ContractAddrFullLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS012.lblMemo</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("ContractTargetMemo", (string)@ViewBag.ContractTargetMemo, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    @if (ViewBag.HideBeanchContractInfo == false)
+    {
+    <div class="usr-row" style="padding-top:10px;">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblPBranchNameEng
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("P_BranchNameEN", (string)@ViewBag.ContractBranchNameEN, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblPBranceAddressEng
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("P_BranchAddressEN", (string)@ViewBag.ContractBranchAddrEN, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row" style="padding-top:10px;">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblPBranceNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("P_BranchNameLC", (string)@ViewBag.ContractBranchNameLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblPBranchAddressLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("P_BranchAddressLC", (string)@ViewBag.ContractBranchAddrLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    }
+    <div class="label-header usr-row-space">
+        @Resources.QUS012.lblRealCustomerInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblRCustomerCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("R_CustCode", (string)@ViewBag.RealCustCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblRNameEng
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("R_CustFullNameEng", (string)@ViewBag.RealCustFullNameEN, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblRAddressEng
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("R_AddrFullEng", (string)@ViewBag.RealAddressFullEN, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row" style="padding-top:10px;">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblRNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("R_CustFullNameLC", (string)@ViewBag.RealCustFullNameLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblRAddressLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("R_AddrFullLC", (string)@ViewBag.RealAddrFullLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS011.lblMemo</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("RealCustomerMemo", (string)@ViewBag.RealCustomerMemo, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="label-header usr-row-space">
+        @Resources.QUS012.lblSiteInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblSiteCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteCode", (string)@ViewBag.SiteCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblSiteNameEng
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameEN", (string)@ViewBag.SiteNameEN, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblSiteAddressEng
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteAddrEN", (string)@ViewBag.SiteAddrEN, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row" style="padding-top:10px;">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblSiteNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameLC", (string)@ViewBag.SiteNameLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblSiteAddressLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteAddrLC", (string)@ViewBag.SiteAddrLC, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="label-header usr-row-space">
+        @Resources.QUS012.lblMoreInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblQuotationOffice
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("QuotationOffice", (string)@ViewBag.QuotationOffice, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS012.lblOperationOffice
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("OperationOffice", (string)@ViewBag.OperationOffice, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblAcquisitionType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("AcquisitionType", (string)@ViewBag.AcquisitionType, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS012.lblIntroducerCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("IntroducerCode", (string)@ViewBag.IntroducerCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS012.lblMotivationType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MotivationType", (string)@ViewBag.MotivationType, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS012.lblOldContractCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("OldContractCode", (string)@ViewBag.OldContractCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS011.lblQuotationStaff 
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("QuotationStaff", (string)@ViewBag.QuotationStaff, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

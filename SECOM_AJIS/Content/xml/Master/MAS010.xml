@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="SiteCodeShort" width="120" type="ro" align="left" sort="str_custom">headerSiteCode</column>
+    <column id="SiteNameENAndLC" width="300" type="ro" align="left" sort="str_custom">headerSiteName</column>
+    <column id="AddressFullENAndLC" width="*" type="ro" align="left" sort="str_custom">headerAddress</column>
+    <column id="Edit" width="30" type="link" align="center" sort="na">headerEdit</column>
+    <column id="Remove" width="30" type="link" align="center" sort="na">headerRemove</column>
+
+    <column id="SiteNameLC" width="*" type="ro" hidden="true" align="center"></column>
+    <column id="AddressFullLC" width="*" type="ro" hidden="true" align="center"></column>
+    <column id="ToJson" width="*" type="ro" hidden="true" align="center"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

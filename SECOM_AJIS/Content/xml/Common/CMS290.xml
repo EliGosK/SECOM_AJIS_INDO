@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="30" type="ro" align="center" sort="na"></column>
+    <column id="ProjectCodeShow" width="*" type="ro" align="left" sort="str_custom">HeaderProjectCode</column>
+    <column id="ProjectNameAddressShow" width="215" type="ro" align="left" sort="na">HeaderProjectNameAddress</column>
+    <!--<column id="ProjectPurchaseName" width="140" type="ro" align="left" sort="na">HeaderProjectPurchaserName</column>
+    <column id="ProjectOwnerName" width="100" type="ro" align="left" sort="na">HeaderProjectOwnerName</column>
+    <column id="EmpNameShow" width="100" type="ro" align="left" sort="na">HeadSalesmanName</column>
+    <column id="ManagerEmpShow" width="100" type="ro" align="left" sort="na">HeaderPJmanangerName</column>-->
+    <column id="ProjectPurchaseOwnerShow" width="210" type="ro" align="left" sort="na">HeaderProjPurNameOwnName</column>
+    <column id="PJManHeadSalesManShow" width="190" type="ro" align="left" sort="na">HeaderPJManNameHeadSaleName</column>
+    <column id="ProjectStatusName" width="85" type="ro" align="left" sort="str_custom">HeaderProjectStat</column>
+    <column id="Select" width="30" type="link" align="center" sort="na">HeaderSelect</column>
+    
+    <column id="ToJson" width="*" type="ro" hidden="true" align="center"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>	  
+    <column id="InstrumentCode" width="120" type="ro" align="left" sort="na">lblInstrumentCode</column>
+	<column id="InstrumentName" width="*" type="ro" align="left" sort="na">lblInstrumentName</column>
+	  <column id="ContractInstalledQTY" width="90" type="ro" align="right" sort="na">lblInstQuan</column>
+	  <column id="TotalStockedOut" width="90" type="ro" align="right" sort="na">#cspan</column>
+	  <column id="AddInstalledQTY" width="90" type="link"  align="right" >#cspan</column>
+	  <column id="ReturnQTY" width="90" type="link"  align="right" >#cspan</column>
+	  <column id="AddRemovedQTY" width="90" type="link"  align="right" >#cspan</column>
+	  <column id="ContractInstalledAfterChange" width="90" format="0,000" type="ro" align="right" sort="na">#cspan</column>
+	  <column id="MoveQTY" width="90" type="link"  align="right"  sort="na">#cspan</column>
+	  <column id="MAExchangeQTY" width="90" type="link"  align="right" sort="na">#cspan</column>
+	  <column id="LineUpTypeCode" width="0" type="ro" align="left" hidden="true" sort="na"></column>
+	  <column id="InstrumentTypeCode" width="0" type="ro" align="left" hidden="true" sort="na"></column>
+	  <column id="RentalFlag" width="0" type="ro" align="left" hidden="true" sort="na"></column>
+	  <column id="SaleFlag" width="0" type="ro" align="left" hidden="true" sort="na"></column>
+	  <column id="ExpansionTypeCode" width="0" type="ro" align="left" hidden="true" sort="na"></column>
+	  <column id="Description" width="0" type="ro" align="left" hidden="true" sort="na"></column>
+	  <column id="InstrumentPrice" width="0" type="ro" align="left" hidden="true" sort="na"></column>
+	  <column id="PartialStockout" width="0" type="ro" align="left" hidden="true" sort="na"></column>
+	  <column id="CurrentStockOutQty" width="0" type="ro" align="left" hidden="true" sort="na"></column>	  
+
+	  <column id="OldAddInstalledQTY" width="0" type="ro"  align="left" hidden="true" sort="na"></column>
+	  <column id="OldAddRemovedQTY" width="0" type="ro"  align="left" hidden="true" sort="na"></column>
+	  <column id="OldReturnQTY" width="0" type="ro"  align="left" hidden="true" sort="na">#cspan</column>
+	  <afterInit>
+		  <call command="attachHeader">
+			  <param>#rspan,#rspan,lblContractInstalledQTY,lblTotalStockedOut,lblAddInstalledQTY,lblReturnQTY,lblAddRemovedQTY,lblContractInstalledAfterChange,lblMoveQTY,lblMAExchangeQTY,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan</param>
+		  </call>
+	  </afterInit>
+	  <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

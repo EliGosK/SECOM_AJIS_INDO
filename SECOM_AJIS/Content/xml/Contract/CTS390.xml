@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="0" type="ro" align="center"></column>
+    <column id="OfficeName" width="*" type="ro" align="left" sort="na">headerOffice</column>
+    <column id="TotalAR" width="200" type="ro" align="center" sort="na">headerTotalAR</column>
+    <column id="TotalIncompleteAR" width="200" type="ro" align="center" sort="na">#cspan</column>
+    <!--<column id="TotalOverAR" width="200" type="ro" align="center" sort="na">#cspan</column>-->
+
+    <column id="OfficeCode" width="0" type="ro" align="left" sort="na" hidden="true">headerOffice</column>
+    <afterInit>
+      <call command="attachHeader">
+        <!--<param>#rspan,#rspan,headerTotal,headerIncomplete,headerOverdue,#rspan</param>-->
+        <param>#rspan,#rspan,headerTotal,headerIncomplete,#rspan</param>
+      </call>
+    </afterInit>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

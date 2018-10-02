@@ -1,0 +1,61 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+
+    ViewBag.LabelCol1Width = "190px";
+    ViewBag.ObjectCol1Width = "225px";
+    ViewBag.LabelCol2Width = "190px";
+    ViewBag.ObjectCol2Width = "225px";
+    ViewBag.ObjectColMergeWidth = "630px";
+    ViewBag.isViewMode = true;
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS012.js")"></script>
+}
+<div style="display:none">
+    @Html.Hidden("btnClose", (string)@Resources.QUS012.btnClose)
+</div>
+@if (ViewBag.HideQuotationTarget == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS012_01")
+}   
+@if (ViewBag.HideQuotationDetailInfo_AL == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS012_02")
+}
+@if (ViewBag.HideQuotationDetailInfo_ONLINE == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS012_03")
+}
+@if (ViewBag.HideQuotationDetailInfo_OTHER == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS012_04")
+}
+@if (ViewBag.HideMaintenanceDetail == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS012_05")
+}
+@if (ViewBag.HideInstrumentDetail_ALB == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS012_06")
+}
+@if (ViewBag.HideInstrumentDetail_ALA == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS012_07")
+}
+@if (ViewBag.HideInstrumentDetail_ONLINE == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS012_08")
+}
+@if (ViewBag.HideFacilityDetail == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS012_09")
+}
+@if (ViewBag.HideBeatGuardDetail == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS012_10")
+}
+@if (ViewBag.HideSentryGuardDetail == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS012_11")
+}

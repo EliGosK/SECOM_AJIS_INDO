@@ -1,0 +1,86 @@
+﻿@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+
+<!-- ======== Html content ======== --->
+
+<form id="form3" action="#">
+<div id="divCreditCardInformation" class="main-table" style="margin-top:5px;">
+    <div class="table-header">
+        @Resources.BLS030.lblCreditCardInformation
+    </div>
+
+    <div class="usr-row">
+        <div style="text-align: right; margin-top: -30px; margin-right: 10px;">
+            @Html.CommonButton("btnCreditCardInfo", (string)@Resources.BLS030.btnRegisterEditCreditCardInfo, new { style = "width:250px;", type = "Button" })
+            <div class="usr-clear-style" style="height:0px;">&nbsp;</div>
+        </div>
+    </div>
+    
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS030.lblCreditCardType
+        </div>
+        <div class="usr-object" style="width:220px; ">
+            @Html.CommonTextBox("CreditCardTypeName", null, new { style = "width:220px;", @readonly = true })
+        </div>
+    </div>   
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS030.lblCardHolderName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth; ">
+            @Html.CommonTextBox("CardName", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>  
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS030.lblCreditCardCompany
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth; ">
+            @Html.CommonTextBox("CreditCardCompanyName", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>   
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS030.lblCreditCardNo
+        </div>
+        <div class="usr-object" style="width:220px;">
+            @Html.CommonTextBox("CreditCardNo", null, new { style = "width: 220px;", @readonly = true })
+        </div>  
+        
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           @Resources.BLS030.lblExpiredate
+        </div>
+        <div class="usr-object" >
+            @Html.CommonTextBox("ExpMonth", null, new { style = "width:20px;", @readonly = true })
+        </div> 
+        <div class="usr-label" style="width: 5px; margin-left: 4px;">
+                     <span> -</span> 
+        </div>  
+        <div class="usr-object" >
+            @Html.CommonTextBox("ExpYear", null, new { style = "width:100px;", @readonly = true })
+        </div>  
+    </div>
+    <div id="dlgBLS031" class="main-popup-dialog">
+        <div class="popup-dialog">
+        </div>
+    </div>  
+    <div id="dlgBLS032" class="main-popup-dialog">
+        <div class="popup-dialog">
+        </div>
+    </div>   
+   
+        
+    @Html.Hidden("CreditCardType")
+    @Html.Hidden("CreditCardCompanyCode")
+
+     @*space*@
+     <div class="usr-row" style="height: 10px">&nbsp;</div>
+   <div class="usr-clear-style" style="height:0px;">&nbsp;</div>
+</div>
+
+</form>

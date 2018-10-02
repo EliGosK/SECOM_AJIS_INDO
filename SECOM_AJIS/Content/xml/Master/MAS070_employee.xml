@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="EmpNo" width="120" type="ro" align="left">headerEmployeeCode</column>
+    <column id="EmpFullName" width="460" type="ro" align="left" sort="str_custom">headerEmployeeName</column>
+    <column id="EmailAddress" width="*" type="ro" align="left" sort="str_custom">headerEmail</column>
+    <column id="Edit" width="30" type="ro" align="center" sort="na">headerDetail</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

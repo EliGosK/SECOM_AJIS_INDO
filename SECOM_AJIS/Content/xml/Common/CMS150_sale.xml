@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column width="30" type="ro" align="center" sort="na">headerNo</column>
+    <column id="OCC" width="60" type="ro"  sort="int" align="left">headerOcc</column>
+    <column id="RegistrationDate" width="100" type="dhxCalendar" format="%d-%b-%Y"   align="left" sort="date">headerReg</column>
+    <column id="OperationDueDate" width="130" type="dhxCalendar" format="%d-%b-%Y"  align="left" sort="date">headerOpDatDueDat</column>
+    <!--<column id="DueDate_ApproveNo" width="130" type="ro" align="left" sort="str_custom">headerOpDatDueDat</column>-->
+    <!--<column id="ChangeType_View" width="*" type="ro"  sort="str_custom" align="left">headerChgTypeIncdArType</column>-->
+    <column id="ChangeType_ApproveNo" width="*" type="ro"  sort="str_custom" align="left">headerChgTypeIncdArType</column>
+    
+    <column id="txtSalePrice" width="210" type="ro" align="left" sort="na">headerSalePrice</column>
+    <column id="SaleBasic" width="35" type="ro"  align="center" sort="na">headerSaleBasic</column>
+    <column id="IncidentAR" width="35" type="ro"  align="center" sort="na">headerIncdAR</column>
+
+
+    <!-- Hidden-->
+    <column id="ChangeIncidentARtype" width="*" type="ro" hidden="true"></column>
+    <column id="ContractType" width="*" type="ro" hidden="true"></column>
+    <column id="RequestNo" width="*" type="ro" hidden="true"></column>
+    <column id="IncidentID" width="*" type="ro" hidden="true"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="" width="0" type="ro" align="center" sort="na"></column>
+    <column id="TransferDate" width="95" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date" >headerTransferDate</column>
+    <column id="InstrumentCodeAndName" width="160" type="ro" align="left" sort="str_custom">headerInstrument</column>
+    <column id="SupplierNameAndPurchaseNo" width="*" type="ro" align="left" sort="str_custom">headerSupplierNameAndPurchaseNo</column>
+    <column id="AreaNameShort" width="50" type="ro" align="left" sort="str_custom">headerAreaShortName</column>
+    <column id="AreaName" width="0" type="ro" align="left" hidden="true"></column>
+    <column id="TransferQty" width="75" type="ron2" align="right" numberformat="+#,##0;-#,##0;0" sort="int">headerTransferQty</column>
+    <column id="Costs" width="110" type="ro" align="left" sort="str_custom">headerCosts</column>
+    <column id="SlipIdAndSlipNo" width="160" type="ro" align="left" sort="str_custom">headerSlip</column>
+    <column id="ContractCodeShow" width="150" type="ro" align="left" sort="str_custom">headerContractShow</column>
+    <column id="InstrumentCode" width="0" type="ro" hidden="true"></column>
+    <column id="InstrumentName" width="0" type="ro" hidden="true"></column>
+    <column id="SlipId" width="0" type="ro" hidden="true"></column>
+    <column id="InventorySlipNo" width="0" type="ro" hidden="true"></column>
+    <column id="ContractCode" width="0" type="ro" hidden="true"></column>
+    <column id="ContractCodeShort" width="0" type="ro" hidden="true"></column>
+    <column id="CustFullName" width="0" type="ro" hidden="true"></column>
+    <column id="SupplierName" width="0" type="ro" hidden="true"></column>
+    <column id="PurchaseOrderNo" width="0" type="ro" hidden="true"></column>
+    <column id="Memo" width="0" type="ro" hidden="true"></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

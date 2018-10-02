@@ -1,0 +1,18 @@
+﻿@using SECOM_AJIS.Common.Helpers
+<div id="divResultOfRegister" class="main-table" style="display:none;">
+    <div class="table-header">
+        @Resources.CTS160.lblTitleResultOfRegister
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Label1Width;">
+            @Resources.CTS160.lblContractDocumentNo
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("ContractDocumentNo", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = "readonly" })
+        </div>
+        <div class="usr-object">
+             @Html.CommonButton("btnRegisterNextDocument", (string)@Resources.CTS160.lblRegisterNextContractDocument, new { style = "width:250px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

@@ -1,0 +1,40 @@
+﻿@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+
+<div id="divContractIncident" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS320.lblContractCodeIncident</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:100px;">@Resources.CTS320.lblIncidentType</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.IncidentTypeComboBoxCTS320("cbbCTIIncidentType", new { style = "width:300px;" })
+        </div>
+        <div class="usr-label" style="width:140px;">@Resources.CTS320.lblDueDate</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.IncidentDueDate_DeadLineComboBoxCTS320("cbbCTIDueDate", new { style = "width:120px;" })
+        </div>
+        <div class="usr-label" style="width:100px;">@Resources.CTS320.lblStatus</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.IncidentSearchStatusComboBox("cbbCTIStatus", new { style = "width:120px;" })
+        </div>
+    </div>
+    <div class="usr-row">&nbsp;</div>
+    <div class="usr-row">
+        <div style="text-align:right;">
+            @Html.CommonButton("btnCTIRetrieve", @Resources.CTS320.btnRetrieve, new { style = "vertical-align: middle;", @type = "button" })
+            @Html.CommonButton("btnCTICustomerIncident", @Resources.CTS320.btnCustomerIncident, new { style = "vertical-align: middle; width: 140px;", @type = "button" })
+            @Html.CommonButton("btnCTISiteIncident", @Resources.CTS320.btnSiteIncident, new { style = "vertical-align: middle; width: 170px;", @type = "button" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="text-align: left;">@Resources.CTS320.lblIncidentOfContract </div>
+        <span id="spCTICode">XXX</span> : <span id="spCTIName">YYY</span>
+        
+    </div>
+    <div class="usr-row">
+
+    </div>
+    <div class="usr-row">
+        <div id="gridCTIMain"></div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

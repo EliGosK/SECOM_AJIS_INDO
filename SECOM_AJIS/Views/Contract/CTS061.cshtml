@@ -1,0 +1,262 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@section page_header{
+    <link href="../../Content/css/common_style.css" rel="stylesheet" type="text/css" />
+    
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS061.js")" ></script>
+}
+@{
+    //ViewBag.Title = "CTS061";
+    ViewBag.LabelWidth = "250px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    <script language="javascript" runat="server"> 
+        var ObjCTS061 = { LastOCC: " @ViewBag.LastOCC ", ExpectedInstallCompleteDate : " @ViewBag.ExpectedInstallCompleteDate ", InstallationStatusCode : " @ViewBag.InstallationStatusCode "
+        , CanOperate: "@ViewBag.CanOperate" }
+    </script>
+      
+    @*if (ViewBag.IsSystemSuspending)
+    {
+    <script language="javascript" runat="server">
+        var obj = {
+        module: "Common",
+        code: "MSG0049"
+        };
+        call_ajax_method("/Shared/GetMessage", obj, function (result) {
+            OpenErrorMessageDialog(result.Code, result.Message,
+            function () {
+                window.location.href = generate_url("/common/CMS020");
+            },
+            null);
+        });
+    </script>
+    }
+    else
+    {
+        if (ViewBag.Permission == false)
+        {
+            <script language="javascript" runat="server">
+                var obj = {
+                module: "Common",
+                code: "MSG0053"
+                };
+                call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                    OpenErrorMessageDialog(result.Code, result.Message,
+                    function () {
+                        window.location.href = generate_url("/common/CMS020");
+                    },
+                    null);
+                });
+            </script>
+        }
+        else
+        {
+            if (ViewBag.HasAuthorityContract == false)
+            {
+                <script language="javascript" runat="server">
+                    var obj = {
+                    module: "Common",
+                    code: "MSG0063"
+                    };
+                    call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                        OpenErrorMessageDialog(result.Code, result.Message,
+                        function () {
+                            window.location.href = generate_url("/common/CMS020");
+                        },
+                        null);
+                    });
+                </script>
+            }
+            else
+            {
+                if (ViewBag.HasAuthorityOperation == false)
+                {
+                    <script language="javascript" runat="server">
+                        var obj = {
+                        module: "Common",
+                        code: "MSG0063"
+                        };
+                        call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                            OpenErrorMessageDialog(result.Code, result.Message,
+                            function () {
+                                window.location.href = generate_url("/common/CMS020");
+                            },
+                            null);
+                        });
+                    </script>
+                }
+                else
+                {
+                    if (ViewBag.ISValidOCCCompleted == false || ViewBag.ISValidOCCCompleted == null)
+                    {
+                        <script language="javascript" runat="server">
+                            var obj = { 
+                            module: "Contract",
+                            code: "MSG3058"
+                            };
+                            call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                                OpenErrorMessageDialog(result.Code, result.Message,
+                                function () {
+                                    window.location.href = generate_url("/common/CMS020");
+                                },
+                                null);
+                            });
+                        </script>
+                    }
+                }
+            }
+        }
+    }
+*@
+}
+<div id="SaleContractChangeSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS061.lblSaleContractBasicInformation
+        </div>
+    </div>
+    <div class="usr-row" style="height:20px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth">
+            @Resources.CTS061.lblContractCode
+        </div>
+        <div class="usr-object" style="width: 100px">
+            @Html.CommonTextBox("ContractCode", (string)@ViewBag.ContractCode, new { style = "width:100px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblPurchaserCustCode
+        </div>
+        <div class="usr-object" style="width: 107px">
+            @Html.CommonTextBox("PurchaserCustCode", (string)@ViewBag.PurchaserCustCode, new { style = "width:100px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 190px">
+            @Resources.CTS061.lblRealCustomerCustCode
+        </div>
+        <div class="usr-object" style="width: 100px">
+            @Html.CommonTextBox("RealCustomerCustCode", (string)@ViewBag.RealCustomerCustCode, new { style = "width:100px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 100px">
+            @Resources.CTS061.lblSiteCode
+        </div>
+        <div class="usr-object" style="width: 140px">
+            @Html.CommonTextBox("SiteCode", (string)@ViewBag.SiteCode, new { style = "width:140px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:20px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        </div>
+        <div class="usr-object">
+            @*@Html.CommonCheckButton("ImportantFlag", @Resources.CTS061.lblImportantFlag, "", (bool)@ViewBag.ImportantFlag, new { disabled = "disabled" })*@
+            @Html.CommonCheckButton("ImportantFlag", @Resources.CTS061.lblImportantFlag, "", (bool)@ViewBag.ImportantFlag, new { disabled = "disabled" })
+        </div>
+    </div>
+    <div class="usr-row" style="height:20px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblCustFullNameEN
+        </div>
+        <div class="usr-object" style="width: 650px">
+            @Html.CommonTextBox("PurchaserNameEN", (string)@ViewBag.PurchaserNameEN, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblPurchaserAddressEnglish
+        </div>
+        <div class="usr-object" style="width: 650px">
+            @Html.CommonTextBox("PurchaserAddressEnglish", (string)@ViewBag.PurchaserAddressEN, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:20px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblSiteNameEN
+        </div>
+        <div class="usr-object" style="width: 650px">
+            @Html.CommonTextBox("SiteNameEN", (string)@ViewBag.SiteNameEN, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblSiteAddressEN
+        </div>
+        <div class="usr-object" style="width: 650px">
+            @Html.CommonTextBox("SiteAddressEN", (string)@ViewBag.SiteAddressEN, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" >
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblCustFullNameLC
+        </div>
+        <div class="usr-object" style="width: 650px">
+            @Html.CommonTextBox("CustFullNameLC", (string)@ViewBag.PurchaserNameLC, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblPurchaserAddressLocal
+        </div>
+        <div class="usr-object" style="width: 650px">
+            @Html.CommonTextBox("PurchaserAddressLocal", (string)@ViewBag.PurchaserAddressLC, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblSiteNameLC
+        </div>
+        <div class="usr-object" style="width: 650px">
+            @Html.CommonTextBox("SiteNameLC", (string)@ViewBag.SiteNameLC, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblSiteAddressLC
+        </div>
+        <div class="usr-object" style="width: 650px">
+            @Html.CommonTextBox("SiteAddressLC", (string)@ViewBag.SiteAddressLC, new { style = "width:650px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height:30px">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblInstallationStatusName
+        </div>
+        <div class="usr-object" style="width: 355px">
+            @Html.CommonTextBox("InstallationStatusName", (string)@ViewBag.InstallationStatusCodeName, new { style = "width:350px;", @readonly = true })
+        </div>
+        <div class="usr-object" style="width: 300px">
+            &nbsp;@Html.CommonButton("btnViewInstalltionDetail", @Resources.CTS061.lblViewInstallationDetail, new { style = "width:200px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblOperationOffice
+        </div>
+        <div class="usr-object" style="width:140px">
+            @Html.CommonTextBox("OperationOffice", (string)@ViewBag.OperationOfficeName, new { style = "width:140px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+@*//----------------------------------------------------------------------------------------------------------------------------------------------------*@
+<div id="ChangeExpectedSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS061.lblChangeExpectedCompleteInstallationDate
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS061.lblExpectedInstallationCompleteDate
+        </div>
+        <div class="usr-object" style="width: 240px">
+            @Html.CommonTextBox("ExpectedInstallCompleteDate", (string)ViewBag.ExpectedInstallCompleteDate, new { style = "width:140px;" })
+            @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

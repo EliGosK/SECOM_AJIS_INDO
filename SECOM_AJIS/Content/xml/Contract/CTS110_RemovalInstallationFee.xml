@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+	  <column id="InstallationFee" width="*" type="ro" align="right" sort="na"></column>
+	  <column id="Amount" width="205" type="link" align="left" sort="na">headerAmount</column>
+	  <column id="PaymentMethod" width="205" type="link" align="left" sort="na">headerPaymentMethod</column>
+	  <settings>
+		  <colwidth>px</colwidth>
+	  </settings>
+  </head>
+</rows>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="na">headerInstrumentName</column>
+    <column id="InstrumentCode" width="170" type="ro" align="left" sort="na">headerInstrumentCode</column>
+    <column id="MakerName" width="188" type="ro" align="left" sort="na">headerMakerName</column>
+    <column id="QtyAdded" width="0" type="ro" align="left" sort="na" hidden="true"></column>
+    <column id="QtyRemoved" width="0" type="ro" align="left" sort="na" hidden="true"></column>
+    <column id="TxtQtyAdded" width="100" type="link" align="right" sort="na">headerQty</column>
+    <column id="TxtQtyRemoved" width="100" type="link" align="right" sort="na">#cspan</column>
+    <column id="QtyTotal" width="100" type="link" align="right" sort="na">headerQtyTotal</column>
+
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,#rspan,#rspan,headerQtyAdded,headerQtyRemoved,#rspan</param>
+      </call>
+    </afterInit>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

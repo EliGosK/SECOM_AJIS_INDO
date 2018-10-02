@@ -1,0 +1,47 @@
+﻿ @using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    
+
+    ViewBag.LabelWidth = "215px";
+    ViewBag.LabelWidth2 = "210px";
+
+    ViewBag.ObjectWidth = "300";
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS050.js")" ></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+}
+<!--  ====== HTML ======= -->
+<div class="main-table">
+    <div class="usr-row">
+        <div style="width: 100%; text-align: center">
+            @Html.CommonButton("btnRunBatchAll", @Resources.CMS050.btnRunBatchAll, new { type = "button", style = "width:200px; high:30px" })
+        </div>
+        <div class="usr-clear-style" style="height: 0%">
+        </div>
+    </div>
+</div>
+<!-- ======= Batch list ======= -->
+<div class="main-table">
+    <div class="table-header">
+        @Resources.CMS050.lblBatchList
+    </div>
+    <div>
+        <div id="mygrid_container" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

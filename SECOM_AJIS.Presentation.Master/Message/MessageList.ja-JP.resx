@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG1001" xml:space="preserve">
+    <value>次の物件／納入先は消去できません: {0}</value>
+  </data>
+  <data name="MSG1002" xml:space="preserve">
+    <value>物件／納入先情報がこの顧客で重複しています。</value>
+  </data>
+  <data name="MSG1003" xml:space="preserve">
+    <value>ID番号／納税者番号が既に登録されています。</value>
+  </data>
+  <data name="MSG1004" xml:space="preserve">
+    <value>顧客名称は既に登録されています。処理を進めますか？</value>
+  </data>
+  <data name="MSG1005" xml:space="preserve">
+    <value>次の顧客情報を削除します：{0}。よろしいですか？</value>
+  </data>
+  <data name="MSG1006" xml:space="preserve">
+    <value>次の顧客情報は削除できません: {0}</value>
+  </data>
+  <data name="MSG1007" xml:space="preserve">
+    <value>グループコードはこの顧客に既に登録されています。</value>
+  </data>
+  <data name="MSG1008" xml:space="preserve">
+    <value>次のグループ情報を削除します:{0}。よろしいですか？</value>
+  </data>
+  <data name="MSG1009" xml:space="preserve">
+    <value>次のグループコードは削除できません: {0}</value>
+  </data>
+  <data name="MSG1010" xml:space="preserve">
+    <value>このグループ名称（現地語）は顧客グループで重複しています。</value>
+  </data>
+  <data name="MSG1011" xml:space="preserve">
+    <value>事業所、及び部署が所属で重複しています。</value>
+  </data>
+  <data name="MSG1012" xml:space="preserve">
+    <value>次のユーザー情報を削除します:{0}。よろしいですか？</value>
+  </data>
+  <data name="MSG1013" xml:space="preserve">
+    <value>社員番号が既に存在しています。</value>
+  </data>
+  <data name="MSG1014" xml:space="preserve">
+    <value>第一部署が所属マスタで重複しています 。</value>
+  </data>
+  <data name="MSG1015" xml:space="preserve">
+    <value>この社員のデータが所属マスタにありません。</value>
+  </data>
+  <data name="MSG1016" xml:space="preserve">
+    <value>次の「事業所／部署」権限を削除します：{0}。よろしいですか？</value>
+  </data>
+  <data name="MSG1017" xml:space="preserve">
+    <value>次の「個別」権限を削除します：{0}。よろしいですか？</value>
+  </data>
+  <data name="MSG1018" xml:space="preserve">
+    <value>事業所、部署、職位が権限グループで重複しています。</value>
+  </data>
+  <data name="MSG1019" xml:space="preserve">
+    <value>機器コードが重複しています。</value>
+  </data>
+  <data name="MSG1020" xml:space="preserve">
+    <value>機器コードが子機器ではありません。</value>
+  </data>
+  <data name="MSG1021" xml:space="preserve">
+    <value>次の子機器コードが機器展開マスタで重複しています：{0}</value>
+  </data>
+  <data name="MSG1022" xml:space="preserve">
+    <value>機器コードが機器展開に既に存在しています。機器展開種類を変更できません。</value>
+  </data>
+  <data name="MSG1023" xml:space="preserve">
+    <value>顧客状態は新規顧客ではありません。</value>
+  </data>
+  <data name="MSG1024" xml:space="preserve">
+    <value>セコム担当者が社員マスター上に存在しません。</value>
+  </data>
+  <data name="MSG1025" xml:space="preserve">
+    <value>社員は既に登録されています。</value>
+  </data>
+  <data name="MSG1026" xml:space="preserve">
+    <value>子機器コードは既に登録されています。</value>
+  </data>
+  <data name="MSG1039" xml:space="preserve">
+    <value>顧客コードを指定してください。</value>
+  </data>
+  <data name="MSG1040" xml:space="preserve">
+    <value>親機器コードを指定してください。</value>
+  </data>
+  <data name="MSG1041" xml:space="preserve">
+    <value>この顧客情報は別の契約で使用されています。</value>
+  </data>
+  <data name="MSG1043" xml:space="preserve">
+    <value>機器コードは機器情報上に親機器として設定されていません。</value>
+  </data>
+  <data name="MSG1038" xml:space="preserve">
+    <value>部署責任者が同一事業所、及び部署で重複しています。</value>
+  </data>
+  <data name="MSG1042" xml:space="preserve">
+    <value>第一部署を設定してください。</value>
+  </data>
+  <data name="MSG1044" xml:space="preserve">
+    <value>少なくとも1人の社員を指定してください。</value>
+  </data>
+  <data name="MSG1047" xml:space="preserve">
+    <value>この社員番号は既に論理削除されています。処理を進めると、画面上の情報でこの社員番号を有効にします。</value>
+  </data>
+  <data name="MSG1030" xml:space="preserve">
+    <value>次の業者コードを削除します:{0}。よろしいですか？</value>
+  </data>
+  <data name="MSG1031" xml:space="preserve">
+    <value>次の業者コードが削除できません: {0}</value>
+  </data>
+  <data name="MSG1032" xml:space="preserve">
+    <value>業者コード： {0} は削除されました。</value>
+  </data>
+  <data name="MSG1037" xml:space="preserve">
+    <value>次の機器コードに安全在庫が既に存在しています: {0}</value>
+  </data>
+  <data name="MSG1033" xml:space="preserve">
+    <value>次の棚番を削除します:{0}。よろしいですか？</value>
+  </data>
+  <data name="MSG1034" xml:space="preserve">
+    <value>次の棚番が削除できません: {0}</value>
+  </data>
+  <data name="MSG1035" xml:space="preserve">
+    <value>棚番： {0} は削除されました。</value>
+  </data>
+  <data name="MSG1046" xml:space="preserve">
+    <value>この棚に対して棚種類を変更できません。</value>
+  </data>
+  <data name="MSG1048" xml:space="preserve">
+    <value>この棚番が既に存在しています。</value>
+  </data>
+  <data name="MSG1049" xml:space="preserve">
+    <value>機器個数が「0」でないため、この棚を削除できません。</value>
+  </data>
+  <data name="MSG1045" xml:space="preserve">
+    <value>VAT登録先コードを指定してください。</value>
+  </data>
+  <data name="MSG1055" xml:space="preserve">
+    <value>この棚番は既に論理削除されています。処理を進めると、画面上の情報でこの棚番を有効にします。</value>
+  </data>
+  <data name="MSG1056" xml:space="preserve">
+    <value>この業者コードが既に存在しています。</value>
+  </data>
+  <data name="MSG1057" xml:space="preserve">
+    <value>この業者コードは既に論理削除されています。処理を進めると、画面上の情報でこの業者コードを有効にします。</value>
+  </data>
+  <data name="MSG1058" xml:space="preserve">
+    <value>VAT登録先が存在しません。</value>
+  </data>
+  <data name="MSG1027" xml:space="preserve">
+    <value>次のVAT登録先コードを削除します:{0}。よろしいですか？</value>
+  </data>
+  <data name="MSG1028" xml:space="preserve">
+    <value>次のVAT登録先コードが削除できません: {0}</value>
+  </data>
+  <data name="MSG1029" xml:space="preserve">
+    <value>VAT登録先コード： {0} は削除されました。</value>
+  </data>
+  <data name="MSG1036" xml:space="preserve">
+    <value>安全在庫が削除できません。</value>
+  </data>
+  <data name="MSG1050" xml:space="preserve">
+    <value>有効期間に入社日より前の日付を設定できません。</value>
+  </data>
+  <data name="MSG1051" xml:space="preserve">
+    <value>有効期間に退職日より後の日付を設定できません。</value>
+  </data>
+  <data name="MSG1052" xml:space="preserve">
+    <value>現在登録されている顧客名称（現地語）は他の顧客コードで使用されているものと同じ名称です。「はい」を押すとこのまま処理を続行することができますが、異なる顧客の場合は区別できる名称にしておくことを推奨します。</value>
+  </data>
+  <data name="MSG1059" xml:space="preserve">
+    <value>顧客コード{0}は契約で使用されているため、削除できません。</value>
+  </data>
+  <data name="MSG1060" xml:space="preserve">
+    <value>納税者番号の桁数は13桁でなければなりません。</value>
+  </data>
+  <data name="MSG1061" xml:space="preserve">
+    <value>支店番号の桁数は5桁でなければなりません。</value>
+  </data>
+  <data name="MSG1062" xml:space="preserve">
+    <value>視点番号00000は、本社のみ使用可能です。</value>
+  </data>
+</root>

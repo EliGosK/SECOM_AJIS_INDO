@@ -1,0 +1,287 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@{
+    ViewBag.LabelWidth = "260px";
+    ViewBag.RightLabelWidth = "120px";
+    ViewBag.ObjectWidth = "150";
+    ViewBag.RightObjectWidth = "150px";
+    ViewBag.CheckboxWidth = "300px";
+    ViewBag.StyleRemark = "color:#777777;font-size: 0.8em;width: 500px;";
+
+    ViewBag.InfoTextboxWidth = "140px";
+    ViewBag.ShortInputWidth = "160px";
+    ViewBag.ApproveNoWidth = "300px";
+    ViewBag.DateInputWidth = "300px";
+    ViewBag.EmpNameWidth = "360px";
+    ViewBag.LongInputWidth = "350px";
+    ViewBag.TextAreaWidth = "500px";
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS280.js")" ></script>
+    <script type="text/javascript">
+        var CTS280Data =
+        {
+            "Mode": "@ViewBag.Mode",
+            "FunctionIdView": "@ViewBag.FunctionIdView",
+            "FunctionIdAdd": "@ViewBag.FunctionIdAdd",
+            "CallerScreenID": "@ViewBag.CallerScreenID"
+        };
+    </script>
+}
+<div id="Section_HiddenData" style="display:none">
+    @Html.Hidden("InstrumentMalfunctionFlagData", null)
+    @Html.Hidden("NeedSalesmanFlagData", null)
+</div>
+<div id="Section_Information" class="main-table">
+    <div class="table-header">
+        @Resources.CTS280.lblMaintenanceCheckupInformation
+    </div>
+    <form id="CTS280_Information">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;"> 
+                @Resources.CTS280.lblMaintenanceCheckupNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InfoTextboxWidth;">
+                @Html.CommonTextBox("CheckupNo", (string)@ViewBag.CheckupNo, new { style = "width:140px;", maxlength = "10", @readonly = "readonly" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.CTS280.lblContractCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InfoTextboxWidth;">
+                @Html.CommonTextBox("ContractCode", (string)@ViewBag.ContractCode, new { style = "width:140px;", maxlength = "15", @readonly = "readonly" })
+             </div>
+             <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.CTS280.lblProductName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InfoTextboxWidth;">
+                @Html.CommonTextBox("ProductName", (string)@ViewBag.ProductName, new { style = "width:140px;", maxlength = "50", @readonly = "readonly" })
+             </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS280.lblCustomerCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InfoTextboxWidth;">
+                @Html.CommonTextBox("RealCustomerCustCode", (string)@ViewBag.RealCustomerCustCode, new { style = "width:140px", maxlength = "11", @readonly = "readonly" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.CTS280.lblSiteCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InfoTextboxWidth;">
+                @Html.CommonTextBox("SiteCode", (string)@ViewBag.SiteCode, new { style = "width:140px", maxlength = "16", @readonly = "readonly" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.CTS280.lblUserCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.InfoTextboxWidth;">
+                @Html.CommonTextBox("UserCode", (string)@ViewBag.UserCode, new { style = "width:140px", maxlength = "11", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS280.lblRealCustomerEnglish
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("RealCustomerNameEN", (string)@ViewBag.RealCustomerNameEN, new { style = "width:670px", maxlength = "100", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS280.lblSiteNameEnglish
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SiteNameEN", (string)@ViewBag.SiteNameEN, new { style = "width:670px", maxlength = "100", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="usr-row usr-row-space-2x">
+            <div class="usr-label" style="width:280px;margin-left:-20px;">
+                @Resources.CTS280.lblRealCustomerLocal
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("RealCustomerNameLC", (string)@ViewBag.RealCustomerNameLC, new { style = "width:670px", maxlength = "100", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS280.lblSiteNameLocal
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SiteNameLC", (string)@ViewBag.SiteNameLC, new { style = "width:670px", maxlength = "100", @readonly = "readonly" })
+            </div>
+        </div>
+    </form>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+<div id="Section_ProcessType">
+    <div class="main-table">
+        <div class="table-header">
+            @Resources.CTS280.lblSpecifyProcessType
+        </div>
+        <form id="CTS280_ProcessType">
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                    @Resources.CTS280.lblProcessType
+                </div>
+                <div class="usr-object" style="width:@ViewBag.CheckboxWidth;">
+                    @Html.CommonRadioButton("InputExpectedMaintenanceDate", (string)@Resources.CTS280.rdoInputExpectedMaintenanceDate, (string)@SECOM_AJIS.Common.Util.ConstantValue.RegisterMAProcessType.C_REGISTER_MA_PROCESS_TYPE_INPUT_EXPECTED, true, "rdoProcessTypeChk") 
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+                <div class="usr-object" style="width:@ViewBag.CheckboxWidth;">
+                    @Html.CommonRadioButton("RegisterActualCheckupData", (string)@Resources.CTS280.rdoRegisterActualCheckupData, (string)@SECOM_AJIS.Common.Util.ConstantValue.RegisterMAProcessType.C_REGISTER_MA_PROCESS_TYPE_REGISTER_RESULT, false, "rdoProcessTypeChk")
+                </div>
+            </div>
+            <div class="usr-row usr-row-space-2x">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+                <div class="usr-object">
+                    @Html.CommonButton("btnSelectProcess", @Resources.CTS280.btnSelectProcess, new { type = "button", style = "width:120px;" })
+                </div>
+            </div>
+        </form>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</div>
+<div id="Section_Result">
+    <div class="main-table">
+        <div class="table-header">
+            @Resources.CTS280.lblMaintenanceCheckupResult
+        </div>
+        <form id="CTS280_Result">
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                    @Resources.CTS280.lblExpectedMaintenanceDate
+                </div>
+                <div class="usr-object" style="width:@ViewBag.DateInputWidth;">
+                    <div class="object-unit">
+                        @Html.CommonTextBox("ExpectedMaintenanceDate", (string)@ViewBag.ExpectedMaintenanceDate, new { style = "width:140px;", @readonly = "readonly" })
+                    </div>
+                    @Html.LabelDateFormat("ExpectedMaintenanceDate")
+                    <div id="Section_RequireExpectedMaintenanceDate" style="display:none;">&nbsp;@Html.RequireFiled()</div>
+                </div>
+            </div>
+            <div id="Section_RegisterDetail">
+                <div class="usr-row">
+                     <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS280.lblMaintenanceDate
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.DateInputWidth;">
+                        <div class="object-unit">
+                            @Html.CommonTextBox("MaintenanceDate", (string)@ViewBag.MaintenanceDate, new { style = "width:140px;" })
+                        </div>
+                        @Html.LabelDateFormat("MaintenanceDate")&nbsp;@Html.RequireFiled()
+                    </div>
+                </div>
+                <div id="Section_MaintenanceFee">
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                            @Resources.CTS280.lblMaintenanceFee
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.LongInputWidth;">
+                            @Html.NumericTextBoxWithMultipleCurrency("MaintenanceFee", (string)@ViewBag.MaintenanceFee, (string)@ViewBag.MaintenanceFeeCurrencyType, new { style = "width:140px;" })
+                            @Html.RequireFiled()
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                            @Resources.CTS280.lblApproveNo1
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.ApproveNoWidth;">
+                            @Html.CommonTextBox("ApproveNo1", (string)@ViewBag.ApproveNo1, new { style = "width:320px;", maxlength = "15" })
+                        </div>
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS280.cboSubcontractorName
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.LongInputWidth;">
+                        @Html.SubContractorComboBox("SubcontractCode", new { style = "width:324px;", selected = (string)@ViewBag.SubcontractCode })
+                        @Html.RequireFiled()
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS280.lblPersonInChargeOfSubcontractor
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.LongInputWidth;">
+                        @Html.CommonTextBox("PICName", (string)@ViewBag.PICName, new { style = "width:320px;", maxlength = "50" })
+                        @Html.RequireFiled()
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS280.lblMaintenanceEmployee
+                    </div>
+                    <div class="usr-object" style="width:600px;">
+                        <div style="float:left;margin-right:5px;">
+                            @Html.CommonTextBox("MaintEmpNo", (string)@ViewBag.MaintEmpNo, new { style = "width:140px;", maxlength = "10" })
+                        </div>
+                        <div style="float:left;">
+                            @Html.CommonTextBox("MaintEmpName", (string)@ViewBag.MaintEmpName, new { style = "width:351px;", maxlength = "70", @readonly = "readonly" })
+                            @Html.RequireFiled()
+                        </div>
+                    </div>
+                </div>
+                <div id="divWarning" class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+                    <div class="usr-object" style="@ViewBag.StyleRemark">
+                        @Resources.CTS280.lblWarning
+                    </div>
+                </div>
+                <div class="usr-row usr-row-space-2x">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS280.lblCheckupUsageTime
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.LongInputWidth;">
+                        @Html.NumericTextBoxWithUnit("UsageTime", (string)@ViewBag.UsageTime, new { style = "width:140px;" }, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.HOURS, true)
+                    </div>
+                </div>
+                <div class="usr-row usr-row-space-2x">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+                    <div class="usr-object" >
+                        @Html.CommonCheckButton("InstrumentMalfunctionFlag", @Resources.CTS280.chkHaveInstrumentMalfunction, "True", (bool)@ViewBag.InstrumentMalfunctionFlag, null)
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS280.lblLocation
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.TextAreaWidth;">
+                        @Html.CommonTextBox("Location", (string)@ViewBag.Location, new { style = "width:500px;", maxlength = "500" })
+                        @Html.Hidden("DefaultLocation", (string)@ViewBag.Location)
+                    </div>
+                </div>
+                <div class="usr-row usr-row-space-2x">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+                    <div class="usr-object">
+                        @Html.CommonCheckButton("NeedSalesmanFlag", @Resources.CTS280.chkNeedToContactSalesman, "True", (bool)@ViewBag.NeedSalesmanFlag, null)
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;"> 
+                        @Resources.CTS280.lblMalfunctionDetailSalesmanInformation            
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.TextAreaWidth;">
+                        @Html.CommonTextArea("MalfunctionDetail", (string)@ViewBag.MalfunctionDetail, new { style = "width:500px;height:65px;", maxlength = "500" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;"> 
+                        @Resources.CTS280.lblRemark      
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.TextAreaWidth;">
+                        @Html.CommonTextArea("Remark", (string)@ViewBag.Remark, new { style = "width:500px;height:65px;", maxlength = "500" })
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</div>

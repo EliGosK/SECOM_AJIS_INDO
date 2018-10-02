@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="InstrumentCode" width="200" type="ro"  sort="str_custom">headerFacilityCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">headerFacilityName</column>
+    <column id="InstrumentQty" width="150" type="edn" align="right" format="0,000" sort="int">headerQuantity</column>
+   
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

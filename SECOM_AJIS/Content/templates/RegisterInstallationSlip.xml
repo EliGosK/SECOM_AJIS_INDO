@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Template>
+  <AdminEmail></AdminEmail>
+  <AdminSubject></AdminSubject>
+  <AdminContent></AdminContent>
+  <TemplateSubject>[SIMS] Register installation slip</TemplateSubject>
+  <TemplateContent>
+    <html>
+      <body>
+        <p>
+          เนื่องจากมีการสร้างสลิปของการติดตั้งตามรายละเอียดดังที่ระบุไว้ด้านล่าง
+          จึงขอให้ผุ้รับผิดชอบตรวจเช็คเหตุผลการติดตั้ง หากพบว่าเป็นเหตุผลของลูกค้า
+          และยังไม่มีการลงทะเบียนเงื่อนไขการติดตั้งแล้ว ให้ทำการลงทะเบียนหลังจากยืนยันเงื่อนไขแล้วโดยเร็วที่สุด
+
+          เลขที่สัญญา: [ContractCode]
+          ชื่อผู้ทำสัญญา: [ContractTargetNameLC]
+          ชื่อสถานที่ติดตั้ง: [SiteNameLC]
+          ชื่อสินค้า: [ProductNameLC]
+          เลขที่การก่อสร้าง: [InstallationMaintenanceNo]
+          ประเภทของการติดตั้ง: [InstallationTypeLC]
+          เหตุผลการเปลี่ยนแปลง: [ChangeReasonTypeLC]
+          เหตุผลของการติดตั้ง: [InstallationCauseReasonLC]
+          พนักงานขาย 1: [Salesman1NameLC]
+          พนักงานขาย 2: [Salesman2NameLC]
+          สาขาที่ให้บริการ: [OperationOfficeNameLC]
+
+          ขอแสดงความนับถือ
+          [SenderLC]
+
+
+          'Installation slip' of the installation with the details mentioned below has been created.
+          For person in charge, please check 'Installation reason'. In case of 'Customer reason' and installation condition is not register, please register immediately after specifying condition.
+
+          Contract no.: [ContractCode]
+          Contract target name: [ContractTargetNameEN]
+          Site name: [SiteNameEN]
+          Product name: [ProductNameEN]
+          Installation no.: [InstallationMaintenanceNo]
+          Installation type: [InstallationTypeEN]
+          Change reason: [ChangeReasonTypeEN]
+          Installation cause reason: [InstallationCauseReasonEN]
+          Salesman 1 name: [Salesman1NameEN]
+          Salesman 2 name: [Salesman2NameEN]
+          Operation office name: [OperationOfficeNameEN]
+
+          Best regards,
+          [SenderEN]
+        </p>
+      </body>
+    </html>
+  </TemplateContent>
+</Template>

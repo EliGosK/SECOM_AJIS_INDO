@@ -1,0 +1,92 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+@if ((string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_AL || (string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_RENTAL_SALE || (bool)ViewBag.isShowAll)
+{
+        <div class="main-table">
+            <div class="table-header">
+                @Resources.CMS140.lblSection_InstrumentDetail
+            </div>
+            <div> <!-- ================Grid InstrumentDeatail================== -->
+                <div id="mygrid_InstrumentDeatail" style="width: 99%; margin-left: 4px;">
+                </div>
+            </div>
+
+            <div class="usr-clear-style">&nbsp;</div>
+        </div>
+}
+
+@if ((string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_AL || (string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_ONLINE || (string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_RENTAL_SALE || (bool)ViewBag.isShowAll)
+{
+        <div class="main-table">
+            <div class="table-header">
+                @Resources.CMS140.lblFacilityDetail
+            </div>
+            <div> <!-- ================Grid InstrumentDeatail================== -->
+                <div id="mygrid_FacilityDetail" style="width: 99%; margin-left: 4px;">
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                    @Resources.IVS140.lblMemo
+                </div>
+                 <div class="usr-object" style="width:700px">
+                    @Html.CommonTextBox("FacilityMemo", (string)@ViewBag.FacilityMemo, new { isViewMode = @ViewBag.isViewMode })
+                </div>
+            </div>
+
+            <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+        </div>
+}
+
+@if ((string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_SG || (bool)ViewBag.isShowAll)
+{
+    <div style="height:5px">&nbsp;</div>
+
+    <div class="main-table">
+        <div class="table-header">
+            @Resources.CMS140.lblSection_SentryGuardDetail
+        </div>
+
+         <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS140.lblSecurity_item_fee
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                <div style="float:left;">@Html.CommonTextBox("txtSecurity_item_fee", (string)@ViewBag.txtSecurity_item_fee, new { isViewMode = @ViewBag.isViewMode })</div>
+                @*@Html.LabelCurrencyUnit("lblCurency")*@
+            </div>
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS140.lblOther_item_fee
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                <div style="float:left;">@Html.CommonTextBox("txtOther_item_fee", (string)@ViewBag.txtOther_item_fee, new { isViewMode = @ViewBag.isViewMode })</div>
+                @*@Html.LabelCurrencyUnit("lblCurency")*@
+            </div>
+        </div>
+
+        <div class="usr-row">
+             <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS140.lblSentry_guard_area_type
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtSentry_guard_area_type", (string)@ViewBag.txtSentry_guard_area_type, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-clear-style">&nbsp;</div>
+
+        <div style="margin-top:10px">  <!-- ================Grid SentryGuardDetail================== -->
+            <div id="mygrid_SentryGuardDetail" style="width: 99%; margin-left: 4px;">
+            </div>
+        </div>
+
+
+
+         <div class="usr-clear-style">&nbsp;</div>
+    </div>
+
+}

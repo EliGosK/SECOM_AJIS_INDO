@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="0" type="ro" align="center" sort="na"></column>
+    <column id="ShelfNo" width="90" type="ro" align="left" sort="str_custom">headerShelfNo</column>
+    <column id="ShelfName" width="225" type="ro" align="left" sort="str_custom">headerShelfName</column>
+    <column id="ShelfTypeCodeName" width="130" type="ro" align="left" sort="str_custom">headerShelfTypeCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">headerInstrumentName</column>
+    <column id="AreaCodeName" width="190" type="ro" align="left" sort="str_custom">headerAreaCode</column>
+    <column id="Edit" width="30" type="link" align="center" sort="na">headerEdit</column>
+
+	  <column id="ShelfTypeCode" width="0" type="ro" align="left" hidden="true"></column>
+	  <column id="AreaCode" width="0" type="ro" align="left" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+

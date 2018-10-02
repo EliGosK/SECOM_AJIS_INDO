@@ -1,0 +1,59 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelColWidth = "160px";
+    ViewBag.ObjectColWidth = "190px";
+    ViewBag.ObjectColCtrlWidth = "140px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS010/CTS010_16.js")"></script>
+<style type="text/css">
+    .text-installfee p { margin: 0; }
+    .text-installfee p span.fee-value { float: right; }
+</style>
+<div id="divBillingTargetInfo" class="main-table">
+    <div class="table-header">@Resources.CTS010.lblBillingTarget</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelColWidth;">@Resources.CTS010.lblTotalContractFee</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColWidth;">
+            @Html.NumericTextBoxWithMultipleCurrency("TotalContractFee", (string)@ViewBag.TotalContractFee, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { @readonly = true, style = "width:" + @ViewBag.ObjectColCtrlWidth + ";" }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelColWidth;">@Resources.CTS010.lblTotalInstallationFee</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColWidth;">
+            @Html.NumericTextBoxWithMultipleCurrency("TotalInstallationFee", (string)@ViewBag.TotalInstallationFee, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { @readonly = true, style = "width:" + @ViewBag.ObjectColCtrlWidth + ";" }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelColWidth;">@Resources.CTS010.lblTotalDepositFee</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColWidth;">
+            @Html.NumericTextBoxWithMultipleCurrency("TotalDepositFee", (string)@ViewBag.TotalDepositFee, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { @readonly = true, style = "width:" + @ViewBag.ObjectColCtrlWidth + ";" }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelColWidth;">@Resources.CTS010.lblTotalContractFee</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColWidth;">
+            @Html.NumericTextBoxWithMultipleCurrency("TotalContractFeeUsd", (string)@ViewBag.TotalContractFeeUsd, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_US, new { @readonly = true, style = "width:" + @ViewBag.ObjectColCtrlWidth + ";" }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelColWidth;">@Resources.CTS010.lblTotalInstallationFee</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColWidth;">
+            @Html.NumericTextBoxWithMultipleCurrency("TotalInstallationFeeUsd", (string)@ViewBag.TotalInstallationFeeUsd, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_US, new { @readonly = true, style = "width:" + @ViewBag.ObjectColCtrlWidth + ";" }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelColWidth;">@Resources.CTS010.lblTotalDepositFee</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColWidth;">
+            @Html.NumericTextBoxWithMultipleCurrency("TotalDepositFeeUsd", (string)@ViewBag.TotalDepositFeeUsd, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_US, new { @readonly = true, style = "width:" + @ViewBag.ObjectColCtrlWidth + ";" }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.LABEL)
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-object">
+            @Html.CommonCheckButton("DevideContractFeeBillingFlag", @Resources.CTS010.chkDevideBillingContractFee, null, (bool?)@ViewBag.DevideContractFeeBillingFlag)
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div id="gridBillingTarget" style="width:99%;margin-left:4px;"></div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-object" style="float:right">
+            @Html.CommonButton("btnNewBillingTargetDetail", @Resources.CTS010.btnNew, new { style = "width:100px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+@Html.Partial("CTS010/_CTS010_17")

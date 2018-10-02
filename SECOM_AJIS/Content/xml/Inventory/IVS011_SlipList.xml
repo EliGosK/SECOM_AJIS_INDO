@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="SlipNo" width="145" type="ro"  sort="str_custom">headerStockInSlipNo</column>
+    <column id="PurchaseOrderNo" width="150" type="ro" align="left" sort="str_custom">headerPurchaseOrderNo</column>
+    <column id="DeliveryOrderNoAndSupplierName" width="160"  type="ro" align="left" sort="str_custom">headerSupplierDeliveryOrderNo</column>
+    <column id="StockInTypeCodeName" width="100"  type="ro" align="left" sort="str_custom">headerStockInType</column>
+    <column id="StockInDate" width="100" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerStockInDate</column>
+    <column id="Memo" width="*" type="ro" align="left" sort="str_custom" >headerMemo</column>
+    <column id="RegisterAssetName" width="100" type="ro" align="left" sort="str_custom">lblRegisterAsset</column>
+    <column id="Select" width="30" type="link" align="center" sort="na">headerSelect</column>
+
+    <column id="StockInFlag" width="*" type="ro" align="left" sort="str_custom" hidden="true" >headerMemo</column>
+    <column id="RegisterAssetFlag" width="*" type="ro" align="left" sort="str_custom" hidden="true" ></column>
+    <column id="LockFlag" width="*" type="ro" align="left" sort="str_custom" hidden="true" ></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

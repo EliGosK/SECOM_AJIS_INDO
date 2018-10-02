@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="headerBillingOffice" xml:space="preserve">
+    <value>Billing office</value>
+  </data>
+  <data name="headerContractOffice" xml:space="preserve">
+    <value>Contract office</value>
+  </data>
+  <data name="headerDocumentNo" xml:space="preserve">
+    <value>Document no.</value>
+  </data>
+  <data name="headerDownloadButton" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;Download&lt;/div&gt;</value>
+  </data>
+  <data name="headerDownloadButtonCol" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="headerGenerateDate" xml:space="preserve">
+    <value>Generate date</value>
+  </data>
+  <data name="headerGenerateDateFrom" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="headerGenerateDatTo" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="headerInstrumentLocation" xml:space="preserve">
+    <value>Equipment location</value>
+  </data>
+  <data name="headerIssueOffice" xml:space="preserve">
+    <value>Inv./Inst. slip issue office</value>
+  </data>
+  <data name="headerMonthYear" xml:space="preserve">
+    <value>Month/Year</value>
+  </data>
+  <data name="headerNo" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="headerOperationOffice" xml:space="preserve">
+    <value>Operation office</value>
+  </data>
+  <data name="lblBillingOffice" xml:space="preserve">
+    <value>Billing office</value>
+  </data>
+  <data name="lblBillingTargetCode" xml:space="preserve">
+    <value>Billing customer code</value>
+  </data>
+  <data name="lblClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="lblComboboxAll" xml:space="preserve">
+    <value>----All----</value>
+  </data>
+  <data name="lblComboboxSelect" xml:space="preserve">
+    <value>----Select----</value>
+  </data>
+  <data name="lblContractCodeOcc" xml:space="preserve">
+    <value>Contract no./OCC</value>
+  </data>
+  <data name="lblContractOffice" xml:space="preserve">
+    <value>Contract office</value>
+  </data>
+  <data name="lblDocumentName" xml:space="preserve">
+    <value>Document name</value>
+  </data>
+  <data name="lblDocumentNo" xml:space="preserve">
+    <value>Document no.</value>
+  </data>
+  <data name="lblDocumentType" xml:space="preserve">
+    <value>Document type</value>
+  </data>
+  <data name="lblGenerateDate" xml:space="preserve">
+    <value>Generate date</value>
+  </data>
+  <data name="lblHeader" xml:space="preserve">
+    <value>Download existing document</value>
+  </data>
+  <data name="lblInstrumentCode" xml:space="preserve">
+    <value>Equipment code</value>
+  </data>
+  <data name="lblInstrumentLocation" xml:space="preserve">
+    <value>Equipment location</value>
+  </data>
+  <data name="lblInvoicePrintingService" xml:space="preserve">
+    <value>Invoice printing service</value>
+  </data>
+  <data name="lblIssueOffice" xml:space="preserve">
+    <value>Inv./Inst. slip issue office</value>
+  </data>
+  <data name="lblMonthYear" xml:space="preserve">
+    <value>Month/Year</value>
+  </data>
+  <data name="lblOperationOffice" xml:space="preserve">
+    <value>Operation office</value>
+  </data>
+  <data name="lblProjectCode" xml:space="preserve">
+    <value>Project code</value>
+  </data>
+  <data name="lblQuotationTagetCodeAlphabet" xml:space="preserve">
+    <value>Quotation target code/Alphabet</value>
+  </data>
+  <data name="lblRemarkStar" xml:space="preserve">
+    <value>*Search documents of contract no. bound with seleted project code.</value>
+  </data>
+  <data name="lblSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="lblSearchCondition" xml:space="preserve">
+    <value>Specify search condition</value>
+  </data>
+  <data name="lblSearchResult" xml:space="preserve">
+    <value>Result list</value>
+  </data>
+  <data name="lbBillingAmount" xml:space="preserve">
+    <value>Harga Satuan</value>
+  </data>
+  <data name="lbBillingAmountUsd" xml:space="preserve">
+    <value>US$</value>
+  </data>
+  <data name="lbDiskon" xml:space="preserve">
+    <value>Diskon</value>
+  </data>
+  <data name="lbDPP_Uang_Muka" xml:space="preserve">
+    <value>DPP Uang Muka</value>
+  </data>
+  <data name="lbFP_FP_Pengganti" xml:space="preserve">
+    <value>FP/FP Pengganti</value>
+  </data>
+  <data name="lbIDNo" xml:space="preserve">
+    <value>NPWP</value>
+  </data>
+  <data name="lbInvoiceNo" xml:space="preserve">
+    <value>Referensi</value>
+  </data>
+  <data name="lbIssueInvDate" xml:space="preserve">
+    <value>Tanggal FP</value>
+  </data>
+  <data name="lbIssueInvDateMonth" xml:space="preserve">
+    <value>Masa Pajak</value>
+  </data>
+  <data name="lbIssueInvDateYear" xml:space="preserve">
+    <value>Tahun Pajak</value>
+  </data>
+  <data name="lbJumlah_Barang" xml:space="preserve">
+    <value>Jumlah Barang</value>
+  </data>
+  <data name="lbKeterangan" xml:space="preserve">
+    <value>Keterangan</value>
+  </data>
+  <data name="lbKode_Barang" xml:space="preserve">
+    <value>Kode Barang</value>
+  </data>
+  <data name="lbKode_Jenis_Trans" xml:space="preserve">
+    <value>Kode Jenis Trans</value>
+  </data>
+  <data name="lbNomor_FP" xml:space="preserve">
+    <value>Nomor FP</value>
+  </data>
+  <data name="lbPPN_Uang_Muka" xml:space="preserve">
+    <value>PPN Uang Muka</value>
+  </data>
+  <data name="lbProductNameEN" xml:space="preserve">
+    <value>Nama Barang/Jasa</value>
+  </data>
+  <data name="lbRealBillingClientAddressEN" xml:space="preserve">
+    <value>Alamat Lengkap</value>
+  </data>
+  <data name="lbRealBillingClientNameEN" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="lbUang_Muka" xml:space="preserve">
+    <value>Uang Muka</value>
+  </data>
+  <data name="lbUang_Muka_PPnBM" xml:space="preserve">
+    <value>Uang Muka PPnBM</value>
+  </data>
+  <data name="lblDownload" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="lbApproveContractDate" xml:space="preserve">
+    <value>ApproveContractDate</value>
+  </data>
+  <data name="lbChangeImplementDate" xml:space="preserve">
+    <value>ChangeImplementDate</value>
+  </data>
+  <data name="lbContractDocAuditResult" xml:space="preserve">
+    <value>ContractDocAuditResult</value>
+  </data>
+  <data name="lbContractDocumentType" xml:space="preserve">
+    <value>ContractDocumentType</value>
+  </data>
+  <data name="lbContractNo" xml:space="preserve">
+    <value>ContractNo</value>
+  </data>
+  <data name="lbContractOffice" xml:space="preserve">
+    <value>ContractOffice</value>
+  </data>
+  <data name="lbCustFullName" xml:space="preserve">
+    <value>CustFullName</value>
+  </data>
+  <data name="lbFirstSecurityStartDate" xml:space="preserve">
+    <value>FirstSecurityStartDate</value>
+  </data>
+  <data name="lbLastChangeImplementDate" xml:space="preserve">
+    <value>LastChangeImplementDate</value>
+  </data>
+  <data name="lbLastChangeType" xml:space="preserve">
+    <value>LastChangeType</value>
+  </data>
+  <data name="lbLastOCC" xml:space="preserve">
+    <value>LastOCC</value>
+  </data>
+  <data name="lbOCC" xml:space="preserve">
+    <value>OCC</value>
+  </data>
+  <data name="lbOperationOffice" xml:space="preserve">
+    <value>OperationOffice</value>
+  </data>
+  <data name="lbPremiseName" xml:space="preserve">
+    <value>PremiseName</value>
+  </data>
+  <data name="lbProduct" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="lbSalesman" xml:space="preserve">
+    <value>Salesman</value>
+  </data>
+</root>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <!--  <column id="No"  width="30" type="ro" align="center"></column> -->
+
+    <column id="CompanyName"  width="*" type="ro" align="left">HgridCompanyName</column>
+    <column id="Name"  width="*"  type="ro" align="left">HgridName</column>
+    <column id="TelNo"  width="*"  type="ro" align="left">HgridContactTelephoneNo</column>
+    <column id="Remark"  width="*"  type="ro" align="left">HgridRemark</column>
+    <column id="Edit" width="30" type="ro" align="center">HgridEdit</column>
+    <column id="Remove" width="30" type="ro" align="center">HgridRemove</column>
+
+
+    <!--Hidden-->
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,73 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS220/CTS220_01.js")"></script>
+@{
+    Layout = "";   
+}
+
+@Html.Hidden("PermissionAdd", (bool?)@ViewBag.PermissionAdd)
+@Html.Hidden("PermissionEdit", (bool?)@ViewBag.PermissionEdit)
+@Html.Hidden("PermissionDel", (bool?)@ViewBag.PermissionDel)
+
+<div id="divSpecifyProcessTypeSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS220.lblSpecifyProcessType
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:351px;">
+            @Resources.CTS220.lblContractCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ContractCode", (string)@ViewBag.ContractCode, new { style = "width:100px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:351px;margin-top:17px;">
+            <div class="usr-row">&nbsp;</div>
+            <div class="usr-row">
+                <div style="width:351px;margin-top:4px;" >
+                    @Resources.CTS220.lblProcessType
+                </div>
+            </div>
+            <div class="usr-row">&nbsp;</div>                 
+        </div> 
+        <div class="usr-object">
+            <div class="fieldset-table" style="float:left;width:377px;border-style: dotted;">
+                <div class="usr-row" style="margin-left:10px;">
+                    <div class="usr-object">
+                        @Html.CommonRadioButton("rdoCorrectSecurityData", @Resources.CTS220.lblCorrectSecurityData,null,true,"Process",null)
+                    </div> 
+                </div>
+                <div class="usr-row" style="margin-left:10px;">
+                    <div class="usr-object">
+                        @Html.CommonRadioButton("rdoInsertSecurityOccurence", @Resources.CTS220.lblInsertSecurityOccurence, null, false, "Process", null)
+                    </div> 
+                </div>
+                <div class="usr-row" style="margin-left:10px;">
+                    <div class="usr-object">
+                        @Html.CommonRadioButton("rdoDeleteOperatedOccurence", @Resources.CTS220.lblDeletedOperatedOccurence, null, false, "Process", null)
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:351px;">
+            @Resources.CTS220.lblOccurence
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("Occurence", (string)@ViewBag.Occurence, new { style = "width:50px;", maxlength = "4" })
+            @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-row">  
+        <div class="usr-label" style="width:610px;">&nbsp;</div>     
+        <div class="usr-object">
+            @Html.CommonButton("btnProcess", @Resources.CTS220.lblSelectProcess, new { style = "width:120px;" })
+        </div>
+    </div>
+    <div class="usr-row"></div>
+</div>

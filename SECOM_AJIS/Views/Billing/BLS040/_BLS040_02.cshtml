@@ -1,0 +1,147 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+
+<!-- ======== Html content ======== --->
+
+
+<div id="divFeeInformation" class="main-table" style="margin-top:5px;">
+    <div class="table-header">
+        @Resources.BLS040.lblFeeinformation
+    </div>
+    
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            @Resources.BLS040.lblMonthlyBillingAmount
+        </div>
+        <div class="usr-object" style="width:200px; ">
+            @*@Html.NumericTextBox("MonthlyBillingAmount", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyBillingAmount", (string)@ViewBag.OrderContractFee, null, new { style = "width:140px;", @readonly = true })
+        </div>
+        @*<div class="usr-object" style="width:30px; margin-left:5px;" >
+            @Html.LabelCurrencyUnit("")
+        </div>*@
+        <div class="usr-label" style="width:235px;">
+            @Resources.BLS040.lblPaymentMethod
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width; ">
+            @Html.PaymentMethodComboBox("PaymentMethod", new { style = "width: 260px;" }, "ValueDisplay")
+            @Html.Hidden("OldPaymentMethod")
+        </div>
+    </div>   
+
+
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            @Resources.BLS040.lblBillingCycle
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.NumericTextBox("BillingCycle", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "2" })
+        </div>  
+        
+        <div class="usr-label" style="width:305px;">
+           @Resources.BLS040.lblCreditTerm
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText;">
+            @Html.NumericTextBox("CreditTerm", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "2" })
+        </div>     
+    </div>
+
+
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            @Resources.BLS040.lblCalculationDailyFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">            
+            @Html.CalculationDailyFeeComboBox2("CalDailyFeeStatus", new { style = "width:135px;" })
+        </div>  
+        
+        <div class="usr-label" style="width:305px;">
+           @Resources.BLS040.lblLastBillingDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText;">
+            @Html.CommonTextBox("LastBillingDate", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>     
+    </div>
+
+
+
+
+
+    <div class="usr-row">
+         <div class="usr-label firstColWidth" ></div>
+        <div class="usr-object" style="width:180px;">
+             @Html.CommonCheckButton("CarefulFlag", @Resources.BLS040.lblCarefulSpecial, null, false) 
+        </div>  
+        
+        <div class="usr-label" style="width:255px;">
+           @Resources.BLS040.lblAdjustEndingDateofBillingPeriod
+        </div>
+        <div class="usr-object" style="width:160px;">
+            <input type="text" id="AdjustEndDate" name="AdjustEndDate" style="width:130px;" />
+        </div>    
+        <div class="usr-object" >
+            @Html.LabelDateFormat("AdjustEndDate")
+        </div> 
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label firstColWidth">
+            @Resources.BLS040.lblManageCodeForSortDetails
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("SortingType", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "10" })
+        </div>  
+        
+        <div class="usr-label" style="width:300px;">&nbsp;</div>
+        <div class="usr-object" style="width:@ViewBag.lbWidth;">
+             @Html.CommonCheckButton("VATUnchargedFlag", @Resources.BLS040.lblVatUnchargedBillingTarget, null, false) 
+        </div>  
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            @Resources.BLS040.lblBillingFlag
+        </div>
+        <div class="usr-object" style="width: 220px;">
+            
+            @Html.BillingFlagComboBox("StopBillingFlag", new { style = "width:220px;" })
+            @Html.Hidden("OldBillingFlag")
+        </div>  
+        
+        <div class="usr-label" style="width:215px;">
+           @Resources.BLS040.lblMonthlyFeeBeforeStop
+        </div>
+        <div class="usr-object" style="width:200px;">
+            @*@Html.NumericTextBox("MonthlyFeeBeforeStop", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyFeeBeforeStop", (string)@ViewBag.OrderContractFee, null, new { style = "width:140px;", @readonly = true })
+        </div>  
+         @*<div class="usr-object" style="width:30px; margin-left:5px;" >
+            @Html.LabelCurrencyUnit("")
+        </div>*@  
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label firstColWidth">
+            @Resources.BLS040.lblBalanceofDepositFee
+        </div>
+        <div class="usr-object" style="width:200px;">
+            @*@Html.CommonTextBox("BalanceDeposit", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })*@
+            @Html.NumericTextBoxWithMultipleCurrency("BalanceDeposit", (string)@ViewBag.OrderContractFee, null, new { style = "width:140px;", @readonly = true })
+        </div>
+        
+         @*<div class="usr-object" style="width:30px; margin-left:5px;" >
+            @Html.LabelCurrencyUnit("")
+        </div>*@
+        
+        <div class="usr-label" style="width: 230px ;">&nbsp;</div>
+        <div class="usr-object" style="width:260px;">
+             @Html.CommonCheckButton("ResultBasedMaintenanceFlag", @Resources.BLS040.lblResultBasedMaintenanceBilling, null, false) 
+        </div>  
+    </div>
+
+     @*space*@
+     <div class="usr-row" style="height: 10px">&nbsp;</div>
+   <div class="usr-clear-style" style="height:0px;">&nbsp;</div>
+</div>
+

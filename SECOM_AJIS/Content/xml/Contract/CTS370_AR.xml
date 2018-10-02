@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="0" type="ro" align="center"></column>
+    <column id="HeadCode" width="0" type="ro" align="center" hidden="true"></column>
+    <column id="HeadName" width="0" type="ro" align="center" hidden="true"></column>
+    <column id="ARStatus" width="50" type="ro" align="center"></column>
+    <column id="ARFlag" width="25" type="ro" align="center"></column>
+    <column id="ARID" width="0" type="ro" align="center" hidden="true"></column>
+    <column id="ARNo" width="115" type="ro" align="center" sort="str_custom">headerRequestNo</column>
+    <!--<column id="DueDateDeadline" width="100" type="ro" align="left" sort="str_custom">headerDueDateDeadline</column>-->
+    <column id="ARType" width="*" type="ro" align="left" sort="str_custom">headerARType</column>
+    <column id="ApproverName" width="145" type="ro" align="left" sort="str_custom">headerApprover</column>
+    <column id="RequesterName" width="145" type="ro" align="left" sort="str_custom">headerRequester</column>
+    <column id="RegisterDate" width="105" type="ro" align="left" sort="str_custom">headerRegisterDate</column>
+    <column id="CompleteDate" width="110" type="ro" align="left" sort="str_custom">headerCompleteDate</column>
+    <column id="Status" width="130" type="ro" align="left" sort="str_custom">headerStatus</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

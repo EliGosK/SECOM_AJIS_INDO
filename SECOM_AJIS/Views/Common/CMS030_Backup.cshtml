@@ -1,0 +1,245 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS030.js")"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/css/Common/cms030.css")" media="all" />
+
+
+}
+@{
+    
+    ViewBag.LabelWidth = "150px";
+    
+}
+<!-- ===== Search condition ===== -->
+<div class="main-table">
+    <div class="table-header">
+        @Resources.CMS030.lblSearchCondition
+    </div>
+    <table style="width: 100%;">
+        <tr style="height: 0px;">
+            <td style="width: @ViewBag.LabelWidth ;">
+            </td>
+            <td style="width: 300px;">
+            </td>
+            <td style="width: 150px;">
+            </td>
+            <td>
+            </td>
+        </tr>
+        <form id="formSearch" action="#" style="margin: 0px">
+        <tr>
+            <td>
+                <div align="right">
+                    <span id="lblDocumentType">@Resources.CMS030.lblDocumentType </span>
+                </div>
+            </td>
+            <td>
+                @Html.DocumentTypeCombo("DocumentType", new { style = "height: 22px; width: 270px;" })
+                <span id="star1" class="star">*</span>
+            </td>
+            <td>
+                <div align="right">
+                    <span id="lblDocumentName">@Resources.CMS030.lblDocumentName</span></div>
+            </td>
+            <td>
+
+                @Html.DocumentNameComboBox("DocumentCode", null, new { style = "height: 22px; width: 254px;" })
+
+                <span id="star2" class="star">*</span>
+            </td>
+        </tr>
+        <tr id="trHide1">
+            <td>
+                <div align="right">
+                    <span id="lblGenerateDate">@Resources.CMS030.lblGenerateDate</span></div>
+            </td>
+            <td colspan="3">
+                <div id = "GenDate">
+                @Html.CommonTextBox("GenerateDateFrom", null, new { style = "width:100px;" })
+                <label>
+                    ~</label>
+                @Html.CommonTextBox("GenerateDateTo", null, new { style = "width:100px;" })
+                <label id = "lblddmmyyyy">(ddMMyyyy)</label>
+                </div>
+            </td>
+        </tr>
+        <tr id="trHide2">
+            <td>
+                <div align="right"><span id="lblMonthYear">@Resources.CMS030.lblMonthYear</span></div>
+            </td>
+            <td colspan="3">
+                @Html.MonthComboBox("Month", new { style = "height: 22px; width: 100px;" })
+                @Html.YearComboBox("Year", new { style = "height: 22px; width: 100px;" })
+            </td>
+        </tr>
+        <tr id="trHide3">
+            <td>
+                <div align="right"><span id="lblContractOffice">@Resources.CMS030.lblContractOffice</span></div>
+            </td>
+            <td>
+                @Html.ContractOfficeCombo("ContractOfficeCode", new { style = "height: 22px; width: 204px;" })
+            </td>
+            <td>
+                <div align="right"><span id="lblOperationOffice">@Resources.CMS030.lblOperationOffice</span></div>
+            </td>
+            <td>
+                 @Html.ContractOfficeCombo("OperationOfficeCode", new { style = "height: 22px; width: 204px;" })
+            </td>
+        </tr>
+        <tr id="trHide4">
+            <td>
+                <div align="right"><span id="lblBillingOffice">@Resources.CMS030.lblBillingOffice</span></div>
+            </td>
+            <td>
+                @Html.BillingOfficeCombo("BillingOfficeCode", new { style = "height: 22px; width: 204px;" })
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr id="trHide5">
+            <td>
+                <div align="right"><span id="lblIssueOffice">@Resources.CMS030.lblIssueOffice</span></div>
+            </td>
+            <td>
+                <select name="IssueOfficeCode" id="IssueOfficeCode" style="width: 204px;"></select>
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr id="trHide6">
+            <td>
+                <div align="right"><span id="lblDocumentNo">@Resources.CMS030.lblDocumentNo</span></div>
+            </td>
+            <td>
+                @Html.CommonTextBox("DocumentNo", null, new { style = "width:150px;" })
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr id="trHide7">
+            <td>
+                <div align="right"><span id="lblQuotationTagetCodeAlphabet">@Resources.CMS030.lblQuotationTagetCodeAlphabet</span></div>
+            </td>
+            <td>
+                @Html.CommonTextBox("QuotationTargetCode", null, new { style = "width:150px;" })
+                @Html.CommonTextBox("Alphabet", null, new { style = "width:15%;" })
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr id="trHide8">
+            <td>
+                <div align="right"><span id="lblContractCodeOcc">@Resources.CMS030.lblContractCodeOcc</span></div>
+            </td>
+            <td>
+                @Html.CommonTextBox("ContractCode", null, new { style = "width:150px;" })
+                @Html.CommonTextBox("OCC", null, new { style = "width:15%;" })
+            </td>
+            <td>
+                <div align="right"><span id="lblProjectCode">@Resources.CMS030.lblProjectCode</span></div>
+            </td>
+            <td>
+                @Html.CommonTextBox("ProjectCode", null, new { style = "width:150px;" })
+            </td>
+        </tr>
+        <tr id="trHide9">
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                <span id="lblRemarkStar" class="remark">@Resources.CMS030.lblRemarkStar</span>
+            </td>
+        </tr>
+        <tr id="trHide10">
+            <td>
+                <div align="right"><span id="lblInstrumentCode">@Resources.CMS030.lblInstrumentCode</span></div>
+            </td>
+            <td>
+                @Html.CommonTextBox("InstrumentCode", null, new { style = "width:150px; " })
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        <tr id="trHide11">
+            <td>
+                <div align="right"><span id="lblBillingTargetCode">@Resources.CMS030.lblBillingTargetCode</span></div>
+            </td>
+            <td>
+                @Html.CommonTextBox("BillingTargetCode", null, new { style = "width:150px;" })
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+        </tr>
+        </form>
+        <!--====================== Button row ==========================-->
+        <tr>
+            <td colspan="4">
+                <div align="right">
+                    @Html.CommonButton("btnInvoicePrintingService", @Resources.CMS030.lblInvoicePrintingService, new { style = "width: 200px;", type = "button" })
+                    &nbsp;
+                    @Html.CommonButton("btnSearch", @Resources.CMS030.lblSearch, new { style = "width: 80px;", type = "button" })
+                    &nbsp;
+                    @Html.CommonButton("btnClear", @Resources.CMS030.lblClear, new { style = "width: 80px;", type = "button" })
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="table-line">
+</div>
+<!-- ===== Search result ===== -->
+<div id="divSearchResult" class="main-table">
+    <div class="table-header">
+        @Resources.CMS060.lblResultList
+    </div>
+    <div id="mygrid_container" style="width: 99%; height: 100px;">
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+<div class="table-line"></div>

@@ -1,0 +1,18 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+}
+
+@section page_header{
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <script src="../../Scripts/Contract/CTS261.js" type="text/javascript"></script>
+}
+<div class="main-table">
+    <div id="GridViewContractDetail">
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+<div style="display:none;">
+    @Html.Hidden("btnCancel_CTS261", @Resources.CTS261.btnCancel)
+</div>

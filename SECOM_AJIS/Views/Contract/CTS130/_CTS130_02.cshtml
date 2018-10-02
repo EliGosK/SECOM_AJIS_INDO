@@ -1,0 +1,126 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "125px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS130/CTS130_02.js")"></script>
+<div id="divSaleContractBasicSection" class="main-table" style="height: auto">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS130.lblContractBasicInformationSale
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS130.lblContractCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("SL_ContractCode", (string)@ViewBag.ContractCodeShort, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS130.lblCustomerCodePurchaser
+        </div>
+        <div class="usr-object" style = "width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("SL_Purchaser", (string)@ViewBag.Purchaser, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 220px">
+            @Resources.CTS130.lblCustomerCodeReal
+        </div>
+        <div class="usr-object" style = "width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("SL_RealCustomerCustCode", (string)@ViewBag.RealCustomerCustCode, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: 115px">
+            @Resources.CTS130.lblSiteCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("SL_SiteCode", (string)@ViewBag.SiteCode, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        </div>
+        <div class="usr-object">
+            @Html.CommonCheckButton("SL_PurchaserImportantFlag", @Resources.CTS130.lblPurchaserImportantCustomer, "", (bool?)@ViewBag.ImportantFlag, new { disabled = "disabled" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS130.lblPurchaserNameEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SL_PurchaserNameEnglish", (string)@ViewBag.PurchaserNameEnglish, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "200", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS130.lblRealCustomerNameEnduserEN
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SL_RealCustomerNameEN", (string)@ViewBag.RealCustomerNameEN, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "1600", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS130.lblSiteNameEnglishSale
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SL_SiteNameEN", (string)@ViewBag.SiteNameEN, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "200", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height: 5px">
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS130.lblPurchaserNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SL_PurchaserNameLocal", (string)@ViewBag.PurchaserNameLocal, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "1600", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS130.lblRealCustomerNameEnduserLC
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SL_RealCustomerNameLC", (string)@ViewBag.RealCustomerNameLC, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "1600", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS130.lblSiteNameLocalSale
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SL_SiteNameLC", (string)@ViewBag.SiteNameLC, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "1600", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row" style="height: 5px">
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS130.lblContractOffice
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("SL_ContractOffice", (string)@ViewBag.ContractOffice, new { @readonly = "readonly", style = "width:200px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS130.lblOperationOffice
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("SL_OperationOffice", (string)@ViewBag.OperationOffice, new { @readonly = "readonly", style = "width:200px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+    </div>
+</div>

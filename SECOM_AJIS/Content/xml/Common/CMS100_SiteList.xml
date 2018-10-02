@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="SiteCodeShort" width="130" type="ro" align="left" sort="str_custom">headerSiteCode</column>
+    <column id="SiteNameForShow" width="170" type="ro" align="left" sort="str_custom">headerSitename</column>
+    <column id="AddressFullForShow" width="*" type="ro" align="left" sort="str_custom">headerAddress</column>
+    <column id="NumOfContract" width="80" type="ro" align="right" sort="str_custom">headerNumberofContract</column>
+    <column id="Detail" width="100" type="link" align="center" sort="na">headerSiteinfo</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

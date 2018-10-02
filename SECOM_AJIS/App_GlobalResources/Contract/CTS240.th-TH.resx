@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="headerAttachedDocumentList" xml:space="preserve">
+    <value>รายการเอกสารแนบ</value>
+  </data>
+	<data name="headerExpectedInstrumentDetail" xml:space="preserve">
+    <value>รายละเอียดอุปกรณ์ที่คาดว่าจะใช้</value>
+  </data>
+	<data name="headerOtherProjectRelatedCompanyPerson" xml:space="preserve">
+    <value>บริษัทอื่น/บุคคลในบริษัทอื่นที่เกี่ยวข้องกับโครงการ</value>
+  </data>
+	<data name="headerOtherProjectRelatedCompanyPersonInformation" xml:space="preserve">
+    <value>ข้อมูลบริษัทอื่น/บุคคลในบริษัทอื่นที่เกี่ยวข้องกับโครงการ</value>
+  </data>
+	<data name="headerProjectInformation" xml:space="preserve">
+    <value>ข้อมูลโครงการ</value>
+  </data>
+	<data name="headerProjectManagementCompany" xml:space="preserve">
+    <value>บริษัทที่ดูแลจัดการโครงการ</value>
+  </data>
+	<data name="headerProjectOwner" xml:space="preserve">
+    <value>เจ้าของโครงการ</value>
+  </data>
+	<data name="headerProjectPurchaser" xml:space="preserve">
+    <value>ผู้ซื้องานโครงการ</value>
+  </data>
+	<data name="headerProjectStockOutInstrumentDetail" xml:space="preserve">
+    <value>รายละเอียดของออกสำหรับโครงการ</value>
+  </data>
+	<data name="headerProjectWipWHInstrumentDetail" xml:space="preserve">
+    <value>รายละเอียดอุปกรณ์ในคลังสินค้า WIP ของโครงการ</value>
+  </data>
+	<data name="headerSecomInformation" xml:space="preserve">
+    <value>ข้อมูลของซีคอม</value>
+  </data>
+	<data name="headerSpecifyProcessType" xml:space="preserve">
+    <value>ระบุประเภทการทำงาน</value>
+  </data>
+	<data name="headerSupportStaff" xml:space="preserve">
+    <value>พนักงานซัพพอร์ต</value>
+  </data>
+	<data name="headerSupportStaffInformation" xml:space="preserve">
+    <value>ข้อมูลพนักงานซัพพอร์ต</value>
+  </data>
+	<data name="headerSystemProduct" xml:space="preserve">
+    <value>ระบบ (สินค้า)</value>
+  </data>
+	<data name="headerSystemProductInformation" xml:space="preserve">
+    <value>ข้อมูลระบบ (สินค้า)</value>
+  </data>
+	<data name="HgridAllStockOutQty" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ออกทั้งหมด</value>
+  </data>
+	<data name="HgridAssignedBranchQty" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ที่จองแล้ว</value>
+  </data>
+	<data name="HgridAssignForCurrentBranchQty" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ที่จองครั้งนี้</value>
+  </data>
+	<data name="HgridBelonging" xml:space="preserve">
+    <value>สังกัด</value>
+  </data>
+	<data name="HgridDelete" xml:space="preserve">
+    <value>&lt;div style="display:none"&gt;ลบ&lt;/div&gt;</value>
+  </data>
+	<data name="HgridDocumentName" xml:space="preserve">
+    <value>ชื่อเอกสาร</value>
+  </data>
+	<data name="HgridInstrumentCode" xml:space="preserve">
+    <value>รหัสอุปกรณ์</value>
+  </data>
+	<data name="HgridInstrumentName" xml:space="preserve">
+    <value>ชื่ออุปกรณ์</value>
+  </data>
+	<data name="HgridNotAssignedBranchQty" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ที่ยังไม่ได้จอง</value>
+  </data>
+	<data name="HgridProjectBranchNo" xml:space="preserve">
+    <value>เลขที่กลุ่มย่อย</value>
+  </data>
+	<data name="HgridQuantity" xml:space="preserve">
+    <value>จำนวน</value>
+  </data>
+	<data name="HgridRemainQuantity" xml:space="preserve">
+    <value>จำนวนอุปกรณ์คงเหลือ</value>
+  </data>
+	<data name="HgridRemark" xml:space="preserve">
+    <value>หมายเหตุ</value>
+  </data>
+	<data name="HgridRemove" xml:space="preserve">
+    <value>&lt;div style="display:none"&gt;ลบ&lt;/div&gt;</value>
+  </data>
+	<data name="HgridEmployeeNo" xml:space="preserve">
+    <value>รหัสพนักงาน</value>
+  </data>
+	<data name="HgridTotalQuantity" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ทั้งหมด</value>
+  </data>
+	<data name="lblAddressEnglish" xml:space="preserve">
+    <value>ที่อยู่ (อังกฤษ)</value>
+  </data>
+	<data name="lblAddressLocal" xml:space="preserve">
+    <value>ที่อยู่ (ไทย)</value>
+  </data>
+	<data name="lblBiddingDate" xml:space="preserve">
+    <value>วันที่ประมูลโครงการ</value>
+  </data>
+	<data name="lblBusinessType" xml:space="preserve">
+    <value>ประเภทธุรกิจ</value>
+  </data>
+	<data name="lblClearCustomer" xml:space="preserve">
+    <value>ล้างข้อมูลลูกค้า</value>
+  </data>
+	<data name="lblCompanyName" xml:space="preserve">
+    <value>ชื่อบริษัท</value>
+  </data>
+	<data name="lblCompanyNameEnglish" xml:space="preserve">
+    <value>ชื่อบริษัท (อังกฤษ)</value>
+  </data>
+	<data name="lblCompanyNameLocal" xml:space="preserve">
+    <value>ชื่อบริษัท (ไทย)</value>
+  </data>
+	<data name="lblContactTelephoneNo" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์ติดต่อ</value>
+  </data>
+	<data name="lblCustomerCode" xml:space="preserve">
+    <value>รหัสลูกค้า</value>
+  </data>
+	<data name="lblCustomerStatus" xml:space="preserve">
+    <value>สถานะลูกค้า</value>
+  </data>
+	<data name="lblCustomerType" xml:space="preserve">
+    <value>ประเภทลูกค้า</value>
+  </data>
+	<data name="lblHeadSalesman" xml:space="preserve">
+    <value>พนักงานขายหลัก</value>
+  </data>
+	<data name="lblIdNoTaxIdNo" xml:space="preserve">
+    <value>เลขประจำตัวประชาชน/เลขประจำตัวผู้เสียภาษี</value>
+  </data>
+	<data name="lblInstallationChief" xml:space="preserve">
+    <value>ผู้รับผิดชอบการติดตั้ง</value>
+  </data>
+	<data name="lblLastOrderAmount" xml:space="preserve">
+    <value>จำนวนเงินที่สั่งซื้อครั้งล่าสุด</value>
+  </data>
+	<data name="lblName" xml:space="preserve">
+    <value>ชื่อ</value>
+  </data>
+	<data name="lblNameEnglish" xml:space="preserve">
+    <value>ชื่อ (อังกฤษ)</value>
+  </data>
+	<data name="lblNameLocal" xml:space="preserve">
+    <value>ชื่อ (ไทย)</value>
+  </data>
+	<data name="lblNationality" xml:space="preserve">
+    <value>สัญชาติ</value>
+  </data>
+	<data name="lblNewEditCustomerInfo" xml:space="preserve">
+    <value>สร้าง/แก้ไขข้อมูลลูกค้า</value>
+  </data>
+	<data name="lblOverallBudgetAmount" xml:space="preserve">
+    <value>งบประมาณทั้งหมด</value>
+  </data>
+	<data name="lblOwner1NameEnglish" xml:space="preserve">
+    <value>ชื่อเจ้าของโครงการ 1 (อังกฤษ)</value>
+  </data>
+	<data name="lblOwner1NameLocal" xml:space="preserve">
+    <value>ชื่อเจ้าของโครงการ 1 (ไทย)</value>
+  </data>
+	<data name="lblOwner2NameEnglish" xml:space="preserve">
+    <value>ชื่อเจ้าของโครงการ 2 (อังกฤษ)</value>
+  </data>
+	<data name="lblOwner2NameLocal" xml:space="preserve">
+    <value>ชื่อเจ้าของโครงการ 2 (ไทย)</value>
+  </data>
+	<data name="lblPjManager" xml:space="preserve">
+    <value>ผู้ดูแลโครงการ</value>
+  </data>
+	<data name="lblPjSubManager" xml:space="preserve">
+    <value>ผู้ช่วยผู้ดูแลโครงการ</value>
+  </data>
+	<data name="lblProcessType" xml:space="preserve">
+    <value>ประเภทการทำงาน</value>
+  </data>
+	<data name="lblProjectCode" xml:space="preserve">
+    <value>เลขที่โครงการ</value>
+  </data>
+	<data name="lblProjectName" xml:space="preserve">
+    <value>ชื่อโครงการ</value>
+  </data>
+	<data name="lblProjectRepresentativeAddress" xml:space="preserve">
+    <value>ที่อยู่สำหรับติดต่อเกี่ยวกับโครงการ</value>
+  </data>
+	<data name="lblProjectStatus" xml:space="preserve">
+    <value>สถานะของโครงการ</value>
+  </data>
+	<data name="lblReceivedBudgetAmount" xml:space="preserve">
+    <value>งบประมาณที่ได้รับมา</value>
+  </data>
+	<data name="lblReceivedInstallationFee" xml:space="preserve">
+    <value>ค่าติดตั้งที่ได้รับมา</value>
+  </data>
+	<data name="lblReceivedInstrumentPrice" xml:space="preserve">
+    <value>ค่าอุปกรณ์ที่ได้รับมา</value>
+  </data>
+	<data name="lblRemark" xml:space="preserve">
+    <value>หมายเหตุ</value>
+  </data>
+	<data name="lblSearchCustomer" xml:space="preserve">
+    <value>ค้นหาลูกค้า</value>
+  </data>
+	<data name="lblSecurityPlanningChief" xml:space="preserve">
+    <value>ผู้รับผิดชอบการวางแผนด้านความปลอดภัย</value>
+  </data>
+	<data name="lblSelectOwner1" xml:space="preserve">
+    <value>เลือกเจ้าของโครงการ 1</value>
+  </data>
+	<data name="lblSelectOwner2" xml:space="preserve">
+    <value>เลือกเจ้าของโครงการ 2</value>
+  </data>
+	<data name="lblSpecifyCustomerCode" xml:space="preserve">
+    <value>ระบุรหัสลูกค้า</value>
+  </data>
+	<data name="lblSystemProductName" xml:space="preserve">
+    <value>ชื่อระบบ (สินค้า)</value>
+  </data>
+	<data name="lblTelephoneNo" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์</value>
+  </data>
+	<data name="lblUrl" xml:space="preserve">
+    <value>URL</value>
+  </data>
+	<data name="lblBtnAdd" xml:space="preserve">
+    <value>เพิ่ม</value>
+  </data>
+	<data name="lblBtnAddUpdate" xml:space="preserve">
+    <value>เพิ่ม/ปรับปรุง</value>
+  </data>
+	<data name="lblBtnCancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+	<data name="lblBtnClear" xml:space="preserve">
+    <value>ล้าง</value>
+  </data>
+	<data name="lblBtnClearCustomer" xml:space="preserve">
+    <value>ล้างข้อมูลลูกค้า</value>
+  </data>
+	<data name="lblBtnDelete" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+	<data name="lblBtnDownload" xml:space="preserve">
+    <value>ดาวน์โหลด</value>
+  </data>
+	<data name="lblBtnEdit" xml:space="preserve">
+    <value>แก้ไข</value>
+  </data>
+	<data name="lblBtnNew" xml:space="preserve">
+    <value>สร้างใหม่</value>
+  </data>
+	<data name="lblBtnNewBranchNo" xml:space="preserve">
+    <value>สร้างเลขที่กลุ่มย่อยใหม่</value>
+  </data>
+	<data name="lblBtnNewEditCustomerInfo" xml:space="preserve">
+    <value>สร้าง/แก้ไขข้อมูลลูกค้า</value>
+  </data>
+	<data name="lblBtnRemove" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+	<data name="lblBtnRetrieve" xml:space="preserve">
+    <value>ดึงข้อมูล</value>
+  </data>
+	<data name="lblBtnSearchCustomer" xml:space="preserve">
+    <value>ค้นหาลูกค้า</value>
+  </data>
+	<data name="lblBtnSearchInstrument" xml:space="preserve">
+    <value>ค้นหาอุปกรณ์</value>
+  </data>
+	<data name="lblBtnSelectProcess" xml:space="preserve">
+    <value>เลือกการทำงาน</value>
+  </data>
+	<data name="lblRdoCancelProjectCode" xml:space="preserve">
+    <value>ยกเลิกเลขที่โครงการ</value>
+  </data>
+	<data name="lblRdoDifferentFromProjectPurchaser" xml:space="preserve">
+    <value>ต่างกับผู้ซื้องานโครงการ</value>
+  </data>
+	<data name="lblRdoModifyAddProjectData" xml:space="preserve">
+    <value>เพิ่ม/แก้ไขข้อมูลโครงการ</value>
+  </data>
+	<data name="lblRdoRegisterProjectLastComplete" xml:space="preserve">
+    <value>บันทึกโครงการเสร็จสิ้นทั้งหมด</value>
+  </data>
+	<data name="lblRdoSameAsProjectPurchaser" xml:space="preserve">
+    <value>เหมือนกับผู้ซื้องานโครงการ</value>
+  </data>
+	<data name="lblStockoutMemo" xml:space="preserve">
+    <value>บันทึกเกี่ยวกับการนำอุปกรณ์ออก</value>
+  </data>
+	<data name="HgridName" xml:space="preserve">
+    <value>ชื่อ</value>
+  </data>
+	<data name="HgridEdit" xml:space="preserve">
+    <value>&lt;div style="display:none"&gt;แก้ไข&lt;/div&gt;</value>
+  </data>
+	<data name="btnClear" xml:space="preserve">
+    <value>ล้าง</value>
+  </data>
+	<data name="btnRetrieve" xml:space="preserve">
+    <value>ดึงข้อมูล</value>
+  </data>
+	<data name="btnSearch" xml:space="preserve">
+    <value>ค้นหา</value>
+  </data>
+	<data name="lblSelectProcessType" xml:space="preserve">
+    <value>เลือกประเภทการทำงาน</value>
+  </data>
+	<data name="lblSpecifyProjectCode" xml:space="preserve">
+    <value>ระบุเลขที่โครงการ</value>
+  </data>
+</root>

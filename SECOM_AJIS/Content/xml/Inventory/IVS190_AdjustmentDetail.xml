@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="InstrumentCode" width="100" type="ro"  sort="na">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="na">headerInstrumentName</column>
+    <column id="AreaCodeName" width="220" type="ro"  sort="na">headerInstrumentArea</column>
+    <column id="InstrumentQty" width="100" type="edn" align="right" format="0,000" sort="na">headerStockAdjustmentQty</column>
+    <column id="StockAdjQty" width="100" type="link" align="right" sort="na">headerFixStockAdjustmentQty</column>
+    <column id="StockAdjAmount" width="100" type="ro" align="right" sort="na">headerFixStockAdjustmentAmount</column>
+    <column id="BtnRemove" width="30" type="ro" align="center" sort="na">headerButtonRemove</column>
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="ProductCodeName"  width="*" type="ro" align="left" sort="na">lblSystemProductName</column>
+    <column id="Remove"  width="30"  type="ro" align="center" sort="na">HgridRemove</column>
+
+
+    <!--Hidden-->
+    <column id="tmpCol" width="*" hidden="true" type="ro" align="center"></column>
+    <column id="ProductCode"  width="*" type="ro" hidden="true" align="left"></column>
+    <column id="ProductName"  width="*" type="ro" hidden="true" align="left"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

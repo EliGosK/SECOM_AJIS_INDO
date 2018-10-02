@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="30" type="ro" align="center" sort="na"></column>
+    <column id="DocNo" width="*" type="ro" align="left" sort="str_custom">headerDocNo</column>
+    <column id="DocDate" width="100" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerDocDate</column>
+    <column id="PaymentAmountShow" width="160" type="ro" align="right" sort="str_custom">headerAmount</column>
+    <column id="BillingTargetCode" width="0" type="ro"  hidden="true"></column>
+
+    <column id="PaymentAmount" width="0" type="ro"  hidden="true"></column>
+      
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

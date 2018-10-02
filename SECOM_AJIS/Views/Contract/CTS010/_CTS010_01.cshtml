@@ -1,0 +1,163 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+<div style="display:none;">
+    @Html.Hidden("ScreenMode", (int)@ViewBag.ScreenMode);
+    @Html.Hidden("C_SERVICE_TYPE_RENTAL", SECOM_AJIS.Common.Util.ConstantValue.ServiceType.C_SERVICE_TYPE_RENTAL)
+    @Html.Hidden("C_TARGET_CODE_TYPE_QTN_CODE", SECOM_AJIS.Common.Util.ConstantValue.TargetCodeType.C_TARGET_CODE_TYPE_QTN_CODE)
+    @Html.Hidden("C_CONTRACT_TRANS_STATUS_QTN_REG", SECOM_AJIS.Common.Util.ConstantValue.ContractTransferStatus.C_CONTRACT_TRANS_STATUS_QTN_REG)
+    @Html.Hidden("ApproveQuotationTargetCode", (string)@ViewBag.QuotationTargetCode)
+</div>
+<div id="divQuotationTargetInfo" class="main-table">
+    <div class="table-header">
+        @Resources.CTS010.lblSpecifyQuotation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblQuotationCode</div>
+        <div class="usr-object" style="width:200px;margin-right:5px;">
+            @Html.CommonTextBox("QuotationTargetCode", null, new { maxlength = CommonValue.C_MAXLENGTH_QUOTATION_TARGE_CODE, style = "width:142px;" })
+            @Html.CommonTextBox("Alphabet", null, new { maxlength = "2", style = "width:30px;" })
+            @Html.RequireFiled()
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnRetrieveQuotationTarget", @Resources.CTS010.btnRetrieveQuotationTarget, new { style = "width:100px;" })
+            @Html.CommonButton("btnSearchQuotationTarget", @Resources.CTS010.btnSearchQuotationTarget, new { style = "width:180px;" })
+            @if (ViewBag.HideChangeQuotationButton != true)
+            {
+                @Html.CommonButton("btnChangeQuotationTarget", @Resources.CTS010.btnChangeQuotationTarget, new { style = "width:180px;" })
+            }
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblContractTargetNameEN</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CustFullNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblSiteNameEN</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblSiteAddressEN</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("AddressFullEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblContractTargetNameLC</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CustFullNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblSiteNameLC</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("SiteNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblSiteAddressLC</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("AddressFullLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>
+    <div id="divQuotationTarget_ContractInfo">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblProductName</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                @Html.CommonTextBox("ProductCodeName", null, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblDispatchType</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("DispatchTypeCodeName", null, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblSecurityAreaSize
+            </div>
+            <div class="usr-object" style="width:190px;">
+                <div style="float:left">@Html.NumericTextBox("SecurityAreaFrom", null, new { @readonly = true, style = "width:80px;" })</div>
+                <div id="divSecurityAreaFromTo" class="label-unit">-&nbsp;</div>
+                <div style="float:left">@Html.NumericTextBox("SecurityAreaTo", null, new { @readonly = true, style = "width:80px;" })</div>
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="fieldset-table">
+                <div class="fieldset-header">
+                    <span>@Resources.CTS010.lblTelephoneLineInformation</span>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.CTS010.lblNormalSignal 
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol12_SWidth;">
+                        <div style="float:left;margin:0px 3px 0 0;padding-top:2px;">
+                            @Resources.CTS010.lblLineType 
+                        </div>
+                        <div style="float:left;">
+                            @Html.CommonTextBox("PhoneLineTypeCodeName1", null, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                        </div>
+                    </div>
+                    <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                        @Resources.CTS010.lblTelephoneOwner
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                        @Html.CommonTextBox("PhoneLineOwnerTypeCodeName1", null, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.CTS010.lblImageMonitoring
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol12_SWidth;">
+                        <div style="float:left;margin:0px 3px 0 0;padding-top:2px;">
+                            @Resources.CTS010.lblLineType 
+                        </div>
+                        <div style="float:left;">
+                            @Html.CommonTextBox("PhoneLineTypeCodeName2", null, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                        </div>
+                    </div>
+                    <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                        @Resources.CTS010.lblTelephoneOwner
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                        @Html.CommonTextBox("PhoneLineOwnerTypeCodeName2", null, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                        @Resources.CTS010.lblDisconnectionMonitoring
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol12_SWidth;">
+                        <div style="float:left;margin:0px 3px 0 0;padding-top:2px;">
+                            @Resources.CTS010.lblLineType 
+                        </div>
+                        <div style="float:left;">
+                            @Html.CommonTextBox("PhoneLineTypeCodeName3", null, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                        </div>
+                    </div>
+                    <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                        @Resources.CTS010.lblTelephoneOwner
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                        @Html.CommonTextBox("PhoneLineOwnerTypeCodeName3", null, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                    </div>
+                </div>
+                <div class="usr-clear-style">&nbsp;</div>
+            </div>
+        </div>
+        <div class="usr-row" style="margin-top:10px;">
+            @Html.ServiceTypeCheckButtonList("ServiceType", (string)@Resources.CTS010.lblProvidedServiceType, true, null, new { @disabled = "disabled" })
+        </div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div style="float:right">
+            @Html.CommonButton("btnViewQuotationDetail", @Resources.CTS010.btnViewQuotationDetail, new { style = "width:180px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

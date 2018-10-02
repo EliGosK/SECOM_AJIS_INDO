@@ -1,0 +1,210 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Billing.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+<!-- ======== Html content ======== --->
+@* --- Contract Information ---  *@
+<div id="divBillingBasicInfo" class="main-table" style="margin-top: 5px;">
+    <div class="table-header">
+            @Resources.BLS040.lblBillingBasicInformation
+    </div>
+
+    <div id="divBillingTargetForView">
+        <div class="usr-row">
+            <div class="usr-label firstColWidth">
+                @Resources.BLS040.lblBillingCode
+            </div>
+            <div class="usr-object" >
+                @Html.CommonTextBox("ContractCodeProjectCode", null, new { style = "width:80px;;", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+            </div>
+            <div class="usr-label" style=" margin-left: 4px;">
+                      -
+            </div>
+            <div class="usr-object" >
+                @Html.CommonTextBox("BillingOCC", null, new { style = "width:30px;", maxlength = "2" })
+            </div>
+            <div class="usr-object" style="width:5px;  margin-left: 5px;">
+                    @Html.RequireFiled()
+            </div>
+            <div class="usr-object" style="width: 10px;">
+                &nbsp;
+            </div>
+            <div class="usr-object" >
+                @Html.CommonButton("btnRetrieve", (string)@Resources.BLS040.btnRetrieve, new { style = "width:100px;", type = "Button" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label firstColWidth" >
+                @Resources.BLS040.lblBillingOffice
+            </div>
+            <div class="usr-object" style="width:300px;">
+                @Html.CommonTextBox("BillingOfficeCodeName", null, new { style = "width :300px;", @readonly = true })
+                @Html.Hidden("BillingOfficeCode")
+            </div>
+            <div class="usr-label" style="width:150px;">
+                @Resources.BLS040.lblDebtTracingOffice
+            </div>
+            <div class="usr-object" style="width:@ViewBag.headText;">
+                @Html.BillingDebtTracingOfficeNormalCbo("DebtTracingOfficeCode", new { style = "width:270px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label firstColWidth" >
+                @Resources.BLS040.lblBillingTargetCode
+            </div>
+            <div class="usr-object" >
+                @Html.CommonTextBox("BillingClientCode", (string)@ViewBag.BillingTargetCode, new { style = "width:80px;", @readonly = true, maxlength = CommonValue.C_MAXLENGTH_BILLING_CLIENT_CODE })
+            </div>
+             <div class="usr-label" style=" margin-left: 4px;">
+                      -
+            </div>
+            <div class="usr-object" >
+                @Html.CommonTextBox("BillingTargetNo", (string)@ViewBag.BillingTargetCode, new { style = "width:30px;", @readonly = true, maxlength = "3" })
+            </div>
+
+            <div class="usr-object" style="width:5px; margin-left:5px;">
+                    @Html.RequireFiled()
+            </div>
+            <div class="usr-object" style="width: 10px;">
+                &nbsp;
+            </div>
+
+            <div class="usr-object" style="width: 110px;">
+                @Html.CommonButton("btnRetrieveBillingTarget", (string)@Resources.BLS040.btnRetrieve, new { style = "width:100px;", type = "Button" })
+            </div>
+            <div class="usr-object" style="width: 210px;">
+                @Html.CommonButton("btnSearchBillingTarget", (string)@Resources.BLS040.btnSearchBillingTarget, new { style = "width:200px;", type = "Button" })
+            </div>
+            <div class="usr-object" style="width:@ViewBag.lbWidth;">
+                @Html.CommonButton("btnClearBillingTarget", (string)@Resources.BLS040.btnClearBillingTarget, new { style = "width:190px;", type = "Button" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label firstColWidth" >
+                @Resources.BLS040.lblCustomerType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("CustTypeName", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label firstColWidth" >
+                @Resources.BLS040.lblBillingClientNameEN
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("FullNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label firstColWidth" >
+                @Resources.BLS040.lblBillingClientBranchNameEN
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth; ">
+                @Html.CommonTextBox("BranchNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label firstColWidth" >
+                @Resources.BLS040.lblBillingClientAddressEN
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth; ">
+                @Html.CommonTextBox("AddressEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row"></div>
+        <div class="usr-row"></div>
+        <div class="usr-row">
+            <div class="usr-label firstColWidth" >
+                @Resources.BLS040.lblBillingClientNameLC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth; ">
+                @Html.CommonTextBox("FullNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label firstColWidth" >
+                @Resources.BLS040.lblBillingClientBranchNameLC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("BranchNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label firstColWidth" >
+                @Resources.BLS040.lblBillingClientAddressLC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth; ">
+                @Html.CommonTextBox("AddressLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+    </div>
+    @*space*@
+    <div class="usr-row"></div>
+<div class="usr-row"></div>
+
+    <div class="usr-row">
+        <div class="usr-label firstColWidth" >
+            &nbsp;
+        </div>
+        <div class="usr-object">
+            <div id="divBillingType" class="sub-table" style="width:@ViewBag.ObjectColMergeWidth;">
+                <div class="usr-row" >
+                     <div class="usr-object">
+                        <div id="gridBillingType" style="width: 700px; margin-left: 10px;">
+                        </div>
+                    </div>
+                </div>
+
+                 @*space*@
+                <div class="usr-row" style="height: 10px">&nbsp;</div>
+
+                <div id="BillingTypeInput">
+
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                        @Resources.BLS040.lblBillingType
+                    </div>
+                    <div class="usr-object" style="width: 490px;">
+                        @Html.BillingTypeComboBox("BillingTypeList", new { style = "width:272px;" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                        @Resources.BLS040.lblInvoiceDescriptionEN
+                    </div>
+                    <div class="usr-object" style="width: 370px;">
+                        @Html.CommonTextBox("InvoiceDescriptionEN", null, new { style = "width:268px;", maxlength = "255" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                        @Resources.BLS040.lblInvoiceDescriptionLC
+                    </div>
+                    <div class="usr-object" style="width:278px;">
+                        @Html.CommonTextBox("InvoiceDescriptionLC", null, new { style = "width:268px", maxlength = "255" })
+                    </div>
+                    <div class="usr-object" style="width:110px; ">
+                        @Html.CommonButton("btnAddUpdateBillingType", (string)@Resources.BLS040.btnAddUpdate, new { style = "width:100px;", type = "Button" })
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.headText; ">
+                        @Html.CommonButton("btnCancelBillingType", (string)@Resources.BLS040.btnCancel, new { style = "width:100px;", type = "Button" })
+                    </div>
+                    @Html.Hidden("GridBillingTypeMode")
+                    @Html.Hidden("EditingRowID")
+                </div>
+
+
+                </div>
+                
+                 @*space*@
+                <div class="usr-row" style="height: 10px">&nbsp;</div>
+                <div class="usr-clear-style" style="height:0px;">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    
+     @*space*@
+     <div class="usr-row" style="height: 10px">&nbsp;</div>
+    <div class="usr-clear-style" style="height:0px;">&nbsp;</div>
+</div>

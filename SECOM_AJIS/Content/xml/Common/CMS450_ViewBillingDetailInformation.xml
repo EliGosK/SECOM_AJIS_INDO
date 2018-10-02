@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+	<head>
+		<column id="No" width="30" type="txt" align="center" sort="na">No.</column>
+		<!--<column id="FirstFeeDetail" width="50" type="link" align="center" sort="na" >headerFFirstFeeDetail</column>-->
+		<column id="FirstFeeDetail" width="30" type="link" align="center" sort="na" >headerFFirstFeeDetail</column>
+		<column id="TaxInvoiceIssuedDetail" width="30" type="link" align="center" sort="na">headerTaxInvoiceIssueDetail</column>
+    <column id="ReceiptIssuedDetail" width="30" type="link" align="center" sort="na" >headerReceiptIssueDetail</column>
+    <column id="CreditNoteIssueDetail" width="30" type="link" align="center" sort="na">headerCCreditNoteIssueDetail</column>
+		<!--<column id="CreditNoteIssueDetail" width="50" type="link" align="center" sort="na">headerCCreditNoteIssueDetail</column>-->
+		<column id="BillingCode_Short" width="100" type="ro" align="left" sort="str_custom" >headerBillingCode</column>
+		<column id="BillingDetailNo_Numeric" width="60" type="ro" align="center" sort="int" >headerRunningNo</column>
+		<column id="InvoiceNo_Text" width="110" type="ro" align="left" sort="link_custom" >headerInvoiceNo</column>
+		<column id="IssueInvDate_Text" width="100" type="ro" align="left" sort="date_custom" >headerIssueInvoiceDate</column>
+		<column id="BillingTypeCode_Text" width="50" type="ro" align="left" sort="str_custom" >headerBillingType</column>
+		<column id="PaymentStatus_Text" width="70" type="ro"  align="left" sort="str_custom" >headerPaymentStatus</column>
+		<column id="TextTransferBillingAmount" width="180" type="ro"  align="right" sort="decimal_custom" >headerBillingAmountThb</column>
+		<!--<column id="BillingStartDate_Text" width="110" type="dhxCalendar"  align="left" sort="date" format="%d-%b-%Y">headerBillingPeriod</column>-->
+    <column id="BillingStartDate_Text" width="110" type="ro"  align="left" sort="date_custom" >headerBillingPeriod</column>
+		<column id="BillingEndDate_Text" width="110" type="ro"  align="left" sort="date_custom" >#cspan</column>
+		<column id="CreateDate_Text" width="110" type="ro"  align="left" sort="date_custom" >headerBillingDetailCreationDate</column>
+		<column id="PaymentDate_Text" width="100" type="ro"  align="left" sort="date_custom" >headerPaymentDate</column>
+		<column id="MatchDate_Text" width="110" type="ro"  align="left" sort="date_custom" >headerMatchingPaymentDate</column>
+		<column id="SecomBankAndBranchName" width="205" type="ro"  align="left" sort="str_custom" >headerSecomBankBranch</column>
+		<column id="SendingBankAndBranchName" width="205" type="ro"  align="left" sort="str_custom" >headerSendingBankBranch</column>
+		<column id="ReasonForFailure_Text" width="80" type="ro"  align="left" sort="str_custom" >headerReasonForFailure</column>
+    <column id="ContractOCC" width="85" type="ro"  align="left" sort="str_custom" >headerContractOCC</column>
+		<column id="FirstFeeFlag" width="0" hiden ="true" type="ro"  align="left" sort="na" ></column>
+		<column id="CreditNoteFlag"  width="0" hidden ="true" type="ro"  align="left" sort="na" ></column>
+    <column id="TaxInvoiceFlag"  width="0" hidden ="true" type="ro"  align="left" sort="na" ></column>
+    <column id="ReceiptFlag"  width="0" hidden ="true" type="ro"  align="left" sort="na" ></column>
+		<column id="CreditNoteInvoiceForTooltip"   hidden ="true" width="0" type="ro"  align="left" sort="na" ></column>
+    <column id="TaxInvoiceForTooltip"  width="0" hidden ="true" type="ro"  align="left" sort="na" ></column>
+    <column id="ReceiptForTooltip"  width="0" hidden ="true" type="ro"  align="left" sort="na" ></column>
+    <column id="PostdateChequeForTooltip"  width="0" hidden ="true" type="ro"  align="left" sort="na" ></column>
+    <column id="BillingTypeName"   hidden ="true" width="0" type="ro"  align="left" sort="na" ></column>
+    <column id="PaymentStatusName"   hidden ="true" width="0" type="ro"  align="left" sort="na" ></column>
+		<afterInit>
+			<call command="attachHeader">
+				<param>#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,headerBillingPeriodFrom,headerBillingPeriodTo,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan</param>
+			</call>
+		</afterInit>
+		<settings>
+			<colwidth>px</colwidth>
+		</settings>
+	</head>
+</rows>

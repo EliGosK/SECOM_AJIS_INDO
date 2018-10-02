@@ -1,0 +1,123 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "355px";
+    ViewBag.ObjectWidth = "180px";
+    ViewBag.ObjectComboWidth = "184px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS180/CTS180_04.js")" ></script>
+
+<div id="divConfirmCurrent" class="main-table" style="display:none">    
+    <div class="table-header">
+        <div class="usr-label">
+            @Resources.CTS180.lblTitleConfirmCurrentInstrumentMemo
+        </div>                                  
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblContractCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("CF_ContractCodeShort", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = "readonly" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblContractTargetName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CF_ContractTargetName", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "200", @readonly = "readonly" })
+        </div>                   
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblRealCustomerName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CF_RealCustomerName", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "200" })
+        </div>                    
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblSiteNameEN
+        </div> 
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CF_SiteNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "200" })
+        </div>            
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblSiteNameLC
+        </div> 
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CF_SiteNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "200" })
+        </div>            
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblSiteAddress
+        </div> 
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CF_SiteAddress", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "255" })
+        </div>            
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblRealInvestigationDate
+        </div>
+        <div class="usr-object">
+            <div class="object-unit">
+                @Html.CommonTextBox("CF_RealInvestigationDate", null, new { style = "width:100px;", maxlength = "15" })
+            </div>
+            @Html.LabelDateFormat("CF_RealInvestigationDate")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblCustomerSignatureName
+        </div>
+        <div class="usr-object" style = "width:375px;">
+            @Html.CommonTextBox("CF_CustomerSignatureName", null, new { style = "width:375px;", maxlength = "150" })
+        </div>
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+
+    <div id="divSecomSignatureConfirmCurr" class="main-table" >
+        <div class="table-header">
+            <div class="usr-label">
+                @Resources.CTS180.lblTitleSecomSignature
+            </div> 
+        </div>
+        <div>
+            <div class="usr-row">
+                <div class="usr-label"  style="width: 150px;">
+                        @Resources.CTS180.lblUseSignaturePicture
+                </div>
+                <div class="usr-object">
+                        @Html.CommonCheckButton("CF_UseSignaturePicture", null, null, false)
+                </div>    
+                <div class="usr-label"  style="width: 235px;">
+                        @Resources.CTS180.lblEmployeeName
+                </div> 
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                        @Html.CommonTextBox("CF_EmployeeName", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "100" })
+                </div>  
+                <div class="usr-label" style="width: 150px;">
+                        @Resources.CTS180.lblEmployeePosition
+                </div> 
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                        @Html.CommonTextBox("CF_EmployeePosition", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "100" })
+                </div>                   
+            </div>
+            <div class="usr-row"></div>
+        </div>
+    </div>
+
+    <div class="usr-row"></div>
+</div>
+

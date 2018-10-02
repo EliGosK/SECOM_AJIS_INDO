@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="InstrumentCode" width="130" type="ro" align="left" sort="na">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="link" align="left" sort="na">headerInstrumentName</column>
+    <column id="OriginalUnitPrice" width="100" type="link" align="right" format="0,000.00" sort="na">headerUnitPrice</column>
+    <column id="UnitPrice" width="100" type="link" align="right" format="0,000.00" sort="na">HeaderUnitPriceDiscount</column>
+    <column id="FirstOrderQty" width="70" type="edn" align="right" format="0,000" sort="na">headerFirstOrderQty</column>
+    <column id="ModifyOrderQty" width="70" type="link" align="right"  sort="na">headerModifyOrderQty</column>
+    <column id="ReceiveQty" width="70" type="edn" align="right" format="0,000" sort="na">headerReceiveQty</column>
+    <column id="RemainQty" width="70"   type="edn" align="right" format="0,000" sort="na">headerRemainQty</column>
+    <column id="Unit" width="70" type="link" align="left" sort="na">lblUnit</column>
+    <column id="DetailAmount" width="120" type="link" align="right" format="0,000.00" sort="na">headerAmount</column>
+    <column id="Remove" width="30" type="ro" align="center" sort="na">headerRemove</column>
+    <column id="IsShowRemove" width="30" type="ro" hidden="true"></column>
+    <column id="TempColumn" width="0" type="ro" hidden="true" sort="na"></column>
+    <column id="xxx" width="*" type="ro" align="left" sort="str_custom" hidden="true"></column>
+    <!--
+    <column id="OrderQty" width="100"  type="link" align="right" format="0,000" sort="int">HeaderOrderQty</column>
+    <column id="Amount" width="100" type="ro" align="right" format="0,000.00" sort="int">HeaderAmount</column>
+    <column id="SourceAreaCode" width ="*" hidden="true" type="ro"></column>-->
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

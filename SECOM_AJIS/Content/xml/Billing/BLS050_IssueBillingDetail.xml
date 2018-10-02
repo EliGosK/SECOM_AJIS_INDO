@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+	
+    <column id="No" width="0" type="txt" align="center" sort="na"> </column><!--lblHeader3No-->
+    <column id="Billingtype" width="*" type="link" align="left" sort="na">lblHeader3Billingtype</column>
+    <column id="FirstFeeCheckBox" width="30" type="link" align="left" sort="na">lblHeaderFirstFeeDetail</column>
+    <column id="ContractOCC" width="80" type="link" align="left" sort="na">lblHeaderContractOCC</column>
+    <column id="From" width="250" type="link" align="left" sort="na">lblHeader3TopBillingperiod</column>
+      <!--<column id="To" width="120" type="link" align="left" sort="na">#cspan</column>-->
+      <!--<column id="From" width="*" type="ro" align="left" sort="str_custom">lblHeader3From</column>-->
+      <!--<column id="To" width="*" type="ro" align="left" sort="str_custom">lblHeader3To</column>-->
+    <column id="Billingamount" width="205" type="link" align="left" sort="na">lblHeader3Billingamount</column>
+    <column id="Issueinvoice" width="100" type="link" align="left" sort="na">lblHeader3Issueinvoice</column>
+    <column id="Paymentmethod" width="100" type="link" align="left" sort="na">lblHeader3Paymentmethod</column>
+    <column id="BillingdetailinvoiceformatBilling" width="100" type="link" align="left" sort="na">lblHeader3Billingdetailinvoiceformat</column>
+    <column id="Expectedissueautotransferdate" width="110" type="link" align="left" sort="na">lblHeader3Expectedissueautotransferdate</column>
+    <column id="Del" width="50" type="link" align="left" sort="na"> </column><!--lblHeader3Del-->
+    <column id="BillingTypeGroup" width="0" type="ro" hidden="true"></column>
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan</param>
+      </call>
+    </afterInit>
+
+  </head>
+</rows>

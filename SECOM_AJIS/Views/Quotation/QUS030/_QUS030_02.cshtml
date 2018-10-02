@@ -1,0 +1,423 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol3Width = "160px";
+
+    ViewBag.ObjectCol1Width = "140px";
+    ViewBag.ObjectCol1ComboWidth = "144px";
+    ViewBag.ObjectCol2Width = "200px";
+    ViewBag.ObjectCol12Width = "370px";
+    ViewBag.ObjectCol12_SWidth = "369px";
+    ViewBag.ObjectCol3Width = "185px";
+    ViewBag.ObjectCol3ComboWidth = "189px";
+    ViewBag.ObjectCol4Width = "80px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+
+<script type="text/javascript">
+    C_CURRENCY_LOCAL =  '@SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL'
+</script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS030/QUS030_02.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("DisabledProductCode", (bool)@ViewBag.DisabledProductCode)
+    @Html.Hidden("DisabledSpecialInstallationFlag", (bool)@ViewBag.DisabledSpecialInstallationFlag)
+    @Html.Hidden("DisabledSiteBuildingArea", (bool)@ViewBag.DisabledSiteBuildingArea)
+    @Html.Hidden("DisabledSecurityAreaFrom", (bool)@ViewBag.DisabledSecurityAreaFrom)
+    @Html.Hidden("DisabledSecurityAreaTo", (bool)@ViewBag.DisabledSecurityAreaTo)
+    @Html.Hidden("DisabledMainStructureTypeCode", (bool)@ViewBag.DisabledMainStructureTypeCode)
+    @Html.Hidden("DisabledBuildingTypeCode", (bool)@ViewBag.DisabledBuildingTypeCode)
+    @Html.Hidden("DisabledNewBldMgmtFlag", (bool)@ViewBag.DisabledNewBldMgmtFlag)
+    @Html.Hidden("DisabledNewBldMgmtCost", (bool)@ViewBag.DisabledNewBldMgmtCost)
+    @Html.Hidden("DisabledNewBldMgmtCostCurrencyType", (bool)@ViewBag.DisabledNewBldMgmtCostCurrencyType)
+    @Html.Hidden("DisabledBidGuaranteeAmount1", (bool)@ViewBag.DisabledBidGuaranteeAmount1)
+    @Html.Hidden("DisabledBidGuaranteeAmount2", (bool)@ViewBag.DisabledBidGuaranteeAmount2)
+    @Html.Hidden("DisabledBidGuaranteeAmount1CurrencyType", (bool)@ViewBag.DisabledBidGuaranteeAmount1CurrencyType)
+    @Html.Hidden("DisabledBidGuaranteeAmount2CurrencyType", (bool)@ViewBag.DisabledBidGuaranteeAmount2CurrencyType)
+    @Html.Hidden("DisabledApproveNo1", (bool)@ViewBag.DisabledApproveNo1)
+    @Html.Hidden("DisabledApproveNo2", (bool)@ViewBag.DisabledApproveNo2)
+    @Html.Hidden("DisabledApproveNo3", (bool)@ViewBag.DisabledApproveNo3)
+    @Html.Hidden("DisabledApproveNo4", (bool)@ViewBag.DisabledApproveNo4)
+    @Html.Hidden("DisabledApproveNo5", (bool)@ViewBag.DisabledApproveNo5)
+</div>
+<form id="formQuotationDetailInfo_Sale">
+    <div id="divQuotationDetailInfo_Sale" class="main-table">
+        <div class="table-header">
+            @Resources.QUS030.lblQuotationDetailInformation_SALE
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblProductCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.ProductComboBox("ProductCode", (string)@ViewBag.EmployeeNo, (string)@ViewBag.ProductCodeCondition, (string)@ViewBag.ProductTypeCode, new { selected = @ViewBag.ProductCode, style = "width:353px;" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblPlanCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.CommonTextBox("PlanCode", (string)@ViewBag.PlanCode, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 20 })
+                @Html.RequireFiled()
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                @Resources.QUS030.lblSpecialInstallation
+            </div>
+            <div id="rdoSpecialInstallationFlag" class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                @Html.CommonRadioButton("SpecialInstallationFlagYes", @Resources.QUS030.rdoSpecialInstall_Yes, "true", (bool)@ViewBag.SpecialInstallationFlagYes, "SpecialInstallationFlag")
+                @Html.CommonRadioButton("SpecialInstallationFlagNo", @Resources.QUS030.rdoSpecialInstall_No, "false", (bool)@ViewBag.SpecialInstallationFlagNo, "SpecialInstallationFlag")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblQuotationNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.CommonTextBox("QuotationNo", (string)@ViewBag.QuotationNo, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 30 })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblPlanner
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("PlannerEmpNo", (string)@ViewBag.PlannerEmpNo, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("PlannerName", (string)@ViewBag.PlannerName, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                    @Html.RequireFiled()
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblPlanChecker
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("PlanCheckerEmpNo", (string)@ViewBag.PlanCheckerEmpNo, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("PlanCheckerName", (string)@ViewBag.PlanCheckerName, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                    @Html.RequireFiled()
+                </div>
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+            @Resources.QUS030.lblPlanCheckingDate
+            </div>
+            <div class="usr-object" style="width:195px;">
+                <div class="object-unit">
+                    @Html.CommonTextBox("PlanCheckDate", (string)@ViewBag.PlanCheckDate, new { style = "width:90px;" })
+                </div>
+                <div style="font-size:9pt;float:left;">
+                    @Html.LabelDateFormat("PlanCheckDate")
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblPlanApprover
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("PlanApproverEmpNo", (string)@ViewBag.PlanApproverEmpNo, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("PlanApproverName", (string)@ViewBag.PlanApproverName, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                    @Html.RequireFiled()
+                </div>
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                @Resources.QUS030.lblPlanApprovingDate
+            </div>
+            <div class="usr-object" style="width:195px;">
+                <div class="object-unit">
+                    @Html.CommonTextBox("PlanApproveDate", (string)@ViewBag.PlanApproveDate, new { style = "width:90px;" })
+                </div>
+                <div style="font-size:9pt;float:left;">
+                    @Html.LabelDateFormat("PlanApproveDate")
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSiteBuildingArea
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.NumericTextBox("SiteBuildingArea", (string)@ViewBag.SiteBuildingArea, new { @class = "numeric-box", style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+            <div class="usr-label" style="width:205px;margin-left:-45px;">
+                @Resources.QUS030.lblSecurityAreaSize
+            </div>
+            <div class="usr-object" style="width:190px;">
+                <div style="float:left">@Html.NumericTextBox("SecurityAreaFrom", (string)@ViewBag.SecurityAreaFrom, new { style = "width:" + @ViewBag.ObjectCol4Width + ";" })</div>
+                <div id="divSecurityAreaFromTo" class="label-unit">-&nbsp;</div>
+                <div style="float:left">@Html.NumericTextBox("SecurityAreaTo", (string)@ViewBag.SecurityAreaTo, new { style = "width:80px;" })</div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblMainStructureType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.MainStructureTypeComboBox("MainStructureTypeCode", null, new { selected = @ViewBag.MainStructureTypeCode, style = "width:353px;" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                @Resources.QUS030.lblNewOldBuilding
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                @Html.BuildingTypeComboBox("BuildingTypeCode", null, new { selected = @ViewBag.BuildingTypeCode, style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblNewBuildingMgmtType 
+            </div>
+            <div id="rdoNewBldMgmtFlag" class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.CommonRadioButton("NewBldMgmtFlagNeed", @Resources.QUS030.rdoNewBuildingMgmtTypeFlagNeed, "true", (bool?)@ViewBag.NewBldMgmtFlagNeed, "NewBldMgmtFlag")
+                @Html.CommonRadioButton("NewBldMgmtFlagNoNeed", @Resources.QUS030.rdoNewBuildingMgmtTypeFlagNoNeed, "false", (bool?)@ViewBag.NewBldMgmtFlagNoNeed, "NewBldMgmtFlag")
+            </div>
+            <div class="usr-label" style="width:205px;margin-left:-45px;">
+                @Resources.QUS030.lblNewBuildingMgmtCost
+            </div>
+            <div class="usr-object" style="width:200px;">
+                @Html.NumericTextBoxWithMultipleCurrency("NewBldMgmtCost", (string)@ViewBag.NewBldMgmtCost, (string)@ViewBag.NewBldMgmtCostCurrencyType, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        @* Begin:: 2015/11/11 Added: tbt_QuotationInstallationDetail *@
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblCeilingType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonCheckButton("chkCeilingTypeTBar", @Resources.QUS030.lblCeilingTypeTBar, null, (bool?)@ViewBag.chkCeilingTypeTBar)
+                @Html.CommonCheckButton("chkCeilingTypeSlabConcrete", @Resources.QUS030.lblCeilingTypeSlabConcrete, null, (bool?)@ViewBag.chkCeilingTypeSlabConcrete, new { style = "margin-left: 25px" })
+                @Html.CommonCheckButton("chkCeilingTypeMBar", @Resources.QUS030.lblCeilingTypeMBar, null, (bool?)@ViewBag.chkCeilingTypeMBar, new { style = "margin-left: 25px" })
+                @Html.CommonCheckButton("chkCeilingTypeSteel", @Resources.QUS030.lblCeilingTypeSteel, null, (bool?)@ViewBag.chkCeilingTypeSteel, new { style = "margin-left: 25px" })
+                @Html.CommonCheckButton("chkCeilingTypeNone", @Resources.QUS030.lblCeilingTypeNone, null, (bool?)@ViewBag.chkCeilingTypeNone, new { style = "margin-left: 25px" }) @Html.RequireFiled()  
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblCeilingHeight
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.NumericTextBox("txtCeilingHeight", (decimal?)@ViewBag.txtCeilingHeight, new { name = "CeilingHeight" }) @Resources.QUS030.lblCeilingHeightUnit
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSpecialIns
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonCheckButton("chkSpecialInsPVC", @Resources.QUS030.lblSpecialInsPVC, null, (bool?)@ViewBag.chkSpecialInsPVC)
+                @Html.CommonCheckButton("chkSpecialInsSLN", @Resources.QUS030.lblSpecialInsSLN, null, (bool?)@ViewBag.chkSpecialInsSLN, new { style = "margin-left: 25px" })
+                @Html.CommonCheckButton("chkSpecialInsProtector", @Resources.QUS030.lblSpecialInsProtector, null, (bool?)@ViewBag.chkSpecialInsProtector, new { style = "margin-left: 25px" })
+                @Html.CommonCheckButton("chkSpecialInsEMT", @Resources.QUS030.lblSpecialInsEMT, null, (bool?)@ViewBag.chkSpecialInsEMT, new { style = "margin-left: 25px" })
+                @Html.CommonCheckButton("chkSpecialInsPE", @Resources.QUS030.lblSpecialInsPE, null, (bool?)@ViewBag.chkSpecialInsPE, new { style = "margin-left: 25px" }) 
+                @Html.CommonCheckButton("chkSpecialInsOther", @Resources.QUS030.lblSpecialInsOther, null, (bool?)@ViewBag.chkSpecialInsOther, new { style = "margin-left: 25px" }) @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("txtSpecialInsOther", (string)@ViewBag.txtSpecialInsOther, new { style = "width: 500px", maxlength = 250, @readonly = true, name = "SpecialInsOtherText" })
+            </div>
+        </div>
+        @* End:: 2015/11/11 Added: tbt_QuotationInstallationDetail *@
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSaleman1
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("SalesmanEmpNo1", (string)@ViewBag.SalesmanEmpNo1, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("Saleman1Name", (string)@ViewBag.Saleman1Name, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                    @Html.RequireFiled()
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSaleman2
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("SalesmanEmpNo2", (string)@ViewBag.SalesmanEmpNo2, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("Saleman2Name", (string)@ViewBag.Saleman2Name, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                <div style="float:left;">
+                    <span id="aLess" class="lbl-link">@Resources.QUS030.lblLess</span>
+                <span id="aMore" class="lbl-link">@Resources.QUS030.lblMore</span>
+                </div>
+                @Resources.QUS030.lblSaleman3
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("SalesmanEmpNo3", (string)@ViewBag.SalesmanEmpNo3, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("Saleman3Name", (string)@ViewBag.Saleman3Name, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div id="divSaleMore" class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSaleman4
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("SalesmanEmpNo4", (string)@ViewBag.SalesmanEmpNo4, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("Saleman4Name", (string)@ViewBag.Saleman4Name, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div id="divSaleMore" class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSaleman5
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("SalesmanEmpNo5", (string)@ViewBag.SalesmanEmpNo5, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("Saleman5Name", (string)@ViewBag.Saleman5Name, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div id="divSaleMore" class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSaleman6
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("SalesmanEmpNo6", (string)@ViewBag.SalesmanEmpNo6, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("Saleman6Name", (string)@ViewBag.Saleman6Name, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div id="divSaleMore" class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSaleman7
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("SalesmanEmpNo7", (string)@ViewBag.SalesmanEmpNo7, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("Saleman7Name", (string)@ViewBag.Saleman7Name, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div id="divSaleMore" class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSaleman8
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("SalesmanEmpNo8", (string)@ViewBag.SalesmanEmpNo8, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("Saleman8Name", (string)@ViewBag.Saleman8Name, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div id="divSaleMore" class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSaleman9
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("SalesmanEmpNo9", (string)@ViewBag.SalesmanEmpNo9, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("Saleman9Name", (string)@ViewBag.Saleman9Name, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div id="divSaleMore" class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblSaleman10
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                <div style="float:left;margin-right:5px;">
+                    @Html.CommonTextBox("SalesmanEmpNo10", (string)@ViewBag.SalesmanEmpNo10, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 10 })
+                </div>
+                <div style="float:left;">
+                    @Html.CommonTextBox("Saleman10Name", (string)@ViewBag.Saleman10Name, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblBidGuaranteeAmount1
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.NumericTextBoxWithMultipleCurrency("BidGuaranteeAmount1", (string)@ViewBag.BidGuaranteeAmount1, (string)@ViewBag.BidGuaranteeAmount1CurrencyType, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+            <div class="usr-label" style="width:205px;margin-left:-45px;">
+                @Resources.QUS030.lblBidGuaranteeAmount2
+            </div>
+            <div class="usr-object" style="width:200px;">
+                @Html.NumericTextBoxWithMultipleCurrency("BidGuaranteeAmount2", (string)@ViewBag.BidGuaranteeAmount2, (string)@ViewBag.BidGuaranteeAmount2CurrencyType, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblApproveNo1
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.CommonTextBox("ApproveNo1", (string)@ViewBag.ApproveNo1, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 15 })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                @Resources.QUS030.lblApproveNo2
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                @Html.CommonTextBox("ApproveNo2", (string)@ViewBag.ApproveNo2, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 15 })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblApproveNo3
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.CommonTextBox("ApproveNo3", (string)@ViewBag.ApproveNo3, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 15 })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">
+                @Resources.QUS030.lblApproveNo4
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                @Html.CommonTextBox("ApproveNo4", (string)@ViewBag.ApproveNo4, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 15 })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblApproveNo5
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("ApproveNo5", (string)@ViewBag.ApproveNo5, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 15 })
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</form>

@@ -1,0 +1,152 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+
+@{
+    ViewBag.LabelWidth = "230px";
+    ViewBag.RightLabelWidth = "205px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+}
+
+@section page_header{
+    <script src="../../Scripts/jquery.maskedinput-1.3.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+
+    <link rel="STYLESHEET" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")" />
+    <link rel="STYLESHEET" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid_skins.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+    <link rel="STYLESHEET" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_skyblue.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+    
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS040.js")" ></script>
+
+    <script type="text/javascript">
+        var CTS040Data =
+            {
+                "PageRow": "@ViewBag.PageRow"
+            };
+    </script>
+
+}
+
+<!-- SEARCH USER SECTION ======================================================================================================================== -->
+<div id="Search_Criteria" class="main-table">
+    <div class="table-header">
+        @Resources.CTS040.lblApprovalResultSearchCriteria
+    </div>
+    <form id="CTS040_Search" action='#' >
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS040.lblQuotationCode
+            </div>
+            <div class="usr-object" style="width:180px;">
+                @Html.CommonTextBox("QuotationCode", "", new { style = "width:140px;", maxlength = "10" })
+                @Html.CommonTextBox("Alphabet", "", new { style = "width:20px;", maxlength = "2" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.CTS040.lblRegistrationDate
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("RegistrationDateFrom", "", new { style = "width:90px;", maxlength = "15" })
+                ~
+                @Html.CommonTextBox("RegistrationDateTo", "", new { style = "width:90px;", maxlength = "15" })
+                <span style="font-size:9pt;">@Resources.CTS040.lblddMMyyyy</span>
+             </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS040.lblSalesman1Code
+            </div>
+            <div class="usr-object" style="width:180px;">
+                @Html.CommonTextBox("Salesman1Code", "", new { style = "width:140px", maxlength = "10" })&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.CTS040.lblSalesman1Name
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("Salesman1Name", "", new { style = "width:140px", maxlength = "50" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS040.lblContractTargetName
+            </div>
+            <div class="usr-object" style="width:180px;">
+                @Html.CommonTextBox("ContractTargetName", "", new { style = "width:140px", maxlength = "50" })&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.CTS040.lblSiteName
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SiteName", "", new { style = "width:140px", maxlength = "50" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS040.cboContractOffice
+            </div>
+            <div class="usr-object" style="width:180px;">
+                @Html.ContractOfficeAuthorityCbo("ContractOfficeCode", new { style = "width:144px;" })&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.CTS040.cboOperationOffice
+            </div>
+            <div class="usr-object">
+                @Html.OperationOfficeAuthorityCbo("OperationOfficeCode", new { style = "width:144px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS040.cboApprovalStatus
+            </div>
+            <div class="usr-object" style="width:180px;">
+                @Html.ApprovalStatusComboBox("ApproveContractStatus", new { style = "width:144px;" })&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.CTS040.lblCPRegistrationDate
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("ApproveDateFrom", "", new { style = "width:90px;", maxlength = "15" })
+                ~
+                @Html.CommonTextBox("ApproveDateTo", "", new { style = "width:90px;", maxlength = "15" })
+                <span style="font-size:9pt;">@Resources.CTS040.lblddMMyyyy</span>
+             </div>
+        </div>
+        <div class="usr-row">
+            &nbsp;
+        </div>
+        <div class="usr-row">
+            <div style="text-align: right;">
+                @Html.CommonButton("btnSearch", @Resources.CTS040.btnSearch, new { type = "button" })
+                &nbsp;
+                @Html.CommonButton("btnClear", @Resources.CTS040.btnClear, new { type = "button" })
+            </div>
+        </div>
+    </form>
+    <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+</div>
+ <!-- SEARCH RESULT SECTION ====================================================================================================================== -->
+<div class="table-line">
+</div>
+<div id="Search_Result" class="main-table">
+    <div class="table-header">
+        @Resources.CTS040.lblSearchResult
+    </div>
+    <div>
+        <div id="grid_result" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+    <div class="table-line">
+    </div>
+</div>

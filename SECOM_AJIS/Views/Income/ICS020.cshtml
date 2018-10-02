@@ -1,0 +1,120 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+
+@using SECOM_AJIS.Presentation.Income.Controllers;
+@using SECOM_AJIS.Presentation.Income.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{  
+    ViewBag.Col1Width = "150px";
+    ViewBag.Col2Width = "250px";                
+    ViewBag.Col3Width = "110px";
+    ViewBag.Col4Width = "404px";
+   
+    ViewBag.CommonTextboxWidth = "400px";
+    ViewBag.CommonDDLWidth = "404px";
+    ViewBag.CommonButtonWidth = "140px";
+    
+    ViewBag.SectionSepWidth = "20px";
+ }
+
+@section page_header{
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/number-functions.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Income/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Income/ICS020.js")"></script>
+}
+
+<style>
+    .combo-unit {
+        float: none;
+        display: inline-block;
+        margin-left: 110px;
+    }
+    #spanrdoBankTransfer {
+        position: absolute;
+        margin-top: 3px;
+    }
+
+</style>
+
+<div class="main-table" id="divSelectProcess">
+    <form id="frmSelectProcess" action="#">
+        <div class="usr-row" style="padding-top:@ViewBag.SectionSepWidth;">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">&nbsp;</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                <label>
+                    @Html.CommonRadioButton("rdoBankTransfer", (string)@Resources.ICS020.lblBankTransfer, "1", true, "SelectProcess")
+                </label>
+                @Html.CurrencyCombobox("CurrencyType", "1", new { style = "width: 80px; float:none;" })
+               
+                @Html.CommonRadioButton("rdoAutoTransfer", @*(string)@Resources.ICS020.lblAutoTransfer*@ "", "0", false, "SelectProcess", new { style = "display: none;" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3Width" id="divBankBranch">
+            @Resources.ICS020.lblBankBranch</div>
+            <div class="usr-object" style="width:@ViewBag.Col4Width">
+                @Html.BlankComboBox("SECOMAccountID", new { style = "width:" + @ViewBag.CommonDDLWidth })
+            </div>
+        </div>
+
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">&nbsp;</div>
+            <div class="usr-object" style="width:@ViewBag.Col2Width">
+                &nbsp;
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3Width" id="divFileName">@Resources.ICS020.lblFileName</div>
+            <div class="usr-object" style="width:@ViewBag.Col4Width">
+                <iframe src="ICS020_Upload?k=@Request.QueryString["k"]" width="@ViewBag.Col4Width" height="60px" marginwidth="0" marginheight="0" id="iframeAttach" vspace="0" hspace="0" frameborder="0" align="left" scrolling="no"></iframe>
+            </div>
+        </div>
+        
+        <div class="usr-row">
+            <div class="usr-object" style="float: right;">
+                @Html.CommonButton("ICS020_btnShowContent", (string)@Resources.ICS020.btnShowContent, new { style = "width:" + @ViewBag.CommonButtonWidth + ";", type = "button" })
+            </div>
+        </div>
+    </form>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+<div class="main-table" id="divAutoTransfer" style="display:none;">
+    <div class="table-header">
+        @Resources.ICS020.lblSectionAutoTransfer
+    </div>
+
+    <div class="usr-row" style="padding-top:@ViewBag.SectionSepWidth">
+        <div id="AutoTransferGrid" style="margin-left:5px;"></div>
+    </div>
+
+    <div id="divNextAutoImport" class="usr-row" style="padding-top:@ViewBag.SectionSepWidth">
+        <div class="usr-object" style="float: right;">
+            @Html.CommonButton("btnNextAutoImport", @Resources.ICS010.btnNextToRegisterPayment, new { style="width:250px;"})
+        </div>
+    </div>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+
+<div class="main-table" id="divBankTransfer" style="display:none;">
+    <div class="table-header">
+        @Resources.ICS020.lblSectionBankTransfer
+    </div>
+
+    <div class="usr-row" style="padding-top:@ViewBag.SectionSepWidth">
+        <div id="BankTransferGrid" style="margin-left:5px;"></div>
+    </div>
+
+    <div id="divNextBankImport" class="usr-row" style="padding-top:@ViewBag.SectionSepWidth">
+        <div class="usr-object" style="float: right;">
+            @Html.CommonButton("btnNextBankImport", @Resources.ICS010.btnNextToRegisterPayment, new { style = "width:250px;" })
+        </div>
+    </div>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>

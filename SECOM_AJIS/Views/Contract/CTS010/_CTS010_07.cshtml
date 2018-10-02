@@ -1,0 +1,56 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "181px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol12_SWidth = "369px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMerge12Width = "280px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.ObjectColCustNameWidth = "200px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS010/CTS010_07.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("defBillingCycle", (string)@ViewBag.BillingCycle)
+    @Html.Hidden("defPayMethod", (string)@ViewBag.PayMethod)
+    @Html.Hidden("defCreditTerm", (string)@ViewBag.CreditTerm)
+    @Html.Hidden("defCalDailyFeeStatus", (string)@ViewBag.CalDailyFeeStatus)
+</div>
+<form id="formContractPaymentTerm">
+    <div id="divContractPaymentTerm" class="main-table">
+        <div class="table-header">@Resources.CTS010.lblContractPaymentTerm</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblBillingCycle</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                @Html.BillingCycleComboBox("BillingCycle", new { selected=@ViewBag.BillingCycle, style = "width:185px;" })
+                @Html.RequireFiled()
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblPaymentMethod</div>
+            <div class="usr-object" style="width:200px;">
+                @Html.PaymentMethodTypeComboBox("PayMethod", new { selected = @ViewBag.PayMethod, style = "width:185px;" }, false)
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblCreditTerm</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                @Html.NumericTextBox("CreditTerm", (string)@ViewBag.CreditTerm, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                @Html.RequireFiled()
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS010.lblCalculationDailyFee</div>
+            <div class="usr-object" style="width:200px;">
+                @Html.CalculationDailyFeeComboBox("CalDailyFeeStatus", new { selected = @ViewBag.CalDailyFeeStatus, style = "width:185px;" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</form>

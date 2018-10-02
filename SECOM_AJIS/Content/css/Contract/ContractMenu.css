@@ -1,0 +1,14 @@
+/*********************************
+// Create by: Nattapong N.
+// Create date: 2/Aug/2011
+// Update date: 2/Aug/2011
+//*********************************/
+
+.ContractMenu
+{
+    float: left;
+    margin: 10px 5px 0px 5px;
+    padding: 2px;
+    width: 305px;
+    word-wrap: break-word;
+}

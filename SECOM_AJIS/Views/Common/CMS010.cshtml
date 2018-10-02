@@ -1,0 +1,94 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue
+@using System.Configuration;
+@{
+    
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-ui-1.8.13.custom.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/json.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/superfish/hoverIntent.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/superfish/superfish.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/modernizr-1.7.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/MessageDialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/control_events.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/object/master_event.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/object/ajax_method.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/object/command_event.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/Master.js")"></script>
+    
+    @if(ConfigurationManager.AppSettings["ThemeMode"] == "Test")
+    {
+    <link href="@Url.Content("~/Content/css/main_layout_test.css")" rel="stylesheet" type="text/css" />
+    }
+    else if (ConfigurationManager.AppSettings["ThemeMode"] == "Production")
+    {
+    <link href="@Url.Content("~/Content/css/main_layout.css")" rel="stylesheet" type="text/css" />
+    }
+    else if (ConfigurationManager.AppSettings["ThemeMode"].EndsWith(".css"))
+    {
+    <link href="@Url.Content("~/Content/css/" + ConfigurationManager.AppSettings["ThemeMode"])" rel="stylesheet" type="text/css" />
+    }
+    else
+    {
+    <link href="@Url.Content("~/Content/css/main_layout.css")" rel="stylesheet" type="text/css" />
+    }
+
+    <link href="@Url.Content("~/Content/themes/custom-theme/jquery-ui-1.8.14.custom.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/table_style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/superfish/superfish.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/Common/cms010.css")" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS010.js")" ></script>
+    <title>@ViewBag.Title</title>
+</head>    
+
+<body class="cms010body">
+    <div id="LoginPanel">
+        <div class="usr-row">
+            <img alt="" id="systemlogo" src = "@Url.Content("~/Content/images/logo2.png")"  width="268px"/></div>
+        <div class="usr-row" style="margin-top: 5px;">
+            <div class="usr-label" style="width: 90px; color: White;">@Resources.CMS010.lblEmpNo
+                <br />
+                @*เลขที่พนักงาน*@</div>
+            <div class="usr-object" style="width: auto;">                
+                @Html.CommonTextBox("EmpNo", "", new { style = "width:169px;" })
+            </div>
+        </div>
+        <div class="usr-row" style="margin-top: 30px;">
+            <div class="usr-label" style="width: 90px; color: White;">@Resources.CMS010.lblPassword
+                <br />
+                @*รหัสผ่าน*@</div>
+            <div class="usr-object" style="width: auto;">
+                @Html.CommonTextBox("Password", "", new { type = "password", style = "width:169px;" })
+            </div>
+        </div>
+        <div class="usr-row" style="float: right;">
+            <div class="usr-label" style="width: 91px;">
+                &nbsp;
+            </div>
+            <div class="usr-object" style="margin-right: 10px;">
+                @Html.CommonButton("btnLogin", Resources.CMS010.btnLogin, new { style = "width:80px;" })</div>
+            <div class="usr-object">
+                @Html.CommonButton("btnClear", Resources.CMS010.btnClear, new { style = "width:80px;" })</div>
+        </div>
+        <div class="usr-row" style="height: 3px; float: right;">
+            &nbsp;</div>
+        <div class="usr-row" id="SessionError" style="display: none;">
+            <div class="usr-label" style="color: #FFFF00; width: 100%; text-align: center; vertical-align: top;">
+                <img src="@Url.Content("~/Content/images/timeout_warning.png")" width="13px" alt="Error" />
+                @Resources.CMS010.lblTimeOut</div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+    @Html.Partial("_MessageDialog")
+</body>
+</html>
+

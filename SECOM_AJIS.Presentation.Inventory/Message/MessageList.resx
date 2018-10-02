@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG4001" xml:space="preserve">
+    <value>No matching result</value>
+  </data>
+  <data name="MSG4002" xml:space="preserve">
+    <value>Process to freeze data for stock checking does not run.</value>
+  </data>
+  <data name="MSG4003" xml:space="preserve">
+    <value>Start stock checking process does not run.</value>
+  </data>
+  <data name="MSG4004" xml:space="preserve">
+    <value>Search result more than 1,000 records. Please input new search criteria.</value>
+  </data>
+  <data name="MSG4005" xml:space="preserve">
+    <value>Selected equipment is duplicate.</value>
+  </data>
+  <data name="MSG4006" xml:space="preserve">
+    <value>There is no data for transferring.</value>
+  </data>
+  <data name="MSG4007" xml:space="preserve">
+    <value>Transferring quantity of {0} must be more than 0.</value>
+  </data>
+  <data name="MSG4008" xml:space="preserve">
+    <value>For equipment: {0}, transfer quantity is more than current equipment quantity.</value>
+  </data>
+  <data name="MSG4009" xml:space="preserve">
+    <value>For equipment: {0}, there is no data on source location.</value>
+  </data>
+  <data name="MSG4010" xml:space="preserve">
+    <value>Generated inventory slip no. is over limit. Please contact the administrator.</value>
+  </data>
+  <data name="MSG4011" xml:space="preserve">
+    <value>Search slip no. ,{0}, not found.</value>
+  </data>
+  <data name="MSG4012" xml:space="preserve">
+    <value>Rack no. ,{0}, was received.</value>
+  </data>
+  <data name="MSG4013" xml:space="preserve">
+    <value>Are you sure to confirm receive equipment?</value>
+  </data>
+  <data name="MSG4014" xml:space="preserve">
+    <value>[Source office] and [Destination office] must not be same office.</value>
+  </data>
+  <data name="MSG4015" xml:space="preserve">
+    <value>Please specify rack no.(from) as character come before rack no.(to) in alphabetical order.</value>
+  </data>
+  <data name="MSG4016" xml:space="preserve">
+    <value>Cannot get Headquarter office of inventory. Please contact the administrator.</value>
+  </data>
+  <data name="MSG4017" xml:space="preserve">
+    <value>Cannot input ‘Supplier code’ and ‘Supplier name’ together.</value>
+  </data>
+  <data name="MSG4018" xml:space="preserve">
+    <value>Transfer type of this Slip no. is incorrect.</value>
+  </data>
+  <data name="MSG4019" xml:space="preserve">
+    <value>Register completed.</value>
+  </data>
+  <data name="MSG4020" xml:space="preserve">
+    <value>'Order quantity' must be inputted more than 0.</value>
+  </data>
+  <data name="MSG4021" xml:space="preserve">
+    <value>Cannot add equipment data more than 15 rows.</value>
+  </data>
+  <data name="MSG4022" xml:space="preserve">
+    <value>You have clicked 'Enter' key more than 4 times in a row in [Memo] text box.</value>
+  </data>
+  <data name="MSG4023" xml:space="preserve">
+    <value>There is no data in [Installation] list. Do you want to continue this process?</value>
+  </data>
+  <data name="MSG4024" xml:space="preserve">
+    <value>There is sample equipment in purchase order. Do you want to continue this process?</value>
+  </data>
+  <data name="MSG4025" xml:space="preserve">
+    <value>'Modify order qty' must more than or equal to 'Receive qty'.</value>
+  </data>
+  <data name="MSG4026" xml:space="preserve">
+    <value>'Modify order qty' must less than or equal 'First order qty'.</value>
+  </data>
+  <data name="MSG4027" xml:space="preserve">
+    <value>Cancel purchase order will be confirmed. Do you want to continue?</value>
+  </data>
+  <data name="MSG4028" xml:space="preserve">
+    <value>Current 'Purchase order status' on DB is not 'Wait to receive'.</value>
+  </data>
+  <data name="MSG4029" xml:space="preserve">
+    <value>'Transfer equipment quantity' must be inputted more than 0.</value>
+  </data>
+  <data name="MSG4030" xml:space="preserve">
+    <value>For equipment: {0}, 'Stock-out qty' must be inputted more than 0.</value>
+  </data>
+  <data name="MSG4031" xml:space="preserve">
+    <value>For equipment: {0},'Repair return qty' must be inputted more than 0.</value>
+  </data>
+  <data name="MSG4032" xml:space="preserve">
+    <value>[Purchase order status]  on DB is not 'Completed'.</value>
+  </data>
+  <data name="MSG4033" xml:space="preserve">
+    <value>[Modify order qty] must be equal or more than [Receive qty].</value>
+  </data>
+  <data name="MSG4034" xml:space="preserve">
+    <value>For equipment code: {0}, [Receive qty] must be equal or less than [Remain qty].</value>
+  </data>
+  <data name="MSG4035" xml:space="preserve">
+    <value>Sum of [Receive qty] must be more than 0.</value>
+  </data>
+  <data name="MSG4036" xml:space="preserve">
+    <value>Sum of [Stock-in equipment qty] must be more than 0.</value>
+  </data>
+  <data name="MSG4037" xml:space="preserve">
+    <value>Inputted equipment code has not been registered in equipment master of this system. Please check whether there is a mistake or not.</value>
+  </data>
+  <data name="MSG4038" xml:space="preserve">
+    <value>Equipment code is already in list.</value>
+  </data>
+  <data name="MSG4039" xml:space="preserve">
+    <value>Equipment code and equipment area is already in list.</value>
+  </data>
+  <data name="MSG4040" xml:space="preserve">
+    <value>[Stock-in equipment qty] must be inputted more than 0.</value>
+  </data>
+  <data name="MSG4041" xml:space="preserve">
+    <value>[In Date] must be less than or equal to [Out Date].</value>
+  </data>
+  <data name="MSG4042" xml:space="preserve">
+    <value>[Create date (from)] must be less than or equal to [Create date (to)].</value>
+  </data>
+  <data name="MSG4043" xml:space="preserve">
+    <value>Are you sure to cancel slip?</value>
+  </data>
+  <data name="MSG4044" xml:space="preserve">
+    <value>Month of [Stock-in date] must be equal to current month.</value>
+  </data>
+  <data name="MSG4045" xml:space="preserve">
+    <value>Equipment {0}, Area {1}, Current equipment qty must be equal to or more than [Stock-in equipment qty].</value>
+  </data>
+  <data name="MSG4046" xml:space="preserve">
+    <value>Stock-in slip no. must not ever been registered asset.</value>
+  </data>
+  <data name="MSG4047" xml:space="preserve">
+    <value>Rack no., {0}, Equipment code, {1}, 'Transfer qty' must be inputted more than 0. </value>
+  </data>
+  <data name="MSG4048" xml:space="preserve">
+    <value>Inputted rack no. {0} is mistake. It does not exist in rack master.</value>
+  </data>
+  <data name="MSG4049" xml:space="preserve">
+    <value>For Rack no., {0}, Equipment code, {1}, 'Destination rack no.' must be inputted value. </value>
+  </data>
+  <data name="MSG4050" xml:space="preserve">
+    <value>Rack no., {0}, Equipment code, {1}, Cannot input Rack no. for temporary receive (00) in ‘Destination rack no.’</value>
+  </data>
+  <data name="MSG4051" xml:space="preserve">
+    <value>Please specify slip no.</value>
+  </data>
+  <data name="MSG4052" xml:space="preserve">
+    <value>Equipment total price] must more than 0.</value>
+  </data>
+  <data name="MSG4053" xml:space="preserve">
+    <value>Rack no., {0}, Equipment code, {1}, Cannot input destination rack no. same as source rack no.</value>
+  </data>
+  <data name="MSG4054" xml:space="preserve">
+    <value>Rack no. {0}, Equipment code, {1}, Cannot transfer to difference area.</value>
+  </data>
+  <data name="MSG4055" xml:space="preserve">
+    <value>Rackno., {0}, Equipment code, {1}, Cannot move rack because there is rack refer to the same area and same equipment exiting.</value>
+  </data>
+  <data name="MSG4056" xml:space="preserve">
+    <value>Rack no., {0}, Equipment code, {1}, Must input [Transfer qty] = [Stock qty] in case move normal rack to empty rack.</value>
+  </data>
+  <data name="MSG4057" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG4058" xml:space="preserve">
+    <value>Rack no., {0}, Equipment code, {1}, [Transfer qty] is more than [Stock qty].</value>
+  </data>
+  <data name="MSG4059" xml:space="preserve">
+    <value>Rack no., {0}, Equipment code, {1}, There is no data on this location.</value>
+  </data>
+  <data name="MSG4060" xml:space="preserve">
+    <value>Generated Picking list Slip no. is over limit. Please contact to administrator.</value>
+  </data>
+  <data name="MSG4061" xml:space="preserve">
+    <value>[Expected stock-out date (from)] must be less than or equal [Expected stock-out date (to)]</value>
+  </data>
+  <data name="MSG4062" xml:space="preserve">
+    <value>Selected [installation slip no.] is duplicate.</value>
+  </data>
+  <data name="MSG4063" xml:space="preserve">
+    <value>There is no data to generate picking list.</value>
+  </data>
+  <data name="MSG4064" xml:space="preserve">
+    <value>Installation slip, {0}, was registered picking list.</value>
+  </data>
+  <data name="MSG4065" xml:space="preserve">
+    <value>Cannot get installation slip information.</value>
+  </data>
+  <data name="MSG4066" xml:space="preserve">
+    <value>Please specify [Project code] before retrieve project information.</value>
+  </data>
+  <data name="MSG4067" xml:space="preserve">
+    <value>Search Project code ,{0}, not found.</value>
+  </data>
+  <data name="MSG4068" xml:space="preserve">
+    <value>There are no data for calculate.</value>
+  </data>
+  <data name="MSG4069" xml:space="preserve">
+    <value>For equipment code, {0}, must be inputted value more than 0.</value>
+  </data>
+  <data name="MSG4070" xml:space="preserve">
+    <value>Project status is not "Processing".</value>
+  </data>
+  <data name="MSG4071" xml:space="preserve">
+    <value>[Fix returned qty] must be inputted more than 0.</value>
+  </data>
+  <data name="MSG4072" xml:space="preserve">
+    <value>Are you sure to confirm 'Start checking'?</value>
+  </data>
+  <data name="MSG4073" xml:space="preserve">
+    <value>Cannot start checing inventory because 'Checking status' is not 'Preparing'.</value>
+  </data>
+  <data name="MSG4074" xml:space="preserve">
+    <value>Are you sure to confirm 'Stop checking'?</value>
+  </data>
+  <data name="MSG4075" xml:space="preserve">
+    <value>Cannot start checing inventory because 'Checking status' is not 'Implementing'.</value>
+  </data>
+  <data name="MSG4076" xml:space="preserve">
+    <value>Generated Purchase order no. is over limit. Please contact to administrator.</value>
+  </data>
+  <data name="MSG4077" xml:space="preserve">
+    <value>Cannot input [Checking date] over range of 'Start checking date({0})' and 'Current date'.</value>
+  </data>
+  <data name="MSG4078" xml:space="preserve">
+    <value>Checking equipment slip data not found.</value>
+  </data>
+  <data name="MSG4079" xml:space="preserve">
+    <value>Rack no, {0}, is not matching with equipment area.</value>
+  </data>
+  <data name="MSG4080" xml:space="preserve">
+    <value>Cannot input empty rack.</value>
+  </data>
+  <data name="MSG4081" xml:space="preserve">
+    <value>Added equipment data is duplicate.</value>
+  </data>
+  <data name="MSG4082" xml:space="preserve">
+    <value>There are no data for checking equipment.</value>
+  </data>
+  <data name="MSG4083" xml:space="preserve">
+    <value>For Rack no., {0}, Equipment area, {1}, Equipment code, {2}, must be inputted value on [Checking equipment quantity].</value>
+  </data>
+  <data name="MSG4084" xml:space="preserve">
+    <value>Search checking equipment data not found.</value>
+  </data>
+  <data name="MSG4085" xml:space="preserve">
+    <value>Search installation slip for stock-out data not found.</value>
+  </data>
+  <data name="MSG4086" xml:space="preserve">
+    <value>Equipment code, {0}, cannot stock-out because [New inst. sale] more than current equipment qty.</value>
+  </data>
+  <data name="MSG4087" xml:space="preserve">
+    <value>Equipment code, {0}, Cannot stock-out because [New inst. sample] more than current equipment qty.</value>
+  </data>
+  <data name="MSG4088" xml:space="preserve">
+    <value>Equipment code, {0}, Cannot stock-out because [New inst. rental] more than current equipment qty.</value>
+  </data>
+  <data name="MSG4089" xml:space="preserve">
+    <value>Equipment code, {0}, Cannot stock-out because [Secondhand inst. rental] more than current equipment qty.</value>
+  </data>
+  <data name="MSG4090" xml:space="preserve">
+    <value>Cannot stock out equipment code, {0} because   [Total stock-out qty] not equal to summary Qty of stock-out equipment of each area. Please adjust stock-out qty to be the same value.</value>
+  </data>
+  <data name="MSG4091" xml:space="preserve">
+    <value>In case of first stock-out, summary Qty of stock-out equipment must not be equal to [Remain stock-out qty]. If you want to stock-out all kind &amp; qty of equipments, please use ‘IVS020:Register stock-out for installation’ screen.</value>
+  </data>
+  <data name="MSG4092" xml:space="preserve">
+    <value>For equipment code, {0}, Summary Qty of stock-out equipment must be less than equal to [Remain stock-out qty].</value>
+  </data>
+  <data name="MSG4093" xml:space="preserve">
+    <value>Generated Inventory Lot no. is over limit. Please contact to administrator.</value>
+  </data>
+  <data name="MSG4094" xml:space="preserve">
+    <value>Search installation slip for receive returned equipment not found</value>
+  </data>
+  <data name="MSG4095" xml:space="preserve">
+    <value>Search Inventory slip for receive returned equipment not found</value>
+  </data>
+  <data name="MSG4096" xml:space="preserve">
+    <value>Are you sure to confirm receive returned equipment?</value>
+  </data>
+  <data name="MSG4097" xml:space="preserve">
+    <value>Rack was used to receive returned equipment already.</value>
+  </data>
+  <data name="MSG4098" xml:space="preserve">
+    <value>Your user account has no permission to do this action.</value>
+  </data>
+  <data name="MSG4099" xml:space="preserve">
+    <value>incorrect data type</value>
+  </data>
+  <data name="MSG4100" xml:space="preserve">
+    <value>Fix stock adjustment will be confirmed. Do you want to continous?</value>
+  </data>
+  <data name="MSG4101" xml:space="preserve">
+    <value>Adjustment stock qty must more than or equal to Fixed stock adjustment qty.</value>
+  </data>
+  <data name="MSG4102" xml:space="preserve">
+    <value>Stock Adjustment qty must be less than stock qty before adjustment</value>
+  </data>
+  <data name="MSG4103" xml:space="preserve">
+    <value>Transaction date must be in current month</value>
+  </data>
+  <data name="MSG4104" xml:space="preserve">
+    <value>Rack no.,{0}, is not Normal rack.</value>
+  </data>
+  <data name="MSG4105" xml:space="preserve">
+    <value>The combination of specified destination rack no. {0}/destination area/equipment does not match with the combination of such rack no. {0}/area/equipment registered on rack master.</value>
+  </data>
+  <data name="MSG4106" xml:space="preserve">
+    <value>For rack no. ,{0}, there is rack no. ,{1}, which reference on this equipment code and area already.</value>
+  </data>
+  <data name="MSG4107" xml:space="preserve">
+    <value>For equipment code , {0}, In case input "Destination rack no." same as "Source rack no.", "Transfer qty" must be inputted equal to "Stock qty".</value>
+  </data>
+  <data name="MSG4108" xml:space="preserve">
+    <value>For rack no. , {0}, In case Input "Destination rack no." same as "Source rack no.", equipment qty must be 0.</value>
+  </data>
+  <data name="MSG4109" xml:space="preserve">
+    <value>Equipment, {0}, not exists in Inventory database.</value>
+  </data>
+  <data name="MSG4112" xml:space="preserve">
+    <value>please input information into {0}.</value>
+  </data>
+  <data name="MSG4113" xml:space="preserve">
+    <value>Are you sure to register special stock out?</value>
+  </data>
+  <data name="MSG4114" xml:space="preserve">
+    <value>Adjustment Vat and WHT must not be more than Total amount</value>
+  </data>
+  <data name="MSG4115" xml:space="preserve">
+    <value>Eliminate equipment will be confirm. Do you want to continue?</value>
+  </data>
+  <data name="MSG4116" xml:space="preserve">
+    <value>System does not freezed current inventory data.</value>
+  </data>
+  <data name="MSG4117" xml:space="preserve">
+    <value>Blank checking slip is created already.</value>
+  </data>
+  <data name="MSG4118" xml:space="preserve">
+    <value>Creating blank checking slip is fail.</value>
+  </data>
+  <data name="MSG4119" xml:space="preserve">
+    <value>For equipment code, {0}, please select [Equipment area].</value>
+  </data>
+  <data name="MSG4120" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG4121" xml:space="preserve">
+    <value>Equipment code, {0}, All child equipments which refer to same parent equipment must be input same stock-out quantity.</value>
+  </data>
+  <data name="MSG4122" xml:space="preserve">
+    <value>Stock-out qty must input more than 0.</value>
+  </data>
+  <data name="MSG4123" xml:space="preserve">
+    <value>Equipment {0}, must be type is General or Material only.</value>
+  </data>
+  <data name="MSG4124" xml:space="preserve">
+    <value>Equipment {0}, has child equipment. Please purchase by child equipment.</value>
+  </data>
+  <data name="MSG4125" xml:space="preserve">
+    <value>[Stock-In Date(From)] must be less than or equal to [Stock-In Date(To)].</value>
+  </data>
+  <data name="MSG4126" xml:space="preserve">
+    <value>Your user account has no permission retrieve this Slip.</value>
+  </data>
+  <data name="MSG4127" xml:space="preserve">
+    <value>There is not returned equipment quantity for receiving.</value>
+  </data>
+  <data name="MSG4128" xml:space="preserve">
+    <value>Rack no., {0}, Equipment {1}, Cannot specify same Empty rack on [Destination rack no.] if [Source rack no.] has difference [Equipment code].</value>
+  </data>
+  <data name="MSG4129" xml:space="preserve">
+    <value>Cannot get DepreciationPeriod for contract and revenue from tbt_RentalContractBasic</value>
+  </data>
+  <data name="MSG4130" xml:space="preserve">
+    <value>Belonged office of user is not permission for acess to this screen.</value>
+  </data>
+  <data name="MSG4131" xml:space="preserve">
+    <value>There is mismatch in inventory qty of seconhand equipment. Please contact department which control inventory</value>
+  </data>
+  <data name="MSG4132" xml:space="preserve">
+    <value>Cannot register because total amount exceed 10 digits.</value>
+  </data>
+  <data name="MSG4133" xml:space="preserve">
+    <value>There is not equipment data for register Purchase order.</value>
+  </data>
+  <data name="MSG4134" xml:space="preserve">
+    <value>No record to edit 'Modify order qty'.</value>
+  </data>
+  <data name="MSG4135" xml:space="preserve">
+    <value>Equipment code, {0}, cannot stock-out because [New inst. sale] is more than project stocked out qty.</value>
+  </data>
+  <data name="MSG4136" xml:space="preserve">
+    <value>Equipment code, {0}, cannot stock-out because [New inst. sample] is more than project stocked out qty.</value>
+  </data>
+  <data name="MSG4137" xml:space="preserve">
+    <value>Equipment code, {0}, cannot stock-out because [New inst. rental] is more than project stocked out qty.</value>
+  </data>
+  <data name="MSG4138" xml:space="preserve">
+    <value>Equipment code, {0}, cannot stock-out because [Secondhand inst. rental] is more than project stocked out qty.</value>
+  </data>
+  <data name="MSG4139" xml:space="preserve">
+    <value>Cannot transfer rack no. {0}, Equipment code, {1}, normal rack to normal rack which there are equipment qty &gt; 0.</value>
+  </data>
+  <data name="MSG4140" xml:space="preserve">
+    <value>Equipment {0}, is logical delete already.</value>
+  </data>
+  <data name="MSG4141" xml:space="preserve">
+    <value>Rack no. ,{0}, cannot stock-out because slip status is not 'Not stock-out' or 'Partial stock-out'.</value>
+  </data>
+  <data name="MSG4142" xml:space="preserve">
+    <value>Rack no. ,{0}, cannot stock-out because slip status is not 'Not stock-out'.</value>
+  </data>
+  <data name="MSG4143" xml:space="preserve">
+    <value>Equipment ,{0}, cannot modify equipment quantity because there is no inventory at buffer W/H and user W/H.</value>
+  </data>
+  <data name="MSG4144" xml:space="preserve">
+    <value>Discount must be less than Total amount</value>
+  </data>
+  <data name="MSG4145" xml:space="preserve">
+    <value>Please specify unit.</value>
+  </data>
+  <data name="MSG4146" xml:space="preserve">
+    <value>Stock-in slip no. already registered asset.</value>
+  </data>
+  <data name="MSG4147" xml:space="preserve">
+    <value>Are you sure to input total price equals to 0? ({0})</value>
+  </data>
+  <data name="MSG4148" xml:space="preserve">
+    <value>Cannot update or cancel stock-in slip after calculate monthly average price.</value>
+  </data>
+  <data name="MSG4149" xml:space="preserve">
+    <value>Lineup of {0} is 'Stop sale'.</value>
+  </data>
+</root>

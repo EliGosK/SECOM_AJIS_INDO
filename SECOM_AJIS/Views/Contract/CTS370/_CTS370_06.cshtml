@@ -1,0 +1,31 @@
+﻿@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+
+<div id="divQuotationAR" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS370.lblQuotationCodeAR</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:150px;">@Resources.CTS370.lblARType</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.ARTypeComboBoxCTS370("cbbQARType", new { style = "width:300px;" })
+        </div>
+        @*<div class="usr-label" style="width:140px;">@Resources.CTS370.lblDueDate</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.ARDueDate_DeadLineComboBoxCTS370("cbbQARDueDate", new { style = "width:120px;" })
+        </div>*@
+        <div class="usr-label" style="width:100px;">@Resources.CTS370.lblStatus</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.ARSearchStatusComboBoxCTS370("cbbQARStatus", new { style = "width:120px;" })
+        </div>
+    </div>
+    <div class="usr-row">&nbsp;</div>
+    <div class="usr-row">
+        <div class="usr-label" style="text-align: left;">@Resources.CTS370.lblAROfQuotation <span id="spQARCode">XXX</span> : <span id="spQARName">YYY</span></div>
+        <div style="text-align:right;">
+            @Html.CommonButton("btnQARRetrieve", @Resources.CTS370.btnRetrieve, new { style = "vertical-align: middle; width: 100px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div id="gridQARMain"></div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

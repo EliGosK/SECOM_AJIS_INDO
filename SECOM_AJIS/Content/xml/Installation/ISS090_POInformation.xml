@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>	  
+    <column id="SubConName" width="*" type="ro" align="left" >lblSubContractorName</column>
+	<column id="SubConGroupName" width="140" type="ro" align="left" sort="na">lblSubContractorGroupName</column>
+	  <column id="SubConPOAmount" width="185" type="ro" align="right" sort="na">lblNormalSubContractorPOAmount</column>
+	  <column id="ActualPOAmount" width="185" type="ro" align="right" sort="na">lblActualPOAmount</column>
+	  <column id="PONo" width="110" type="ro" align="left" sort="na">lblPONo</column>
+	  <column id="InstallStartDate" width="120" type="ro" align="left" sort="na">lblExpectInstallStartDate</column>
+	  <column id="InstallCompleteDate" width="120" type="ro" align="left" sort="na">lblExpectInstallCompleteDate</column>
+	  <column id="SubConCode" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+	 	  
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

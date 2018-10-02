@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E44DC4DC-CE32-4CE7-9CB6-ADDEDFDF1B23}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.DataEntity.Quotation</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Entity.Quotation</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomEntity\doLockCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dsGenerateData.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_QuotationInstrumentDetails.cs" />
+    <Compile Include="CustomEntity\EXT_doUpdateQuotationData.cs" />
+    <Compile Include="CustomEntity\EXT_doUpdateQuotationTargetData.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_QuotationSite.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_QuotationCustomer.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_QuotationTarget.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_QuotationFacilityDetails.cs" />
+    <Compile Include="CustomEntity\doDefaultFacilityCondition.cs" />
+    <Compile Include="CustomEntity\doDefaultInstrumentCondition.cs" />
+    <Compile Include="CustomEntity\doInitQuotationData.cs" />
+    <Compile Include="CustomEntity\doInitRentalQuotationData.cs" />
+    <Compile Include="CustomEntity\doRegisterQuotationData.cs" />
+    <Compile Include="CustomEntity\doSearchQuotationListCondition.cs" />
+    <Compile Include="CustomEntity\EXT_doBeatGuardDetail.cs" />
+    <Compile Include="CustomEntity\EXT_doDefaultFacility.cs" />
+    <Compile Include="CustomEntity\EXT_doDefaultInstrument.cs" />
+    <Compile Include="CustomEntity\EXT_doSentryGuardDetail.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_QuotationOperationType.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_QuotationBeatGuardDetails.cs" />
+    <Compile Include="CustomEntity\EXT_doQuotationCustomer.cs" />
+    <Compile Include="CustomEntity\EXT_doQuotationSite.cs" />
+    <Compile Include="CustomEntity\EXT_doQuotationTarget.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_QuotationMaintenanceLinkage.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_QuotationSentryGuardDetails.cs" />
+    <Compile Include="CustomEntity\View_dtSearchQuotationTargetListlResult.cs" />
+    <Compile Include="CustomEntity\View_dtSearchQuotationListResult.cs" />
+    <Compile Include="CustomEntity\doInitImportData.cs" />
+    <Compile Include="CustomEntity\doLinkageSaleContractData.cs" />
+    <Compile Include="CustomEntity\doGetQuotationDataCondition.cs" />
+    <Compile Include="CustomEntity\doQuotationHeaderData.cs" />
+    <Compile Include="CustomEntity\doQuotationKey.cs" />
+    <Compile Include="CustomEntity\doRegisterQuotationTargetData.cs" />
+    <Compile Include="CustomEntity\doRentalQuotationData.cs" />
+    <Compile Include="CustomEntity\doSaleQuotationData.cs" />
+    <Compile Include="CustomEntity\doSearchQuotationTargetListCondition.cs" />
+    <Compile Include="CustomEntity\doUpdateQuotationBasicData.cs" />
+    <Compile Include="CustomEntity\doUpdateQuotationData.cs" />
+    <Compile Include="CustomEntity\doUpdateQuotationTargetData.cs" />
+    <Compile Include="CustomEntity\dsGenerateData.cs" />
+    <Compile Include="CustomEntity\dsImportData.cs" />
+    <Compile Include="CustomEntity\dsQuotationData.cs" />
+    <Compile Include="CustomEntity\dtIntrumenCode.cs" />
+    <Compile Include="CustomEntity\EXT_doInstrumentDetail.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_QuotationBasic.cs" />
+    <Compile Include="doBeatGuardDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doDefaultFacility.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doDefaultInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doFacilityDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInstrumentDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doQuotationCustomer.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doQuotationOneShotFlag.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doQuotationOperationType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doQuotationSite.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doQuotationTarget.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSentryGuardDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doxygen-DO.cs" />
+    <Compile Include="Doxygen-function.cs" />
+    <Compile Include="dtBatchProcessResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSearchQuotationTargetListResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_QuotationBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_QuotationBeatGuardDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_QuotationCustomer.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_QuotationFacilityDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_QuotationInstallationDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_QuotationInstrumentDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_QuotationMaintenanceLinkage.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_QuotationOperationType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_QuotationSentryGuardDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_QuotationSite.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_QuotationTarget.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="SECOM_AJIS.Entity.Quotation.Context.Biz.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.Context.tt</DependentUpon>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Quotation.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.Context.tt</DependentUpon>
+    </None>
+    <Compile Include="dtSearchQuotationListResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Quotation.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Quotation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="SECOM_AJIS.Entity.Quotation.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Quotation.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SECOM_AJIS.Entity.Quotation.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Quotation.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Quotation.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Quotation.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Common\SECOM_AJIS.Entity.Common.csproj">
+      <Project>{527A7562-621E-47CD-92CB-E0FA26660A4E}</Project>
+      <Name>SECOM_AJIS.Entity.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Contract\SECOM_AJIS.Entity.Contract.csproj">
+      <Project>{22F8AFE0-0CBB-4543-A703-2C29A1E2105A}</Project>
+      <Name>SECOM_AJIS.Entity.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Master\SECOM_AJIS.Entity.Master.csproj">
+      <Project>{65F28583-CF30-4765-A871-E97D2AE7F9B9}</Project>
+      <Name>SECOM_AJIS.Entity.Master</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SECOM_AJIS.Entity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Context.cs</LastGenOutput>
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.edmx</DependentUpon>
+    </Content>
+    <Content Include="SECOM_AJIS.Entity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.cs</LastGenOutput>
+      <DependentUpon>SECOM_AJIS.Entity.Quotation.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

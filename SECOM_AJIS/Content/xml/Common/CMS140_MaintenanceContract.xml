@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    
+    <column id="RelatedContractCode" width="110" type="ro" align="left" sort="str_custom">headerContract_code</column>
+    <!-- 170 -->
+    <column id="ProductName" width="*" type="ro" align="left" sort="str_custom">headerProduct_name</column>
+    <column id="TextTransferAmountPrice" width="180" type="ro" align="right" sort="na">headerContract_fee_Sale_Price_THB</column>
+    <column id="CustAcceptanceDate" width="130" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerCustomer_acceptance_date</column>
+
+    <column id="ButtonMaintenance" width="120" type="ro" align="center" sort="na">headerBtnView_maintenance_check_up_result</column>
+    <column id="ButtonContractBasic" width="100" type="ro" align="center" sort="na">headerBtnContract_basic</column>
+    <column id="ButtonSaleBasic" width="100" type="ro" align="center" sort="na">headerBtnSale_basic</column>
+
+    <!-- Hidden -->
+    <column id="ServiceTypeCode" width="0" type="ro" align="center"  hidden="true"></column>
+    <column id="ProductCode" width="0" type="ro" align="center"  hidden="true"></column>
+    <column id="RelatedOCC" width="0" type="ro" align="center"  hidden="true"></column>
+    
+
+    <column id="EnableContractBasic" width="0" type="ro" align="center"  hidden="true"></column>
+    <column id="EnableSaleBasic" width="0" type="ro" align="center"  hidden="true"></column>
+    <column id="Object" width="0" type="ro" align="center"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

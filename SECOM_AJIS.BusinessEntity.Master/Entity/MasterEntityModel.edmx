@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SECOM_AJIS.BusinessEntity.Master.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SECOM_AJISBusinessEntityMasterStoreContainer">
+          <EntitySet Name="tbm_Department" EntityType="SECOM_AJIS.BusinessEntity.Master.Store.tbm_Department" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tbm_District" EntityType="SECOM_AJIS.BusinessEntity.Master.Store.tbm_District" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tbm_Office" EntityType="SECOM_AJIS.BusinessEntity.Master.Store.tbm_Office" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="tbm_Province" EntityType="SECOM_AJIS.BusinessEntity.Master.Store.tbm_Province" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+        <EntityType Name="tbm_Department">
+          <Key>
+            <PropertyRef Name="DepartmentCode" />
+          </Key>
+          <Property Name="DepartmentCode" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
+          <Property Name="HeadDepartmentCode" Type="char" MaxLength="4" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="varchar" MaxLength="10" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbm_District">
+          <Key>
+            <PropertyRef Name="DistrictCode" />
+          </Key>
+          <Property Name="DistrictCode" Type="int" Nullable="false" />
+          <Property Name="ProvinceCode" Type="int" />
+          <Property Name="DistrictNameEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="DistrictNameLC" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrefixNameEN" Type="nvarchar" MaxLength="20" />
+          <Property Name="PrefixNameLC" Type="nvarchar" MaxLength="20" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="varchar" MaxLength="10" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbm_Office">
+          <Key>
+            <PropertyRef Name="OfficeCode" />
+          </Key>
+          <Property Name="OfficeCode" Type="char" Nullable="false" MaxLength="4" />
+          <Property Name="OfficeNameEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="OfficeNameJP" Type="nvarchar" MaxLength="50" />
+          <Property Name="OfficeNameLC" Type="nvarchar" MaxLength="50" />
+          <Property Name="PhoneNo" Type="nvarchar" MaxLength="15" />
+          <Property Name="FaxNo" Type="nvarchar" MaxLength="15" />
+          <Property Name="BranchCode" Type="char" MaxLength="4" />
+          <Property Name="HeadBranchCode" Type="char" MaxLength="4" />
+          <Property Name="HQCode" Type="char" MaxLength="4" />
+          <Property Name="RepresentOfficeCode" Type="varchar" MaxLength="4" />
+          <Property Name="OfficeLevel" Type="char" MaxLength="1" />
+          <Property Name="InstrumentStockOfficeCode" Type="varchar" MaxLength="4" />
+          <Property Name="FunctionLogistic" Type="char" MaxLength="1" />
+          <Property Name="FunctionSecurity" Type="char" MaxLength="1" />
+          <Property Name="FunctionSale" Type="char" MaxLength="1" />
+          <Property Name="FunctionAdmin" Type="char" MaxLength="1" />
+          <Property Name="FunctionBilling" Type="char" MaxLength="1" />
+          <Property Name="FunctionQuatation" Type="char" MaxLength="1" />
+          <Property Name="FunctionDebtTracing" Type="char" MaxLength="1" />
+          <Property Name="AreaRankSentryGuard" Type="char" MaxLength="1" />
+          <Property Name="AreaRankAlarm" Type="char" MaxLength="1" />
+          <Property Name="AreaRankSpecialOffice" Type="char" MaxLength="1" />
+          <Property Name="AreaRankInstallationFree" Type="char" MaxLength="1" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="varchar" MaxLength="10" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbm_Province">
+          <Key>
+            <PropertyRef Name="ProvinceCode" />
+          </Key>
+          <Property Name="ProvinceCode" Type="int" Nullable="false" />
+          <Property Name="ProvinceNameLC" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProvinceNameEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrefixNameLC" Type="nvarchar" MaxLength="20" />
+          <Property Name="PrefixNameEN" Type="nvarchar" MaxLength="20" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="varchar" MaxLength="50" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="sp_MA_GetCustAddressEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvnstrAutoComplete" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetCustAddressLC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvnstrAutoComplete" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetCustAlleyEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvnstrAutoComplete" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetCustAlleyLC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvnstrAutoComplete" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetCustRoadEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvnstrAutoComplete" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetCustRoadLC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvnstrAutoComplete" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetCustSubDistrictEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvnstrAutoComplete" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetCustSubDistrictLC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvnstrAutoComplete" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetGroup" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvnGroupCode" Type="nvarchar" Mode="In" />
+          <Parameter Name="pchvnGroupName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetGroupNameDataList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvnstrAutoComplete" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetSiteAddressEN" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="pchvnstrAutoComplete" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetTbm_District" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ProvinceCode" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_MA_GetTbm_Province" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SECOM_AJIS.BusinessEntity.Master" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="MAEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="dtTbm_District" EntityType="SECOM_AJIS.BusinessEntity.Master.dtTbm_District" />
+          <EntitySet Name="dtTbm_Province" EntityType="SECOM_AJIS.BusinessEntity.Master.dtTbm_Province" />
+          <EntitySet Name="dtTbm_Department" EntityType="SECOM_AJIS.BusinessEntity.Master.dtTbm_Department" />
+          <EntitySet Name="dtTbm_Office" EntityType="SECOM_AJIS.BusinessEntity.Master.dtTbm_Office" />
+          <FunctionImport Name="GetTbm_Province" EntitySet="dtTbm_Province" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.dtTbm_Province)" />
+          <FunctionImport Name="GetTbm_District" EntitySet="dtTbm_District" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.dtTbm_District)">
+          <Parameter Name="ProvinceCode" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetCustAddressEN" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.doCustAddressEN)">
+          <Parameter Name="pchvnstrAutoComplete" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetCustAddressLC" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.doCustAddressLC)">
+          <Parameter Name="pchvnstrAutoComplete" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetCustAlleyEN" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.doCustAlleyEN)">
+          <Parameter Name="pchvnstrAutoComplete" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetCustAlleyLC" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.doCustAlleyLC)">
+          <Parameter Name="pchvnstrAutoComplete" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetCustRoadEN" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.doCustRoadEN)">
+          <Parameter Name="pchvnstrAutoComplete" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetCustRoadLC" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.doCustRoadLC)">
+          <Parameter Name="pchvnstrAutoComplete" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetCustSubDistrictEN" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.doCustSubDistrictEN)">
+          <Parameter Name="pchvnstrAutoComplete" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetCustSubDistrictLC" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.doCustSubDistrictLC)">
+          <Parameter Name="pchvnstrAutoComplete" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetGroup" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.GetGroup)">
+            <Parameter Name="pchvnGroupCode" Mode="In" Type="String" />
+            <Parameter Name="pchvnGroupName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetGroupNameDataList" ReturnType="Collection(SECOM_AJIS.BusinessEntity.Master.GetGroupNameDataList)">
+            <Parameter Name="pchvnstrAutoComplete" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetGroupNameDataList">
+          <Property Type="String" Name="GroupNameEN" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="dtTbm_District">
+          <Key>
+            <PropertyRef Name="DistrictCode" />
+          </Key>
+          <Property Type="Int32" Name="DistrictCode" Nullable="false" />
+          <Property Type="Int32" Name="ProvinceCode" />
+          <Property Type="String" Name="DistrictNameEN" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DistrictNameLC" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrefixNameEN" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrefixNameLC" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="String" Name="CreateBy" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UpdateDate" />
+          <Property Type="String" Name="UpdateBy" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="dtTbm_Province">
+          <Key>
+            <PropertyRef Name="ProvinceCode" />
+          </Key>
+          <Property Type="Int32" Name="ProvinceCode" Nullable="false" />
+          <Property Type="String" Name="ProvinceNameLC" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProvinceNameEN" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrefixNameLC" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PrefixNameEN" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="String" Name="CreateBy" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UpdateDate" />
+          <Property Type="String" Name="UpdateBy" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="dtTbm_Department">
+          <Key>
+            <PropertyRef Name="DepartmentCode" />
+          </Key>
+          <Property Type="String" Name="DepartmentCode" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="DepartmentName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="HeadDepartmentCode" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="StartDate" />
+          <Property Type="DateTime" Name="EndDate" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="String" Name="CreateBy" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UpdateDate" />
+          <Property Type="String" Name="UpdateBy" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="dtTbm_Office">
+          <Key>
+            <PropertyRef Name="OfficeCode" />
+          </Key>
+          <Property Type="String" Name="OfficeCode" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="OfficeNameEN" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OfficeNameJP" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="OfficeNameLC" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneNo" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FaxNo" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BranchCode" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="HeadBranchCode" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="HQCode" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="RepresentOfficeCode" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="OfficeLevel" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="InstrumentStockOfficeCode" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="FunctionLogistic" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="FunctionSecurity" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="FunctionSale" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="FunctionAdmin" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="FunctionBilling" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="FunctionQuatation" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="FunctionDebtTracing" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AreaRankSentryGuard" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AreaRankAlarm" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AreaRankSpecialOffice" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="AreaRankInstallationFree" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="CreateDate" />
+          <Property Type="String" Name="CreateBy" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="UpdateDate" />
+          <Property Type="String" Name="UpdateBy" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="GetGroup">
+          <Property Type="String" Name="GroupCode" Nullable="false" MaxLength="6" />
+          <Property Type="String" Name="GroupNameEN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="GroupNameLC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Memo" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="GroupOfficeCode" Nullable="true" MaxLength="4" />
+          <Property Type="String" Name="GroupEmpNo" Nullable="true" MaxLength="10" />
+          <Property Type="Boolean" Name="DeleteFlag" Nullable="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="CreateBy" Nullable="true" MaxLength="10" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="UpdateBy" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="OfficeNameEN" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OfficeNameJP" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="OfficeNameLC" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="FullNameEn" Nullable="true" MaxLength="101" />
+          <Property Type="String" Name="FullNameLC" Nullable="true" MaxLength="101" />
+        </ComplexType>
+        <ComplexType Name="doCustAddressEN">
+          <Property Type="String" Name="AddressEN" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="doCustAddressLC">
+          <Property Type="String" Name="AddressLC" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="doCustAlleyEN">
+          <Property Type="String" Name="AlleyEN" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="doCustAlleyLC">
+          <Property Type="String" Name="AlleyLC" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="doCustRoadEN">
+          <Property Type="String" Name="RoadEN" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="doCustRoadLC">
+          <Property Type="String" Name="RoadLC" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="doCustSubDistrictEN">
+          <Property Type="String" Name="SubDistrictEN" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="doCustSubDistrictLC">
+          <Property Type="String" Name="SubDistrictLC" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SECOM_AJISBusinessEntityMasterStoreContainer" CdmEntityContainer="MAEntities">
+          <EntitySetMapping Name="dtTbm_District">
+            <EntityTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.dtTbm_District">
+              <MappingFragment StoreEntitySet="tbm_District">
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PrefixNameLC" ColumnName="PrefixNameLC" />
+                <ScalarProperty Name="PrefixNameEN" ColumnName="PrefixNameEN" />
+                <ScalarProperty Name="DistrictNameLC" ColumnName="DistrictNameLC" />
+                <ScalarProperty Name="DistrictNameEN" ColumnName="DistrictNameEN" />
+                <ScalarProperty Name="ProvinceCode" ColumnName="ProvinceCode" />
+                <ScalarProperty Name="DistrictCode" ColumnName="DistrictCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dtTbm_Province">
+            <EntityTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.dtTbm_Province">
+              <MappingFragment StoreEntitySet="tbm_Province">
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PrefixNameEN" ColumnName="PrefixNameEN" />
+                <ScalarProperty Name="PrefixNameLC" ColumnName="PrefixNameLC" />
+                <ScalarProperty Name="ProvinceNameEN" ColumnName="ProvinceNameEN" />
+                <ScalarProperty Name="ProvinceNameLC" ColumnName="ProvinceNameLC" />
+                <ScalarProperty Name="ProvinceCode" ColumnName="ProvinceCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dtTbm_Department">
+            <EntityTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.dtTbm_Department">
+              <MappingFragment StoreEntitySet="tbm_Department">
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="HeadDepartmentCode" ColumnName="HeadDepartmentCode" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="DepartmentCode" ColumnName="DepartmentCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dtTbm_Office">
+            <EntityTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.dtTbm_Office">
+              <MappingFragment StoreEntitySet="tbm_Office">
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="AreaRankInstallationFree" ColumnName="AreaRankInstallationFree" />
+                <ScalarProperty Name="AreaRankSpecialOffice" ColumnName="AreaRankSpecialOffice" />
+                <ScalarProperty Name="AreaRankAlarm" ColumnName="AreaRankAlarm" />
+                <ScalarProperty Name="AreaRankSentryGuard" ColumnName="AreaRankSentryGuard" />
+                <ScalarProperty Name="FunctionDebtTracing" ColumnName="FunctionDebtTracing" />
+                <ScalarProperty Name="FunctionQuatation" ColumnName="FunctionQuatation" />
+                <ScalarProperty Name="FunctionBilling" ColumnName="FunctionBilling" />
+                <ScalarProperty Name="FunctionAdmin" ColumnName="FunctionAdmin" />
+                <ScalarProperty Name="FunctionSale" ColumnName="FunctionSale" />
+                <ScalarProperty Name="FunctionSecurity" ColumnName="FunctionSecurity" />
+                <ScalarProperty Name="FunctionLogistic" ColumnName="FunctionLogistic" />
+                <ScalarProperty Name="InstrumentStockOfficeCode" ColumnName="InstrumentStockOfficeCode" />
+                <ScalarProperty Name="OfficeLevel" ColumnName="OfficeLevel" />
+                <ScalarProperty Name="RepresentOfficeCode" ColumnName="RepresentOfficeCode" />
+                <ScalarProperty Name="HQCode" ColumnName="HQCode" />
+                <ScalarProperty Name="HeadBranchCode" ColumnName="HeadBranchCode" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="FaxNo" ColumnName="FaxNo" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="OfficeNameLC" ColumnName="OfficeNameLC" />
+                <ScalarProperty Name="OfficeNameJP" ColumnName="OfficeNameJP" />
+                <ScalarProperty Name="OfficeNameEN" ColumnName="OfficeNameEN" />
+                <ScalarProperty Name="OfficeCode" ColumnName="OfficeCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetTbm_Province" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetTbm_Province" />
+          <FunctionImportMapping FunctionImportName="GetTbm_District" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetTbm_District" />
+          <FunctionImportMapping FunctionImportName="GetCustAddressEN" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetCustAddressEN">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.doCustAddressEN">
+                <ScalarProperty Name="AddressEN" ColumnName="AddressEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCustAddressLC" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetCustAddressLC">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.doCustAddressLC">
+                <ScalarProperty Name="AddressLC" ColumnName="AddressLC" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCustAlleyEN" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetCustAlleyEN">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.doCustAlleyEN">
+                <ScalarProperty Name="AlleyEN" ColumnName="AlleyEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCustAlleyLC" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetCustAlleyLC">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.doCustAlleyLC">
+                <ScalarProperty Name="AlleyLC" ColumnName="AlleyLC" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCustRoadEN" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetCustRoadEN">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.doCustRoadEN">
+                <ScalarProperty Name="RoadEN" ColumnName="RoadEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCustRoadLC" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetCustRoadLC">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.doCustRoadLC">
+                <ScalarProperty Name="RoadLC" ColumnName="RoadLC" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCustSubDistrictEN" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetCustSubDistrictEN">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.doCustSubDistrictEN">
+                <ScalarProperty Name="SubDistrictEN" ColumnName="SubDistrictEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetCustSubDistrictLC" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetCustSubDistrictLC">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.doCustSubDistrictLC">
+                <ScalarProperty Name="SubDistrictLC" ColumnName="SubDistrictLC" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetGroup" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetGroup">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.GetGroup">
+                <ScalarProperty Name="GroupCode" ColumnName="GroupCode" />
+                <ScalarProperty Name="GroupNameEN" ColumnName="GroupNameEN" />
+                <ScalarProperty Name="GroupNameLC" ColumnName="GroupNameLC" />
+                <ScalarProperty Name="Memo" ColumnName="Memo" />
+                <ScalarProperty Name="GroupOfficeCode" ColumnName="GroupOfficeCode" />
+                <ScalarProperty Name="GroupEmpNo" ColumnName="GroupEmpNo" />
+                <ScalarProperty Name="DeleteFlag" ColumnName="DeleteFlag" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="OfficeNameEN" ColumnName="OfficeNameEN" />
+                <ScalarProperty Name="OfficeNameJP" ColumnName="OfficeNameJP" />
+                <ScalarProperty Name="OfficeNameLC" ColumnName="OfficeNameLC" />
+                <ScalarProperty Name="FullNameEn" ColumnName="FullNameEn" />
+                <ScalarProperty Name="FullNameLC" ColumnName="FullNameLC" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetGroupNameDataList" FunctionName="SECOM_AJIS.BusinessEntity.Master.Store.sp_MA_GetGroupNameDataList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SECOM_AJIS.BusinessEntity.Master.GetGroupNameDataList">
+                <ScalarProperty Name="GroupNameEN" ColumnName="GroupNameEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="MasterEntityModel" ZoomLevel="92">
+        <EntityTypeShape EntityType="SECOM_AJIS.BusinessEntity.Master.dtTbm_District" Width="1.5" PointX="0.75" PointY="0.75" Height="2.9417936197916665" />
+        <EntityTypeShape EntityType="SECOM_AJIS.BusinessEntity.Master.dtTbm_Province" Width="1.5" PointX="2.75" PointY="0.75" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="SECOM_AJIS.BusinessEntity.Master.dtTbm_Department" Width="1.5" PointX="4.75" PointY="0.75" Height="2.7494921874999996" />
+        <EntityTypeShape EntityType="SECOM_AJIS.BusinessEntity.Master.dtTbm_Office" Width="1.5" PointX="6.75" PointY="0.75" Height="6.21091796875" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

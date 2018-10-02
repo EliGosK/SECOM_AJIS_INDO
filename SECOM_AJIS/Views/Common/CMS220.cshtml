@@ -1,0 +1,89 @@
+﻿
+@using SECOM_AJIS.Common.Helpers
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+
+
+    ViewBag.lbWidth = "200px";  /* ViewBag.LabelWidth */
+    ViewBag.lb2Width = "165px";
+    ViewBag.lb3Width = "120px";
+
+    ViewBag.headText = "120px";
+
+    ViewBag.shortText = "200px";
+    ViewBag.longText = "600px";
+
+    ViewBag.shortText2 = "230px"; /* for case 3 column*/
+
+    ViewBag.RightBtnSet = "185px";
+
+    ViewBag.ViewClass = "label-view";
+    ViewBag.isViewMode = true;
+
+    ViewBag.merge = "750px";
+    ViewBag.AramWidth = "210px";
+
+    /* for debug */
+    ViewBag.txtBackgroundColor = "None"; /*Lime*/
+
+    /* for debug */
+    ViewBag.isShowAll = false;
+   
+}
+
+@section page_header{
+<script type="text/javascript" >
+    var txtAttachImportanceFlag = "@ViewBag.txtAttachImportanceFlag" == "True" ? true : false;
+    
+</script>
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS220.js")" ></script>
+
+<script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+
+
+
+}
+
+
+<div style="display:none">
+    @Html.Hidden("btnClose_CMS220", (string)@Resources.CMS220.btnClose)
+</div>
+
+<div id="divAll_CMS220">
+
+@if ((bool)ViewBag.isShowContractTarget || (bool)ViewBag.isShowAll)
+{
+    @Html.Partial("CMS220/_CMS220_1")
+}
+
+
+@if ((bool)ViewBag.isShowPurchaser || (bool)ViewBag.isShowAll)
+{
+    @Html.Partial("CMS220/_CMS220_2")
+}
+
+@if ((bool)ViewBag.isShowRealCustomer || (bool)ViewBag.isShowAll)
+{
+    @Html.Partial("CMS220/_CMS220_3")
+}
+
+@if ((bool)ViewBag.isShowSite || (bool)ViewBag.isShowAll)
+{
+    @Html.Partial("CMS220/_CMS220_4")
+}
+
+</div>

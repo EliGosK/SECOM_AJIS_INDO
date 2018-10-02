@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na">headerNo</column>
+    <column id="GroupCode" width="100" type="ro" align="left" sort="str_custom">headerGroupCode</column>
+    <column id="GroupNameDisplay" width="*" type="ro" align="left" sort="str_custom">headerGroupName</column>
+    <column id="OfficeInCharge" width="120" type="ro" align="left" sort="str_custom">headerOfficeInCharge</column>
+    <column id="PersonInCharge" width="*" type="ro" align="left" sort="str_custom">headerPersonInCharge</column>
+    <column id="CountCust" width="100" type="ro" align="right" sort="int">headerNumberOfCustomer</column>
+    <column id="CountSite" width="100" type="ro" align="right" sort="int">headerNumberOfSite</column>
+    <column id="GroupDetail" width="100" type="link" align="center" sort="na">headerGroupDetail</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+	  <column id="BillingOCC" width="90" type="ro" align="left" sort="na">headerBillingOCC</column>
+	  <column id="BillingClientCode" width="110" type="ro" align="left" sort="na">headerBillingClientCode</column>
+	  <column id="BillingOfficeName" width="150" type="ro" align="left" sort="na">headerBillingOffice</column>
+	  <column id="BillingTargetCode" width="200" type="ro" align="left" sort="na">headerBillingTargetCode</column>
+	  <column id="BillingTargetName" width="*" type="ro" align="left" sort="na">headerBillingTargetName</column>
+	  <column id="Detail" width="30" type="link" align="center" sort="na">headerDetail</column>
+	  <column id="Sequence" width="74" type="ro" hidden="true"></column>
+	  <settings>
+		  <colwidth>px</colwidth>
+	  </settings>
+  </head>
+</rows>

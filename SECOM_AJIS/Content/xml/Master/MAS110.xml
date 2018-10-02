@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="0" type="ro" align="center" sort="na"></column>
+    <column id="SubContractorCode" width="110" type="ro" align="left" sort="str_custom">headerSubcontractorCode</column>
+    <column id="COCompanyCode" width="110" type="ro" align="left" sort="str_custom">headerCoCompanyCode</column>
+    <column id="InstallationTeam" width="110" type="ro" align="left" sort="str_custom">headerInstallTeamNumber</column>
+    <column id="SubContractorName" width="*" type="ro" align="left" sort="str_custom">headerSubcontractorName</column>
+    <column id="SubInstallationFlagDisplay" width="120" type="ro" align="left" sort="str_custom">headerInstrallationSubcontractor</column>
+    <column id="SubMaintenanceFlagDisplay" width="120" type="ro" align="left" sort="str_custom">headerMaintenanceSubcontractor</column>
+    <column id="Edit" width="30" type="link" align="center" sort="na">headerDetail</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+

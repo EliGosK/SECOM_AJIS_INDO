@@ -1,0 +1,11 @@
+﻿@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/FlowMenu.js")"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/flow/flow.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/flow/images/cms025/flow_cms025.css")" />
+}
+@Html.Partial("_FlowMenuCondition")
+@Html.Partial("CMS025/_CMS025_02")
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>

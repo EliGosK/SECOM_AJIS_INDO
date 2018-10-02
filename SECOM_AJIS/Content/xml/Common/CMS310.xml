@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    
+    <column id="ContractCode_Short" width="100" type="ro" align="left" sort="str_custom">headerContractCode</column>
+    <column id="CustName_Extra" width="150" type="ro" align="left" sort="str_custom">headerContractTargetPurchase</column>
+    <column id="SiteName_Extra" width="*" type="ro" align="left" sort="str_custom">headerSiteName</column>
+    <column id="TextTransferPrice" width="180" type="ro" align="right" sort="na">headerContractFeeSalePrice</column>
+    
+    <column id="OfficeName_Extra" width="160" type="ro" align="left" sort="str_custom">headerOffice</column>
+    <column id="OperationDate" width="100" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerOperationDate</column>
+
+    <column id="Button" width="30" type="ro" align="center" sort="na">headerSelectButton</column>
+    <column id="Object" width="0" type="ro" align="center"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

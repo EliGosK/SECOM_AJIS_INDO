@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="BillingOCC" width="80" type="ro" align="left" sort="str_custom">headerBillingOCC</column>
+    <column id="BillingClientCode" width="*" type="ro" align="left" sort="str_custom">headerBillingClientCode</column>
+    <column id="BillingOfficeName" width="190" type="ro" align="left" sort="str_custom">headerBillingOffice</column>
+    <column id="BillingTargetCode" width="180" type="ro" align="left" sort="str_custom">headerBillingTargetCode</column>
+    <column id="BillingTargetName" width="225" type="ro" align="left" sort="str_custom">headerBillingTargetName</column>
+    <column id="ContractFee" width="75" type="ro" align="right" sort="str_custom">headerContractFee</column>
+    <column id="Detail" width="30" type="ro" align="left" sort="str_custom">headerDetail</column>
+    <column id="Remove" width="30" type="ro" align="center" sort="str_custom">headerRemove</column>
+    <column id="Sequence" width="10" type="ro" align="left" sort="str_custom"></column>
+    <column id="Show" width="10" type="ro" align="left" sort="str_custom"></column>
+    <column id="StatusGrid" width="10" type="ro" align="left" sort="str_custom"></column>
+
+    <column id="BillingOffice" width="10" type="ro" align="left" sort="str_custom"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

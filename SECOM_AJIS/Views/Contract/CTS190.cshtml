@@ -1,0 +1,98 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelCol1Width = "300px";
+    ViewBag.LabelCol2Width = "170px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "170px"; // 150px
+    ViewBag.ObjectCol2Width = "200px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+
+}
+@section page_header{
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS190.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+  
+}
+
+<div style="display:none">
+    @*@Html.Hidden("CTS300_IsLoaded_ProjectSection", "0")
+    @Html.Hidden("CTS300_IsLoaded_CustomerSection", "0")
+    @Html.Hidden("CTS300_IsLoaded_SiteSection", "0")*@
+</div>
+
+<div class="main-table">
+    <div class="table-header">
+        @Resources.CTS190.lblReceiveContractDocument
+    </div>
+
+    <form id= "CTS190_RecieveForm">
+
+    <div class="usr-row" style="margin-top:10px">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS190.lblContractCodeQuotationTargetCode 
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;" >
+            @Html.CommonTextBox("ContractCode_QuotationTargetCode", null, new { style = "width:150px;", maxlength = CommonValue.C_MAXLENGTH_QUOTATION_TARGE_CODE }) @Html.RequireFiled()
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.CTS190.lblOCC_Alphabet 
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;" >
+            @Html.CommonTextBox("OCC_Alphabet", null, new { style = "width:150px;", maxlength = "4" }) @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS190.lblContractDocOCC
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;" >
+            @Html.CommonTextBox("ContractDocOCC", null, new { style = "width:150px;", maxlength = "4" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.CTS190.lblDocAuditResult
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;" >
+            @Html.DocumnetAuditResultComboBox("DocAuditResult", new { style = "height: 22px; width: 154px;" }) @Html.RequireFiled()
+        </div>
+    </div>
+
+    </form>
+
+    <div class="usr-row" >
+        <div class="usr-object" style="margin-top:20px;margin-right:4px; float:right;">
+            <div>
+                @Html.CommonButton("btnCTS190Add", @Resources.CTS190.btnAdd, new { style = "width:100px;", type = "button" })
+                @Html.CommonButton("btnCTS190Clear", @Resources.CTS190.btnClear, new { style = "width:100px;", type = "button" })
+            </div>
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+
+<div class="main-table">
+    <div class="table-header">
+        @Resources.CTS190.lblReceiveContractDocumentList
+    </div>
+    <div style="margin-top:10px">
+        <div id="CTS190_RecieveContacrDocList" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+

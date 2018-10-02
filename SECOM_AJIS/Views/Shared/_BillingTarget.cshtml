@@ -1,0 +1,193 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    /* --- Before use this control, You must declare
+     *      1.) ViewBag.LabelWidth (string)
+     *      2.) ViewBag.BillSpcifyCodeWidth (string)
+     *      3.) ViewBag.BillCopyWidth (string)
+     */
+}
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+    <div class="usr-object" style="height:100%;">
+        <div id="divSpecifyInfo" class="sub-table" style="float:left;width:@ViewBag.BillSpcifyCodeWidth;margin-right:10px;">
+            <div class="table-header">
+                @Resources._BillingTarget.lblSpecifyCode
+            </div>
+            <div class="usr-row" style="margin-left:5px;">
+                <div class="usr-object">&nbsp;</div>
+            </div>
+            <div class="usr-row" style="margin-left:5px;">
+                <div class="usr-object" style="width:150px;">
+                    @Html.CommonRadioButton("rdoBillTargetCode", @Resources._BillingTarget.rdoBillingTargetCode, "1", false, "BillGroup", new { @checked = "true" })
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("txtBillTargetCode", null, new { style = "width:130px;" })
+                </div>
+            </div>
+            <div class="usr-row" style="margin-left:5px;">
+                <div class="usr-object" style="width:150px;">
+                    @Html.CommonRadioButton("rdoBillClientCode", @Resources._BillingTarget.rdoBillingClientCode, "2", false, "BillGroup")
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("txtBillClientCode", null, new { style = "width:130px;" })
+                </div>
+            </div>
+                <div class="usr-row" style="margin-left:5px;">
+                    <div class="usr-object">&nbsp;</div>
+                </div>
+            <div class="usr-row">
+                <div style="float:right;">
+                    <div class="usr-object" style="padding-right:10px;">
+                        @Html.CommonButton("btnBillRetrieve", @Resources._BillingTarget.btnBillRetrieve, new { style = "width:80px;" })&nbsp;
+                        @Html.CommonButton("btnBillSearch", @Resources._BillingTarget.btnBillSearch, new { style = "width:140px;" })
+                    </div>
+                </div>
+            </div>
+            <div class="usr-footer-row">&nbsp;</div>
+        </div>
+        <div class="sub-table" style="float:left; width:@ViewBag.BillCopyWidth;">
+            <div class="table-header">
+                @Resources._BillingTarget.lblCopyNameAddrInfo
+            </div>
+            <div class="usr-row" style="margin-left:5px;">
+                <div class="usr-object">
+                    @Html.CommonRadioButton("rdoContractTargetPurchaser", @Resources._BillingTarget.rdoContractTargetPurchaser, "1", false, "InfomationGroup", new { @checked = "true" })
+                </div>
+            </div>
+            <div class="usr-row" style="margin-left:5px;">
+                <div class="usr-object">
+                    @Html.CommonRadioButton("rdoBranchTargetPurchaser", @Resources._BillingTarget.rdoBranchTargetPurchaser, "2", false, "InfomationGroup")
+                </div>
+            </div>
+            <div class="usr-row" style="margin-left:5px;">
+                <div class="usr-object">
+                    @Html.CommonRadioButton("rdoRealCustomer", @Resources._BillingTarget.rdoRealCustomer, "3", false, "InfomationGroup")
+                </div>
+            </div>
+            <div class="usr-row" style="margin-left:5px;">
+                <div class="usr-object">
+                    @Html.CommonRadioButton("rdoCopyInformation", @Resources._BillingTarget.rdoCopyInformation, "4", false, "InfomationGroup")
+                </div>
+            </div>
+            <div class="usr-row">
+                <div style="float:right;">
+                    <div class="usr-object" style="padding-right:10px;">
+                        @Html.CommonButton("btnBillCopy", @Resources._BillingTarget.btnBillCopy, new { style = "width:80px;" })
+                    </div>
+                </div>
+            </div>
+            <div class="usr-footer-row">&nbsp;</div>
+        </div>
+    </div>
+</div>
+<div class="usr-row">&nbsp;</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._BillingTarget.lblBillingOCC
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtBillingOCC", null, new { @readonly = "readonly", style = "width:100px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._BillingTarget.lblBillingTargetCodeD
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtBillingTargetCodeD", null, new { @readonly = "readonly", style = "width:120px;" })
+    </div>
+    <div class="usr-label" style="width:130px;">
+        @Resources._BillingTarget.lblBillingClientCodeD
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtBillingClientCodeD", null, new { @readonly = "readonly", style = "width:100px;" })
+    </div>
+    <div class="usr-object" style="padding-left:10px;margin-top:-1px;">
+        @Html.CommonButton("btnNewEditBillClientInfo", @Resources._BillingTarget.btnNewEditBillClientInfo, new { style = "width:190px;" })&nbsp;
+        @Html.CommonButton("btnClearBillTarget", @Resources._BillingTarget.btnClearBillTarget, new { style = "width:140px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._BillingTarget.lblNameEng
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtNameEng", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._BillingTarget.lblBranchNameEng
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtBranchNameEng", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._BillingTarget.lblAddressEng
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtAddressEng", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row" style="margin-top:10px;">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._BillingTarget.lblNameLocal
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtNameLocal", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._BillingTarget.lblBranchNameLocal
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtBranchNameLocal", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._BillingTarget.lblAddressLocal
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtAddressLocal", null, new { @readonly = "readonly", style = "width:710px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._BillingTarget.lblNationality
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtNationality", null, new { @readonly = "readonly", style = "width:100px;" })
+    </div>
+    <div class="usr-label" style="width:150px;">
+        @Resources._BillingTarget.lblTelNo
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtTelNo", null, new { @readonly = "readonly", style = "width:100px;" })
+    </div>
+    <div class="usr-label" style="width:150px;">
+        @Resources._BillingTarget.lblBusinessType
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtBusinessType", null, new { @readonly = "readonly", style = "width:100px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._BillingTarget.lblIDTaxNo
+    </div>
+    <div class="usr-object">
+        @Html.CommonTextBox("txtIDTaxNo", null, new { @readonly = "readonly", style = "width:100px;" })
+    </div>
+</div>
+<div class="usr-row">
+    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+        @Resources._BillingTarget.lblBillingOffice
+    </div>
+    <div class="usr-object">
+        @Html.BillingOfficeComboBox("cboBillingOffice", new { style = "width:104px;" })
+    </div>
+</div>

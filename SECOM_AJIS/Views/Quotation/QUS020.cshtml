@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "130px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectCol4Width = "371px";
+    ViewBag.ObjectColMergeWidth = "730px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Master/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS020.js")"></script>
+}
+@Html.Partial("QUS020/_QUS020_01")
+@Html.Partial("QUS020/_QUS020_02")
+@Html.Partial("QUS020/_QUS020_03")
+@Html.Partial("QUS020/_QUS020_04")
+@Html.Partial("QUS020/_QUS020_05")
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>

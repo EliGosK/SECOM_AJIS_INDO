@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>	  
+    <column id="SubConName" width="*" type="ro" align="left" >lblSubContractorName</column>
+	<column id="SubConGroupName" width="110" type="ro" align="left" sort="na">lblSubContractorGroupName</column>
+	  <column id="SubConPOAmount" width="185" type="ro" align="right" sort="na">headerNormalSubContractorPOAmount</column>
+	  <column id="ActualPOAmount" width="185" type="ro" align="right" sort="na">lblActualPOAmount</column>
+	  <column id="PONo" width="110" type="ro" align="left" sort="na">lblPONo</column>
+	  <column id="InstallStartDate" width="120" type="ro" align="left" sort="na">lblExpectInstallStartDate</column>
+	  <column id="InstallCompleteDate" width="120" type="ro" align="left" sort="na">lblExpectInstallCompleteDate</column>
+	  <column id="SubConCode" width="0" type="ro" align="left" hidden="true" sort="str_custom"></column>
+	  <column id="ButtonPOIssue" width="40" type="link" align="center" sort="na">lblIssuePO</column>
+	  <column id="ButtonPOEdit" width="40" type="link" align="center" sort="na">lblDivEdit</column>
+      <column id="ButtonPORemove" width="40" type="link" align="center" sort="na">headerRemove1</column>	  
+	  <column id="TempColumn" width="0" type="ro" hidden="true" sort="na"></column>
+	  <column id="OldPOData" width="0" type="ro" hidden="true" sort="na"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

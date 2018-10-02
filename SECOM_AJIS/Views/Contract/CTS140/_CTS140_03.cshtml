@@ -1,0 +1,145 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Presentation.Master.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelWidth = "215px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<div id="divContractAgreement" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS140.lblContractAgreementInformation
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblApproveContractDate
+            </div>
+            <div class="usr-object" style="width: 100px">
+                @Html.CommonTextBox("ApproveContractDate", (string)@ViewBag.ApproveContractDate, new { style = "width:120px;", @readonly = true })
+            </div>
+            <div class="usr-label" style="width: 295px">
+                @Resources.CTS140.lblContractOffice
+            </div>
+            <div class="usr-object">
+                @Html.ContractOfficeNormalCbo("ContractOfficeCode", new { style = "width:200px;", selected = (string)@ViewBag.ContractOfficeCode })
+            </div>
+            <div class="usr-object">@Html.RequireFiled()</div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblQuotationCode
+            </div>
+            <div class="usr-object" style="width: 100px">
+                @Html.CommonTextBox("QuotationTargetCode", (string)@ViewBag.QuotationTargetCode, new { style = "width:95px;", @readonly = true })                
+            </div>
+            <div class="usr-object" style="width: 20px">
+                @Html.CommonTextBox("QuotationAlphabet", (string)@ViewBag.QuotationAlphabet, new { style = "width:20px;", @readonly = true })
+            </div>
+            <div class="usr-label" style="width: 275px">
+                @Resources.CTS140.lblPlanCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("PlanCode", (string)@ViewBag.PlanCode, new { style = "width:120px;", maxlength = "20" })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblQuotationNo
+            </div>
+            <div class="usr-object" style="width: 200px">
+                @Html.CommonTextBox("QuotationNo", (string)@ViewBag.QuotationNo, new { style = "width:200px;", maxlength="30" })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblSaleMan1
+            </div>
+            <div class="usr-object" style="width: 55px">
+                @Html.CommonTextBox("SalesmanEmpNo1", (string)@ViewBag.SalesmanEmpNo1, new { style = "width:50px;", maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 170px">
+                @Html.CommonTextBox("SalesmanEmpName1", (string)@ViewBag.SalesmanEmpName1, new { style = "width:145px;", @readonly = true })
+                @Html.RequireFiled()
+            </div>
+
+            <div class="usr-label" style="width: 170px">
+                @Resources.CTS140.lblSaleMan2
+            </div>
+            <div class="usr-object" style="width: 55px">
+                @Html.CommonTextBox("SalesmanEmpNo2", (string)@ViewBag.SalesmanEmpNo2, new { style = "width:50px;", maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 170px">
+                @Html.CommonTextBox("SalesmanEmpName2", (string)@ViewBag.SalesmanEmpName2, new { style = "width:145px;", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblLinkageSaleContractCode
+            </div>
+            <div class="usr-object" style="width: 120px">
+                @Html.CommonTextBox("RelatedContractCode", (string)@ViewBag.RelatedContractCode, new { style = "width:120px;", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE, @readonly = true })
+            </div>
+            <div class="usr-label" style="width: 275px">
+                @Resources.CTS140.lblOldContractCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("OldContractCode", (string)@ViewBag.OldContractCode, new { style = "width:120px;", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblAcquisitionType
+            </div>
+            <div class="usr-object" style = "width:200px;">
+                @Html.AcquisitionComboBox("AcquisitionTypeCode", new { style = "width:200px;", selected = (string)@ViewBag.AcquisitionTypeCode })                
+            </div>
+            <div class="usr-label" style="width: 195px">
+                @Resources.CTS140.lblIntroducerCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("IntroducerCode", (string)@ViewBag.IntroducerCode, new { style = "width:120px;", maxlength = "11" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblMotivationType
+            </div>
+            <div class="usr-object" style = "width:200px;">
+                @Html.MotivationComboBox("MotivationTypeCode", new { style = "width:200px;", selected = (string)@ViewBag.MotivationTypeCode })                
+            </div>
+            <div class="usr-label" style="width: 195px">
+                @Resources.CTS140.lblSaleSupporter
+            </div>
+            <div class="usr-object" style="width: 55px">
+                @Html.CommonTextBox("SalesSupporterEmpNo", (string)@ViewBag.SalesSupporterEmpNo, new { style = "width:50px;", maxlength = "10" })
+            </div>
+            <div class="usr-object" style="width: 170px">
+                @Html.CommonTextBox("SalesSupporterEmpName", (string)@ViewBag.SalesSupporterEmpName, new { style = "width:145px;", @readonly = true })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblPaymentDateIncentive
+            </div>
+            <div class="usr-object">
+                <div class="object-unit">
+                    @Html.CommonTextBox("PaymentDateIncentive", (string)@ViewBag.PaymentDateIncentive, new { style = "width:100px;", maxlength = "15" })
+                </div>
+                @Html.LabelDateFormat("PaymentDateIncentive")
+            </div>
+        </div>
+     </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+

@@ -1,0 +1,172 @@
+﻿.main-table
+{
+    border: 1px solid #aaaaaa;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 10px;
+    
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border-radius: 5px; 
+}
+.main-table .table-header
+{
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0 0 10px 5px;
+}
+.main-table .label
+{
+    text-align: right;
+}
+.main-table .label-header
+{
+    clear:both;
+    font-size: 10pt;
+    font-weight: bold;
+    margin: 0 0 1px 5px;
+    padding-top:0px;
+}
+.main-table .sub-table
+{
+    border: 1px solid #aaaaaa;
+    padding: 5px 0px 5px 0px;
+    
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border-radius: 5px; 
+}
+.sub-table .table-sub-header
+{
+    clear:both;
+    font-size: 10pt;
+    font-weight: bold;
+    margin: 0px 0 5px 5px;
+    padding-top:0px;
+}
+.main-table .fieldset-table
+{
+    border: 1px solid #aaaaaa;
+    margin-top:5px;
+    padding: 5px 0px 5px 0px;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border-radius: 5px; 
+}
+.fieldset-table .fieldset-header
+{
+    clear:both;
+    margin: -13px 0 0px 5px;
+    
+}
+.fieldset-header span
+{
+    background-color: #ffffff;
+    padding: 0 5px 0 5px;
+}
+/* --- User define table --- */
+.main-table .usr-row
+{
+    clear:both;
+    width:100%;
+    height:100%;
+    padding-top: 2px;
+}
+.main-table .usr-row-space
+{
+    padding-top: 5px;
+}
+.main-table .usr-row-space-2x
+{
+    padding-top: 10px;
+}
+.main-table .usr-label
+{
+    text-align: right;
+    float:left;
+    margin-right:5px;
+    height:100%;
+    /*line-height: 21px;*/
+    margin-top: 3px;
+    line-height: 14px;
+    /*height:21px;*/
+    padding-bottom: 4px;
+}
+
+/*Add by budd on 22/Jun/2012 for bold label on ICS081, ICS084 screen*/
+.main-table .bold
+{
+    font-size:11pt;
+    font-weight:bold;
+}
+
+
+.usr-label .multi-line-01
+{
+    margin-top:-8px;
+}
+.usr-label .multi-line-02
+{
+    margin-top:-6px;
+}
+.main-table .usr-object
+{
+    float:left;
+    height:100%;
+    word-wrap: break-word;
+}
+.main-table .usr-clear-style
+{
+    clear:both;
+    width:100%;
+    height: 0px;
+}
+
+
+.row-image
+{
+    cursor: pointer;
+    cursor:hand; 
+}
+.row-image-disabled
+{
+    cursor: auto;
+    
+    filter: alpha(opacity=25);
+    -moz-opacity:0.23;
+    opacity=0.25
+}
+
+.label-unit
+{
+    float:left;
+    margin-left:5px;
+    margin-top: 3px;
+    line-height: 14px;
+    padding-bottom: 4px;
+}
+.object-unit
+{
+    float:left;
+}
+.combo-unit {
+    float:left;
+}
+.combo-unit > span {
+    display: inline-block;
+    color: #ff7700;
+    width: 30px;
+    padding-top: 2px;
+}
+.combo-unit select {
+    width: 50px;
+}
+.grid-view-object-unit
+{
+    float: right;
+    margin-top: -2px;
+}
+
+.main-table a 
+{
+    line-height: 20px;
+}

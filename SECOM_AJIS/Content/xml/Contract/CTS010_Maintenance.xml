@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column id="RelatedContractCodeShort" width="180" type="ro" align="left">headerMaintenanceCode</column>
+    <column id="ProductName" width="*" type="ro" align="left">headerProductName</column>
+    <column id="Detail" width="30" type="link" align="center">headerDetail</column>
+    <column id="ProductTypeCode" width="0" type="ro" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

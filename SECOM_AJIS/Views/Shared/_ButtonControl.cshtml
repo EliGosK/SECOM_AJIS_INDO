@@ -1,0 +1,151 @@
+﻿
+@*
+
+@using SECOM_AJIS.Common.Helpers
+@{
+    /* --- Before use this control, You must declare
+     *      1.) ViewBag.EnableContractBasic (bool)
+     *      2.) ViewBag.EnableSecurityBasic (bool)
+     *      3.) ViewBag.EnableSecurityDetail (bool)
+     *      4.) ViewBag.EnableHistoryDigest (bool)
+     *      5.) ViewBag.EnableSalesContractBasic (bool)
+     *      6.) ViewBag.EnableContractBillingTransfer (bool)
+     */
+
+    ViewBag.btnContractBasic_Style = new { style = "width:130px; height:auto;" };  /*130px*/
+    if (ViewBag.EnableContractBasic == null || ViewBag.EnableContractBasic == false)
+    {
+        ViewBag.btnContractBasic_Style = new { disabled = "disabled", style = "width:130px; height:auto;" };
+    }
+
+    ViewBag.btnSecurityBasic_Style = new { style = "width:140px; height:auto;" };  /*130px*/
+    if (ViewBag.EnableSecurityBasic == null || ViewBag.EnableSecurityBasic == false)
+    {
+        ViewBag.btnSecurityBasic_Style = new { disabled = "disabled", style = "width:140px; height:auto;" };
+    }
+
+    ViewBag.btnSecurityDetail_Style = new { style = "width:160px; height:auto;" }; /*130px*/
+    if (ViewBag.EnableSecurityDetail == null || ViewBag.EnableSecurityDetail == false)
+    {
+        ViewBag.btnSecurityDetail_Style = new { disabled = "disabled", style = "width:160px; height:auto;" };
+    }
+
+    ViewBag.btnHistoryDigest_Style = new { style = "width:130px; height:auto;" };/*130px*/
+    if (ViewBag.EnableHistoryDigest == null || ViewBag.EnableHistoryDigest == false)
+    {
+        ViewBag.btnHistoryDigest_Style = new { disabled = "disabled", style = "width:130px; height:auto;" };
+    }
+
+    ViewBag.btnSalesContractBasic_Style = new { style = "width:150px; height:auto;" }; /*190px*/
+    if (ViewBag.EnableSalesContractBasic == null || ViewBag.EnableSalesContractBasic == false)
+    {
+        ViewBag.btnSalesContractBasic_Style = new { disabled = "disabled", style = "width:150px; height:auto;" };
+    }
+
+    ViewBag.btnContractBillingTransfer_Style = new { style = "width:170px; height:auto;" }; /*160px*/
+    if (ViewBag.EnableContractBillingTransfer == null || ViewBag.EnableContractBillingTransfer == false)
+    {
+        ViewBag.btnContractBillingTransfer_Style = new { disabled = "disabled", style = "width:170px; height:auto;" };
+    }
+}
+<div style="margin-top:10px;height:40px;margin-bottom:10px;">
+    @Html.CommonButton("btnContractBasic", @Resources._ButtonControl.btnContractBasic, (object)@ViewBag.btnContractBasic_Style)&nbsp;
+    @Html.CommonButton("btnSecurityBasic", @Resources._ButtonControl.btnSecurityBasic, (object)@ViewBag.btnSecurityBasic_Style)&nbsp;
+    @Html.CommonButton("btnSecurityDetail", @Resources._ButtonControl.btnSecurityDetail, (object)@ViewBag.btnSecurityDetail_Style)&nbsp;
+    @Html.CommonButton("btnHistoryDigest", @Resources._ButtonControl.btnHistoryDigest, (object)@ViewBag.btnHistoryDigest_Style)&nbsp;
+    @Html.CommonButton("btnSalesContractBasic", @Resources._ButtonControl.btnSalesContractBasic, (object)@ViewBag.btnSalesContractBasic_Style)&nbsp; 
+    @Html.CommonButton("btnContractBillingTransfer", @Resources._ButtonControl.btnContractBillingTransfer, (object)ViewBag.btnContractBillingTransfer_Style)    
+</div>
+
+*@
+
+@*For phase 2 replace these code instead of upper code.*@
+
+
+
+
+@using SECOM_AJIS.Common.Helpers
+@{
+    /* --- Before use this control, You must declare
+     *      1.) ViewBag.EnableContractBasic (bool)
+     *      //2.) ViewBag.EnableSecurityBasic (bool)  21/aug/2012, Remove security basic/detail button 
+     *      //3.) ViewBag.EnableSecurityDetail (bool)
+     *      4.) ViewBag.EnableHistoryDigest (bool)
+     *      5.) ViewBag.EnableSalesContractBasic (bool)
+     *      6.) ViewBag.EnableContractBillingTransfer (bool)
+     *      7.) ViewBag.EnableInstallation (bool)
+     *      8.) ViewBag.EnableBillingBasic (bool)
+     */
+
+    ViewBag.CommonHeaderButtonStyle = "width:220px; height:auto;"; // "width:170px; height:auto;";  // "width:220px; height:auto;"
+
+    ViewBag.btnContractBasic_Style = new { style = ViewBag.CommonHeaderButtonStyle, type="button" };  /*130px*/
+    if (ViewBag.EnableContractBasic == null || ViewBag.EnableContractBasic == false)
+    {
+        ViewBag.btnContractBasic_Style = new { disabled = "disabled", style = ViewBag.CommonHeaderButtonStyle, type = "button" };
+    }
+
+    <!--ViewBag.btnSecurityBasic_Style = new { style = ViewBag.CommonHeaderButtonStyle };  /*130px*/
+    if (ViewBag.EnableSecurityBasic == null || ViewBag.EnableSecurityBasic == false)
+    {
+        ViewBag.btnSecurityBasic_Style = new { disabled = "disabled", style = ViewBag.CommonHeaderButtonStyle };
+    }
+
+    ViewBag.btnSecurityDetail_Style = new { style = ViewBag.CommonHeaderButtonStyle }; /*130px*/
+    if (ViewBag.EnableSecurityDetail == null || ViewBag.EnableSecurityDetail == false)
+    {
+        ViewBag.btnSecurityDetail_Style = new { disabled = "disabled", style = ViewBag.CommonHeaderButtonStyle };
+    }-->
+
+    ViewBag.btnHistoryDigest_Style = new { style = ViewBag.CommonHeaderButtonStyle, type = "button" };/*130px*/
+    if (ViewBag.EnableHistoryDigest == null || ViewBag.EnableHistoryDigest == false)
+    {
+        ViewBag.btnHistoryDigest_Style = new { disabled = "disabled", style = ViewBag.CommonHeaderButtonStyle, type = "button" };
+    }
+
+    ViewBag.btnSalesContractBasic_Style = new { style = ViewBag.CommonHeaderButtonStyle, type = "button" }; /*190px*/
+    if (ViewBag.EnableSalesContractBasic == null || ViewBag.EnableSalesContractBasic == false)
+    {
+        ViewBag.btnSalesContractBasic_Style = new { disabled = "disabled", style = ViewBag.CommonHeaderButtonStyle, type = "button" };
+    }
+
+    ViewBag.btnContractBillingTransfer_Style = new { style = ViewBag.CommonHeaderButtonStyle, type = "button" }; /*160px*/
+    if (ViewBag.EnableContractBillingTransfer == null || ViewBag.EnableContractBillingTransfer == false)
+    {
+        ViewBag.btnContractBillingTransfer_Style = new { disabled = "disabled", style = ViewBag.CommonHeaderButtonStyle, type = "button" };
+    }
+
+
+    ViewBag.btnInstallation_Style = new { style = ViewBag.CommonHeaderButtonStyle, type = "button" }; /*160px*/
+    if (ViewBag.EnableInstallation == null || ViewBag.EnableInstallation == false)
+    {
+        ViewBag.btnInstallation_Style = new { disabled = "disabled", style = ViewBag.CommonHeaderButtonStyle, type = "button" };
+    }
+
+
+    ViewBag.btnBillingBasic_Style = new { style = ViewBag.CommonHeaderButtonStyle, type = "button" }; /*160px*/
+    if (ViewBag.EnableBillingBasic == null || ViewBag.EnableBillingBasic == false)
+    {
+        ViewBag.btnBillingBasic_Style = new { disabled = "disabled", style = ViewBag.CommonHeaderButtonStyle, type = "button" };
+    }
+    
+    
+}
+
+<div style="margin-top:10px;height:40px;margin-bottom:20px;">
+    <div style="text-align:center">
+        @Html.CommonButton("btnContractBasic", @Resources._ButtonControl.btnContractBasic, (object)@ViewBag.btnContractBasic_Style)
+        <!--@Html.CommonButton("btnSecurityBasic", @Resources._ButtonControl.btnSecurityBasic, (object)@ViewBag.btnSecurityBasic_Style)
+        @Html.CommonButton("btnSecurityDetail", @Resources._ButtonControl.btnSecurityDetail, (object)@ViewBag.btnSecurityDetail_Style)-->
+        @Html.CommonButton("btnHistoryDigest", @Resources._ButtonControl.btnHistoryDigest, (object)@ViewBag.btnHistoryDigest_Style)
+        @Html.CommonButton("btnHeader_Installation", @Resources._ButtonControl.btnInstallation, (object)@ViewBag.btnInstallation_Style)
+    </div>
+    <div style="height:5px">&nbsp;</div>
+    <div style="text-align:center">
+        @Html.CommonButton("btnSalesContractBasic", @Resources._ButtonControl.btnSalesContractBasic, (object)@ViewBag.btnSalesContractBasic_Style) 
+        @Html.CommonButton("btnContractBillingTransfer", @Resources._ButtonControl.btnContractBillingTransfer, (object)ViewBag.btnContractBillingTransfer_Style)    
+        @Html.CommonButton("btnHeader_BillingBasic", @Resources._ButtonControl.btnBillingBasic, (object)ViewBag.btnBillingBasic_Style)    
+    </div>
+</div>
+
+

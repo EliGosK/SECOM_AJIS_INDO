@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="PaymentType" width="100" type="ro" align="center"  sort="na">gridHeaderPaymentType</column>
+    <column id="ReceiptGrid" width="150" type="ro" align="left" sort="na">gridHeaderReceipt</column>
+    <column id="SECOMBankGrid" width="200" type="ro" align="left" sort="na">gridHeaderSECOMBank</column>
+    <column id="PaymentDate" width="110" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="na" >gridHeaderPaymentDate</column>
+    <column id="PaymenyAmountShow" width="140" type="edn" align="right" sort="na">gridHeaderPaymentAmount</column>
+    <column id="Payer" width="120" type="ro" align="left" sort="na">gridHeaderPaymentName</column>
+    <column id="SendingGrid" width="180" type="ro" align="left" sort="na">gridHeaderSending</column>
+    <column id="Memo" width="*" type="ro" align="left" sort="na">gridHeaderMemo</column>
+    <column id="PaymentTransNo" width="110" type="ro" align="center" hidden="true" sort="na">gridHeaderPaymentTransNo</column>
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+
+
+
+
+
+
+
+
+

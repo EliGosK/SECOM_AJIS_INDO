@@ -1,0 +1,257 @@
+﻿<!--
+//*********************************
+// Create by: Siripoj S.
+// Create date: 08/Mar/2012
+// Update date: 08/Mar/2012
+//*********************************
+-->
+
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+@{
+   
+   //Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.LabelWidth = "210px";
+    ViewBag.LabelWidth2 = "270px";
+    
+    ViewBag.ObjectWidth = "200px";
+    ViewBag.ObjectWidth2 = "250px";
+
+    ViewBag.ObjectWidthLong = "140px";
+    ViewBag.ObjectWidthLong2 = "650px";
+    
+    
+    ViewBag.isViewMode = true;
+    
+    // for debug
+    ViewBag.txtBackgroundColor = "none";  // Lime
+
+    ViewBag.C_DEPOSIT_STATUS_PAYMENT = DepositStatus.C_DEPOSIT_STATUS_PAYMENT;
+    ViewBag.C_DEPOSIT_STATUS_SLIDE = DepositStatus.C_DEPOSIT_STATUS_SLIDE;
+}
+
+
+@section page_header{
+
+    <script type="text/javascript">
+        var objCMS430Conts = {
+            C_DEPOSIT_STATUS_PAYMENT: "@ViewBag.C_DEPOSIT_STATUS_PAYMENT",
+            C_DEPOSIT_STATUS_SLIDE: "@ViewBag.C_DEPOSIT_STATUS_SLIDE",
+            BillingOCC: "@ViewBag.BillingOCC",
+            ContractCode: "@ViewBag.ContractCode"
+        };
+    </script>
+     <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+     <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS430.js")" ></script>
+    
+}
+
+<!-- View Deposit Information ==================================================================================================================== -->
+<div id="divListofOCCforbillingdepositfee" class="main-table">
+    <div class="table-header">
+       @Resources.CMS430.headerListOfOccForBillingDepositFee
+    </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                <b>@Resources.CMS430.lblContractCode</b>
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; ">
+                @Html.CommonTextBox("CMS430_ContractCode", (string)@ViewBag.txtContractCode, new { isViewMode = @ViewBag.isViewMode })
+            </div>           
+        </div>   
+        <div class="usr-row">  
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS430.lblNormalDepositFee
+            </div>
+            <div class="usr-object" style="width:148px; "> 
+                @*@Html.NumericTextBoxWithUnit("CMS430_NormalDepositFee", (string)@ViewBag.txtNormalDepositFee, new { isViewMode = @ViewBag.isViewMode }, TextBoxHelper.NUMERIC_UNIT_TYPE.CURRENCY)*@               
+                @*@Html.CommonTextBox("CMS430_NormalDepositFee", (string)@ViewBag.txtNormalDepositFee, new { isViewMode = @ViewBag.isViewMode })*@
+                @Html.CommonTextBox("CMS430_NormalDepositFee", (string)@ViewBag.txtNormalDepositFee, new { isViewMode = @ViewBag.isViewMode })
+            </div>         
+            <div class="usr-label" style="width:129px">
+                @Resources.CMS430.lblBillingDepositFee
+            </div>
+            <div class="usr-object" style="width:148px; ">
+                @*@Html.NumericTextBoxWithUnit("CMS430_BillingDepositFee", (string)@ViewBag.txtBillingDepositFee, new { isViewMode = @ViewBag.isViewMode }, TextBoxHelper.NUMERIC_UNIT_TYPE.CURRENCY)*@
+                @Html.CommonTextBox("CMS430_BillingDepositFee", (string)@ViewBag.txtBillingDepositFee, new { isViewMode = @ViewBag.isViewMode })                             
+            </div>
+            <div class="usr-label" style="width:160px">
+                @Resources.CMS430.lblExemptedDepositFee
+            </div>
+            <div class="usr-object" style="width:148px">
+                @*@Html.NumericTextBoxWithUnit("CMS430_ExemptedDepositFee", (string)@ViewBag.txtExemptedDepositFee, new { isViewMode = @ViewBag.isViewMode }, TextBoxHelper.NUMERIC_UNIT_TYPE.CURRENCY)*@
+                @Html.CommonTextBox("CMS430_ExemptedDepositFee", (string)@ViewBag.txtExemptedDepositFee, new { isViewMode = @ViewBag.isViewMode })                                          
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @*@Resources.CMS430.lblNormalDepositFee*@
+            </div>
+            <div class="usr-object" style="width:148px; ">
+                @Html.CommonTextBox("CMS430_NormalDepositFeeUsd", (string)@ViewBag.txtNormalDepositFeeUsd, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:129px">
+                @*@Resources.CMS430.lblBillingDepositFee*@
+            </div>
+            <div class="usr-object" style="width:148px; ">
+                @Html.CommonTextBox("CMS430_BillingDepositFeeUsd", (string)@ViewBag.txtBillingDepositFeeUsd, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:160px">
+                @*@Resources.CMS430.lblExemptedDepositFee*@
+            </div>
+            <div class="usr-object" style="width:148px">
+                 @Html.CommonTextBox("CMS430_ExemptedDepositFeeUsd", (string)@ViewBag.txtExemptedDepositFeeUsd, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>   
+        <br>
+        <br>
+        <br>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS430.lblContractTargetNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+                @Html.CommonTextBox("CMS430_ContractTargetNameEN", (string)@ViewBag.txtContractTargetNameEN, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">         
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS430.lblBranchNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+                @Html.CommonTextBox("CMS430_BranchNameEN", (string)@ViewBag.txtBranchNameEN, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">        
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS430.lblSiteNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+                @Html.CommonTextBox("CMS430_SiteNameEN", (string)@ViewBag.txtSiteNameEN, new { isViewMode = @ViewBag.isViewMode })
+            </div> 
+        </div>                  
+        <br>
+        <br>
+        <br>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS430.lblContractTargetNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+                @Html.CommonTextBox("CMS430_ContractTargetNameLC", (string)@ViewBag.txtContractTargetNameLC, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+         </div>
+         <div class="usr-row">        
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS430.lblBranchNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2;">
+                @Html.CommonTextBox("CMS430_BranchNameLC", (string)@ViewBag.txtBranchNameLC, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+         </div>
+         <div class="usr-row">       
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS430.lblSiteNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2;">
+                @Html.CommonTextBox("CMS430_SiteNameLC", (string)@ViewBag.txtSiteNameLC, new { isViewMode = @ViewBag.isViewMode })
+            </div>    
+        </div> 
+        <br>
+        <br>
+         <div class="usr-row">
+            <div id="gridBillingOCCList" style="width: 99%; margin-left: 4px;">
+            </div>
+        </div>
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+</div>
+
+<form id="formDepositDetailInformation" action="#">
+<div id="divDepositDetailInformation" class="main-table">
+        <div class="table-header">
+           @Resources.CMS430.lblDepositDetailInformation
+        </div>
+          <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS430.lblBillingCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                @Html.CommonTextBox("CMS430_BillingCode", null, new { isViewMode = @ViewBag.isViewMode })
+            </div>           
+             <div class="usr-label" style="width:100px;">
+                @Resources.CMS430.lblBillingOffice
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                @Html.CommonTextBox("CMS430_BillingOffice", null, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+          </div>   
+          <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS430.lblBillingTargetCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                @Html.CommonTextBox("CMS430_BillingTargetCode", null, new { isViewMode = @ViewBag.isViewMode })
+            </div>           
+          </div>  
+          <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS430.lblBillingClientNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+                @Html.CommonTextBox("CMS430_BillingClientNameEnglish", null, new { isViewMode = @ViewBag.isViewMode })
+            </div>           
+          </div>
+          <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS430.lblBillingClientBranchNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+                @Html.CommonTextBox("CMS430_BillingClientBranchNameEnglish", null, new { isViewMode = @ViewBag.isViewMode })
+            </div>           
+          </div>
+           <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS430.lblBillingClientAddressEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+                @Html.CommonTextBox("CMS430_BillingClientAddressEnglish", null, new { isViewMode = @ViewBag.isViewMode })
+            </div>           
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS430.lblBillingClientNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+                @Html.CommonTextBox("CMS430_BillingClientNameLocal", null, new { isViewMode = @ViewBag.isViewMode })
+            </div>           
+          </div>
+          <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS430.lblBillingClientBranchNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+                @Html.CommonTextBox("CMS430_BillingClientBranchNameLocal", null, new { isViewMode = @ViewBag.isViewMode })
+            </div>           
+          </div>
+          <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS430.lblBillingClientAddressLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+                @Html.CommonTextBox("CMS430_BillingClientAddressLocal", null, new { isViewMode = @ViewBag.isViewMode })
+            </div>           
+          </div>
+          <br/>
+          <br/>
+           <div class="usr-row">
+            <div id="gridDepositDetail" style="width: 99%; margin-left: 4px;">
+            </div>
+        </div>
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+</div>
+</form>

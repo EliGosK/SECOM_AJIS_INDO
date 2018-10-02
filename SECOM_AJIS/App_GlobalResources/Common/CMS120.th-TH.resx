@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnRegisterAR" xml:space="preserve">
+    <value>บันทึกข้อมูลการขออนุมัติ</value>
+  </data>
+  <data name="btnRegisterIncident" xml:space="preserve">
+    <value>บันทึกข้อมูลเหตุการณ์</value>
+  </data>
+  <data name="btnViewARList" xml:space="preserve">
+    <value>ดูข้อมูลการขออนุมัติ</value>
+  </data>
+  <data name="btnViewCustomerHistory" xml:space="preserve">
+    <value>ดูข้อมูลประวัติลูกค้า</value>
+  </data>
+  <data name="btnViewIncidentList" xml:space="preserve">
+    <value>ดูข้อมูลเหตุการณ์</value>
+  </data>
+  <data name="btnView_deposit_fee_information" xml:space="preserve">
+    <value>ดูข้อมูลค่ามัดจำ</value>
+  </data>
+  <data name="chkCrimePrevention" xml:space="preserve">
+    <value>บริการแจ้งเตือนการบุกรุก</value>
+  </data>
+  <data name="chkEmergencyReport" xml:space="preserve">
+    <value>บริการแจ้งเตือนภัยฉุกเฉิน</value>
+  </data>
+  <data name="chkFacilityMonitoring" xml:space="preserve">
+    <value>บำรุงรักษาอุปกรณ์ของลูกค้า</value>
+  </data>
+  <data name="chkFireMonitoring" xml:space="preserve">
+    <value>บริการแจ้งเตือนอัคคีภัย</value>
+  </data>
+  <data name="chkOutofregulation_document_usage_flag" xml:space="preserve">
+    <value>ใช้เอกสารรูปแบบพิเศษ</value>
+  </data>
+  <data name="headerContractCode" xml:space="preserve">
+    <value>เลขที่สัญญา</value>
+  </data>
+  <data name="headerContractFeeSalePrice_THB" xml:space="preserve">
+    <value>ค่าเช่า/ค่าบริการ/ราคาขาย (บาท)</value>
+  </data>
+  <data name="headerContract_basic" xml:space="preserve">
+    <value>สัญญาพื้นฐาน</value>
+  </data>
+  <data name="headerCustomerAcceptanceDate" xml:space="preserve">
+    <value>วันส่งมอบสินค้า</value>
+  </data>
+  <data name="headerFee_THB" xml:space="preserve">
+    <value>ราคา (บาท)</value>
+  </data>
+  <data name="headerFee_type" xml:space="preserve">
+    <value>ประเภทรายการที่เรียกเก็บ</value>
+  </data>
+  <data name="headerHandling_type" xml:space="preserve">
+    <value>เงื่อนไข</value>
+  </data>
+  <data name="headerNo" xml:space="preserve">
+    <value>No.</value>
+  </data>
+  <data name="headerPeriod" xml:space="preserve">
+    <value>ระยะเวลา</value>
+  </data>
+  <data name="headerProductName" xml:space="preserve">
+    <value>ชื่อระบบ</value>
+  </data>
+  <data name="headerRemark" xml:space="preserve">
+    <value>หมายเหตุ</value>
+  </data>
+  <data name="headerSale_basic" xml:space="preserve">
+    <value>สัญญาขายขาดพื้นฐาน</value>
+  </data>
+  <data name="headerTax_THB" xml:space="preserve">
+    <value>ภาษี (บาท)</value>
+  </data>
+  <data name="headerViewMaintenanceCheckUpResult" xml:space="preserve">
+    <value>ผลการเข้าบำรุงรักษา</value>
+  </data>
+  <data name="lblAcquisition_type" xml:space="preserve">
+    <value>วิธีการหาลูกค้า</value>
+  </data>
+  <data name="lblApprove_contract_date" xml:space="preserve">
+    <value>วันที่อนุมัติสัญญา</value>
+  </data>
+  <data name="lblAutorenew_month" xml:space="preserve">
+    <value>ต่อสัญญาอัตโนมัติ (เดือน)</value>
+  </data>
+  <data name="lblBilling_deposit_fee" xml:space="preserve">
+    <value>ค่ามัดจำที่ลูกค้าเซ็นมา</value>
+  </data>
+  <data name="lblBranchAddress_Eng" xml:space="preserve">
+    <value>ที่อยู่สาขา (อังกฤษ)</value>
+  </data>
+  <data name="lblBranchAddress_Local" xml:space="preserve">
+    <value>ที่อยู่สาขา (ไทย)</value>
+  </data>
+  <data name="lblBranchName_Eng" xml:space="preserve">
+    <value>ชื่อสาขา (อังกฤษ)</value>
+  </data>
+  <data name="lblBranchName_Local" xml:space="preserve">
+    <value>ชื่อสาขา (ไทย)</value>
+  </data>
+  <data name="lblContactPoint" xml:space="preserve">
+    <value>ช่องทางติดต่อ</value>
+  </data>
+  <data name="lblContractCode" xml:space="preserve">
+    <value>เลขที่สัญญา</value>
+  </data>
+  <data name="lblContractDuration" xml:space="preserve">
+    <value>อายุสัญญา</value>
+  </data>
+  <data name="lblContractDuration_month" xml:space="preserve">
+    <value>อายุสัญญา (เดือน)</value>
+  </data>
+  <data name="lblContractFee" xml:space="preserve">
+    <value>ค่าเช่า/ค่าบริการ</value>
+  </data>
+  <data name="lblContractReport" xml:space="preserve">
+    <value>หนังสือสัญญา</value>
+  </data>
+  <data name="lblContractTargetAddress_Eng" xml:space="preserve">
+    <value>ที่อยู่ผู้ทำสัญญา (อังกฤษ)</value>
+  </data>
+  <data name="lblContractTargetAddress_Local" xml:space="preserve">
+    <value>ที่อยู่ผู้ทำสัญญา (ไทย)</value>
+  </data>
+  <data name="lblContractTargetName_Eng" xml:space="preserve">
+    <value>ชื่อผู้ทำสัญญา (อังกฤษ)</value>
+  </data>
+  <data name="lblContractTargetName_Local" xml:space="preserve">
+    <value>ชื่อผู้ทำสัญญา (ไทย)</value>
+  </data>
+  <data name="lblContract_office" xml:space="preserve">
+    <value>สาขาที่ทำสัญญา</value>
+  </data>
+  <data name="lblCP01" xml:space="preserve">
+    <value>CP-01</value>
+  </data>
+  <data name="lblCP05" xml:space="preserve">
+    <value>CP-05</value>
+  </data>
+  <data name="lblCP12_change_contract_fee_only" xml:space="preserve">
+    <value>CP-12 (กรณีเปลี่ยนแปลงค่าเช่า/ค่าบริการเท่านั้น)</value>
+  </data>
+  <data name="lblCP12_change_plan" xml:space="preserve">
+    <value>CP-12 (กรณีเปลี่ยนแปลน/เปลี่ยนค่าเช่า)</value>
+  </data>
+  <data name="lblCP13" xml:space="preserve">
+    <value>CP-13</value>
+  </data>
+  <data name="lblCP14" xml:space="preserve">
+    <value>CP-14</value>
+  </data>
+  <data name="lblCP15" xml:space="preserve">
+    <value>CP-15</value>
+  </data>
+  <data name="lblCP16" xml:space="preserve">
+    <value>CP-16</value>
+  </data>
+  <data name="lblCP32" xml:space="preserve">
+    <value>CP-32</value>
+  </data>
+  <data name="lblCP33" xml:space="preserve">
+    <value>CP-33</value>
+  </data>
+  <data name="lblCP34" xml:space="preserve">
+    <value>CP-34</value>
+  </data>
+  <data name="lblCS01" xml:space="preserve">
+    <value>CS-01</value>
+  </data>
+  <data name="lblCustomerCode_Contract_target" xml:space="preserve">
+    <value>รหัสลูกค้า (ผู้ทำสัญญา)</value>
+  </data>
+  <data name="lblCustomerCode_RealCustomer_Enduser" xml:space="preserve">
+    <value>รหัสลูกค้า (ผู้ใช้สถานที่ติดตั้ง)</value>
+  </data>
+  <data name="lblDocument_audit_result" xml:space="preserve">
+    <value>ผลการตรวจสอบเอกสาร</value>
+  </data>
+  <data name="lblExempted_deposit_fee" xml:space="preserve">
+    <value>ค่ามัดจำที่ไม่เก็บลูกค้า</value>
+  </data>
+  <data name="lblFirstOperationDate" xml:space="preserve">
+    <value>วันเปิดใช้บริการครั้งแรก</value>
+  </data>
+  <data name="lblFN99" xml:space="preserve">
+    <value>FN-99</value>
+  </data>
+  <data name="lblIntroducer_code" xml:space="preserve">
+    <value>รหัสผู้แนะนำลูกค้า</value>
+  </data>
+  <data name="lblLastChangeType" xml:space="preserve">
+    <value>สถานะการดำเนินการล่าสุด</value>
+  </data>
+  <data name="lblLastOccurrence" xml:space="preserve">
+    <value>OCC ล่าสุด</value>
+  </data>
+  <data name="lblLastOperationDate" xml:space="preserve">
+    <value>วันที่เปลี่ยนแปลงสถานะล่าสุด</value>
+  </data>
+  <data name="lblLinkage_sale_contract_code" xml:space="preserve">
+    <value>รหัสผู้ซื้อที่ใช้อ้างอิง</value>
+  </data>
+  <data name="lblMaintenanceContractStart_month" xml:space="preserve">
+    <value>เดือนที่เริ่มบริการบำรุงรักษา</value>
+  </data>
+  <data name="lblMaintenanceCycle_month" xml:space="preserve">
+    <value>รอบการบำรุงรักษา (เดือน)</value>
+  </data>
+  <data name="lblMaintenanceFeeType" xml:space="preserve">
+    <value>วิธีการเรียกเก็บค่าบำรุงรักษา</value>
+  </data>
+  <data name="lblMaintenanceTargetProduct" xml:space="preserve">
+    <value>สินค้าที่จะบำรุงรักษา</value>
+  </data>
+  <data name="lblMaintenanceType" xml:space="preserve">
+    <value>ประเภทการบำรุงรักษา</value>
+  </data>
+  <data name="lblMaintenance_contractCode" xml:space="preserve">
+    <value>เลขที่สัญญาบริการบำรุงรักษา</value>
+  </data>
+  <data name="lblMain_structure_type" xml:space="preserve">
+    <value>โครงสร้างหลัก</value>
+  </data>
+  <data name="lblMemo" xml:space="preserve">
+    <value>บันทึกข้อความ</value>
+  </data>
+  <data name="lblMK03" xml:space="preserve">
+    <value>MK-03</value>
+  </data>
+  <data name="lblMotivation_type" xml:space="preserve">
+    <value>เหตุผลในการตัดสินใจใช้บริการ</value>
+  </data>
+  <data name="lblNew_building_mgmt_cost" xml:space="preserve">
+    <value>ค่าใช้จ่ายในการจัดการอาคารกำลังก่อสร้าง</value>
+  </data>
+  <data name="lblNew_building_mgmt_type" xml:space="preserve">
+    <value>ประเภทการจัดการอาคารกำลังก่อสร้าง</value>
+  </data>
+  <data name="lblNew_OldBuilding" xml:space="preserve">
+    <value>อาคารสร้างเสร็จแล้ว/อาคารกำลังก่อสร้าง</value>
+  </data>
+  <data name="lblNormal_deposit_fee" xml:space="preserve">
+    <value>ค่ามัดจำที่คำนวณได้</value>
+  </data>
+  <data name="lblNumberOfBuildings" xml:space="preserve">
+    <value>จำนวนอาคาร</value>
+  </data>
+  <data name="lblNumber_of_floors" xml:space="preserve">
+    <value>จำนวนชั้น</value>
+  </data>
+  <data name="lblOld_contract_code" xml:space="preserve">
+    <value>เลขที่สัญญาเก่า</value>
+  </data>
+  <data name="lblOperationOffice" xml:space="preserve">
+    <value>สาขาบริการ</value>
+  </data>
+  <data name="lblOrigin_contract_code_for_slide_deposit_fee" xml:space="preserve">
+    <value>โอนค่ามัดจำจากสัญญาเลขที่</value>
+  </data>
+  <data name="lblPeriod" xml:space="preserve">
+    <value>ระยะเวลา</value>
+  </data>
+  <data name="lblPlan_code" xml:space="preserve">
+    <value>เลขที่แปลน</value>
+  </data>
+  <data name="lblPO" xml:space="preserve">
+    <value>ใบสั่งซื้อ</value>
+  </data>
+  <data name="lblProduct" xml:space="preserve">
+    <value>สินค้า</value>
+  </data>
+  <data name="lblProjectCode" xml:space="preserve">
+    <value>เลขที่โครงการ</value>
+  </data>
+  <data name="lblQuotation_code" xml:space="preserve">
+    <value>เลขที่ใบคำนวณราคา</value>
+  </data>
+  <data name="lblReceive_date" xml:space="preserve">
+    <value>วันที่ลงทะเบียนรับเอกสารคืน</value>
+  </data>
+  <data name="lblSalesman_1" xml:space="preserve">
+    <value>พนักงานขาย 1</value>
+  </data>
+  <data name="lblSalesman_2" xml:space="preserve">
+    <value>พนักงานขาย 2</value>
+  </data>
+  <data name="lblSales_supporter" xml:space="preserve">
+    <value>ผู้ช่วยพนักงานขาย</value>
+  </data>
+  <data name="lblSectionMaintenance_information_case_Alarm_Sale_online" xml:space="preserve">
+    <value>ข้อมูลงานบำรุงรักษา</value>
+  </data>
+  <data name="lblSection_Cancel_contract_information" xml:space="preserve">
+    <value>ข้อมูลการยกเลิกสัญญา</value>
+  </data>
+  <data name="lblSection_ContractRelated_FeeInformation" xml:space="preserve">
+    <value>ข้อมูลที่เกี่ยวกับสัญญาและข้อมูลราคา</value>
+  </data>
+  <data name="lblSection_Contract_Basic_Information" xml:space="preserve">
+    <value>ข้อมูลพื้นฐานของสัญญา</value>
+  </data>
+  <data name="lblSection_Line_for_disconnection_monitoring" xml:space="preserve">
+    <value>สายสัญญาณที่ใช้ตรวจสอบการเชื่อมต่อสัญญาณ</value>
+  </data>
+  <data name="lblSection_Maintenance_contract_target_list" xml:space="preserve">
+    <value>รายการสินค้าที่จะบำรุงรักษา</value>
+  </data>
+  <data name="lblSection_Maintenance_information_case_MA" xml:space="preserve">
+    <value>ข้อมูลงานบำรุงรักษา</value>
+  </data>
+  <data name="lblSection_Other_Information" xml:space="preserve">
+    <value>อื่นๆ</value>
+  </data>
+  <data name="lblSection_Provide_Service_Information" xml:space="preserve">
+    <value>ข้อมูลประเภทการให้บริการ</value>
+  </data>
+  <data name="lblSection_Registration_Data_Fields" xml:space="preserve">
+    <value>การบันทึกข้อมูล</value>
+  </data>
+  <data name="lblSection_Site_Information" xml:space="preserve">
+    <value>ข้อมูลสถานที่ติดตั้ง</value>
+  </data>
+  <data name="lblSecurityTypeCode" xml:space="preserve">
+    <value>รหัสประเภทการบริการ</value>
+  </data>
+  <data name="lblSecurity_area_square_meter" xml:space="preserve">
+    <value>ขนาดพื้นที่รักษาความปลอดภัย (ตรม.)</value>
+  </data>
+  <data name="lblSiteAddress_Eng" xml:space="preserve">
+    <value>ที่อยู่สถานที่ติดตั้ง (อังกฤษ)</value>
+  </data>
+  <data name="lblSiteAddress_Local" xml:space="preserve">
+    <value>ที่อยู่สถานที่ติดตั้ง (ไทย)</value>
+  </data>
+  <data name="lblSiteBuildingArea" xml:space="preserve">
+    <value>ขนาดพื้นที่อาคารที่ติดตั้ง</value>
+  </data>
+  <data name="lblSiteCode" xml:space="preserve">
+    <value>รหัสสถานที่ติดตั้ง</value>
+  </data>
+  <data name="lblSiteName_Eng" xml:space="preserve">
+    <value>ชื่อสถานที่ติดตั้ง (อังกฤษ)</value>
+  </data>
+  <data name="lblSiteName_Local" xml:space="preserve">
+    <value>ชื่อสถานที่ติดตั้ง (ไทย)</value>
+  </data>
+  <data name="lblStartDealDate" xml:space="preserve">
+    <value>วันที่เริ่มติดต่อธุรกิจ</value>
+  </data>
+  <data name="lblSubSection_Alarm_Provided_ServiceType" xml:space="preserve">
+    <value>ประเภทการให้บริการสำหรับการเช่าอุปกรณ์เตือนภัย</value>
+  </data>
+  <data name="lblSubSection_Contracat_Document_Information" xml:space="preserve">
+    <value>ข้อมูลเอกสารสัญญา</value>
+  </data>
+  <data name="lblSubSection_ContractRelated_Information" xml:space="preserve">
+    <value>ข้อมูลที่เกี่ยวกับสัญญา</value>
+  </data>
+  <data name="lblSubSection_Contract_Agreement_Information" xml:space="preserve">
+    <value>ข้อมูลการทำสัญญา</value>
+  </data>
+  <data name="lblSubSection_Deposit_Information" xml:space="preserve">
+    <value>ข้อมูลค่ามัดจำ</value>
+  </data>
+  <data name="lblSubSection_Line_for_image_monitoring" xml:space="preserve">
+    <value>สายสัญญาณที่ใช้ตรวจสอบสัญญาณภาพ</value>
+  </data>
+  <data name="lblSubSection_Line_For_Normal_Signal" xml:space="preserve">
+    <value>สายสัญญาณปกติ</value>
+  </data>
+  <data name="lblTelephoneLineOwner" xml:space="preserve">
+    <value>เจ้าของสายสัญญาณ</value>
+  </data>
+  <data name="lblTelephoneLineType" xml:space="preserve">
+    <value>ประเภทสายสัญญาณ</value>
+  </data>
+  <data name="lblTelephoneNo" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์</value>
+  </data>
+  <data name="lblUserCode" xml:space="preserve">
+    <value>User code</value>
+  </data>
+  <data name="lblStartOperationConfirmationLetter" xml:space="preserve">
+    <value>หนังสือยืนยันการเปิดใช้บริการ</value>
+  </data>
+  <data name="lblPeriodicalAlarmMaintenance" xml:space="preserve">
+    <value>การบำรุงรักษาอุปกรณ์เตือนภัยตามกำหนดเวลา</value>
+  </data>
+  <data name="lblBICContractCode" xml:space="preserve">
+    <value>เลขที่สัญญาของระบบเก่า</value>
+  </data>
+  <data name="lblViewContractDocument" xml:space="preserve">
+    <value>ดูข้อมูลเอกสารสัญญา</value>
+  </data>
+  <data name="lblAttachImportanceFlag" xml:space="preserve">
+    <value>ต้องดำเนินการอย่างระมัดระวัง</value>
+  </data>
+  <data name="lblCancelContractDate" xml:space="preserve">
+    <value>วันที่ยกเลิกสัญญา</value>
+  </data>
+  <data name="lblRemovalInstallationCompleteDate" xml:space="preserve">
+    <value>วันเสร็จสิ้นการถอดอุปกรณ์</value>
+  </data>
+  <data name="headerNormal" xml:space="preserve">
+    <value>ราคาที่คำนวณได้</value>
+  </data>
+  <data name="headerOrder" xml:space="preserve">
+    <value>ราคาที่ลูกค้าเซ็นมา</value>
+  </data>
+  <data name="headerDiscount" xml:space="preserve">
+    <value>อัตราส่วนลด/ชำระเกิน</value>
+  </data>
+  <data name="lblDepositFee" xml:space="preserve">
+    <value>ค่ามัดจำ</value>
+  </data>
+  <data name="lblInstallationFee" xml:space="preserve">
+    <value>ค่าติดตั้ง</value>
+  </data>
+</root>

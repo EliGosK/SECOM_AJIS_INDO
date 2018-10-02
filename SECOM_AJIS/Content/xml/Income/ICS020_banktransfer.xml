@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="GridPaymentDateDisplay" width="150" type="ro" align="left" sort="na">gridHeaderBAPaymentDate</column>
+    <column id="RefInvoiceNo" width="150" type="ro" align="left" sort="na">gridHeaderBAInvoiceNo</column>
+    <column id="PaymentAmountShow" width="250" type="edn" align="right" sort="na">gridHeaderBAAmount</column>
+    <column id="WHTAmountShow" width="250" type="edn" align="right" sort="na">gridHeaderBAWHTAmount</column>
+    <column id="ImportErrorReason" width="*" type="ro" align="left" sort="na">gridHeaderBAImportErrorReason</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

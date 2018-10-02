@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="InstrumentCode" width="160" type="ro" align="left" sort="str_custom">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">headerInstrumentName</column>
+    <column id="InstrumentAreaCodeName" width="250"  type="ro" align="left" sort="str_custom">headerInstrumentArea</column>    
+    <column id="ContractRemoveQty" width="100" type="edn" align="right" format="0,000" sort="int">headerContractRemoveQty</column>
+    <column id="RemoveQty" width="90" type="edn" align="right" format="0,000" sort="int">headerRemoveQty</column>
+    <column id="NotInstalledQty" width="90" type="edn" align="right" format="0,000" sort="int">headerNotInstalledQty</column>
+    <column id="UnRemovableQty" width="90" type="edn" align="right" format="0,000" sort="int">headerUnRemovableQty</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

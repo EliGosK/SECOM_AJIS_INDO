@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="QuatationCodeShow" width="100" type="ro" align="left" sort="str_custom">headerQuotationCode</column>
+    <column id="ContractTargatShow" width="240" type="ro" align="left" sort="str_custom">headerContractTargetPurchaser</column>
+    <column id="SiteShow" width="240" type="ro" align="left" sort="str_custom">headerSite</column>
+    <column id="OfficeShow" width="160" type="ro" align="left" sort="str_custom">headerOffice</column>
+    <column id="Salesman1Show" width="160" type="ro" align="left" sort="str_custom">headerSalesman1</column>
+    <column id="ApprovalStatusName" width="*" type="ro" align="left" sort="str_custom">headerApprovalStatus</column>
+    <!--<column id="RegisterDateShow" width="100" type="ro" align="center" sort="str_custom">headerRegistrationDate</column>
+    <column id="ApproveContractDateShow" width="100" type="ro" align="center" sort="str_custom">headerCPRegistrationDate</column>-->
+    <column id="RegistrationDateFNFQCPShow" width="135" type="ro" align="left" sort="str_custom">headerRegistrationFNFQCP</column>
+    <column id="ContractCodeShow" width="90" type="ro" align="center" sort="str_custom">headerContractCode</column>
+    
+    <column id="ServiceTypeCode" width="*" type="ro" align="center" hidden="true" ></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

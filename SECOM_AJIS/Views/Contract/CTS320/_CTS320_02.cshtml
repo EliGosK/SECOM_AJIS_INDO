@@ -1,0 +1,38 @@
+﻿@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+
+<div id="divCustomerIncident" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS320.lblCustomerCodeIncident</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:100px;">@Resources.CTS320.lblIncidentType</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.IncidentTypeComboBoxCTS320("cbbCIIncidentType", new { style = "width:300px;" })
+        </div>
+        <div class="usr-label" style="width:140px;">@Resources.CTS320.lblDueDate</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.IncidentDueDate_DeadLineComboBoxCTS320("cbbCIDueDate", new { style = "width:120px;" })
+        </div>
+        <div class="usr-label" style="width:100px;">@Resources.CTS320.lblStatus</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.IncidentSearchStatusComboBox("cbbCIStatus", new { style = "width:120px;" })
+        </div>
+    </div>
+    <div class="usr-row">&nbsp;</div>
+    <div class="usr-row">
+        <div class="usr-label" style="text-align: left;">@Resources.CTS320.lblIncidentOfCustomer <span id="spCICode">XXX</span> : <span id="spCIName">YYY</span></div>
+        <div style="text-align:right;">
+            @Html.CommonButton("btnCIRetrieve", @Resources.CTS320.btnRetrieve, new { @type = "button" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div id="gridCIMain"></div>
+    </div>
+    <div class="usr-row">&nbsp;</div>
+    <div class="usr-row">
+        @Resources.CTS320.lblIncidentCustomerList
+    </div>
+    <div class="usr-row">
+        <div id="gridCISub" style="width: 845px;"></div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

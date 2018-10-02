@@ -1,0 +1,171 @@
+﻿@using SECOM_AJIS.Common.Helpers
+
+@{
+    ViewBag.Title = "Dialog";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/MessageDialog.js")"></script>
+
+<style type="text/css">
+    .table
+    {
+        background: #333;
+        width: 1048px
+    }
+    .table ul
+    {
+        float: left;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #C9C9C9;
+    }
+    .table ul li
+    {
+        list-style: none;
+        padding: 5px 10px;
+        border: 1px solid #C9C9C9;
+        height: 30px;
+    }
+    .table ul li.title
+    {
+        font-weight: bold;
+        background: #333;
+        color: #fff;
+    }
+    .table ul li.even
+    {
+        background: #fff;
+    }
+    .table ul li.odd
+    {
+        background: #FFFFE6;
+    }
+</style>
+<script language=javascript type="text/javascript">
+    $(document).ready(function () {
+        var obj = new Object();
+        obj["prd"] = "test";
+        obj.data = "data";
+        alert(obj.data);
+        $("#btnError").click(function () {
+            OpenErrorMessageDialog("MSG0000", "Data can't load",
+                function () {
+                    alert("After Show");
+                }
+            );
+        });
+        $("#btnInfo").click(function () {
+            OpenInformationMessageDialog("MSG0000", "Data can't load",
+                function () {
+                    alert("After Show");
+                }
+            );
+        });
+        $("#btnYesNo").click(function () {
+            OpenYesNoMessageDialog("MSG1012", "Are you sure to Delete?"
+                , function () {
+                    alert("Yes");
+                }
+                , function () {
+                    alert("No");
+                }
+            );
+        });
+        $("#btnOkCancel").click(function () {
+            OpenOkCancelDialog("MSG0000", "Confirm to purge log."
+                , function () {
+                    alert("OK");
+                }
+                , function () {
+                    alert("Cancel");
+                }
+            );
+        });
+        $("#btnWarning").click(function () {
+            OpenWarningDialog("MSG0000", "Warning Data can't load",
+                function () {
+                    alert("After Show");
+                }
+            );
+        });
+    });
+</script>
+<div id="Search_Criteria" class="main-table">
+<form id="Search_Form" action="#">
+<h2>Demo Html Helper</h2>
+
+    <div class="table">
+        <ul>
+            <li class="title">Code</li>
+            <li class="even" style="height:150px">
+    <pre>
+    OpenErrorMessageDialog("MSG0000", "Data can't load",
+        function () {
+            alert("After Show");
+        }
+    );
+    </pre>
+                
+            </li>
+                        <li class="odd" style="height:150px">
+    <pre>
+    OpenInformationMessageDialog("MSG0000", "Data can't load",
+        function () {
+            alert("After Show");
+        }
+    );
+    </pre>
+                
+            </li>
+                        <li class="even" style="height:150px">
+    <pre>
+    OpenYesNoMessageDialog("MSG1012", "Are you sure to Delete?"
+        , function () {
+            alert("Yes");
+        }
+        , function () {
+            alert("No");
+        }
+    );
+    </pre>
+                
+            </li>
+                        <li class="odd" style="height:150px">
+    <pre>
+    OpenOkCancelDialog("MSG0000", "Confirm to purge log."
+        , function () {
+            alert("OK");
+        }
+        , function () {
+            alert("Cancel");
+        }
+    );
+    </pre>
+                
+            </li>
+                        <li class="even" style="height:150px">
+    <pre>
+    OpenWarningDialog("MSG0000", "Warning Data can't load",
+        function () {
+            alert("After Show");
+        }
+    );
+    </pre>
+                
+            </li>                                
+        </ul>
+        <ul>
+            <li class="title">Code</li>
+            <li class="even"style="height:150px">@Html.CommonButton("btnError", "OpenErrorMessageDialog", new { style = "width:180px;", type = "button" })</li>
+            <li class="odd" style="height:150px">@Html.CommonButton("btnInfo", "OpenInformationMessageDialog", new { style = "width:180px;", type = "button" })</li>
+            <li class="even"style="height:150px">@Html.CommonButton("btnYesNo", "OpenYesNoMessageDialog", new { style = "width:180px;", type = "button" })</li>
+            <li class="odd" style="height:150px">@Html.CommonButton("btnOkCancel", "OpenOkCancelDialog", new { style = "width:180px;", type = "button" })</li>
+            <li class="even" style="height:150px">@Html.CommonButton("btnWarning", "OpenWarningDialog", new { style = "width:180px;", type = "button" })</li>                                   
+        </ul>
+    </div>
+    
+    
+    
+        
+    </form>
+    <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+</div>

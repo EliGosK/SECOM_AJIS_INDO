@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="ChangeDate" width="80" type="dhxCalendar" align="left" format="%d-%b-%Y" sort="date">headerChangedDate</column>
+    
+    <!--<column id="CSCustCode" width="70" type="ro" align="left" sort="str_custom">headerContractPurchaser</column>
+    <column id="CSCustName" width="*" type="ro" align="left" sort="str_custom">#cspan</column>-->
+    <column id="CSCustCodeName" width="*" type="ro" align="left" sort="str_custom">headerContractPurchaser</column>
+
+    <column id="ContractSignerTypeName" width="80" type="ro" align="left" sort="str_custom">#cspan</column>
+    
+    <!--<column id="RCCustCode" width="70" type="ro" align="left" sort="str_custom">headerRealCustomer</column>
+    <column id="RCCustName" width="100" type="ro" align="left" sort="str_custom">#cspan</column>-->
+    <column id="RCCustCodeName" width="175" type="ro" align="left" sort="str_custom">headerRealCustomer</column>
+    
+    <!--<column id="SiteCode" width="90" type="ro" align="left" sort="str_custom">headerSite</column>
+    <column id="SiteName" width="90" type="ro" align="left" sort="str_custom">#cspan</column>-->
+    <column id="SiteCodeName" width="175" type="ro" align="left" sort="str_custom">headerSite</column>
+    
+    <column id="ChangeNameReasonTypeDisplay" width="100" type="ro" align="left" sort="str_custom">headerChangedReason</column>
+    <column id="Detail" width="30" type="link" align="center" sort="na">headerDetail</column>
+
+    <column id="ContractCode" width="0" type="ro" align="left" hidden="true">headerDetail</column>
+    <column id="SequenceNo" width="0" type="ro" align="left" hidden="true">headerDetail</column>
+    <column id="CSChangeFlag" width="0" type="ro" align="left" hidden="true">headerDetail</column>
+    <column id="RCChangeFlag" width="0" type="ro" align="left" hidden="true">headerDetail</column>
+    <column id="SiteChangeFlag" width="0" type="ro" align="left" hidden="true">headerDetail</column>
+    <!--<column id="ContractSignerChangeFlag" width="0" type="ro" align="left" hidden="true">headerDetail</column>-->
+    
+    
+    <afterInit>
+      <call command="attachHeader">
+        <!--<param>#rspan,#rspan,headerCode,headerName,headerContractSignerType,headerCode,headerName,headerCode,headerName,#rspan,#rspan</param>-->
+        <param>#rspan,#rspan,headerCustCodeName,headerContractSignerType,headerCustCodeName,headerSiteCodeName,#rspan,#rspan</param>
+      </call>
+    </afterInit>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

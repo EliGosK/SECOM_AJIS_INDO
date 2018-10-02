@@ -1,0 +1,57 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+<div id="divSelectARListFields" class="main-table" style="margin-top:5px;display:none">
+    <div class="table-header">@Resources.CTS370.lblSelectARList</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS370.lblARListMode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonRadioButton("radCustomer", @Resources.CTS370.radCustomer, SECOM_AJIS.Common.Util.ConstantValue.ARRelevant.C_AR_RELEVANT_TYPE_CUSTOMER, false, "radGrpSelectAR", null)
+            @Html.CommonRadioButton("radSite", @Resources.CTS370.radSite, SECOM_AJIS.Common.Util.ConstantValue.ARRelevant.C_AR_RELEVANT_TYPE_SITE, false, "radGrpSelectAR", null)
+            @Html.CommonRadioButton("radContract", @Resources.CTS370.radContract, SECOM_AJIS.Common.Util.ConstantValue.ARRelevant.C_AR_RELEVANT_TYPE_CONTRACT, false, "radGrpSelectAR", null)
+            @Html.CommonRadioButton("radProject", @Resources.CTS370.radProject, SECOM_AJIS.Common.Util.ConstantValue.ARRelevant.C_AR_RELEVANT_TYPE_PROJECT, false, "radGrpSelectAR", null)
+            @Html.CommonRadioButton("radQuotation", @Resources.CTS370.radQuotation, SECOM_AJIS.Common.Util.ConstantValue.ARRelevant.C_AR_RELEVANT_TYPE_QUOTATION, false, "radGrpSelectAR", null)
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS370.lblCustomerCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+           @* @Html.CommonTextBox("txtCustomerCode", null, new { style = "width:220px;", @maxlength = "13" })*@
+           @Html.CommonTextBox("txtCustomerCode", null, new { style = "width:220px;", maxlength = CommonValue.C_MAXLENGTH_CUSTOMER_CODE })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS370.lblSiteCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @*@Html.CommonTextBox("txtSiteCode", null, new { style = "width:220px;", @maxlength = "16" })*@
+            @Html.CommonTextBox("txtSiteCode", null, new { style = "width:220px;", maxlength = CommonValue.C_MAXLENGTH_SITE_CODE })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS370.lblContractCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @*@Html.CommonTextBox("txtContractCode", null, new { style = "width:220px;", @maxlength = "12" })*@
+            @Html.CommonTextBox("txtContractCode", null, new { style = "width:220px;", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS370.lblProjectCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("txtProjectCode", null, new { style = "width:220px;", @maxlength = "8" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS370.lblQuotationCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @*@Html.CommonTextBox("txtQuotationCode", null, new { style = "width:220px;", @maxlength = "13" })*@
+            @Html.CommonTextBox("txtQuotationCode", null, new { style = "width:220px;", maxlength = CommonValue.C_MAXLENGTH_QUOTATION_TARGE_CODE })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div style="text-align:right;">
+            @Html.CommonButton("btnRetrieveSelectARList", @Resources.CTS370.btnRetrieve, new { style = "vertical-align: middle;width: 100px;" })
+            @Html.CommonButton("btnClearSelectARList", @Resources.CTS370.btnClear, new { style = "vertical-align: middle; width: 100px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

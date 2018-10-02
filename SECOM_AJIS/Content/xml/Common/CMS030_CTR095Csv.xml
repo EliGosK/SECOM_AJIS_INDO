@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="ContractDocumentType" type="text" >lbContractDocumentType</column>
+    <column id="ContractNo" type="text" >lbContractNo</column>
+    <column id="OCC" type="text" >lbOCC</column>
+    <column id="ChangeImplementDate" type="text">lbChangeImplementDate</column>
+    <column id="LastOCC" type="text" >lbLastOCC</column>
+    <column id="LastChangeImplementDate" type="date" format="dd/MM/yyyy" >lbLastChangeImplementDate</column>
+    <column id="LastChangeType" type="text" >lbLastChangeType</column>
+    <column id="CustFullName" type="text" >lbCustFullName</column>
+    <column id="PremiseName" type="text" >lbPremiseName</column>
+    <column id="ApproveContractDate" type="date" format="dd/MM/yyyy">lbApproveContractDate</column>
+    <column id="FirstSecurityStartDate" type="date" format="dd/MM/yyyy">lbFirstSecurityStartDate</column>
+    <column id="Product" type="text" >lbProduct</column>
+    <column id="ContractDocAuditResult" type="text" >lbContractDocAuditResult</column>
+    <column id="ContractOffice" type="text" >lbContractOffice</column>
+    <column id="OperationOffice" type="text" >lbOperationOffice</column>
+    <column id="Salesman" type="text" >lbSalesman</column>
+  </head>
+</rows>

@@ -1,0 +1,121 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Inventory.Helpers
+@using SECOM_AJIS.DataEntity.Common
+@using SECOM_AJIS.Presentation.Common.Helpers;
+
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.maskedinput-1.3.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Inventory/IVS012.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+
+    <script type="text/javascript">
+        var AreaSample = "@ViewBag.AreaSample";
+        var PreloadSlilpNo = "@ViewBag.PreloadSlipNo";
+    </script>
+}
+@{
+    ViewBag.Col1 = "210px";
+    ViewBag.Col2 = "260px";
+    ViewBag.NormalTxt = "175px";
+    ViewBag.NormalCbo = "181px";
+    ViewBag.ProjPurSortObj = "120px";
+    ViewBag.LongTxt = "720px";
+    ViewBag.Midtxt = "220px";
+    ViewBag.SysProdTxt = "300px";
+    ViewBag.txtBackgroundColor = "None";
+}
+<!-- ===================================== Specify stock-in slip no  =========================================== -->
+<div class="main-table" id="SpecifySlipNo">
+    <div class="table-header">
+        @Resources.IVS012.lblStockInSlipNo</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 375px;">@Resources.IVS012.lblStockInSlipNo
+        </div>
+        <div class="usr-object" style="width: 185px;">
+            @Html.CommonTextBox("SlipNo", null, new { style = "width:" + ViewBag.NormalTxt + ";", maxlength = "16" })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnRetrieve", @Resources.IVS012.lblBtnRetrieve)
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<!-- ===================================== End Specify stock-in slip no =========================================== -->
+<!-- ===================================== Register Instrument cost price  =========================================== -->
+<div class="main-table" id="InstrumentCostPrice" style="display: none">
+    <form id="frmHeader" action="#">
+        <div class="table-header">
+            @Resources.IVS012.lblRegisterInstrumentCostPriceList</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS012.lblStockInSlipNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.NormalTxt">
+                @Html.CommonTextBox("DetSlipNo", null, new { style = "width:" + ViewBag.NormalTxt + ";" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS012.lblPurchaseOrderNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.NormalTxt">
+                @Html.CommonTextBox("DetPorderNo", null, new { style = "width:" + ViewBag.NormalTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS012.lblStockInType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.NormalTxt">
+                @Html.CommonTextBox("DetStockInTypeCodeName", null, new { style = "width:" + ViewBag.NormalTxt + ";" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS012.lblSupplierDeliveryOrderNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.NormalTxt">
+                @Html.CommonTextBox("DetSupOrderNo", null, new { style = "width:" + ViewBag.NormalTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS012.lblStockInDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.NormalTxt">
+                @Html.CommonTextBox("DetStockDate", null, new { style = "width:" + ViewBag.NormalTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">@Resources.IVS012.lblMemo
+            </div>
+            <div class="usr-object" style="width:569px">
+                @Html.CommonTextArea("Detmemo", null, new { style = " width: 569px; height: 50px; overflow: auto;" })
+            </div>
+        </div>        
+        <div class="usr-row">
+            <div class="usr-label" style="width: @ViewBag.Col1;">@Resources.IVS012.lblVoucherNo
+            </div>
+            <div class="usr-object" style="width: @ViewBag.NormalTxt">
+                @Html.CommonTextBox("txtVoucherNo", null, new { style = "width:" + @ViewBag.NormalTxt + ";", maxlength = 15, name = "VoucherNo" })
+            </div>
+            <div class="usr-label" style="width: @ViewBag.Col1;">@Resources.IVS012.lblVoucherDate
+            </div>
+            <div class="usr-object" style="width: @ViewBag.WidthDatePicker">
+                @Html.CommonTextBox("txtVoucherDate", null, new { style = "width:" + @ViewBag.WidthDatePicker, name = "VoucherDate" })
+            </div>
+        </div>
+    </form>
+
+    <div class="usr-row">
+        <div id="InstrumentGrid" style="width: 99%; margin-left: 4px; margin-top:5px;">
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;
+    </div>
+</div>
+<!-- ===================================== End Register Instrument cost price =========================================== -->
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog">
+    </div>
+</div>

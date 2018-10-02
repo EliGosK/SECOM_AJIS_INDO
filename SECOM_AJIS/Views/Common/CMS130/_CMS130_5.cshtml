@@ -1,0 +1,116 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+
+<div id="divInsatallInformation" class="main-table">
+    <div class="table-header">@Resources.CMS130.lblInstallation_information</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblInstallation_type
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtInstallation_type",(string)@ViewBag.txtInstallation_type , new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblComplete_installation_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtComplete_installation_date",(string)@ViewBag.txtComplete_installation_date , new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblNormal_installation_fee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;" >@Html.CommonTextBox("txtNormal_installation_fee", (string)@ViewBag.txtNormal_installation_fee, new { isViewMode = @ViewBag.isViewMode }) </div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblOrder_installation_fee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtOrder_installation_fee",(string)@ViewBag.txtOrder_installation_fee , new { isViewMode = @ViewBag.isViewMode }) </div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblOrder_installation_fee_Approve_contract
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtOrder_installation_fee_Approve_contract",(string)@ViewBag.txtOrder_installation_fee_Approve_contract , new { isViewMode = @ViewBag.isViewMode }) </div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblOrder_installation_fee_Complete_installation
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtOrder_installation_fee_Complete_installation",(string)@ViewBag.txtOrder_installation_fee_Complete_installation , new { isViewMode = @ViewBag.isViewMode }) </div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblOrder_installation_fee_Start_service
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtOrder_installation_fee_Start_service",(string)@ViewBag.txtOrder_installation_fee_Start_service , new { isViewMode = @ViewBag.isViewMode }) </div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblSECOM_payment
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtSECOM_payment",(string)@ViewBag.txtSECOM_payment , new { isViewMode = @ViewBag.isViewMode })</div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblSECOM_revenue
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; margin-right:0px; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left;">@Html.CommonTextBox("txtSECOM_revenue",(string)@ViewBag.txtSECOM_revenue , new { isViewMode = @ViewBag.isViewMode }) </div>
+            @*@Html.LabelCurrencyUnit("lblCurency")*@
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS130.lblInstallation_slip_no
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonLink("lnkInstallation_slip_no", (string)@ViewBag.lnkInstallation_slip_no)&nbsp;
+        </div>
+    </div>
+
+
+      <div class="usr-row">
+        <div class="usr-object" style="height: 100%;">
+            <div class="fieldset-table" style="width: 945px; height: 100%; margin-left: 5px ; margin-top:20px">
+                <div class="fieldset-header">
+                    <span>@Resources.CMS130.lblSubcontractor</span>
+                </div>
+
+                @*[GRID] SUBCONTRACTOR *@
+                <div>
+                    <div id="mygrid_Subcontract" style="width: 99%; margin-left: 4px;">
+                    </div>
+                </div>
+
+                <div class="usr-clear-style">
+                    &nbsp;</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

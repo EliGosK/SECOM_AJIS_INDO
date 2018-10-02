@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="30" type="ro" align="center" sort="na"></column>
+    <column id="FirstFeeFlagIcon" width="30" type="ro" align="center" sort="na">headerFirstFeeFlag</column>
+    <column id="InvoiceNo" width="120" type="ro" align="left" sort="str_custom">headerInvoiceNo</column>
+    <column id="ContractCodeDisplay" width="100" type="ro" align="left" sort="str_custom">headerContractCode</column>
+    <column id="BillingTypeName" width="*" type="ro" align="left" sort="str_custom">headerBillingType</column>
+    <column id="BillingStartDate" width="110" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerBillingStartDate</column>
+    <column id="BillingEndDate" width="110" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerBillingEndDate</column>
+    <column id="BillingAmountShow" width="160" type="ro" align="right" sort="str_custom">headerAmount</column>
+    <column id="ContractCodeShort" width="0" type="ro" hidden="true"></column>
+    <column id="BillingOCC" width="0" type="ro"  hidden="true"></column>
+    <column id="FirstFeeFlag" width="0" type="ro"  hidden="true"></column>
+
+    <column id="BillingAmount" width="0" type="ro"  hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

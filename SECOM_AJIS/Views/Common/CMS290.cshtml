@@ -1,0 +1,171 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Presentation.Master.Helpers
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.LabelWidth = "180px";
+    ViewBag.RightLabelWidth = "140px";
+}
+@section page_header{
+    <script type="text/javascript" src="../../Scripts/Base/AutoComplete.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS290.js")"></script>
+}
+<div id="cms290_HiddenData" style="display: none">
+    @Html.Hidden("cms290_btnCancel", (string)@Resources.CMS290.btnCancel)
+    @Html.Hidden("cms290_PageRow", (int)@ViewBag.PageRow)
+</div>
+
+
+<!-- SEARCH TYPE SECTION ====================================================================================================================== -->
+<div id="CMS290_SearchType" class="main-table">
+    <div class="table-header">
+        @Resources.CMS290.lblSearchType
+    </div>
+
+    <div style="text-align: center">
+        @Html.CommonRadioButton("cms290_rdoSearchByCode", @Resources.CMS290.rdoSerachByCode, "1", true, "cms290_SearchTypeGroup")
+        <span style="width:10px;">&nbsp;</span>
+        @Html.CommonRadioButton("cms290_rdoSearchByCondition", @Resources.CMS290.rdoSearchByCon, "2", false, "cms290_SearchTypeGroup")
+    </div>
+
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+
+
+<!-- SEARCH BY CODE SECTION ====================================================================================================================== -->
+<div id="CMS290_SearchByCode" class="main-table">
+    <div class="table-header">
+        @Resources.CMS290.rdoSerachByCode
+    </div>
+    <form id="CMS290_SearchByCodeForm" action="#">
+    <div class="usr-row">
+        <div class="usr-label" style="width:240px;">
+            @Resources.CMS290.lblProjectCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("cms290_ProjectCode", "", new { style = "width:140px;", maxlength = "8" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+            @Resources.CMS290.lblContractCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("cms290_ContractCode", "", new { style = "width:140px;", maxlength = "12" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-object" style="float: right; margin-right: 5px; margin-top: 5px">
+            @Html.CommonButton("cms290_btnSearchByCode", @Resources.CMS170.btnSearch, new { style = "width:100px;", type = "button" })
+            @Html.CommonButton("cms290_btnClearByCode", @Resources.CMS170.btnClear, new { style = "width:100px;", type = "button" })
+        </div>
+    </div>
+    </form>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+
+
+<!-- SEARCH BY CONDITION SECTION ====================================================================================================================== -->
+<div id="CMS290_SearchByCondition" class="main-table">
+    <div class="table-header">
+        @Resources.CMS290.lblSearchByCon
+    </div>
+    <form id="CMS290_SearchByConditionForm" action="#">
+    <div class="usr-row">
+        <div class="usr-label" style="width: 240px;">
+            @Resources.CMS290.lblProjectName
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("cms290_ProjectName", "", new { style = "width:595px;", maxlength = "100" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 240px;">
+            @Resources.CMS290.lblProRepAdd
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("cms290_ProjectAddress", "", new { style = "width:595px;", maxlength = "1600" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 240px;">
+            @Resources.CMS290.lblPjPurNam
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("cms290_PJPurchaseName", "", new { style = "width:595px;", maxlength = "200" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 240px;">
+            @Resources.CMS290.lblPJOwe1
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("cms290_Owner1Name", "", new { style = "width:595px;", maxlength = "200" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 240px;">
+            @Resources.CMS290.lblPJManComName
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("cms290_PJManagementCompanyName", "", new { style = "width:595px;", maxlength = "200" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 240px;">
+            @Resources.CMS290.lblOthPJRelPerName
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("cms290_OtherProjectRelatedPersonName", "", new { style = "width:595px;", maxlength = "200" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 240px;">
+            @Resources.CMS290.lblSysProdName
+        </div>
+        <div class="usr-object">
+            @Html.SystemProduct("cms290_ProductCode", new { style = "width:300px;" },"ALL")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 240px;">
+            @Resources.CMS290.lblHeadSalemanName
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("cms290_HeadSalesmanEmpName", null, new { style = "width:595px;", maxlength = "50" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 240px;">
+            @Resources.CMS290.lblPJMangName
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("cms290_ProjectManagerEmpName", null, new { style = "width:595px;", maxlength = "50" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-object" style="float: right; margin-right: 5px; margin-top: 5px">
+            @Html.CommonButton("cms290_btnSearchByCondition", @Resources.CMS170.btnSearch, new { style = "width:100px;", type = "button" })
+            @Html.CommonButton("cms290_btnClearByCondition", @Resources.CMS170.btnClear, new { style = "width:100px;", type = "button" })
+        </div>
+    </div>
+    </form>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+
+
+<!-- SEARCH RESULT SECTION ====================================================================================================================== -->
+<div id="CMS290_SearchResult">
+    <div class="main-table">
+        <div class="table-header">
+            @Resources.CMS290.lblResult
+        </div>
+        <div class="usr-row">
+            <div id="cms290_grid_result" style="width: 99%; margin-left: 4px;">
+            </div>
+        </div>
+
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</div>

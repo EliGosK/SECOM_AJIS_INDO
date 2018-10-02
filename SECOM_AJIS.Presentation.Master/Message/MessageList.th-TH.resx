@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG1001" xml:space="preserve">
+    <value>ไม่สามารถลบข้อมูลสถานที่ติดตั้งต่อไปนี้ได้ : {0}</value>
+  </data>
+  <data name="MSG1002" xml:space="preserve">
+    <value>ข้อมูลสถานที่ติดตั้งซ้ำกับที่มีอยู่ในข้อมูลลูกค้า</value>
+  </data>
+  <data name="MSG1003" xml:space="preserve">
+    <value>เลขประจำตัวประชาชน/เลขประจำตัวผู้เสียภาษีนี้ได้ถูกบันทึกอยู่แล้ว</value>
+  </data>
+  <data name="MSG1004" xml:space="preserve">
+    <value>ชื่อลูกค้านี้ได้ถูกบันทึกอยู่แล้ว คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG1005" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะลบข้อมูลลูกค้าต่อไปนี้: {0}?</value>
+  </data>
+  <data name="MSG1006" xml:space="preserve">
+    <value>ไม่สามารถลบข้อมูลลูกค้าต่อไปนี้ได้: {0}</value>
+  </data>
+  <data name="MSG1007" xml:space="preserve">
+    <value>ลูกค้ารายนี้ได้บันทึกรหัสกลุ่มลูกค้าที่ระบุไว้อยู่แล้ว</value>
+  </data>
+  <data name="MSG1008" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะลบข้อมูลกลุ่มลูกค้าต่อไปนี้ : {0}?</value>
+  </data>
+  <data name="MSG1009" xml:space="preserve">
+    <value>ไม่สามารถลบรหัสกลุ่มลูกค้าต่อไปนี้ได้: {0}</value>
+  </data>
+  <data name="MSG1010" xml:space="preserve">
+    <value>ลูกค้ารายนี้มีชื่อกลุ่ม (ไทย) ซ้ำกับที่มีอยู่แล้วในกลุ่มลูกค้า</value>
+  </data>
+  <data name="MSG1011" xml:space="preserve">
+    <value>สาขาและแผนกซ้ำกับที่มีอยู่แล้วในสังกัด</value>
+  </data>
+  <data name="MSG1012" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะลบผู้ใช้: {0}?</value>
+  </data>
+  <data name="MSG1013" xml:space="preserve">
+    <value>รหัสพนักงานนี้ซ้ำกับที่มีอยู่ในระบบ</value>
+  </data>
+  <data name="MSG1014" xml:space="preserve">
+    <value>ข้อมูลสังกัดหลักซ้ำกับที่มีในข้อมูลมาสเตอร์ของสังกัด</value>
+  </data>
+  <data name="MSG1015" xml:space="preserve">
+    <value>พนักงานรายนี้ยังไม่มีข้อมูลในมาสเตอร์ของสังกัด</value>
+  </data>
+  <data name="MSG1016" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการลบสิทธิการใช้งานประเภท 'สิทธิการใช้งานตามสาขา/แผนก' ดังต่อไปนี้: {0}?</value>
+  </data>
+  <data name="MSG1017" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการลบสิทธิการใช้งานประเภท 'สิทธิการใช้งานเฉพาะ' ดังต่อไปนี้: {0}?</value>
+  </data>
+  <data name="MSG1018" xml:space="preserve">
+    <value>สาขา แผนก และตำแหน่งซ้ำกับที่มีอยู่แล้วในกลุ่มสิทธิการใช้งานนี้</value>
+  </data>
+  <data name="MSG1019" xml:space="preserve">
+    <value>รหัสอุปกรณ์ซ้ำกับที่มีอยู่แล้ว</value>
+  </data>
+  <data name="MSG1020" xml:space="preserve">
+    <value>รหัสอุปกรณ์นี้ไม่ใช่อุปกรณ์ลูก</value>
+  </data>
+  <data name="MSG1021" xml:space="preserve">
+    <value>รหัสอุปกรณ์ลูกซ้ำกับที่มีอยู่แล้วในข้อมูลการแบ่งระดับของอุปกรณ์: {0}</value>
+  </data>
+  <data name="MSG1022" xml:space="preserve">
+    <value>มีรหัสอุปกรณ์อยู่ในการแบ่งระดับของอุปกรณ์แล้ว ไม่สามารถเปลี่ยนประเภทของการแบ่งระดับของอุปกรณ์ได้</value>
+  </data>
+  <data name="MSG1023" xml:space="preserve">
+    <value>ลูกค้าไม่ได้อยู่ในสถานะลูกค้าใหม่</value>
+  </data>
+  <data name="MSG1024" xml:space="preserve">
+    <value>ไม่มีข้อมูลผู้รับผิดชอบของซีคอมในข้อมูลมาสเตอร์ของพนักงาน</value>
+  </data>
+  <data name="MSG1025" xml:space="preserve">
+    <value>พนักงานรายนี้มีการบันทึกข้อมูลไว้แล้ว</value>
+  </data>
+  <data name="MSG1026" xml:space="preserve">
+    <value>รหัสอุปกรณ์ลูกนี้มีการบันทึกข้อมูลไว้แล้ว</value>
+  </data>
+  <data name="MSG1039" xml:space="preserve">
+    <value>กรุณาระบุรหัสลูกค้า</value>
+  </data>
+  <data name="MSG1040" xml:space="preserve">
+    <value>กรุณาระบุรหัสอุปกรณ์แม่</value>
+  </data>
+  <data name="MSG1041" xml:space="preserve">
+    <value>ข้อมูลลูกค้าถูกใช้ในสัญญาอื่นแล้ว</value>
+  </data>
+  <data name="MSG1043" xml:space="preserve">
+    <value>รหัสอุปกรณ์นี้ไม่ได้ถูกตั้งให้เป็นอุปกรณ์แม่ในข้อมูลอุปกรณ์</value>
+  </data>
+  <data name="MSG1038" xml:space="preserve">
+    <value>มีผู้รับผิดชอบของแผนกซ้ำกับที่มีอยู่แล้วในสาขาเดียวกันและแผนกเดียวกัน</value>
+  </data>
+  <data name="MSG1042" xml:space="preserve">
+    <value>กรุณาระบุสังกัดหลัก</value>
+  </data>
+  <data name="MSG1044" xml:space="preserve">
+    <value>กรุณาระบุพนักงานอย่างน้อย 1 คน</value>
+  </data>
+  <data name="MSG1047" xml:space="preserve">
+    <value>รหัสพนักงานนี้ถูกลบทางลอจิคอลไปแล้ว หากดำเนินการต่อรหัสพนักงานนี้จะถูกนำกลับมาใช้อีกครั้งโดยใช้ข้อมูลที่กรอกบนหน้าจอ</value>
+  </data>
+  <data name="MSG1030" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะลบรหัสผู้รับเหมา: {0}?</value>
+  </data>
+  <data name="MSG1031" xml:space="preserve">
+    <value>ไม่สามารถลบรหัสผู้รับเหมาต่อไปนี้ได้: {0}</value>
+  </data>
+  <data name="MSG1032" xml:space="preserve">
+    <value>ลบข้อมูลรหัสผู้รับเหมา: {0} เรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG1037" xml:space="preserve">
+    <value>ข้อมูลปริมาณอุปกรณ์ขั้นต่ำของรหัสอุปกรณ์ต่อไปนี้มีอยู่ในระบบแล้ว: {0}</value>
+  </data>
+  <data name="MSG1033" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะลบรหัสชั้น: {0}?</value>
+  </data>
+  <data name="MSG1034" xml:space="preserve">
+    <value>ไม่สามารถลบรหัสชั้นต่อไปนี้ได้: {0}</value>
+  </data>
+  <data name="MSG1035" xml:space="preserve">
+    <value>ลบข้อมูลรหัสชั้น: {0} เรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG1046" xml:space="preserve">
+    <value>ไม่สามารถเปลี่ยนแปลงประเภทชั้นสำหรับชั้นนี้ได้</value>
+  </data>
+  <data name="MSG1048" xml:space="preserve">
+    <value>รหัสชั้นนี้มีอยู่ในระบบแล้ว</value>
+  </data>
+  <data name="MSG1049" xml:space="preserve">
+    <value>ไม่สามารถลบชั้นนี้ได้เนื่องจากจำนวนอุปกรณ์ไม่เท่ากับ 0</value>
+  </data>
+  <data name="MSG1045" xml:space="preserve">
+    <value>กรุณาระบุรหัสลูกค้าสำหรับเรียกเก็บ</value>
+  </data>
+  <data name="MSG1055" xml:space="preserve">
+    <value>เลขที่ชั้นนี้ถูกลบทางลอจิคอลไปแล้ว หากดำเนินการต่อเลขที่ชั้นนี้จะถูกนำกลับมาใช้อีกครั้งโดยใช้ข้อมูลที่กรอกบนหน้าจอ</value>
+  </data>
+  <data name="MSG1056" xml:space="preserve">
+    <value>รหัสผู้รับเหมานี้มีอยู่ในระบบอยู่แล้ว</value>
+  </data>
+  <data name="MSG1057" xml:space="preserve">
+    <value>รหัสผู้รับเหมานี้ถูกลบทางลอจิคอลไปแล้ว หากดำเนินการต่อรหัสผู้รับเหมานี้จะถูกนำกลับมาใช้อีกครั้งโดยใช้ข้อมูลที่กรอกบนหน้าจอ</value>
+  </data>
+  <data name="MSG1058" xml:space="preserve">
+    <value>ลูกค้าสำหรับเรียกเก็บนี้ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG1027" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะลบรหัสลูกค้าสำหรับเรียกเก็บ: {0}?</value>
+  </data>
+  <data name="MSG1028" xml:space="preserve">
+    <value>ไม่สามารถลบรหัสลูกค้าสำหรับเรียกเก็บ: {0}</value>
+  </data>
+  <data name="MSG1029" xml:space="preserve">
+    <value>ลบข้อมูลรหัสลูกค้าสำหรับเรียกเก็บ: {0} เรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG1036" xml:space="preserve">
+    <value>ไม่สามารถลบจำนวนอุปกรณ์ขั้นต่ำได้</value>
+  </data>
+  <data name="MSG1050" xml:space="preserve">
+    <value>กำหนดระยะเวลาต้องไม่ใช่วันที่ก่อนวันเริ่มงาน</value>
+  </data>
+  <data name="MSG1051" xml:space="preserve">
+    <value>กำหนดระยะเวลาต้องไม่ใช่วันที่หลังวันลาออก</value>
+  </data>
+  <data name="MSG1052" xml:space="preserve">
+    <value>ชื่อภาษาไทยของลูกค้านี้ซ้ำกับชื่อลูกค้าในรหัสลูกค้าอื่น หากต้องการดำเนินการต่อ กรุณากด "ตกลง" แต่หากไม่ใช่ลูกค้ารายเดียวกัน กรุณาใส่ชื่อลูกค้าให้แตกต่างกัน</value>
+  </data>
+  <data name="MSG1059" xml:space="preserve">
+    <value>ไม่สามารถลบรหัสลูกค้า {0} ได้เนื่องจากถูกนำไปใช้ในสัญญาแล้ว</value>
+  </data>
+  <data name="MSG1060" xml:space="preserve">
+    <value>จำนวนหลักของเลขประจำตัวผู้เสียภาษีต้องเป็น 13 หลัก</value>
+  </data>
+  <data name="MSG1061" xml:space="preserve">
+    <value>จำนวนหลักของเลขที่สาขาต้องเป็น 5 หลัก</value>
+  </data>
+  <data name="MSG1062" xml:space="preserve">
+    <value>เลขที่สาขา 00000 ใช้สำหรับสำนักงานใหญ่เท่านั้น</value>
+  </data>
+</root>

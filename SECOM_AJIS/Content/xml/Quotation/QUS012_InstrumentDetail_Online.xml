@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="MaintenanceFlag" width="30" type="ro" align="center" sort="na"></column>
+    <column id="InstrumentCode" width="200" type="ro" align="left" sort="str_custom">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">headerInstrumentName</column>
+    <column id="LineUpTypeCodeName" width="120" type="ro" align="left" sort="str_custom">headerLineUpType</column>
+    <column id="InstrumentQty" width="80" type="edn" format="0,000" align="right" sort="int">headerQuantity</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

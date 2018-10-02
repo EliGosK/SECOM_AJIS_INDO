@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="lblHeader2UnPaidBillingBillingClientName" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;Billing Customer Name&lt;BR&gt;(1) English&lt;BR&gt;(2) Local&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingBillingTargetCode" xml:space="preserve">
+    <value>Billing customer code</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingIncludeFirstFee" xml:space="preserve">
+    <value>Include first fee</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingNumberOfBillingDetail" xml:space="preserve">
+    <value>Number of billing detail</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingNumberOfUnpaidAmount" xml:space="preserve">
+    <value>Number of unpaid invoice</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingOldestBillingDetailDelayMonth" xml:space="preserve">
+    <value>Oldest billing detail delayed month</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingTracingResultRegistered" xml:space="preserve">
+    <value>Tracing result registered</value>
+  </data>
+  <data name="lblHeader2UnPaidBillingUnpaidAmount" xml:space="preserve">
+    <value>Unpaid amount </value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceWHTAmount" xml:space="preserve">
+    <value>WHT amount</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceIncludeFirstFee" xml:space="preserve">
+    <value>Include first fee</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceInvoiceNo" xml:space="preserve">
+    <value>Invoice no.</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceIssueInvoiceDate" xml:space="preserve">
+    <value>Issue invoice date</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceNumberOFBillingDetail" xml:space="preserve">
+    <value>Number of billing detail</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceOldBillingDetailDelayMonth" xml:space="preserve">
+    <value>Oldest billing detail delayed month</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoicePaymentMethod" xml:space="preserve">
+    <value>Payment method</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceTracingResaultRegister" xml:space="preserve">
+    <value>Tracing result registered</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceUnpaidAmount" xml:space="preserve">
+    <value>Unpaid amount</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceViewRegisterDebtTracingInfo" xml:space="preserve">
+    <value>View/Register debt tracing info</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingBillingAmount" xml:space="preserve">
+    <value>Billing amount</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingBillingCode" xml:space="preserve">
+    <value>Billing code</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingBillingPeriod" xml:space="preserve">
+    <value>Billing period</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingBillingType" xml:space="preserve">
+    <value>Billing type</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingFirstFee" xml:space="preserve">
+    <value>First fee</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingInvoiceNo" xml:space="preserve">
+    <value>Invoice no.</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingNumberOfDelayMonth" xml:space="preserve">
+    <value>Number of delayed month</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingPaymentStatus" xml:space="preserve">
+    <value>Payment status</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingSiteName" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;Premise's name&lt;BR&gt;(1) English&lt;BR&gt;(2) Local&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingTracingResaultRegister" xml:space="preserve">
+    <value>Tracing result registered</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingViewRegisterDebtTracingInfo" xml:space="preserve">
+    <value>View/Register debt tracing info</value>
+  </data>
+  <data name="lblHeaderDebtActualSummary" xml:space="preserve">
+    <value>Debt actual summary</value>
+  </data>
+  <data name="lblHeaderDebtActualTable" xml:space="preserve">
+    <value>Debt actual table</value>
+  </data>
+  <data name="lblHeaderListOfUnPaidBillingTargetByBillingOffice" xml:space="preserve">
+    <value>List of unpaid billing customer by billing office</value>
+  </data>
+  <data name="lblHeaderListOfUnPaidByBillingTarget" xml:space="preserve">
+    <value>List of unpaid detail by billing customer</value>
+  </data>
+  <data name="lblHeaderListOfUnPaidInvoiceByBillingTarget" xml:space="preserve">
+    <value>List of unpaid invoice by billing customer</value>
+  </data>
+  <data name="lblMonthYear" xml:space="preserve">
+    <value>Month-Year</value>
+  </data>
+  <data name="lblUnPaidBillingBillingOffice" xml:space="preserve">
+    <value>Billing office</value>
+  </data>
+  <data name="lblUnPaidBillingBillingOfficeCode" xml:space="preserve">
+    <value>Billing office code</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientAddressEN" xml:space="preserve">
+    <value>Billing customer address (English)</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientAddressLC" xml:space="preserve">
+    <value>Billing customer address (Local)</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientContactPerson" xml:space="preserve">
+    <value>Billing customer contract person</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientNameEN" xml:space="preserve">
+    <value>Billing customer name (English)</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientNameLC" xml:space="preserve">
+    <value>Billing customer code (Local)</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingClientTelNo" xml:space="preserve">
+    <value>Billing customer tel. no.</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingOffice" xml:space="preserve">
+    <value>Billing office</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingOfficeCode" xml:space="preserve">
+    <value>Billing office code</value>
+  </data>
+  <data name="lblUnPaidByBillingBillingTargetCode" xml:space="preserve">
+    <value>Billing customer code</value>
+  </data>
+  <data name="lblUnPaidByBillingTotalUnpaidAmount" xml:space="preserve">
+    <value>Total unpaid amount</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientAddressEN" xml:space="preserve">
+    <value>Billing customer address (English)</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientAddressLC" xml:space="preserve">
+    <value>Billing customer address (Local)</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientContactPerson" xml:space="preserve">
+    <value>Billing customer contract person</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientNameEN" xml:space="preserve">
+    <value>Billing customer name (English)</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientNameLC" xml:space="preserve">
+    <value>Billing customer code (Local)</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingClientTelNo" xml:space="preserve">
+    <value>Billing customer tel. no.</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingOffice" xml:space="preserve">
+    <value>Billing office</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingOfficeCode" xml:space="preserve">
+    <value>Billing office code</value>
+  </data>
+  <data name="lblUnPaidInvoiceBillingTargetCode" xml:space="preserve">
+    <value>Billing customer code</value>
+  </data>
+  <data name="lblUnPaidInvoiceTotalUnpaidAmount" xml:space="preserve">
+    <value>Total unpaid amount</value>
+  </data>
+  <data name="lblHeader1AllUnpaid" xml:space="preserve">
+    <value>All unpaid</value>
+  </data>
+  <data name="lblHeader1AllUnpaidActual" xml:space="preserve">
+    <value>Actual</value>
+  </data>
+  <data name="lblHeader1AllUnpaidActualDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) Amount&lt;BR&gt;(2) No. of billing detail&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1AllUnpaidCompareTotarget" xml:space="preserve">
+    <value>Compare to target</value>
+  </data>
+  <data name="lblHeader1AllUnpaidCompareTotargetDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) Amount (%)&lt;BR&gt;(2) No. of billing detail (%)&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1AllUnpaidTarget" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="lblHeader1AllUnpaidTargetDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) Amount&lt;BR&gt;(2) No. of billing detail&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1BillingOffice" xml:space="preserve">
+    <value>Billing office</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2Month" xml:space="preserve">
+    <value>Unpaid over 2 months</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthActual" xml:space="preserve">
+    <value>Actual</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthActualDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) Amount&lt;BR&gt;(2) No. of billing detail&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthCompareTotarget" xml:space="preserve">
+    <value>Compare to target</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthCompareTotargetDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) Amount (%)&lt;BR&gt;(2) No. of billing detail (%)&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthTarget" xml:space="preserve">
+    <value>Target</value>
+  </data>
+  <data name="lblHeader1UnpaidOver2MonthTargetDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) Amount&lt;BR&gt;(2) No. of billing detail&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader1UnpaidOver6Month" xml:space="preserve">
+    <value>Unpaid over 6 months</value>
+  </data>
+  <data name="lblHeader1UnpaidOver6MonthActual" xml:space="preserve">
+    <value>Actual</value>
+  </data>
+  <data name="lblHeader1UnpaidOver6MonthActualDetails" xml:space="preserve">
+    <value>&lt;div class='hdrcell'&gt;&lt;div&gt;(1) Amount&lt;BR&gt;(2) No. of billing detail&lt;/div&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceBillingAmountExTax" xml:space="preserve">
+    <value>Billing amount&lt;BR&gt;(excluding tax)</value>
+  </data>
+  <data name="lblHeader3UnPaidInvoiceVatAmount" xml:space="preserve">
+    <value>Vat Amount</value>
+  </data>
+  <data name="lblHeaderListOfUnPaidBySelectedInvoice" xml:space="preserve">
+    <value>List of unpaid detail by selected invoice</value>
+  </data>
+  <data name="lblIconCreditNoteIssuedDetail" xml:space="preserve">
+    <value>Credit note issued detail</value>
+  </data>
+  <data name="lblIconFirstFeeDetail" xml:space="preserve">
+    <value>First fee detail</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingCreditNoteImage" xml:space="preserve">
+    <value>&lt;img width='20' height='20' title='Credit note issue detail' class='row-image' style='margin-top: -1px;' src='../../Content/images/icon/creditNote.PNG'/&gt;</value>
+  </data>
+  <data name="lblHeader4UnPaidByBillingFirstFeeImage" xml:space="preserve">
+    <value>&lt;img width='20' height='20' title='First fee detail' class='row-image' style='margin-top: -1px;' src='../../Content/images/icon/firstFee.PNG'/&gt;</value>
+  </data>
+  <data name="lblTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="lblHeaderViewRegsiterDebt" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;View/Register debt tracing info&lt;/div&gt;</value>
+  </data>
+  <data name="lbHeaderCurrency" xml:space="preserve">
+    <value>Curr&lt;br /&gt;ency</value>
+  </data>
+</root>

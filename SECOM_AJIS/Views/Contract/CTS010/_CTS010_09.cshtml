@@ -1,0 +1,48 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "181px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol12_SWidth = "369px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMerge12Width = "280px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.ObjectColCustNameWidth = "200px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS010/CTS010_09.js")"></script>
+<div id="divInsuranceInformation" class="main-table">
+    <div class="table-header">
+        @Resources.CTS010.lblInsuranceInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblInsuranceType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+            @Html.CommonTextBox("InsuranceType", (string)@ViewBag.InsuranceTypeCodeName, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblInsuranceCoverageAmount
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("InsuranceCoverageAmount", (string)@ViewBag.InsuranceCoverageAmount, (string)@ViewBag.InsuranceCoverageAmountCurrencyType, new { @readonly = true, style = "width:131px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblMonthlyInsuranceFee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyInranceFee", (string)@ViewBag.MonthlyInranceFee, (string)@ViewBag.MonthlyInranceFeeCurrencyType, new { @readonly = true, style = "width:131px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

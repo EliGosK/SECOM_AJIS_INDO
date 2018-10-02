@@ -1,0 +1,229 @@
+﻿<!--
+//*********************************
+// Create by: Nattapong N.
+// Create date: 23/Jun/2010
+// Update date:  /Jun/2010
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Quotation.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    if (ViewBag.ViewMode == "2")
+    {
+        Layout = "~/Views/Shared/_DialogLayout.cshtml";
+        ViewBag.Label1Width = "240px";
+        ViewBag.Label2Width = "269px";
+        ViewBag.ObjectWidth = "210px";
+        ViewBag.ObjectTextWidth = "200px";
+        ViewBag.ObjectComboWidth = "205px";
+        ViewBag.ObjectMergeWidth = "684px";
+    }
+    else
+    {
+        ViewBag.Label1Width = "240px";
+        ViewBag.Label2Width = "280px";
+        ViewBag.ObjectWidth = "210px";
+        ViewBag.ObjectTextWidth = "200px";
+        ViewBag.ObjectComboWidth = "205px";
+        ViewBag.ObjectMergeWidth = "695px";
+    }
+}
+@section page_header{
+    <script type="text/javascript">
+        var _CallerScreenID, _ServiceTypeCode, _TargetCodeTypeCode, _QuotationTargetCode;
+        var C_SCREEN_ID_MAIN,
+            C_SCREEN_ID_FN99,
+            C_SCREEN_ID_FQ99,
+            C_SCREEN_ID_FN99,
+            C_SCREEN_ID_FQ99,
+            C_LOCK_STATUS_UNLOCK,
+            C_SCREEN_ID_MAIN,
+            C_SCREEN_ID_CP12_PLAN,
+            C_SCREEN_ID_CP12_INST,
+            C_SCREEN_ID_CQ12;
+
+        _CallerScreenID = "@ViewBag.strCallerScreenID";
+        _ServiceTypeCode = "@ViewBag.strServiceTypeCode";
+        _TargetCodeTypeCode = "@ViewBag.strTargetCodeTypeCode";
+        _QuotationTargetCode = "@ViewBag.strQuotationTargetCode";
+
+        C_SCREEN_ID_MAIN = "@ViewBag.C_SCREEN_ID_MAIN";
+        C_SCREEN_ID_FN99 = "@ViewBag.C_SCREEN_ID_FN99";
+        C_SCREEN_ID_FQ99 = "@ViewBag.C_SCREEN_ID_FQ99";
+        C_SCREEN_ID_FN99 = "@ViewBag.C_SCREEN_ID_FN99";
+        C_SCREEN_ID_FQ99 = "@ViewBag.C_SCREEN_ID_FQ99";
+        C_LOCK_STATUS_UNLOCK = "@ViewBag.C_LOCK_STATUS_UNLOCK";
+        C_SCREEN_ID_MAIN = "@ViewBag.C_SCREEN_ID_MAIN";
+        C_SCREEN_ID_CP12_PLAN = "@ViewBag.C_SCREEN_ID_CP12_PLAN";
+        C_SCREEN_ID_CP12_INST = "@ViewBag.C_SCREEN_ID_CP12_INST";
+        C_SCREEN_ID_CQ12 = "@ViewBag.C_SCREEN_ID_CQ12";
+        C_PROD_TYPE_SALE = "@ViewBag.C_PROD_TYPE_SALE";
+        ViewMode = "@ViewBag.ViewMode";
+    </script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    @if (ViewBag.ViewMode != "2")
+    {
+        <script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/Dialog.js")"></script>
+    }
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS010.js")"></script>
+}
+<div style="display: none;">
+    @Html.Hidden("lblBtnClose", (string)Resources.QUS040.lblbtnClose)
+</div>
+<div id="SearchCriteriaSection">
+    <div class="main-table">
+        <div class="table-header">
+            @Resources.QUS010.lblSearchCriteria
+        </div>
+        <form id="SearCriteria" name="SearCriteria">
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS010.lblQuotationCode
+                </div>
+                <div class="usr-object" style="margin-right: 5px;">
+                    @Html.CommonTextBox("QuotationTargetCode", null, new { @maxlength = CommonValue.C_MAXLENGTH_QUOTATION_TARGE_CODE, style = "width:" + ViewBag.ObjectTextWidth + ";" })
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("Alphabet", null, new { @maxlength = "2", style = "width:40px;" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS010.lblProductType
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                    @Html.ProductTypeComboboxQUS010("ProductTypeCode", (string)ViewBag.strServiceTypeCode, new { style = "width:" + ViewBag.ObjectComboWidth + ";" }, "ALL")
+                </div>
+                <div class="usr-label" style="width:@ViewBag.Label2Width; ">
+                    @Resources.QUS010.lblLockStatus
+                </div>
+                <div class="usr-object">
+                    @Html.LockStatusComboQUS010("LockStatus", new { style = "width:" + ViewBag.ObjectComboWidth + ";" }, "ALL")
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS010.lblQuotationOffce
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                    @Html.QuotationOfficeComboBox("QuotationOfficeCode", new { style = "width:" + ViewBag.ObjectComboWidth + ";" }, "ALL")
+                </div>
+                <div class="usr-label" style="width:@ViewBag.Label2Width;">
+                    @Resources.QUS010.lblOperationOffce
+                </div>
+                <div class="usr-object">
+                    @Html.OperationOfficeComboQUS010("OperationOfficeCode", new { style = "width:" + ViewBag.ObjectComboWidth + ";" }, "ALL")
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS010.lblContractTargetPurchaserCode
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("ContractTargetCode", null, new { @maxlength = CommonValue.C_MAXLENGTH_CUSTOMER_CODE, style = "width:" + ViewBag.ObjectTextWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS010.lblContractTargetPurchaserName
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("ContractTargetName", null, new { @maxlength = "200", style = "width:" + ViewBag.ObjectMergeWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS010.lblContractTargetPurchaserAddr
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("ContractTargetAddr", null, new { @maxlength = "255", style = "width:" + ViewBag.ObjectMergeWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS010.lblSiteCode
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("SiteCode", null, new { @maxlength = CommonValue.C_MAXLENGTH_SITE_CODE, style = "width:" + ViewBag.ObjectTextWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS010.lblSiteName
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("SiteName", null, new { @maxlength = "200", style = "width:" + ViewBag.ObjectMergeWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS010.lblSiteAddr
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("SiteAddr", null, new { @maxlength = "255", style = "width:" + ViewBag.ObjectMergeWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width;">
+                    @Resources.QUS010.lblSaleman1Code
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                    @Html.CommonTextBox("EmpNo", null, new { @maxlength = "10", style = "width:" + ViewBag.ObjectTextWidth + ";" })
+                </div>
+                <div class="usr-label" style="width:@ViewBag.Label2Width;">
+                    @Resources.QUS010.lblSaleman1Name
+                </div>
+                <div class="usr-object">
+                    @Html.CommonTextBox("EmpName", null, new { @maxlength = "100", style = "width:" + ViewBag.ObjectTextWidth + ";" })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.Label1Width; ">
+                    @Resources.QUS010.lblRegDateForm
+                </div>
+                <div class="usr-object">
+                    <div class="object-unit">
+                        @Html.CommonTextBox("QuotationDateFrom", null, new { style = "width:100px;" })
+                    </div>
+                </div>
+                <div class="usr-label" style="padding-left: 5px">
+                    ~
+                </div>
+                <div class="usr-object">
+                    <div class="object-unit">
+                        @Html.CommonTextBox("QuotationDateTo", null, new { style = "width:100px;" })
+                    </div>
+                    <div style="float:left;">
+                        @Html.LabelDateFormat("QuotationDate")
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div class="usr-row usr-row-space-2x">
+            <div class="usr-object" style="float: right; margin-right: 14px;">
+                @Html.CommonButton("btnSearch", @Resources.QUS010.lblSearch, new { type = "button", style = "width:100px;" })
+                @Html.CommonButton("btnClear", @Resources.QUS010.lblClear, new { type = "button", style = "width:100px;" })
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</div>
+<div id="subSearchResult">
+    <div class="main-table">
+        <div class="table-header">
+            @Resources.QUS010.lblSearchResultList
+        </div>
+        <div class='usr-row'>
+            <div id="SearchResultList" style="width: 99%; margin-left: 4px;">
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</div>
+<div id="dlgQUS" class="main-popup-dialog">
+    <div class="popup-dialog">&nbsp;</div>
+</div>

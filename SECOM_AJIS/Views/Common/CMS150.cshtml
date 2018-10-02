@@ -1,0 +1,194 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@section page_header{
+    <script src="../../Scripts/Base/ComboBox.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+    <script src="../../Content/js/dhtmlxgrid/dhtmlxgrid.js" type="text/javascript"></script>
+    <script src="../../Content/js/dhtmlxgrid/dhtmlxgridcell.js" type="text/javascript"></script>
+    <script src="../../Content/js/dhtmlxgrid/dhtmlxcommon.js" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")" type="text/javascript"></script>
+    <script src="../../Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js" type="text/javascript"></script>
+    <script src="../../Content/js/dhtmlxgrid/dhtmlxcalendar.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/GridControl.js" type="text/javascript"></script>
+    <script src="../../Scripts/Quotation/Dialog.js" type="text/javascript"></script>
+    <script src="../../Content/js/dhtmlxgrid/ext/dhtmlxgrid_filter.js" type="text/javascript"></script>
+    <script src="../../Scripts/Common/CMS150.js" type="text/javascript"></script>
+    <script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var cRentalType = "@ViewBag.C_SERVICE_TYPE_RENTAL";
+        var strLongContractCode = "@ViewBag.strLongContractCode";
+        var CondOCC = "@ViewBag.condOCC";
+        var ServiceType = "@ViewBag.ServiceType";
+        var cConT_CONTACT = "@ViewBag.C_CONTRACT_TYPE_CONTACT";
+        var strContractCode = "@ViewBag.ContractCode";
+
+        var OCC = "@ViewBag.OCC";
+        var ContractTargetCode = "@ViewBag.CustCodeCT";
+        var RealCustCode = "@ViewBag.CustCodeRC";
+        var SiteCode = "@ViewBag.SiteCode";
+        var C_CONTRACT_TYPE_INCIDENT = "@ViewBag.C_CONTRACT_TYPE_INCIDENT";
+        var C_CONTRACT_TYPE_AR = "@ViewBag.C_CONTRACT_TYPE_AR";
+
+        var CustCodePur = "@ViewBag.CustCodePur";
+
+
+        var cms150_IncdAR = "@Resources.CMS150.lbl_ext_headerIncdAR";
+        var cms150_SaleBasic = "@Resources.CMS150.lbl_ext_headerSaleBasic";
+        var cms150_SecBasc = "@Resources.CMS150.lbl_ext_headerSecBasc";
+        var cms150_SecDtl = "@Resources.CMS150.lbl_ext_headerSecDtl";
+
+        var txtRentalAttachImportanceFlag = "@ViewBag.txtRentalAttachImportanceFlag" == "True" ? true : false;
+        var txtSaleAttachImportanceFlag = "@ViewBag.txtSaleAttachImportanceFlag" == "True" ? true : false;
+    </script>
+}
+@{
+   
+    ViewBag.lbWidth = "225px";
+    ViewBag.lb2Width = "200px";
+
+    ViewBag.ObjectWidth = "200px";
+    ViewBag.txtWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.btnRightSet = "185px";
+
+    ViewBag.longTxtWidth = "700px"; //550px -> 525px
+    ViewBag.BtnHeadWidth = "155px";
+    ViewBag.MidTxtSize = "540px;";
+
+
+    /* enable button in herder section*/
+    if ((string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_AL || (string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_RENTAL_SALE || (string)ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_SALE)
+    {
+        ViewBag.EnableInstallation = true;
+
+    }
+    else
+    {
+        ViewBag.EnableInstallation = false;
+    }
+    
+    ViewBag.EnableBillingBasic = true;
+   
+}
+
+@*<div style="display:none">
+    @Html.Hidden("cms150_IncdAR", (string)@Resources.CMS150.lbl_ext_headerIncdAR)
+    @Html.Hidden("cms150_SaleBasic", (string)@Resources.CMS150.lbl_ext_headerSaleBasic)
+    @Html.Hidden("cms150_SecBasc", (string)@Resources.CMS150.lbl_ext_headerSecBasc)
+    @Html.Hidden("cms150_SecDtl", (string)@Resources.CMS150.lbl_ext_headerSecDtl)
+</div>*@
+
+<div style="display:none">
+    @Html.Hidden("C_INCIDENT_RELEVANT_TYPE_CONTRACT", IncidentRelevant.C_INCIDENT_RELEVANT_TYPE_CONTRACT)
+    @Html.Hidden("C_AR_RELEVANT_TYPE_CONTRACT", ARRelevant.C_AR_RELEVANT_TYPE_CONTRACT)
+</div>
+
+
+@Html.Partial("_ButtonControl")
+@if (ViewBag.ServiceType == ServiceType.C_SERVICE_TYPE_SALE)
+{
+    @Html.Partial("CMS150/_sale");
+}
+else
+{
+    @Html.Partial("CMS150/_rental");
+}
+
+
+<div class="main-table">
+    <div class="table-header">@Resources.CMS150.BtnHistoryDigest</div>
+    <div class="usr-row">
+        <div class="usr-object" style="width: 300px; margin-left:50px;">
+            <div>@Html.CommonCheckButton("SpecifyChgType", Resources.CMS150.lblSpecChgType)</div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-object">
+            <div style="margin-left:130px;">
+                <div style="width: 320px; float: left">
+                    <div class="usr-label"> @Resources.CMS150.lblAll</div>
+                    @Html.ChangeTypeComboBoxCMS150("cbmChangeType", (string)@ViewBag.ServiceType, new { multiple = "multiple", style = "width:320px;height:150px;" })
+                </div>
+                <div style="float: left; width: 50px; margin-left: 5px; margin-right: 5px; margin-top: 30px;">
+                    <br />
+                    <br />
+                    <button id="ChangeTypeAdd" style="width: 50px;">
+                        &gt;</button><br />
+                    <br />
+                    <button id="ChangeTypeRemove" style="width: 50px;">
+                        &lt;</button>
+                </div>
+                <div style="width: 320px; float: left;">
+                    <div class="usr-label">
+                        @Resources.CMS150.lblSelect</div>
+                    <select name="drop2" id="selChangeType" multiple="multiple" style="width: 320px;
+                        height: 150px;">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="usr-row" style="height:15px"></div>
+    
+    <div class="usr-row">
+        <div class="usr-object" style="width: 300px; margin-left:50px;">
+            <div>
+                @Html.CommonCheckButton("SpecifyIncdARType", Resources.CMS150.lblSpecIncdARtype)</div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-object">
+            <div style="margin-left:130px;">
+                <div style="width: 320px; float: left">
+                    <div class="usr-label">
+                        @Resources.CMS150.lblAll</div>
+                    @Html.IncidentARComboBoxCMS150("cbmIncdAR", new { multiple = "multiple", style = "width:320px;height:150px;" })
+                </div>
+                <div style="float: left; width: 50px; margin-left: 5px; margin-right: 5px; margin-top: 30px;">
+                    <br />
+                    <br />
+                    <button id="IncdARAdd" style="width: 50px;">
+                        &gt;</button><br />
+                    <br />
+                    <button id="IncdARRemove" style="width: 50px;">
+                        &lt;</button>
+                </div>
+                <div style="width: 320px; float: left">
+                    <div class="usr-label">
+                        @Resources.CMS150.lblSelect</div>
+                    <select name="drop2" id="selIncdAR" multiple="multiple" style="width: 320px; height: 150px;">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="usr-row">
+        <div class="usr-object" style="float: right; margin-top:20px ;margin-right:5px">
+            @Html.CommonButton("btnSearch", Resources.CMS150.lblBtnSearch)
+            @Html.CommonButton("btnClear", Resources.CMS150.lblBtnClear)
+        </div>
+    </div>
+    <div class="usr-row">
+        <div id="subSearchResult">
+            <div id="ResultList" style="width:99%;margin-left:4px;">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+<div id="diag" class="main-popup-dialog">
+    <div class="popup-dialog">
+        &nbsp;</div>
+</div>

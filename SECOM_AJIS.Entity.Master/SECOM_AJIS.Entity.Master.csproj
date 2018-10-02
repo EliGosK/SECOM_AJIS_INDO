@@ -1,0 +1,646 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65F28583-CF30-4765-A871-E97D2AE7F9B9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.DataEntity.Master</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Entity.Master</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CheckHeadOffice_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CheckUpdateDate.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomEntity\EXT_doSECOMAccount.cs" />
+    <Compile Include="CustomEntity\dtBelongingOfficeMap.cs" />
+    <Compile Include="CustomEntity\EXT_dtBankBranch.cs" />
+    <Compile Include="CustomEntity\EXT_doShelf.cs" />
+    <Compile Include="CustomEntity\EXT_dtDepartment.cs" />
+    <Compile Include="CustomEntity\EXT_dtEmailAddressForIncident.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_CreditCardCompany.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_BankBranch.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Bank.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Position.cs" />
+    <Compile Include="CustomEntity\EXT_dtEmpNo.cs" />
+    <Compile Include="CustomEntity\EXT_doSubcontractor.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_SafetyStock.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Shelf.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Supplier.cs" />
+    <Compile Include="CustomEntity\dtEmployeeOffice.cs" />
+    <Compile Include="CustomEntity\EXT_dtCustomerData.cs" />
+    <Compile Include="CustomEntity\EXT_dtEmployeeBelonging.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Office.cs" />
+    <Compile Include="CustomEntity\EXT_doFunctionBilling.cs" />
+    <Compile Include="CustomEntity\EXT_dtSiteData.cs" />
+    <Compile Include="CustomEntity\EXT_dtPermissionHeader.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Object.cs" />
+    <Compile Include="CustomEntity\EXT_dtBelongingEmpNo.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Product.cs" />
+    <Compile Include="CustomEntity\EXT_tbs_MiscellaneousTypeCode.cs" />
+    <Compile Include="CustomEntity\EXT_doInstrumentExpansion.cs" />
+    <Compile Include="CustomEntity\EXT_doGroup.cs" />
+    <Compile Include="CustomEntity\EXT_doBelongingData.cs" />
+    <Compile Include="CustomEntity\doBillingClient.cs" />
+    <Compile Include="CustomEntity\EXT_doCompanyType.cs" />
+    <Compile Include="CustomEntity\EXT_dtBelonging.cs" />
+    <Compile Include="CustomEntity\EXT_dtBillingClientData.cs" />
+    <Compile Include="CustomEntity\EXT_dtCustomeGroupData.cs" />
+    <Compile Include="CustomEntity\EXT_dtEmployee.cs" />
+    <Compile Include="CustomEntity\EXT_doPermission.cs" />
+    <Compile Include="CustomEntity\doPermission.cs" />
+    <Compile Include="CustomEntity\doInstrumentSearchCondition.cs" />
+    <Compile Include="CustomEntity\EXT_doInstrumentData.cs" />
+    <Compile Include="CustomEntity\EXT_doOfficeList.cs" />
+    <Compile Include="CustomEntity\EXT_doParentGeneralInstrument.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_BillingClient.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_BillingType.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_BuildingUsage.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_BusinessType.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Instrument.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Region.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Site.cs" />
+    <Compile Include="CustomEntity\EXT_doActiveEmployeeList.cs" />
+    <Compile Include="CustomEntity\View_dtOffice.cs" />
+    <Compile Include="CustomEntity\doBelonging.cs" />
+    <Compile Include="CustomEntity\doEmployee.cs" />
+    <Compile Include="CustomEntity\View_tbm_Belonging.cs" />
+    <Compile Include="CustomEntity\doCustomerTarget.cs" />
+    <Compile Include="CustomEntity\dtCustomerGroup.cs" />
+    <Compile Include="CustomEntity\EXT_doCustomer.cs" />
+    <Compile Include="CustomEntity\View_dtEmailAddress.cs" />
+    <Compile Include="CustomEntity\View_dtBillingClientData.cs" />
+    <Compile Include="CustomEntity\View_dtCustomerData.cs" />
+    <Compile Include="CustomEntity\View_dtSiteData.cs" />
+    <Compile Include="CustomEntity\View_dtCustomerForView.cs" />
+    <Compile Include="CustomEntity\EXT_doSite.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_District.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Employee.cs" />
+    <Compile Include="CustomEntity\View_tbm_Group.cs" />
+    <Compile Include="CustomEntity\View_tbm_Product.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_Province.cs" />
+    <Compile Include="CustomEntity\View_tbm_Site.cs" />
+    <Compile Include="doActiveEmployeeList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBelongingData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBillingAddressNameEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBillingAddressNameLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBillingBranchNameEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBillingBranchNameLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBillingNameEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doChildInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCompanyType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustAddress.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustAddressEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustAddressLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustAlley.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustAlleyEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustAlleyLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustomer.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustomerList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustRoad.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustRoadEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustRoadLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustSubDistrict.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustSubDistrictEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCustSubDistrictLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doFunctionBilling.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doFunctionLogistic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetBillingNameLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetTbm_Site.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGroup.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGroupNameDataList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInsertInstrumentExpansion.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInstrumentData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInstrumentExpansion.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInstrumentName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doMonitoringInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doOfficeList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doParentGeneralInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doParentInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSafetyStock.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSECOMAccount.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doShelf.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doShelfName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSite.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSubcontractor.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSubcontractorAddress.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSubcontractorAddressEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSubcontractorAddressLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSubcontractorName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSubcontractorNameEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSubcontractorNameLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doxygen-DO.cs" />
+    <Compile Include="Doxygen-function.cs" />
+    <Compile Include="dtAuthorizeOffice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBankBranch.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBelonging.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBelongingEmpNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBelongingOffice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBillingClientAddress.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBillingClientData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBillingClientDataForSearch.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBillingClientName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCustName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCustNameEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCustNameLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCustomeGroupData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCustomerData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCustomerForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCustomerGroupForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtDepartment.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtDocumentTemplateByDocumentCode.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtEmailAddress.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtEmailAddressForIncident.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtEmployee.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtEmployeeBelonging.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtEmployeeData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtEmployeeDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtEmployeeName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtEmployeeOffice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtEmpNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtFunction.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetEmailAddress.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetInstrumentMaker.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetSiteAlleyEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetSiteAlleyLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetSiteNameEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetSiteNameLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetSiteRoadLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetSiteSubDistrictEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetSiteSubDistrictLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInstrumentDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtManageCustomerInformation.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtObjectFunction.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtOffice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtOfficeChief.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtPermissionHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtProductName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteAddress.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteAddressEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteAddressLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteAlley.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteAlleyEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteAlleyLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteNameEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteNameLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteRoad.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteRoadEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteRoadLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteSubDistrict.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteSubDistrictEN.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteSubDistrictLC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtUserBelonging.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetFQ_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_AutoTransferScheduleList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Bank.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_BankBranch.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Belonging.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_BillingClient.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_BillingType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_BuildingUsage.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_BusinessType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Calendar.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_CompanyType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_CreditCardCompany.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Customer.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_CustomerGroup.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Department.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_District.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Employee.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Group.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Instrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_InstrumentExpansion.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Module.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Object.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_ObjectFunction.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Office.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_PermissionDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_PermissionGroup.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_PermissionIndividual.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_PermissionIndividualDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Position.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Product.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_ProductFacility.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_ProductInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Province.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Region.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_SafetyStock.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_SecomBankAccount.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Shelf.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Site.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_Supplier.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_MiscellaneousTypeCode.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="SECOM_AJIS.Entity.Master.Context.Biz.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Master.Context.tt</DependentUpon>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Master.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Master.Context.tt</DependentUpon>
+    </None>
+    <Compile Include="SECOM_AJIS.Entity.Master.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Master.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Master.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Master.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="SECOM_AJIS.Entity.Master.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Master.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SECOM_AJIS.Entity.Master.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Master.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Master.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Master.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Common\SECOM_AJIS.Entity.Common.csproj">
+      <Project>{527a7562-621e-47cd-92cb-e0fa26660a4e}</Project>
+      <Name>SECOM_AJIS.Entity.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

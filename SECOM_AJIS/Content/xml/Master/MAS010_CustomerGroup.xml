@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+   
+    <column id="GroupCode" width="100" type="ro" align="left" sort="na">headerGroupCode</column>
+    <column id="GroupNameEN" width="200" type="ro" align="left" sort="na">headerGroupNameEng</column>
+    <column id="GroupNameLC" width="*" type="ro" align="left" sort="na">headerGroupNameLocal</column>
+    <column id="BtnRemove" width="30" type="link" align="left" sort="na">headerRemove</column>
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

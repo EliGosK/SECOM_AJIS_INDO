@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="headerBillingClientCode" xml:space="preserve">
+    <value>รหัสลูกค้าสำหรับเรียกเก็บ</value>
+  </data>
+  <data name="headerBillingOCC" xml:space="preserve">
+    <value>OCC การเรียกเก็บ</value>
+  </data>
+  <data name="headerBillingOffice" xml:space="preserve">
+    <value>สาขาที่ออกบิล</value>
+  </data>
+  <data name="headerBillingTargetCode" xml:space="preserve">
+    <value>รหัสลูกค้าสำหรับออกใบแจ้งหนี้</value>
+  </data>
+  <data name="headerBillingTargetName" xml:space="preserve">
+    <value>&lt;div&gt;ชื่อลูกค้าสำหรับออกใบแจ้งหนี้&lt;br/&gt; (1) อังกฤษ &lt;br/&gt; (2) ไทย&lt;/div&gt;</value>
+  </data>
+  <data name="headerDetail" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;รายละเอียด&lt;/div&gt;</value>
+  </data>
+  <data name="headerGroupCode" xml:space="preserve">
+    <value>รหัสกลุ่มลูกค้า</value>
+  </data>
+  <data name="headerGroupNameEN" xml:space="preserve">
+    <value>ชื่อกลุ่มลูกค้า (อังกฤษ)</value>
+  </data>
+  <data name="headerGroupNameLC" xml:space="preserve">
+    <value>ชื่อกลุ่มลูกค้า (ไทย)</value>
+  </data>
+  <data name="lblAddressEnglish" xml:space="preserve">
+    <value>ที่อยู่ (อังกฤษ)</value>
+  </data>
+  <data name="lblAddressLocal" xml:space="preserve">
+    <value>ที่อยู่ (ไทย)</value>
+  </data>
+  <data name="lblBillingClientCode" xml:space="preserve">
+    <value>รหัสลูกค้าสำหรับเรียกเก็บ</value>
+  </data>
+  <data name="lblBillingOCC" xml:space="preserve">
+    <value>OCC การเรียกเก็บ</value>
+  </data>
+  <data name="lblBillingOffice" xml:space="preserve">
+    <value>สาขาที่ออกบิล</value>
+  </data>
+  <data name="lblBillingTarget" xml:space="preserve">
+    <value>ลูกค้าสำหรับออกใบแจ้งหนี้</value>
+  </data>
+  <data name="lblBillingTargetCode" xml:space="preserve">
+    <value>รหัสลูกค้าสำหรับออกใบแจ้งหนี้</value>
+  </data>
+  <data name="lblBillingTargetDetail" xml:space="preserve">
+    <value>รายละเอียดลูกค้าสำหรับออกใบแจ้งหนี้</value>
+  </data>
+  <data name="lblBranchAddressEnglish" xml:space="preserve">
+    <value>ที่อยู่สาขา (อังกฤษ)</value>
+  </data>
+  <data name="lblBranchAddressLocal" xml:space="preserve">
+    <value>ที่อยู่สาขา (ไทย)</value>
+  </data>
+  <data name="lblBranchContract" xml:space="preserve">
+    <value>สาขาเป็นผู้ทำสัญญา</value>
+  </data>
+  <data name="lblBranchNameEnglish" xml:space="preserve">
+    <value>ชื่อสาขา (อังกฤษ)</value>
+  </data>
+  <data name="lblBranchNameLocal" xml:space="preserve">
+    <value>ชื่อสาขา (ไทย)</value>
+  </data>
+  <data name="lblBranchOfContractTargetPurchaser" xml:space="preserve">
+    <value>สาขาของผู้ทำสัญญา/ผู้ซื้อ</value>
+  </data>
+  <data name="lblBusinessType" xml:space="preserve">
+    <value>ประเภทธุรกิจ</value>
+  </data>
+  <data name="lblCancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="lblChangeNameAndAddress" xml:space="preserve">
+    <value>ข้อมูลเปลี่ยนแปลงชื่อ/ที่อยู่</value>
+  </data>
+  <data name="lblClearBillingTarget" xml:space="preserve">
+    <value>ล้างข้อมูลลูกค้า</value>
+  </data>
+  <data name="lblClearCustomer" xml:space="preserve">
+    <value>ล้างข้อมูลลูกค้า</value>
+  </data>
+  <data name="lblClearSite" xml:space="preserve">
+    <value>ล้างข้อมูลสถานที่ติดตั้ง</value>
+  </data>
+  <data name="lblContactPoint" xml:space="preserve">
+    <value>ช่องทางติดต่อ</value>
+  </data>
+  <data name="lblContactPointMessageBottom" xml:space="preserve">
+    <value>ของฝั่งลูกค้าของสัญญานี้ (เช่นผู้รับผิดชอบของผู้ทำสัญญา/ผู้ซื้อ ผู้รับผิดชอบของสถานที่ติดตั้ง เป็นต้น)</value>
+  </data>
+  <data name="lblContactPointMessageUpper" xml:space="preserve">
+    <value>กรุณากรอกข้อมูลสำคัญ เช่น ชื่อ ที่อยู่ หมายเลขโทรศัพท์ ที่อยู่อีเมล์ของบุคคลหลัก</value>
+  </data>
+  <data name="lblContractBasicInformationRental" xml:space="preserve">
+    <value>ข้อมูลพื้นฐานของสัญญา (กรณีสัญญาเช่า)</value>
+  </data>
+  <data name="lblContractBasicInformationSale" xml:space="preserve">
+    <value>ข้อมูลพื้นฐานของสัญญา (กรณีสัญญาขายขาด)</value>
+  </data>
+  <data name="lblContractCode" xml:space="preserve">
+    <value>เลขที่สัญญา</value>
+  </data>
+  <data name="lblContractOffice" xml:space="preserve">
+    <value>สาขาที่ทำสัญญา</value>
+  </data>
+  <data name="lblContractSignerType" xml:space="preserve">
+    <value>ประเภทผู้ทำสัญญา</value>
+  </data>
+  <data name="lblContractTarget" xml:space="preserve">
+    <value>รหัสลูกค้า (ผู้ทำสัญญา)</value>
+  </data>
+  <data name="lblContractTargetAddressEnglish" xml:space="preserve">
+    <value>ที่อยู่ผู้ทำสัญญา (อังกฤษ)</value>
+  </data>
+  <data name="lblContractTargetAddressLocal" xml:space="preserve">
+    <value>ที่อยู่ผู้ทำสัญญา (ไทย)</value>
+  </data>
+  <data name="lblContractTargetImportantCustomer" xml:space="preserve">
+    <value>เป็นผู้ทำสัญญารายสำคัญ</value>
+  </data>
+  <data name="lblContractTargetNameEnglish" xml:space="preserve">
+    <value>ชื่อผู้ทำสัญญา (อังกฤษ)</value>
+  </data>
+  <data name="lblContractTargetNameLocal" xml:space="preserve">
+    <value>ชื่อผู้ทำสัญญา (ไทย)</value>
+  </data>
+  <data name="lblContractTargetPurchaser" xml:space="preserve">
+    <value>ผู้ทำสัญญา/ผู้ซื้อ</value>
+  </data>
+  <data name="lblCopy" xml:space="preserve">
+    <value>คัดลอก</value>
+  </data>
+  <data name="lblCopyName" xml:space="preserve">
+    <value>คัดลอกข้อมูลชื่อและที่อยู่</value>
+  </data>
+  <data name="lblCustomerCode" xml:space="preserve">
+    <value>รหัสลูกค้า</value>
+  </data>
+  <data name="lblCustomerCodePurchaser" xml:space="preserve">
+    <value>รหัสลูกค้า (ผู้ซื้อ)</value>
+  </data>
+  <data name="lblCustomerCodeReal" xml:space="preserve">
+    <value>รหัสลูกค้า (ผู้ใช้สถานที่ติดตั้ง)</value>
+  </data>
+  <data name="lblCustomerStatus" xml:space="preserve">
+    <value>สถานะลูกค้า</value>
+  </data>
+  <data name="lblCustomerType" xml:space="preserve">
+    <value>ประเภทลูกค้า</value>
+  </data>
+  <data name="lblIDTaxID" xml:space="preserve">
+    <value>เลขประจำตัวประชาชน/เลขประจำตัวผู้เสียภาษี</value>
+  </data>
+  <data name="lblNameAddressChangeReason" xml:space="preserve">
+    <value>เหตุผลที่ขอเปลี่ยนแปลงชื่อ/ที่อยู่</value>
+  </data>
+  <data name="lblNameAndAddressBottom" xml:space="preserve">
+    <value>เลขประจำตัวประชาชน/เลขประจำตัวผู้เสียภาษี</value>
+  </data>
+  <data name="lblNameAndAddressUpper" xml:space="preserve">
+    <value>ระบบจะแสดงชื่อ/ที่อยู่โดยยึดตาม</value>
+  </data>
+  <data name="lblNameEnglish" xml:space="preserve">
+    <value>ชื่อ (อังกฤษ)</value>
+  </data>
+  <data name="lblNameLocal" xml:space="preserve">
+    <value>ชื่อ (ไทย)</value>
+  </data>
+  <data name="lblNationality" xml:space="preserve">
+    <value>สัญชาติ</value>
+  </data>
+  <data name="lblNewEditBillingClientInfo" xml:space="preserve">
+    <value>สร้าง/แก้ไขข้อมูลลูกค้า</value>
+  </data>
+  <data name="lblNewEditCustomerInfo" xml:space="preserve">
+    <value>สร้าง/แก้ไขข้อมูลลูกค้า</value>
+  </data>
+  <data name="lblNewEditSiteInfo" xml:space="preserve">
+    <value>สร้าง/แก้ไขข้อมูลสถานที่ติดตั้ง</value>
+  </data>
+  <data name="lblOperationOffice" xml:space="preserve">
+    <value>สาขาบริการ</value>
+  </data>
+  <data name="lblPurchaserImportantCustomer" xml:space="preserve">
+    <value>เป็นผู้ซื้อรายสำคัญ</value>
+  </data>
+  <data name="lblPurchaserNameEnglish" xml:space="preserve">
+    <value>ชื่อผู้ซื้อ (อังกฤษ)</value>
+  </data>
+  <data name="lblPurchaserNameLocal" xml:space="preserve">
+    <value>ชื่อผู้ซื้อ (ไทย)</value>
+  </data>
+  <data name="lblRealCustomerEndUser" xml:space="preserve">
+    <value>ผู้ใช้สถานที่ติดตั้ง</value>
+  </data>
+  <data name="lblRealCustomerNameEnduserEN" xml:space="preserve">
+    <value>ชื่อผู้ใช้สถานที่ติดตั้ง (อังกฤษ)</value>
+  </data>
+  <data name="lblRealCustomerNameEnduserLC" xml:space="preserve">
+    <value>ชื่อผู้ใช้สถานที่ติดตั้ง (ไทย)</value>
+  </data>
+  <data name="lblRealCustomerNameLC" xml:space="preserve">
+    <value>ชื่อผู้ใช้สถานที่ติดตั้ง (ไทย)</value>
+  </data>
+  <data name="lblRetrieve" xml:space="preserve">
+    <value>ดึงข้อมูล</value>
+  </data>
+  <data name="lblSameAsContractTartget" xml:space="preserve">
+    <value>เหมือนข้อมูลผู้ทำสัญญา/ผู้ซื้อ</value>
+  </data>
+  <data name="lblSearchBillingClientDetail" xml:space="preserve">
+    <value>ค้นหาลูกค้าสำหรับเรียกเก็บ</value>
+  </data>
+  <data name="lblSearchCustomer" xml:space="preserve">
+    <value>ค้นหาลูกค้า</value>
+  </data>
+  <data name="lblSearchSite" xml:space="preserve">
+    <value>ค้นหาสถานที่ติดตั้ง</value>
+  </data>
+  <data name="lblSite" xml:space="preserve">
+    <value>สถานที่ติดตั้ง</value>
+  </data>
+  <data name="lblSiteAddressEnglish" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="lblSiteAddressLocal" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="lblSiteCode" xml:space="preserve">
+    <value>รหัสสถานที่ติดตั้ง</value>
+  </data>
+  <data name="lblSiteNameEnglishRental" xml:space="preserve">
+    <value>ชื่อสถานที่ติดตั้ง (อังกฤษ)</value>
+  </data>
+  <data name="lblSiteNameLocalRental" xml:space="preserve">
+    <value>ชื่อสถานที่ติดตั้ง (ไทย)</value>
+  </data>
+  <data name="lblSpecifyCode" xml:space="preserve">
+    <value>ระบุรหัส</value>
+  </data>
+  <data name="lblTelephoneNo" xml:space="preserve">
+    <value>หมายเลขโทรศัพท์</value>
+  </data>
+  <data name="lblUpdate" xml:space="preserve">
+    <value>ปรับปรุง</value>
+  </data>
+  <data name="lblURL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="lblUsage" xml:space="preserve">
+    <value>ลักษณะอาคาร</value>
+  </data>
+  <data name="lblUserCode" xml:space="preserve">
+    <value>User code</value>
+  </data>
+  <data name="lblViewCustomerHistory" xml:space="preserve">
+    <value>ดูข้อมูลประวัติลูกค้า</value>
+  </data>
+  <data name="lblSiteNameEnglishSale" xml:space="preserve">
+    <value>ชื่อสถานที่ติดตั้ง (อังกฤษ)</value>
+  </data>
+  <data name="lblSiteNameLocalSale" xml:space="preserve">
+    <value>ชื่อสถานที่ติดตั้ง (ไทย)</value>
+  </data>
+</root>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="FirstFeeDetail" width="30" type="link" align="center" sort="na">lblHeader4UnPaidByBillingFirstFeeImage</column>
+    <column id="CreditNoteIssueDetail" width="30" type="link" align="center" sort="na">lblHeader4UnPaidByBillingCreditNoteImage</column>
+    <column id="DelayedMonth" width="70" type="edn" align="right" format="0,000" sort="int">lblHeaderNumberOfDelayedMonth</column>
+    <column id="SiteNameGridFormat" width="*" type="ro" align="left" sort="str_custom">lblHeaderSiteName</column>
+    <column id="BillingCodeShort" width="100" type="ro" align="left" sort="str_custom">lblHeaderBillingCode</column>
+    <column id="BillingTypeCode" width="70" type="ro" align="center" sort="str_custom">lblHeaderBillingType</column>
+    <column id="BillingPeriod" width="90" type="ro" align="left" sort="str_custom">lblHeaderBillingPeriod</column>
+    <column id="BillingAmountString" width="140" type="edn" align="right" sort="int">lblHeaderBillingAmount</column>
+    <column id="InvoiceNo" width="110" type="ro" align="left" sort="str_custom">lblHeaderInvoiceNo</column>
+    <column id="PaymentStatus" width="65" type="ro" align="center" sort="str_custom">lblHeaderPaymentStatus</column>
+    <column id="DebtTracingRegisteredGridFormat" width="80" type="link" align="center" sort="na">lblHeaderTracingResaultRegistered</column>
+    
+    <column id="FirstFeeFlag" width="0" type="ro" hidden="true"></column>
+    <column id="CreditNoteIssuedFlag" width="0" type="ro" hidden="true"></column>
+    <column id="BillingType" width="0" type="ro" hidden="true" ></column>
+    <column id="PaymentStatusDesc" width="0" type="ro" hidden="true" ></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

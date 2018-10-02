@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnAddUpdate" xml:space="preserve">
+    <value>Add/Update</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="btnImportQuotationInfo" xml:space="preserve">
+    <value>Import quotation information</value>
+  </data>
+  <data name="btnRegisterNextQuotationDetail" xml:space="preserve">
+    <value>Register next quotation detail</value>
+  </data>
+  <data name="btnResetLinkageContract" xml:space="preserve">
+    <value>Reset linkage contract</value>
+  </data>
+  <data name="btnRetrieve" xml:space="preserve">
+    <value>Retrieve</value>
+  </data>
+  <data name="btnSearchFacility" xml:space="preserve">
+    <value>Search facility</value>
+  </data>
+  <data name="btnSearchInstrument" xml:space="preserve">
+    <value>Search equipment</value>
+  </data>
+  <data name="btnSearchQuotationTarget" xml:space="preserve">
+    <value>Search quotation target</value>
+  </data>
+  <data name="btnShowDefault" xml:space="preserve">
+    <value>Show default</value>
+  </data>
+  <data name="headerAdditionalQuantity" xml:space="preserve">
+    <value>Additional</value>
+  </data>
+  <data name="headerBeforeQuantity" xml:space="preserve">
+    <value>Installed qty before change</value>
+  </data>
+  <data name="headerChangeQuantity" xml:space="preserve">
+    <value>Change quantity</value>
+  </data>
+  <data name="headerContractCode" xml:space="preserve">
+    <value>Contract no.</value>
+  </data>
+  <data name="headerCostPerHour" xml:space="preserve">
+    <value>Cost per hour</value>
+  </data>
+  <data name="headerDetail" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;Detail&lt;/div&gt;</value>
+  </data>
+  <data name="headerEdit" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;Edit&lt;/div&gt;</value>
+  </data>
+  <data name="headerFacilityCode" xml:space="preserve">
+    <value>Facility code</value>
+  </data>
+  <data name="headerFacilityName" xml:space="preserve">
+    <value>Facility name</value>
+  </data>
+  <data name="headerInstalledQuantity" xml:space="preserve">
+    <value>Installed quantity</value>
+  </data>
+  <data name="headerInstrumentCode" xml:space="preserve">
+    <value>Equipment code</value>
+  </data>
+  <data name="headerInstrumentName" xml:space="preserve">
+    <value>Equipment name</value>
+  </data>
+  <data name="headerLineUpType" xml:space="preserve">
+    <value>Line-up type</value>
+  </data>
+  <data name="headerNoOfDate" xml:space="preserve">
+    <value>Number of date</value>
+  </data>
+  <data name="headerNoOfSG" xml:space="preserve">
+    <value>Number of SG (person(s))</value>
+  </data>
+  <data name="headerProductName" xml:space="preserve">
+    <value>Product name</value>
+  </data>
+  <data name="headerQuantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="headerRemovalQuantity" xml:space="preserve">
+    <value>Removal</value>
+  </data>
+  <data name="headerRemove" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;Remove&lt;/div&gt;</value>
+  </data>
+  <data name="headerSecurityTime" xml:space="preserve">
+    <value>Security time (HH:MM)</value>
+  </data>
+  <data name="headerSecurityTimeFinish" xml:space="preserve">
+    <value>Finish</value>
+  </data>
+  <data name="headerSecurityTimeStart" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="headerSentryGuardType" xml:space="preserve">
+    <value>Security guard type</value>
+  </data>
+  <data name="headerWorkingHour" xml:space="preserve">
+    <value>Working hours per month</value>
+  </data>
+  <data name="lblAcquisitionType" xml:space="preserve">
+    <value>Acquisition type</value>
+  </data>
+  <data name="lblAdditionalApproveNo1" xml:space="preserve">
+    <value>Additional approve no. 1</value>
+  </data>
+  <data name="lblAdditionalApproveNo2" xml:space="preserve">
+    <value>Additional approve no. 2</value>
+  </data>
+  <data name="lblAdditionalApproveNo3" xml:space="preserve">
+    <value>Additional approve no. 3</value>
+  </data>
+  <data name="lblAdditionalContractFee1" xml:space="preserve">
+    <value>Additional service fee 1</value>
+  </data>
+  <data name="lblAdditionalContractFee2" xml:space="preserve">
+    <value>Additional service fee 2</value>
+  </data>
+  <data name="lblAdditionalContractFee3" xml:space="preserve">
+    <value>Additional service fee 3</value>
+  </data>
+  <data name="lblAddressEN" xml:space="preserve">
+    <value>Address (English)</value>
+  </data>
+  <data name="lblAddressLC" xml:space="preserve">
+    <value>Address (Local)</value>
+  </data>
+  <data name="lblApproveNo1" xml:space="preserve">
+    <value>Approve no. 1</value>
+  </data>
+  <data name="lblApproveNo2" xml:space="preserve">
+    <value>Approve no. 2</value>
+  </data>
+  <data name="lblApproveNo3" xml:space="preserve">
+    <value>Approve no. 3</value>
+  </data>
+  <data name="lblApproveNo4" xml:space="preserve">
+    <value>Approve no. 4</value>
+  </data>
+  <data name="lblApproveNo5" xml:space="preserve">
+    <value>Approve no. 5</value>
+  </data>
+  <data name="lblBeatGuardDetail" xml:space="preserve">
+    <value>Beat guard detail</value>
+  </data>
+  <data name="lblBidGuaranteeAmount1" xml:space="preserve">
+    <value>Bid guarantee amount 1</value>
+  </data>
+  <data name="lblBidGuaranteeAmount2" xml:space="preserve">
+    <value>Bid guarantee amount 2</value>
+  </data>
+  <data name="lblBranchAddressEN" xml:space="preserve">
+    <value>Branch address (English)</value>
+  </data>
+  <data name="lblBranchAddressLC" xml:space="preserve">
+    <value>Branch address (Local)</value>
+  </data>
+  <data name="lblBranchNameEN" xml:space="preserve">
+    <value>Branch name (English)</value>
+  </data>
+  <data name="lblBranchNameLC" xml:space="preserve">
+    <value>Branch name (Local)</value>
+  </data>
+  <data name="lblContractCode" xml:space="preserve">
+    <value>Contract no.</value>
+  </data>
+  <data name="lblContractFee" xml:space="preserve">
+    <value>Service fee</value>
+  </data>
+  <data name="lblCostPerHour" xml:space="preserve">
+    <value>Cost per hour</value>
+  </data>
+  <data name="lblCustomerCode" xml:space="preserve">
+    <value>Customer code</value>
+  </data>
+  <data name="lblDepositFee" xml:space="preserve">
+    <value>Deposit fee</value>
+  </data>
+  <data name="lblDisconnectionMonitoring" xml:space="preserve">
+    <value>Disconnection monitoring</value>
+  </data>
+  <data name="lblDisconnectLineOwnerType" xml:space="preserve">
+    <value>Disconnection monitoring telephone owner</value>
+  </data>
+  <data name="lblDisconnectLineType" xml:space="preserve">
+    <value>Disconnection monitoring line type</value>
+  </data>
+  <data name="lblDispatchType" xml:space="preserve">
+    <value>Dispatch type</value>
+  </data>
+  <data name="lblFacilityCode" xml:space="preserve">
+    <value>Facility code</value>
+  </data>
+  <data name="lblFacilityDetail" xml:space="preserve">
+    <value>Facility detail</value>
+  </data>
+  <data name="lblFeeInformation_AL" xml:space="preserve">
+    <value>Fee information</value>
+  </data>
+  <data name="lblFeeInformation_OTHER" xml:space="preserve">
+    <value>Fee information</value>
+  </data>
+  <data name="lblFeeInformation_Sale" xml:space="preserve">
+    <value>Fee information</value>
+  </data>
+  <data name="lblFrequencyOfGateUsage" xml:space="preserve">
+    <value>Frequency of gate premise's type</value>
+  </data>
+  <data name="lblImageLineOwnerType" xml:space="preserve">
+    <value>Image monitoring telephone owner</value>
+  </data>
+  <data name="lblImageLineType" xml:space="preserve">
+    <value>Image monitoring line type</value>
+  </data>
+  <data name="lblImageMonitoring" xml:space="preserve">
+    <value>Image monitoring</value>
+  </data>
+  <data name="lblInstallationFee" xml:space="preserve">
+    <value>Installation fee</value>
+  </data>
+  <data name="lblInstrumentCode" xml:space="preserve">
+    <value>Equipment code</value>
+  </data>
+  <data name="lblInstrumentDetail_01" xml:space="preserve">
+    <value>Equipment detail</value>
+  </data>
+  <data name="lblInstrumentDetail_02" xml:space="preserve">
+    <value>Equipment detail</value>
+  </data>
+  <data name="lblInstrumentDetail_03" xml:space="preserve">
+    <value>Equipment detail</value>
+  </data>
+  <data name="lblInsuranceCoverageAmount" xml:space="preserve">
+    <value>Insurance coverage amount</value>
+  </data>
+  <data name="lblInsuranceType" xml:space="preserve">
+    <value>Insurance type</value>
+  </data>
+  <data name="lblIntroducerCode" xml:space="preserve">
+    <value>Introducer code</value>
+  </data>
+  <data name="lblLess" xml:space="preserve">
+    <value>&lt;&lt;Less</value>
+  </data>
+  <data name="lblLineNo" xml:space="preserve">
+    <value>Line no.</value>
+  </data>
+  <data name="lblLineType" xml:space="preserve">
+    <value>Line type</value>
+  </data>
+  <data name="lblLinkageSaleContractCode_1" xml:space="preserve">
+    <value>Linkage sale contract no.</value>
+  </data>
+  <data name="lblLinkageSaleContractCode_2" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblLinkageSaleContractInformation" xml:space="preserve">
+    <value>Linkage sale contract information</value>
+  </data>
+  <data name="lblMainStructureType" xml:space="preserve">
+    <value>Main structure type</value>
+  </data>
+  <data name="lblMaintenaceCycle" xml:space="preserve">
+    <value>Maintenance cycle (months)</value>
+  </data>
+  <data name="lblMaintenanceDetail" xml:space="preserve">
+    <value>Maintenance detail</value>
+  </data>
+  <data name="lblMaintenanceTargetContractCode" xml:space="preserve">
+    <value>Maintenance target Contract</value>
+  </data>
+  <data name="lblMaintenanceTargetProduct" xml:space="preserve">
+    <value>Maintenance target product</value>
+  </data>
+  <data name="lblMaintenanceType" xml:space="preserve">
+    <value>Maintenance type</value>
+  </data>
+  <data name="lblMAList" xml:space="preserve">
+    <value>Maintenance target contract no. list</value>
+  </data>
+  <data name="lblMemo" xml:space="preserve">
+    <value>Memo</value>
+  </data>
+  <data name="lblMonthlyInsuranceFee" xml:space="preserve">
+    <value>Monthly insurance fee</value>
+  </data>
+  <data name="lblMore" xml:space="preserve">
+    <value>More&gt;&gt;</value>
+  </data>
+  <data name="lblMoreInformation" xml:space="preserve">
+    <value>(4) More information</value>
+  </data>
+  <data name="lblNameEN" xml:space="preserve">
+    <value>Name (English)</value>
+  </data>
+  <data name="lblNameLC" xml:space="preserve">
+    <value>Name (Local)</value>
+  </data>
+  <data name="lblNecessary" xml:space="preserve">
+    <value>: Necessary to maintain to keep product working</value>
+  </data>
+  <data name="lblNewBuildingMgmtCost" xml:space="preserve">
+    <value>New building mgmt. cost</value>
+  </data>
+  <data name="lblNewBuildingMgmtType" xml:space="preserve">
+    <value>New building mgmt. type</value>
+  </data>
+  <data name="lblNewOldBuilding" xml:space="preserve">
+    <value>New/Old building</value>
+  </data>
+  <data name="lblNormalLineOwnerType" xml:space="preserve">
+    <value>Normal signal telephone owner</value>
+  </data>
+  <data name="lblNormalLineType" xml:space="preserve">
+    <value>Normal signal line type</value>
+  </data>
+  <data name="lblNormalSignal" xml:space="preserve">
+    <value>Normal signal</value>
+  </data>
+  <data name="lblNotifyTime" xml:space="preserve">
+    <value>Notify time (HHMM)</value>
+  </data>
+  <data name="lblNumberOfBuildings" xml:space="preserve">
+    <value>Number of buildings</value>
+  </data>
+  <data name="lblNumberOfClockKey" xml:space="preserve">
+    <value>Number of clock key</value>
+  </data>
+  <data name="lblNumberOfDate" xml:space="preserve">
+    <value>Number of date</value>
+  </data>
+  <data name="lblNumberOfFloors" xml:space="preserve">
+    <value>Number of floors</value>
+  </data>
+  <data name="lblNumerOfBeatGuardSteps" xml:space="preserve">
+    <value>Number of beat guard steps</value>
+  </data>
+  <data name="lblNumerOfSentryGuard" xml:space="preserve">
+    <value>Number of security guard</value>
+  </data>
+  <data name="lblOldContractCode" xml:space="preserve">
+    <value>Old contract no.</value>
+  </data>
+  <data name="lblOperationOffice" xml:space="preserve">
+    <value>Operation office</value>
+  </data>
+  <data name="lblOperationType" xml:space="preserve">
+    <value>Operation type</value>
+  </data>
+  <data name="lblOtherItemFee" xml:space="preserve">
+    <value>Other item fee</value>
+  </data>
+  <data name="lblOutsourcingFee" xml:space="preserve">
+    <value>Outsourcing fee</value>
+  </data>
+  <data name="lblPhoneLineOwnerTypeCode1" xml:space="preserve">
+    <value>Normal signal telephone owner</value>
+  </data>
+  <data name="lblPhoneLineOwnerTypeCode2" xml:space="preserve">
+    <value>Image monitoring telephone owner</value>
+  </data>
+  <data name="lblPhoneLineOwnerTypeCode3" xml:space="preserve">
+    <value>Disconnection monitoring telephone owner</value>
+  </data>
+  <data name="lblPhoneLineTypeCode1" xml:space="preserve">
+    <value>Normal signal line type</value>
+  </data>
+  <data name="lblPhoneLineTypeCode2" xml:space="preserve">
+    <value>Image monitoring line type</value>
+  </data>
+  <data name="lblPhoneLineTypeCode3" xml:space="preserve">
+    <value>Disconnection monitoring line type</value>
+  </data>
+  <data name="lblPlanApprover" xml:space="preserve">
+    <value>Plan approver</value>
+  </data>
+  <data name="lblPlanApprovingDate" xml:space="preserve">
+    <value>Plan approving date</value>
+  </data>
+  <data name="lblPlanChecker" xml:space="preserve">
+    <value>Plan checker</value>
+  </data>
+  <data name="lblPlanCheckingDate" xml:space="preserve">
+    <value>Plan checking date</value>
+  </data>
+  <data name="lblPlanCode" xml:space="preserve">
+    <value>Planning no.</value>
+  </data>
+  <data name="lblPlanner" xml:space="preserve">
+    <value>Planner</value>
+  </data>
+  <data name="lblProductCode" xml:space="preserve">
+    <value>Product code</value>
+  </data>
+  <data name="lblProductPrice" xml:space="preserve">
+    <value>Product price</value>
+  </data>
+  <data name="lblProductType" xml:space="preserve">
+    <value>Product type</value>
+  </data>
+  <data name="lblProvidedServiceType" xml:space="preserve">
+    <value>Provided service type</value>
+  </data>
+  <data name="lblPurchaseReasonMotivationType" xml:space="preserve">
+    <value>Purchase reason/Motivation type</value>
+  </data>
+  <data name="lblPurchaserInformation" xml:space="preserve">
+    <value>(1) Customer information</value>
+  </data>
+  <data name="lblQuantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="lblQuotationCode" xml:space="preserve">
+    <value>Quotation code</value>
+  </data>
+  <data name="lblQuotationDetailInformation_AL" xml:space="preserve">
+    <value>Quotation detail information</value>
+  </data>
+  <data name="lblQuotationDetailInformation_ONLINE" xml:space="preserve">
+    <value>Quotation detail information</value>
+  </data>
+  <data name="lblQuotationDetailInformation_OTHER" xml:space="preserve">
+    <value>Quotation detail information</value>
+  </data>
+  <data name="lblQuotationDetailInformation_SALE" xml:space="preserve">
+    <value>Quotation detail information</value>
+  </data>
+  <data name="lblQuotationOffice" xml:space="preserve">
+    <value>Quotation office</value>
+  </data>
+  <data name="lblQuotationStaff" xml:space="preserve">
+    <value>Quotation staff (Sales admin)</value>
+  </data>
+  <data name="lblQuotationTargetCode" xml:space="preserve">
+    <value>Quotation target code</value>
+  </data>
+  <data name="lblQuotationTargetInformation" xml:space="preserve">
+    <value>Quotation target information</value>
+  </data>
+  <data name="lblRealCustomerInformation" xml:space="preserve">
+    <value>(2) Real customer (End user) information</value>
+  </data>
+  <data name="lblRegisterSentryGuardInformation" xml:space="preserve">
+    <value>Register security guard information</value>
+  </data>
+  <data name="lblResultOfRegisterQuotationDetail" xml:space="preserve">
+    <value>Result of register quotation detail</value>
+  </data>
+  <data name="lblSaleman1" xml:space="preserve">
+    <value>Salesman 1</value>
+  </data>
+  <data name="lblSaleman10" xml:space="preserve">
+    <value>Salesman 10</value>
+  </data>
+  <data name="lblSaleman2" xml:space="preserve">
+    <value>Salesman 2</value>
+  </data>
+  <data name="lblSaleman3" xml:space="preserve">
+    <value>Salesman 3</value>
+  </data>
+  <data name="lblSaleman4" xml:space="preserve">
+    <value>Salesman 4</value>
+  </data>
+  <data name="lblSaleman5" xml:space="preserve">
+    <value>Salesman 5</value>
+  </data>
+  <data name="lblSaleman6" xml:space="preserve">
+    <value>Salesman 6</value>
+  </data>
+  <data name="lblSaleman7" xml:space="preserve">
+    <value>Salesman 7</value>
+  </data>
+  <data name="lblSaleman8" xml:space="preserve">
+    <value>Salesman 8</value>
+  </data>
+  <data name="lblSaleman9" xml:space="preserve">
+    <value>Salesman 9</value>
+  </data>
+  <data name="lblSalesSupporter" xml:space="preserve">
+    <value>Sales supporter</value>
+  </data>
+  <data name="lblSaturdayDayTime" xml:space="preserve">
+    <value>Saturday daytime</value>
+  </data>
+  <data name="lblSaturdayNightTime" xml:space="preserve">
+    <value>Saturday nighttime</value>
+  </data>
+  <data name="lblSecurityAreaSize" xml:space="preserve">
+    <value>Security area size (sqm)</value>
+  </data>
+  <data name="lblSecurityAreaSizeFrom" xml:space="preserve">
+    <value>Security area size from  (sqm)</value>
+  </data>
+  <data name="lblSecurityAreaSizeTo" xml:space="preserve">
+    <value>Security area size to  (sqm)</value>
+  </data>
+  <data name="lblSecurityFinishTime" xml:space="preserve">
+    <value>Security finish time (HHMM)</value>
+  </data>
+  <data name="lblSecurityItemFee" xml:space="preserve">
+    <value>Security item fee</value>
+  </data>
+  <data name="lblSecurityStartTime" xml:space="preserve">
+    <value>Security start time (HHMM)</value>
+  </data>
+  <data name="lblSecurityTypeCode" xml:space="preserve">
+    <value>Security type code</value>
+  </data>
+  <data name="lblSentryGuardAreaType" xml:space="preserve">
+    <value>Security guard area type</value>
+  </data>
+  <data name="lblSentryGuardDetail" xml:space="preserve">
+    <value>Security guard detail</value>
+  </data>
+  <data name="lblSentryGuardType" xml:space="preserve">
+    <value>Security guard type</value>
+  </data>
+  <data name="lblSGList" xml:space="preserve">
+    <value>Security guard detail list</value>
+  </data>
+  <data name="lblSiteBuildingArea" xml:space="preserve">
+    <value>Premise's building area (sqm)</value>
+  </data>
+  <data name="lblSiteCode" xml:space="preserve">
+    <value>Premise's code</value>
+  </data>
+  <data name="lblSiteInformation" xml:space="preserve">
+    <value>(3) Premise's information</value>
+  </data>
+  <data name="lblSpecialInstallation" xml:space="preserve">
+    <value>Special installation</value>
+  </data>
+  <data name="lblSundayDayTime" xml:space="preserve">
+    <value>Sunday daytime</value>
+  </data>
+  <data name="lblSundayNightTime" xml:space="preserve">
+    <value>Sunday nighttime</value>
+  </data>
+  <data name="lblTelephoneLineInformation" xml:space="preserve">
+    <value>Telephone line information</value>
+  </data>
+  <data name="lblTelephoneLineInformationError" xml:space="preserve">
+    <value>Telephone line information (any)</value>
+  </data>
+  <data name="lblTelephoneOwner" xml:space="preserve">
+    <value>Telephone owner</value>
+  </data>
+  <data name="lblWeekdayDayTime" xml:space="preserve">
+    <value>Weekday daytime</value>
+  </data>
+  <data name="lblWeekdayNightTime" xml:space="preserve">
+    <value>Weekday nighttime</value>
+  </data>
+  <data name="lblWorkingHoursPerMonth" xml:space="preserve">
+    <value>Working hours per month</value>
+  </data>
+  <data name="rdoNewBuildingMgmtTypeFlagNeed" xml:space="preserve">
+    <value>Need</value>
+  </data>
+  <data name="rdoNewBuildingMgmtTypeFlagNoNeed" xml:space="preserve">
+    <value>No need</value>
+  </data>
+  <data name="rdoSpecialInstall_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="rdoSpecialInstall_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="lblCeilingHeight" xml:space="preserve">
+    <value>Ceiling height</value>
+  </data>
+  <data name="lblCeilingHeightUnit" xml:space="preserve">
+    <value>Meters</value>
+  </data>
+  <data name="lblCeilingType" xml:space="preserve">
+    <value>Ceiling type</value>
+  </data>
+  <data name="lblCeilingTypeMBar" xml:space="preserve">
+    <value>M-Bar</value>
+  </data>
+  <data name="lblCeilingTypeSlabConcrete" xml:space="preserve">
+    <value>Slab concrete</value>
+  </data>
+  <data name="lblCeilingTypeSteel" xml:space="preserve">
+    <value>Steel structure</value>
+  </data>
+  <data name="lblCeilingTypeTBar" xml:space="preserve">
+    <value>T-Bar</value>
+  </data>
+  <data name="lblSpecialIns" xml:space="preserve">
+    <value>Special agreement</value>
+  </data>
+  <data name="lblSpecialInsEMT" xml:space="preserve">
+    <value>EMT</value>
+  </data>
+  <data name="lblSpecialInsOther" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="lblSpecialInsPE" xml:space="preserve">
+    <value>PE</value>
+  </data>
+  <data name="lblSpecialInsProtector" xml:space="preserve">
+    <value>Protector</value>
+  </data>
+  <data name="lblSpecialInsPVC" xml:space="preserve">
+    <value>PVC</value>
+  </data>
+  <data name="lblSpecialInsSLN" xml:space="preserve">
+    <value>SLN</value>
+  </data>
+  <data name="lblCeilingTypeNone" xml:space="preserve">
+    <value>Not specified</value>
+  </data>
+  <data name="lblQuotationNo" xml:space="preserve">
+    <value>Quotation no.</value>
+  </data>
+</root>

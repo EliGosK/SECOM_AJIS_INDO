@@ -1,0 +1,32 @@
+/*view Week & Day*/
+.fc-agenda-allday {
+  height: 80px!important;
+}
+
+.fc-day-content > div {
+  height: 0;
+}
+
+.fc-agenda-divider-inner, .fc-agenda-divider {
+  display: none;
+}
+
+ /*view month*/
+.fc-day > div {
+  min-height: 60px!important;
+}
+
+/* common */
+.fc-event {
+  background-color: rgba(255, 238, 238, 0);
+  border-color: rgba(255, 238, 238, 0);
+}
+
+.fc-view-agendaDay .fc-event-inner, .fc-view-agendaWeek .fc-event-inner {
+  height: 70px!important;
+  padding-top: 5px;
+}
+
+.fc-agenda-slots {
+  height: 1px!important;
+}

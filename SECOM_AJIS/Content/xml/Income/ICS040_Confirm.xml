@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="InvoiceNo" width="130" type="ro" align="center"  sort="na">gridHeaderInvoiceNo</column>
+    <column id="BillingClientNameGridDisplay" width="*" type="ro" align="left" sort="na">gridHeaderBillingClientName</column>
+    <column id="IssueInvDate" width="110" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="na" >gridHeaderIssueInvoiceDate</column>
+    <column id="BillingAmountIncVATGridDisplayString" width="120" type="edn" align="right" sort="na">gridHeaderBillingAmount</column>
+    <column id="InvoiceDetailQtyGridDisplay" width="100" type="edn" align="right" format="0,000" sort="na">gridHeaderInvoiceDetailQTY</column>
+    <column id="ExemptApproveNo" width="130" type="ro" align="left" sort="na">gridHeaderApproveNo</column>
+    <column id="ViewInvoiceDetail" width="30" type="ro" align="left" sort="na"></column>
+    
+    <column id="BillingTargetCode" width="0" type="ro" hidden="true"></column>
+    <column id="InvoiceOCC" width="0" type="ro" hidden="true"></column>
+    <column id="TempSpan" width="0" type="ro" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+
+
+
+
+
+
+
+
+

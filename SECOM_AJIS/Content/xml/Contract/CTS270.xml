@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="Checkbox" width="25" type="link" align="center" sort="na">headerPrinter</column>
+    <column id="CheckupNoShow" width="75" type="ro" align="left" sort="str_custom">headerMaintCheckupNo</column>
+    <column id="OfficeName" width="80" type="ro" align="left" sort="str_custom">headerOperationOffice</column>
+    <column id="SiteCodeShow" width="85" type="ro" align="left" sort="str_custom">headerSiteCode</column>
+    <column id="RealCustomerShow" width="*" type="ro" align="left" sort="str_custom">headerRealCustomer</column>
+    <column id="SiteNameShow" width="105" type="ro" align="left" sort="str_custom">headerSiteName</column>
+    <column id="UserCodeContractCodeShow" width="85" type="ro" align="center" sort="str_custom">headerUserContractCode</column>
+    <column id="ProductName" width="65" type="ro" align="left" sort="str_custom">headerProductName</column>
+    <column id="InstructionDateShow" width="85" type="ro" align="left" sort="date_my_custom">headerCheckupInstMonthYear</column>
+    <column id="MaintenanceDateExpectActualShow" width="123" type="ro" align="left" sort="cts270_ma_ext_custom">headerMaintenanceDateExpectActual</column>
+    <column id="Actions" width="70" type="link" align="center" sort="na">headerActions</column>
+    
+    <column id="EnableViewFlag" width="0" type="ro" hidden="true"></column>
+    <column id="EnableRegisterFlag" width="0" type="ro" hidden="true"></column>
+    <column id="EnableDeleteFlag" width="0" type="ro" hidden="true"></column>
+    <column id="EnableCheckboxFlag" width="0" type="ro" hidden="true"></column>
+    <column id="ContractCodeShow" width="0" type="ro" hidden="true"></column>
+    <column id="ProductCode" width="0" type="ro" hidden="true"></column>
+    <column id="InstructionDate" width="0" type="ro" hidden="true"></column>
+    <column id="CheckedFlag" width="0" type="ro" hidden="true"></column>
+    <column id="CheckupNo" width="0" type="ro" hidden="true"></column>
+    <column id="ContractCode" width="0" type="ro" hidden="true"></column>
+    <column id="KeyIndex" width="0" type="ro" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

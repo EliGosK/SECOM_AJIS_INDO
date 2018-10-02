@@ -1,0 +1,89 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+
+<!-- ======== Html content ======== --->
+
+<form id="form2" action="#">
+<div id="divAutoTransferInformation" class="main-table" style="margin-top:5px;">
+    <div class="table-header">
+        @Resources.BLS030.lblAutoTransferInformation
+    </div>
+
+    <div class="usr-row">
+        <div style="text-align: right; margin-top: -30px; margin-right: 10px;">
+             @Html.CommonButton("btnAutoTransferInfo", (string)@Resources.BLS030.btnAutoTransferInfo, new { style = "width:250px;", type = "Button" })
+            <div class="usr-clear-style" style="height:0px;">&nbsp;</div>
+        </div>
+    </div>
+
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS030.lblAutoTransferAccountName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth; ">
+            @Html.CommonTextBox("AccountName", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>   
+
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS030.lblBank
+        </div>
+        <div class="usr-object" style="width:220px;">
+            @Html.CommonTextBox("BankName", null, new { style = "width:220px;", @readonly = true })
+        </div>  
+        
+        <div class="usr-label" style="width:250px;">
+           @Resources.BLS030.lblBranch
+        </div>
+        <div class="usr-object" style="width:275px;">
+            @Html.CommonTextBox("BankBranchName", null, new { style = "width:275px;", @readonly = true })
+        </div>     
+    </div>
+
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS030.lblAccountType
+        </div>
+        <div class="usr-object" style="width:220px;">
+            @Html.CommonTextBox("AccountTypeName", null, new { style = "width:220px;", @readonly = true })
+        </div>  
+        
+        <div class="usr-label" style="width:250px;">
+           @Resources.BLS030.lblAccountNo
+        </div>
+        <div class="usr-object" style="width:275px;">
+            @Html.CommonTextBox("AccountNo", null, new { style = "width:275px;", @readonly = true })
+        </div>     
+    </div>
+
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.BLS030.lblAutoTransferDate
+        </div>
+        <div class="usr-object" style="width:220px;">
+            @Html.CommonTextBox("AutoTransferDateForView", null, new { style = "width:220px;", @readonly = true })
+            @Html.Hidden("AutoTransferDate")
+        </div>  
+        
+        <div class="usr-label" style="width:250px;">
+           @Resources.BLS030.lblLastestAutoTransferResult
+        </div>
+        <div class="usr-object" style="width:275px;">
+            @Html.CommonTextBox("LastestResultName", null, new { style = "width:275px;", @readonly = true })
+        </div>     
+    </div>
+    @Html.Hidden("BankCode")
+    @Html.Hidden("BankBranchCode")
+    @Html.Hidden("AccountType")
+
+    @*space*@
+    <div class="usr-row" style="height: 10px">&nbsp;</div>
+   <div class="usr-clear-style" style="height:0px;">&nbsp;</div>
+
+</div>
+
+</form>

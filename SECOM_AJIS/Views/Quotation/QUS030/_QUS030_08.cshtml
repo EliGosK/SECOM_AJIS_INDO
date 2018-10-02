@@ -1,0 +1,56 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "120px";
+    ViewBag.LabelCol2Width = "75px";
+    
+    ViewBag.ObjectCol1Width = "140px";
+    ViewBag.ObjectCol2Width = "80px";
+    ViewBag.ObjectColCustNameWidth = "200px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS030/QUS030_08.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("DisabledAllControls", (bool)@ViewBag.DisabledAllControls)
+    @Html.Hidden("DisabledRemoveButton", (bool)@ViewBag.DisabledRemoveButton)
+    @Html.Hidden("DisabledQuantityTextBox", (bool)@ViewBag.DisabledQuantityTextBox)
+</div>
+<div id="divInstrumentDetail_01" class="main-table">
+    <div class="table-header">
+        @Resources.QUS030.lblInstrumentDetail_02
+    </div>
+    <div style="clear:both;margin-top: -20px;">
+        <div class="table-remark">
+            <img src="../../Content/images/icon/star.png"/>@Resources.QUS012.lblNecessary
+        </div>
+    </div>
+    <div class="usr-row">
+        <div id="gridInstrumentDetail02" style="width:99%;margin-left:4px;"></div>
+    </div>
+    <div id="divInstrumentAdd" class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS030.lblInstrumentCode
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("InstrumentCode", "", new { maxlength = "50", style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("InstrumentName", "", new { style = "width:" + @ViewBag.ObjectColCustNameWidth + ";", @readonly = true })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnSearchInstrument", @Resources.QUS030.btnSearchInstrument, new { style = "width:150px;" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.QUS030.lblQuantity
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.NumericTextBox("InstrumentQty", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";" })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnAdd", @Resources.QUS030.btnAdd, new { style = "width:70px;" })
+            @Html.CommonButton("btnCancel", @Resources.QUS030.btnCancel, new { style = "width:70px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

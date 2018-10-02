@@ -1,0 +1,64 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+
+<!-- ======== Html content ======== --->
+
+
+@* --- Contract Information ---  *@
+<div id="divProjectInfo" class="main-table" style="margin-top:5px;">
+
+    <div class="usr-row">
+        <div class="table-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS010.lblHeaderName2
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>   
+      
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS010.lblProjectName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ProjectName", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>   
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS010.lblProjectAddress
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ProjectAddress", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>  
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS010.lblProjectPurchaserName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ProjectPurchaserNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>   
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS010.lblProjectPurchaserNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("ProjectPurchaserNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+        </div>
+    </div>       
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>   
+     
+
+ 
+</div>
+

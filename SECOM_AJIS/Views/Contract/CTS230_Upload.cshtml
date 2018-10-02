@@ -1,0 +1,101 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    Layout = null;
+}
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.5.1.min.js")"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var msg = "@ViewBag.Message";
+        var msgCode = "@ViewBag.MsgCode";
+        $('#fileSelect').change(UpdateFilename);
+        if (msg != "" && msgCode != "") {
+            //alert(msg);
+            parent.doAlertWithMessage(msgCode, msg);
+        }
+        //parent.RefreshAttachList();
+        $('#CTS230_btnAddDoc').click(CTS230_btnAddDoc_clicked);
+
+        var k = "@ViewBag.K";
+        $('#k').val(k.toString());
+
+    });
+
+    function CTS230_btnAddDoc_clicked() {
+        //if (($('#fileSelect').val() == undefined) || ($('#DocumentName').val().length == 0)) {
+        //    return false;
+        //} else {
+            $("#formUpload").submit();
+        //}
+    }
+
+    function UpdateFilename() {
+        var fName = $('#fileSelect').val().split('\\')[$('#fileSelect').val().split('\\').length - 1];
+        var fExt = $.trim(fName.substr(fName.lastIndexOf('.')));
+        fName = fName.substr(0, fName.lastIndexOf('.'));
+        fName = $.trim(fName.substr(0, 100 - fExt.length));
+        $('#DocumentName').val(fName);
+//        $('#DocumentName').val($('#fileSelect').val().split('\\')[$('#fileSelect').val().split('\\').length - 1]);
+    }
+
+    
+</script>
+
+<style type="text/css">
+    .usr-label
+    {
+        font-family: Verdana, MS UI Gothic;
+        font-size: 10pt;
+    }
+    /* --- Button --- */
+    button
+    {
+        border: 1px solid #707070;
+        background: #dbdbdb url(/Content/themes/custom-theme/images/ui-bg_glass_100_dbdbdb_1x400.png) 50% 50% repeat-x;
+        font-weight: normal;
+        color: #000000;
+        width: 100px;
+        height: 22px;
+        padding: 0;
+        line-height: 19px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        font-family: Verdana, MS UI Gothic;
+        font-size: 10pt;
+    }
+    button:hover
+    {
+        cursor: pointer;
+        border: 1px solid #2c628b;
+        background: #d9f0fc url(/Content/themes/custom-theme/images/ui-bg_glass_100_d9f0fc_1x400.png) 50% 50% repeat-x;
+        font-weight: normal;
+        color: #000000;
+    }
+    button:active
+    {
+        border: 1px solid #999999;
+        background: #6eac2c url(/Content/themes/custom-theme/images/ui-bg_glass_30_6eac2c_1x400.png) 50% 50% repeat-x;
+        font-weight: normal;
+        color: #000000;
+    }
+    button[disabled]
+    {
+        border: 1px solid #adb2b5;
+        background: #f4f4f4;
+        cursor: default;
+    }
+</style>
+
+@using (Html.BeginForm("CTS230_AttachFile", "Contract", FormMethod.Post, new { enctype = "multipart/form-data", id = "formUpload" }))
+{
+    <div class="usr-label">
+        <span style="width: 210px; text-align:right;">@Resources.CTS300.lblAttachedDocument</span>
+        <input type="file" name="fileSelect" id="fileSelect" style="width:320px; margin-left:5px;" />&nbsp;&nbsp;
+        <span style="margin-left:5px; text-align:right;">@Resources.CTS300.lblDocumentName</span>
+        @Html.CommonTextBox("DocumentName", "", new { style = "width:194px", maxlength = "100" })
+        <button name="CTS230_btnAddDoc" id="CTS230_btnAddDoc" style="margin-left:5px; width:60px;" type="submit">@Resources.CTS300.btnAdd</button>
+       <input type="hidden" id="k" name="k" />
+    </div>
+}

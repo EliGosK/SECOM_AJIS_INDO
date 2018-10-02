@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="CustCodeShort" width="90" type="ro" align="left" sort="str_custom">headerCustomerCode</column>
+    <column id="CustNameForShow" width="190" type="ro" align="left" sort="str_custom">headerContaractTaget</column>
+    <column id="AddressFullForShow" width="*" type="ro" align="left" sort="str_custom">headerAddress</column>
+    <column id="NumOfContract" width="80" type="ro" align="right" sort="str_custom">headerNumberofContract</column>
+    <column id="NumOfSite" width="80" type="ro" align="right" sort="str_custom">headerNumberofSite</column>
+    <column id="Detail" width="100" type="link" align="center" sort="na">headerCustinfo</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+	  <column id="Fee" width="*" type="ro" align="right" sort="na"></column>
+	  <column id="Order" width="188" type="link" align="left" sort="na">headerOrder</column>
+	  <column id="ApproveContract" width="188" type="link" align="left" sort="na">headerApproveContract</column>
+	  <column id="CompleteInstallation" width="188" type="link" align="left" sort="na">headerCompleteInstallation</column>	
+	  <column id="StartService" width="188" type="link" align="left" sort="na">headerStartService</column>
+	  <settings>
+		  <colwidth>px</colwidth>
+	  </settings>
+  </head>
+</rows>

@@ -1,0 +1,145 @@
+﻿@using SECOM_AJIS.Common.Helpers
+
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "125px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.ObjectColMergeWidth = "720px";    
+}
+
+<div id="divContractBasicInfo" class="main-table">    
+    <div class="table-header">
+        @Resources._ContractInformation.lblHeaderName                                 
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._ContractInformation.lblContractCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth">
+                @Html.CommonTextBox("ContractCodeShort", (string)@ViewBag.ContractCodeShort, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = "readonly" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+            @Resources._ContractInformation.lblUserCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("UserCode", (string)@ViewBag.UserCode, new { @readonly = "readonly", style = "width:" + @ViewBag.ObjectWidth + ";" })
+        </div>
+    </div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._ContractInformation.lblCustomerCodeC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth">
+                @Html.CommonTextBox("ContractTargetCustCodeShort", (string)@ViewBag.ContractTargetCustCodeShort, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = "readonly" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources._ContractInformation.lblCustomerCodeR
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth">
+                @Html.CommonTextBox("RealCustomerCustCodeShort", (string)@ViewBag.RealCustomerCustCodeShort, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = "readonly" })
+            </div>
+            <div class="usr-label" style="width:115px">
+                @Resources._ContractInformation.lblSiteCode
+            </div> 
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth">
+                @Html.CommonTextBox("SiteCodeShort", (string)@ViewBag.SiteCodeShort, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = "readonly" })
+            </div>                       
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+    
+    <div class="usr-row">      
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>     
+            <div class="usr-object">
+                @Html.CommonCheckButton("ContractTargetCustomerImportant", @Resources._ContractInformation.chkContractTarget, "", (bool?)@ViewBag.ContractTargetCustomerImportant, new { disabled = "disabled" })
+            </div>
+    </div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._ContractInformation.lblContractNameEng
+            </div> 
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("ContractTargetNameEN", (string)@ViewBag.CustFullNameEN, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = "readonly" })
+            </div>            
+    </div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._ContractInformation.lblCointractAddrEng
+            </div> 
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("ContractTargetAddressEN", (string)@ViewBag.AddressFullEN, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = "readonly" })
+            </div>            
+    </div>
+    @*<div class="usr-row" style="height:5px"></div>*@
+    
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._ContractInformation.lblSiteNameEng
+            </div> 
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("SiteNameEN", (string)@ViewBag.SiteNameEN, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = "readonly" })
+            </div>            
+    </div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._ContractInformation.lblSiteAddrEng
+            </div> 
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("SiteAddressEN", (string)@ViewBag.SiteAddressEN, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = "readonly" })
+            </div>            
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._ContractInformation.lblContractNameLocal
+            </div> 
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("ContractTargetNameLC", (string)@ViewBag.CustFullNameLC, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = "readonly" })
+            </div>            
+    </div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._ContractInformation.lblCointractAddrLocal
+            </div> 
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("ContractTargetAddressLC", (string)@ViewBag.AddressFullLC, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = "readonly" })
+            </div>            
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._ContractInformation.lblSiteNameLocal
+            </div> 
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("SiteNameLC", (string)@ViewBag.SiteNameLC, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = "readonly" })
+            </div>            
+    </div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._ContractInformation.lblSiteAddrLocal
+            </div> 
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("SiteAddressLC", (string)@ViewBag.SiteAddressLC, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = "readonly" })
+            </div>            
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._ContractInformation.lblOperationOffice
+            </div> 
+            <div class="usr-object" style="width:200px;">
+                @Html.CommonTextBox("OperationOfficeCodeName", (string)@ViewBag.OfficeName, new { style = "width:200px;", @readonly = "readonly" })
+            </div>            
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+    <div id="divLastChangeType" class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources._SaleContractBasicInformation.lblLastChangeType
+            </div> 
+            <div class="usr-object" style="width:350px;">
+                @Html.CommonTextBox("LastChangeType", (string)@ViewBag.LastChangeType, new { style = "width:350px;", @readonly = "readonly" })
+            </div>            
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

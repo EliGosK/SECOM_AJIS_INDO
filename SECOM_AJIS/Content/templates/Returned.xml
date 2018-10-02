@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Template>
+  <AdminEmail></AdminEmail>
+  <AdminSubject></AdminSubject>
+  <AdminContent></AdminContent>
+  <TemplateSubject>[SIMS] AR Returned : [ARRelatedCode] : [ARSubtitle]</TemplateSubject>
+  <TemplateContent>
+    <html>
+		&lt;body style="font-family: tahoma; font-size: 10pt;"&gt;
+				&lt;br/&gt;AR ที่คุณยื่นเรื่องไปถูกตีกลับมา
+				&lt;br/&gt;กรุณาเข้าไปตรวจสอบจาก URL ด้านล่างนี้
+				&lt;br/&gt; &lt;a href="[ViewURLLC]"&gt; [ViewURLLC] &lt;/a&gt;
+			&lt;br/&gt;
+				&lt;br/&gt;Approval request you requested was returned.
+				&lt;br/&gt;Please check at below URL.
+				&lt;br/&gt; &lt;a href="[ViewURL]"&gt; [ViewURL] &lt;/a&gt;
+			&lt;br/&gt;
+				&lt;br/&gt; &lt;b&gt; &lt;u&gt; AR Detail/รายละเอียด AR &lt;/u&gt; &lt;/b&gt;
+				&lt;br/&gt;Request No/เลขที่ AR: [ARRequestNo]
+				&lt;br/&gt;AR type/ประเภทการขออนุมัติ: [ARTypeEN]/[ARTypeLC]
+				&lt;br/&gt;AR title/หัวข้อการขออนุมัติ: [ARTitleEN]/[ARTitleLC]
+				&lt;br/&gt;AR subtitle/หัวข้อย่อยการขออนุมัติ: [ARSubtitle]
+				&lt;br/&gt;AR Purpose/วัตถุประสงค์การขออนุมัติ: 
+				&lt;br/&gt;[ARPurpose]
+				&lt;br/&gt;
+				&lt;br/&gt;Detail/เนื้อหา:
+				&lt;br/&gt;[AuditDetailHistory]
+		&lt;/body&gt;
+    </html>
+  </TemplateContent>
+</Template>

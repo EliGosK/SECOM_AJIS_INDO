@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="50" type="ro" align="center" sort="na"></column>
+    <!--headerNo-->
+    <column id="GenerateDateFrom" width="200" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date" >headerGenerateDate</column>
+    <column id="GenerateDateTo" width="200" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date" >#cspan</column>
+    
+
+    <!-- hidden -->
+    <column id="MonthYear" width="*" type="ro" hidden="true"></column>
+    <column id="DocumentNo" width="0" type="ro"  hidden="true"></column>
+    <column id="DocumentOCC" width="0" type="ro" align="left" sort="str_custom" hidden="true"></column>
+    <!-- hidden DocumentCode -->
+    <column id="DocumentCode" width="0" type="ro" align="left" sort="str_custom" hidden="true"></column>
+
+    <column id="Button" width="150" type="ro" align="center" sort="na">headerDownloadButtonCol</column>
+    <column id="Object" width="0" type="ro" align="center" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,headerGenerateDateFrom,headerGenerateDatTo,#rspan,#rspan,#rspan,#rspan,#rspan</param>
+      </call>
+    </afterInit>
+  </head>
+</rows>

@@ -1,0 +1,415 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+
+    ViewBag.MainLabelWidth = "200px";
+    ViewBag.LabelWidth = "150px";
+    ViewBag.ShortObjWidth = "100px";
+    ViewBag.LongObjectWidth = "620px";
+    ViewBag.isViewModeFlag = true;
+}
+
+@section page_header{
+
+@*<script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>*@
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+@*<script type="text/javascript" src="@Url.Content("~/Scripts/Custom/SearchAddressControl.js")" ></script>*@
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS300.js")" ></script>
+
+<script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+
+}
+<div style="display:none">
+    @Html.Hidden("btnClose", (string)@Resources.CMS300.btnClose)
+</div>
+<!-- CHANGE HISTORY LIST ======================================================================================================================== -->
+<div id="Change_History_List" class="main-table">
+    <div class="table-header">
+       @Resources.CMS300.sectionChangedCustomerHistoryList
+    </div>
+    <div>
+        <div id="history_list_grid" style="width:99%;margin-left:4px;"></div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+<!-- CONTRACT / CUSTOMER DETAIL ================================================================================================================= -->
+
+<div id="Contract_Customer_Detail" class="main-table">
+    <div class="table-header">
+       @Resources.CMS300.sectionContractPurchaser
+    </div>
+    <form id="CMS300_ContractCustomer" action="#">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblCustomerCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("CMS300_CSCustCode", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblContractSignerType
+            </div>
+            <div class="usr-object" style="width:600px;">
+                @Html.CommonTextBox("CMS300_ContractSignerTypeDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblCustomerStatus
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_CSCustStatusDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblCustomerType
+            </div>
+            <div class="usr-object" style="width:225px ;">
+                @Html.CommonTextBox("CMS300_CSCustTypeDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblNameEN
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_CSCustFullNameEN", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblAddressEN
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;"> 
+                @Html.CommonTextBox("CMS300_CSAddressFullEN", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row" style="height:10px" ></div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblNameLC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_CSCustFullNameLC", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblAddressLC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_CSAddressFullLC", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblRepresentativePersonName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_CSRepPersonName", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblContactPersonName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_CSContactPersonName", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblFinancialMarketType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_CSFinancialMarketTypeDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblBusinessType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_CSBusinessTypeDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblNationality
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_CSRegionDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblTelephoneNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_CSPhoneNo", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblIDTaxNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_CSIDNo", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblSECOMContactPerson
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_CSSECOMContactPerson", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblURL
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_CSURL", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row" style="height:10px" ></div>
+        <div class="usr-row" >
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblBranchNameEN
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("CMS300_BranchNameEN", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblBranchAddressEN
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_BranchAddressEN", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row" style="height:10px" ></div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblBranchNameLC
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("CMS300_BranchNameLC", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblBranchAddressLC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_BranchAddressLC", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+    </form>
+    <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+</div>
+<!-- REAL CUSTOMER INFORMATION ================================================================================================================== -->
+<div id="Real_Customer_Detail" class="main-table">
+    <div class="table-header">
+       @Resources.CMS300.sectionRealCustomer
+    </div>
+    <form id="CMS300_RealCustomer" action="#">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblCustomerCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("CMS300_RCCustCode", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblCustomerStatus
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_RCCustStatusDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblCustomerType
+            </div>
+            <div class="usr-object" style="width:225px ;">
+                @Html.CommonTextBox("CMS300_RCCustTypeDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblNameEN
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_RCCustFullNameEN", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblAddressEN
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_RCAddressFullEN", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row" style="height:10px" ></div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblNameLC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_RCCustFullNameLC", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblAddressLC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_RCAddressFullLC", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblRepresentativePersonName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_RCRepPersonName", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblContactPersonName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_RCContactPersonName", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblFinancialMarketType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_RCFinancialMarketTypeDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblBusinessType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_RCBusinessTypeDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblNationality
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_RCRegionDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblTelephoneNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_RCPhoneNo", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblIDTaxNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_RCIDNo", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblSECOMContactPerson
+            </div>
+            <div class="usr-object" style="width:225px ;">
+                @Html.CommonTextBox("CMS300_RCSECOMContactPerson", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblURL
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_RCURL", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+    </form>
+    <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+</div>
+<!-- SITE INFORMATION =========================================================================================================================== -->
+<div id="Site_Detail" class="main-table">
+    <div class="table-header">
+       @Resources.CMS300.sectionSiteInformation
+    </div>
+    <form id="CMS300_Site" action="#">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblSiteCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("CMS300_SiteCode", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblNameEN
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_SiteNameEN", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblAddressEN
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_SiteAddressFullEN", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row" style="height:10px" ></div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblNameLC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_SiteNameLC", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblAddressLC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongObjectWidth;">
+                @Html.CommonTextBox("CMS300_SiteAddressFullLC", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblTelephoneNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.MainLabelWidth;">
+                @Html.CommonTextBox("CMS300_SitePhoneNo", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+                @Resources.CMS300.lblUsage
+            </div>
+            <div class="usr-object" style="width:225px ;">
+                @Html.CommonTextBox("CMS300_SiteBuildingUsageDisplay", "", new { @isViewMode = @ViewBag.isViewModeFlag })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.MainLabelWidth;">
+          
+            </div>
+            <div class="usr-object" style="width:@ViewBag.longText;color:#ff7700">
+                @Html.CommonCheckButton("CMS300_ChkAttachImportanceFlag", @Resources.CMS220.lblAttachImportanceFlag, null, null, new { isViewMode = @ViewBag.isViewMode, disabled = true })
+            </div>
+        </div>
+    </form>
+    <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+</div>

@@ -1,0 +1,56 @@
+@import "images/normal/flow_normal.css";
+@import "images/orange/flow_orange.css";
+@import "images/gray/flow_gray.css";
+
+.flow-table
+{
+	width:970px;
+	font-family: Verdana, MS UI Gothic;
+	font-size: 8pt;
+	/*display: none;*/
+}
+.flow-table .line
+{
+	clear: both;
+	width: 100%;
+
+}
+.flow-table .section
+{
+	width: 120px;
+	height: 100px;
+	float: left;
+	background-color: #fff;
+	position: relative;
+}
+.flow-table .section .text
+{
+	text-align: center;
+	width: 100px;
+	height: 90px;
+	padding: 10px 0 0 10px;
+	display: table-cell;
+	vertical-align: middle;
+}
+.flow-table .section .subject-text
+{
+	font-weight: bold;
+}
+
+.flow-table .section .upper-text
+{
+	margin:3px 0 0 10px;
+	position:absolute;
+	Z-index: 2;
+	text-align: center;
+}
+.flow-table .section .upper-section
+{
+	border: 1px solid #ece190;
+	background-color:#f9d25b;
+}
+
+.flow-table .section .special
+{
+	padding-left: 10px;
+}

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="ContractCode" width="100" type="ro" align="left" sort="str_custom">headerContractCode</column>
+    <column id="ContractNameDisplay" width="*" type="ro" align="left" sort="str_custom">headerContractPurchaser</column>
+    <!-->column id="SiteNameDisplay" width="120" type="ro" align="center">headerSiteName</column-->
+    <column id="ChangeTypeNameDisplay" width="200" type="ro" align="left" sort="str_custom">headerContractStatus</column>
+    <column id="ProductNameDisplay" width="280" type="ro" align="left" sort="str_custom">headerProductName</column>
+    <!--column id="Price" width="100" type="price" align="center" format="0,000">headerContractfeeSaleprice</column-->
+    <column id="OfficeDisplay" width="150" type="ro" align="left" sort="str_custom">headerOffice</column>
+    <!-->column id="OperationDate" width="80"  type="dhxCalendar" align="left" format="%d-%b-%Y">headerOperationDate</column-->
+    <column id="ContactDetail" width="60" type="ro" align="center" sort="na">headerContractDigest</column>
+    <column id="SiteDetail" width="80" type="link" align="center" sort="na">headerSiteInformation</column>
+
+    <column id="ServiceTypeCode" width="0" type="ro" align="center" hidden="true">headerSiteInformation</column>
+    <column id="SiteCode" width="0" type="ro" align="center" hidden="true">headerSiteInformation</column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

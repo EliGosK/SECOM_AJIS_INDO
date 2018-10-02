@@ -1,0 +1,21 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+
+    ViewBag.LabelCol1Width = "190px";
+    ViewBag.ObjectCol1Width = "225px";
+    ViewBag.LabelCol2Width = "190px";
+    ViewBag.ObjectCol2Width = "225px";
+    ViewBag.ObjectColMergeWidth = "630px";
+    ViewBag.isViewMode = true;
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS011.js")"></script>
+<div style="display:none">
+    @Html.Hidden("btnClose", (string)@Resources.QUS011.btnClose)
+</div>
+@if (@ViewBag.HideQuotationTarget == false)
+{
+    @Html.EmptyDIVforLoadData2("QUS011_01")
+}
+@Html.EmptyDIVforLoadData2("QUS011_02")
+@Html.EmptyDIVforLoadData2("QUS011_03")

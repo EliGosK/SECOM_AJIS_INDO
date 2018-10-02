@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG6001" xml:space="preserve">
+    <value>Cannot register "Issue invoice timing (months)" with the number over 60 months.</value>
+  </data>
+  <data name="MSG6002" xml:space="preserve">
+    <value>The combination of specified Billing client code and billing office already exists in billing customer code: {0}</value>
+  </data>
+  <data name="MSG6003" xml:space="preserve">
+    <value>The combination of specified contract no./Project code and billing customer code already exists in billing code: {0}</value>
+  </data>
+  <data name="MSG6004" xml:space="preserve">
+    <value>Billing type, {0} already exists in list.</value>
+  </data>
+  <data name="MSG6005" xml:space="preserve">
+    <value>Please specify at least 1 billing type.</value>
+  </data>
+  <data name="MSG6006" xml:space="preserve">
+    <value>Payment method is Bank transfer (Other account). Please register bank transfer account information.</value>
+  </data>
+  <data name="MSG6007" xml:space="preserve">
+    <value>Payment method is Credit card. Please register credit card information.</value>
+  </data>
+  <data name="MSG6008" xml:space="preserve">
+    <value>Cannot remove {0}.</value>
+  </data>
+  <data name="MSG6009" xml:space="preserve">
+    <value>If Payment term is less than 2, it needs to acquire approval.</value>
+  </data>
+  <data name="MSG6010" xml:space="preserve">
+    <value>Adjust ending date of billing period cannot be the date before Last billing date.</value>
+  </data>
+  <data name="MSG6011" xml:space="preserve">
+    <value>Last payment condition changing date cannot be a future date.</value>
+  </data>
+  <data name="MSG6012" xml:space="preserve">
+    <value>There is inconsistency in continuity of "Last date" and "Date before changing 1-4".</value>
+  </data>
+  <data name="MSG6013" xml:space="preserve">
+    <value>Start date of billing period of the first billing history of billing basic cannot be registered before contract's start operation date.</value>
+  </data>
+  <data name="MSG6014" xml:space="preserve">
+    <value>Billing period (from) must be the same date as Approve contract date or after.</value>
+  </data>
+  <data name="MSG6015" xml:space="preserve">
+    <value>After registering, all editions except ‘Special careful flag’ will be disabled until special careful flag is unchecked.</value>
+  </data>
+  <data name="MSG6016" xml:space="preserve">
+    <value>Payment method is changed from "Bank transfer (Other account)" to others. Bank transfer account information will be deleted, so please confirm.</value>
+  </data>
+  <data name="MSG6017" xml:space="preserve">
+    <value>Payment method is changed from "Credit card" to others. Credit card information will be deleted, so please confirm.</value>
+  </data>
+  <data name="MSG6018" xml:space="preserve">
+    <value>The number over 60 months is registered in Payment term. Please confirm whether it is mistake or not.</value>
+  </data>
+  <data name="MSG6019" xml:space="preserve">
+    <value>The number over 12 months is registered in credit term. Please confirm whether it is mistake or not.</value>
+  </data>
+  <data name="MSG6020" xml:space="preserve">
+    <value>Billing of continuous fee will be stopped by this change. Please confirm whether there is no problem.</value>
+  </data>
+  <data name="MSG6021" xml:space="preserve">
+    <value>Billing flag is changed, so billing of continuous fee will be issued. Please confirm whether there is no problem.</value>
+  </data>
+  <data name="MSG6022" xml:space="preserve">
+    <value>Please be sure to edit contract data in order not to be inconsistent with service fee.</value>
+  </data>
+  <data name="MSG6023" xml:space="preserve">
+    <value>You do not have a permission to cancel billing detail.</value>
+  </data>
+  <data name="MSG6024" xml:space="preserve">
+    <value>Issued billing detail and cancelled billing detail must be same billing type.</value>
+  </data>
+  <data name="MSG6025" xml:space="preserve">
+    <value>Expected issue/bank transfer (other account) date cannot be in the past.</value>
+  </data>
+  <data name="MSG6026" xml:space="preserve">
+    <value>Specified expected issue/bank transfer (other account) date is not the bank transfer (other account) date set in master.</value>
+  </data>
+  <data name="MSG6027" xml:space="preserve">
+    <value>Specified expected issue/bank transfer (other account) date is not the credit card transfer date set in master.</value>
+  </data>
+  <data name="MSG6028" xml:space="preserve">
+    <value>Expected bank transfer (other account) date has already generated bank transfer (other account) bank file.</value>
+  </data>
+  <data name="MSG6029" xml:space="preserve">
+    <value>Expected bank transfer (other account) date has already generated credit card transfer file.</value>
+  </data>
+  <data name="MSG6030" xml:space="preserve">
+    <value>Billing period (from) must be the same date as Start operation date or after.</value>
+  </data>
+  <data name="MSG6031" xml:space="preserve">
+    <value>Billing period ({0}-{1}) must be continuous period with existing billing detail's billing period.</value>
+  </data>
+  <data name="MSG6032" xml:space="preserve">
+    <value>Billing period ({0}-{1}) must not be overlapped with exiting billing detail's billing period.</value>
+  </data>
+  <data name="MSG6033" xml:space="preserve">
+    <value>Cannot register because there will be no billing detail from 'Start date of billing period' of the first billing history.</value>
+  </data>
+  <data name="MSG6034" xml:space="preserve">
+    <value>Cannot create billing detail before 'Start date of billing period' of the first billing history.</value>
+  </data>
+  <data name="MSG6035" xml:space="preserve">
+    <value>This billing detail was issued invoice and the invoice has more one billing detail. Do you want to continue cancellation?</value>
+  </data>
+  <data name="MSG6036" xml:space="preserve">
+    <value>The adjust-on-next-period amount is registered in this billing basic. Please check whether there is a mistake or not, or whether it's necessary to edit or delete the adjust-on-next-period amount or not.</value>
+  </data>
+  <data name="MSG6037" xml:space="preserve">
+    <value>Adjust billing period (from) must be the same date as Start operation date or after.</value>
+  </data>
+  <data name="MSG6038" xml:space="preserve">
+    <value>Adjust billing period (to) must be the same date as Last billing date or before.</value>
+  </data>
+  <data name="MSG6039" xml:space="preserve">
+    <value>Are you sure to change adjust-on-next-period data?</value>
+  </data>
+  <data name="MSG6040" xml:space="preserve">
+    <value>Billing customer does not exist.</value>
+  </data>
+  <data name="MSG6041" xml:space="preserve">
+    <value>Billing basic does not exist.</value>
+  </data>
+  <data name="MSG6042" xml:space="preserve">
+    <value>Billing detail does not exist.</value>
+  </data>
+  <data name="MSG6043" xml:space="preserve">
+    <value>Invoice does not exist.</value>
+  </data>
+  <data name="MSG6044" xml:space="preserve">
+    <value>Cannot switch to bank transfer (other account)/credit card because payment method of billing basic is not bank transfer (other account)/credit card.</value>
+  </data>
+  <data name="MSG6045" xml:space="preserve">
+    <value>Please switch to bank transfer (other account)/credit card by invoice because billing detail is already issued invoice and have more than 1 detail in invoice.</value>
+  </data>
+  <data name="MSG6046" xml:space="preserve">
+    <value>Cannot switch to bank transfer (other account)/credit card because billing detail is not payment status as 00 -unissued invoice or 01-unpaid invoice and only 1 detail in invoice.</value>
+  </data>
+  <data name="MSG6047" xml:space="preserve">
+    <value>Cannot stop bank transfer (other account)/credit card because billing detail is already issued invoice and have more than 1 detail in invoice.</value>
+  </data>
+  <data name="MSG6048" xml:space="preserve">
+    <value>Cannot stop bank transfer (other account)/credit card because billing detail is not payment status as 04 -unissued invoice or 03-unpaid invoice and only 1 detail in invoice.</value>
+  </data>
+  <data name="MSG6049" xml:space="preserve">
+    <value>Cannot change expected issue date/bank transfer (other account) date because billing detail is not unpaid and unissued invoice.</value>
+  </data>
+  <data name="MSG6050" xml:space="preserve">
+    <value>Cannot switch to bank transfer (other account)/credit card because there is any billing code which has different account information in bank transfer (other account) information/credit card information.</value>
+  </data>
+  <data name="MSG6051" xml:space="preserve">
+    <value>Cannot switch to bank transfer (other account)/credit card because billing detail is not payment status as  01-unpaid invoice.</value>
+  </data>
+  <data name="MSG6052" xml:space="preserve">
+    <value>Cannot stop bank transfer (other account)/credit card because billing detail is not payment status 03-unpaid invoice.</value>
+  </data>
+  <data name="MSG6053" xml:space="preserve">
+    <value>Cannot cancel billing detail of intermediate term.</value>
+  </data>
+  <data name="MSG6054" xml:space="preserve">
+    <value>Please specify at least 1 billing detail to cancel.</value>
+  </data>
+  <data name="MSG6055" xml:space="preserve">
+    <value>Please issue at least 1 billing detail.</value>
+  </data>
+  <data name="MSG6056" xml:space="preserve">
+    <value>Billing basic: {0} is careful special. Cannot edit billing basic, billing detail and invoice information.</value>
+  </data>
+  <data name="MSG6057" xml:space="preserve">
+    <value>Contract no. does not exist.</value>
+  </data>
+  <data name="MSG6058" xml:space="preserve">
+    <value>The total of registered billing amount must be equal to the amount of last service fee.</value>
+  </data>
+  <data name="MSG6059" xml:space="preserve">
+    <value>Billing detail in invoice must have same billing type.</value>
+  </data>
+  <data name="MSG6060" xml:space="preserve">
+    <value>Billing detail in invoice must have same paymant method.</value>
+  </data>
+  <data name="MSG6061" xml:space="preserve">
+    <value>Billing detail in invoice must have same tax rate.</value>
+  </data>
+  <data name="MSG6062" xml:space="preserve">
+    <value>This contract must be start operation.</value>
+  </data>
+  <data name="MSG6063" xml:space="preserve">
+    <value>Billing period (from-to) must not duplicate with existing billing detail.</value>
+  </data>
+  <data name="MSG6064" xml:space="preserve">
+    <value>Cannot issue sale invoice because process management status is not 2: Stock-out or 4: Installation completed but not accepted.</value>
+  </data>
+  <data name="MSG6065" xml:space="preserve">
+    <value>Please specify at least 1 billing detail to separate invoice.</value>
+  </data>
+  <data name="MSG6066" xml:space="preserve">
+    <value>"Not change invoice no." of Separate invoice is being checked. Please check whether there is a mistake or not.</value>
+  </data>
+  <data name="MSG6067" xml:space="preserve">
+    <value>Please specify at least 1 billing detail to combine invoice.</value>
+  </data>
+  <data name="MSG6068" xml:space="preserve">
+    <value>User can combine only same billing type.</value>
+  </data>
+  <data name="MSG6069" xml:space="preserve">
+    <value>"Not change invoice no." of Combine invoice is being checked. Please check whether there is a mistake or not.</value>
+  </data>
+  <data name="MSG6070" xml:space="preserve">
+    <value>This process will separate all detail of separated source invoice. Do you want to continue?</value>
+  </data>
+  <data name="MSG6071" xml:space="preserve">
+    <value>Sale contract dose not exist.</value>
+  </data>
+  <data name="MSG6072" xml:space="preserve">
+    <value>Partial fee which is not issued will be issued here. Do you want to continue?</value>
+  </data>
+  <data name="MSG6073" xml:space="preserve">
+    <value>Cannot separate invoice: {0} because this invoice has payment status {1}.</value>
+  </data>
+  <data name="MSG6074" xml:space="preserve">
+    <value>Cannot combine invoice: {0} because this invoice has payment status {1}.</value>
+  </data>
+  <data name="MSG6075" xml:space="preserve">
+    <value>Cannot change bank transfer (other account) payment method because billing basic was issued billing detail or issued invoice for Bank transfer (other account).</value>
+  </data>
+  <data name="MSG6076" xml:space="preserve">
+    <value>Cannot change auto transfer information  because billing basic was issued invoice for Auto transfer.</value>
+  </data>
+  <data name="MSG6077" xml:space="preserve">
+    <value>Cannot change credit card payment method because billing basic was issued billing detail or issued invoice for Credit card.</value>
+  </data>
+  <data name="MSG6078" xml:space="preserve">
+    <value>Cannot change credit card information because billing basic was issued invoice for Credit card.</value>
+  </data>
+  <data name="MSG6079" xml:space="preserve">
+    <value>Cannot separate from invoice: {0} because this invoice has different billing customer code.</value>
+  </data>
+  <data name="MSG6080" xml:space="preserve">
+    <value>Cannot combine to invoice: {0} because this invoice has different billing customer code.</value>
+  </data>
+  <data name="MSG6081" xml:space="preserve">
+    <value>Cannot create invoice because this invoice has different billing customer code.</value>
+  </data>
+  <data name="MSG6082" xml:space="preserve">
+    <value>Cannot edit monthly service fee because there is no monthly service fee data.</value>
+  </data>
+  <data name="MSG6083" xml:space="preserve">
+    <value>Cannot save billing detail information because the result of calculation billing amount exceed 12 digits.</value>
+  </data>
+  <data name="MSG6084" xml:space="preserve">
+    <value>Cannot save invoice information because the result of calculation invoice amount exceed 12 digits.</value>
+  </data>
+  <data name="MSG6085" xml:space="preserve">
+    <value>Cannot save invoice information because the result of calculation VAT amount exceed 12 digits.</value>
+  </data>
+  <data name="MSG6086" xml:space="preserve">
+    <value>Cannot save invoice information because the  result of calculation WHT amount exceed 12 digits.</value>
+  </data>
+  <data name="MSG6087" xml:space="preserve">
+    <value>You do not have a permission to operate this process</value>
+  </data>
+  <data name="MSG6088" xml:space="preserve">
+    <value>Billing period ({0}-{1}) must be duplicate period with existing billing detail's billing period.</value>
+  </data>
+  <data name="MSG6089" xml:space="preserve">
+    <value>Cannot register billing basic because there must be at least one billing OCC which 'Start date of billing period' of the first billing history is the same date as 'New start service date'.</value>
+  </data>
+  <data name="MSG6090" xml:space="preserve">
+    <value>Please specify billing type.</value>
+  </data>
+  <data name="MSG6091" xml:space="preserve">
+    <value>Please specify at least 1 record.</value>
+  </data>
+  <data name="MSG6092" xml:space="preserve">
+    <value>"First Sell" cannot be selected altogether with "Non-First Sell" or "Add Sale" record when performing "Cancel and Re-create" process. Process must be created separately</value>
+  </data>
+  <data name="MSG6093" xml:space="preserve">
+    <value>Billing type {0} &lt;b&gt;&lt;u&gt;doesn't have&lt;/u&gt;&lt;/b&gt; first fee flag in system.&lt;br/&gt;Do you want to continue?</value>
+  </data>
+  <data name="MSG6094" xml:space="preserve">
+    <value>Billing type {0} already has first fee flag in system.&lt;br/&gt;Do you want to continue?</value>
+  </data>
+</root>

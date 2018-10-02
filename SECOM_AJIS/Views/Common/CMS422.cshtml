@@ -1,0 +1,133 @@
+﻿<!--
+//*********************************
+// Create by: Siripoj S.
+// Create date: 05/Mar/2012
+// Update date: 05/Mar/2012
+//*********************************
+-->
+
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+@{
+   
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.LabelWidth = "220px";
+    ViewBag.LabelWidth2 = "190px";
+    
+    ViewBag.ObjectWidth = "200px";
+    ViewBag.ObjectWidth2 = "250px";
+
+    ViewBag.ObjectWidthLong = "450px";
+    
+    
+    ViewBag.isViewMode = true;
+    
+    // for debug
+    ViewBag.txtBackgroundColor = "none";  // Lime
+}
+
+
+@section page_header{
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS422.js")" ></script>
+
+}
+<div style="display:none">
+    @Html.Hidden("btnClose_cms422", (string)@Resources.CMS131.btnClose)
+    
+</div>
+<div id="divAll">
+<!-- View credit Card Information SECTION ==================================================================================================================== -->
+<div id="ViewCreditCardInformation" class="main-table">
+    <div class="table-header">
+       @Resources.CMS422.lblHeaderCreditCard
+    </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS422.lblBillingCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; ">
+                @Html.CommonTextBox("CMS422_BillingCode", (string)@ViewBag.txtBillingCode, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS422.lblBillingClientCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; ">
+                @Html.CommonTextBox("CMS422_BillingClientCode", (string)@ViewBag.txtBillingClientCode, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS422.lblBillingClientNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS422_BillingClientNameEN", (string)@ViewBag.txtBillingClientNameEN, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS422.lblBillingClientNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS422_BillingClientNameLC", (string)@ViewBag.txtBillingClientNameLC, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+         <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS422.lblCreditCardType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS422_CreditCardType", (string)@ViewBag.txtCreditCardType, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+         <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS422.lblCardHolderName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS422_CardName", (string)@ViewBag.txtCardName, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+         <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS422.lblCreditCardCompany
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS422_CreditCardCompany", (string)@ViewBag.txtCreditCardCompany, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS422.lblCreditCardNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong;">
+                @Html.CommonTextBox("CMS422_CreditCardNo", (string)@ViewBag.txtCreditCardNo, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+       
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS422.lblExpireDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                @Html.CommonTextBox("CMS422_ExpireDate", (string)@ViewBag.txtExpireDate, new { isViewMode = @ViewBag.isViewMode })
+            </div>           
+        </div>       
+         <!---<div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS422.lblTransferDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                @Html.CommonTextBox("CMS422_TransferDate", (string)@ViewBag.txtTransferDate, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+         </div>   !--->
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+        
+</div>
+
+</div>

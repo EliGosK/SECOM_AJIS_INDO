@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<rows>
+	<head>
+		<column id="InstrumentCode_Text" width="160" type="ro" align="left" sort="str_custom" >headerInstrumentCode</column>
+		<column id="InstrumentName_Text" width="160" type="ro" align="left" sort="str_custom">headerInstrumentName</column>
+    <column id="TotalStockOutQty_Numeric" width="75" type="edn" align="right" format="0,000" sort="int">headerInstrumentQuantity</column>
+		<column id="ContractInstalledQty_Numeric" width="75" type="edn" align="right" format="0,000" sort="int">#cspan</column>
+		<column id="AddInstalledQty_Numeric" width="75" type="edn" align="right" format="0,000" sort="int">#cspan</column>
+		<column id="ReturnQty_Numeric" width="75" type="edn" align="right" format="0,000" sort="int">#cspan</column>
+		<column id="AddRemovedQty_Numeric" width="75" type="edn" align="right" format="0,000" sort="int">#cspan</column>
+		<column id="ContractInstallAfterChange_Numeric" width="75" type="edn" align="right" format="0,000" sort="int">#cspan</column>
+		<column id="MoveQty_Numeric" width="75" type="edn" align="right" format="0,000" sort="int">#cspan</column>
+		<column id="MAExchangeQty_Numeric" width="*" type="edn" align="right" format="0,000" sort="int">#cspan</column>
+		<afterInit>
+			<call command="attachHeader">
+				<param>#rspan,#rspan,headerTotalStockOut,headerContractInstalledCurrent,headerAdditionalInstalled,headerReturn,headerRemoved,headerContractInstalledAfterChange,headerMoved,headerMaintenanceExchange</param>
+			</call>
+		</afterInit>
+		<settings>
+			<colwidth>px</colwidth>
+		</settings>
+	</head>
+</rows>

@@ -1,0 +1,248 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers ;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    Layout = "";
+
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+
+@*@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS300/CTS300_05.js")"></script>
+}*@
+
+<div id="divContractTargetPurchaserInfo" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.CTS300.lblNewIncidentFieldInformation</div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblReceivedDate</div>
+        <div class="usr-object" style="width:164px;">
+            @Html.CommonTextBox("ReceivedDate", (string)@ViewBag.ReceivedDate, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-label" style="width:105px;">
+            @Html.RequireFiled()
+            @Html.LabelDateFormat("ReceivedDate")
+        </div>
+        <div class="usr-label" style="width:141px;">@Resources.CTS300.lblReceivedTime</div>
+        <div class="usr-object" style="width:165px;">
+            @Html.CommonTextBox("ReceivedTime", (string)@ViewBag.ReceivedDate, new { style = "width:160px" })
+        </div>
+        <div class="usr-label" style="width:10px;">
+            @Html.RequireFiled()
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblReceivedMethod @Html.RequireFiled()</div>
+        <div class="usr-object" style="margin-left:0px;">
+           @Html.CommonRadioButton("rdoTelephone", (string)@Resources.CTS300.rdoTelephone, IncidentReceivedMethod.C_INCIDENT_RECEIVED_METHOD_TELEPHONE, false, "ReceiveMethod") 
+        </div> 
+        <div class="usr-object" style="margin-left:10px;">
+           @Html.CommonRadioButton("rdoDocument", (string)@Resources.CTS300.rdoDocument, IncidentReceivedMethod.C_INCIDENT_RECEIVED_METHOD_DOCUMENT, false, "ReceiveMethod") 
+        </div>
+        <div class="usr-object" style="margin-left:10px;">
+           @Html.CommonRadioButton("rdoVisit", (string)@Resources.CTS300.rdoVisit, IncidentReceivedMethod.C_INCIDENT_RECEIVED_METHOD_VISIT, false, "ReceiveMethod") 
+        </div>
+        <div class="usr-object" style="margin-left:10px;">
+           @Html.CommonRadioButton("rdoOther", (string)@Resources.CTS300.rdoOther, IncidentReceivedMethod.C_INCIDENT_RECEIVED_METHOD_OTHER, false, "ReceiveMethod") 
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblContractName</div>
+        <div class="usr-object" style="width:230px;">
+            @Html.CommonTextBox("ContractName", (string)@ViewBag.ReceivedDate, new { style = "width:230px", @maxlength = "100" })
+        </div>
+        <div class="usr-label" style="width:20px;">
+            @Html.RequireFiled()
+        </div>
+        <div class="usr-label" style="width:160px;">@Resources.CTS300.lblDepartment_Position</div>
+        <div class="usr-object" style="width:280px;">
+            @Html.CommonTextBox("Department_Position", (string)@ViewBag.ReceivedDate, new { style = "width:280px", @maxlength = "500" })
+        </div>
+    </div>
+
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblIncidentTitle</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("IncidentTitle", null, new { style = "width:699px", @maxlength = "500" })
+            @Html.RequireFiled()
+        </div>
+    </div>
+
+   
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblIncidentType</div>
+        <div class="usr-object" style="width:298px;">
+            @Html.IncidentTypeComboBox("IncidentTypeCode", new { style = "width:280px;" })
+            @Html.RequireFiled()
+        </div>
+        <div class="usr-label" style="width:100px;">@Resources.CTS300.lblReasonType</div>
+        <div class="usr-object" style="width:320px;">
+        <span id="spanReasonTypeCode">
+            @Html.ReasonComboBox("ReasonTypeCode", new { style = "width:300px;" })
+        </span>
+            @Html.RequireFiled()
+        </div>
+    </div>
+
+    <div class="usr-row usr-row-space" >
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblSpecialInformation</div>
+        <div class="usr-object" >
+            @Html.CommonCheckButton("chkConfidential", (string)@Resources.CTS300.chkConfidential, "True")
+        </div>
+        <div class="usr-object" style="margin-left:10px" >
+            @Html.CommonCheckButton("chkImportance", (string)@Resources.CTS300.chkImportance, "True")
+        </div>
+    </div>
+
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblRecivedDetail @Html.RequireFiled()</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextArea("RecivedDetail", "", new { style = "width:700px; height:200px", @maxlength = "1000" })
+        </div>
+    </div>
+
+    <div class="usr-row usr-row-space" id="divDueDate">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS300.lblDueDate_DeadLine @Html.RequireFiled()
+        </div>
+        <div class="usr-object" style="width:80px">
+           @Html.CommonRadioButton("rdoDueDate", (string)@Resources.CTS300.rdoDueDate, "1", true, "DueDate_DeadLine") 
+        </div>
+        <div class="usr-object" style="margin-left:10px" >
+            @Html.CommonTextBox("DueDate", (string)@ViewBag.DueDate, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-label">
+            @Html.LabelDateFormat("DueDate")
+        </div>
+        <div class="usr-label" style="width:40px;">@Resources.CTS300.lblTime</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ReceivedDueTime", (string)@ViewBag.ReceivedDate, new { style = "width:150px" })
+        </div>
+    </div>
+
+    <div class="usr-row usr-row-space" id="divDeadLine">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            <div id="divDueDateRemark" style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                @Resources.CTS300.lblPleaseSetDue
+            </div>
+        </div>
+        <div class="usr-object" style="width:80px">
+           @Html.CommonRadioButton("rdoDeadLine", (string)@Resources.CTS300.rdoDeadLine, "2", true, "DueDate_DeadLine") 
+        </div>
+        <div class="usr-object" style="margin-left:10px" >
+            @Html.CommonTextBox("DeadLine", (string)@ViewBag.DueDate, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+        <div class="usr-label">
+            @Html.LabelDateFormat("DeadLine")
+        </div>
+        <div class="usr-label" style="width:40px;">@Resources.CTS300.lblUntil</div>
+        <div class="usr-object">
+           @Html.DeadLineTimeTypeComboBox("DeadLineTimeType", new { style = "width:154px;" })
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+
+    <!-- ==========================================Attached document list======================================================== -->
+
+    <div id="divAttachedDoclist" class="sub-table" style="margin-top:10px">
+        <div class="table-sub-header">@Resources.CTS300.lblAttachedDocumentList</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+            <div style="float:left;">
+                <div id="CTS300_gridAttachDocList" style="width:400px;"></div>
+            </div>
+        </div>
+        <div class="usr-row usr-row-space" id="divAttachFrame">
+            <iframe width="100%" height="25px" marginwidth="0" marginheight="0" id="frmAttach"
+                    vspace="0" hspace="0" frameborder="0" align="middle" scrolling="no"></iframe>
+            @*<div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblAttachedDocument</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("AttachedDocument", "", new { style = "width:250px" })
+                <input id="fileSelect" type="file" style="width:32opx;" />
+            </div>
+            <div class="usr-object" style="margin-left:5px">
+                @Html.CommonButton("CTS300_btnBrowse", (string)@Resources.CTS300.btnBrowse, new { style = "width:70px" })
+            </div>
+            <div class="usr-label" style="margin-left:5px" >@Resources.CTS300.lblDocumentName</div>
+            <div class="usr-object" style="margin-left:0px">
+                @Html.CommonTextBox("DocumentName", "", new { style = "width:194px" })
+            </div>
+            <div class="usr-object" style="margin-left:5px">
+                @Html.CommonButton("CTS300_btnAddDoc", (string)@Resources.CTS300.btnAdd, new { style = "width:60px" })
+            </div>*@
+        </div>
+
+        <div class="usr-row" id="divAttachRemark">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+            <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                @Resources.CTS300.lblPleasePayAttention
+            </div>
+            <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                @Resources.CTS300.lblRemarkAttachFileSize
+            </div>
+        </div>
+    <div class="usr-clear-style">&nbsp;</div>
+    </div>
+
+    <!-- =========================================Assign person in charge information========================================================= -->
+
+    <div id="divAssignPIC" class="sub-table"  style="margin-top:10px" >
+        <div class="table-sub-header">@Resources.CTS300.lblAssignPersonInChargeInformation</div>
+
+        <div id="divSelectPIC">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblOffice</div>
+            <div id="divCBBOffice" class="usr-object" style="width:260px;">
+                @Html.BelongingOfficeComboBox("BelongOfficeCode", new { style = "width:260px;" })
+            </div>
+            <div class="usr-label" style="width:120px;">@Resources.CTS300.lblDepartment</div>
+            <div id="divCBBDepartment" class="usr-object" style="width:260px;">
+                @Html.BlankComboBoxWithFirstRow("DepartmentCode", new { style = "width:260px;" })
+            </div>
+        </div>
+
+        <div class="usr-clear-style">&nbsp;</div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblIncidentRole</div>
+            <div id="divCBBIncidentRole" class="usr-object" style="width:260px;">
+                @Html.IncidentRoleAllComboBox("IncidentRoleCode", new { style = "width:260px;" })
+            </div>
+            <div class="usr-label" style="width:120px;">@Resources.CTS300.lblEmployeeName</div>
+            <div id="divCBBEmployee" class="usr-object" style="width:260px;">
+                 @Html.BlankComboBoxWithFirstRow("EmployeeCode", new { style = "width:260px;" })
+            </div>
+            <div class="usr-object" style="margin-left:5px" >
+                @Html.CommonButton("CTS300_btnAddPIC", (string)@Resources.CTS300.btnAdd, new { style = "width:70px", @type = "button" })
+            </div>
+        </div>
+        </div>
+        <div class="usr-row usr-row-space ">
+            @*<div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>*@
+            <div style="margin-left: 220px;">
+                <div id="CTS300_gridAssignPIC" style="width:@ViewBag.ObjectColMergeWidth;"></div>
+            </div>
+        </div>
+    <div class="usr-clear-style">&nbsp;</div>
+    </div>
+
+    
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

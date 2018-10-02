@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="30" type="ro" align="center" sort="na"></column>
+    <column id="ContractCode" width="80" type="ro" align="left" sort="str_custom">headerContractCode</column>
+    <column id="PaymentTransNo" width="100" type="ro" align="left" sort="str_custom">headerPaymentTransNo</column>
+    <column id="InvoiceNoAndTaxInvoiceNo" width="140" type="ro" align="left" sort="str_custom">headerInvoiceNoAndTaxInvoiceNo</column>
+    <column id="CustomerNameAndTaxID" width="*" type="ro" align="left" sort="str_custom">headerCustomerNameAndTaxID</column>
+    <column id="Payer" width="150" type="ro" align="left" sort="str_custom">headerPayerName</column>
+    <column id="PaymentDate" width="110" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerPaymentDate</column>
+    <column id="ReceivedWHTAmountShow" width="160" type="ro" align="right" sort="str_custom">headerReceivedWHTAmount</column>
+    <column id="WHTNo" width="120" type="ro" align="left" sort="str_custom">headerWHTDocNo</column>
+
+    <column id="ReceivedWHTAmount" width="0" type="ro" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

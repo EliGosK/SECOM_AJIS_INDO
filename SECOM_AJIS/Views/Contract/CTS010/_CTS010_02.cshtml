@@ -1,0 +1,263 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "181px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol12_SWidth = "369px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMerge12Width = "280px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.ObjectColCustNameWidth = "200px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS010/CTS010_02.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("lblContractFee", @Resources.CTS010.lblContractFee)
+    @Html.Hidden("lblInstallationFee", @Resources.CTS010.lblInstallationFee)
+    @Html.Hidden("lblDepositFee", @Resources.CTS010.lblDepositFee)
+    @Html.Hidden("CurrencyUnit", @Resources.CommonResources.lblTHB)
+    @Html.Hidden("DisabledOperationType", (bool)@ViewBag.DisabledOperationType)
+    @Html.Hidden("DisabledExpectedInstallCompleteDate", (bool)@ViewBag.DisabledExpectedInstallCompleteDate)
+    @Html.Hidden("DisabledOrderInstallFee", (bool)@ViewBag.DisabledOrderInstallFee)
+    @Html.Hidden("DisabledOrderInstallFee_ApproveContract", (bool)@ViewBag.DisabledOrderInstallFee_ApproveContract)
+    @Html.Hidden("DisabledOrderInstallFee_CompleteInstall", (bool)@ViewBag.DisabledOrderInstallFee_CompleteInstall)
+    @Html.Hidden("DisabledOrderInstallFee_StartService", (bool)@ViewBag.DisabledOrderInstallFee_StartService)
+    @Html.Hidden("RequiredOrderDepositFee", (bool)@ViewBag.RequiredOrderDepositFee)
+</div>
+<form id="formFN99Information">
+    <div id="divFN99Information" class="main-table">
+        <div class="table-header">@Resources.CTS010.lblFN99Information</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;margin-top:12px;">
+                @Resources.CTS010.lblOperationType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                @Html.OperationTypeCheckList("OperationType", (string[])@ViewBag.OperationTypeList, new { width = "142px", height = "40px" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblExpectedInstallationDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                <div class="object-unit">
+                    @Html.CommonTextBox("ExpectedInstallCompleteDate", (string)@ViewBag.ExpectedInstallCompleteDate, new { style = "width:100px;" })
+                    @if (@ViewBag.DisabledExpectedInstallCompleteDate != true)
+                    {
+                        @Html.RequireFiled()
+                    }
+                </div>
+                @Html.LabelDateFormat("ExpectedInstallCompleteDate")
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblExpectedOperationDate
+            </div>
+            <div class="usr-object">
+                <div class="object-unit">
+                    @Html.CommonTextBox("ExpectedStartServiceDate", (string)@ViewBag.ExpectedStartServiceDate, new { style = "width:100px;" })
+                    @Html.RequireFiled()
+                </div>
+                @Html.LabelDateFormat("ExpectedStartServiceDate")
+            </div>
+        </div>
+        <div class="usr-row usr-row-space-2x">
+            <div class="usr-object custom-table" style="width:100%;">
+                <table cellpadding="0" cellspacing="0">
+                    <tr class="hdr">
+                        <td style="width:150px;">&nbsp;</td>
+                        <td style="width:205px;">@Html.Raw(Resources.CTS010.headerNormal)</td>
+                        <td style="width:215px;">@Html.Raw(Resources.CTS010.headerOrder)</td>
+                        <td style="width:215px;">@Html.Raw(Resources.CTS010.headerApprove)</td>
+                        <td style="width:215px;">@Html.Raw(Resources.CTS010.headerComplete)</td>
+                        <td style="width:215px;">@Html.Raw(Resources.CTS010.headerStart)</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">@Resources.CTS010.lblContractFee</td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("NormalContractFee", (string)@ViewBag.NormalContractFee, (string)@ViewBag.NormalContractFeeCurrencyType, new { style = "width:140px;", @readonly = true })
+                            </div>
+                        </td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("OrderContractFee", (string)@ViewBag.OrderContractFee, (string)@ViewBag.OrderContractFeeCurrencyType, new { style = "width:140px;" })
+                                @Html.RequireFiled()
+                            </div>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">@Resources.CTS010.lblInstallationFee</td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("NormalInstallFee", (string)@ViewBag.NormalInstallFee, (string)@ViewBag.NormalInstallFeeCurrencyType, new { style = "width:140px;", @readonly = true })
+                            </div>
+                        </td>
+                        @if (@ViewBag.DisabledOrderInstallFee != true)
+                        {
+                            <td style="padding-left:1px;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("OrderInstallFee", (string)@ViewBag.OrderInstallFee, (string)@ViewBag.OrderInstallFeeCurrencyType, new { style = "width:140px;" })
+                                    @Html.RequireFiled()
+                                </div>
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="padding-left:1px;padding-right:8px;">
+                                <div id="divOrderInstallFeeLine" style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("OrderInstallFee", (string)@ViewBag.OrderInstallFee, (string)@ViewBag.OrderInstallFeeCurrencyType, new { style = "width:140px;" })
+                                    <span>&nbsp;</span>
+                                </div>
+                            </td>
+                        }
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("OrderInstallFee_ApproveContract", (string)@ViewBag.OrderInstallFee_ApproveContract, (string)@ViewBag.OrderInstallFee_ApproveContractCurrencyType, new { style = "width:140px;" })
+                                @if (@ViewBag.DisabledOrderInstallFee_ApproveContract != true)
+                                {
+                                    @Html.RequireFiled()
+                                }
+                            </div>
+                        </td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("OrderInstallFee_CompleteInstall", (string)@ViewBag.OrderInstallFee_CompleteInstall, (string)@ViewBag.OrderInstallFee_CompleteInstallCurrencyType, new { style = "width:140px;" })
+                                @if (@ViewBag.DisabledOrderInstallFee_CompleteInstall != true)
+                                {
+                                    @Html.RequireFiled()
+                                }
+                            </div>
+                        </td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("OrderInstallFee_StartService", (string)@ViewBag.OrderInstallFee_StartService, (string)@ViewBag.OrderInstallFee_StartServiceCurrencyType, new { style = "width:140px;" })
+                                @if (@ViewBag.DisabledOrderInstallFee_StartService != true)
+                                {
+                                    @Html.RequireFiled()
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">@Resources.CTS010.lblDepositFee</td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("NormalDepositFee", (string)@ViewBag.NormalDepositFee, (string)@ViewBag.NormalDepositFeeCurrencyType, new { style = "width:140px;", @readonly = true })
+                            </div>
+                        </td>
+                        @if (@ViewBag.RequiredOrderDepositFee == true)
+                        {
+                            <td style="padding-left:1px;">
+                                <div style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("OrderDepositFee", (string)@ViewBag.OrderDepositFee, (string)@ViewBag.OrderDepositFeeCurrencyType, new { style = "width:140px;" })
+                                    @Html.RequireFiled()
+                                </div>
+                            </td>
+                        }
+                        else
+                        {
+                            <td style="padding-left:1px;padding-right:8px;">
+                                <div id="divOrderDepositLine" style="float:right;">
+                                    @Html.NumericTextBoxWithMultipleCurrency("OrderDepositFee", (string)@ViewBag.OrderDepositFee, (string)@ViewBag.OrderDepositFeeCurrencyType, new { style = "width:140px;" })
+                                    <span>&nbsp;</span>
+                                </div>
+                            </td>
+                        }
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>                    
+        </div>
+        <div class="usr-row usr-row-space-2x">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblBillingTimingOfDepositFee
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                @Html.BillingTimingTypeForRegisterContractComboBox("BillingTimingDepositFee", (string)@ViewBag.ProductTypeCode, new { selected = @ViewBag.BillingTimingDepositFee, style = "width:185px;" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblLinkageSaleContractCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("LinkageSaleContractCode", (string)@ViewBag.LinkageSaleContractCode, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblContractCodeDepositFeeSlide
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                @Html.CommonCheckButton("chkCounterBalanceOriginContractCode", null)
+                @Html.CommonTextBox("CounterBalanceOriginContractCode", (string)@ViewBag.CounterBalanceOriginContractCode, new { maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE, style = "width:157px;" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblProjectCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("ProjectCode", (string)@ViewBag.ProjectCode, new { maxlength = "8", style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblApproveNo1
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                @Html.CommonTextBox("ApproveNo1", (string)@ViewBag.ApproveNo1, new { maxlength = "15", style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblApproveNo2
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("ApproveNo2", (string)@ViewBag.ApproveNo2, new { maxlength = "15", style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblApproveNo3
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                @Html.CommonTextBox("ApproveNo3", (string)@ViewBag.ApproveNo3, new { maxlength = "15", style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblApproveNo4
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("ApproveNo4", (string)@ViewBag.ApproveNo4, new { maxlength = "15", style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblApproveNo5
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                @Html.CommonTextBox("ApproveNo5", (string)@ViewBag.ApproveNo5, new { maxlength = "15", style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblBICContractCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+                @Html.CommonTextBox("BICContractCode", (string)@ViewBag.BICContractCode, new { maxlength = "20", style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+                @*@if (ViewBag.IsApproveMode == true)
+                {
+                    @Html.RequireFiled()
+                }*@
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</form>

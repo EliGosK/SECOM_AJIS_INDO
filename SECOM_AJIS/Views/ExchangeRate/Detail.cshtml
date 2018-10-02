@@ -1,0 +1,125 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+@{
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+}
+
+@section page_header{
+    
+}
+
+<div id="Rate_Detail" class="main-table">
+    <div class="table-header">
+        Maintain rate
+    </div>
+    <form id="MAS120_ShelfDetail" action="#">
+        <div id="MaintainTargetEffectiveDate" class="current-rate-date" style="text-align: center;font-size: 30px;font-weight: 600;">
+        </div>
+        <div class="usr-row" style="width:700px;margin:auto;">
+            <div class="usr-label" style="width:220px;">
+                <div class="usr-row">
+                    <div class="usr-object">
+                        <div class="">
+                            <img alt="" id="EN_ChangeLang" name="EN_ChangeLang" src="../../Content/images/gb.png" width="" />
+                        </div>
+                    </div>
+                    <div class="usr-object" style="padding: 0 20px;">
+                        ->
+                    </div>
+                    <div class="usr-object">
+
+                        <div class="">
+                            <img alt="" id="LC_ChangeLang" name="LC_ChangeLang" src="../../Content/images/th.png" width="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="usr-object">
+
+            </div>
+        </div>
+        <div class="usr-row" style="width:700px;margin:auto;">
+            <div class="ui-helper-clearfix" style="width:650px;margin:auto;padding-bottom:2px;">
+                <div class="usr-label" style="width: 80px;">
+                    BANK Rate
+                </div>
+                <div class="usr-object" style="margin-left: 20px;">
+                    <input id="BankRateToIRP" name="BankRateToIRP" class="numeric-box" style="width: 370px;height: 40px;line-height: 40px;font-size: 35px;" type="text" value="" maxlength="15">
+                </div>
+                <div class="usr-object" style="padding: 20px 5px 0;">
+                    IRP / 1.00 USD
+                </div>
+            </div>
+        </div>
+
+        <div class="usr-row" style="width:700px;margin:auto;border-top: 1px solid #aaa;">
+            <div class="ui-helper-clearfix" style="width:650px;margin:auto;">
+
+                <div class="usr-label" style="width: 80px;">
+                    TAX Rate
+                </div>
+                <div class="usr-object" style="margin-left: 20px;">
+                    <input id="TaxRateToIRP" name="TaxRateToIRP" class="numeric-box" style="width: 370px;height: 40px;line-height: 40px;font-size: 35px;" type="text" value="" maxlength="15">
+                </div>
+                <div class="usr-object" style="padding: 20px 5px 0;">
+                    IRP / 1.00 USD
+                </div>
+            </div>
+        </div>
+
+        <div class="usr-row" style="width:700px;margin:auto;">
+            <div class="usr-label" style="width:220px;">
+                <div class="usr-row">
+                    <div class="usr-object">
+                        <div class="">
+                            <img alt="" id="LC_ChangeLang" name="LC_ChangeLang" src="../../Content/images/th.png" width="" />
+                        </div>
+                    </div>
+                    <div class="usr-object" style="padding: 0 20px;">
+                        ->
+                    </div>
+                    <div class="usr-object">
+
+                        <div class="">
+                            <img alt="" id="EN_ChangeLang" name="EN_ChangeLang" src="../../Content/images/gb.png" width="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="usr-object">
+
+            </div>
+        </div>
+
+        <div class="usr-row" style="width:700px;margin:auto;">
+            <div class="ui-helper-clearfix" style="width:650px;margin:auto;padding-bottom:2px;">
+                <div class="usr-label" style="width: 80px;">
+                    BANK Rate
+                </div>
+                <div class="usr-object" style="margin-left: 20px;">
+                    <input id="BankRateToUSD" name="BankRateToUSD" class="numeric-box" style="width: 370px;height: 40px;line-height: 40px; font-size: 35px;" type="text" value="" disabled="disabled">
+                </div>
+                <div class="usr-object" style="padding: 20px 5px 0;">
+                    USD / 1.000000000 IRP
+                </div>
+            </div>
+        </div>
+
+        <div class="usr-row" style="width:700px;margin:auto;border-top: 1px solid #aaa;">
+            <div class="ui-helper-clearfix" style="width:650px;margin:auto;">
+                <div class="usr-label" style="width: 80px;">
+                    TAX Rate
+                </div>
+                <div class="usr-object" style="margin-left: 20px;">
+                    <input id="TaxRateToUSD" name="TaxRateToUSD" class="numeric-box" style="width: 370px;height: 40px;line-height: 40px;font-size: 35px;" type="text" value="" disabled="disabled">
+                </div>
+                <div class="usr-object" style="padding: 20px 5px 0;">
+                    USD / 1.000000000 IRP
+                </div>
+            </div>
+        </div>
+        
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+    </form>
+</div>

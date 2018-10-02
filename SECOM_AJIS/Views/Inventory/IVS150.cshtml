@@ -1,0 +1,101 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Controllers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "180px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+    
+ }
+
+@section page_header{
+
+
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Inventory/IVS150.js")"></script>
+
+
+<script type="text/javascript">
+
+    //  1 = Enable , 0 = disable
+    IVS150_ViewBag = {
+        EnableBtnStartingChecking : "@ViewBag.EnableBtnStartingChecking" ,
+        EnableBtnStopChecking : "@ViewBag.EnableBtnStopChecking"
+    };
+
+</script>
+
+
+}
+
+
+
+<!-- Register Start/Stop -->
+<div class="main-table" id="divRegisterStartStop">
+    <div class="table-header">
+        @Resources.IVS150.lblRegisterStratStopCheckingInventory
+    </div>
+
+    <div style="width: 100%; text-align: center">
+            @Html.CommonButton("btnStartChecking", @Resources.IVS150.btnStartChecking, new { type = "button", style = "width:200px; height:30px" }) 
+            @Html.CommonButton("btnStopChecking", @Resources.IVS150.btnStopChecking, new { type = "button", style = "width:200px; height:30px" }) 
+    </div>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+
+<!-- Checking status history-->
+<div class="main-table" id="divCheckingStarusHistory">
+    <div class="table-header">
+        @Resources.IVS150.lblCheckingStatusHistory
+    </div>
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS150.lblCheckingYear
+        </div>
+         <div class="usr-object">
+            @Html.InventoryCheckingYearCbo("CheckingYear", new { style = "width:154px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS150.lblCheckingStatus
+        </div>
+         <div class="usr-object">
+            <div id="IVS150_CheckingStatusGrid" style="width: 730px;"></div>
+        </div>
+    </div>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+
+<!-- Show slip no. -->
+<div class="main-table" id="divShowSlipNo">
+    <div class="table-header">
+        @Resources.IVS150.lblOfficeCheckingList
+    </div>
+
+    <div class="usr-row">
+        <div id="IVS150_OfficeCheckingListGrid" style="width: 99%; margin-left: 4px;"></div>
+    </div>
+
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>

@@ -1,0 +1,68 @@
+﻿<!--
+//*********************************
+// Create by: Natthavat S.
+// Create date: 06/Oct/2010
+// Update date:  06/Oct/2010
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelCol1Width = "240px";
+    ViewBag.LabelCol2Width = "180px";
+    ViewBag.LabelCol3Width = "90px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+
+@section page_header{
+    <script type="text/javascript">
+        var _markerStar = "@Resources.CTS320.markerStar";
+        var _markerOver = "@Resources.CTS320.markerOver";
+        var _markerNew = "@Resources.CTS320.markerNew";
+        var _incType_Site = "@IncidentRelevant.C_INCIDENT_RELEVANT_TYPE_SITE";
+        var _incType_Contract = "@IncidentRelevant.C_INCIDENT_RELEVANT_TYPE_CONTRACT";
+    </script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid_skins.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_skyblue.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS320.js")" ></script>
+}
+
+@*Select incident list fields*@
+@Html.Partial("CTS320/_CTS320_01")
+
+@*Customer incident*@
+@Html.Partial("CTS320/_CTS320_02")
+
+@*Site incident*@
+@Html.Partial("CTS320/_CTS320_03")
+
+@*Contract incident*@
+@Html.Partial("CTS320/_CTS320_04")
+
+@*Project incident*@
+@Html.Partial("CTS320/_CTS320_05")
+
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>

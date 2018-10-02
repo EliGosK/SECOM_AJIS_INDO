@@ -1,0 +1,32 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS130/CTS130_03.js")"></script>
+<div id="divChangeReasonSection" class="main-table" style="height: auto">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS130.lblChangeNameAndAddress
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS130.lblNameAddressChangeReason
+        </div>
+        <div class="usr-object">
+            @Html.ChangeNameReasonTypeComboBox("ChangeReasonType", new { style = "width:204px;" }, true)
+            @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-row">
+    </div>
+</div>

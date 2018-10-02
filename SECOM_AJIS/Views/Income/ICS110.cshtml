@@ -1,0 +1,242 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Income.Helpers;
+@using SECOM_AJIS.Presentation.Income.Controllers;
+@using SECOM_AJIS.Common.Util;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_ron2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Income/ICS110.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/number-functions.js")"></script>
+    <script type="text/javascript">
+        var MATCHSTATUS_PARTIAL = "@Resources.ICS110.MatchStatusPartial"
+        var MATCHSTATUS_COMPLETED = "@Resources.ICS110.MatchStatusCompleted"
+        var C_CURRENCY_LOCAL = '@CurrencyUtil.C_CURRENCY_LOCAL';
+
+        ErrorMessage = {
+            InvalidCurrencyType: '@MessageUtil.GetMessage(MessageUtil.MODULE_INCOME, MessageUtil.MessageList.MSG7128).Message'
+        }
+    </script>
+}
+@{
+    ViewBag.Col1 = "200px;";
+    ViewBag.Col2 = "250px;";
+    ViewBag.Col3 = "140px;";
+    ViewBag.Col4 = "250px;";
+
+    ViewBag.Col2Txt = "140px;";
+    ViewBag.Col4Txt = "140px;";
+
+    ViewBag.SLWidthCol1 = "250px;";
+    ViewBag.SLWidthCol2 = "200px;";
+    ViewBag.SLWidthCol3 = "150px;";
+
+    ViewBag.SearchPaymentCol1 = "120px;";
+    ViewBag.SearchPaymentCol2 = "280px;";
+    ViewBag.SearchPaymentCol3 = "170px;";
+    ViewBag.SearchPaymentCol4 = "200px;";
+
+    ViewBag.SearchPaymentCol2Txt = "140px;";
+    ViewBag.SearchPaymentCol4Txt = "140px;";
+
+    ViewBag.DatePickerWidth = "95px;";
+}
+<div class="main-table" id="divMatchWHT">
+    <div class="table-header">
+        @Resources.ICS110.lblMatchWHT</div>
+    <form name="formSearch" id="formMatchWHT" action="#">
+    <div id="divMatchWHTHeader">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">
+                @Resources.ICS110.lblWHTNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col2">
+                @Html.CommonTextBox("txtWHTNo", null, new { @readonly = true, style = "width:" + @ViewBag.Col2Txt, maxlength = "50" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3">
+                @Resources.ICS110.lblMatchingStatus
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col4">
+                @Html.CommonTextBox("txtMatchingStatus", null, new { @readonly = true, style = "width:" + @ViewBag.Col4Txt, maxlength = "50" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">
+                @Resources.ICS110.lblWHTAmount
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col2">
+                @*@Html.CommonTextBox("txtWHTAmount", null, new { style = "width:" + @ViewBag.Col2Txt })*@
+                @Html.NumericTextBoxWithMultipleCurrency("txtWHTAmount", null, null, new { style = "width: 150px;" })
+                @Html.RequireFiled()
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3">
+                @Resources.ICS110.lblDocumentDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col4">
+                @Html.CommonTextBox("txtDocumentDate", null, new { style = "width:" + @ViewBag.DatePickerWidth })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1">
+                @Resources.ICS110.lblMatchedAmount
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col2">
+                @*@Html.CommonTextBox("txtMatchedAmount", null, new { @readonly = true, style = "width:" + @ViewBag.Col2Txt })*@
+                @Html.NumericTextBoxWithMultipleCurrency("txtMatchedAmount", null, null, new { style = "width: 150px;", @readonly = true })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.Col3">
+                @Resources.ICS110.lblMatchingDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.Col4">
+                @Html.CommonTextBox("txtWHTMatchingDate", null, new { style = "width:" + @ViewBag.DatePickerWidth })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+        <div class="usr-row" style="margin-top: 5px">
+            <div class="usr-object" style="float: right; margin-right: 4px; margin-bottom: 3px">
+                @Html.CommonButton("btnRetrievePayment", @Resources.ICS110.lblBtnAddPayment, new { type = "button" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+    </div>
+    </form>
+    <div class="usr-row" id="divMatchWHTDetail">
+        <div id="divMatchWHTDetailGrid" style="width: 99%; margin-left: 4px;">
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+    </div>
+</div>
+<div class="main-table" id="divShowWHTNo" style="display: none">
+    <div class="table-header">
+        @Resources.ICS110.lblShowWHTNo
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.SLWidthCol1">
+            @Resources.ICS110.lblWHTNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.SLWidthCol2">
+            @Html.CommonTextBox("txtShowWHTNo", null, new { @readonly = true, style = "width:95%" })
+        </div>
+        @Html.CommonButton("btnNewRegister", @Resources.ICS110.lblBtnNewRegister, new { style = "width:" + ViewBag.SLWidthCol3 })
+        <div class="usr-clear-style">
+            &nbsp;
+        </div>
+    </div>
+</div>
+<div id="divSearchPaymentDialog" class="main-popup-dialog">
+    <div class="popup-dialog">
+        <div class="main-table">
+            <div class="table-header">
+                @Resources.ICS110.lblSearchPayment</div>
+            <form name="formSearch" id="formSearchWHT" action="#">
+            <div id="divSearchPaymentHeader">
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.SearchPaymentCol1">
+                        @Resources.ICS110.lblPaymentDate
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.SearchPaymentCol2">
+                        @Html.CommonTextBox("txtPaymentDateFrom", null, new { style = "width:" + @ViewBag.DatePickerWidth, name = "PaymentDateFrom" })
+                        <span>~ </span>
+                        @Html.CommonTextBox("txtPaymentDateTo", null, new { style = "width:" + @ViewBag.DatePickerWidth, name = "PaymentDateTo" })
+                    </div>
+                    <div class="usr-label" style="width:@ViewBag.SearchPaymentCol3">
+                        @Resources.ICS110.lblPaymentTransactionNo
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.SearchPaymentCol4">
+                        @Html.CommonTextBox("txtPaymentTransNo", null, new { style = "width:" + @ViewBag.SearchPaymentCol4Txt, maxlength = "50", name = "PaymentTransNo" })
+                    </div>
+                </div>
+                <div class="usr-clear-style">
+                    &nbsp;
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.SearchPaymentCol1">
+                        @Resources.ICS110.lblPayerName
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.SearchPaymentCol2">
+                        @Html.CommonTextBox("txtPayerName", null, new { style = "width:" + @ViewBag.SearchPaymentCol2Txt, maxlength = "50", name = "PayerName" })
+                    </div>
+                    <div class="usr-label" style="width:@ViewBag.SearchPaymentCol3">
+                        @Resources.ICS110.lblVatRegistantName
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.SearchPaymentCol4">
+                        @Html.CommonTextBox("txtVATRegistantName", null, new { style = "width:" + @ViewBag.SearchPaymentCol4Txt, maxlength = "50", name = "VATRegistantName" })
+                    </div>
+                </div>
+                <div class="usr-clear-style">
+                    &nbsp;
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.SearchPaymentCol1">
+                        @Resources.ICS110.lblInvoiceNo
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.SearchPaymentCol2">
+                        @Html.CommonTextBox("txtInvoiceNo", null, new { style = "width:" + @ViewBag.SearchPaymentCol2Txt, maxlength = "50", name = "InvoiceNo" })
+                    </div>
+                    <div class="usr-label" style="width:@ViewBag.SearchPaymentCol3">
+                        @Resources.ICS110.lblContractCode
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.SearchPaymentCol4">
+                        @Html.CommonTextBox("txtContractCode", null, new { style = "width:" + @ViewBag.SearchPaymentCol4Txt, maxlength = "50", name = "ContractCode" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.SearchPaymentCol1">
+                        @Resources.ICS110.lblIDNo
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.SearchPaymentCol2">
+                        @Html.CommonTextBox("txtIDNo", null, new { style = "width:" + @ViewBag.SearchPaymentCol2Txt, maxlength = "20", name = "IDNo" })
+                    </div>
+                </div>
+                <div class="usr-clear-style">
+                    &nbsp;
+                </div>
+                <div class="usr-row" style="margin-top: 5px">
+                    <div class="usr-object" style="float: right; margin-right: 4px;">
+                        @Html.CommonButton("btnSearchPayment", @Resources.ICS110.lblBtnSearch, new { type = "button" })
+                        @Html.CommonButton("btnClearPayment", @Resources.ICS110.lblBtnClear, new { type = "button" })
+                    </div>
+                </div>
+                <div class="usr-clear-style">
+                    &nbsp;
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="table-line">
+        </div>
+        <div class="main-table" id="divSearchPaymentResult">
+            <div class="table-header">
+                @Resources.CMS170.lblResultList
+            </div>
+            <div class="usr-row">
+                <div id="divSearchPaymentResultGrid" style="width: 99%; margin-left: 4px;">
+                </div>
+                <div class="usr-clear-style">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="table-line">
+            </div>
+        </div>
+    </div>
+</div>

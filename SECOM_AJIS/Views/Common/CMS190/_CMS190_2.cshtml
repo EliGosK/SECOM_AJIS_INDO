@@ -1,0 +1,196 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+<div  class="sub-table">
+<div class="table-sub-header">@Resources.CMS190.lblSection_Contract_detail_information</div>
+    <div style="float: right; margin: -20px 5px 0 0; background-color:@ViewBag.BG2" >
+        
+           @if (ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_AL || ViewBag.ProductTypeCode == ProductType.C_PROD_TYPE_RENTAL_SALE)
+           {
+                <div class="fieldset-table" style="width: @ViewBag.AramWidth; height: 100%;">
+                    <div class="fieldset-header">
+                        <span>@Resources.CMS130.lblAlarm_provided_service_type</span>
+                    </div>
+                    <div style="margin-left:5px" class="label-view">@Html.CommonCheckButton("chkFire_monitoring", @Resources.CMS130.chkFire_monitoring, null, (bool)@ViewBag.chkFire_monitoring, new { disabled = "disabled" })</div>
+                    <div style="margin-left:5px" class="label-view">@Html.CommonCheckButton("chkCrime_prevention", @Resources.CMS130.chkCrime_prevention, null, (bool)@ViewBag.chkCrime_prevention, new { disabled = "disabled" })</div>
+                    <div style="margin-left:5px" class="label-view">@Html.CommonCheckButton("chkEmergency_report", @Resources.CMS130.chkEmergency_report, null, (bool)@ViewBag.chkEmergency_report, new { disabled = "disabled" })</div>
+                    <div style="margin-left:5px" class="label-view">@Html.CommonCheckButton("chkFacility_monitoring", @Resources.CMS130.chkFacility_monitoring, null, (bool)@ViewBag.chkFacility_monitoring, new { disabled = "disabled" })</div>
+            
+                    <div class="usr-clear-style">&nbsp;</div>
+                </div>
+
+                <div style="height:7px">&nbsp;</div>
+
+           }
+            
+        <div>
+            @Html.Raw(Html.ContractsSameSiteLinkList("contractSameSiteList", @Resources.CMS130.lblContracts_of_the_same_site, (string)@ViewBag.SiteCodeList, false, new { width = @ViewBag.AramWidth, height = "120px;" }, (string)@ViewBag.ContractCode)) </div >
+
+    </div>
+
+     <!----- ============================================================================================================================== --->
+     <div style="float: left; width:@ViewBag.merge2 ; background-color:@ViewBag.BG2 ">
+       <div class="usr-row" style="width:@ViewBag.merge2;">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS190.lblProduct
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtProduct", (string)@ViewBag.txtProduct, new { isViewMode = @ViewBag.isViewMode
+        })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.lb2Width_ext;">
+                @Resources.CMS190.lblContract_fee
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortTextPrdInfo; background-color:@ViewBag.txtBackgroundColor;">
+                <div style="float:left;" >@Html.CommonTextBox("txtContract_fee", (string)@ViewBag.txtContract_fee, new { isViewMode = @ViewBag.isViewMode }) </div>
+                @*@Html.LabelCurrencyUnit("lblCurency")*@
+            </div>
+      </div>
+
+      <div class="usr-row" style="width:@ViewBag.merge2;">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS190.lblSecurity_type_code
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtSecurity_type_code", (string)@ViewBag.txtSecurity_type_code, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.lb2Width_ext;">
+                @Resources.CMS190.lblReceived_deposit_fee
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortTextPrdInfo; background-color:@ViewBag.txtBackgroundColor;">
+                <div style="float:left;">@Html.CommonTextBox("txtReceived_deposit_fee", (string)@ViewBag.txtReceived_deposit_fee, new { isViewMode = @ViewBag.isViewMode }) </div>
+                @*@Html.LabelCurrencyUnit("lblCurency")*@
+            </div>
+      </div>
+
+      <div class="usr-row" style="width:@ViewBag.merge2;">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS190.lblOperation_office
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtOperation_office", (string)@ViewBag.txtOperation_office, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.lb2Width_ext;">
+                @Resources.CMS190.lblFirst_operation_date
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortTextPrdInfo; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtFirst_operation_date", (string)@ViewBag.txtFirst_operation_date, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+      </div>
+
+      <div class="usr-row" style="width:@ViewBag.merge2 ">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS190.lblContract_office
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtContract_office", (string)@ViewBag.txtContract_office, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.lb2Width_ext;">
+                @Resources.CMS190.lblContract_duration
+            </div>
+            @*
+            <div class="usr-object" style="width:@ViewBag.shortTextPrdInfo; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtContract_duration", (string)@ViewBag.txtContract_duration, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            *@
+
+            @if ((string)ViewBag.strContractStartDate != string.Empty || (string)ViewBag.strContractEndDate != string.Empty)
+            {
+                   <div class="usr-object" style="width:200px ;background-color:@ViewBag.txtBackgroundColor;">
+                        <div class="usr-object">
+                            @Html.CommonTextBox("txtContractStartDate", (string)@ViewBag.strContractStartDate, new { isViewMode = @ViewBag.isViewMode })
+                        </div>
+                        <div class="usr-label" style="margin:0px; margin-top:2px;"> ~ </div>
+                        <div class="usr-object">
+                            @Html.CommonTextBox("txtContractEndDate", (string)@ViewBag.strContractEndDate, new { isViewMode = @ViewBag.isViewMode })
+                        </div>
+                    </div> 
+            }
+            else
+            { 
+                 <div class="usr-object" style="width:@ViewBag.shortTextPrdInfo; background-color:@ViewBag.txtBackgroundColor;">
+                    @Html.CommonTextBox("txtContract_duration", "-", new { isViewMode = @ViewBag.isViewMode })
+                </div>
+            }
+            
+
+      </div>
+
+      <div class="usr-row" style="width:@ViewBag.merge2;">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS190.lblSalesman1
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtSalesman1", (string)@ViewBag.txtSalesman1, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.lb2Width_ext;">
+                @Resources.CMS190.lblAuto_renew_months
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortTextPrdInfo; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtAuto_renew_months", (string)@ViewBag.txtAuto_renew_months, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+      </div>
+
+      <!-- ========================================================= space ========================================================= -->
+       <div class="usr-row" style="height:10px">&nbsp;</div>
+      <!-- ========================================================= space ========================================================= -->
+
+     <div class="usr-row" style="width:@ViewBag.merge2;">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS190.lblLast_operation_date
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtLast_operation_date", (string)@ViewBag.txtLast_operation_date, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.lb2Width_ext;">
+                @Resources.CMS190.lblProcessing_installation
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortTextPrdInfo; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtProcessing_installation", (string)@ViewBag.txtProcessing_installation, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+      </div>
+
+      <div class="usr-row" style="width:@ViewBag.merge2;">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.CMS190.lblLast_change_type
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtLast_change_type", (string)@ViewBag.txtLast_change_type, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.lb2Width_ext;">
+                @Resources.CMS190.lblProcessing_installation_status
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortTextPrdInfo; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("txtProcessing_installation_status", (string)@ViewBag.txtProcessing_installation_status, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+      </div>
+
+      <!-- ========================================================= space ========================================================= -->
+       <div class="usr-row" style="height:10px">&nbsp;</div>
+      <!-- ========================================================= space ========================================================= -->
+
+
+      <div class="usr-row" style="width:@ViewBag.merge2;">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                &nbsp;
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+                 <div  class="label-view"> @Html.CommonCheckButton("chkOutofregulation_document_usage_flag", @Resources.CMS190.lblOut_of_regulation_document_usage_flag, "", (bool)@ViewBag.bOutOfRegulationDocFlag, new { disabled = "disabled" }) </div>
+            </div>
+            <div class="usr-label" style="width:@ViewBag.lb2Width_ext;">
+                @Resources.CMS190.lblOld_contract_code
+            </div>
+            <div class="usr-object" style="width:@ViewBag.shortTextPrdInfo; background-color:@ViewBag.txtBackgroundColor;">
+                 @Html.CommonLink("lnkOld_contract_code", (string)@ViewBag.lnkOld_contract_codeC)&nbsp;
+            </div>
+      </div>
+
+     </div>
+
+
+  <div class="usr-clear-style"> &nbsp;</div>
+</div>
+

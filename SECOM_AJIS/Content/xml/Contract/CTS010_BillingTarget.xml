@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column id="BillingClientCodeShort" width="100" type="ro" align="left" sort="na">headerBillingClientCode</column>
+    <column id="BillingOfficeName" width="60" type="ro" align="left" sort="na">headerBillingOfficeCode</column>
+    <column id="BillingTargetCodeShort" width="180" type="ro" align="left" sort="na">headerBillingTargetCode</column>
+    <column id="BillingClientName" width="*" type="ro" align="left" sort="na">headerBillingClientName</column>
+    <column id="TextContractFee" width="170" type="ro" align="right" sort="na">headerBillingContractFee</column>
+    <column id="TextInstallationFee" width="200" type="ro" align="left" sort="na">headerBillingInstallationFee</column>
+    <column id="TextDepositFee" width="170" type="ro" align="right" sort="na">headerBillingDepositFee</column>
+    <column id="Edit" width="30" type="link" align="center" sort="na">headerEdit</column>
+    <column id="Remove" width="30" type="link" align="center" sort="na">headerRemove</column>
+    <column id="FixScroll" width="0" type="ro" hidden="true"></column>
+    <column id="BillingTargetKeyIndex" width="0" type="ro" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

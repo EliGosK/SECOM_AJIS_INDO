@@ -1,0 +1,49 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS220/CTS220_04.js")"></script>
+@{
+    Layout = "";
+    ViewBag.Title = "CTS220";
+    ViewBag.LabelWidth = "250px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "120px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+
+<div id="divChangeContractSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS220.lblChangeContractConditionInformation
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblNegotiationStaff1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth">
+            @Html.CommonTextBox("NegotiationStaffEmpNo1", (string)@ViewBag.NegotiationStaffEmpNo1, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "10" })
+        </div>
+        <div class="usr-label" style="width:1px;">&nbsp;</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("NegotiationStaffEmpName1", (string)@ViewBag.NegotiationStaffEmpName1, new { style = "width:189px;", @readonly = true })
+        </div>
+
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblNegotiationStaff2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth">
+            @Html.CommonTextBox("NegotiationStaffEmpNo2", (string)@ViewBag.NegotiationStaffEmpNo2, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "10" })
+        </div>
+        <div class="usr-label" style="width:1px;">&nbsp;</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("NegotiationStaffEmpName2", (string)@ViewBag.NegotiationStaffEmpName2, new { style = "width:189px;", @readonly = true })
+        </div>   
+    </div>      
+    <div class="usr-row">&nbsp;</div>
+</div>

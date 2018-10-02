@@ -1,0 +1,144 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelWidth = "300px";
+    ViewBag.LabelCondWidth = "260px";
+    ViewBag.LabelBillingWidth = "183px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+}
+
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    @*<script type="text/javascript" src="@Url.Content("~/Scripts/Base/Master.js")"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS210.js")" ></script>
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+    
+}
+
+<div class="table-header">
+    <form id="CTS210_Search" action='#' >
+
+        <div id="divSpecifyContractCode" class="main-table" >
+            <div class="table-header">
+                <div class="usr-label">
+                    @Resources.CTS210.TitleSpecifyContractCode
+                </div>                                  
+            </div>
+            <div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width: @ViewBag.LabelCondWidth;">
+                        @Resources.CTS210.lblContractQuotationTargetCode
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("txtContractQuotTgtCode", null, new { style = "width:150px;", maxlength = CommonValue.C_MAXLENGTH_QUOTATION_TARGE_CODE })
+                        @Html.RequireFiled()
+                    </div>
+
+                    <div class="usr-label" style="width:235px;">
+                        @Resources.CTS210.lblOccAlphabet
+                    </div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("txtOccAlphabet", null, new { style = "width:150px;", maxlength = "4" })
+                        @Html.RequireFiled()
+                    </div>
+                </div>
+
+                <div class="usr-row" style="height:5px"></div>
+
+                <div class="usr-row">
+                    <div class="usr-label" style="width:735px;">&nbsp;</div>  
+                    <div class="usr-object">
+                            @Html.CommonButton("btnRetrieve", @Resources.CTS210.lblRetrieve, new { style = "width:100px;", type = "button" }) 
+                    </div>    
+                    <div class="usr-label" style="width:1px;">&nbsp;</div> 
+                    <div class="usr-object">
+                            @Html.CommonButton("btnClear", @Resources.CTS210.lblClear, new { style = "width:100px;", type = "button" }) 
+                    </div>                                
+                </div> 
+                <div class="usr-row" style="height:5px"></div>
+            </div>
+        </div>
+
+        <div id="divContractInfo" class="main-table">    
+            <div class="table-header">
+                    <div class="usr-label">
+                        @Resources.CTS210.TitleContractInformation
+                    </div>                                  
+            </div>
+            <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS210.lblContractTargetNameEN
+                    </div> 
+                    <div class="usr-object">
+                        @Html.CommonTextBox("ContractTargetNameEN", (string)@ViewBag.CustFullNameEN, new { style = "width:520px;", maxlength = "200", @readonly = "readonly" })
+                    </div>            
+            </div>
+            <div class="usr-row" style="height:5px">
+            </div>
+            <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS210.lblContractTargetNameLC
+                    </div> 
+                    <div class="usr-object">
+                        @Html.CommonTextBox("ContractTargetNameLC", (string)@ViewBag.CustFullNameLC, new { style = "width:520px;", maxlength = "200", @readonly = "readonly" })
+                    </div>            
+            </div>
+            <div class="usr-row" style="height:5px">
+            </div>
+            <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS210.lblSiteNameEN
+                    </div> 
+                    <div class="usr-object">
+                        @Html.CommonTextBox("SiteNameEN", (string)@ViewBag.SiteNameEN, new { style = "width:520px;", maxlength = "200", @readonly = "readonly" })
+                    </div>            
+            </div>
+            <div class="usr-row" style="height:5px">
+            </div>
+
+            <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS210.lblSiteNameLC
+                    </div> 
+                    <div class="usr-object">
+                        @Html.CommonTextBox("SiteNameLC", (string)@ViewBag.SiteNameLC, new { style = "width:520px;", maxlength = "200", @readonly = "readonly" })
+                    </div>            
+            </div>
+            <div class="usr-row"></div>
+        </div>
+
+        <div id="divDocumentList" class="main-table">
+            <div class="table-header">
+                <div class="usr-label">
+                    @Resources.CTS210.TitleDocumentList
+                </div>                                  
+            </div>
+            <div class="usr-row" style="height:5px">
+                
+            </div>
+            <div class="usr-row" id="gridDocumentList" style="width: 99%; margin-left: 5px;"></div>
+            <div class="usr-row" style="height:5px"></div>
+        </div>
+
+        <div class="usr-row" style="height:5px"></div>
+    </form>
+</div>    
+

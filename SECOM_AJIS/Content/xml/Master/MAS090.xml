@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <!--Akat K. Remove-->
+    <!--<column width="0" type="ro" align="center" sort="na" hidden="true"></column>-->
+    <column id="InstrumentCode" width="*" type="ro" align="left" sort="str_custom">headerInstrumentCode</column>
+    <column id="InstrumentName" width="225" type="ro" align="left" sort="str_custom">headerInstrumentName</column>
+    <column id="InstrumentNameForSupplier" width="200" type="ro" align="left" sort="str_custom">headerInstrumentNameForSupp</column>
+    <column id="InstrumentCategory1" width="90" type="ro" align="left" sort="str_custom">headerInstrumentCat1</column>
+    <column id="InstrumentCategory2" width="90" type="ro" align="left" sort="str_custom">headerInstrumentCat2</column>
+    <column id="InstrumentCategory3" width="90" type="ro" align="left" sort="str_custom">headerInstrumentCat3</column>
+    <column id="LineUpTypeCode" width="85" type="ro" align="left" sort="str_custom">headerLineUpType</column>
+    <column id="Edit" width="30" type="link" align="center" sort="na">headerDetail</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+

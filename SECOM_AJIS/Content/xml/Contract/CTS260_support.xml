@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="EmpNo"  width="120" type="ro" align="left">HgridEmployeeNo</column>
+    <column id="EmpFullName"  width="*"  type="ro" align="left">HgridName</column>
+    <column id="Belonging"  width="*"  type="ro" align="left">HgridBelonging</column>
+    <column id="Remark"  width="180"  type="ro" align="left">HgridRemark</column>
+  
+
+
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

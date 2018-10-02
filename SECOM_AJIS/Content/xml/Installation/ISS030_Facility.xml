@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>	  
+    <column id="FacilityCode" width="200" type="ro" align="left" sort="na">lblFacilityCode</column>
+	<column id="FacilityName" width="*" type="ro" align="left" sort="na">lblFacilityName</column>
+    <column id="FacilityQuantity" width="105" type="link"  align="right" sort="na">lblQuantity</column>
+	<column id="FacilityRemove" width="40" type="link" align="center" >headerRemove1</column>
+	  <column id="TempColumn" width="0" type="ro"  hidden="true" sort="na"></column>
+	  <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column id="GroupCode" width="100" type="ro" align="left">headerGroupCode</column>
+    <column id="GroupNameEN" width="250" type="ro" align="left">headerGroupNameEN</column>
+    <column id="GroupNameLC" width="*" type="ro" align="left">headerGroupNameLC</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

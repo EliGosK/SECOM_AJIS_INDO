@@ -1,0 +1,81 @@
+﻿<!--
+//*********************************
+// Create by: Non A.
+// Create date: 12/Jan/2015
+// Update date: 12/Jan/2015
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.Col1Width = "130px";
+    ViewBag.Col2Width = "300px";
+    ViewBag.Col2WidthSpan3 = "810px";
+    ViewBag.Col3Width = "170px";
+    ViewBag.Col4Width = "340px";
+    
+    ViewBag.WidthButton1 = "80px";
+    ViewBag.WidthButton2 = "140px";
+
+    ViewBag.WidthComboBox = "180px";
+    ViewBag.WidthTextBox = "180px";
+    ViewBag.WidthTextBoxLong = "600px";
+    ViewBag.WidthTextBoxRange = "130px";
+    ViewBag.WidthDatePicker = "90px";
+
+    ViewBag.DTLCol1Width = "250px;";
+    ViewBag.DTLCol2Width = "200px;";
+    ViewBag.DTLCol3Width = "150px;";
+    ViewBag.DTLCol4Width = "150px;";
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_ron2.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Inventory/IVS287.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/number-functions.js")"></script>
+    <script type="text/javascript">
+    </script>
+}
+<div id="divSearch" class="main-table" style="margin-top: 5px;">
+    <div class="table-header">@Resources.IVS287.lblHeaderSearchCondition</div>
+    <form id="frmSearch" action="#">
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1Width;">@Resources.IVS287.lblStockReportType</div>
+        <div class="usr-object" style="width:@ViewBag.Col2Width;">
+            @Html.StockReportTypeCbo("cboStockReportType", new { style = "width:" + ViewBag.WidthComboBox, name = "StockReportType" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.Col3Width;">@Resources.IVS287.lblInstrumentCode</div>
+        <div class="usr-object" style="width:@ViewBag.Col4Width;">
+            @Html.CommonTextBox("txtInstrumentCode", null, new { style = "width:" + ViewBag.WidthTextBox, name = "InstrumentCode", maxlength = 50 })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+    <div class="usr-row" style="margin-top: 5px">
+        <div style="text-align: right; float: right; margin-right: 4px;">
+            @Html.CommonButton("btnSearch", (string)@Resources.IVS287.btnSearch, new { style = "width:" + @ViewBag.WidthButton1 })
+            @Html.CommonButton("btnClear", (string)@Resources.IVS287.btnClear, new { style = "width:" + @ViewBag.WidthButton1 })
+        </div>
+    </div>
+    </form>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+<div id="divSearchResult" class="main-table" style="margin-top: 5px;">
+    <div class="table-header">@Resources.IVS287.lblHeaderResultList</div>
+    <div id="divSearchResultGrid" style="width: 99%; margin-left: 4px; margin-top: 5px;">
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+    <div class="usr-row" style="margin-top: 5px">
+        <div style="text-align: right; float: right; margin-right: 4px;">
+            @Html.CommonButton("btnDownload", (string)@Resources.IVS287.btnDownload, new { style = "width:" + @ViewBag.WidthButton1 })
+            <iframe id="ifDownload" name="Download" style="visibility: hidden; width: 0px; height: 0px;"></iframe>
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>

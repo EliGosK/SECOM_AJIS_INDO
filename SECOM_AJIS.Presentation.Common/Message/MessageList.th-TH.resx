@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG0001" xml:space="preserve">
+    <value>ไม่พบข้อมูล</value>
+  </data>
+  <data name="MSG0006" xml:space="preserve">
+    <value>กรุณากรอกเงื่อนไขการค้นหา</value>
+  </data>
+  <data name="MSG0007" xml:space="preserve">
+    <value>จำเป็นต้องกรอกข้อมูลต่อไปนี้: {0}</value>
+  </data>
+  <data name="MSG0011" xml:space="preserve">
+    <value>ไม่มี {0} อยู่ในระบบ</value>
+  </data>
+  <data name="MSG0013" xml:space="preserve">
+    <value>ไม่สามารถเปิดการใช้งานได้เนื่องจากยังอยู่ในกระบวนการรัน batch </value>
+  </data>
+  <data name="MSG0019" xml:space="preserve">
+    <value>รายการถูกปรับปรุงโดยผู้ใช้รายอื่นแล้ว</value>
+  </data>
+  <data name="MSG0021" xml:space="preserve">
+    <value>ไม่สามารถปรับปรุง {0}: {1}</value>
+  </data>
+  <data name="MSG0028" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการ {0}?</value>
+  </data>
+  <data name="MSG0029" xml:space="preserve">
+    <value>ไม่สามารถตั้งเวลาปิดการใช้งานระบบเท่ากับเวลาเปิดการใช้งานระบบได้</value>
+  </data>
+  <data name="MSG0030" xml:space="preserve">
+    <value>ไม่สามารถตั้งเวลาเปิดการใช้งานระบบเท่ากับเวลาปิดการใช้งานระบบได้</value>
+  </data>
+  <data name="MSG0031" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการรัน batch ต่อไปนี้ได้: {0}</value>
+  </data>
+  <data name="MSG0033" xml:space="preserve">
+    <value>คุณไม่มีสิทธิ์ในการใช้งาน</value>
+  </data>
+  <data name="MSG0038" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการล้างข้อมูลหน้านี้เป็นค่าเริ่มต้น? หากคุณดำเนินการต่อข้อมูลทั้งหมดจะสูญหายไป</value>
+  </data>
+  <data name="MSG0040" xml:space="preserve">
+    <value>ไม่สามารถเปิดหน้าจอนี้ได้</value>
+  </data>
+  <data name="MSG0046" xml:space="preserve">
+    <value>บันทึกสำเร็จแล้ว</value>
+  </data>
+  <data name="MSG0047" xml:space="preserve">
+    <value>ลบข้อมูลสำเร็จแล้ว</value>
+  </data>
+  <data name="MSG0049" xml:space="preserve">
+    <value>ไม่สามารถลงทะเบียนข้อมูลในขณะที่หยุดการใช้งานระบบได้</value>
+  </data>
+  <data name="MSG0052" xml:space="preserve">
+    <value>ผลการค้นหามีมากกว่า {0} รายการ กรุณากรอกเงื่อนไขการค้นหาเพิ่มเติม</value>
+  </data>
+  <data name="MSG0053" xml:space="preserve">
+    <value>คุณไม่มีสิทธิ์ในการดำเนินการกับหน้าจอนี้</value>
+  </data>
+  <data name="MSG0054" xml:space="preserve">
+    <value>กรุณาเลือกสถานะลูกค้าอย่างน้อย 1 แบบ</value>
+  </data>
+  <data name="MSG0055" xml:space="preserve">
+    <value>กรุณาเลือกประเภทลูกค้าอย่างน้อย 1 แบบ</value>
+  </data>
+  <data name="MSG0056" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการปิดการทำงานระบบเดี๋ยวนี้?</value>
+  </data>
+  <data name="MSG0057" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการเปิดการทำงานระบบเดี๋ยวนี้?</value>
+  </data>
+  <data name="MSG0058" xml:space="preserve">
+    <value>ไม่สามารถปรับปรุงการตั้งค่าของระบบต่อไปนี้ได้ : {0} </value>
+  </data>
+  <data name="MSG0059" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการรัน batch ทั้งหมด?</value>
+  </data>
+  <data name="MSG0060" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการรัน batch {0}?</value>
+  </data>
+  <data name="MSG0061" xml:space="preserve">
+    <value>ไม่สามารถปรับปรุงรหัส batch ต่อไปนี้ได้ : {0} </value>
+  </data>
+  <data name="MSG0064" xml:space="preserve">
+    <value>ไม่พบตำแหน่งจัดเก็บรายงานสำหรับเอกสารประเภท {0}</value>
+  </data>
+  <data name="MSG0065" xml:space="preserve">
+    <value>ไม่พบ {0} กรุณาติดต่อผู้ดูแลระบบ</value>
+  </data>
+  <data name="MSG0066" xml:space="preserve">
+    <value>คุณกรอกค่าในช่องต่อไปนี้ผิด: {0}.</value>
+  </data>
+  <data name="MSG0067" xml:space="preserve">
+    <value>กรุณาระบุรหัสลูกค้าของผู้ทำสัญญา/ผู้ซื้อ</value>
+  </data>
+  <data name="MSG0068" xml:space="preserve">
+    <value>รหัสลูกค้าของผู้ทำสัญญา/ผู้ซื้อไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0069" xml:space="preserve">
+    <value>กรุณาระบุรหัสลูกค้าของผู้ใช้สถานที่ติดตั้ง</value>
+  </data>
+  <data name="MSG0070" xml:space="preserve">
+    <value>กรุณาระบุรหัสสถานที่ติดตั้ง</value>
+  </data>
+  <data name="MSG0071" xml:space="preserve">
+    <value>รหัสสถานที่ติดตั้งไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0072" xml:space="preserve">
+    <value>ไม่สามารถดึงข้อมูลสถานที่ติดตั้งได้เนื่องจากส่วนหลักของรหัสสถานที่ติดตั้งผิดพลาด</value>
+  </data>
+  <data name="MSG0073" xml:space="preserve">
+    <value>ไม่มีข้อมูลผู้ทำสัญญา/ผู้ซื้อสำหรับการคัดลอก</value>
+  </data>
+  <data name="MSG0074" xml:space="preserve">
+    <value>ไม่มีข้อมูลผู้ใช้สถานที่ติดตั้งสำหรับการคัดลอก</value>
+  </data>
+  <data name="MSG0078" xml:space="preserve">
+    <value>รหัสลูกค้าของผู้ใช้สถานที่ติดตั้งไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0079" xml:space="preserve">
+    <value>กรุณาเลือกอย่างน้อย 1 {0} </value>
+  </data>
+  <data name="MSG0080" xml:space="preserve">
+    <value>เงื่อนไขการค้นหามีความขัดแย้งกัน</value>
+  </data>
+  <data name="MSG0081" xml:space="preserve">
+    <value>กรุณาระบุรหัสอุปกรณ์</value>
+  </data>
+  <data name="MSG0082" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0083" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} มีอยู่ในรายละเอียดอุปกรณ์อยู่แล้ว</value>
+  </data>
+  <data name="MSG0084" xml:space="preserve">
+    <value>กรุณาระบุจำนวนอุปกรณ์มากกว่า 0</value>
+  </data>
+  <data name="MSG0085" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่ได้บันทึกเป็นอุปกรณ์สำหรับเช่า</value>
+  </data>
+  <data name="MSG0086" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ถูกยกเลิกแล้ว</value>
+  </data>
+  <data name="MSG0089" xml:space="preserve">
+    <value>กรุณาระบุหน้าที่ของลูกค้า</value>
+  </data>
+  <data name="MSG0090" xml:space="preserve">
+    <value>เงื่อนไขการค้นหาผิดพลาด กรุณาระบุวันที่เริ่มต้นเป็นวันที่หลังจาก หรือวันเดียวกับวันที่สุดท้าย</value>
+  </data>
+  <data name="MSG0093" xml:space="preserve">
+    <value>เลขที่สัญญาขาย {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0098" xml:space="preserve">
+    <value>กรุณาระบุประเภทเอกสารและชื่อเอกสาร</value>
+  </data>
+  <data name="MSG0099" xml:space="preserve">
+    <value>รหัสพนักงานหรือรหัสผ่านไม่ถูกต้อง </value>
+  </data>
+  <data name="MSG0102" xml:space="preserve">
+    <value>เลขที่สัญญานี้ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0103" xml:space="preserve">
+    <value>หากเปลี่ยนภาษาระบบจะล้างข้อมูลบนหน้าจอทั้งหมดเป็นค่าเริ่มต้นยกเว้นข้อมูลของหน้าจอสำหรับดูข้อมูล คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG0107" xml:space="preserve">
+    <value>อีเมล์ {0} มีอยู่ในระบบอยู่แล้ว</value>
+  </data>
+  <data name="MSG0012" xml:space="preserve">
+    <value>รหัสพนักงานที่ติดต่อกับลูกค้า {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0096" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการยกเลิกการดำเนินการนี้? ข้อมูลที่แก้ไขจะสูญหายไป</value>
+  </data>
+  <data name="MSG0063" xml:space="preserve">
+    <value>คุณไม่มีสิทธิในการเข้าถึงข้อมูลนี้</value>
+  </data>
+  <data name="MSG0095" xml:space="preserve">
+    <value>รหัสพนักงานดังต่อไปนี้ไม่มีในระบบ: {0} </value>
+  </data>
+  <data name="MSG0062" xml:space="preserve">
+    <value>เงื่อนไขการค้นหาผิดพลาด {0} ต้องมีค่าน้อยกว่า {1}</value>
+  </data>
+  <data name="MSG0094" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการลบ {0} : {1}</value>
+  </data>
+  <data name="MSG0009" xml:space="preserve">
+    <value>ไม่สามารถลงทะเบียนวันที่อนาคตใน {0} ได้</value>
+  </data>
+  <data name="MSG0109" xml:space="preserve">
+    <value>ไม่มีข้อมูล</value>
+  </data>
+  <data name="MSG0110" xml:space="preserve">
+    <value>ไม่มีข้อมูลบันทึกไว้</value>
+  </data>
+  <data name="MSG0112" xml:space="preserve">
+    <value>ไม่พบข้อมูล</value>
+  </data>
+  <data name="MSG0113" xml:space="preserve">
+    <value>----เลือก----</value>
+  </data>
+  <data name="MSG0101" xml:space="preserve">
+    <value>กรุณาระบุวันที่เริ่มต้นเป็นวันที่ก่อนวันที่สุดท้าย</value>
+  </data>
+  <data name="MSG0105" xml:space="preserve">
+    <value>เลขที่สัญญา {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0087" xml:space="preserve">
+    <value>{0} อยู่ในรูปแบบที่ไม่ถูกต้อง</value>
+  </data>
+  <data name="MSG0043" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการเปลี่ยนค่าจาก {0} เป็น {1}? (ข้อมูลที่แก้ไขจะสูญหายไป)</value>
+  </data>
+  <data name="MSG0097" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูล? ข้อมูลจะสูญหายไป</value>
+  </data>
+  <data name="MSG0114" xml:space="preserve">
+    <value>ไม่สามารถสร้างเอกสารได้ เอกสารหมายเลข {0} และ OCC เอกสาร {1} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0088" xml:space="preserve">
+    <value>กรุณาระบุอีเมล์สำหรับส่งจดหมายแจ้ง</value>
+  </data>
+  <data name="MSG0092" xml:space="preserve">
+    <value>เลขที่สัญญาที่รับโอนค่ามัดจำมา {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0117" xml:space="preserve">
+    <value>กรุณากรอกเพียงเงื่อนไขเดียว</value>
+  </data>
+  <data name="MSG0076" xml:space="preserve">
+    <value>ไม่สามารถแนบไฟล์ได้เกิน 5 ไฟล์</value>
+  </data>
+  <data name="MSG0115" xml:space="preserve">
+    <value>ชื่อเอกสาร {0} มีอยู่ในลิสต์แล้ว</value>
+  </data>
+  <data name="MSG0091" xml:space="preserve">
+    <value>เลขที่โครงการ {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0120" xml:space="preserve">
+    <value>----ทั้งหมด----</value>
+  </data>
+  <data name="MSG0121" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="MSG0122" xml:space="preserve">
+    <value>Offline</value>
+  </data>
+  <data name="MSG0123" xml:space="preserve">
+    <value>การบำรุงรักษาอุปกรณ์เตือนภัยตามกำหนดเวลา</value>
+  </data>
+  <data name="MSG0106" xml:space="preserve">
+    <value>OCC สัญญา {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0044" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการล้างข้อมูลของหน้านี้</value>
+  </data>
+  <data name="MSG0116" xml:space="preserve">
+    <value>กรุณาระบุระยะเวลา</value>
+  </data>
+  <data name="MSG0118" xml:space="preserve">
+    <value>เลขที่สัญญาที่เชื่อมต่อ {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0119" xml:space="preserve">
+    <value>รหัสสัญญาขายอุปกรณ์หลัก {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0075" xml:space="preserve">
+    <value>ไม่สามารถแนบไฟล์ประเภทนี้ได้</value>
+  </data>
+  <data name="MSG0077" xml:space="preserve">
+    <value>ไฟล์แนบต้องมีขนาดรวมกันทั้งหมดไม่เกิน 5 MB</value>
+  </data>
+  <data name="MSG0100" xml:space="preserve">
+    <value>ไม่สามารถเข้าระบบโดยการกรอก URL โดยตรงได้</value>
+  </data>
+  <data name="MSG0104" xml:space="preserve">
+    <value>ไม่สามารถดึงข้อมูล Running no. หมายเลขถัดไปของ {0} ได้ กรุณาติดต่อผู้ดูแลระบบ </value>
+  </data>
+  <data name="MSG0108" xml:space="preserve">
+    <value>ยกเลิกสำเร็จแล้ว</value>
+  </data>
+  <data name="MSG0111" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้นในระบบ กรุณาติดต่อผู้ดูแลระบบ {0}</value>
+  </data>
+  <data name="MSG0124" xml:space="preserve">
+    <value>เลขที่สัญญานี้ไม่มีในระบบ หรือหน้านี้ไม่สามารถใช้เลขที่สัญญาดังกล่าวได้</value>
+  </data>
+  <data name="MSG0125" xml:space="preserve">
+    <value>ไม่สามารถใช้อักขระต่อไปนี้ในการตั้งชื่อไฟล์ได้ \ / : * ? " &lt; &gt; |</value>
+  </data>
+  <data name="MSG0126" xml:space="preserve">
+    <value>ข้อมูลผู้ทำสัญญา/ผู้ซื้อผิดพลาด กรุณาคลิกปุ่ม 'สร้างใหม่/แก้ไขข้อมูลลูกค้า' ในส่วนข้อมูลผู้ทำสัญญา/ผู้ซื้อเพื่อดูรายละเอียด</value>
+  </data>
+  <data name="MSG0127" xml:space="preserve">
+    <value>ข้อมูลผู้ใช้สถานที่ติดตั้งผิดพลาด กรุณาคลิกปุ่ม 'สร้างใหม่/แก้ไขข้อมูลลูกค้า' ในส่วนข้อมูลผู้ใช้สถานที่ติดตั้งเพื่อดูรายละเอียด</value>
+  </data>
+  <data name="MSG0128" xml:space="preserve">
+    <value>ข้อมูลสถานที่ติดตั้งผิดพลาด กรุณาคลิกปุ่ม 'สร้างใหม่/แก้ไขข้อมูลสถานที่ติดตั้ง'' ในส่วนข้อมูลสถานที่ติดตั้งเพื่อดูรายละเอียด</value>
+  </data>
+  <data name="MSG0131" xml:space="preserve">
+    <value>ไม่สามารถเลือกพนักงานรายนี้ได้เนื่องจากไม่มีข้อมูลอีเมล์</value>
+  </data>
+  <data name="MSG0129" xml:space="preserve">
+    <value>ไม่มีข้อมูลสาขาหรือผู้ทำสัญญา/ผู้ซื้อสำหรับการคัดลอก</value>
+  </data>
+  <data name="MSG0130" xml:space="preserve">
+    <value>ไม่มีข้อมูลสถานที่ติดตั้งหรือผู้ใช้สถานที่ติดตั้งสำหรับการคัดลอก</value>
+  </data>
+  <data name="MSG0134" xml:space="preserve">
+    <value>ไม่มีการกรอก 'ลูกค้าสำหรับเรียกเก็บ' ซึ่งเป็นข้อมูลที่จำเป็นต้องกรอก กรุณากดปุ่ม 'สร้าง/แก้ไขข้อมูลลูกค้า' เพื่อทำการบันทึกข้อมูล</value>
+  </data>
+  <data name="MSG0135" xml:space="preserve">
+    <value>จำนวนหลักของรหัสต่อไปนี้ไม่ถูกต้อง: {0} </value>
+  </data>
+  <data name="MSG0136" xml:space="preserve">
+    <value>มีข้อผิดพลาดเกิดขึ้นในระบบ Running no. ไม่ได้ถูกระบุอยู่ในระบบ</value>
+  </data>
+  <data name="MSG0139" xml:space="preserve">
+    <value>ไม่มีรหัสลูกค้านี้ในอยู่ในระบบ</value>
+  </data>
+  <data name="MSG0137" xml:space="preserve">
+    <value>รหัสใบคำนวณราคาไม่มีอยู่ในระบบ</value>
+  </data>
+  <data name="MSG0138" xml:space="preserve">
+    <value>รหัสลูกค้าสำหรับเรียกเก็บไม่มีอยู่ในระบบ</value>
+  </data>
+  <data name="MSG0132" xml:space="preserve">
+    <value>ไม่สามารถระบุสัญญาเช่าอุปกรณ์เตือนภัย/สัญญาบริการ Online/สัญญาเช่าอุปกรณ์ขายขาดพร้อมกับสัญญาขายได้</value>
+  </data>
+  <data name="MSG0133" xml:space="preserve">
+    <value>ไม่มีเลขที่สัญญาหรือ User code นี้อยู่ในระบบ</value>
+  </data>
+  <data name="MSG0140" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการยกเลิก?</value>
+  </data>
+  <data name="MSG0141" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการลบ?</value>
+  </data>
+  <data name="MSG0142" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการลบ?</value>
+  </data>
+  <data name="MSG0143" xml:space="preserve">
+    <value>ปรับปรุงข้อมูลเวลาปิดการใช้งานระบบเรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG0144" xml:space="preserve">
+    <value>ปรับปรุงข้อมูลเวลาเปิดการใช้งานระบบเรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG0145" xml:space="preserve">
+    <value>เกิดปัญหาในการปรับปรุงข้อมูลเวลาปิดการใช้งานระบบ กรุณาติดต่อผู้ดูแลระบบ</value>
+  </data>
+  <data name="MSG0146" xml:space="preserve">
+    <value>เกิดปัญหาในการปรับปรุงข้อมูลเวลาเปิดการใช้งานระบบ กรุณาติดต่อผู้ดูแลระบบ</value>
+  </data>
+  <data name="MSG0051" xml:space="preserve">
+    <value>กรณีที่ไม่ได้ระบุรหัสลูกค้าของข้อมูลผู้ใช้สถานที่ติดตั้งไว้ ปุ่ม 'ค้นหาสถานที่ติดตั้ง' กับ 'ดึงข้อมูล' จะไม่เปิดให้ใช้งาน กรุณากดปุ่ม 'สร้างใหม่/แก้ไขข้อมูลสถานที่ติดตั้ง' เพื่อบันทึกข้อมูลสถานที่ติดตั้ง</value>
+  </data>
+  <data name="MSG0014" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่ได้ตั้งเป็นอุปกรณ์ทั่วไป</value>
+  </data>
+  <data name="MSG0015" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่ได้ตั้งเป็นเป็นอุปกรณ์แม่</value>
+  </data>
+  <data name="MSG0016" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่ได้บันทึกเป็นอุปกรณ์สำหรับขาย</value>
+  </data>
+  <data name="MSG0022" xml:space="preserve">
+    <value>กรุณาระบุรหัสอุปกรณ์ของลูกค้า</value>
+  </data>
+  <data name="MSG0023" xml:space="preserve">
+    <value>รหัสอุปกรณ์ของลูกค้า {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0024" xml:space="preserve">
+    <value>รหัสอุปกรณ์ของลูกค้า {0} มีอยู่ในข้อมูลรายละเอียดอุปกรณ์ของลูกค้าอยู่แล้ว</value>
+  </data>
+  <data name="MSG0025" xml:space="preserve">
+    <value>กรุณาระบุจำนวนอุปกรณ์ของลูกค้ามากกว่า 0</value>
+  </data>
+  <data name="MSG0026" xml:space="preserve">
+    <value>รหัสอุปกรณ์ของลูกค้า {0} ไม่ได้ตั้งเป็นอุปกรณ์เฝ้าติดตาม</value>
+  </data>
+  <data name="MSG0147" xml:space="preserve">
+    <value>ไม่สามารถเปิดหน้าจอได้เนื่องจากยังไม่ได้ระบุเลขที่สัญญา</value>
+  </data>
+  <data name="MSG0148" xml:space="preserve">
+    <value>การปรับปรุงใน {0} ทำได้ 0 รายการ</value>
+  </data>
+  <data name="MSG0050" xml:space="preserve">
+    <value>คุณไม่ได้เลือกเอกสารแนบ กรุณาเลือกไฟล์แนบก่อนกดปุ่ม 'เพิ่ม'</value>
+  </data>
+  <data name="MSG0149" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูล Log?</value>
+  </data>
+  <data name="MSG0032" xml:space="preserve">
+    <value>ไม่สามารถเพิ่มสัญญาได้มากกว่านี้ เลขที่สัญญาเช่าอุปกรณ์เตือนภัย/สัญญาบริการ Online/สัญญาเช่าอุปกรณ์ขายขาดได้ถูกเลือกเป็นสัญญาที่จะบำรุงรักษาแล้ว</value>
+  </data>
+  <data name="MSG0017" xml:space="preserve">
+    <value>กรุณาเลือกรายการที่จะทำการดาวน์โหลด (ไม่สามารถเลือกรายการที่ทำการดาวน์โหลดไปแล้วได้ ให้ไปใช้หน้า "ดาวน์โหลดเอกสารในระบบ" แทน)</value>
+  </data>
+  <data name="MSG0018" xml:space="preserve">
+    <value>ไม่พบรูปแบบเอกสาร</value>
+  </data>
+  <data name="MSG0151" xml:space="preserve">
+    <value>อีเมล์ที่เลือกไม่ตรงกับที่มีในการตั้งค่าของระบบ</value>
+  </data>
+  <data name="MSG0045" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่ใช้สำหรับขาย/เช่าแล้ว</value>
+  </data>
+  <data name="MSG0152" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการกับข้อมูลจำนวนเงินได้เนื่องจากมีตัวเลขเกินจำนวนหลักเกินที่กำหนด กรุณาติดต่อผู้ดูแลระบบ</value>
+  </data>
+  <data name="MSG0153" xml:space="preserve">
+    <value>ดำเนินการเสร็จสิ้น</value>
+  </data>
+  <data name="MSG0150" xml:space="preserve">
+    <value>เลขที่ใบแจ้งหนี้ {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG0034" xml:space="preserve">
+    <value>ไม่สามารถเปิดหน้าจอนี้ด้วยเลขที่สัญญาที่ไม่ใช่สัญญาเช่าอุปกรณ์เตือนภัยหรือสัญญาขายขาดได้</value>
+  </data>
+  <data name="MSG0154" xml:space="preserve">
+    <value>ไม่สามารถเปิดหน้าจอได้เนื่องจากยังไม่ได้ระบุรหัสลูกค้าสำหรับออกใบแจ้งหนี้</value>
+  </data>
+  <data name="MSG0155" xml:space="preserve">
+    <value>ไม่สามารถเปิดหน้าจอได้เนื่องจากยังไม่ได้ระบุเลขที่รายการเรียกเก็บ</value>
+  </data>
+  <data name="MSG0156" xml:space="preserve">
+    <value>ไม่สามารถเปิดหน้าจอได้เนื่องจากยังไม่ได้ระบุรหัสลูกค้าสำหรับออกใบแจ้งหนี้หรือเลขที่รายการเรียกเก็บหรือเลขที่ใบแจ้งหนี้</value>
+  </data>
+  <data name="MSG0157" xml:space="preserve">
+    <value>ไม่สามารถค้นหาข้อมูลได้เนื่องจาก User code นี้มีหลายสัญญา หากต้องการดูข้อมูลสัญญาที่บันทึกไว้ กรุณาเปิดหน้าจอค้นหาข้อมูล</value>
+  </data>
+  <data name="MSG0158" xml:space="preserve">
+    <value>กรุณาเลือกสถานะการติดตั้ง/สถานะสลิปการติดตั้ง/สถานะการจ่ายค่าจ้างผู้รับเหมาอย่างน้อยหนึ่งรายการ</value>
+  </data>
+  <data name="MSG0159" xml:space="preserve">
+    <value>เกิดความหนาแน่นในการใช้งานเซิร์ฟเวอร์ โปรดลองใหม่อีกครั้ง</value>
+  </data>
+  <data name="MSG0160" xml:space="preserve">
+    <value>หยุดการดำเนินการเพราะระบบกำลังพิมพ์งานอยู่</value>
+  </data>
+  <data name="MSG0161" xml:space="preserve">
+    <value>Please check at least 1 items.</value>
+  </data>
+  <data name="MSG0162" xml:space="preserve">
+    <value>ไม่พบเอกสารเลขที่ ({0}) ในระบบ</value>
+  </data>
+  <data name="MSG0163" xml:space="preserve">
+    <value>เอกสารเลขที่ {0} ได้ถูกยกเลิกไปแล้ว</value>
+  </data>
+  <data name="MSG0164" xml:space="preserve">
+    <value>ในเอกสารมีรหัสลูกค้าสำหรับออกใบแจ้งหนี้ที่แตกต่างกันอยู่ กรุณาแก้ไขรหัสลูกค้าสำหรับออกใบแจ้งหนี้ในเอกสารให้ตรงกันก่อน</value>
+  </data>
+  <data name="MSG0165" xml:space="preserve">
+    <value>Currency type not match.</value>
+  </data>
+</root>

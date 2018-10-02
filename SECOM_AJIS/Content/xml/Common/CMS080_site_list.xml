@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na">headerNo</column>
+    <column id="SiteCode" width="130" type="ro" align="left" sort="str_custom">headerSitecode</column>
+    <column id="SiteNameDisplay" width="200" type="ro" align="left" sort="str_custom">headerSitename</column>
+    <column id="AddressDisplay" width="*" type="ro" align="left" sort="str_custom">headerAddress</column>
+    <column id="NumOfContract_Rental" width="100" type="ro" align="right" sort="int">headerNumberOfContact</column>
+    <column id="NumOfContract_Sale" width="100" type="ro" align="right" sort="int">#cspan</column>
+    <column id="Detail" width="100" type="link" align="center" sort="na">headerBtnSiteinformation</column>
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,#rspan,headerRENT,headerSALE,#rspan</param>
+      </call>
+    </afterInit>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

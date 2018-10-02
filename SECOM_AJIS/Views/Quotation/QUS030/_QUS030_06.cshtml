@@ -1,0 +1,81 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.ObjectCol1Width = "160px";
+    ViewBag.ObjectCol1ComboWidth = "164px";
+    ViewBag.ObjectCol12Width = "370px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS030/QUS030_06.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("DefaultMaintenanceCycle", (string)@ViewBag.DefaultMACycle)
+    @Html.Hidden("C_MA_TARGET_PROD_TYPE_SECOM", @SECOM_AJIS.Common.Util.ConstantValue.MaintenanceTargetProductType.C_MA_TARGET_PROD_TYPE_SECOM)
+    @Html.Hidden("C_PROD_TYPE_SALE", @SECOM_AJIS.Common.Util.ConstantValue.ProductType.C_PROD_TYPE_SALE)
+    @Html.Hidden("DisabledMaintenanceTargetProductTypeCode", (bool)@ViewBag.DisabledMaintenanceTargetProductTypeCode)
+    @Html.Hidden("DisabledMaintenanceTypeCode", (bool)@ViewBag.DisabledMaintenanceTypeCode)
+    @Html.Hidden("DisabledMaintenanceCycle", (bool)@ViewBag.DisabledMaintenanceCycle)
+    @Html.Hidden("DisabledMaintenanceMemo", (bool)@ViewBag.DisabledMaintenanceMemo)
+    @Html.Hidden("DisabledMaintenanceTargetContract", (bool)@ViewBag.DisabledMaintenanceTargetContract)
+    @Html.Hidden("DisabledMaintenanceTargetContractDetail", (bool)@ViewBag.DisabledMaintenanceTargetContractDetail)
+    @Html.Hidden("DisabledMaintenanceTargetContractRemove", (bool)@ViewBag.DisabledMaintenanceTargetContractRemove)
+</div>
+<form id="formMaintenanceDetail">
+    <div id="divMaintenanceDetail" class="main-table">
+        <div class="table-header">
+            @Resources.QUS030.lblMaintenanceDetail
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblMaintenanceTargetProduct
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.MaintenanceTargetProductTypeComboBox("MaintenanceTargetProductTypeCode", new{ selected=@ViewBag.MaintenanceTargetProductTypeCode, style="width:" + @ViewBag.ObjectCol1ComboWidth + ";"})
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblMaintenanceType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.MaintenanceTypeComboBox("MaintenanceTypeCode", new { selected=@ViewBag.MaintenanceTypeCode, style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblMaintenaceCycle
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.MaintenanceCycleComboBox("MaintenanceCycle", new { selected =@ViewBag.MaintenanceCycle, style = "width:" + @ViewBag.ObjectCol1ComboWidth + ";" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.QUS030.lblMaintenanceTargetContractCode
+            </div>
+            <div class="usr-object" style="margin-right:5px;">
+                @Html.CommonTextBox("MaintenanceTargetContractCode", null, new { maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+            </div>
+            <div class="usr-object">
+                @Html.CommonButton("btnAddMaintenanceTarget", @Resources.QUS030.btnAdd, new { style = "width:100px;" })
+                @Html.CommonButton("btnClearMaintenaceTarget", @Resources.QUS030.btnClear, new { style = "width:100px;" })
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+            <div class="usr-object" style="height:100%;">
+                <div id="gridMaintenanceTargetContract" style="width:600px;"></div>
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS030.lblMemo</div>
+            <div class="usr-object" style="width:598px;">
+                @Html.CommonTextArea("MaintenanceMemo", (string)@ViewBag.MaintenanceMemo, new { style = "width:598px;height:65px;" })
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</form>

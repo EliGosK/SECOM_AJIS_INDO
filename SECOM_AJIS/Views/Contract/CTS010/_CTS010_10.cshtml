@@ -1,0 +1,76 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "120px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "181px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol12_SWidth = "369px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMerge12Width = "280px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.ObjectColCustNameWidth = "200px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS010/CTS010_10.js")"></script>
+<div id="divOtherFeeInformation" class="main-table">
+    <div class="table-header">
+        @Resources.CTS010.lblOtherFeeInformation
+    </div>
+    <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+                @Resources.CTS010.lblOutsourcingFee
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol12Width;">
+                @Html.NumericTextBoxWithMultipleCurrency("OutSourcingFee", (string)@ViewBag.OutSourcingFee, (string)@ViewBag.OutSourcingFeeCurrencyType, new { @readonly = true, style = "width:131px;" })
+            </div>
+        </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblAdditionalContractFee1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("AdditionalFee1", (string)@ViewBag.AdditionalFee1, (string)@ViewBag.AdditionalFee1CurrencyType, new { @readonly = true, style = "width:131px;" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblAdditionalApproveNo1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("AdditionalApproveNo1", (string)@ViewBag.AdditionalApproveNo1, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblAdditionalContractFee2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("AdditionalFee2", (string)@ViewBag.AdditionalFee2, (string)@ViewBag.AdditionalFee2CurrencyType, new { @readonly = true, style = "width:131px;" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblAdditionalApproveNo2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("AdditionalApproveNo2", (string)@ViewBag.AdditionalApproveNo2, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblAdditionalContractFee3
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMerge12Width;">
+            @Html.NumericTextBoxWithMultipleCurrency("AdditionalFee3", (string)@ViewBag.AdditionalFee3, (string)@ViewBag.AdditionalFee3CurrencyType, new { @readonly = true, style = "width:131px;" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.CTS010.lblAdditionalApproveNo3
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+            @Html.CommonTextBox("AdditionalApproveNo3", (string)@ViewBag.AdditionalApproveNo3, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

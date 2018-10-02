@@ -1,0 +1,27 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+
+@*@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS300/CTS300_06.js")"></script>
+}*@
+
+<div id="divResultRegister" class="main-table">
+    <div class="table-header">@Resources.CTS300.lblResultRegisterIncident</div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblIncidentNo</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("IncidentNo", null, new { style = "width:150px;", @readonly = true })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnViewEditIncidentDetail", (string)@Resources.CTS300.btnViewEditIncidentDetail, new { style = "width:200px;", @type = "button" })
+            @Html.CommonButton("btnRegisterNextIncident", (string)@Resources.CTS300.btnRegisterNextIncident, new { style = "width:250px;", @type = "button" })
+            @Html.Hidden("hidViewIncidentNo")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS300.lblStatus</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("IncidentStatus", null, new { style = "width:610px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

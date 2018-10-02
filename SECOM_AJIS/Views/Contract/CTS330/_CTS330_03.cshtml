@@ -1,0 +1,81 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@{
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "260px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+
+<div id="divSaleContractInfo" class="main-table" style="margin-top:5px; display:none;">
+    <div class="table-header">@Resources.CTS330.lblSaleContractInformation</div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblContractCode</div>
+        <div class="usr-object" style="margin-left:0px; width:  @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ContractCode3", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS330.lblProcessManagementStatus</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ProcessManagementStatus", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblProductName</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ProductName2", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS330.lblExpectedCompleteInstallationDate</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ExpectedCompleteInstallationDate", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblMaintenanceContractCode</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MaintenanceContractCode", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS330.lblCompleteInstallationDate</div>
+        <div class="usr-object" style="margin-left:0px; width:  @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("CompleteInstallationDate", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblSaleType</div>
+        <div class="usr-object" style="margin-left:0px; width:  @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("SaleType", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS330.lblExpectedCustomerAcceptanceDate</div>
+        <div class="usr-object" style="margin-left:0px; width:  @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("ExpectedCustomerAcceptanceDate", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblOperationOffice</div>
+        <div class="usr-object" style="margin-left:0px; width:  @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("OperationOffice2", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.CTS330.lblCustomerAcceptanceDate</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("CustomerAcceptanceDate", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.CTS330.lblLastChangeType</div>
+        <div class="usr-object" style="margin-left:0px; width: @ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("LastChangeType", null, new { style = "width: " + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

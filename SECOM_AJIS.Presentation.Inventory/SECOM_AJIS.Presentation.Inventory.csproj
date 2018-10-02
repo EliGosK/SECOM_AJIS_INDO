@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C84596E4-F762-4035-9B76-344A613B8E57}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.Presentation.Inventory</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Presentation.Inventory</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CSI.WindsorHelper">
+      <HintPath>..\SECOM_AJIS.Common\_ExtLib\CSI.WindsorHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\IVS290_BufferLossReport.cs" />
+    <Compile Include="Controllers\IVS289_EliminateReport.cs" />
+    <Compile Include="Controllers\IVS283_MovementReport.cs" />
+    <Compile Include="Controllers\IVS286_InprocessReport.cs" />
+    <Compile Include="Controllers\IVS287_StockListReport.cs" />
+    <Compile Include="Controllers\IVS285_PhysicalReport.cs" />
+    <Compile Include="Controllers\IVS284_InprocessToInstallReport.cs" />
+    <Compile Include="Controllers\IVS282_ReturnStockReport.cs" />
+    <Compile Include="Controllers\IVS281_OutStockReport.cs" />
+    <Compile Include="Controllers\IVS280_InStockReport.cs" />
+    <Compile Include="Controllers\InventoryData.cs" />
+    <Compile Include="Controllers\IVS021_RegisterPartialStockOutForInstallation.cs" />
+    <Compile Include="Controllers\IVS080_TransferInstrumentWithInWarehouse.cs" />
+    <Compile Include="Controllers\IVS210_TransferInstrumentWithInWarehouse.cs" />
+    <Compile Include="Controllers\IVS270_RegisterProjectStockOut.cs" />
+    <Compile Include="Controllers\IVS240_RegisterPickingList.cs" />
+    <Compile Include="Controllers\IVS230_InquireInventorySlip.cs" />
+    <Compile Include="Controllers\IVS220_InquireStockInOutHistory.cs" />
+    <Compile Include="Controllers\IVS201_ViewInstrumentDetail.cs" />
+    <Compile Include="Controllers\IVS030_RegisterReceiveReturnInstrument.cs" />
+    <Compile Include="Controllers\IVS200_InquireInstrument.cs" />
+    <Compile Include="Controllers\IVS260_MaintainPurchaseOrder.cs" />
+    <Compile Include="Controllers\IVS020_RegisterStockOutForInstallation.cs" />
+    <Compile Include="Controllers\IVS060_RegisterTransferBetweenWarehouseAndBranch.cs" />
+    <Compile Include="Controllers\IVS070_RegisterReceiveBetweenWarehouseAndBranch.cs" />
+    <Compile Include="Controllers\IVS050_RegisterEliminationInstrument.cs" />
+    <Compile Include="Controllers\IVS040_RegisterExpectedEliminationInstrument.cs" />
+    <Compile Include="Controllers\IVS090_RegisterSpecialStockOut.cs" />
+    <Compile Include="Controllers\IVS100_RegisterStockOutRepairingInstrument.cs" />
+    <Compile Include="Controllers\IVS110_RegisterReceiveRepairInstrument.cs" />
+    <Compile Include="Controllers\IVS120_RegisterStockReturnInstrumentForRepair.cs" />
+    <Compile Include="Controllers\IVS130_RegisterReceiveRepairInstrument.cs" />
+    <Compile Include="Controllers\IVS190_RegisterFixStockAdjustment.cs" />
+    <Compile Include="Controllers\IVS180_TransferInstrumentBufferHQWH_MK92.cs" />
+    <Compile Include="Controllers\IVS170_ViewChickingInventoryResult.cs" />
+    <Compile Include="Controllers\IVS160_RegisterCheckingInstrument.cs" />
+    <Compile Include="Controllers\IVS150_ViewAndMaintenanceChickingInventory.cs" />
+    <Compile Include="Controllers\IVS140_RegisterCheckingReturnedInstrument.cs" />
+    <Compile Include="Controllers\IVS250_RegisterPurchaseOrder.cs" />
+    <Compile Include="Controllers\IVS012_RegisterStockInAsset.cs" />
+    <Compile Include="Controllers\IVS010_RegisterStockIn.cs" />
+    <Compile Include="Controllers\IVS288_ChangeAreaReport.cs" />
+    <Compile Include="Helpers\ComboBoxHelper.cs" />
+    <Compile Include="Controllers\IVS011_RegisterInquireCancelStockin.cs" />
+    <Compile Include="Message\MessageList.ja-JP.Designer.cs">
+      <DependentUpon>MessageList.ja-JP.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Message\MessageList.th-TH.Designer.cs">
+      <DependentUpon>MessageList.th-TH.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Message\MessageList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IVS290.cs" />
+    <Compile Include="Models\IVS289.cs" />
+    <Compile Include="Models\IVS283.cs" />
+    <Compile Include="Models\IVS286.cs" />
+    <Compile Include="Models\IVS287.cs" />
+    <Compile Include="Models\IVS285.cs" />
+    <Compile Include="Models\IVS284.cs" />
+    <Compile Include="Models\IVS282.cs" />
+    <Compile Include="Models\IVS281.cs" />
+    <Compile Include="Models\IVS280.cs" />
+    <Compile Include="Models\IVS021.cs" />
+    <Compile Include="Models\IVS080.cs" />
+    <Compile Include="Models\IVS210.cs" />
+    <Compile Include="Models\IVS220.cs" />
+    <Compile Include="Models\IVS230.cs" />
+    <Compile Include="Models\IVS240.cs" />
+    <Compile Include="Models\IVS270.cs" />
+    <Compile Include="Models\IVS201.cs" />
+    <Compile Include="Models\IVS030.cs" />
+    <Compile Include="Models\IVS200.cs" />
+    <Compile Include="Models\IVS260.cs" />
+    <Compile Include="Models\IVS020.cs" />
+    <Compile Include="Models\IVS090.cs" />
+    <Compile Include="Models\IVS140.cs" />
+    <Compile Include="Models\IVS150.cs" />
+    <Compile Include="Models\IVS180.cs" />
+    <Compile Include="Models\IVS070.cs" />
+    <Compile Include="Models\IVS060.cs" />
+    <Compile Include="Models\IVS050.cs" />
+    <Compile Include="Models\IVS040.cs" />
+    <Compile Include="Models\IVS100.cs" />
+    <Compile Include="Models\IVS110.cs" />
+    <Compile Include="Models\IVS120.cs" />
+    <Compile Include="Models\IVS130.cs" />
+    <Compile Include="Models\IVS160.cs" />
+    <Compile Include="Models\IVS170.cs" />
+    <Compile Include="Models\IVS190.cs" />
+    <Compile Include="Models\IVS250.cs" />
+    <Compile Include="Models\IVS012.cs" />
+    <Compile Include="Models\IVS011.cs" />
+    <Compile Include="Models\IVS010.cs" />
+    <Compile Include="Models\IVS288.cs" />
+    <Compile Include="Models\ReportModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\IVR210_ReturnedSlip%28MK-43%29.cs">
+      <DependentUpon>IVR210_ReturnedSlip%28MK-43%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR010B_StockInSlip%28MK-02%29.cs">
+      <DependentUpon>IVR010B_StockInSlip%28MK-02%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR192_PurchaseOrder.cs">
+      <DependentUpon>IVR192_PurchaseOrder.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR181_StockOutSlip%28MK-22%29.cs">
+      <DependentUpon>IVR181_StockOutSlip%28MK-22%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR110_CheckingInstrumentResultSlip%28MK-90%29.cs">
+      <DependentUpon>IVR110_CheckingInstrumentResultSlip%28MK-90%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR070_StockOutRepairingInstrumentSlip%28MK-17A%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR070_StockOutRepairingInstrumentSlip%28MK-17A%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR070_StockOutRepairingInstrumentSlip%28MK-17B%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR070_StockOutRepairingInstrumentSlip%28MK-17B%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR080_ReturnInstrumentForRepairInstrumentSlip%28MK-18A%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR080_ReturnInstrumentForRepairInstrumentSlip%28MK-18A%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR080_ReturnInstrumentForRepairInstrumentSlip%28MK-18B%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR080_ReturnInstrumentForRepairInstrumentSlip%28MK-18B%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR090_CheckingReturnedSlip%28MK-44%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR090_CheckingReturnedSlip%28MK-44%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR100_CheckingInstrumentSlip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR100_CheckingInstrumentSlip.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR120_RegisterOverAndShortAdjustmentSlip%28MK-91%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR120_RegisterOverAndShortAdjustmentSlip%28MK-91%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR130_FixStockAdjustmentSlip%28MK-92%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR130_FixStockAdjustmentSlip%28MK-92%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR150_SummaryInventoryAssetReport.cs">
+      <DependentUpon>IVR150_SummaryInventoryAssetReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR143_SummaryInputOutputInStockUser.cs">
+      <DependentUpon>IVR143_SummaryInputOutputInStockUser.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR142_SummaryInputOutputInStockWIPGroup.cs">
+      <DependentUpon>IVR142_SummaryInputOutputInStockWIPGroup.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR141_SummaryInputOutputInStockOffice.cs">
+      <DependentUpon>IVR141_SummaryInputOutputInStockOffice.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR060_SpecialStockOutSlip%28MK-19B%29.cs">
+      <DependentUpon>IVR060_SpecialStockOutSlip%28MK-19B%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR060_SpecialStockOutSlip%28MK-19A%29.cs">
+      <DependentUpon>IVR060_SpecialStockOutSlip%28MK-19A%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR050_TransferInstrumentWithinWarehouseSlip%28MK-50%29.cs">
+      <DependentUpon>IVR050_TransferInstrumentWithinWarehouseSlip%28MK-50%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR040_TransferBetweenWarehouseAndBranchSlip%28MK-06B%29.cs">
+      <DependentUpon>IVR040_TransferBetweenWarehouseAndBranchSlip%28MK-06B%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR040_TransferBetweenWarehouseAndBranchSlip%28MK-06A%29.cs">
+      <DependentUpon>IVR040_TransferBetweenWarehouseAndBranchSlip%28MK-06A%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR030_EliminationSlip%28MK-99B%29.cs">
+      <DependentUpon>IVR030_EliminationSlip%28MK-99B%29.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR010_StockInSlip%28MK-02%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR010_StockInSlip%28MK-02%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR020_ExpectedEliminationSlip%28MK-98%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR020_ExpectedEliminationSlip%28MK-98%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR030_EliminationSlip%28MK-99A%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR030_EliminationSlip%28MK-99A%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR140_SummaryInputOutputInStockHeadOffice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR140_SummaryInputOutputInStockHeadOffice.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR170_PikcingListSlip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR170_PikcingListSlip.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR180_StockOutSlip%28MK-22%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR180_StockOutSlip%28MK-22%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR190_PurchaseOrder%28CHN%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR190_PurchaseOrder%28CHN%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\IVR191_PurchaseOrder%28DOM%29.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVR191_PurchaseOrder%28DOM%29.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.DataEntity.ExchangeRate\SECOM_AJIS.DataEntity.ExchangeRate.csproj">
+      <Project>{dbee8ad2-0e4c-4cf6-9c20-17d19011d93f}</Project>
+      <Name>SECOM_AJIS.DataEntity.ExchangeRate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Billing\SECOM_AJIS.Entity.Billing.csproj">
+      <Project>{D5237D53-9467-4B1E-92D7-B91C8358402C}</Project>
+      <Name>SECOM_AJIS.Entity.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Common\SECOM_AJIS.Entity.Common.csproj">
+      <Project>{527A7562-621E-47CD-92CB-E0FA26660A4E}</Project>
+      <Name>SECOM_AJIS.Entity.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Contract\SECOM_AJIS.Entity.Contract.csproj">
+      <Project>{22F8AFE0-0CBB-4543-A703-2C29A1E2105A}</Project>
+      <Name>SECOM_AJIS.Entity.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Income\SECOM_AJIS.Entity.Income.csproj">
+      <Project>{82E5CDD0-5A70-4637-9BF2-AE7DED57B8C7}</Project>
+      <Name>SECOM_AJIS.Entity.Income</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Installation\SECOM_AJIS.Entity.Installation.csproj">
+      <Project>{E952E4EE-DD08-4187-AD89-0F56C4CF8D7D}</Project>
+      <Name>SECOM_AJIS.Entity.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Inventory\SECOM_AJIS.Entity.Inventory.csproj">
+      <Project>{DDC95591-2286-4A85-BD76-C3499101BA98}</Project>
+      <Name>SECOM_AJIS.Entity.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Master\SECOM_AJIS.Entity.Master.csproj">
+      <Project>{65F28583-CF30-4765-A871-E97D2AE7F9B9}</Project>
+      <Name>SECOM_AJIS.Entity.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Quotation\SECOM_AJIS.Entity.Quotation.csproj">
+      <Project>{E44DC4DC-CE32-4CE7-9CB6-ADDEDFDF1B23}</Project>
+      <Name>SECOM_AJIS.Entity.Quotation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Billing\SECOM_AJIS.Interface.Billing.csproj">
+      <Project>{0958FEAD-16B9-4BB9-9C1E-DA33749F7685}</Project>
+      <Name>SECOM_AJIS.Interface.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Common\SECOM_AJIS.Interface.Common.csproj">
+      <Project>{0177E9AC-5098-42BC-9AC1-9B8862FB3E3C}</Project>
+      <Name>SECOM_AJIS.Interface.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Contract\SECOM_AJIS.Interface.Contract.csproj">
+      <Project>{99F59DB1-92D2-49BB-9FCD-46D7880F089E}</Project>
+      <Name>SECOM_AJIS.Interface.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Income\SECOM_AJIS.Interface.Income.csproj">
+      <Project>{BA5911DE-A7E3-467B-8857-1528A134CE42}</Project>
+      <Name>SECOM_AJIS.Interface.Income</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Installation\SECOM_AJIS.Interface.Installation.csproj">
+      <Project>{BFF36845-756B-4D9B-A575-DEBC4099774B}</Project>
+      <Name>SECOM_AJIS.Interface.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Inventory\SECOM_AJIS.Interface.Inventory.csproj">
+      <Project>{0CB3F45D-11BB-45C1-8031-BB960C5C5B0D}</Project>
+      <Name>SECOM_AJIS.Interface.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Master\SECOM_AJIS.Interface.Master.csproj">
+      <Project>{0AC1F756-B4CC-4386-B6A3-C58F555E953B}</Project>
+      <Name>SECOM_AJIS.Interface.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Quotation\SECOM_AJIS.Interface.Quotation.csproj">
+      <Project>{1F3EE1E7-4718-4410-A396-6C7B0E5A95C5}</Project>
+      <Name>SECOM_AJIS.Interface.Quotation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Presentation.Common\SECOM_AJIS.Presentation.Common.csproj">
+      <Project>{4890e853-1c31-4230-8fa1-5d451c115875}</Project>
+      <Name>SECOM_AJIS.Presentation.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Message\MessageList.ja-JP.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageList.ja-JP.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message\MessageList.th-TH.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageList.th-TH.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message\MessageList.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageList.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Reports\IVS170.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVS290.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVS289.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVS283.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVS286.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVS287.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVS285.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVS284.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVS282.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVS281.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR110_CheckingInstrumentResultSlip%28MK-90%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR110_CheckingInstrumentResultSlip%28MK-90%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR010B_StockInSlip%28MK-02%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR010B_StockInSlip%28MK-02%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="Reports\IVR210_ReturnedSlip%28MK-43%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR210_ReturnedSlip%28MK-43%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR192_PurchaseOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR192_PurchaseOrder.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR181_StockOutSlip%28MK-22%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR181_StockOutSlip%28MK-22%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR070_StockOutRepairingInstrumentSlip%28MK-17A%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR070_StockOutRepairingInstrumentSlip%28MK-17A%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR070_StockOutRepairingInstrumentSlip%28MK-17B%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR070_StockOutRepairingInstrumentSlip%28MK-17B%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR080_ReturnInstrumentForRepairInstrumentSlip%28MK-18A%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR080_ReturnInstrumentForRepairInstrumentSlip%28MK-18A%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR080_ReturnInstrumentForRepairInstrumentSlip%28MK-18B%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR080_ReturnInstrumentForRepairInstrumentSlip%28MK-18B%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR090_CheckingReturnedSlip%28MK-44%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR090_CheckingReturnedSlip%28MK-44%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR120_RegisterOverAndShortAdjustmentSlip%28MK-91%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR120_RegisterOverAndShortAdjustmentSlip%28MK-91%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR130_FixStockAdjustmentSlip%28MK-92%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR130_FixStockAdjustmentSlip%28MK-92%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR170_PikcingListSlip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR170_PikcingListSlip.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR180_StockOutSlip%28MK-22%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR180_StockOutSlip%28MK-22%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR190_PurchaseOrder%28CHN%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR190_PurchaseOrder%28CHN%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\IVR191_PurchaseOrder%28DOM%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR191_PurchaseOrder%28DOM%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="Reports\IVR100_CheckingInstrumentSlip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR100_CheckingInstrumentSlip.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR150_SummaryInventoryAssetReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR150_SummaryInventoryAssetReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR143_SummaryInputOutputInStockUser.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR143_SummaryInputOutputInStockUser.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR142_SummaryInputOutputInStockWIPGroup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR142_SummaryInputOutputInStockWIPGroup.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR141_SummaryInputOutputInStockOffice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR141_SummaryInputOutputInStockOffice.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR060_SpecialStockOutSlip%28MK-19B%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR060_SpecialStockOutSlip%28MK-19B%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR060_SpecialStockOutSlip%28MK-19A%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR060_SpecialStockOutSlip%28MK-19A%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR050_TransferInstrumentWithinWarehouseSlip%28MK-50%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR050_TransferInstrumentWithinWarehouseSlip%28MK-50%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR040_TransferBetweenWarehouseAndBranchSlip%28MK-06B%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR040_TransferBetweenWarehouseAndBranchSlip%28MK-06B%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR040_TransferBetweenWarehouseAndBranchSlip%28MK-06A%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR040_TransferBetweenWarehouseAndBranchSlip%28MK-06A%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR030_EliminationSlip%28MK-99B%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR030_EliminationSlip%28MK-99B%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR010_StockInSlip%28MK-02%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR010_StockInSlip%28MK-02%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR020_ExpectedEliminationSlip%28MK-98%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR020_ExpectedEliminationSlip%28MK-98%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR030_EliminationSlip%28MK-99A%29.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR030_EliminationSlip%28MK-99A%29.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVR140_SummaryInputOutputInStockHeadOffice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVR140_SummaryInputOutputInStockHeadOffice.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVS280.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\IVS288.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

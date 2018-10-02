@@ -1,0 +1,38 @@
+﻿@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+
+<!-- ======== Html content ======== --->
+
+@{
+    ViewBag.POlbWidth = "180px";
+    ViewBag.POControlWidth = "300px"; 
+ }
+@* --- Contract Information ---  *@
+
+<div id="divInstallManageInfo" class="main-table" style="margin-top:5px;">
+<div class="usr-row">
+        <div class="table-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS080.lblSearchResult
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>  
+   
+    <div class="usr-row">
+            <div id="gridInstallationManagement"  >
+            </div>
+        </div>
+    <br />    
+
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+ 
+</div>
+
+
+

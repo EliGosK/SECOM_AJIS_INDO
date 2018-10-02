@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnDepositFeeAdd" xml:space="preserve">
+    <value>เพิ่ม</value>
+  </data>
+  <data name="btnDepositFeeCancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="btnDepositFeeRetrieve" xml:space="preserve">
+    <value>ดึงข้อมูล</value>
+  </data>
+  <data name="btnDepositFeeRetrieveBillingInformation" xml:space="preserve">
+    <value>ดึงข้อมูลการเรียกเก็บ</value>
+  </data>
+  <data name="btnExceptDepositFeeAdd" xml:space="preserve">
+    <value>เพิ่ม</value>
+  </data>
+  <data name="btnExceptDepositFeeCancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="btnExceptDepositFeeRetrieve" xml:space="preserve">
+    <value>ดึงข้อมูล</value>
+  </data>
+  <data name="btnExceptDepositFeeRetrieveBillingInformation" xml:space="preserve">
+    <value>ดึงข้อมูลการเรียกเก็บ</value>
+  </data>
+  <data name="btnNextToRegister" xml:space="preserve">
+    <value>บันทึกข้อมูลอื่น</value>
+  </data>
+  <data name="btnRevenueAdd" xml:space="preserve">
+    <value>เพิ่ม</value>
+  </data>
+  <data name="btnRevenueCancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="btnRevenueRetrieve" xml:space="preserve">
+    <value>ดึงข้อมูล</value>
+  </data>
+  <data name="btnSelectProcess" xml:space="preserve">
+    <value>เลือกการทำงาน</value>
+  </data>
+  <data name="cboDepositFeeTaxInvoiceBillingType" xml:space="preserve">
+    <value>ประเภทการเรียกเก็บในใบกำกับภาษี</value>
+  </data>
+  <data name="chkDepositFeeNotRetrieve" xml:space="preserve">
+    <value>ไม่ดึงข้อมูล</value>
+  </data>
+  <data name="chkExceptDepositFeeNotRetrieve" xml:space="preserve">
+    <value>ไม่ดึงข้อมูล</value>
+  </data>
+  <data name="dtpDepositFeeCreditNoteDate" xml:space="preserve">
+    <value>วันที่ในใบลดหนี้</value>
+  </data>
+  <data name="dtpDepositFeeTaxInvoiceDate" xml:space="preserve">
+    <value>วันที่ในใบกำกับภาษี</value>
+  </data>
+  <data name="lblCancelCreditNoteNo" xml:space="preserve">
+    <value>เลขที่</value>
+  </data>
+  <data name="lblDepositFeeAccumulatedPaymentAmount" xml:space="preserve">
+    <value>ยอดชำระรวม</value>
+  </data>
+  <data name="lblDepositFeeApproveNo" xml:space="preserve">
+    <value>เลขที่อนุมัติ</value>
+  </data>
+  <data name="lblDepositFeeBalanceOfDepositFee" xml:space="preserve">
+    <value>ยอดเงินค่ามัดจำปัจจุบัน</value>
+  </data>
+  <data name="lblDepositFeeBillingClientNameEN" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ (อังกฤษ)</value>
+  </data>
+  <data name="lblDepositFeeBillingClientNameLC" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ (ไทย)</value>
+  </data>
+  <data name="lblDepositFeeBillingCode" xml:space="preserve">
+    <value>เลขที่รายการเรียกเก็บ</value>
+  </data>
+  <data name="lblDepositFeeCreditNoteAmount" xml:space="preserve">
+    <value>ภาษีมูลค่าเพิ่ม</value>
+  </data>
+  <data name="lblDepositFeeCreditNoteAmountIncludeVAT" xml:space="preserve">
+    <value>ยอดเงินคืนค่ามัดจำ (รวมภาษีมูลค่าเพิ่ม)</value>
+  </data>
+  <data name="lblDepositFeeCreditNoteDate" xml:space="preserve">
+    <value>วันที่ในใบลดหนี้</value>
+  </data>
+  <data name="lblDepositFeeIssueReason" xml:space="preserve">
+    <value>เหตุผลที่ออก</value>
+  </data>
+  <data name="lblDepositFeeTaxInvoiceAmount" xml:space="preserve">
+    <value>ภาษีมูลค่าเพิ่ม</value>
+  </data>
+  <data name="lblDepositFeeTaxInvoiceAmountIncludeVAT" xml:space="preserve">
+    <value>ยอดเงินในใบกำกับภาษี (รวมภาษีมูลค่าเพิ่ม)</value>
+  </data>
+  <data name="lblDepositFeeTaxInvoiceDate" xml:space="preserve">
+    <value>วันที่ในใบกำกับภาษี</value>
+  </data>
+  <data name="lblDepositFeeTaxInvoiceNoForCreditNote" xml:space="preserve">
+    <value>เลขที่ใบกำกับภาษีเพื่อออกใบลดหนี้</value>
+  </data>
+  <data name="lblExceptDepositFeeAccumulatedPaymentAmount" xml:space="preserve">
+    <value>ยอดชำระรวม</value>
+  </data>
+  <data name="lblExceptDepositFeeApproveNo" xml:space="preserve">
+    <value>เลขที่อนุมัติ</value>
+  </data>
+  <data name="lblExceptDepositFeeBillingClientNameEN" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ (อังกฤษ)</value>
+  </data>
+  <data name="lblExceptDepositFeeBillingClientNameLC" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ (ไทย)</value>
+  </data>
+  <data name="lblExceptDepositFeeBillingCode" xml:space="preserve">
+    <value>เลขที่รายการเรียกเก็บ</value>
+  </data>
+  <data name="lblExceptDepositFeeCreditNoteAmount" xml:space="preserve">
+    <value>ภาษีมูลค่าเพิ่ม</value>
+  </data>
+  <data name="lblExceptDepositFeeCreditNoteAmountIncludeVAT" xml:space="preserve">
+    <value>ยอดเงินในใบลดหนี้ (รวมภาษีมูลค่าเพิ่ม)</value>
+  </data>
+  <data name="lblExceptDepositFeeCreditNoteDate" xml:space="preserve">
+    <value>วันที่ในใบลดหนี้</value>
+  </data>
+  <data name="lblExceptDepositFeeIssueReason" xml:space="preserve">
+    <value>เหตุผลที่ออก</value>
+  </data>
+  <data name="lblExceptDepositFeeTaxInvoiceAmount" xml:space="preserve">
+    <value>ภาษีมูลค่าเพิ่ม</value>
+  </data>
+  <data name="lblExceptDepositFeeTaxInvoiceAmountIncludeVAT" xml:space="preserve">
+    <value>ยอดเงินในใบกำกับภาษี (รวมภาษีมูลค่าเพิ่ม)</value>
+  </data>
+  <data name="lblExceptDepositFeeTaxInvoiceBillingType" xml:space="preserve">
+    <value>ประเภทการเรียกเก็บในใบกำกับภาษี</value>
+  </data>
+  <data name="lblExceptDepositFeeTaxInvoiceDate" xml:space="preserve">
+    <value>วันที่ในใบกำกับภาษี</value>
+  </data>
+  <data name="lblExceptDepositFeeTaxInvoiceNoForCreditNote" xml:space="preserve">
+    <value>เลขที่ใบกำกับภาษีเพื่อออกใบลดหนี้</value>
+  </data>
+  <data name="lblHeaderAmountIncludingVat" xml:space="preserve">
+    <value>จำนวนเงิน (รวมภาษีมูลค่าเพิ่ม)</value>
+  </data>
+  <data name="lblHeaderBillingClientName" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ</value>
+  </data>
+  <data name="lblHeaderBillingCode" xml:space="preserve">
+    <value>เลขที่รายการเรียกเก็บ</value>
+  </data>
+  <data name="lblHeaderCancelCreditNote" xml:space="preserve">
+    <value>รายการข้อมูลที่บันทึก</value>
+  </data>
+  <data name="lblHeaderCreditNoteDate" xml:space="preserve">
+    <value>วันที่ในใบลดหนี้</value>
+  </data>
+  <data name="lblHeaderCreditNoteNo" xml:space="preserve">
+    <value>เลขที่ใบลดหนี้</value>
+  </data>
+  <data name="lblHeaderRefundCreditNoteExceptDepositFee" xml:space="preserve">
+    <value>ใบลดหนี้แบบคืนเงิน (ยกเว้นค่ามัดจำ)</value>
+  </data>
+  <data name="lblHeaderRegisterCancelCreditNoteInformation" xml:space="preserve">
+    <value>ข้อมูลการยกเลิกใบลดหนี้</value>
+  </data>
+  <data name="lblHeaderRegisterDecreasedCreditNote" xml:space="preserve">
+    <value>บันทึกข้อมูลใบลดหนี้แบบลดเงิน</value>
+  </data>
+  <data name="lblHeaderRegisterRefundCreditNoteDepositFee" xml:space="preserve">
+    <value>บันทึกข้อมูลใบลดหนี้แบบคืนเงิน (ค่ามัดจำ)</value>
+  </data>
+  <data name="lblHeaderRegisterRefundCreditNoteExceptDepositFee" xml:space="preserve">
+    <value>บันทึกข้อมูลใบลดหนี้แบบคืนเงิน (ยกเว้นค่ามัดจำ)</value>
+  </data>
+  <data name="lblHeaderRegistrationContents" xml:space="preserve">
+    <value>เนื้อหาที่บันทึก</value>
+  </data>
+  <data name="lblHeaderRemove" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;ลบ&lt;/div&gt;</value>
+  </data>
+  <data name="lblHeaderRevenueDepositFee" xml:space="preserve">
+    <value>บันทึกข้อมูลการยึดค่ามัดจำ</value>
+  </data>
+  <data name="lblHeaderSelectProcess" xml:space="preserve">
+    <value>เลือกการทำงาน</value>
+  </data>
+  <data name="lblHeaderVatAmount" xml:space="preserve">
+    <value>ภาษีมูลค่าเพิ่ม</value>
+  </data>
+  <data name="lblRetrieveRemark" xml:space="preserve">
+    <value>*ไม่สามารถดึงข้อมูลการเรียกเก็บด้วยเลขที่ใบกำกับภาษีที่ไม่ได้ถ่ายโอนข้อมูลเข้าไปในระบบใหม่ได้ กรุณาใส่เครื่องหมายในช่อง "ไม่ดึงข้อมูล" และดึงข้อมูลด้วยเลขที่</value>
+  </data>
+  <data name="lblRevenueBalanceOfDepositFee" xml:space="preserve">
+    <value>ยอดเงินค่ามัดจำปัจจุบัน</value>
+  </data>
+  <data name="lblRevenueBillingClientNameEN" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ (อังกฤษ)</value>
+  </data>
+  <data name="lblRevenueBillingClientNameLC" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ (ไทย)</value>
+  </data>
+  <data name="lblRevenueBillingCode" xml:space="preserve">
+    <value>เลขที่รายการเรียกเก็บ</value>
+  </data>
+  <data name="lblRevenueRevenueDepositFee" xml:space="preserve">
+    <value>ยอดเงินยึดค่ามัดจำ (รวมภาษีมูลค่าเพิ่ม)</value>
+  </data>
+  <data name="lblRevenueRevenueVatAmount" xml:space="preserve">
+    <value>ภาษีมูลค่าเพิ่มของเงินที่ยึดไว้</value>
+  </data>
+  <data name="optCancelCreditNote" xml:space="preserve">
+    <value>ยกเลิกใบลดหนี้</value>
+  </data>
+  <data name="optRegisterDecreasedCreditNote" xml:space="preserve">
+    <value>บันทึกข้อมูลใบลดหนี้แบบลดเงิน</value>
+  </data>
+  <data name="optRegisterRefundCreditNoteDepositFee" xml:space="preserve">
+    <value>บันทึกข้อมูลใบลดหนี้แบบคืนเงิน (ค่ามัดจำ)</value>
+  </data>
+  <data name="optRegisterRefundCreditNoteExceptDepositFee" xml:space="preserve">
+    <value>บันทึกข้อมูลใบลดหนี้แบบคืนเงิน (ยกเว้นค่ามัดจำ)</value>
+  </data>
+  <data name="optRevenueDepositFee" xml:space="preserve">
+    <value>ยึดค่ามัดจำ</value>
+  </data>
+</root>

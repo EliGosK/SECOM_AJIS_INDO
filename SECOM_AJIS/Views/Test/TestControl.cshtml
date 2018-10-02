@@ -1,0 +1,264 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Models
+@using SECOM_AJIS.Presentation.Master.Helpers;
+
+@section page_header{
+    <script src="../../Scripts/jquery.maskedinput-1.3.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/AutoComplete.js" type="text/javascript"></script>
+    <script src="../../Scripts/Test/TestControl.js" type="text/javascript"></script>
+    <script src="../../Scripts/json.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/ComboBox.js" type="text/javascript"></script>
+}
+@{
+    ViewBag.Title = "TestControl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>TestControl</h2>
+<fieldset>
+    <legend>Custom Table</legend>
+    <div class="main-table">
+        <div class="table-header">Table Header</div>
+        <div class="usr-row">
+            <div class="sub-table">
+                <div class="table-sub-header">Sub Table Header</div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:200px;">Row 1</div>
+                    <div class="usr-object">
+                        @Html.CommonButton("Button44", "Button")
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:200px;">Row 2</div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("txt", "text data", new { @class = "label-view" })
+                    </div>
+                </div>
+                <div class="usr-row usr-row-space">
+                    <div class="usr-label" style="width:200px;">Row 3</div>
+                    <div class="usr-object">
+                        @Html.CommonTextBox("txt", "Row with space", new { @class = "label-view" })
+                    </div>
+                </div>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:200px;margin-top:9px;">
+                         <div class="usr-label" style="width:200px;">Row 4</div>
+                         <div class="usr-label" style="width:200px;">Row 5</div>
+                    </div>
+                    <div class="usr-object" style="height:100%;" >
+                        <div class="fieldset-table" style="width:300px;height:100%;">
+                            <div class="fieldset-header">
+                                <span>Fieldset Header</span>
+                            </div>
+                            <div class="usr-row">
+                                <div class="usr-label" style="width:120px;">Field Set Row 1</div>
+                                <div class="usr-object">
+                                    @Html.CommonTextBox("txt", "text data", new { @class = "label-view" })
+                                </div>
+                            </div>
+                            <div class="usr-row">
+                                <div class="usr-label" style="width:120px;">Field Set Row 2</div>
+                                <div class="usr-object">
+                                    @Html.CommonTextBox("txt", "text data", new { @class = "label-view" })
+                                </div>
+                            </div>
+                            <div class="usr-clear-style">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="usr-clear-style">&nbsp;</div>
+            </div>
+        </div>
+        <div class="usr-clear-style">&nbsp;</div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Button</legend>
+    <p>- Using <b>"using SECOM_AJIS.Common.Helpers"</b></p>
+    <p>- Call Html.CommonButton</p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonButton("Button3", "Button")
+    <p>- When you want to disable button then add <b>"new { disabled = "true" }"</b></p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonButton("Button4", "Button", new { disabled = "true" })
+</fieldset>
+<fieldset>
+    <legend>Text Box</legend>
+    <p>- Using <b>"using SECOM_AJIS.Common.Helpers"</b></p>
+    <p>- Call Html.CommonTextBox</p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonTextBox("txt", null, new { style = "width:300px" })
+    <p>- When you want to disable text box then add <b>"new { readonly = "readonly" }"</b></p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonTextBox("txt", "text data", new { style = "width:300px", @readonly = "readonly" })
+    <p>- When you want to change text to view mode then set class name <b>"label-view"</b> to text box</p>
+    <div>
+        <div style="float:left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div style="float:left">@Html.CommonTextBox("txt", "text data", new { @class = "label-view" })</div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Auto Complete</legend>
+    <p>- Add script <b>"AutoComplete.js"</b></p>
+    <p>- Crete textbox "CommonTextBox"</p>
+    <p>- Create Method to call data from server</p>
+    <p>
+        function txt_keypress(e) {<br />
+        <b>if ($(this).val().length + 1 >= 3) {<br />
+            var cond = $(this).val() + String.fromCharCode(e.which);<br />
+            InitialAutoCompleteControl</b>("#divSearchAddrCtrl input[id=Address]",<br />
+                                    cond,<br />
+                                    "/Master/GetCustAddress",<br />
+                                    { "cond": cond },<br />
+                                    "doCustAddress",<br />
+                                    "Address",<br />
+                                    "Address");<br />
+        }<br />
+        }
+    </p>
+    <p>- Add Event <b>"keypress"</b> ex. $("#iList").keypress(txt_keypress);</p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonTextBox("iList", null, new { style = "width:500px;" })
+</fieldset>
+<fieldset>
+    <legend>Date Picker</legend>
+    <p>- Add script <b>"DateTimePicker.js"</b></p>
+    <div>
+        <p>1.) Date</p>
+        <p>-- Create textbox "CommonTextBox"</p>
+        <p>-- Call method <b>"$(ctrl).InitialDate();"</b>, ctrl = id of</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonTextBox("datepicker", null, new { style = "width:100px;" })
+    </div>
+    <div>
+        <p>2.) Date From-To</p>
+        <p>-- Create textbox "CommonTextBox" (From/To) </p>
+        <p>-- Call method <b>"InitialDateFromToControl(from_ctrl, to_ctrl)"</b>, from_ctrl = from id, to_ctrl = to id</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="from">From</label>
+        @Html.CommonTextBox("from", null, new { style = "width:100px;" })
+        <label for="to">to</label>
+        @Html.CommonTextBox("to", null, new { style = "width:100px;" })
+    </div>
+    <div>
+        <p>3.) Disable Date</p>
+        <p>-- Create textbox "CommonTextBox"</p>
+        <p>-- Call method <b>"InitialDateControl(ctrl)"</b>, ctrl = id of</p>
+        <p>-- Call method <b>"$(ctrl).EnableDatePicker(enable)"</b>, ctrl = id of</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonTextBox("datepicker2", null, new { style = "width:100px;" })
+    </div>
+    
+</fieldset>
+<fieldset>
+    <legend>Text Area</legend>
+    <p>- Using <b>"using SECOM_AJIS.Common.Helpers"</b></p>
+    <p>- Call <b>"Html.CommonTextArea"</b></p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonTextArea("txtArea", "Test")
+    <p>- When you want to set disable control, You can add <b>"new { readonly = "readonly" }"</b></p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonTextArea("txtArea", "Test", new { @readonly = "readonly" })
+</fieldset>
+<fieldset>
+    <legend>Common ComboBox</legend>
+    <p>- Using <b>"using SECOM_AJIS.Common.Helpers"</b></p>
+    <p>- Call <b>"Html.XXXComboBox"</b> < Method that create in Helper folder for each Module</p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.DistrictComboBox("cboDistinct", null, new { style = "width:144px" })
+    <p>- When you want to set disable control, You can add <b>"new { disabled = "disabled" }"</b></p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.DistrictComboBox("cboDistinct", null, new { style = "width:144px", @disabled = "disabled" })
+</fieldset>
+
+
+<fieldset>
+    <legend>Radio Button</legend>
+    <p>- Using <b>"using SECOM_AJIS.Common.Helpers"</b></p>
+    <p>- Call <b>"Html.CommonRadioButton"</b></p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonRadioButton("rdoButton", "Test", "1", true)
+    <p>- Case Group Radio</p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonRadioButton("rdoButton2", "Test 1", "1", true)
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonRadioButton("rdoButton2", "Test 2", "2", false)
+</fieldset>
+<fieldset>
+    <legend>Check Box</legend>
+    <p>- Using <b>"using SECOM_AJIS.Common.Helpers"</b></p>
+    <p>- Call <b>"Html.CommonCheckButton"</b></p>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonCheckButton("chkBox", "Test Checkbox", "1", true)
+</fieldset>
+
+
+<fieldset>
+    <legend>Dialog</legend>
+    <div>
+        <p>1.) Error Message Dialog</p>
+        <p>-- Call <b>"OpenErrorDialog(code,msg)"</b> in japascrit</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonButton("btnDialogE", "Error Dialog", new { style = "width:120px" })
+    </div>
+    <div style="margin-top:3px;">
+        <p>2.) Information Dialog</p>
+        <p>-- 2.1) Default Dialog</p>
+        <p>---- Call <b>"OpenMessageDialog(code,msg)"</b> in japascrit</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonButton("btnDialog1", "Default Dialog", new { style = "width:120px" })
+        <p>-- 2.2) Yes/No Dialog</p>
+        <p>---- Call <b>"OpenYesNoMessageDialog(code,msg)"</b> in japascrit</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonButton("btnDialog2", "Yes/No Dialog", new { style = "width:120px" })
+    </div>
+    <div>
+        <p>3.) Warning Dialog</p>
+        <p>-- Call <b>"OpenWarningDialog(msg)"</b> in japascrit</p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Html.CommonButton("btnDialogW", "Warning Dialog", new { style = "width:120px" })
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Check List Box</legend>
+    <div class="main-table">
+        @Html.TestCheckButtonList("chkLst", false, new string[]{"U001", "U003", "U004"}, new{width="500px", height="100%", @disabled="disabled"})
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Select List Box</legend>
+    <p>- Add script <b>"ComboBox.js"</b></p>
+    <p>- Call method <b>"initial_select_combo_list"</b> < when load page</p>
+    <div class="main-table">
+        <div class="fieldset-table" style="width:500px;">
+            <script>
+                $(document).ready(function () {
+                    initial_select_combo_list("#Select1", "#Select2", "#sadd", "#sRemove");
+                });
+            </script>
+            @Html.DistrictComboBox("Select1", null, new { multiple = "multiple", style = "width:200px;height:100px;" })
+            <select name="drop2" id="Select2" multiple="multiple" style="width:200px;height:100px;">
+            </select>
+            <button id="sadd">Add</button>
+            <button id="sRemove">Remove</button>
+            <div class="usr-clear-style">&nbsp;</div>
+        </div>
+    </div>
+</fieldset>
+<fieldset>
+    <legend>Link</legend>
+    <script>
+        $(document).ready(function () {
+            $("#lnk").initial_link(function (val) {
+                OpenErrorDialog("000", "Link from >> " + val);
+            });
+
+            $("#lnkLst").initial_link_list(function (val) {
+                OpenErrorDialog("000", "Link from >> " + val);
+            });
+        });
+    </script>
+    <p>- Using <b>"using SECOM_AJIS.Common.Helpers"</b></p>
+    <p>- Call method <b>"$(ctrl).initial_link(func)"</b> < when load page</p>
+    @Html.CommonLink("lnk", "Test");
+    <br />
+    <br />
+    <p>- Using <b>"using SECOM_AJIS.Common.Helpers"</b></p>
+    <p>- Add script <b>"ComboBox.js"</b></p>
+    <p>- Call method <b>"$(ctrl).initial_link_list(func)"</b> < when load page</p>
+    <p>- * function must be <b>"function(val){}"</b></p>
+    <div class="main-table">
+        @Html.DemoLinkList("lnkLst", "Header", false, new { width = "300px", height = "50px;"})
+    </div>
+</fieldset>
+<script language="javascript">
+//    function downloadFile() {
+//        var arr=[];
+//        var obj={
+//        $.ajax({
+//            url:"",
+//            data:
+//        });
+//    }
+    
+</script>

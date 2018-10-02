@@ -1,0 +1,288 @@
+﻿<!--
+//*********************************
+// Create by: Siripoj S.
+// Create date: 19/Mar/2012
+// Update date: 19/Mar/2012
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@{
+   
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.LabelWidth = "200px";
+    ViewBag.LabelWidth2 = "200px";
+
+    ViewBag.ObjectWidth = "150px";
+    ViewBag.ObjectWidth2 = "250px";
+
+    ViewBag.ObjectWidthLong = "150px";
+    ViewBag.ObjectWidthLong2 = "620px";
+
+    ViewBag.spaceWidth = "170px";
+
+    ViewBag.isViewMode = true;
+
+    // for debug
+    ViewBag.txtBackgroundColor = "none";  // Lime
+
+    // ViewBag.C_SCREEN_ID_VIEW_BILLING_TARGET_INFORMATION = ScreenID.C_SCREEN_ID_VIEW_BILLING_TARGET_INFORMATION;
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS470.js")" ></script>
+    <script type="text/javascript">
+        //var objCMS400Conts = {
+        //C_SCREEN_ID_VIEW_BILLING_TARGET_INFORMATION: "@ViewBag.C_SCREEN_ID_VIEW_BILLING_TARGET_INFORMATION",
+        //ShowInvoiceList: "@ViewBag.txtShowInvoiceList"
+        //};
+    </script>
+}
+<div style="display:none">
+    @Html.Hidden("btnClose_cms470", (string)@Resources.CMS470.btnClose)
+    
+</div>
+
+
+<!-- Specify Search Condition ==================================================================================================================== -->
+<form id="SearchCondition" action="#">
+<div id="divSpecifySearchCondition" class="main-table">
+    <div class="table-header">
+        @Resources.CMS470.lblSearchByConditionEnglishLocal
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblBillingClientCode
+        </div>
+        <div class="usr-object" style="width: 200px">
+            @Html.CommonTextBox("CMS470_BillingClientCode", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = CommonValue.C_MAXLENGTH_BILLING_CLIENT_CODE })
+        </div>
+        <div class="usr-label" style="width: 120px">
+            @Resources.CMS470.lblBillingOffice
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.BillingOfficeAuthorityCbo("CMS470_BillingOffice", new { style = "width:154px;"},true,"ALL")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblBillingClientName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2;">
+            @Html.CommonTextBox("CMS470_BillingClientName", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", maxlength = "200" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth; margin-top:45px">
+            @Resources.CMS470.lblCustomerType
+            @Html.RequireFiled()
+        </div>
+        <div class="usr-object" style="height: 100%; width: 625px">
+            <div class="sub-table">
+                @Html.CommonCheckButton("CMS470_chkJuristic", @Resources.CMS470.lblJuristic, @CustomerType.C_CUST_TYPE_JURISTIC)
+                &nbsp;&nbsp;&nbsp;@Resources.CMS470.lblCompanyType
+                @Html.CompanyTypeComboBox("CMS470_CompanyTypeCode", new { style = "height: 22px; width: 240px;" },"ALL")
+                <br />
+                @Html.CommonCheckButton("CMS470_chkIndividual", @Resources.CMS470.lblIndividual, @CustomerType.C_CUST_TYPE_INDIVIDUAL)
+                <br />
+                @Html.CommonCheckButton("CMS470_chkAssociation", @Resources.CMS470.lblAssociation, @CustomerType.C_CUST_TYPE_ASSOCIATION)
+                <br />
+                @Html.CommonCheckButton("CMS470_chkPublicOffice", @Resources.CMS470.lblPublicOffice, @CustomerType.C_CUST_TYPE_PUBLIC_OFFICE)
+                <br />
+                @Html.CommonCheckButton("CMS470_chkOther", @Resources.CMS470.lblOther, @CustomerType.C_CUST_TYPE_OTHERS)
+                <div class="usr-clear-style">
+                    &nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class ="usr-label" style = "width:@ViewBag.LabelWidth" >
+            @Resources.CMS470.lblNationality
+        </div>
+        <div class="usr-object">
+            @Html.NationalityComboBox("CMS470_RegionCode", new { style = "height: 22px; width: 200px;" },true,"ALL")
+        </div>
+        <div class="usr-label" style="width: 120px">
+            @Resources.CMS470.lblBusinessType
+        </div>
+        <div class="usr-object">
+            @Html.BusinessTypeComboBox("CMS470_BusinessTypeCode", new { style = "height: 22px; width: 300px;" },true,"ALL")
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class ="usr-label" style = "width:@ViewBag.LabelWidth" >
+            @Resources.CMS470.lblAddress
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("CMS470_Address", null, new { style = "width:620px;", maxlength = "3200" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class ="usr-label" style = "width:@ViewBag.LabelWidth" >
+            @Resources.CMS470.lblTelephoneNumber
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("CMS470_TelephoneNo", null, new { style = "width:200px;", maxlength = "100" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-object" style="float: right; margin-right: 5px">
+            @Html.CommonButton("btnSearch", @Resources.CMS470.btnSearch, new { style = "width:100px;", type = "button" })
+            @Html.CommonButton("btnClear", @Resources.CMS470.btnClear, new { style = "width:100px;", type = "button" })
+        </div>
+    </div>
+    <div class="usr-clear-style" style="height: 0%">
+        &nbsp;</div>
+</div>
+</form>
+<!-- ============== Result list ================= -->
+<div id="divSearchResult" class="main-table">
+    <div class="table-header">
+        @Resources.CMS470.lblResultlistList
+    </div>
+    <div>
+        <div id="gridBillingTarget" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<!-- ====== End main table ======= -->
+<!-- ============== Billingtarget information and supplentary ================= -->
+<div id="CMS470_divBillingTargetInfo" class="main-table">
+    <div class="table-header">
+        @Resources.CMS470.lblBillingTargetInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblBillingTargetCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth; font-weight:bold;">
+            @Html.CommonTextBox("CMS470_BillingTargetCodeInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblBillingOffice
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth2; ">
+            @Html.CommonTextBox("CMS470_BillingOfficeInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblCustomerType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("CMS470_CustomerTypeInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblNameEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("CMS470_NameEnglishInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblBranchNameEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("CMS470_BranchNameEnglishInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblAddressEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("CMS470_AddressEnglishInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("CMS470_NameLocalInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblBranchNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("CMS470_BranchNameLocalInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblAddressLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("CMS470_AddressLocalInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblNationality
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+            @Html.CommonTextBox("CMS470_NationalityInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblTelephoneNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+            @Html.CommonTextBox("CMS470_TelephoneNoInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblIdNoTaxIdNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+            @Html.CommonTextBox("CMS470_IdNoTaxIdNoInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblBusinessType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth2; ">
+            @Html.CommonTextBox("CMS470_BusinessTypeInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+    </div>
+    <div class="usr-row">
+    </div>
+    <div class="usr-row">
+    </div>
+    <div class="table-header">
+        @Resources.CMS470.lblBillingTargetSupplementaryInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblBillingClientContactPerson
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth2; ">
+            @Html.CommonTextBox("CMS470_BillingClientContactPersonInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CMS470.lblMemo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidthLong2; ">
+            @Html.CommonTextBox("CMS470_MemoInfo", null, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<!-- ====== End main table ======= -->

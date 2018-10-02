@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="PurchaseOrderNoLink" width="120" type="ro" align="left" sort="str_custom">headerPurchaseOrderNo</column>
+    <column id="CreateDate" width="110" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerPOIssueDate</column>
+    <column id="SupplierCodeName" width="*" type="ro" align="left" sort="str_custom">headerSupplierCodeName</column>
+    <column id="POStatusAndDeliveryDate" width="200" type="ro" align="left" sort="str_custom">headerPOStatusAndDeliveryDate</column>
+    <!--<column id="TransportTypeName" width="120" type="ro" align="left" sort="str_custom">headerTransportType</column>-->
+	<column id="Memo" width="150" type="ro" align="left" sort="str_custom">headerMemo</column>
+    <column id="Amount" width="140" type="edn" align="right" format="0,000.00" sort="int">headerPurchaseAmount</column>
+    <column id="Select" width="30" type="ro" align="right" sort="na">headerSelect</column>
+    <column id="UpdateDate" width="*" type="ro" align="left" sort="str_custom" hidden="true"></column>
+    <column id="PurchaseOrderNo" width="0" type="ro" hidden="true"></column>
+    <!--
+    <column id="OrderQty" width="100"  type="link" align="right" format="0,000" sort="int">HeaderOrderQty</column>
+    <column id="Amount" width="100" type="ro" align="right" format="0,000.00" sort="int">HeaderAmount</column>
+    <column id="SourceAreaCode" width ="*" hidden="true" type="ro"></column>-->
+    <column id="Discount" width="0" type="ro" hidden="true"></column>
+    <column id="Vat" width="0" type="ro" hidden="true"></column>
+    <column id="WHT" width="0" type="ro" hidden="true"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

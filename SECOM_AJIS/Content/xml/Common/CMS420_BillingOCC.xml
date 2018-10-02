@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="BillingOCC" width="90" type="ro" align="left" sort="str_custom">HeaderBillingOCC</column>
+    <column id="BillingTargetCode_short" width="110" type="ro" align="left" sort="str_custom">HeaderBillingTargetCode</column>
+    <column id="Name" width="*" type="ro" align="left" sort="str_custom">HeaderBillingClientName</column>
+    <column id="OfficeName" width="140" type="ro" align="left" sort="str_custom">HeaderBillingOffice</column>
+    <column id="TextTransferMonthlyBillingAmount" width="140" type="ro" align="right">HeaderMonthlyBillingAmountTHB</column>
+    <column id="Detail" width="60" type="link" align="center" sort="na">HeaderBillingBasic</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

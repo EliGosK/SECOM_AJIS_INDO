@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D5237D53-9467-4B1E-92D7-B91C8358402C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.DataEntity.Billing</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Entity.Billing</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSI.WindsorHelper">
+      <HintPath>..\SECOM_AJIS.Common\_ExtLib\CSI.WindsorHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BillingBasicList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BillingTypeDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomEntity\AdjustOnNextPeriod.cs" />
+    <Compile Include="CustomEntity\AutoTransfer.cs" />
+    <Compile Include="CustomEntity\EXT_dtMonthlyBillingHistoryList.cs" />
+    <Compile Include="CustomEntity\EXT_dtViewBillingBasicList.cs" />
+    <Compile Include="CustomEntity\EXT_doGetBillingCodeInfo.cs" />
+    <Compile Include="CustomEntity\EXT_doGetRptInvoiceIssueList.cs" />
+    <Compile Include="CustomEntity\EXT_dtBillingDetailForCreateInvoice.cs" />
+    <Compile Include="CustomEntity\EXT_dtBillingContract.cs" />
+    <Compile Include="CustomEntity\EXT_doBLS050GetTbt_BillingTargetForView.cs" />
+    <Compile Include="CustomEntity\EXT_doBLS050GetBillingDetailForCancelList.cs" />
+    <Compile Include="CustomEntity\EXT_doBLS050GetBillingBasic.cs" />
+    <Compile Include="CustomEntity\EXT_dtCreditCardForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtAutoTransferBankAccountForView.cs" />
+    <Compile Include="CustomEntity\EXT_doTbt_BillingBasic.cs" />
+    <Compile Include="CustomEntity\EXT_doGetBillingDetailOfInvoice.cs" />
+    <Compile Include="CustomEntity\EXT_doGetTaxInvoiceForIC.cs" />
+    <Compile Include="CustomEntity\EXT_dtGetRptDocReceipt.cs" />
+    <Compile Include="CustomEntity\EXT_dtRptPaymentForm.cs" />
+    <Compile Include="CustomEntity\EXT_dtRptTaxInvoice.cs" />
+    <Compile Include="CustomEntity\EXT_doInvoice.cs" />
+    <Compile Include="CustomEntity\EXT_dtRptInvoice.cs" />
+    <Compile Include="CustomEntity\EXT_dtBillingBasicForRentalList.cs" />
+    <Compile Include="CustomEntity\EXT_dtDownloadAutoTransferBankFile.cs" />
+    <Compile Include="CustomEntity\doBatchGenerateAutoTransferBankFile.cs" />
+    <Compile Include="CustomEntity\doBillingTargetDataSearchCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dtBillingTargetData.cs" />
+    <Compile Include="CustomEntity\EXT_doBillingTargetList.cs" />
+    <Compile Include="CustomEntity\EXT_dtViewBillingInvoiceListOfLastInvoiceOcc.cs" />
+    <Compile Include="CustomEntity\EXT_dtBillingBasicList.cs" />
+    <Compile Include="CustomEntity\EXT_dtViewDepositDetailInformation.cs" />
+    <Compile Include="CustomEntity\EXT_Tbt_CreditNote.cs" />
+    <Compile Include="CustomEntity\EXT_dtViewBillingDetailListOfLastInvoiceOCC.cs" />
+    <Compile Include="CustomEntity\EXT_dtViewBillingDetailList.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbt_BillingBasicForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbt_CreditCardForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtViewBillingBasic.cs" />
+    <Compile Include="CustomEntity\EXT_dtViewBillingOccList.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbt_AutoTranferBankAccountForView.cs" />
+    <Compile Include="CustomEntity\EXT_doBillingTypeDetailList.cs" />
+    <Compile Include="CustomEntity\EXT_doBillingDetail.cs" />
+    <Compile Include="CustomEntity\doCreditCard.cs" />
+    <Compile Include="CustomEntity\EXT_dtBillingTargetForView.cs" />
+    <Compile Include="CustomEntity\EXT_Tbt_BillingDetail.cs" />
+    <Compile Include="CustomEntity\EXT_Tbt_BillingTarget.cs" />
+    <Compile Include="CustomEntity\EXT_Tbt_BillingTypeDetail.cs" />
+    <Compile Include="CustomEntity\EXT_Tbt_Invoice.cs" />
+    <Compile Include="CustomEntity\EXT_View_dtBillingClientData.cs" />
+    <Compile Include="CustomEntity\View_dtBillingTargetData.cs" />
+    <Compile Include="doBillingBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBillingDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBillingTargetList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBillingTypeDetailList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBLS050GetBillingBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBLS050GetBillingDetailForCancelList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBLS050GetTbt_BillingTargetForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCheckInvoiceSameAccount.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCheckInvoiceSameAccountNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetBalanceDepositByBillingCode.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetBankAutoTransferDateForGen.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetBillingCodeInfo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetBillingDetailContinues.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetBillingDetailForCancel.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetBillingDetailOfInvoice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetInvoiceForGenBankFile.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetInvoiceWithBillingClientName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetRptInvoiceIssueList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetTaxInvoiceForIC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetUnpaidInvoiceData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInvoice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doRefundInfo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doTax.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doTbt_BillingBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doTbt_MonthlyBillingHistoryList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doVATMaster.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doxygen-DO.cs" />
+    <Compile Include="Doxygen-function.cs" />
+    <Compile Include="dtAutoTransferBankAccountForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBillingBasicForRentalList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBillingContract.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBillingDetailByProcess.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBillingDetailForCreateInvoice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBillingTargetData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCreditCardForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtDownloadAutoTransferBankFile.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetRptDocReceipt.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtRptInvoice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtRptInvoiceDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtRptInvoiceHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtRptPaymentForm.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtRptTaxInvoice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_AutoTransferBankAccountForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_BillingBasicForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_BillingTargetForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_CreditCardForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtViewBillingBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtViewBillingBasicList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtViewBillingDetailList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtViewBillingDetailListOfLastInvoiceOCC.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtViewBillingInvoiceListOfLastInvoiceOcc.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtViewBillingOccList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtViewDepositDetailInformation.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_AutoTransferScheduleList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_AutoTransferBankAccount.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_BillingBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_BillingDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_BillingTarget.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_BillingTypeDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_CreditCard.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_CreditNote.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_Depositfee.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ExportAutoTransfer.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_Invoice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InvoiceIssueList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InvoiceReprint.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_MonthlyBillingHistory.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_TaxInvoice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <None Include="SECOM_AJIS.Entity.Billing.Context.Biz.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Billing.Context.tt</DependentUpon>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Billing.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Billing.Context.tt</DependentUpon>
+    </None>
+    <Compile Include="SECOM_AJIS.Entity.Billing.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Billing.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Billing.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Billing.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="SECOM_AJIS.Entity.Billing.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Billing.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SECOM_AJIS.Entity.Billing.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Billing.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Billing.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Billing.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Common\SECOM_AJIS.Entity.Common.csproj">
+      <Project>{527a7562-621e-47cd-92cb-e0fa26660a4e}</Project>
+      <Name>SECOM_AJIS.Entity.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Master\SECOM_AJIS.Entity.Master.csproj">
+      <Project>{65F28583-CF30-4765-A871-E97D2AE7F9B9}</Project>
+      <Name>SECOM_AJIS.Entity.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Common\SECOM_AJIS.Interface.Common.csproj">
+      <Project>{0177E9AC-5098-42BC-9AC1-9B8862FB3E3C}</Project>
+      <Name>SECOM_AJIS.Interface.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

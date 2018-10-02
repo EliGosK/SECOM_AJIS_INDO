@@ -1,0 +1,104 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+<div class="main-table">
+    <div class="table-header">@Resources.QUS020.lblRealCustomerInfo</div>
+    <div id="divCopyContractInfo" style="float:right;margin:-30px 12px 0 0;">
+        @Html.CommonButton("btnCopyContractInfo", (string)@Resources.QUS020.btnCopyContractTargetPurchaserInfo, new { style = "width:300px;" })
+    </div>
+    <div id="divRealCustomerInfo">
+        <div id="divSpecifyRealCustomer" class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">&nbsp;</div>
+            <div class="usr-object" style="width:@ViewBag.SubTableWidth;padding-bottom:5px;">
+                <div class="sub-table">
+                    <div class="table-sub-header">@Resources.QUS020.lblSpecifyCode</div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.SubLabelCol1Width;">@Resources.QUS020.lblCustomerCode</div>
+                        <div class="usr-object" style="margin-right:5px;">
+                            @Html.CommonTextBox("RCSearchCustCode", null, new { maxlength = CommonValue.C_MAXLENGTH_CUSTOMER_CODE, style = "width:120px;" })
+                        </div>
+                        <div class="usr-object">
+                            @Html.CommonButton("btnRCRetrieve", (string)@Resources.QUS020.btnRetrieve, new { style = "width:100px;" })
+                            @Html.CommonButton("btnRCSearchCustomer", (string)@Resources.QUS020.btnSearchCustomer, new { style = "width:150px;" })
+                        </div>
+                    </div>
+                    <div class="usr-clear-style">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblCustomerCode</div>
+            <div class="usr-object" style="margin-right:5px;">
+                @Html.CommonTextBox("RCCustCodeShort", null, new { style = "width:120px;", @readonly = true })
+            </div>
+            <div class="usr-object">
+                @Html.CommonButton("btnRCNewEditCustomer", (string)@Resources.QUS020.btnNewEditCustomerInfo, new { style = "width:200px;" })
+                @Html.CommonButton("btnRCClearCustomer", (string)@Resources.QUS020.btnClearCustomer, new { style = "width:150px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblNameEN</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("RCCustFullNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblAddressEN</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("RCAddressFullEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblNameLC</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("RCCustFullNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblAddressLC</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("RCAddressFullLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblCustomerType</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("RCCustTypeName", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.QUS020.lblCompanyType</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+                @Html.CommonTextBox("RCCompanyTypeName", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">@Resources.QUS020.lblIDNo</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                @Html.CommonTextBox("RCIDNo", null, new { style = "width:" + @ViewBag.ObjectCol3Width + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblNationality</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+                @Html.CommonTextBox("RCNationality", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", @readonly = true })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">@Resources.QUS020.lblBusinessType</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;">
+                @Html.CommonTextBox("RCBusinessTypeName", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelCol3Width;">@Resources.QUS020.lblPhoneNo</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectCol3Width;">
+                @Html.CommonTextBox("RCPhoneNo", null, new { style = "width:" + @ViewBag.ObjectCol3Width + ";", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblURL</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                @Html.CommonTextBox("RCURL", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div id="divRealCustomerMemo" class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblMemo</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextArea("RealCustomerMemo", (string)@ViewBag.RealCustomerMemo, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";height:55px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

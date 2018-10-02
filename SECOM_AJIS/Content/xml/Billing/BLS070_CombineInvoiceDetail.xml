@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    
+    <!--Hiddle-->
+    <column id="BillingCode" width="0" type="ro" hiddle="true" align="left" sort="na" ></column>
+
+    <column id="BillingCode_Short" width="110" type="ro" align="left" sort="na" >lblHeader4BillingCode</column>
+    
+    <column id="RunningNo" width="70" type="ro" align="left" sort="na" >lblHeader4RunningNo</column>
+    <column id="BillingType" width="160" type="ro" align="left" sort="na" >lblHeader4BillingType</column>
+    <column id="BillingAmount" width="210" type="edn" align="right" sort="na">lblHeader4BillingAmount</column>
+    <column id="SiteName" width="*" type="ro" align="left" sort="na" >lblHeader4SiteName</column>
+
+    <column id="isAddNew" width="0" type="ro" hidden="true" align="left" sort="na" >lblHeader4BillingCode</column>
+
+    <!--Hidden-->
+    <column id="ContractCode" width="0" type="ro" hidden="true" align="left" sort="na" ></column>
+    <!--Hidden-->
+    <column id="BillingOCC" width="0" type="ro" hidden="true" align="left" sort="na" ></column>
+    <!--Hidden-->
+    <column id="BillingDetailNo" width="0" type="ro" hidden="true" align="left" sort="na" ></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

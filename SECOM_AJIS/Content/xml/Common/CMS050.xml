@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column> <!--headerNo-->
+
+    <!-- Hidden-->
+    <column id="BatchCode" width="0" type="ro" align="left" sort="na"></column> 
+    <column id="BatchName" width="*" type="ro" align="left" sort="na">headerBatchName</column>
+    
+    <column id="BatchLastRunTimeEXT" width="180" type="ro" align="left" sort="na">headerLastRuntime</column>
+    
+    
+    <column id="BatchLastResultName" width="140" type="ro" align="left" sort="na">headerLastResult</column>
+
+    <!-- Hidden-->
+    <column id="BatchStatus" width="0" type="ro" align="left" sort="na" hidden="true"></column>
+    <column id="BatchStatusName" width="130" type="ro" align="left" sort="na">headerStatus</column>
+    <column id="Total" width="70" type="ro" align="right" sort="na">headerTotal</column>
+    <column id="Complete" width="85" type="ro" align="right" sort="na">headerComplete</column>
+    <column id="Fail" width="70" type="ro" align="right" sort="na">headerFailed</column>
+
+    <!-- Hidden-->
+    <column id="EnableRun" width="0" type="ro" align="left" sort="str_custom" hidden="true"></column>
+    <!-- Hidden-->
+    <column id="RunOnlineFlag" width="0" type="ro" align="left" sort="str_custom" hidden="true"></column>
+
+    <column id="Button" width="30" type="ro" align="center" sort="na">headerButton</column>
+    <column id="Object" width="0" type="ro" align="center" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

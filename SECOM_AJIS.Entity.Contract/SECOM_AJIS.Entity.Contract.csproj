@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22F8AFE0-0CBB-4543-A703-2C29A1E2105A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.DataEntity.Contract</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Entity.Contract</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSI.WindsorHelper">
+      <HintPath>..\SECOM_AJIS\bin\CSI.WindsorHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoRenewProcess_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CheckCancelContractBeforeStartService_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CheckCanReplaceInstallSlip_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CheckCP12_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomEntity\CMS070_ContractView.cs" />
+    <Compile Include="CustomEntity\doChangePlanBeforeStartEmail.cs" />
+    <Compile Include="CustomEntity\EXT_doMaintenanceCompletionReport.cs" />
+    <Compile Include="CustomEntity\EXT_dtGroupSummary.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbt_RentalSentryGuardDetailsListForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtGetContractDataForSearch.cs" />
+    <Compile Include="CustomEntity\EXT_dtSaleHistoryDigestList.cs" />
+    <Compile Include="CustomEntity\EXT_dtRentalHistoryDigest.cs" />
+    <Compile Include="CustomEntity\EXT_dtRelatedContract.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbt_BillingTempListForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbt_RentalSecurityBasicForView.cs" />
+    <Compile Include="CustomEntity\EXT_RPTStartResumeMemoDo.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_RentalSentryGuardForView.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_ProjectExpectedInstrumentDetails.cs" />
+    <Compile Include="CustomEntity\EXT_doRentalContractDataForFlowMenu.cs" />
+    <Compile Include="CustomEntity\doBillingBasicForMAResultBasedFeePayment.cs" />
+    <Compile Include="CustomEntity\doMACheckupSlipResult.cs" />
+    <Compile Include="CustomEntity\dtBillingTemp_SetItem.cs" />
+    <Compile Include="CustomEntity\EXT_doDraftRentalContractInformation.cs" />
+    <Compile Include="CustomEntity\EXT_doSaleContractDataForFlowMenu.cs" />
+    <Compile Include="CustomEntity\EXT_dtSaleBasic.cs" />
+    <Compile Include="CustomEntity\doProjectBranch.cs" />
+    <Compile Include="CustomEntity\EXT_dtRentalContractBasicForInstall.cs" />
+    <Compile Include="CustomEntity\EXT_RPTCancelContractMemoDetailDo.cs" />
+    <Compile Include="CustomEntity\EXT_RPTInstrumentCheckupDo.cs" />
+    <Compile Include="CustomEntity\EXT_RPTMACheckupSlipDo.cs" />
+    <Compile Include="CustomEntity\EXT_tbs_ARTypePattern.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_BillingTemp.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DocCancelContractMemoDetail.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_MaintenanceCheckup.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_ProjectStockOutMemo.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbt_ProjectStockoutIntrumentForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtContractList.cs" />
+    <Compile Include="CustomEntity\EXT_dtGroupList.cs" />
+    <Compile Include="CustomEntity\doARPermission.cs" />
+    <Compile Include="CustomEntity\dsARDetail.cs" />
+    <Compile Include="CustomEntity\dsARDetailIn.cs" />
+    <Compile Include="CustomEntity\dsProjectInfo.cs" />
+    <Compile Include="CustomEntity\dsSiteInfo.cs" />
+    <Compile Include="CustomEntity\dtProjectPurcheser.cs" />
+    <Compile Include="CustomEntity\EXT_dtAR.cs" />
+    <Compile Include="CustomEntity\EXT_dtARListCTS370.cs" />
+    <Compile Include="CustomEntity\EXT_dtARRole.cs" />
+    <Compile Include="CustomEntity\EXT_dtIncident.cs" />
+    <Compile Include="CustomEntity\EXT_dtIncidentHistory.cs" />
+    <Compile Include="CustomEntity\EXT_dtIncidentRole.cs" />
+    <Compile Include="CustomEntity\EXT_dtRentalContractBasicForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtSaleContractBasicForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbs_IncidentTypePattern.cs" />
+    <Compile Include="CustomEntity\EXT_tbs_ARTypeTitle.cs" />
+    <Compile Include="CustomEntity\EXT_tbs_IncidentReasonType.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_ContractDocument.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DocCancelContractMemo.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DocChangeFeeMemo.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DocChangeMemo.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DocContractReport.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_RentalContractBasic.cs" />
+    <Compile Include="CustomEntity\doMaintenanceCheckSheetReportView.cs" />
+    <Compile Include="CustomEntity\RPTSlipReport.cs" />
+    <Compile Include="CustomEntity\doSearchContractDocCondition.cs" />
+    <Compile Include="CustomEntity\dsIncidentDetailIn.cs" />
+    <Compile Include="CustomEntity\EXT_dtContractDocumentList.cs" />
+    <Compile Include="CustomEntity\dsIncidentDetail.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbt_SaleBasicForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtContractDoc.cs" />
+    <Compile Include="CustomEntity\EXT_dtContractsSameSite.cs" />
+    <Compile Include="CustomEntity\dsContractDocForIssue.cs" />
+    <Compile Include="CustomEntity\dsIncidentData.cs" />
+    <Compile Include="CustomEntity\EXT_dtChangedCustHistDetail.cs" />
+    <Compile Include="CustomEntity\doContractSite.cs" />
+    <Compile Include="CustomEntity\doTbt_Project.cs" />
+    <Compile Include="CustomEntity\doRetrieveARListCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbt_ProjectStockoutBranchIntrumentDetailForView.cs" />
+    <Compile Include="CustomEntity\dtTbt_ProjectPurchaserCustomerForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbt_ProjectSystemDetailForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtProjectSupprtStaffDetailsForView.cs" />
+    <Compile Include="CustomEntity\EXT_dtChangedCustHistList.cs" />
+    <Compile Include="CustomEntity\EXT_RPTCancelContractMemoDo.cs" />
+    <Compile Include="CustomEntity\EXT_RPTChangeFeeMemoDo.cs" />
+    <Compile Include="CustomEntity\EXT_RPTChangeMemoDo.cs" />
+    <Compile Include="CustomEntity\EXT_RPTChangeNoticeDo.cs" />
+    <Compile Include="CustomEntity\EXT_RPTConfirmCurrInstMemoDo.cs" />
+    <Compile Include="CustomEntity\EXT_RPTContractReportDo.cs" />
+    <Compile Include="CustomEntity\EXT_RPTCoverLetterDo.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_ProjectStockoutBranchIntrumentDetails.cs" />
+    <Compile Include="CustomEntity\tbt_BillingBasic.cs" />
+    <Compile Include="CustomEntity\EXT_dtSummaryAR.cs" />
+    <Compile Include="CustomEntity\doDraftSaleContractCondition.cs" />
+    <Compile Include="CustomEntity\doDraftSaleContractData.cs" />
+    <Compile Include="CustomEntity\EXT_ContractDocHeader.cs" />
+    <Compile Include="CustomEntity\doRetrieveIncidentListCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dtContractListGrp.cs" />
+    <Compile Include="CustomEntity\EXT_dtIncidentListCTS320.cs" />
+    <Compile Include="CustomEntity\EXT_dtsiteListGrp.cs" />
+    <Compile Include="CustomEntity\EXT_dtCustomerListGrp.cs" />
+    <Compile Include="CustomEntity\dtGroupSummaryForShow.cs" />
+    <Compile Include="CustomEntity\EXT_dtARList.cs" />
+    <Compile Include="CustomEntity\doSearchARListCondition.cs" />
+    <Compile Include="CustomEntity\doSearchSaleWarrantyExpireCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dtSearchSaleWarrantyExpireResult.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DraftSaleContract.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DraftSaleEmail.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DraftSaleInstrument.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_ProjectPurchaserCustomer.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_Project.cs" />
+    <Compile Include="CustomEntity\doSearchARListByRole.cs" />
+    <Compile Include="CustomEntity\doRegisterProjectData.cs" />
+    <Compile Include="CustomEntity\dsContractDocData.cs" />
+    <Compile Include="CustomEntity\EXT_dtSummaryIncident.cs" />
+    <Compile Include="CustomEntity\doSearchProjectCondition.cs" />
+    <Compile Include="CustomEntity\doHasIncidentPermission.cs" />
+    <Compile Include="CustomEntity\doSearchIncidentListCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dtIncidentList.cs" />
+    <Compile Include="CustomEntity\doIncidentListByRole.cs" />
+    <Compile Include="CustomEntity\doNotifyEmailContent.cs" />
+    <Compile Include="CustomEntity\doDraftRentalContractCondition.cs" />
+    <Compile Include="CustomEntity\doDraftRentalContractData.cs" />
+    <Compile Include="CustomEntity\dsCancelContractQuotation.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_CancelContractMemo.cs" />
+    <Compile Include="CustomEntity\EXT_doProjectContractDetail.cs" />
+    <Compile Include="CustomEntity\EXT_dtSearchMACheckupResult.cs" />
+    <Compile Include="CustomEntity\dtBillingTempData.cs" />
+    <Compile Include="CustomEntity\doSearchMACheckupCriteria.cs" />
+    <Compile Include="CustomEntity\EXT_dtTbt_RentalContractBasicForView.cs" />
+    <Compile Include="CustomEntity\EXT_tbm_SubContractor.cs" />
+    <Compile Include="CustomEntity\EXT_doMaintenanceCheckupInformation.cs" />
+    <Compile Include="CustomEntity\doGenerateMACheckupSchedule.cs" />
+    <Compile Include="CustomEntity\EXT_doSaleContractBasicInformation.cs" />
+    <Compile Include="CustomEntity\EXT_doBillingDetail.cs" />
+    <Compile Include="CustomEntity\EXT_doBillingBasic.cs" />
+    <Compile Include="CustomEntity\EXT_doContractHeader.cs" />
+    <Compile Include="CustomEntity\EXT_dtSearchDraftContractResult.cs" />
+    <Compile Include="CustomEntity\doBillingTempData.cs" />
+    <Compile Include="CustomEntity\doUpdateCustomerAcceptanceData.cs" />
+    <Compile Include="CustomEntity\doSendBillingData.cs" />
+    <Compile Include="CustomEntity\doSubcontractorDetails.cs" />
+    <Compile Include="CustomEntity\doInstrumentDetails.cs" />
+    <Compile Include="CustomEntity\doCompleteInstallationData.cs" />
+    <Compile Include="CustomEntity\doInstrument.cs" />
+    <Compile Include="CustomEntity\doRentalContractBasicInformation.cs" />
+    <Compile Include="CustomEntity\doRentalSecurityBasicInformation.cs" />
+    <Compile Include="CustomEntity\doUpdateStockOutInstrumentData.cs" />
+    <Compile Include="CustomEntity\dsQuotation.cs" />
+    <Compile Include="CustomEntity\dsSaleContractData.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_CancelContractMemoDetail.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DraftRentalContract.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DraftRentalEmail.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DraftRentalInstrument.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_DraftRentalMaintenanceDetails.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_RelationType.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_RentalSecurityBasic.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_SaleBasic.cs" />
+    <Compile Include="CustomEntity\EXT_dtProjectData.cs" />
+    <Compile Include="CustomEntity\View_dtTbt_BillingTempListForView.cs" />
+    <Compile Include="CustomEntity\View_dtMaintCheckUpResultList.cs" />
+    <Compile Include="CustomEntity\dsMaintenanceTargetList.cs" />
+    <Compile Include="CustomEntity\doSaleContractData.cs" />
+    <Compile Include="CustomEntity\View_dtContractListGrp.cs" />
+    <Compile Include="CustomEntity\View_dtCustomerListGrp.cs" />
+    <Compile Include="CustomEntity\View_dtSiteListGrp.cs" />
+    <Compile Include="CustomEntity\View_dtTbt_CancelContractMemoDetailForView.cs" />
+    <Compile Include="CustomEntity\View_dtRelatedContract.cs" />
+    <Compile Include="CustomEntity\doSearchDraftContractCondition.cs" />
+    <Compile Include="CustomEntity\doCustomerInfoCondition.cs" />
+    <Compile Include="CustomEntity\View_dtContractDocument.cs" />
+    <Compile Include="CustomEntity\dsContractBasicForView.cs" />
+    <Compile Include="CustomEntity\dsSecurityBasicForView.cs" />
+    <Compile Include="CustomEntity\dtChangeType.cs" />
+    <Compile Include="CustomEntity\dtIncidentARType.cs" />
+    <Compile Include="CustomEntity\View_dtContractData.cs" />
+    <Compile Include="CustomEntity\dsRentalContractData.cs" />
+    <Compile Include="CustomEntity\View_dtContractSameSite.cs" />
+    <Compile Include="CustomEntity\View_dtSearchDraftContractResult.cs" />
+    <Compile Include="doBillingTargetDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBillingTempBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doBillingTempDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doContractAutoRenew.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doContractBasicInformation.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doContractHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCreateMASchedule.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCreateMAScheduleDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doDraftRentalContractInformation.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetContractProjectInfo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetSaleDataForIssueInvoice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doLastCancelContractMemo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doMaintenanceCheckSheetReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doMaintenanceCheckupInformation.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doMaintenanceCompletionReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doMaintenanceRelationType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doProjectBranch.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doProjectContractDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doRentalContractBasicInformation.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doRentalContractDataForFlowMenu.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doRentalSecurityBasicInformation.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSaleContractBasicInformation.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSaleContractDataForFlowMenu.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doServiceProductTypeCode.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSummaryFee.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doUpdateAutoRenew.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doxygen-DO.cs" />
+    <Compile Include="Doxygen-function.cs" />
+    <Compile Include="dsGetSiteContractList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dsSaleInstrumentDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAR.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtARDepartmentChief.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtARList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtARListCTS370.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAROccContract.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAROccSite.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtAROfficeChief.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtARRole.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBillingTempChangeFeeData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtChangedCustHistDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtChangedCustHistList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtChangedCustHistList2.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtContractDoc.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtContractDocHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtContractDocument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtContractDocumentList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtContractList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtContractListGrp.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtContractOfAllSite.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtContractSignerType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtContractsSameSite.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtContractTargetInfoByRelated.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCustomerList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCustomerListGrp.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetContractTargetInfoByRelated.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetMaintenanceCheckupList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetMaintenanceTargetContract.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGetSaleInstruDetailListForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGroupList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtGroupSummary.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtIncident.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtIncidentHistory.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtIncidentList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtIncidentListCTS320.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtIncidentOccContract.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtIncidentOccSite.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtIncidentRole.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInstrumentAdditionalInstalled.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInstrumentCheckupList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInstrumentInstalledBefore.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtMACheckupSlip.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtMaintCheckUpResultList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtMaintContractTargetInfoByRelated.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtProjectData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtProjectForInstall.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtQuotationNoData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtRelatedContract.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtRelatedOfficeChief.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtRentalContractBasicForInstall.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtRentalContractBasicForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtRentalHistoryDigest.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSaleBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSaleContractBasicForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSaleHistoryDigest.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSaleInstruDetailListForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSearchDraftContractResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSearchMACheckupResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSearchSaleWarrantyExpireResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSiteList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtsiteListGrp.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSummaryAR.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSummaryIncident.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbs_ARApproveNoRunningNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbs_ARRunningNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbs_IncidentRunningNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbs_IncidentTypePattern.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_BillingTempForSP.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_BillingTempListForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_CancelContractMemoDetailForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_ProjectExpectedInstrumentDetailsForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_ProjectPurchaserCustomerForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_ProjectStockoutBranchIntrumentDetailForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_ProjectStockoutIntrumentForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_ProjectSupportStaffDetailForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_ProjectSystemDetailForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_RentalBEDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_RentalBEDetailsForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_RentalContractBasicForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_RentalInstrumentDetailsListForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_RentalInstSubContractorListForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_RentalMaintenanceDetailsForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_RentalOperationTypeListForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_RentalSecurityBasicForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_RentalSentryGuardDetailsListForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_RentalSentryGuardForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_SaleBasicForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtTbt_SaleInstSubcontractorListForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtUnreceivedContractDocuemntCTR095.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTCancelContractMemoDetailDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTCancelContractMemoDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTChangeFeeMemoDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTChangeMemoDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTChangeNoticeDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTConfirmCurrInstMemoDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTContractReportDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTCoverLetterDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTInstrumentCheckupDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTInstrumentDetailDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTMACheckupSlipDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTStartResumeMemoDo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Contract1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Contract.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="sp_CT_GetSaleBasicOneShotFlag_Result.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbm_SubContractor.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_ARApproveNoRunningNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_ARPermissionConfiguration.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_ARRunningNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_ARTypePattern.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_ARTypeTitle.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_ContractDocTemplate.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_IncidentPermissionConfiguration.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_IncidentReasonType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_IncidentRunningNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_AR.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ARFeeAdjustment.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ARHistory.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ARHistoryDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ARRole.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_BillingTemp.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_CancelContractMemo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_CancelContractMemoDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ContractCustomerHistory.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ContractDocument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ContractEmail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocCancelContractMemo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocCancelContractMemoDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocChangeFeeMemo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocChangeMemo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocChangeNotice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocConfirmCurrentInstrumentMemo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocContractReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocInstrumentDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DocStartMemo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftRentalBEDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftRentalBillingTarget.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftRentalContract.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftRentalEmail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftRentalInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftRentalMaintenanceDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftRentalOperationType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftRentalSentryGuard.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftRentalSentryGuardDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftSaleBillingTarget.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftSaleContract.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftSaleEmail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_DraftSaleInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_Incident.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_IncidentHistory.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_IncidentHistoryDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_IncidentRole.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_MaintenanceCheckup.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_MaintenanceCheckupDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_Project.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ProjectExpectedInstrumentDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ProjectOtherRalatedCompany.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ProjectPurchaserCustomer.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ProjectStockoutBranchIntrumentDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ProjectStockoutInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ProjectStockoutInstrument1.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ProjectStockOutMemo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ProjectSupportStaffDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_ProjectSystemDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_RelationType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_RentalBEDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_RentalContractBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_RentalInstrumentDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_RentalInstSubcontractor.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_RentalMaintenanceDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_RentalOperationType.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_RentalSecurityBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_RentalSentryGuard.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_RentalSentryGuardDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_SaleBasic.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_SaleInstrumentDetails.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_SaleInstSubcontractor.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="SECOM_AJIS.Entity.Contract.Context.Biz.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.Context.tt</DependentUpon>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Contract.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Contract.Context.tt</DependentUpon>
+    </None>
+    <Compile Include="dtContractBranchName.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtContractData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Contract.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Contract.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Contract.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Contract.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="SECOM_AJIS.Entity.Contract.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Contract1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SECOM_AJIS.Entity.Contract.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Contract.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Contract.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Contract.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.DataEntity.ExchangeRate\SECOM_AJIS.DataEntity.ExchangeRate.csproj">
+      <Project>{DBEE8AD2-0E4C-4CF6-9C20-17D19011D93F}</Project>
+      <Name>SECOM_AJIS.DataEntity.ExchangeRate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Common\SECOM_AJIS.Entity.Common.csproj">
+      <Project>{527A7562-621E-47CD-92CB-E0FA26660A4E}</Project>
+      <Name>SECOM_AJIS.Entity.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Master\SECOM_AJIS.Entity.Master.csproj">
+      <Project>{65F28583-CF30-4765-A871-E97D2AE7F9B9}</Project>
+      <Name>SECOM_AJIS.Entity.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Common\SECOM_AJIS.Interface.Common.csproj">
+      <Project>{0177e9ac-5098-42bc-9ac1-9b8862fb3e3c}</Project>
+      <Name>SECOM_AJIS.Interface.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

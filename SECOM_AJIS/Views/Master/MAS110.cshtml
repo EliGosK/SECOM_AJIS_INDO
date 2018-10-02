@@ -1,0 +1,338 @@
+﻿<!--
+//*********************************
+// Create by: Fikree S.
+// Create date: 13/Jan/2012
+// Update date: 13/Jan/2012
+//*********************************
+-->
+
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers;
+
+@section page_header{
+    <script type="text/javascript" src="../../Scripts/jquery.maskedinput-1.3.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Master/MAS110.js")" ></script>
+
+    <script type="text/javascript">
+            var permission =
+        {
+            ADD: "@ViewBag.HasPermissionAdd" == "True" ? true : false,
+            EDIT: "@ViewBag.HasPermissionEdit" == "True" ? true : false,
+            DEL: "@ViewBag.HasPermissionDelete" == "True" ? true : false
+        };
+        var msgCancel = "@Resources.MAS110.msgCancel";
+
+        var MAS110_FlagDisplay = 
+        {
+            Yes: "@ViewBag.FlagDisplayYes",
+            No: "@ViewBag.FlagDisplayNo"
+        };
+    </script>
+}
+
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.SubLabelWidth = "70px";
+    ViewBag.SubLabelWidthCenter = "250px";
+}
+
+
+
+<!-- SEARCH CRITERIA SECTION ==================================================================================================================== -->
+<div id="Search_Criteria" class="main-table">
+    <div class="table-header">
+       @Resources.MAS110.lblSearchSubcontractor
+    </div>
+    <form id="MAS110_SearchCriteria" action='#' >
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblSubcontractorCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SubcontractorCodeSearch", null, new { style = "width:120px;", maxlength = "5" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblCoCompanyCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("CoCompanyCodeSearch", null, new { style = "width:60px;", maxlength = "3" })
+            </div>
+            <div class="usr-label" style="width:251px;">
+                @Resources.MAS110.lblInstallationTeamNumber
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("InstallationTeamSearch", null, new { style = "width:30px;", maxlength = "2" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblSubcontractorName
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SubcontractorNameSearch", null, new { style = "width:350px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div style="text-align: right; margin-top:5px">
+                @Html.CommonButton("btnSearch", @Resources.MAS110.btnSearch, new { type = "button" })
+                @Html.CommonButton("btnClear", @Resources.MAS110.btnClear, new { type = "button" })
+                @Html.CommonButton("btnNew", @Resources.MAS110.btnNew, new { type = "button" })
+            </div>
+        </div>
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+    </form>
+</div>
+
+<!-- SEARCH RESULT SECTION ====================================================================================================================== -->
+<div id="Result_List" class="main-table">
+    <div class="table-header">
+        @Resources.MAS110.lblResultList
+    </div>
+    <div id="grid_result" style="width:99%;margin-left:4px;"></div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<!-- RESULT DETAIL SECTION ====================================================================================================================== -->
+<div id="Result_Detail" class="main-table">
+    <div class="table-header">
+       @Resources.MAS110.lblSubcontractorInfo
+    </div>
+    <form id="MAS110_ResultDetail" action="#">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">&nbsp;</div>
+            <div class="usr-object"> 
+                @Html.CommonCheckButton("DeleteFlag", @Resources.MAS110.lblDelete, "True")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblSubcontractorCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SubContractorCode", null, new { style = "width:150px;", maxlength = "5" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblCoCompanyCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("COCompanyCode", null, new { style = "width:60px;", maxlength = "3" })
+                @Html.RequireFiled()
+            </div>
+            <div class="usr-label" style="width:252px;">
+                @Resources.MAS110.lblTeamNo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("InstallationTeam", null, new { style = "width:30px;", maxlength = "2" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblSubcontractorNameEN
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SubContractorNameEN", null, new { style = "width:630px;", maxlength = "100" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblSubcontractorNameLC
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SubContractorNameLC", null, new { style = "width:630px;", maxlength = "100" })
+
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblRepresentativePersonName
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("RepresentSubContractorName", null, new { style = "width:630px;", maxlength = "100" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblAddressEnglish
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("AddressEN", null, new { style = "width:630px;", maxlength = "200" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblAddressLocal
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("AddressLC", null, new { style = "width:630px;", maxlength = "200" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblTelephoneNo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("PhoneNo", null, new { style = "width:150px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblNumberOfInstallationStaff
+            </div>
+            <div class="usr-object">
+                @Html.NumericTextBox("NoInstallStaff", null, new { style = "width:60px;" })
+            </div>
+        </div>
+        <div class="usr-row" style="width:@ViewBag.LabelWidth;">
+            <div class="usr-object">
+                @Html.CommonCheckButton("SubInstallationFlag", @Resources.MAS110.lblInstallationSubcontractor, "True")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; margin-top:50px ;">
+                <div style="width:85px;  float:right;">@Resources.MAS110.lblInstallationSubcontractorSkillLevel </div>
+            </div> 
+            <div class="usr-object" style="width:720px; margin-top:5px">
+                <div class="sub-table">
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.SubLabelWidthCenter;">
+                            @Resources.MAS110.lblSubcontractorLevel
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorLevelComboBox("InstallationSubcontractorLevel", new { style = "width:300px;" })
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                    <br />
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                            @Resources.MAS110.lblAccess
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorSkillComboBox("InstallationAccessLevel", new { style = "width:150px;" })
+                        </div>
+                        <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                            @Resources.MAS110.lblAlarm
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorSkillComboBox("InstallationAlarmLevel", new { style = "width:150px;" })
+                        </div>
+                        <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                            @Resources.MAS110.lblOther
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorSkillComboBox("InstallationOtherLevel", new { style = "width:150px;" })
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                            @Resources.MAS110.lblCCTV
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorSkillComboBox("InstallationCCTVLevel", new { style = "width:150px;" })
+                        </div>
+                        <div class="usr-label" style="width:295px;">
+                            @Resources.MAS110.lblImageMonitoringSystem
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorSkillComboBox("InstallationImageMonitorLevel", new { style = "width:150px;" })
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                    <br />
+                    </div>
+                    <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row" style="width:@ViewBag.LabelWidth;">
+            <div class="usr-object">
+                @Html.CommonCheckButton("SubMaintenanceFlag", @Resources.MAS110.lblMaintenanceSubcontractor, "True")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; margin-top:50px;">
+                <div style="width:85px;  float:right;">@Resources.MAS110.lblMaintenanceSubcontractorSkillLevel </div>
+            </div> 
+            <div class="usr-object" style="width:720px; margin-top:5px">
+                <div class="sub-table">
+                   <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.SubLabelWidthCenter;">
+                            @Resources.MAS110.lblSubcontractorLevel
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorLevelComboBox("MaintenanceSubcontractorLevel", new { style = "width:300px;" })
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                    <br />
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                            @Resources.MAS110.lblAccess
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorSkillComboBox("MaintenanceAccessLevel", new { style = "width:150px;" })
+                        </div>
+                        <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                            @Resources.MAS110.lblAlarm
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorSkillComboBox("MaintenanceAlarmLevel", new { style = "width:150px;" })
+                        </div>
+                        <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                            @Resources.MAS110.lblOther
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorSkillComboBox("MaintenanceOtherLevel", new { style = "width:150px;" })
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.SubLabelWidth;">
+                            @Resources.MAS110.lblCCTV
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorSkillComboBox("MaintenanceCCTVLevel", new { style = "width:150px;" })
+                        </div>
+                        <div class="usr-label" style="width:295px;">
+                            @Resources.MAS110.lblImageMonitoringSystem
+                        </div>
+                        <div class="usr-object">
+                            @Html.SubcontractorSkillComboBox("MaintenanceImageMonitorLevel", new { style = "width:150px;" })
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <br />
+                    </div>
+                    <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS110.lblSubcontractorMemo
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextArea("Memo", "", new { style = "width:630px;  height:60px ; overflow:auto;", maxlength = "2000" })
+            </div>
+        </div>
+            @Html.Hidden("UpdateBy", "")
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+    </form>
+</div>

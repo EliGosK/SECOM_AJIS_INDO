@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rows>
+  <head>
+    <column width="0" type="ro" align="center"></column>
+    <column id="MainDepartmentFlag" width="90" type="yesNoCell" align="center" sort="na">headerMainDepartmentFlag</column>
+    <column id="OfficeDisplay" width="130" type="ro" align="left" sort="str_custom">headerOffice</column>
+    <column id="DepartmentDisplay" width="*" type="ro" align="left" sort="str_custom">headerDepartment</column>
+    <column id="PositionDisplay" width="100" type="ro" align="left">headerPosition</column>
+    <column id="DepPersonInchargeFlag" width="100" type="ro" align="center">headerDepartmentPersonInCharge</column>
+    <column id="ApprovalAuthorityPersonFlag" width="90" type="ro" align="center">headerApprAuth</column>
+    <column id="ValidFrom" width="100" type="dhxCalendar" align="left" format="%d-%b-%Y">headerValid</column>
+    <column id="ValidTo" width="100" type="dhxCalendar" align="left" format="%d-%b-%Y">#cspan</column>
+    <column id="Edit" width="30" type="link" align="center" sort="na">headerDetail</column>
+    <column id="Remove" width="30" type="link" align="center" sort="na">headerRemove</column>
+
+    <column id="OfficeCode" width="0" type="ro" hidden="true" align="center"></column>
+    <column id="DepartmentCode" width="0" type="ro" hidden="true" align="center"></column>
+    <column id="PositionCode" width="0" type="ro" hidden="true" align="center"></column>
+    <column id="BelongingID" width="0" type="ro" hidden="true" align="center"></column>
+    <column id="UpdateDate" width="0" type="ro" hidden="true" align="center"></column>
+
+    <column id="ModifyMode" width="0" type="ro" hidden="true" align="center"></column>
+    
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan,headerFrom,headerTo,#rspan,#rspan</param>
+      </call>
+    </afterInit>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

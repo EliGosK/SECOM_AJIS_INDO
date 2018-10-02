@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="ContractCodeShort" width="90" type="ro" align="left" sort="str_custom">headerContractCode</column>
+    <column id="ContractNameForShow" width="190" type="ro" align="left" sort="str_custom">headerContaractTaget</column>
+    <column id="BranchNameForShow" width="130" type="ro" align="left" sort="str_custom">headerBranchName</column>
+    <column id="AddressFullForShow" width="*" type="ro" align="left" sort="str_custom">headerAddress</column>
+    <column id="TextTransferPrice" width="180" type="ro" align="right" sort="na">headerContractfee</column>
+    <column id="Detail" width="80" type="link" align="center" sort="na">headerContractdegest</column>
+    <column id="ServiceTypeCode" width="0" type="ro" align="center" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

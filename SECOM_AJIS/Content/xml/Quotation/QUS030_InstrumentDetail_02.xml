@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="MaintenanceFlag" width="30" type="ro" align="center" sort="na"></column>
+    <column id="InstrumentCode" width="140" type="ro" align="left" sort="na">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="na">headerInstrumentName</column>
+    <column id="LineUpTypeCodeName" width="100" type="ro" align="left" sort="na">headerLineUpType</column>
+    <column id="InstrumentQty" width="90" type="link" align="right" sort="na">headerBeforeQuantity</column>
+    <column id="AddQty" width="90" type="link" align="right" sort="na">headerChangeQuantity</column>
+    <column id="RemoveQty" width="90" type="link" align="right" sort="na">#cspan</column>
+    <column id="InstalledQty" width="90" type="link" align="right" sort="na">headerInstalledQuantity</column>
+    <column id="Remove" width="30" type="link" align="center" sort="na">headerRemove</column>
+    <column id="FixScroll" width="0" type="ro" hidden="true"></column>
+    <column id="IsDefault" width="0" type="ro" hidden="true"></column>
+    <column id="SaleFlag" width="0" type="ro" hidden="true"></column>
+    <column id="RentalFlag" width="0" type="ro" hidden="true"></column>
+    <column id="LineUpTypeCode" width="0" type="ro" hidden="true"></column>
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,#rspan,#rspan,headerAdditionalQuantity,headerRemovalQuantity,#rspan,#rspan</param>
+      </call>
+    </afterInit>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

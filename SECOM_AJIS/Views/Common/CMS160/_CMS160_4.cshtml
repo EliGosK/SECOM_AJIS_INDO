@@ -1,0 +1,107 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+
+
+<div class="main-table">
+    <div class="table-header">@Resources.CMS160.lblSection_Maintenance_information </div>
+
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS120.lblMaintenance_contractCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtMaintenance_contractCode", (string)@ViewBag.txtMaintenance_contractCode, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS120.lblMaintenanceTargetProduct
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtMaintenanceTargetProduct", (string)@ViewBag.txtMaintenanceTargetProduct , new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS120.lblMaintenanceType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtMaintenanceType", (string)@ViewBag.txtMaintenanceType , new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS120.lblMaintenanceCycle_month
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtMaintenanceCycleMonth", (string)@ViewBag.txtMaintenanceCycleMonth, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS120.lblMaintenanceContractStart_month
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtMaintenanceContractStart_month", (string)@ViewBag.txtMaintenanceContractStart_month, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS120.lblMaintenanceFeeType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtMaintenanceFeeType", (string)@ViewBag.txtMaintenanceFeeType, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS120.lblMemo
+        </div>
+        <div class="usr-object" style="width:700px; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtMemo", (string)@ViewBag.txtMemo, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <!--  tt -->
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblContract_duration_month
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtContract_duration_month", (string)@ViewBag.txtContract_duration_month, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblEnd_contract_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtEnd_contract_date", (string)@ViewBag.txtEnd_contract_date, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblAuto_renew_month
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtAuto_renew_month", (string)@ViewBag.txtAuto_renew_month, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblStart_maintenance_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtStart_maintenance_date", (string)@ViewBag.txtStart_maintenance_date, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS160.lblEnd_maintenance_date
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtEnd_maintenance_date", (string)@ViewBag.txtEnd_maintenance_date, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

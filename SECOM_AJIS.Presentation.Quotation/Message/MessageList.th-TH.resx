@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="MSG2007" xml:space="preserve">
+    <value>รหัสอักษรที่เลือกได้ถูกล๊อค กรุณาเลือกรหัสอักษรใหม่</value>
+  </data>
+	<data name="MSG2001" xml:space="preserve">
+    <value>เงื่อนไขการค้นหาผิดพลาด กรุณาระบุวันที่สุดท้าย &gt; วันที่เริ่มต้น</value>
+  </data>
+	<data name="MSG2002" xml:space="preserve">
+    <value>เงื่อนไขการค้นหาผิดพลาด กรุณาระบุรหัสลูกค้าเพื่อเสนอราคาของรหัสอักษร</value>
+  </data>
+	<data name="MSG2003" xml:space="preserve">
+    <value>ไม่พบข้อมูลลูกค้าเพื่อเสนอราคา, {0}</value>
+  </data>
+	<data name="MSG2004" xml:space="preserve">
+    <value>รหัสลูกค้าเพื่อเสนอราคาที่ระบุไม่ถูกอนุมัติ กรุณาใช้รหัสลูกค้าเพื่อเสนอราคาอื่น</value>
+  </data>
+	<data name="MSG2005" xml:space="preserve">
+    <value>มีการแก้ไขรายละเอียดการปฏิบัติงานของ SG กรุณายืนยันหรือยกเลิกการแก้ไขนั้นและทำการบันทึกข้อมูลอีกครั้ง</value>
+  </data>
+	<data name="MSG2006" xml:space="preserve">
+    <value>ไม่พบข้อมูลรหัสใบคำนวณราคา, {0}</value>
+  </data>
+	<data name="MSG2012" xml:space="preserve">
+    <value>รายละเอียดใบคำนวณราคาของรหัสลูกค้าเพื่อเสนอราคาที่ระบุนั้นไม่มีอยู่ในระบบ, {0}</value>
+  </data>
+	<data name="MSG2008" xml:space="preserve">
+    <value>ไม่สามารถสร้างรหัสอักษรได้เนื่องจากรหัสอักษรไม่เท่ากับ 2 หลัก</value>
+  </data>
+	<data name="MSG2009" xml:space="preserve">
+    <value>ไม่สามารถสร้างรหัสอักษรได้เนื่องจากพบอักขระที่ห้ามใช้</value>
+  </data>
+	<data name="MSG2010" xml:space="preserve">
+    <value>ไม่สามารถสร้างรหัสอักษรได้เนื่องจากถึงจุดสูงสุดในช่วงของรหัสอักษรแล้ว</value>
+  </data>
+	<data name="MSG2011" xml:space="preserve">
+    <value>ไม่สามารถสร้างรหัสลูกค้าเพื่อเสนอราคาได้เนื่องจาก Prefix ของใบคำนวณราคาไม่มีในระบบ</value>
+  </data>
+	<data name="MSG2013" xml:space="preserve">
+    <value>ในบรรทัด {0} ข้อมูลต่อไปนี้เป็นข้อมูลที่ต้องกรอก: {1}</value>
+  </data>
+	<data name="MSG2014" xml:space="preserve">
+    <value>ไม่สามารถสร้างใบคำนวณราคาสำหรับสัญญาที่ไม่ใช่สัญญาเช่าอุปกรณ์เตือนภัยหรือสัญญาเช่าอุปกรณ์ขายขาดได้</value>
+  </data>
+	<data name="MSG2015" xml:space="preserve">
+    <value>ไม่สามารถสร้างใบคำนวณราคาได้เนื่องจากไม่พบข้อมูลมาสเตอร์ของรหัสอุปกรณ์ {0} </value>
+  </data>
+	<data name="MSG2016" xml:space="preserve">
+    <value>ไม่สามารถสร้างใบคำนวณราคาได้เนื่องจากไม่พบราคาเช่าต่อหน่วยของรหัสอุปกรณ์ {0} </value>
+  </data>
+	<data name="MSG2017" xml:space="preserve">
+    <value>ชื่อไฟล์นี้ไม่สามารถใช้ได้</value>
+  </data>
+	<data name="MSG2018" xml:space="preserve">
+    <value>กรุณาระบุไฟล์ข้อมูลก่อนทำการนำเข้าไฟล์</value>
+  </data>
+	<data name="MSG2019" xml:space="preserve">
+    <value>ไม่สามารถใช้ไฟล์ประเภทนี้ได้</value>
+  </data>
+	<data name="MSG2020" xml:space="preserve">
+    <value>ไม่สามารถใช้รูปแบบไฟล์นี้ได้</value>
+  </data>
+	<data name="MSG2021" xml:space="preserve">
+    <value>ข้อมูลลูกค้าผิดพลาด รหัสลูกค้าต้องไม่มีอยู่ในรายละเอียดลูกค้าอื่น</value>
+  </data>
+	<data name="MSG2022" xml:space="preserve">
+    <value>ข้อมูลสถานที่ติดตั้งผิดพลาด รหัสสถานที่ติดตั้งต้องไม่มีอยู่ในรายละเอียดสถานที่ติดตั้งอื่น</value>
+  </data>
+	<data name="MSG2023" xml:space="preserve">
+    <value>คุณไม่มีสิทธิในการนำเข้าข้อมูลนี้</value>
+  </data>
+	<data name="MSG2024" xml:space="preserve">
+    <value>ข้อมูลผู้ทำสัญญา/ผู้ซื้อในไฟล์ข้อมูลที่นำเข้าไม่มีอยู่ในระบบ</value>
+  </data>
+	<data name="MSG2025" xml:space="preserve">
+    <value>ข้อมูลหน้าที่ของลูกค้าผิดพลาด</value>
+  </data>
+	<data name="MSG2026" xml:space="preserve">
+    <value>จำนวนของลูกค้าผิดพลาด</value>
+  </data>
+	<data name="MSG2027" xml:space="preserve">
+    <value>จำนวนติดตั้งของอุปกรณ์รหัส {0} ไม่ตรงกับรายละเอียดอุปกรณ์ก่อนหน้า</value>
+  </data>
+	<data name="MSG2028" xml:space="preserve">
+    <value>ขนาดไฟล์ใหญ่เกินไป ไฟล์ต้องมีขนาดไม่เกิน 3MB</value>
+  </data>
+	<data name="MSG2029" xml:space="preserve">
+    <value>วันตรวจสอบแปลนต้องไม่ใช่วันที่ในอนาคต</value>
+  </data>
+	<data name="MSG2030" xml:space="preserve">
+    <value>ไม่สามารถดึงข้อมูลสถานที่ติดตั้งได้เนื่องจากไม่มีการระบุรหัสลูกค้าของผู้ใช้สถานที่ติดตั้ง</value>
+  </data>
+	<data name="MSG2031" xml:space="preserve">
+    <value>วันอนุมัติแปลนต้องไม่ใช่วันที่ในอนาคต</value>
+  </data>
+	<data name="MSG2032" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ที่ติดตั้งเดิมและจำนวนที่ถอดของอุปกรณ์รหัส {0} ต้องเท่ากับ 0</value>
+  </data>
+	<data name="MSG2033" xml:space="preserve">
+    <value>รหัสผู้แนะนำลูกค้าใช้กับวิธีการหาลูกค้าแบบ แนะนำโดยลูกค้า และแนะนำโดยคนในบริษัทเท่านั้น</value>
+  </data>
+	<data name="MSG2034" xml:space="preserve">
+    <value>เลขที่สัญญาเก่าจะไม่ใช้กับสินค้าประเภทขายขาด</value>
+  </data>
+	<data name="MSG2035" xml:space="preserve">
+    <value>รหัสสถานที่ติดตั้งถูกกรอกโดยไม่ได้ระบุรหัสผู้ใช้สถานที่ติดตั้ง</value>
+  </data>
+	<data name="MSG2036" xml:space="preserve">
+    <value>ข้อมูลสถานที่ติดตั้งไม่มีในระบบ</value>
+  </data>
+	<data name="MSG2037" xml:space="preserve">
+    <value>รหัสพนักงานที่ออกใบคำนวณราคาไม่มีในระบบ</value>
+  </data>
+	<data name="MSG2038" xml:space="preserve">
+    <value>เลขที่สัญญาเก่าไม่มีในระบบ</value>
+  </data>
+	<data name="MSG2039" xml:space="preserve">
+    <value>เลขที่สัญญาเก่าต้องเป็นเลขที่สัญญาเช่าอุปกรณ์เตือนภัย/สัญญาบริการ Online/สัญญาเช่าอุปกรณ์ขายขาด</value>
+  </data>
+	<data name="MSG2040" xml:space="preserve">
+    <value>เลขที่สัญญาเก่าต้องเป็นเลขที่สัญญาบริการพนักงานรักษาความปลอดภัย/ลาดตระเวณ</value>
+  </data>
+	<data name="MSG2041" xml:space="preserve">
+    <value>เลขที่สัญญาเก่าต้องเป็นเลขที่สัญญาการบำรุงรักษา</value>
+  </data>
+	<data name="MSG2042" xml:space="preserve">
+    <value>ผู้ใช้สถานที่ติดตั้ง/สถานที่ติดตั้งของสัญญาที่จะบำรุงรักษาไม่ตรงกับที่ระบุในข้อมูลลูกค้าเพื่อเสนอราคา หากผู้ใช้สถานที่ติดตั้ง/สถานที่ติดตั้งของข้อมูลลูกค้าเพื่อเสนอราคาไม่ถูกต้อง กรุณาเลือกรหัสลูกค้าเพื่อเสนอราคาใหม่</value>
+  </data>
+	<data name="MSG2043" xml:space="preserve">
+    <value>กรุณาระบุเลขที่สัญญาขายหรือสัญญาเช่าอุปกรณ์เตือนภัย/สัญญาบริการ Online/สัญญาเช่าอุปกรณ์ขายขาด</value>
+  </data>
+	<data name="MSG2044" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2045" xml:space="preserve">
+    <value>เลขที่สัญญาที่ระบุมีอยู่ในรายการเลขที่สัญญาที่จะบำรุงรักษาแล้ว</value>
+  </data>
+	<data name="MSG2046" xml:space="preserve">
+    <value>สินค้านี้ไม่มีการบันทึกข้อมูลอุปกรณ์ตั้งต้นไว้</value>
+  </data>
+	<data name="MSG2047" xml:space="preserve">
+    <value>ระบบจะทำการล้างข้อมูลรายละเอียดอุปกรณ์ทั้งหมดเพื่อแสดงข้อมูลอุปกรณ์ตั้งต้น คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+	<data name="MSG2048" xml:space="preserve">
+    <value>กรุณาระบุประเภทระบบ</value>
+  </data>
+	<data name="MSG2049" xml:space="preserve">
+    <value>สินค้านี้ไม่มีการบันทึกข้อมูลอุปกรณ์ของลูกค้าตั้งต้นไว้</value>
+  </data>
+	<data name="MSG2050" xml:space="preserve">
+    <value>ระบบจะทำการล้างข้อมูลรายละเอียดอุปกรณ์ของลูกค้าทั้งหมดเพื่อแสดงข้อมูลอุปกรณ์ของลูกค้าตั้งต้น คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+	<data name="MSG2051" xml:space="preserve">
+    <value>มีการใส่บันทึกข้อความของผู้ใช้สถานที่ติดตั้งแต่ไม่ได้ระบุผู้ใช้สถานที่ติดตั้งไว้</value>
+  </data>
+	<data name="MSG2052" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2053" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2054" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2055" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2056" xml:space="preserve">
+    <value></value>
+  </data>
+	<data name="MSG2057" xml:space="preserve">
+    <value>กรุณาระบุรหัสผู้ซื้อที่ใช้อ้างอิง</value>
+  </data>
+	<data name="MSG2058" xml:space="preserve">
+    <value>กรุณาระบุรหัสลูกค้าเพื่อเสนอราคา</value>
+  </data>
+	<data name="MSG2059" xml:space="preserve">
+    <value>ยอดรวมของจำนวนอุปกรณ์ที่ติดตั้งต้องมากกว่า 0</value>
+  </data>
+	<data name="MSG2060" xml:space="preserve">
+    <value>รหัสลูกค้าเพื่อเสนอราคาที่ระบุได้ถูกอนุมัติเพื่อทำเป็นสัญญาแล้ว กรุณาระบุเป็นเลขที่สัญญาแทน</value>
+  </data>
+	<data name="MSG2061" xml:space="preserve">
+    <value>เลขที่สัญญาที่ระบุได้ถูกยกเลิกแล้ว กรุณาใช้เลขที่สัญญาอื่น</value>
+  </data>
+	<data name="MSG2062" xml:space="preserve">
+    <value>กรุณาระบุจำนวนอุปกรณ์ให้มากกว่า 0 อย่างน้อย 1 แถว</value>
+  </data>
+	<data name="MSG2063" xml:space="preserve">
+    <value>กรุณาระบุขนาดพื้นที่รักษาความปลอดภัย (จนถึง) &gt; ขนาดพื้นที่รักษาความปลอดภัย (ตั้งแต่) </value>
+  </data>
+	<data name="MSG2064" xml:space="preserve">
+    <value>มีข้อมูลอุปกรณ์แบบใช้ครั้งเดียวหรืออุปกรณ์แบบใช้ชั่วคราวอยู่ จำเป็นต้องมีเลขที่อนุมัติ</value>
+  </data>
+	<data name="MSG2065" xml:space="preserve">
+    <value>จำนวนของอุปกรณ์ {0} ต้องมากกว่า 0</value>
+  </data>
+	<data name="MSG2066" xml:space="preserve">
+    <value>จำนวนติดตั้งเพิ่มของอุปกรณ์ {0} ต้องมากกว่า 0</value>
+  </data>
+	<data name="MSG2067" xml:space="preserve">
+    <value>จำนวนถอดอุปกรณ์ {0} ต้องมากกว่าหรือเท่ากับจำนวนที่ติดตั้งเดิม</value>
+  </data>
+	<data name="MSG2068" xml:space="preserve">
+    <value>ประเภทพนักงาน รปภ. ในบรรทัดที่ {0} ไม่มีอยู่ในระบบ</value>
+  </data>
+	<data name="MSG2069" xml:space="preserve">
+    <value>อุปกรณ์ {0} ไม่สามารถใช้กับประเภทระบบ {1} ได้</value>
+  </data>
+	<data name="MSG2070" xml:space="preserve">
+    <value>กรุณาเลือกประเภทการประกันภัยเพื่อให้สามารถระบุวงเงินประกันภัยหรือค่าเบี้ยประกันรายเดือนได้</value>
+  </data>
+	<data name="MSG2071" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ของลูกค้า {0} ต้องมากกว่า 0</value>
+  </data>
+	<data name="MSG2072" xml:space="preserve">
+    <value>อุปกรณ์ของลูกค้า {0} ไม่สามารถใช้กับประเภทระบบ {1} ได้ </value>
+  </data>
+	<data name="MSG2073" xml:space="preserve">
+    <value>ประเภทระบบต้องเป็น {0} เหมือนกับสัญญาเก่า</value>
+  </data>
+	<data name="MSG2074" xml:space="preserve">
+    <value>จำนวนวันในบรรทัดที่ {0} ไม่มีอยู่ในระบบ</value>
+  </data>
+	<data name="MSG2075" xml:space="preserve">
+    <value>รายละเอียดอุปกรณ์ของลูกค้าดังต่อไปนี้ในบรรทัดที่ {0} เป็นข้อมูลที่จำเป็นต้องกรอก: {1}</value>
+  </data>
+	<data name="MSG2080" xml:space="preserve">
+    <value>ไม่มีประเภทระบบ {0} ในระบบ</value>
+  </data>
+	<data name="MSG2081" xml:space="preserve">
+    <value>ประเภทระบบ {0} ได้เลยระยะเวลาการขายไปแล้ว คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+	<data name="MSG2082" xml:space="preserve">
+    <value>เลขที่สัญญา {0} ถูกระบุไว้มากกว่า 1 ครั้ง</value>
+  </data>
+	<data name="MSG2083" xml:space="preserve">
+    <value>ข้อมูลค่าใช้จ่ายในการจัดการอาคารกำลังก่อสร้างจะต้องใส่ในกรณีที่เป็นอาคารกำลังก่อสร้างและเลือกประเภทการจัดการอาคารกำลังก่อสร้างเป็น "จำเป็น" เท่านั้น</value>
+  </data>
+	<data name="MSG2079" xml:space="preserve">
+    <value>รายละเอียดอุปกรณ์ดังต่อไปนี้ในบรรทัดที่ {0} เป็นข้อมูลที่จำเป็นต้องกรอก: {1}</value>
+  </data>
+	<data name="MSG2076" xml:space="preserve">
+    <value>สินค้าที่จะบำรุงรักษาจำเป็นต้องเหมือนกับสัญญาเก่า</value>
+  </data>
+	<data name="MSG2077" xml:space="preserve">
+    <value>เลขที่สัญญาบริการ Online ต้องเป็น {0} เหมือนกับสัญญาเก่า</value>
+  </data>
+	<data name="MSG2078" xml:space="preserve">
+    <value>รายละเอียดการปฏิบัติงานของ SGดังต่อไปนี้ในบรรทัดที่ {0} เป็นข้อมูลที่จำเป็นต้องกรอก: {1}</value>
+  </data>
+	<data name="MSG2093" xml:space="preserve">
+    <value>ข้อมูลหน้าที่ของลูกค้าซ้ำ</value>
+  </data>
+	<data name="MSG2086" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ถูกระบุไว้มากกว่า 1 ครั้ง</value>
+  </data>
+	<data name="MSG2087" xml:space="preserve">
+    <value>{0} ไม่อยู่ในขอบเขตข้อมูล ({1}~{2}).</value>
+  </data>
+	<data name="MSG2088" xml:space="preserve">
+    <value>{1} ของอุปกรณ์รหัส {0} ไม่อยู่ในขอบเขตข้อมูล ({2}~{3}).</value>
+  </data>
+	<data name="MSG2090" xml:space="preserve">
+    <value>รหัสอุปกรณ์ของลูกค้า {0} ถูกระบุไว้มากกว่า 1 ครั้ง</value>
+  </data>
+	<data name="MSG2091" xml:space="preserve">
+    <value>{1} ของรหัสอุปกรณ์ของลูกค้า {0} ไม่อยู่ในขอบเขตข้อมูล ({2}~{3}).</value>
+  </data>
+	<data name="MSG2089" xml:space="preserve">
+    <value>{1} ของแถวที่ {0} ไม่อยู่ในขอบเขตข้อมูล ({2}~{3}).</value>
+  </data>
+	<data name="MSG2084" xml:space="preserve">
+    <value>ประเภทข้อมูลต่อไปนี้ไม่ถูกต้อง: {0}</value>
+  </data>
+	<data name="MSG2085" xml:space="preserve">
+    <value>ไม่พบข้อมูลสัญญาดังต่อไปนี้ {0}</value>
+  </data>
+	<data name="MSG2092" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ที่ติดตั้งแล้วไม่มีอยู่ในรายละเอียดอุปกรณ์</value>
+  </data>
+</root>

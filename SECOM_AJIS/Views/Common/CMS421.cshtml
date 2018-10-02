@@ -1,0 +1,130 @@
+﻿<!--
+//*********************************
+// Create by: Fikree S.
+// Create date: 13/Jan/2012
+// Update date: 13/Jan/2012
+//*********************************
+-->
+
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+@{
+   
+    Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    
+    ViewBag.LabelWidth = "190px";
+    ViewBag.LabelWidth2 = "170px";
+    ViewBag.ObjectWidth = "170px";
+    ViewBag.ObjectWidth2 = "180px";
+
+    ViewBag.ObjectWidthLong = "600px";
+    
+    
+    ViewBag.isViewMode = true;
+    
+    // for debug
+    ViewBag.txtBackgroundColor = "none";  // Lime none
+}
+
+
+@section page_header{
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS421.js")" ></script>
+
+}
+<div style="display:none">
+    @Html.Hidden("btnClose_cms421", (string)@Resources.CMS131.btnClose)
+    
+</div>
+
+<div id="CMS421_divAll">
+<!-- View Auto Transfer Information SECTION ==================================================================================================================== -->
+<div id="AutoTransferInformation" class="main-table">
+    <div class="table-header">
+       @Resources.CMS421.lblAutoTransferInformation
+    </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS421.lblBillingCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("CMS421_BillingCode", (string)@ViewBag.txtBillingCode, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS421.lblBillingClientCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("CMS421_BillingClientCode", (string)@ViewBag.txtBillingClientCode, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS421.lblBillingClientNameEN
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("CMS421_BillingClientNameEN", (string)@ViewBag.txtBillingClientNameEN, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS421.lblBillingClientNameLC
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("CMS421_BillingClientNameLC", (string)@ViewBag.txtBillingClientNameLC, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS421.lblAutoTransferAccountName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("CMS421_AutoTransferAccountName", (string)@ViewBag.txtAutoTransferAccountName, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS421.lblBankBranch
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidthLong; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("CMS421_BankBranch", (string)@ViewBag.txtBankBranch, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS421.lblAccountType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("CMS421_AccountType", (string)@ViewBag.txtAccountType, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS421.lblAccountNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth2; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("CMS421_AccountNo", (string)@ViewBag.txtAccountNo, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS421.lblAutoTransferDate
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("CMS421_AutoTransferDate", (string)@ViewBag.txtAutoTransferDate, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS421.lblLastAutoTransferResult
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth2; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("CMS421_LastAutoTransferResult", (string)@ViewBag.txtLastAutoTransferResult, new { isViewMode = @ViewBag.isViewMode })
+            </div>
+        </div>
+
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+
+</div>
+
+</div>

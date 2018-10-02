@@ -1,0 +1,54 @@
+.flow-table .subject
+{
+	background: #fff url(subject.png) 100% 100% no-repeat;
+}
+.flow-table .subject-top
+{
+	background: #fff url(subject_o.png) 100% 100% no-repeat;
+}
+.flow-table .subject-middle
+{
+	background: #fff url(subject_io.png) 100% 100% no-repeat;
+}
+.flow-table .subject-bottom
+{
+	background: #fff url(subject_i.png) 100% 100% no-repeat;
+}
+
+
+
+.flow-table .non-action
+{
+	background: #fff url(non_action.png) 100% 100% no-repeat;
+}
+.flow-table .non-action-left
+{
+	background: #fff url(non_action_o.png) 100% 100% no-repeat;
+}
+.flow-table .non-action-center
+{
+	background: #fff url(non_action_io.png) 100% 100% no-repeat;
+}
+.flow-table .non-action-right
+{
+	background: #fff url(non_action_i.png) 100% 100% no-repeat;
+}
+
+
+
+.flow-table .action
+{
+	background: #fff url(action.png) 100% 100% no-repeat;
+}
+.flow-table .action-left
+{
+	background: #fff url(action_o.png) 100% 100% no-repeat;
+}
+.flow-table .action-center
+{
+	background: #fff url(action_io.png) 100% 100% no-repeat;
+}
+.flow-table .action-right
+{
+	background: #fff url(action_i.png) 100% 100% no-repeat;
+}

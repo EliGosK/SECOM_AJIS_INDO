@@ -1,0 +1,74 @@
+﻿<!--
+//*********************************
+// Create by: Natthavat S.
+// Create date: 17/Oct/2010
+// Update date:  17/Oct/2010
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelCol1Width = "240px";
+    ViewBag.LabelCol2Width = "180px";
+    ViewBag.LabelCol3Width = "90px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+
+@section page_header{
+    <script type="text/javascript">
+        var _markerStar = "@Resources.CTS370.markerStar";
+        var _markerOver = "@Resources.CTS370.markerOver";
+        var _markerNew = "@Resources.CTS370.markerNew";
+        var _arType_Customer = '@ARRelevant.C_AR_RELEVANT_TYPE_CUSTOMER';
+        var _arType_Site = '@ARRelevant.C_AR_RELEVANT_TYPE_SITE';
+        var _arType_Project = '@ARRelevant.C_AR_RELEVANT_TYPE_PROJECT';
+        var _arType_Contract = '@ARRelevant.C_AR_RELEVANT_TYPE_CONTRACT';
+        var _arType_Quotation = '@ARRelevant.C_AR_RELEVANT_TYPE_QUOTATION';
+    </script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid_skins.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_skyblue.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS370.js")" ></script>
+}
+
+@*Select AR list fields*@
+@Html.Partial("CTS370/_CTS370_01")
+
+@*Customer AR*@
+@Html.Partial("CTS370/_CTS370_02")
+
+@*Site AR*@
+@Html.Partial("CTS370/_CTS370_03")
+
+@*Contract AR*@
+@Html.Partial("CTS370/_CTS370_04")
+
+@*Project AR*@
+@Html.Partial("CTS370/_CTS370_05")
+
+@*Quotation AR*@
+@Html.Partial("CTS370/_CTS370_06")
+
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>

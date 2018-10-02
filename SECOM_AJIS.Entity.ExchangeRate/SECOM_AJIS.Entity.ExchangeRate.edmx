@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SECOM_AJIS_TESTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbt_RateConversion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TargetDate" Type="date" Nullable="false" />
+          <Property Name="BankRateRupiahPerDollar" Type="decimal" Precision="14" Scale="2" />
+          <Property Name="BankRateDollarPerRupiah" Type="decimal" Precision="14" Scale="9" />
+          <Property Name="TaxRateRupiahPerDollar" Type="decimal" Precision="14" Scale="2" />
+          <Property Name="TaxkRateDollarPerRupiah" Type="decimal" Precision="14" Scale="9" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="CreateBy" Type="varchar" MaxLength="10" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="SECOM_AJIS_TESTModelStoreContainer">
+          <EntitySet Name="tbt_RateConversion" EntityType="Self.tbt_RateConversion" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SECOM_AJIS_TESTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ERDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbt_RateConversion" EntityType="SECOM_AJIS_TESTModel.tbt_RateConversion" />
+        </EntityContainer>
+        <ComplexType Name="doExchangeRateForCalendar" >
+          <Property Type="String" Name="target_date" Nullable="false" />
+          <Property Type="String" Name="title" Nullable="false" />
+          <Property Type="String" Name="start" Nullable="false" />
+          <Property Type="String" Name="end" Nullable="false" />
+          <Property Type="String" Name="color" Nullable="false" />
+          <Property Type="String" Name="bank_rate" Nullable="false" />
+          <Property Type="String" Name="tax_rate" Nullable="false" />
+          <Property Type="String" Name="all_day" Nullable="false" />
+          <Property Type="Boolean" Name="is_today" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="tbt_RateConversion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Nullable="false" Precision="18" Scale="0" Type="Decimal" />
+          <Property Name="TargetDate" Nullable="false" Precision="0" Type="DateTime" />
+          <Property Name="BankRateRupiahPerDollar" Precision="14" Scale="2" Type="Decimal" />
+          <Property Name="BankRateDollarPerRupiah" Precision="14" Scale="9" Type="Decimal" />
+          <Property Name="TaxRateRupiahPerDollar" Precision="14" Scale="2" Type="Decimal" />
+          <Property Name="TaxkRateDollarPerRupiah" Precision="14" Scale="9" Type="Decimal" />
+          <Property Name="CreateDate" Precision="3" Type="DateTime" />
+          <Property Name="CreateBy" MaxLength="10" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="UpdateDate" Precision="3" Type="DateTime" />
+          <Property Name="UpdateBy" MaxLength="10" FixedLength="false" Unicode="false" Type="String" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SECOM_AJIS_TESTModelStoreContainer" CdmEntityContainer="ERDataEntities">
+          <EntitySetMapping Name="tbt_RateConversion">
+            <EntityTypeMapping TypeName="SECOM_AJIS_TESTModel.tbt_RateConversion">
+              <MappingFragment StoreEntitySet="tbt_RateConversion">
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="TaxkRateDollarPerRupiah" ColumnName="TaxkRateDollarPerRupiah" />
+                <ScalarProperty Name="TaxRateRupiahPerDollar" ColumnName="TaxRateRupiahPerDollar" />
+                <ScalarProperty Name="BankRateDollarPerRupiah" ColumnName="BankRateDollarPerRupiah" />
+                <ScalarProperty Name="BankRateRupiahPerDollar" ColumnName="BankRateRupiahPerDollar" />
+                <ScalarProperty Name="TargetDate" ColumnName="TargetDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="なし" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

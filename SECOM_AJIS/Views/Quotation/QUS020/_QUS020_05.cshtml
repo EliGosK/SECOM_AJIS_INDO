@@ -1,0 +1,15 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+<div id="divResultRegister" class="main-table">
+    <div class="table-header">@Resources.QUS020.lblResultRegisterQuotationTarget</div>
+    <div class="usr-row usr-row-space-2x">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS020.lblQuotationTargetCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("QuotationTargetCode", null, new { style = "width:150px;", @readonly = true })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnRegisterQuotationDetail", (string)@Resources.QUS020.btnRegisterQuotationDetail, new { style = "width:200px;" })
+            @Html.CommonButton("btnRegisterNextQuotationTarget", (string)@Resources.QUS020.btnRegisterNextQuotationTarget, new { style = "width:250px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG7001" xml:space="preserve">
+    <value>จำนวนเงินที่ชำระไม่เท่ากับจำนวนเงินในใบแจ้งหนี้</value>
+  </data>
+  <data name="MSG7002" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลได้เนื่องจากเลขที่ใบเสร็จรับเงิน {0} มีอยู่ในรายการแล้ว</value>
+  </data>
+  <data name="MSG7003" xml:space="preserve">
+    <value>ไม่มี{0}นี้ในระบบ</value>
+  </data>
+  <data name="MSG7004" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลการชำระเงินด้วยเลขที่ใบเสร็จรับเงิน {0} ได้ เนื่องจากเป็นใบเสร็จที่ออกหลังจากชำระเงิน</value>
+  </data>
+  <data name="MSG7005" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลการชำระเงินด้วยเลขที่ใบเสร็จรับเงิน {0} ได้ เนื่องจากได้ทำการบันทึกข้อมูลการชำระเงินเรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG7006" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลการติดตามหนี้ได้ กรุณาลองใหม่อีกครั้ง</value>
+  </data>
+  <data name="MSG7007" xml:space="preserve">
+    <value>ไม่สามารถบันทึกงดเว้นการเรียกเก็บเงินกับใบแจ้งหนี้ {0} ได้ เนื่องจากไม่ใช่ใบแจ้งหนี้ที่สามารถงดเว้นการเรียกเก็บเงินได้</value>
+  </data>
+  <data name="MSG7008" xml:space="preserve">
+    <value>ดำเนินการเสร็จสิ้น</value>
+  </data>
+  <data name="MSG7009" xml:space="preserve">
+    <value>เลขที่ใบแจ้งหนี้ {0} ออกใบเสร็จรับเงินแล้ว</value>
+  </data>
+  <data name="MSG7010" xml:space="preserve">
+    <value>ไม่สามารถออกใบเสร็จรับเงินได้ กรุณาลองใหม่อีกครั้ง</value>
+  </data>
+  <data name="MSG7011" xml:space="preserve">
+    <value>ไม่มีไฟล์อยู่ในระบบ</value>
+  </data>
+  <data name="MSG7012" xml:space="preserve">
+    <value>ไฟล์ข้อมูลการหักบัญชีอัตโนมัตินี้มีการนำเข้าในระบบแล้ว</value>
+  </data>
+  <data name="MSG7013" xml:space="preserve">
+    <value>ใบแจ้งหนี้และจำนวนเงินไม่ถูกต้อง</value>
+  </data>
+  <data name="MSG7014" xml:space="preserve">
+    <value>ใบแจ้งหนี้ไม่ถูกต้อง</value>
+  </data>
+  <data name="MSG7015" xml:space="preserve">
+    <value>ใบแจ้งหนี้ใบนี้มีการนำเข้าข้อมูลการชำระเงินเรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG7016" xml:space="preserve">
+    <value>ใบแจ้งหนี้ใบนี้ได้ชำระเงินเรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG7017" xml:space="preserve">
+    <value>ข้อมูลในไฟล์ไม่ถูกต้อง</value>
+  </data>
+  <data name="MSG7018" xml:space="preserve">
+    <value>รูปแบบไฟล์ไม่ถูกต้อง</value>
+  </data>
+  <data name="MSG7019" xml:space="preserve">
+    <value>ประเภทการชำระเงินในไฟล์ข้อมูลการชำระเงินขัดแย้งกัน</value>
+  </data>
+  <data name="MSG7020" xml:space="preserve">
+    <value>ประเภทการชำระเงินไม่ถูกต้อง</value>
+  </data>
+  <data name="MSG7021" xml:space="preserve">
+    <value>คุณไม่ได้ใส่ค่าที่จำเป็นต้องใส่</value>
+  </data>
+  <data name="MSG7022" xml:space="preserve">
+    <value>วันชำระเงินในไฟล์ข้อมูลการชำระเงินขัดแย้งกัน</value>
+  </data>
+  <data name="MSG7023" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลการชำระเงินได้</value>
+  </data>
+  <data name="MSG7024" xml:space="preserve">
+    <value>บันทึกข้อมูลการชำระเงินเรียบร้อยแล้วแต่ไม่สามารถจับคู่ใบแจ้งหนี้ได้</value>
+  </data>
+  <data name="MSG7025" xml:space="preserve">
+    <value>ข้อมูลการชำระเงินถูกบันทึกเรียบร้อยแล้วแต่จำเป็นต้องจับคู่ใบแจ้งหนี้เอง</value>
+  </data>
+  <data name="MSG7026" xml:space="preserve">
+    <value>ไม่สามารถปรับปรุงสถานะการชำระเงินได้</value>
+  </data>
+  <data name="MSG7027" xml:space="preserve">
+    <value>ไม่สามารถสร้างใบแจ้งหนี้ให้กับเลขที่ใบแจ้งหนี้ {0} ซึ่งไม่สามารถทำการหักบัญชีอัตโนมัติได้</value>
+  </data>
+  <data name="MSG7028" xml:space="preserve">
+    <value>เลขที่ใบเสร็จรับเงิน {0} ไม่ใช่ใบเสร็จรับเงินที่ออกล่วงหน้า</value>
+  </data>
+  <data name="MSG7029" xml:space="preserve">
+    <value>ใบเสร็จรับเงินนี้ถูกยกเลิกเรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG7030" xml:space="preserve">
+    <value>ในการยกเลิกใบเสร็จรับเงิน จะต้องยกเลิกการจับคู่ใบแจ้งหนี้ด้วย กรุณายกเลิกการจับคู่ใบแจ้งหนี้หลังดำเนินการนี้เสร็จสิ้น</value>
+  </data>
+  <data name="MSG7031" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกใบเสร็จรับเงินได้</value>
+  </data>
+  <data name="MSG7032" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกใบกำกับภาษีได้</value>
+  </data>
+  <data name="MSG7033" xml:space="preserve">
+    <value>ไม่สามารถลบข้อมูลการชำระเงินได้</value>
+  </data>
+  <data name="MSG7034" xml:space="preserve">
+    <value>เงื่อนไขการค้นหาผิดพลาด "{0} (จนถึง)" ต้องมากกว่าหรือเท่ากับ "{0} (ตั้งแต่)"</value>
+  </data>
+  <data name="MSG7035" xml:space="preserve">
+    <value>คุณยังไม่ได้เลือกใบแจ้งหนี้</value>
+  </data>
+  <data name="MSG7036" xml:space="preserve">
+    <value>ไม่สามารถจับคู่ใบแจ้งหนี้ได้เนื่องจาก "ยอดคงเหลือหลังดำเนินการ" เป็นยอดติดลบ</value>
+  </data>
+  <data name="MSG7037" xml:space="preserve">
+    <value>ไม่สามารถใส่ "จำนวนเงินที่จับคู่ใบแจ้งหนี้ (รวมภาษีหัก ณ ที่จ่าย)" มากกว่า "ยอดค้างชำระ" ได้</value>
+  </data>
+  <data name="MSG7038" xml:space="preserve">
+    <value>"ยอดคงเหลือหลังดำเนินการ" ไม่ใช่ 0 กรุณาตรวจสอบความถูกต้องก่อนดำเนินการต่อ</value>
+  </data>
+  <data name="MSG7039" xml:space="preserve">
+    <value>ใบแจ้งหนี้ใบนี้จะถูกจับคู่บางส่วน กรุณาตรวจสอบความถูกต้อง</value>
+  </data>
+  <data name="MSG7040" xml:space="preserve">
+    <value>ยังไม่มีการบันทึกข้อมูลภาษีหัก ณ ที่จ่าย คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG7041" xml:space="preserve">
+    <value>ใบแจ้งหนี้ใบนี้ออกใบเสร็จรับเงินแล้ว กรุณายกเลิกใบเสร็จรับเงินก่อนยกเลิกการจับคู่ใบแจ้งหนี้</value>
+  </data>
+  <data name="MSG7042" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกการจับคู่ใบแจ้งหนี้ได้</value>
+  </data>
+  <data name="MSG7043" xml:space="preserve">
+    <value>ไม่สามารถออกใบแจ้งหนี้ใบใหม่ได้</value>
+  </data>
+  <data name="MSG7044" xml:space="preserve">
+    <value>ไม่พบเลขที่ใบลดหนี้ {0}</value>
+  </data>
+  <data name="MSG7045" xml:space="preserve">
+    <value>เลขที่ใบกำกับภาษีนี้ไม่มีในระบบ กรุณาตรวจสอบความถูกต้องอีกครั้ง หากข้อมูลถูกต้องแล้ว กรุณาใส่เครื่องหมายในช่อง "ไม่ดึงข้อมูล" ก่อนดำเนินการบันทึกข้อมูลต่อ</value>
+  </data>
+  <data name="MSG7046" xml:space="preserve">
+    <value>เลขที่รายการเรียกเก็บนี้ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG7047" xml:space="preserve">
+    <value>"ยอดเงินในใบลดหนี้ (รวมภาษีมูลค่าเพิ่ม)" ต้องมากกว่า 0</value>
+  </data>
+  <data name="MSG7048" xml:space="preserve">
+    <value>"ยอดเงินในใบลดหนี้ (รวมภาษีมูลค่าเพิ่ม)" ต้องไม่เกิน "ยอดเงินในใบกำกับภาษี"</value>
+  </data>
+  <data name="MSG7049" xml:space="preserve">
+    <value>"ยอดเงินในใบลดหนี้ (รวมภาษีมูลค่าเพิ่ม)" ต้องไม่เกิน "ยอดเงินในใบกำกับภาษี - ยอดชำระรวม"</value>
+  </data>
+  <data name="MSG7050" xml:space="preserve">
+    <value>ภาษีมูลค่าเพิ่มต้องไม่เท่ากับหรือมากกว่า "ยอดเงินในใบลดหนี้ (รวมภาษีมูลค่าเพิ่ม)"</value>
+  </data>
+  <data name="MSG7051" xml:space="preserve">
+    <value>วันที่ในใบลดหนี้ต้องไม่ใช่วันที่ในอนาคต</value>
+  </data>
+  <data name="MSG7052" xml:space="preserve">
+    <value>ค่าที่ใส่ในช่อง "ภาษีมูลค่าเพิ่ม" ต่างจากค่าภาษีมูลค่าเพิ่มที่คำนวณได้มาก (ตั้งแต่ ±10 ขึ้นไป) คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG7053" xml:space="preserve">
+    <value>ไม่สามารถดึงข้อมูลได้ เนื่องจากใบกำกับภาษีนี้มีหลายข้อมูลรายละเอียดการเรียกเก็บ หากข้อมูลถูกต้องแล้ว กรุณาใส่เครื่องหมายในช่อง "ไม่ดึงข้อมูล" ก่อนดำเนินการบันทึกข้อมูลต่อ</value>
+  </data>
+  <data name="MSG7054" xml:space="preserve">
+    <value>"ยอดเงินคืนค่ามัดจำ (รวมภาษีมูลค่าเพิ่ม)" ต้องมากกว่า 0</value>
+  </data>
+  <data name="MSG7055" xml:space="preserve">
+    <value>"ยอดเงินคืนค่ามัดจำ (รวมภาษีมูลค่าเพิ่ม)" ต้องไม่เกิน "ยอดเงินค่ามัดจำปัจจุบัน"</value>
+  </data>
+  <data name="MSG7056" xml:space="preserve">
+    <value>ไม่สามารถใส่ยอดเงินคืนมากกว่ายอดเงินค่ามัดจำปัจจุบันและยอดชำระรวมได้ หากข้อมูลค่ามัดจำไม่ถูกต้อง กรุณาแก้ไขข้อมูลก่อนดำเนินการต่อ</value>
+  </data>
+  <data name="MSG7057" xml:space="preserve">
+    <value>ภาษีมูลค่าเพิ่มต้องไม่เท่ากับหรือมากกว่า "ยอดเงินคืนค่ามัดจำ (รวมภาษีมูลค่าเพิ่ม)"</value>
+  </data>
+  <data name="MSG7058" xml:space="preserve">
+    <value>"ยอดเงินยึดค่ามัดจำ (รวมภาษีมูลค่าเพิ่ม)" ต้องมากกว่า 0</value>
+  </data>
+  <data name="MSG7059" xml:space="preserve">
+    <value>"ภาษีมูลค่าเพิ่มของยอดเงินยึดค่ามัดจำ" ต้องไม่เท่ากับหรือมากกว่า "ยอดเงินยึดค่ามัดจำ (รวมภาษีมูลค่าเพิ่ม)"</value>
+  </data>
+  <data name="MSG7060" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกใบลดหนี้นี้ได้เนื่องจากถูกนำไปใช้แล้ว</value>
+  </data>
+  <data name="MSG7061" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะยกเลิกใบลดหนี้?</value>
+  </data>
+  <data name="MSG7062" xml:space="preserve">
+    <value>ยกเลิกเรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG7063" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้นขณะยกเลิกใบลดหนี้</value>
+  </data>
+  <data name="MSG7064" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้นขณะเซฟข้อมูลใบลดหนี้</value>
+  </data>
+  <data name="MSG7065" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้นขณะบันทึกข้อมูลการยึดค่ามัดจำ</value>
+  </data>
+  <data name="MSG7066" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้นขณะบันทึกข้อมูลการชำระเงิน การดำเนินการต่างๆ จะถูกย้อนกลับไปทั้งหมด</value>
+  </data>
+  <data name="MSG7067" xml:space="preserve">
+    <value>กรุณาระบุวิธีการค้นหาข้อมูล</value>
+  </data>
+  <data name="MSG7068" xml:space="preserve">
+    <value>กรุณาเลือกประเภทรหัสที่จะค้นหาข้อมูล</value>
+  </data>
+  <data name="MSG7069" xml:space="preserve">
+    <value>ยอดเงินของการหักบัญชีอัตโนมัติไม่ตรงกับยอดเงินในใบแจ้งหนี้</value>
+  </data>
+  <data name="MSG7070" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลได้เนื่องจากเลขที่ใบแจ้งหนี้ {0} มีอยู่ในรายการแล้ว</value>
+  </data>
+  <data name="MSG7071" xml:space="preserve">
+    <value>กรุณาบันทึกข้อมูล</value>
+  </data>
+  <data name="MSG7072" xml:space="preserve">
+    <value>ใบแจ้งหนี้นี้เป็นการเรียกเก็บค่ามัดจำ กรุณาเลือกการทำงานเป็น "บันทึกใบลดหนี้เพื่อคืนเงิน (ค่ามัดจำ)"</value>
+  </data>
+  <data name="MSG7073" xml:space="preserve">
+    <value>ใบแจ้งหนี้นี้ไม่ใช่เป็นการเรียกเก็บค่ามัดจำ กรุณาเลือกการทำงานเป็น "บันทึกใบลดหนี้เพื่อคืนเงิน (ไม่ใช่ค่ามัดจำ)"</value>
+  </data>
+  <data name="MSG7074" xml:space="preserve">
+    <value>ไม่มีข้อมูลให้นำเข้า กรุณาเลือกไฟล์ก่อนกดปุ่ม "แสดงข้อมูล"</value>
+  </data>
+  <data name="MSG7075" xml:space="preserve">
+    <value>นามสกุลไฟล์ไม่ถูกต้อง กรุณานำเข้าไฟล์ CSV</value>
+  </data>
+  <data name="MSG7076" xml:space="preserve">
+    <value>วันชำระเงินต้องไม่ใช่วันที่ในอนาคต</value>
+  </data>
+  <data name="MSG7077" xml:space="preserve">
+    <value>เลขที่บัญชียังกรอกไม่ครบถ้วน</value>
+  </data>
+  <data name="MSG7078" xml:space="preserve">
+    <value>ไม่สามารถทำการจับคู่ใบแจ้งหนี้ได้เนื่องจากเกิดข้อผิดพลาดขึ้นในขณะที่กำลังเพิ่มข้อมูลต้นขั้วในระบบ</value>
+  </data>
+  <data name="MSG7079" xml:space="preserve">
+    <value>ไม่สามารถทำการจับคู่ใบแจ้งหนี้ได้เนื่องจากเกิดข้อผิดพลาดขึ้นในขณะที่กำลังเพิ่มข้อมูลรายละเอียดในระบบ</value>
+  </data>
+  <data name="MSG7080" xml:space="preserve">
+    <value>ไม่สามารถทำการจับคู่ใบแจ้งหนี้ได้เนื่องจากเกิดข้อผิดพลาดขึ้นในขณะที่กำลังปรับปรุงข้อมูลใบแจ้งหนี้</value>
+  </data>
+  <data name="MSG7081" xml:space="preserve">
+    <value>ไม่สามารถทำการจับคู่ใบแจ้งหนี้ได้เนื่องจากเกิดข้อผิดพลาดขึ้นในขณะที่กำลังปรับปรุงข้อมูลใบเสร็จรับเงิน</value>
+  </data>
+  <data name="MSG7082" xml:space="preserve">
+    <value>ไม่สามารถทำการจับคู่ใบแจ้งหนี้ได้เนื่องจากเกิดข้อผิดพลาดขึ้นในขณะที่กำลังปรับปรุงข้อมูลค่ามัดจำ</value>
+  </data>
+  <data name="MSG7083" xml:space="preserve">
+    <value>ไม่สามารถทำการจับคู่ใบแจ้งหนี้ได้เนื่องจากเกิดข้อผิดพลาดขึ้นในขณะที่กำลังปรับปรุงข้อมูลการชำระเงิน</value>
+  </data>
+  <data name="MSG7084" xml:space="preserve">
+    <value>ไม่สามารถทำการจับคู่กับเลขที่ใบแจ้งหนี้ {0} ได้เนื่องจากใบแจ้งหนี้นี้คือใบแจ้งหนี้ที่ใช้ออกใบลดหนี้เพื่อคืนเงิน</value>
+  </data>
+  <data name="MSG7085" xml:space="preserve">
+    <value>ไม่สามารถลบข้อมูลได้เนื่องจากมีการปรับปรุงข้อมูลนี้ในขั้นตอนอื่นหรือโดยผู้ใช้คนอื่น กรุณาลองใหม่อีกครั้ง</value>
+  </data>
+  <data name="MSG7086" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้นในระบบ ไม่สามารถบันทึกข้อมูลเป้าหมายการค้างชำระได้ กรุณาลองใหม่อีกครั้ง</value>
+  </data>
+  <data name="MSG7087" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้นในระบบ ไม่สามารถบันทึกข้อมูลการงดเว้นการเรียกเก็บได้ กรุณาลองใหม่อีกครั้ง</value>
+  </data>
+  <data name="MSG7088" xml:space="preserve">
+    <value>ไม่สามารถบันทึกงดเว้นการเรียกเก็บเงินกับใบแจ้งหนี้นี้ได้ เนื่องจากมีการบันทึกงดเว้นการเรียกเก็บเรียบร้อยแล้ว</value>
+  </data>
+  <data name="MSG7089" xml:space="preserve">
+    <value>ใบแจ้งหนี้เลขที่ {0} ถูกยกเลิกไปแล้ว</value>
+  </data>
+  <data name="MSG7090" xml:space="preserve">
+    <value>เลขที่ใบแจ้งหนี้ {0} ถูกบันทึกเป็นการงดเว้นการเรียกเก็บแล้ว</value>
+  </data>
+  <data name="MSG7091" xml:space="preserve">
+    <value>ไม่สามารถใส่ยอดเงินมากกว่ายอดเงินค่ามัดจำปัจจุบันได้ หากข้อมูลค่ามัดจำไม่ถูกต้อง กรุณาแก้ไขข้อมูลก่อนดำเนินการต่อ</value>
+  </data>
+  <data name="MSG7092" xml:space="preserve">
+    <value>ข้อมูลการชำระเงินนี้มีการจับคู่ใบแจ้งหนี้สำหรับค่าธรรมเนียมเรียบร้อยแล้ว ซึ่งค่าธรรมเนียมนี้จะสามารถบันทึกข้อมูลได้เพียงครั้งเดียวต่อการชำระเงินหนึ่งรายการเท่านั้น</value>
+  </data>
+  <data name="MSG7093" xml:space="preserve">
+    <value>ข้อมูลการชำระเงินนี้มีการจับคู่ใบแจ้งหนี้สำหรับรายจ่ายอื่นๆ เรียบร้อยแล้ว ซึ่งรายจ่ายอื่นๆ นี้จะสามารถบันทึกข้อมูลได้เพียงครั้งเดียวต่อการชำระเงินหนึ่งรายการเท่านั้น</value>
+  </data>
+  <data name="MSG7094" xml:space="preserve">
+    <value>ข้อมูลการชำระเงินนี้มีการจับคู่ใบแจ้งหนี้สำหรับรายรับอื่นๆ เรียบร้อยแล้ว ซึ่งรายรับอื่นๆ นี้จะสามารถบันทึกข้อมูลได้เพียงครั้งเดียวต่อการชำระเงินหนึ่งรายการเท่านั้น</value>
+  </data>
+  <data name="MSG7095" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกการจับคู่ใบแจ้งหนี้สำหรับใบแจ้งหนี้นี้ได้ เนื่องจากยังไม่เคยมีการบันทึกข้อมูลการจับคู่ใบแจ้งหนี้มาก่อน</value>
+  </data>
+  <data name="MSG7096" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกการจับคู่ใบแจ้งหนี้ได้เนื่องจากเกิดข้อผิดพลาดขึ้นในขณะที่กำลังปรับปรุงข้อมูลรายละเอียดในระบบ</value>
+  </data>
+  <data name="MSG7097" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกการจับคู่ใบแจ้งหนี้ได้เนื่องจากเกิดข้อผิดพลาดขึ้นในขณะที่กำลังปรับปรุงข้อมูลต้นขั้วในระบบ</value>
+  </data>
+  <data name="MSG7098" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกการจับคู่ใบแจ้งหนี้ได้เนื่องจากเกิดข้อผิดพลาดขึ้นในขณะที่กำลังปรับปรุงข้อมูลการชำระเงิน</value>
+  </data>
+  <data name="MSG7099" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกการจับคู่ใบแจ้งหนี้ได้เนื่องจากเกิดข้อผิดพลาดขึ้นในขณะที่กำลังปรับปรุงข้อมูลใบแจ้งหนี้</value>
+  </data>
+  <data name="MSG7100" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกการจับคู่ใบแจ้งหนี้ได้เนื่องจากเกิดข้อผิดพลาดขึ้นในขณะที่กำลังปรับปรุงข้อมูลค่ามัดจำ</value>
+  </data>
+  <data name="MSG7101" xml:space="preserve">
+    <value>ไม่พบข้อมูลการค้างชำระของลูกค้าสำหรับออกใบแจ้งหนี้รายนี้จากการสืบค้นด้วยรหัสดังกล่าว</value>
+  </data>
+  <data name="MSG7102" xml:space="preserve">
+    <value>มีการเลือกวิธีการพิเศษไว้แต่ไม่ได้ใส่ข้อมูลเลขที่อนุมัติและรายจ่ายอื่นๆ/รายรับอื่นๆ　หากต้องการยกเลิกวิธีการพิเศษ กรุณาคลิกไม่เลือกในช่อง "วิธีการพิเศษ"</value>
+  </data>
+  <data name="MSG7103" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลได้เนื่องจากเลขที่ใบกำกับภาษี {0} มีอยู่ในรายการแล้ว</value>
+  </data>
+  <data name="MSG7104" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้นในระบบ ไม่สามารถนำเข้าไฟล์ข้อมูลการชำระเงินได้</value>
+  </data>
+  <data name="MSG7105" xml:space="preserve">
+    <value>ไม่สามารถนำเข้าไฟล์ข้อมูลการชำระเงินได้เนื่องจากไม่ตรงตามเงื่อนไข</value>
+  </data>
+  <data name="MSG7106" xml:space="preserve">
+    <value>เลขที่ใบเสร็จรับเงิน {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG7107" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลได้เนื่องจากเลขที่รายการเรียกเก็บ {0} มีอยู่ในรายการแล้ว</value>
+  </data>
+  <data name="MSG7108" xml:space="preserve">
+    <value>ไม่สามารถลบข้อมูลการชำระเงินนี้จากหน้าจอนี้ได้เนื่องจากเป็นข้อมูลที่ถูกสร้างขึ้นจากการบันทึกข้อมูลใบลดหนี้แบบลดเงิน คุณสามารถลบข้อมูลนี้ได้ด้วยการยกเลิกใบลดหนี้</value>
+  </data>
+  <data name="MSG7109" xml:space="preserve">
+    <value>เลขที่ใบเสร็จรับเงินนี้มีการบันทึกข้อมูลการชำระเงินแล้ว กรุณาลบข้อมูลการชำระเงินก่อนยกเลิกใบเสร็จรับเงินนี้</value>
+  </data>
+  <data name="MSG7110" xml:space="preserve">
+    <value>ลูกค้าสำหรับออกใบแจ้งหนี้นี้เป็นลูกค้าที่ได้รับยกเว้นภาษีมูลค่าเพิ่มแต่มีการกรอกข้อมูลภาษีมูลค่าเพิ่มอยู่ กรุณาตรวจสอบความถูกต้องอีกครั้ง คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG7111" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการต่อได้เนื่องจากยอดเงินค่ามัดจำปัจจุบันจะน้อยกว่า 0</value>
+  </data>
+  <data name="MSG7112" xml:space="preserve">
+    <value>ใบแจ้งหนี้นี้เป็นใบแจ้งหนี้สำหรับหักบัญชีอัตโนมัติ</value>
+  </data>
+  <data name="MSG7113" xml:space="preserve">
+    <value>วันหักบัญชีอัตโนมัติไม่ตรงกัน</value>
+  </data>
+  <data name="MSG7114" xml:space="preserve">
+    <value>ไฟล์นี้ไม่สมบูรณ์ (มีข้อมูลไฟล์หักบัญชีอัตโนมัติไม่ครบถ้วน)</value>
+  </data>
+  <data name="MSG7115" xml:space="preserve">
+    <value>เกิดความผิดพลาดขณะขึ้นเงิน</value>
+  </data>
+  <data name="MSG7116" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขณะยกเลิกการขึ้นเงิน</value>
+  </data>
+  <data name="MSG7117" xml:space="preserve">
+    <value>รหัสธนาคารสำหรับหักบัญชีอัตโนมัติในไฟล์ข้อมูลการชำระเงินไม่ถูกต้อง</value>
+  </data>
+  <data name="MSG7118" xml:space="preserve">
+    <value>รหัสธนาคารสำหรับหักบัญชีอัตโนมัติไม่ตรงกัน</value>
+  </data>
+  <data name="MSG7119" xml:space="preserve">
+    <value>ไม่สามารถทำการจับคู่ใบแจ้งหนี้บางส่วนสำหรับประเภทการชำระแบบตั๋วสัญญาใช้เงินหรือเช็คได้ สามารถจับคู่ใบแจ้งหนี้แบบเต็มจำนวนได้เท่านั้น</value>
+  </data>
+  <data name="MSG7120" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้นขณะจับคู่ใบแจ้งหนี้ การดำเนินการต่างๆ จะถูกย้อนกลับไปทั้งหมด</value>
+  </data>
+  <data name="MSG7121" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้นขณะบันทึกข้อมูลเป้าหมายการค้างชำระ</value>
+  </data>
+  <data name="MSG7122" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้นขณะบันทึกข้อมูลเพื่อการตามเก็บเงิน</value>
+  </data>
+  <data name="MSG7123" xml:space="preserve">
+    <value>ไม่สามารถสร้างใบลดหนี้ได้ เนื่องจากมีการสร้างข้อมูลการหักบัญชีอัตโนมัติ/ตัดผ่านบัตรเครดิตแล้ว</value>
+  </data>
+  <data name="MSG7124" xml:space="preserve">
+    <value>ไม่สามารถสร้างใบลดหนี้ที่จำนวนเงินมากกว่าจำนวนเงินคงเหลือที่หักจากใบกำกับภาษี</value>
+  </data>
+  <data name="MSG7125" xml:space="preserve">
+    <value>ไม่สามารถบันทึกได้ เนื่องจากยังไม่มีการชำระเงิน
+หากต้องการยกเลิกใบแจ้งหนี้ โปรดเลือก "บันทึกข้อมูลใบลดหนี้แบบลดเงิน"</value>
+  </data>
+  <data name="MSG7126" xml:space="preserve">
+    <value>ยอดเงินที่จับคู่ต้องไม่มากกว่ายอดเงิน WHT</value>
+  </data>
+  <data name="MSG7127" xml:space="preserve">
+    <value>Please input Payment date and Group nameTH.</value>
+  </data>
+  <data name="MSG7128" xml:space="preserve">
+    <value>Currency type not match invoid currency type</value>
+  </data>
+</root>

@@ -1,0 +1,80 @@
+﻿@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+
+<!-- ======== Html content ======== --->
+
+@{
+    ViewBag.POlbWidth = "180px";
+    ViewBag.POControlWidth = "300px"; 
+ }
+@* --- Contract Information ---  *@
+
+<div id="divInstallationInstrumentInfo" class="main-table" style="margin-top:5px;">
+<div class="usr-row">
+        <div class="table-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS060.lblHeaderInstrument
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+</div>  
+    
+    <div class="usr-row" id="divCondHave1">
+    @Html.CommonCheckButton("chkCondHave1", @Resources.ISS060.lblHave1, null, false)
+    </div>
+    <div class="usr-row" id="divCondHave2">
+        <div class="usr-object" style="width:250px" >
+        @Html.CommonCheckButton("chkCondHave2", @Resources.ISS060.lblHave2, null, false) 
+        </div>
+        <div class="usr-label">
+        @Resources.ISS060.lblApproveNo
+        </div>    
+        <div class="usr-object" >
+        @Html.CommonTextBox("UnremoveApproveNo", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = 15})
+        </div>
+    </div>
+    <div class="usr-row" id="divCondHave3">
+    @Html.CommonCheckButton("chkCondHave3", @Resources.ISS060.lblHave3, null, false)
+    </div>
+    <div class="usr-row" id="divCondHave4">
+    @Html.CommonCheckButton("chkCondHave4", @Resources.ISS060.lblHave4, null, false)
+    </div>
+    <div class="usr-row" id="divCondHave5">
+    @Html.CommonCheckButton("chkCondHave5", @Resources.ISS060.lblHave5, null, false)
+    </div>
+    <div class="usr-row" style="color:Gray">
+    @Resources.ISS060.lblRemarkCP12
+    </div>
+
+    <div class="usr-row">
+            <div id="gridInstrumentInfo" >
+            </div>
+    </div>
+    <br />
+     <div class="usr-row" id="divStockoutOriginAdditional" >
+    <div class="usr-label" style="width:@ViewBag.lbWidth;">
+    @Resources.ISS060.lblStockoutOriginAdditional 
+    </div>     
+    <div class="usr-object"> 
+     @Html.CommonTextBox("AdditionalStockOutOfficeName", null, new { style = "width:280px;", @readonly = true })
+    <div style="display:none"> @Html.StockOutOriginAdditionalComboBox("AdditionalStockOutOfficeCode", new { style = "width:280px;",readOnly = true })</div>
+    </div>
+    </div>
+    @*<br />
+    <br />*@
+    <div id="dlgCTS053" class="main-popup-dialog">
+        <div class="popup-dialog">
+        </div>
+    </div>    
+
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+ 
+</div>
+
+
+

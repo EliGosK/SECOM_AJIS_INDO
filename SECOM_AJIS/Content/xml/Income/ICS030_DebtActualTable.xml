@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="30" type="ro" align="center" sort="na" ></column>
+    <column id="BillingOffice" width="*" type="ro" align="left" sort="na" >lblHeader1BillingOffice</column>
+    <column id="Currency" width="60" type="ro" align="center" sort="na" >lbHeaderCurrency</column>
+    <column id="AllUnpaidActual" width="170" type="ro" align="left" sort="na" >lblHeader1AllUnpaid</column>
+    <column id="AllUnpaidTarget" width="170" type="ro" align="left" sort="na" >#cspan</column>
+    <column id="AllUnpaidCompareTotarget" width="130" type="ro" align="left" sort="na" >#cspan</column>
+    <!--<column id="AllUnpaidActualDetails" width="50" type="ro" align="left" sort="na" >lblHeader1AllUnpaidActualDetails</column>
+    <column id="AllUnpaidTargetDetails" width="50" type="ro" align="left" sort="na" >lblHeader1AllUnpaidTargetDetails</column>
+    <column id="AllUnpaidCompareTotargetDetails" width="50" type="ro" align="left" sort="na" >lblHeader1AllUnpaidCompareTotargetDetails</column>
+    -->
+    <column id="UnpaidOver2MonthActual" width="170" type="ro" align="left" sort="na" >lblHeader1UnpaidOver2Month</column>
+    <column id="UnpaidOver2MonthTarget" width="170" type="ro" align="left" sort="na" >#cspan</column>
+    <column id="UnpaidOver2MonthCompareTotarget" width="130" type="ro" align="left" sort="na" >#cspan</column>
+    <!--<column id="UnpaidOver2MonthActualDetails" width="50" type="ro" align="left" sort="na" >lblHeader1UnpaidOver2MonthActualDetails</column>
+    <column id="UnpaidOver2MonthTargetDetails" width="50" type="ro" align="left" sort="na" >lblHeader1UnpaidOver2MonthTargetDetails</column>
+    <column id="UnpaidOver2MonthCompareTotargetDetails" width="50" type="ro" align="left" sort="na" >lblHeader1UnpaidOver2MonthCompareTotargetDetails</column>
+     -->
+    <column id="UnpaidOver6Month" width="140" type="ro" align="left" sort="na" >lblHeader1UnpaidOver6Month</column>
+    <!--<column id="UnpaidOver6MonthActual" width="50" type="ro" align="left" sort="na" ></column>
+    <column id="UnpaidOver6MonthActualDetails" width="50" type="ro" align="left" sort="na" ></column> -->
+
+	  <column id="BillingOfficeCode" width="0" type="ro" hidden="true"></column>
+	  <column id="BillingOfficeName" width="0" type="ro" hidden="true"></column>
+	  <column id="DisableLinkOfficeFlag" width="0" type="ro" hidden="true"></column>	  
+	  
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,lblHeader1AllUnpaidActual,lblHeader1AllUnpaidTarget,lblHeader1AllUnpaidCompareTotarget,lblHeader1UnpaidOver2MonthActual,lblHeader1UnpaidOver2MonthTarget,lblHeader1UnpaidOver2MonthCompareTotarget,lblHeader1UnpaidOver6MonthActual</param>
+      </call>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,lblHeader1AllUnpaidActualDetails,lblHeader1AllUnpaidTargetDetails,lblHeader1AllUnpaidCompareTotargetDetails,lblHeader1UnpaidOver2MonthActualDetails,lblHeader1UnpaidOver2MonthTargetDetails,lblHeader1UnpaidOver2MonthCompareTotargetDetails,lblHeader1UnpaidOver6MonthActualDetails</param>
+      </call>
+    </afterInit>
+
+	<settings>
+		<colwidth>px</colwidth>
+	</settings>
+  </head>
+</rows>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,197 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Controllers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.LabelCol2Width = "180px";
+    ViewBag.LabelCol3Width = "130px";
+    ViewBag.ObjectCol1Width = "130px";
+    ViewBag.ObjectCol2Width = "220px";
+    ViewBag.ObjectCol3Width = "110px";
+    ViewBag.ObjectColMergeWidth = "720px";
+
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+    
+ }
+
+@section page_header{
+
+
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Inventory/IVS190.js")"></script>
+
+
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/skins/dhtmlxgrid_dhx_secom.css")"/>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn_bricks.css")"/>
+
+<script type="text/javascript">
+    var IVS190_ViewBag = {DisableMinus : "@ViewBag.DisableMinus"};
+</script>
+
+
+}
+
+<div style="display:none">
+    @Html.Hidden("btnCalculate", (string)@Resources.IVS190.headerButtonCalculate)
+    @Html.Hidden("lblTotalAmountOfTransfer", (string)@Resources.IVS190.lblTotalAmtTransferAsset)
+</div>
+
+<!-- Specify location -->
+<div class="main-table" id="Speclocation">
+    <div class="table-header">
+        @Resources.IVS190.lblSpecifyLocation
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS190.lblSourceLocation
+        </div>
+         <div class="usr-object">
+            @Html.CommonTextBox("SourceLocation", (string)@ViewBag.SourceLocation, new { style = "width:150px;", ReadOnly = "readonly" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.IVS190.lblDestinationLocation 
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;" >
+            @Html.CommonTextBox("DestinationLocation", (string)@ViewBag.DestinationLocation , new { style = "width:150px;" ,ReadOnly = "readonly"}) 
+        </div>
+
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS190.lblPlusMinusType
+        </div>
+        <div class="usr-object">
+            @Html.CommonRadioButton("radPlus", @Resources.IVS190.radPlus, "PLUS", true, "PlusMinusType")&nbsp;
+            @Html.CommonRadioButton("radMinus", @Resources.IVS190.radMinus, "MINUS", false, "PlusMinusType")
+        </div>
+    </div>
+    <div class="usr-row" style="height:5px;">&nbsp;</div>
+
+    <div id="divSearchInstrument">    
+    <hr />
+    <div id="ResultSection">
+    <div class="table-header">
+        @Resources.IVS190.lblSearchInstrument
+    </div>
+
+    <form id="formSearchCriteria" action="#">
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS190.lblInstrumentCode
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("InstrumentCode", null, new { style = "width:150px;", maxlength = "50" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelCol2Width;">
+            @Resources.IVS190.lblInstrumentName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol2Width;" >
+            @Html.CommonTextBox("InstrumentName", null, new { style = "width:150px;", maxlength = "100" }) 
+        </div>
+
+    </div>
+
+    <div class="usr-row">
+         <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS190.lblInstrumentArea
+        </div>
+         <div class="usr-object">
+            @Html.InvenotryAreaNoLendingCbo("AreaCode", new { style = "width:494px" }, true, "All")
+        </div>
+    </div>
+
+    </form>    
+    <div class="usr-row">
+        <div class="usr-object" style="margin-top:5px;margin-right:4px; float:right;">
+            <div>
+                @Html.CommonButton("btnSearch", @Resources.IVS190.btnSearch, new { style = "width:100px;", type = "button" })
+                @Html.CommonButton("btnClear", @Resources.IVS190.btnClear, new { style = "width:100px;", type = "button" })
+            </div>
+        </div>
+    </div>
+
+    <div class="usr-row" style="height:5px;">&nbsp;</div>
+
+    <div class="usr-row">
+        <div id="IVS190_SearchResultGrid" style="width: 99%; margin-left: 4px;"></div>
+    </div>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+    </div>
+    </div>
+</div>
+
+
+<!-- Fix Instrument Adjustment Detail -->
+<div class="main-table" id="divTransferInstrumentDetail">
+    <div class="table-header">
+        @Resources.IVS190.lblFixInstrumentAdjustmentDetail
+    </div>
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS190.lblApproveNo
+        </div>
+         <div class="usr-object">
+            @Html.CommonTextBox("ApproveNo", null, new { style = "width:150px;", maxlength = "15" }) @Html.RequireFiled()
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS190.lblMemo
+        </div>
+         <div class="usr-object">
+            @Html.CommonTextArea("Memo", null, new { style = "width:500px; height:80px ;  overflow:auto", maxlength = "1000" })
+        </div>
+    </div>
+
+    <div class="usr-row" style="height:5px;">&nbsp;</div>
+
+    <div class="usr-row">
+        <div id="IVS190_RetrundInstrumentCheckingDetailGrid" style="width: 99%; margin-left: 4px;"></div>
+    </div>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>
+
+
+<!-- Show slip no. -->
+<div class="main-table" id="divShowSlipNo">
+    <div class="table-header">
+        @Resources.IVS190.lblShowSlipNo
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width; ">
+            @Resources.IVS190.lblSlipNo
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("SlipNo", (string)@ViewBag.SoruceLocation, new { style = "width:280px;", ReadOnly = "readonly" })
+        </div>
+        <div class="usr-object">
+            &nbsp;
+            @Html.CommonButton("btnDownloadSlip", (string)@Resources.IVS190.btnDownloadSlip, new { style = "width:100px;", type = "button" })
+            @Html.CommonButton("btnNewRegister", (string)@Resources.IVS190.btnNewRegister, new { style = "width:100px;", type = "button" })
+        </div>
+    </div>
+
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>

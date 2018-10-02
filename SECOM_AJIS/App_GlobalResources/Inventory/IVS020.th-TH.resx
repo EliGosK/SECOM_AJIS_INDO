@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="headerBtnEdit" xml:space="preserve">
+    <value>&lt;div style="display:none"&gt;เลือก&lt;/div&gt;</value>
+  </data>
+  <data name="headerContractCode" xml:space="preserve">
+    <value>เลขที่สัญญา</value>
+  </data>
+  <data name="headerCustFullName" xml:space="preserve">
+    <value>&lt;div&gt;(1) ชื่อผู้ทำสัญญา/ผู้ซื้อ&lt;br&gt;(2) ชื่อสถานที่ติดตั้ง&lt;/div&gt;</value>
+  </data>
+  <data name="headerDetailColumnHeader" xml:space="preserve">
+    <value>จำนวนนำอุปกรณ์ออกแยกตามประเภทอุปกรณ์</value>
+  </data>
+  <data name="headerExpectedStockOutDate" xml:space="preserve">
+    <value>วันที่คาดว่าจะนำอุปกรณ์ออก</value>
+  </data>
+  <data name="headerInstallationType" xml:space="preserve">
+    <value>ประเภทคำร้องขอติดตั้ง</value>
+  </data>
+  <data name="headerInstrumentCode" xml:space="preserve">
+    <value>รหัสอุปกรณ์&lt;br/&gt;&lt;br/&gt;&lt;div class="usr-label" style="margin-left: 30px"&gt;S/N &lt;/div&gt;&lt;div class="usr-object"&gt;&lt;a id="lnkShowSN" href="#" style="color: blue"&gt;แสดง&lt;/a&gt;&lt;/div&gt;&lt;div class="usr-label"&gt;|&lt;/div&gt;&lt;div class="usr-object"&gt;&lt;a id="lnkHideSN" href="#" style="color: blue"&gt;ซ่อน&lt;/a&gt;&lt;/div&gt;</value>
+  </data>
+  <data name="headerInstrumentName" xml:space="preserve">
+    <value>ชื่ออุปกรณ์</value>
+  </data>
+  <data name="headerInventoryOffice" xml:space="preserve">
+    <value>สาขาที่ดูแลคลังสินค้า</value>
+  </data>
+  <data name="headerLastInstallationSlipNo" xml:space="preserve">
+    <value>เลขที่สลิปการติดตั้งล่าสุด</value>
+  </data>
+  <data name="headerNewInstRental" xml:space="preserve">
+    <value>อุปกรณ์ใหม่สำหรับเช่า</value>
+  </data>
+  <data name="headerNewInstSale" xml:space="preserve">
+    <value>อุปกรณ์ใหม่สำหรับขาย</value>
+  </data>
+  <data name="headerNewInstSample" xml:space="preserve">
+    <value>อุปกรณ์ใหม่ตัวอย่าง</value>
+  </data>
+  <data name="headerProjectCode" xml:space="preserve">
+    <value>เลขที่โครงการ</value>
+  </data>
+  <data name="headerSecondhandInstRental" xml:space="preserve">
+    <value>อุปกรณ์มือสองสำหรับเช่า</value>
+  </data>
+  <data name="headerTotalStockOutQty" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ออกรวม</value>
+  </data>
+  <data name="lblBtnBack" xml:space="preserve">
+    <value>ย้อนกลับ</value>
+  </data>
+  <data name="lblBtnClear" xml:space="preserve">
+    <value>ล้าง</value>
+  </data>
+  <data name="lblBtnConfirm" xml:space="preserve">
+    <value>ยืนยัน</value>
+  </data>
+  <data name="lblBtnDownloadSlip" xml:space="preserve">
+    <value>ดาวน์โหลดสลิป</value>
+  </data>
+  <data name="lblBtnNewRegister" xml:space="preserve">
+    <value>สร้างใหม่</value>
+  </data>
+  <data name="lblBtnRegister" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="lblBtnReset" xml:space="preserve">
+    <value>เริ่มต้นใหม่</value>
+  </data>
+  <data name="lblBtnSearch" xml:space="preserve">
+    <value>ค้นหา</value>
+  </data>
+  <data name="lblContractCode" xml:space="preserve">
+    <value>เลขที่สัญญา</value>
+  </data>
+  <data name="lblContractTargetName" xml:space="preserve">
+    <value>ชื่อผู้ทำสัญญา/ผู้ซื้อ</value>
+  </data>
+  <data name="lblContractTargetNameEN" xml:space="preserve">
+    <value>ชื่อผู้ทำสัญญา/ผู้ซื้อ (อังกฤษ)</value>
+  </data>
+  <data name="lblContractTargetNameLC" xml:space="preserve">
+    <value>ชื่อผู้ทำสัญญา/ผู้ซื้อ (ไทย)</value>
+  </data>
+  <data name="lblExpectedStockOutDate" xml:space="preserve">
+    <value>วันที่คาดว่าจะนำอุปกรณ์ออก</value>
+  </data>
+  <data name="lblExpectedStockOutDateFrom" xml:space="preserve">
+    <value>วันที่คาดว่าจะนำอุปกรณ์ออก (เริ่มต้น)</value>
+  </data>
+  <data name="lblExpectedStockOutDateTo" xml:space="preserve">
+    <value>วันที่คาดว่าจะนำอุปกรณ์ออก (สิ้นสุด)</value>
+  </data>
+  <data name="lblHeaderRegisterStockOut" xml:space="preserve">
+    <value>บันทึกข้อมูลการนำอุปกรณ์ออก</value>
+  </data>
+  <data name="lblHeaderSearchInstallationSlip" xml:space="preserve">
+    <value>ค้นหาสลิปการติดตั้ง</value>
+  </data>
+  <data name="lblHeaderShowSlipNo" xml:space="preserve">
+    <value>แสดงเลขที่สลิป</value>
+  </data>
+  <data name="lblInstallationSlipNo" xml:space="preserve">
+    <value>เลขที่สลิปการติดตั้ง</value>
+  </data>
+  <data name="lblInstallationType" xml:space="preserve">
+    <value>ประเภทคำร้องขอติดตั้ง</value>
+  </data>
+  <data name="lblInventoryOffice" xml:space="preserve">
+    <value>สาขาที่ดูแลคลังสินค้า</value>
+  </data>
+  <data name="lblMemo" xml:space="preserve">
+    <value>บันทึกข้อความ</value>
+  </data>
+  <data name="lblOfficeCode" xml:space="preserve">
+    <value>รหัสสาขา</value>
+  </data>
+  <data name="lblProjectCode" xml:space="preserve">
+    <value>เลขที่โครงการ</value>
+  </data>
+  <data name="lblSiteName" xml:space="preserve">
+    <value>ชื่อสถานที่ติดตั้ง</value>
+  </data>
+  <data name="lblSiteNameEN" xml:space="preserve">
+    <value>ชื่อสถานที่ติดตั้ง (อังกฤษ)</value>
+  </data>
+  <data name="lblSiteNameLC" xml:space="preserve">
+    <value>ชื่อสถานที่ติดตั้ง (ไทย)</value>
+  </data>
+  <data name="lblSlipNo" xml:space="preserve">
+    <value>เลขที่สลิป</value>
+  </data>
+  <data name="lblSlipType" xml:space="preserve">
+    <value>ประเภทสลิป</value>
+  </data>
+  <data name="lblStockOutDate" xml:space="preserve">
+    <value>วันที่นำอุปกรณ์ออก</value>
+  </data>
+</root>

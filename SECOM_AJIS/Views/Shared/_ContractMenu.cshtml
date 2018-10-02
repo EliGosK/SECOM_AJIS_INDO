@@ -1,0 +1,51 @@
+﻿@using SECOM_AJIS.Common.Models;
+@using SECOM_AJIS.Common.Util;
+@{
+    Layout = "";
+}
+<div class="contract-menu">
+    <div>
+        <div class="header" style="float: left; margin-right: 5px;">
+            @if (ViewBag.ContractType == 0)
+            {
+                @Resources.CommonResources.lblContractMenuBefore
+            }
+            else if(ViewBag.ContractType == 1)
+            {
+                @Resources.CommonResources.lblContractMenuAfter
+            }
+            else if(ViewBag.ContractType == 2)
+            {
+                @Resources.CommonResources.lblContractMenuAR
+            }
+            else if(ViewBag.ContractType == 3)
+            {
+                @Resources.CommonResources.lblContractMenuIAR
+            }
+            else if(ViewBag.ContractType == 4)
+            {
+                @Resources.CommonResources.lblContractMenuProject
+            }
+        </div>
+        <div style="float: left; margin-top: 3px;">
+            <img id="imgClose" class="image" src="../../Content/images/icon/close_button.gif" /></div>
+    </div>
+    <div style="clear: both; width: 1000px; padding-top: 10px;">
+        @if (ViewBag.Lines != null)
+        {
+            foreach (Dictionary<string, Menu> line in (List<Dictionary<string, Menu>>)ViewBag.Lines)
+            {
+                <div style="width: 1000px;">
+                @foreach (Menu i in line.Values)
+                {
+                    <div class="link" style="margin-bottom:5px;">
+                        @Html.ActionLink(i.Name, i.Action + "/" + i.SubObject, i.Controller, null, new { id = i.Action })<br />
+                        <div>@i.ObjectDescription</div>
+                    </div>
+                }
+                <div style="clear:both;height:0;padding:0;margin:0;">&nbsp;</div>
+                </div>
+            }
+        }
+    </div>
+</div>

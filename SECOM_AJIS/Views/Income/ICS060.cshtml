@@ -1,0 +1,183 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+
+@using SECOM_AJIS.Presentation.Income.Controllers;
+@using SECOM_AJIS.Presentation.Income.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{  
+    ViewBag.Col1Width = "310px";
+    ViewBag.CommonDDLWidth = "154px";
+    ViewBag.CommonTextboxWidth = "150px";
+    ViewBag.CommonCalendarTextboxWidth = "128px";       //CommonTextboxWidth - 22px
+    ViewBag.LongTextboxWidth = "500px";  
+    ViewBag.CommonButtonWidth = "100px";
+    ViewBag.SectionSepWidth = "20px";
+ }
+
+
+@section page_header{
+<script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/Income/ICS060.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/number-functions.js")"></script>
+}
+
+<div class="main-table" id="divRegisterInvoice">
+    <div class="table-header">
+        @Resources.ICS060.lblSectionSpecifyReceipt
+    </div>
+    <!--<div class="usr-row" style="margin-left:5px;">
+        <div class="usr-object remark-gray">@Resources.ICS060.lblSectionSpecifyReceiptRemark</div>
+    </div>-->
+
+
+    <div id="DivInputReceipt">
+    
+        <div class="usr-row" style="padding-top:@ViewBag.SectionSepWidth">
+            <div class="usr-label" style="width:@ViewBag.Col1Width" id="DivReceiptNo">@Resources.ICS060.lblReceiptNo</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("ReceiptNo", null, new { style = "width:" + @ViewBag.CommonTextboxWidth , maxlength = "12" })
+                @Html.RequireFiled()
+                @Html.CommonButton("BtnRetrieve", (string)@Resources.ICS060.btnRetrieve, new { style = "width:" + @ViewBag.CommonButtonWidth + ";", type = "button" })
+            </div>
+        </div>
+        
+        <div id="DivReceiptDetail">
+        <div class="usr-row" style="padding-top:@ViewBag.SectionSepWidth">
+            <div class="usr-label" style="width:@ViewBag.Col1Width" id="DivCancelMethod">@Resources.ICS060.lblCancelMethod</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @Html.BlankComboBox("CancelMethod", new { style = "width:" + @ViewBag.CommonDDLWidth, @disabled = true })
+                </div>
+                <div class="usr-object" id="CancelMethod_Require" style="display:none;margin-left:5px;">
+                @Html.RequireFiled()
+            </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblTaxInvoiceNo</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @Html.CommonTextBox("TaxInvoiceNo", null, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblReceiptIssueDate</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @Html.CommonTextBox("ReceiptIssueDate", null, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblBillingClientNameEN</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @Html.CommonTextBox("BillingClientNameEN", null, new { style = "width:" + @ViewBag.LongTextboxWidth, @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblBillingClientNameLC</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @Html.CommonTextBox("BillingClientNameLC", null, new { style = "width:" + @ViewBag.LongTextboxWidth, @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblBillingClientAddressEN</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @Html.CommonTextArea("BillingClientAddressEN", null, new { style = "width:" + @ViewBag.LongTextboxWidth + "; height:40px; overflow:auto;", @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblBillingClientAddressLC</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @Html.CommonTextArea("BillingClientAddressLC", null, new { style = "width:" + @ViewBag.LongTextboxWidth + "; height:40px; overflow:auto;", @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblInvoiceNo</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @Html.CommonTextBox("InvoiceNo", null, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblPaymentDate</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @Html.CommonTextBox("PaymentDate", null, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblPaymentMatchingDate</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @Html.CommonTextBox("PaymentMatchingDate", null, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })
+                </div>
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblBillingTotalAmountIncVAT</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @*@Html.NumericTextBox("BillingTotalAmountIncVAT", null, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })*@
+                    @Html.NumericTextBoxWithMultipleCurrency("BillingTotalAmountIncVAT", "", null, new { style = "width:150px;", @readonly = true })
+                </div>
+                @*<div class="usr-object">
+                    @Html.LabelCurrencyUnit("")
+                </div>*@
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblVatAmount</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @*@Html.NumericTextBox("VatAmount", null, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })*@
+                    @Html.NumericTextBoxWithMultipleCurrency("VatAmount", "", null, new { style = "width:150px;", @readonly = true })
+                </div>
+                @*<div class="usr-object">
+                    @Html.LabelCurrencyUnit("")
+                </div>*@
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblWhtAmount</div>
+            <div class="usr-object">
+                <div style="float:left;">
+                    @*@Html.NumericTextBox("WhtAmount", null, new { style = "width:" + @ViewBag.CommonTextboxWidth, @readonly = true })*@
+                    @Html.NumericTextBoxWithMultipleCurrency("WhtAmount", "", null, new { style = "width:150px;", @readonly = true })
+                </div>
+                @*<div class="usr-object">
+                    @Html.LabelCurrencyUnit("")
+                </div>*@
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1Width">@Resources.ICS060.lblAdvanceIssueReceipt</div>
+            <div class="usr-object">
+                @Html.CommonCheckButton("AdvanceIssueReceipt", "", "True", false, new { @disabled = true})
+            </div>
+        </div>
+        </div>
+    
+    </div>
+
+   
+    <div class="usr-clear-style" style="height:0px">&nbsp;</div>
+</div>

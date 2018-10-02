@@ -1,0 +1,38 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.Label1Width = "220px";
+    ViewBag.Label2Width = "200px";
+
+    ViewBag.ObjectWidth = "150px";
+    ViewBag.Object1Width = "250px";
+    ViewBag.Object1_TWidth = "245px";
+    
+    ViewBag.Object2Width = "250px";
+    ViewBag.ObjectMergeWidth = "709px";
+    ViewBag.ObjectMerge_TWidth = "713px";
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/Dialog.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS160.js")" ></script>
+}
+<script type="text/javascript">
+    CTS160_CONST = {
+        C_DOC_LANGUAGE_EN: '@SECOM_AJIS.Common.Util.ConstantValue.DocLanguage.C_DOC_LANGUAGE_EN'
+    }
+</script>
+<div style="display:none;">
+    @Html.Hidden("ContractType", (string)@ViewBag.ContractType);
+    @Html.Hidden("DisabledrdoContract", (bool)@ViewBag.DisabledrdoContract)
+    @Html.Hidden("DisabledrdoMemorandum", (bool)@ViewBag.DisabledrdoMemorandum)
+    @Html.Hidden("DisabledrdoNotice", (bool)@ViewBag.DisabledrdoNotice)
+    @Html.Hidden("DisabledrdoCoverLetter", (bool)@ViewBag.DisabledrdoCoverLetter)
+</div>
+@Html.Partial("CTS160/_CTS160_01")
+@Html.Partial("CTS160/_CTS160_02")
+@Html.Partial("CTS160/_CTS160_03")
+@Html.Partial("CTS160/_CTS160_04")

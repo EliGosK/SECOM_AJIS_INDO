@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="FirstFee" width="40" type="link" align="center" sort="na">gridHeaderFirstFee</column>
+    <column id="CreditNote" width="40" type="link" align="center" sort="na">gridHeaderCreditNote</column>
+    <column id="InvoiceNo" width="140" type="ro" align="center" sort="str_custom">gridHeaderInvoiceNo</column>
+    <column id="GridBillingCode" width="200" type="ro" align="left" sort="str_custom">gridHeaderBillingCode</column>
+    <column id="GridSiteName" width="*" type="ro" align="left" sort="str_custom">gridHeaderSiteName</column>
+    <column id="BillingTypeCode" width="100" type="ro" align="center" sort="str_custom">gridHeaderBillingType</column>
+    <column id="BillingAmountShow" width="160" type="edn" align="right" sort="str_custom">gridHeaderbillingAmount</column>
+    <column id="PaymentStatus" width="100" type="ro" align="center" sort="str_custom">gridHeaderPaymentStatus</column>
+    
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+    <column id="FirstFeeFlag" width="100" type="ro" align="center" sort="na" hidden="true"></column>
+    <column id="CreditNoteIssuedFlag" width="100" type="ro" align="center" sort="na" hidden="true"></column>
+    <column id="BillingAmount" width="0" type="ro"  hidden="true"></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+
+
+
+
+
+

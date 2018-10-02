@@ -1,0 +1,107 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+
+<div class="main-table">
+    <div class="table-header">@Resources.CMS140.lblSection_BeatGuardDetail</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS140.lblWeekday_daytime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object" >@Html.CommonTextBox("txtWeekday_daytime", (string)@ViewBag.txtWeekday_daytime, new { isViewMode = @ViewBag.isViewMode })</div>
+            <div class="usr-label" >&nbsp;@Resources.CMS140.lblTimes</div>
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS140.lblWeekday_nighttime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">@Html.CommonTextBox("txtWeekday_nighttime", (string)@ViewBag.txtWeekday_nighttime, new { isViewMode = @ViewBag.isViewMode })</div>
+            <div class="usr-label" >&nbsp;@Resources.CMS140.lblTimes</div>
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS140.lblSaturday_daytime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object">@Html.CommonTextBox("txtSaturday_daytime", (string)@ViewBag.txtSaturday_daytime, new { isViewMode = @ViewBag.isViewMode })</div>
+            <div class="usr-label">&nbsp;@Resources.CMS140.lblTimes</div>
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS140.lblSaturday_nighttime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object" >@Html.CommonTextBox("txtSaturday_nighttime", (string)@ViewBag.txtSaturday_nighttime, new { isViewMode = @ViewBag.isViewMode })</div>
+            <div class="usr-label" >&nbsp;@Resources.CMS140.lblTimes</div>
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS140.lblSunday_daytime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object" >@Html.CommonTextBox("txtSunday_daytime", (string)@ViewBag.txtSunday_daytime, new { isViewMode = @ViewBag.isViewMode })</div>
+            <div class="usr-label" >&nbsp;@Resources.CMS140.lblTimes</div>
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS140.lblSunday_nighttime
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            <div class="usr-object" >@Html.CommonTextBox("txtSunday_nighttime", (string)@ViewBag.txtSunday_nighttime, new { isViewMode = @ViewBag.isViewMode })</div>
+            <div class="usr-label" >&nbsp;@Resources.CMS140.lblTimes</div>
+        </div>
+    </div>
+
+    <!-------------- space height 20 px ---------------->
+    <div class="usr-row" style="height:20px">&nbsp;</div>
+
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS140.lblNumber_of_beat_guard_steps
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtNumber_of_beat_guard_steps", (string)@ViewBag.txtNumber_of_beat_guard_steps, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS140.lblFrequency_of_gate_usage
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtFrequency_of_gate_usage", (string)@ViewBag.txtFrequency_of_gate_usage, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS140.lblNumber_of_clock_key
+        </div>
+        <div class="usr-object" style="width:@ViewBag.shortText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtNumber_of_clock_key", (string)@ViewBag.txtNumber_of_clock_key, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS140.lblNumber_of_date
+        </div>
+        <div class="usr-object" style="width:300px; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtNumber_of_date", (string)@ViewBag.txtNumber_of_date, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS140.lblNotify_time
+        </div>
+        <div class="usr-object" style="width:300px; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtNotify_time", (string)@ViewBag.txtNotify_time, new { isViewMode = @ViewBag.isViewMode })
+        </div> 
+    </div>
+
+
+
+     <div class="usr-clear-style">&nbsp;</div>
+</div>

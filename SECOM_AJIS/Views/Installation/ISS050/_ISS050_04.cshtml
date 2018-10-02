@@ -1,0 +1,275 @@
+﻿@using SECOM_AJIS.Presentation.Installation.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+
+<!-- ======== Html content ======== --->
+
+@{
+    ViewBag.POlbWidth = "180px";
+    ViewBag.POControlWidth = "300px"; 
+ }
+@* --- Contract Information ---  *@
+
+<div id="divInstallationPOInfo" class="main-table" style="margin-top:5px;">
+<div class="usr-row">
+        <div class="table-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS050.lblHeaderPO
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>  
+   <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblIEStaff1
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("IEStaffEmpNo1", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "10" })
+        </div>
+        <div class="usr-label" style="width:0px"></div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("EmpFullName1", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblIEStaff2
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("IEStaffEmpNo2", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "10" })
+        </div>
+        <div class="usr-label" style="width:0px"></div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("EmpFullName2", null, new { style = "width:" + @ViewBag.ObjectCol2Width + ";", @readonly = true })
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="usr-row">
+            <div id="gridPOInfo" >
+            </div>
+           @* <table>
+                <td width="260px" align="right">Total</td>
+                <td>@Html.CommonTextBox("TotalNormalPOAmount", null, new { style = "width:107px;text-align:right;", @readonly = true })</td>
+                <td>@Html.CommonTextBox("TotalActualPOAmount", null, new { style = "width:107px;text-align:right;", @readonly = true })</td>
+                <td></td>
+            </table>*@
+        </div>
+    <br />
+    
+
+    <div class="main-table" id="divAddUpdatePOInfo" style="margin-top:5px;">
+
+
+        <div class="usr-row">
+        <div class="label-header" style="width:@ViewBag.ObjectColMergeWidth;">
+           
+                @Resources.ISS050.lblSubHeaderPO
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>  
+        
+        <div class="usr-row">
+            @Html.Hidden("EditingSubcontractorCode")
+            @Html.Hidden("EditingRowIndex")
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.ISS050.lblSubContractorName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.POControlWidth; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.SubContractorNameComboBox("SubcontractorCode", new { style = "width:280px;", selected = (string)@ViewBag.SubcontractCode })
+                @*@Html.InstallationTypeComboBox("SubcontractorCode", null, new { style = "width:" + @ViewBag.ObjectCol1Width })*@
+                @Html.RequireFiled()
+            </div>  
+        
+            <div class="usr-label" style="width:@ViewBag.POlbWidth;">
+               @Resources.ISS050.lblSubContractorGroupName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+                @Html.CommonTextBox("SubConstractorGroupName", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "100" })
+            </div>     
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.ISS050.lblNormalSubContractorPOAmount
+            </div>
+            <div class="usr-object" style="width:@ViewBag.POControlWidth; background-color:@ViewBag.txtBackgroundColor;">
+                <div class="usr-label" style="text-align:left">
+                 @*@Html.NumericTextBox("NormalSubPOAmount", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "14" })*@
+                 @Html.NumericTextBoxWithMultipleCurrency("NormalSubPOAmount", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true}, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+                @Html.RequireFiled()
+                </div>
+                @*@Html.LabelCurrencyUnit("")*@
+            </div>  
+        
+            <div class="usr-label" style="width:@ViewBag.POlbWidth;">
+               @Resources.ISS050.lblActualPOAmount
+            </div>
+            <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+                <div class="usr-label" style="text-align:left">
+                @*@Html.NumericTextBox("ActualPOAmount", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";" })*@
+                @Html.NumericTextBoxWithMultipleCurrency("ActualPOAmount", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true}, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+                @Html.RequireFiled()
+                </div>
+                @*@Html.LabelCurrencyUnit("")*@
+            </div>     
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">
+                @Resources.ISS050.lblPONo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.POControlWidth; background-color:@ViewBag.txtBackgroundColor;">
+                 @Html.CommonTextBox("PONo", null, new { style = "width:" + @ViewBag.ObjectCol1Width + ";", maxlength = "20" })
+              
+            </div>  
+        
+            <div class="usr-label" style="width:100px">
+               
+            </div>
+            <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+               
+            </div>     
+        </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.ISS050.lblExpectInstallStartDate
+            
+        </div>
+        <div class="usr-object" style="width:@ViewBag.POControlWidth; background-color:@ViewBag.txtBackgroundColor;">
+            <div  class="usr-label">
+            <input type="text" id="ExpectInstallStartDate" name="ExpectInstallStartDate" style="width:90px;" />
+            @Html.RequireFiled()
+            </div>
+            
+            @Html.LabelDateFormat("ExpectInstallStartDate")    
+          
+        </div>
+        
+        <div class="usr-label" style="width:@ViewBag.POlbWidth;">
+           @Resources.ISS050.lblExpectInstallCompleteDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+            <input type="text" id="ExpectInstallCompleteDate" name="ExpectInstallCompleteDate" style="width:90px;" />
+            @Html.RequireFiled()
+            @*@Resources.ISS010.lblDMY*@
+        </div>
+        @Html.LabelDateFormat("ExpectInstallCompleteDate")
+    </div>   
+
+    <div class="usr-row" style="text-align:right">
+    @Html.CommonButton("btnPOAdd", @Resources.ISS050.lblAdd, new { style = "width:80px;" })
+    @Html.CommonButton("btnPOClear", @Resources.ISS050.lblPOClear, new { style = "width:80px;" })
+    </div>
+
+    <br />
+    <br />
+    </div>
+
+    
+    
+
+
+
+    <div id="divAddEmail" class="usr-row">
+        <div class="usr-label" style="width: @ViewBag.lbWidth;">
+            @Resources.ISS050.lblEmailNoticeTarget
+        </div>
+        <div class="usr-object" style="width: 165px">
+            @Html.CommonTextBox("EmailAddress", "", new { style = "width:160px;", maxlength = "50" })
+        </div>
+        <div class="usr-object" style="width: 120px">
+           @ViewBag.EmailSuffix
+        </div>
+        <div class="usr-object" style="width: 85px">
+            @Html.CommonButton("btnAdd", @Resources.CTS053.lblAdd, new { style = "width:80px;" })
+        </div>
+        <div class="usr-object" style="width: 85px">
+            @Html.CommonButton("btnClear", @Resources.CTS053.lblClear, new { style = "width:80px;" })
+        </div>
+        <div class="usr-object" style="width: 85px">
+            @Html.CommonButton("btnSearchEmail", @Resources.CTS053.lblSearchEmail, new { style = "width:150px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+    </div>
+    <div class="usr-row">
+        <div id="gridEmail" style="width: 360px; margin-left: 225px;">
+        </div>
+    </div>
+   
+    
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+           
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>
+    </div>   
+    <div id="dlgCTS053" class="main-popup-dialog">
+        <div class="popup-dialog">
+        </div>
+    </div>    
+    
+    <div class="usr-row">
+        @*<div class="usr-label" style="width:@ViewBag.lbWidth;">
+           
+        </div>
+        <div class="usr-object" style="width:@ViewBag.headText; background-color:@ViewBag.txtBackgroundColor;">
+        
+        </div>*@
+        <div class="usr-label" style="width:@ViewBag.lbWidth; height:60px;">@Resources.ISS050.lblPOMemo</div>
+        <div class="usr-object" style="margin-right:5px;width:495px;">
+            @Html.CommonTextArea("POMemo", null, new { style = "width:495px; height:60px;", maxlength = "4000" })
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <div class="usr-row"></div>
+    <!---------------------------------- Attached Document list ---------------------------------------------->
+    <div id="divAttachedDoclist" class="sub-table" style="margin-top:10px">
+        <div class="table-sub-header">@Resources.CTS300.lblAttachedDocumentList</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">&nbsp;</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                <div id="ISS050_gridAttachDocList" style="width:400px;"></div>
+            </div>
+        </div>
+        <div class="usr-row usr-row-space" id="divAttachFrame">
+            <iframe width="100%" height="25px" marginwidth="0" marginheight="0" id="frmAttach"
+                    vspace="0" hspace="0" frameborder="0" align="middle" scrolling="no" ></iframe>         
+        </div>
+
+        <div class="usr-row" id="divAttachRemark">
+            <div class="usr-label" style="width:@ViewBag.lbWidth;">&nbsp;</div>
+            <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                @Resources.CTS300.lblPleasePayAttention
+            </div>
+            <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                @Resources.CTS300.lblRemarkAttachFileSize
+            </div>
+        </div>
+    <div class="usr-clear-style">&nbsp;</div>
+    </div>
+    
+    <!---------------------------------- End   Attached Document list---------------------------------------------->
+    <br />
+    
+
+
+
+ 
+</div>
+

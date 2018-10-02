@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    
+    <column id="ContractName" width="250" type="ro" align="left">headerContractTarget</column>
+    <column id="SiteName" width="*" type="ro" align="left" >headerSiteName</column>
+    <column id="UserCode" width="80" type="ro" align="center" >headerUserCode</column>
+    <column id="ContractCode" width="110" type="ro" align="center" >headerContractCode</column>
+    
+    <column id="RemoveBtn" width="30" type="ro" align="center" sort="na">headerRemove</column>
+    <column id="TmpColumn" width="0" type="ro" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

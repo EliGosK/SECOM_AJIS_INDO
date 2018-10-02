@@ -1,0 +1,53 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    Layout = "";
+
+    ViewBag.LabelCol1Width = "190px";
+    ViewBag.ObjectCol1Width = "225px";
+    ViewBag.LabelCol2Width = "190px";
+    ViewBag.ObjectCol2Width = "225px";
+    ViewBag.ObjectColMergeWidth = "630px";
+    ViewBag.isViewMode = true;
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS012/QUS012_05.js")"></script>
+<div style="display:none;">
+    @Html.Hidden("C_PROD_TYPE_SALE", SECOM_AJIS.Common.Util.ConstantValue.ProductType.C_PROD_TYPE_SALE);
+</div>
+<div id="divMaintenanceDetail" class="main-table">
+    <div class="table-header">@Resources.QUS012.lblMaintenanceDetail</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS012.lblMaintenanceTargetProduct</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MaintenaceTargetProduct", (string)@ViewBag.MaintenaceTargetProduct, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS012.lblMaintenaceType</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MaintenaceType", (string)@ViewBag.MaintenaceType, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS012.lblMaintenanceCycle</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectCol1Width;">
+            @Html.CommonTextBox("MaintenaceCycle", (string)@ViewBag.MaintenaceCycle, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    @if (@ViewBag.HideMaintenanceTargetCode == false)
+    {
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS012.lblMaintenanceTargetContractCode</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                <div id="gridMaintenanceDetail" style="width:500px;"></div>
+                <div class="usr-clear-style">&nbsp;</div>
+            </div>
+        </div>
+    }
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS012.lblMemo</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("Memo", (string)@ViewBag.MaintenanceMemo, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

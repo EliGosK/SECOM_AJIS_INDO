@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="GridMatchDateDisplay" width="100" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="na" >gridHeaderMaMatchingPaymentDate</column>
+    <column id="InvoiceNo" width="130" type="ro" align="center" sort="na">gridHeaderMaInvoiceNo</column>
+    <column id="ReceiptNo" width="130" type="ro" align="center"  sort="na">gridHeaderMaReceiptNo</column>
+    <column id="BillingTargetCodeShortFormat" width="130" type="ro" align="center" sort="na">gridHeaderMaBillingTargetCode</column>
+    <column id="GridBillingClientNameOrCustomValue" width="*" type="ro" align="left" sort="na">gridHeaderMaBillingClientName</column>
+    <column id="MatchAmountIncWHTShow" width="160" type="edn" align="right" sort="na">gridHeaderMaMatchedPaymentAmount</column>
+    <column id="GridPartialPayment" width="80" type="ro" align="center" sort="na">gridHeaderMaPartialPayment</column>
+    
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+    <column id="GirdBusinessDecorateFlag" width="30" type="ro" hidden="true"></column>
+    <column id="MatchAmountIncWHT" width="0" type="ro"  hidden="true"></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <column id="ContractCode_Short" width="100" type="ro"  sort="str_custom" align="left">headerContractcode</column>
+    <column id="ContTarPurcName" width="180" type="ro"  align="left" sort="str_custom">headerContTarPurcName</column>
+    <column id="ProductName" width="150" type="ro"   align="left" sort="str_custom">headerProductname</column>
+    <column id="OperationDateText"  width="100" type="ro"   align="left" sort="date_custom">headerOperationdate</column>
+    <column id="LastChangeDateText" width="100" type="ro"   align="left" sort="date_custom">headerLastchangedate</column>
+  
+    <column id="CalContractStatus" width="*" type="ro"   align="left" sort="str_custom">headerLastchangetype</column>
+    <column id="Text_Price" width="*" type="edn" align="right" sort="str_custom">headerMonthContFeeSalePrice</column>
+    <column id="Detail" width="30" type="ro"   align="center">headerContDigest</column>
+    <!-- Hidden-->
+    <column id="ServiceTypeCode" width="*" type="ro" align="left" hidden="true"></column>
+    <column id="Price" width="*" type="edn" align="right" hidden="true"></column>
+    <settings> 
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="Instrumentcode" width="150" type="ro"  sort="na">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="na">headerInstrumentName</column>
+    <column id="AreaCodeName" width="200" type="ro" align="left" sort="na">headerInstrumentArea</column>
+    <column id="SourceQty" width="130"   type="edn" align="right" format="0,000" sort="na">headerSourceInstrumentQuantity</column>
+    <column id="TransferQty" width="130"   type="link" align="right"  sort="na">headerTransferInstrumentQuantity</column>
+    <column id="TransferingAmount" width="100"   type="ro" align="right" sort="na">headerTransferringAmount</column>
+    <column id="Remove" width="30" type="ro" align="right" sort="na">headerRemove</column>
+
+    <column id="AreaCode" width="*" type="ro" align="center" hidden="true">headerSelect</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

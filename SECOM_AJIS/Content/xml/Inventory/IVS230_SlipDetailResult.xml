@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="InstrumentCode" width="120" type="ro" align="left" sort="int">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="str_custom">headerInstrumentName</column>
+    <column id="SourceAreaName" width="200" type="ro" align="left" sort="str_custom">headerSourceArea</column>
+    <column id="DestAreaName" width="200" type="ro" align="left" sort="str_custom">headerDestArea</column>
+    <column id="TransferQty" width="100" type="ron" align="right" format="0,000" sort="int">headerTransferQty</column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

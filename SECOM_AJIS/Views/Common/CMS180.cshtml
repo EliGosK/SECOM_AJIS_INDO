@@ -1,0 +1,819 @@
+﻿<!--
+//*********************************
+// Create by: Siripoj S.
+// Create date: 27/Mar/2012
+// Update date: 27/Mar/2012
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Util;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Installation.Helpers;
+@{
+   
+    //Layout = "~/Views/Shared/_DialogLayout.cshtml";
+    ViewBag.LabelWidth = "260px";
+    ViewBag.LabelWidth2 = "330px";
+
+    ViewBag.LabelWidth3 = "280px";
+    ViewBag.LabelWidth4 = "260px";
+
+    ViewBag.ObjectWidth = "220px";
+    ViewBag.ObjectWidth2 = "350px";
+    ViewBag.ObjectWidth3 = "190px";
+    ViewBag.ObjectWidth4 = "335px";
+
+    ViewBag.ObjectWidthLong = "150px";
+    ViewBag.ObjectWidthLong2 = "605px";
+
+    ViewBag.spaceWidth = "170px";
+
+    ViewBag.isViewMode = true;
+
+    // for debug
+    ViewBag.txtBackgroundColor = "none";  // Lime
+
+    //Comment by Jutarat A. on 26022014
+    //ViewBag.C_INSTALL_STATUS_INSTALL_NOT_REQUESTED = InstallationStatus.C_INSTALL_STATUS_INSTALL_NOT_REQUESTED;
+    //ViewBag.C_INSTALL_STATUS_INSTALL_REQUESTED_PO_NOT_REGISTERED = InstallationStatus.C_INSTALL_STATUS_INSTALL_REQUESTED_PO_NOT_REGISTERED;
+    //ViewBag.C_INSTALL_STATUS_INSTALL_REQUESTED_PO_REGISTERED = InstallationStatus.C_INSTALL_STATUS_INSTALL_REQUESTED_PO_REGISTERED;
+    //ViewBag.C_INSTALL_STATUS_UNDER_INSTALLATION = InstallationStatus.C_INSTALL_STATUS_UNDER_INSTALLATION;
+    //ViewBag.C_INSTALL_STATUS_COMPLETED = InstallationStatus.C_INSTALL_STATUS_COMPLETED;
+    //ViewBag.C_INSTALL_STATUS_INSTALL_CANCELLED = InstallationStatus.C_INSTALL_STATUS_INSTALL_CANCELLED;
+    //ViewBag.C_INSTALL_STATUS_INSTALL_NOT_REGISTERED = InstallationStatus.C_INSTALL_STATUS_INSTALL_NOT_REGISTERED;
+    //ViewBag.C_INSTALL_STATUS_NO_INSTALLATION = InstallationStatus.C_INSTALL_STATUS_NO_INSTALLATION;
+    
+
+    //ViewBag.C_INSTALL_STATUS_COMPLETE = InstallationStatus.C_INSTALL_STATUS_COMPLETE;
+    //ViewBag.C_INSTALL_STATUS_REQUEST = InstallationStatus.C_INSTALL_STATUS_REQUEST;
+    //ViewBag.C_INSTALL_STATUS_PO = InstallationStatus.C_INSTALL_STATUS_PO;
+    //ViewBag.C_INSTALL_STATUS_SLIP = InstallationStatus.C_INSTALL_STATUS_SLIP;
+    //ViewBag.C_INSTALL_STATUS_REGISTER = InstallationStatus.C_INSTALL_STATUS_REGISTER;
+
+    //ViewBag.C_SLIP_STATUS_PARTIAL_STOCK_OUT = SlipStatus.C_SLIP_STATUS_PARTIAL_STOCK_OUT;
+    //ViewBag.C_SLIP_STATUS_STOCK_OUT = SlipStatus.C_SLIP_STATUS_STOCK_OUT;
+    //ViewBag.C_INSTALL_STATUS_CANCEL = InstallationStatus.C_INSTALL_STATUS_CANCEL;
+    //ViewBag.C_SLIP_STATUS_NO_NEED_TO_STOCK_OUT = SlipStatus.C_SLIP_STATUS_NO_NEED_TO_STOCK_OUT;
+    //ViewBag.C_SLIP_STATUS_STOCK_OUT = SlipStatus.C_SLIP_STATUS_STOCK_OUT;
+    //ViewBag.C_CONTRACT_STATUS_CANCEL = ContractStatus.C_CONTRACT_STATUS_CANCEL;
+    //ViewBag.C_RENTAL_INSTALL_TYPE_REMOVE_ALL = RentalInstallationType.C_RENTAL_INSTALL_TYPE_REMOVE_ALL;
+    //ViewBag.C_SALE_INSTALL_TYPE_REMOVE_ALL = SaleInstallationType.C_SALE_INSTALL_TYPE_REMOVE_ALL;
+    //End Comment
+    
+    /* enable button in header section*/
+    if (string.IsNullOrEmpty(ViewBag.ContractCode) == true)
+    {
+        ViewBag.EnableContractBasic = false;
+        ViewBag.EnableHistoryDigest = false;
+
+        ViewBag.EnableSalesContractBasic = false;
+        ViewBag.EnableContractBillingTransfer = false;
+        ViewBag.EnableBillingBasic = false;
+    }
+    else 
+    {
+        ViewBag.EnableContractBasic = ((string)ViewBag.ServiceTypeCode == ServiceType.C_SERVICE_TYPE_RENTAL);
+        ViewBag.EnableHistoryDigest = true;
+        
+        ViewBag.EnableSalesContractBasic = ((string)ViewBag.ServiceTypeCode == ServiceType.C_SERVICE_TYPE_SALE);
+        ViewBag.EnableContractBillingTransfer = true;
+        ViewBag.EnableBillingBasic = true;
+    }
+    ViewBag.EnableInstallation = false;
+
+    ViewBag.lblWidth = "220px";
+    ViewBag.ObjectColMergeWidth = "720px";
+    
+    //ViewBag.EnableSecurityBasic = true;
+    //ViewBag.EnableSecurityDetail = true;
+}
+@section page_header{
+    <x type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></x>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script src="../../Scripts/Base/ComboBox.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Common/CMS180.js")" ></script>
+    <script type="text/javascript">
+        var CMS180_ViewBag =
+         {
+             ContractCode: "@ViewBag.ContractCode",
+             InstallationSlipNo: "@ViewBag.InstallationSlipNo",
+             ServiceTypeCode: "@ViewBag.ServiceTypeCode",
+
+             //Modify by Jutarat A. on 26022014
+             //             C_INSTALL_STATUS_INSTALL_NOT_REQUESTED: "@ViewBag.C_INSTALL_STATUS_INSTALL_NOT_REQUESTED",
+             //             C_INSTALL_STATUS_INSTALL_REQUESTED_PO_NOT_REGISTERED: "@ViewBag.C_INSTALL_STATUS_INSTALL_REQUESTED_PO_NOT_REGISTERED",
+             //             C_INSTALL_STATUS_INSTALL_REQUESTED_PO_REGISTERED: "@ViewBag.C_INSTALL_STATUS_INSTALL_REQUESTED_PO_REGISTERED",
+             //             C_INSTALL_STATUS_UNDER_INSTALLATION: "@ViewBag.C_INSTALL_STATUS_UNDER_INSTALLATION",
+             //             C_INSTALL_STATUS_COMPLETED: "@ViewBag.C_INSTALL_STATUS_COMPLETED",
+             //             C_INSTALL_STATUS_INSTALL_CANCELLED: "@ViewBag.C_INSTALL_STATUS_INSTALL_CANCELLED",
+             //             C_INSTALL_STATUS_INSTALL_NOT_REGISTERED: "@ViewBag.C_INSTALL_STATUS_INSTALL_NOT_REGISTERED",
+             //             C_INSTALL_STATUS_NO_INSTALLATION: "@ViewBag.C_INSTALL_STATUS_NO_INSTALLATION",
+
+             //             C_INSTALL_STATUS_COMPLETE_CNT: "@ViewBag.C_INSTALL_STATUS_COMPLETE",
+             //             C_INSTALL_STATUS_REQUEST_CNT: "@ViewBag.C_INSTALL_STATUS_REQUEST",
+             //             C_INSTALL_STATUS_PO_CNT: "@ViewBag.C_INSTALL_STATUS_PO",
+             //             C_INSTALL_STATUS_SLIP_CNT: "@ViewBag.C_INSTALL_STATUS_SLIP",
+             //             C_INSTALL_STATUS_REGISTER_CNT: "@ViewBag.C_INSTALL_STATUS_REGISTER",
+             //             C_INSTALL_STATUS_CANCEL_CNT: "@ViewBag.C_INSTALL_STATUS_CANCEL",
+
+             //             C_INSTALL_STATUS_COMPLETE: "@Resources.CMS180.btnComplete",
+             //             C_INSTALL_STATUS_REQUEST: "@Resources.CMS180.btnRequest",
+             //             C_INSTALL_STATUS_PO: "@Resources.CMS180.btnPO",
+             //             C_INSTALL_STATUS_SLIP: "@Resources.CMS180.btnSlip",
+             //             C_INSTALL_STATUS_REGISTER: "@Resources.CMS180.btnRegister",
+             //             C_INSTALL_STATUS_CANCEL: "@Resources.CMS180.btnCancel",
+
+             //             C_SLIP_STATUS_PARTIAL_STOCK_OUT: "@ViewBag.C_SLIP_STATUS_PARTIAL_STOCK_OUT",
+             //             C_SLIP_STATUS_STOCK_OUT: "@ViewBag.C_SLIP_STATUS_STOCK_OUT",             
+             //             C_SLIP_STATUS_NO_NEED_TO_STOCK_OUT: "@ViewBag.C_SLIP_STATUS_NO_NEED_TO_STOCK_OUT",
+             //             C_SLIP_STATUS_STOCK_OUT: "@ViewBag.C_SLIP_STATUS_STOCK_OUT",
+             //             C_CONTRACT_STATUS_CANCEL: "@ViewBag.C_CONTRACT_STATUS_CANCEL",
+             //             C_RENTAL_INSTALL_TYPE_REMOVE_ALL: "@ViewBag.C_RENTAL_INSTALL_TYPE_REMOVE_ALL",
+             //             C_SALE_INSTALL_TYPE_REMOVE_ALL: "@ViewBag.C_SALE_INSTALL_TYPE_REMOVE_ALL"
+
+             C_INSTALL_STATUS_INSTALL_NOT_REQUESTED: "@InstallationStatus.C_INSTALL_STATUS_INSTALL_NOT_REQUESTED",
+             C_INSTALL_STATUS_INSTALL_REQUESTED_PO_NOT_REGISTERED: "@InstallationStatus.C_INSTALL_STATUS_INSTALL_REQUESTED_PO_NOT_REGISTERED",
+             C_INSTALL_STATUS_INSTALL_REQUESTED_PO_REGISTERED: "@InstallationStatus.C_INSTALL_STATUS_INSTALL_REQUESTED_PO_REGISTERED",
+             C_INSTALL_STATUS_UNDER_INSTALLATION: "@InstallationStatus.C_INSTALL_STATUS_UNDER_INSTALLATION",
+             C_INSTALL_STATUS_COMPLETED: "@InstallationStatus.C_INSTALL_STATUS_COMPLETED",
+             C_INSTALL_STATUS_INSTALL_CANCELLED: "@InstallationStatus.C_INSTALL_STATUS_INSTALL_CANCELLED",
+             C_INSTALL_STATUS_INSTALL_NOT_REGISTERED: "@InstallationStatus.C_INSTALL_STATUS_INSTALL_NOT_REGISTERED",
+             C_INSTALL_STATUS_NO_INSTALLATION: "@InstallationStatus.C_INSTALL_STATUS_NO_INSTALLATION",
+
+             C_INSTALL_STATUS_COMPLETE_CNT: "@InstallationStatus.C_INSTALL_STATUS_COMPLETE",
+             C_INSTALL_STATUS_REQUEST_CNT: "@InstallationStatus.C_INSTALL_STATUS_REQUEST",
+             C_INSTALL_STATUS_PO_CNT: "@InstallationStatus.C_INSTALL_STATUS_PO",
+             C_INSTALL_STATUS_SLIP_CNT: "@InstallationStatus.C_INSTALL_STATUS_SLIP",
+             C_INSTALL_STATUS_REGISTER_CNT: "@InstallationStatus.C_INSTALL_STATUS_REGISTER",
+             C_INSTALL_STATUS_CANCEL_CNT: "@InstallationStatus.C_INSTALL_STATUS_CANCEL",
+
+             C_INSTALL_STATUS_COMPLETE: "@Resources.CMS180.btnComplete",
+             C_INSTALL_STATUS_REQUEST: "@Resources.CMS180.btnRequest",
+             C_INSTALL_STATUS_PO: "@Resources.CMS180.btnPO",
+             C_INSTALL_STATUS_SLIP: "@Resources.CMS180.btnSlip",
+             C_INSTALL_STATUS_REGISTER: "@Resources.CMS180.btnRegister",
+             C_INSTALL_STATUS_CANCEL: "@Resources.CMS180.btnCancel",
+
+             C_SLIP_STATUS_PARTIAL_STOCK_OUT: "@SlipStatus.C_SLIP_STATUS_PARTIAL_STOCK_OUT",
+             C_SLIP_STATUS_STOCK_OUT: "@SlipStatus.C_SLIP_STATUS_STOCK_OUT",
+             C_SLIP_STATUS_NO_NEED_TO_STOCK_OUT: "@SlipStatus.C_SLIP_STATUS_NO_NEED_TO_STOCK_OUT",
+             C_SLIP_STATUS_STOCK_OUT: "@SlipStatus.C_SLIP_STATUS_STOCK_OUT",
+             C_CONTRACT_STATUS_CANCEL: "@ContractStatus.C_CONTRACT_STATUS_CANCEL",
+             C_RENTAL_INSTALL_TYPE_REMOVE_ALL: "@RentalInstallationType.C_RENTAL_INSTALL_TYPE_REMOVE_ALL",
+             C_SALE_INSTALL_TYPE_REMOVE_ALL: "@SaleInstallationType.C_SALE_INSTALL_TYPE_REMOVE_ALL"
+             //End Modify                          
+         };
+    </script>
+}
+
+<!-- Top button -->
+@if (string.IsNullOrEmpty(ViewBag.ContractCode) == false)
+{ 
+    @Html.Partial("_ButtonControl")
+}
+
+
+
+@if (CommonUtil.IsNullOrEmpty(ViewBag.ContractCode) == true && CommonUtil.IsNullOrEmpty(ViewBag.InstallationSlipNo) == true)
+{
+    <!-- SearchCriteria ==================================================================================================================== -->
+    <form id="SearchCriteria" action="#">
+    <div id="divSearchCriteria" class="main-table">
+        <div class="table-header">
+            @Resources.CMS180.lblSearchCriteria
+        </div>
+        <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.LabelWidth;" >&nbsp;</div>
+                        <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                            @Resources.CMS180.lblRemark1
+                        </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; margin-top:30px">
+                @Resources.CMS180.lblInstallationStatus
+            </div>
+            <div class="usr-object" style="height: 100%; width: 690px">
+                <div class="sub-table">
+                    
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth2;" >
+                            @Html.CommonCheckButton("chkInstallationNotRegistered", @Resources.CMS180.chkInstallationNotRegistered, @InstallationStatus.C_INSTALL_STATUS_INSTALL_NOT_REGISTERED, true)
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth4;" >
+                            @Html.CommonCheckButton("chkInstallationUnderInstall", @Resources.CMS180.chkInstallationUnderInstall, @InstallationStatus.C_INSTALL_STATUS_UNDER_INSTALLATION, true)
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth2; ">
+                            @Html.CommonCheckButton("chkInstallationNotRequest", @Resources.CMS180.chkInstallationNotRequest, @InstallationStatus.C_INSTALL_STATUS_INSTALL_NOT_REQUESTED, true)
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth4; ">
+                            @Html.CommonCheckButton("chkInstallationCompleted", @Resources.CMS180.chkInstallationCompleted, @InstallationStatus.C_INSTALL_STATUS_COMPLETED, true)
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth2; ">
+                            @Html.CommonCheckButton("chkInstallationRequestButPoNotRegistered", @Resources.CMS180.chkInstallationRequestButPoNotRegistered, @InstallationStatus.C_INSTALL_STATUS_INSTALL_REQUESTED_PO_NOT_REGISTERED, true)
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth4; ">
+                            @Html.CommonCheckButton("chkInstallationCancelled", @Resources.CMS180.chkInstallationCancelled, @InstallationStatus.C_INSTALL_STATUS_INSTALL_CANCELLED, true)
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth2; ">
+                            @Html.CommonCheckButton("chkInstallationRequestedAndPoRegistered", @Resources.CMS180.chkInstallationRequestedAndPoRegistered, @InstallationStatus.C_INSTALL_STATUS_INSTALL_REQUESTED_PO_REGISTERED, true)
+                        </div>
+                    </div>
+                    <div class="usr-clear-style">
+                        &nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            &nbsp;
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; margin-top:30px">
+                @Resources.CMS180.lblInstallationSlipStatus
+            </div>
+            <div class="usr-object" style="height: 100%; width: 690px">
+                <div class="sub-table">
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkNotStockOut", @Resources.CMS180.chkNotStockOut, @SlipStatus.C_SLIP_STATUS_NOT_STOCK_OUT, true)
+                        </div>   
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkInstallationSlipCanceled", @Resources.CMS180.chkInstallationSlipCanceled, @SlipStatus.C_SLIP_STATUS_INSTALL_SLIP_CANCELED, true)
+                        </div>    
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkReplaced", @Resources.CMS180.chkReplaced, @SlipStatus.C_SLIP_STATUS_REPLACED, true)
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkPartialStockOut", @Resources.CMS180.chkPartialStockOut, @SlipStatus.C_SLIP_STATUS_PARTIAL_STOCK_OUT, true)
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkWaitForReturn", @Resources.CMS180.chkWaitForReturn, @SlipStatus.C_SLIP_STATUS_WAIT_FOR_RETURN, true)
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("NotRegisteredYetSlipFlag", @Resources.CMS180.lblNotRegistered, Convert.ToString(@FlagType.C_FLAG_ON), true)
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkStockOut", @Resources.CMS180.chkStockOut, @SlipStatus.C_SLIP_STATUS_STOCK_OUT, true)
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkReturned", @Resources.CMS180.chkReturned, @SlipStatus.C_SLIP_STATUS_RETURNED, true)
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkNoNeedToStockOut", @Resources.CMS180.chkNoNeedToStockOut, @SlipStatus.C_SLIP_STATUS_NO_NEED_TO_STOCK_OUT, true)
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkNoNeedToReturn", @Resources.CMS180.chkNoNeedToReturn, @SlipStatus.C_SLIP_STATUS_NO_NEED_TO_RETURN, true)
+                        </div>
+                        
+                    </div>
+                    <div class="usr-clear-style">
+                        &nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            &nbsp;
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; margin-top:21px">
+                @Resources.CMS180.lblInstallationManagementStatus
+            </div>
+            <div class="usr-object" style="height: 100%; width: 690px">
+                <div class="sub-table">
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkProcessing", @Resources.CMS180.chkProcessing, @InstallationManagementStatus.C_INSTALL_MANAGE_STATUS_PROCESSING, true)
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkRejected", @Resources.CMS180.chkRejected, @InstallationManagementStatus.C_INSTALL_MANAGE_STATUS_REJECTED, true)
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("NotRegisteredYetManagementFlag", @Resources.CMS180.lblNotRegistered, Convert.ToString(@FlagType.C_FLAG_ON), true)
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkRequestApprove", @Resources.CMS180.chkRequestApprove, @InstallationManagementStatus.C_INSTALL_MANAGE_STATUS_REQUEST_APPROVE, true)
+                        </div>
+                         <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkCompleted", @Resources.CMS180.chkCompleted, @InstallationManagementStatus.C_INSTALL_MANAGE_STATUS_COMPLETED, true)
+                        </div>
+                        
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkApproved", @Resources.CMS180.chkApproved, @InstallationManagementStatus.C_INSTALL_MANAGE_STATUS_APPROVED, true)
+                        </div>
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth; ">
+                            @Html.CommonCheckButton("chkCanceled", @Resources.CMS180.chkCanceled, @InstallationManagementStatus.C_INSTALL_MANAGE_STATUS_CANCELED, true)
+                        </div>
+                       
+                    </div>
+                    <div class="usr-clear-style">
+                        &nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            &nbsp;
+        </div>
+        <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.LabelWidth;" >&nbsp;</div>
+                        <div style="font-size: 0.8em; color: rgb(119, 119, 119);">
+                            @Resources.CMS180.lblRemark2
+                        </div>
+                    </div>
+        
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS180.lblContractCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.CommonTextBox("ContractCode", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS180.lblUserCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.CommonTextBox("UserCode", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", maxlength = "50" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS180.lblPlanCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.CommonTextBox("PlanCode", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", maxlength = "50" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS180.lblInstallationSlipNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.CommonTextBox("InstallationSlipNo", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", maxlength = "50" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS180.lblInstallationMaintenanceNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.CommonTextBox("InstallationMaintenanceNo", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", maxlength = "50" })
+            </div>
+        </div>
+        <div class="usr-row">
+        </div>
+        <div class="usr-row">
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS180.lblOperationOffice
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.OperationOfficeComboBoxWithFirstElement("OperationOffice", new { style = "width:154px;" }, true, "ALL")
+            </div>
+
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS180.lblSalesmanCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.CommonTextBox("SalesmanEmpNo", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", maxlength = "50" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.LabelWidth2;">
+                @Resources.CMS180.lblSubContractorName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.CommonTextBox("subContractorName", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", maxlength = "50" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS180.lblInstallationSlipIssueDate
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SlipIssueDateFrom", null, new { style = "width:120px;", maxlength = "50" })
+            </div>
+            <div class="usr-object" style="width: 20px" align="center">
+                ~
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("SlipIssueDateTo", null, new { style = "width:120px;", maxlength = "50" })
+            </div>
+            <div class="usr-object">
+                <div style="margin-right: 5px;">
+                    @Html.LabelDateFormat("lblInstallationSlipIssueDateToe")
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS180.lblContractTargetNamePurchaserName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.CommonTextBox("ContractTargetPurchaserName", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", maxlength = "250" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS180.lblSiteCode
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.CommonTextBox("SiteCode", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", maxlength = CommonValue.C_MAXLENGTH_SITE_CODE })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS180.lblSiteName
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.CommonTextBox("SiteName", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", maxlength = "250" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CMS180.lblSiteAddress
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                @Html.CommonTextBox("SiteAddress", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", maxlength = "250" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-object" style="width: 250px">
+                @Html.CommonButton("btnDownload", @Resources.CMS180.lblDownloadCsvOfInstallationBasic, new { style = "width:250px;", type = "button" })
+            </div>
+            <iframe id="ifDownload" style="visibility: hidden; width: 0px; height: 0px;"></iframe>
+            <div class="usr-label" style="width: 490px;">
+                &nbsp;
+            </div>
+            <div class="usr-object">
+                @Html.CommonButton("btnSearch", @Resources.CMS180.lblSearch, new { style = "width:100px;", type = "button" })
+                @Html.CommonButton("btnClear", @Resources.CMS180.lblClear, new { style = "width:100px;", type = "button" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+    </form>
+}
+<!-- ============== Result list ================= -->
+<div id="divSearchResult" class="main-table">
+    <div class="table-header">
+        @Resources.CMS180.lblResultlist
+    </div>
+    <div>
+        <div id="gridResultList" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+
+<!-- ============== Site information for installation ================= -->
+<div id="divSiteInfo" class="main-table">
+    <div class="table-header">
+        @Resources.CMS180.lblSiteInformationForInstallation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+            @Resources.CMS180.lblContractCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+            @Html.CommonTextBox("ContractCode1", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", maxlength = CommonValue.C_MAXLENGTH_CONTRACT_CODE, @readonly = true })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.LabelWidth4;">
+            @Resources.CMS180.lblUserCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+            @Html.CommonTextBox("UserCodeSiteInfo", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+            @Resources.CMS180.lblContractTargetPurchaserNameEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+            @Html.CommonTextBox("CustFullNameEN", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+            @Resources.CMS180.lblContractTargetPurchaserNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+            @Html.CommonTextBox("CustFullNameLC", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+            @Resources.CMS180.lblSiteNameEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+            @Html.CommonTextBox("SiteNameEN", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+            @Resources.CMS180.lblSiteAddressEnglish
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+            @Html.CommonTextBox("SiteAddressEN", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+            @Resources.CMS180.lblSiteNameLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+            @Html.CommonTextBox("SiteNameLC", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+            @Resources.CMS180.lblSiteAddressLocal
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+            @Html.CommonTextBox("SiteAddressLC", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", @readonly = true })
+        </div>
+    </div>
+    <br />
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+            @Resources.CMS180.lblOperationOffice
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+            @Html.CommonTextBox("OperationOfficeSiteInfo", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<!-- ============== Show detail information ================= -->
+<div id="divShowDetail" class="main-table">
+    <div class="table-header">
+        @Resources.CMS180.lblShowDetailInformation
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+            @Resources.CMS180.lblInstallationMaintenanceNo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+            @Html.CommonTextBox("InstallationMaintenanceNoDetail", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        &nbsp;
+    </div>
+    <div class="usr-row">
+        <div class="sub-table">
+            <div class="table-sub-header">
+                @Resources.CMS180.lblInstallationSlipHistory
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblInstallationSlipHistory
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @*@Html.InstallationHistoryComboBox("SlipNo", new { style = "width:154px" }, true)*@
+                    @Html.BlankComboBox("SlipNo", new { style = "width:154px" }) @*Modify by Jutarat A. on 26022014*@
+                </div>
+                <div class="usr-label" style="width:@ViewBag.LabelWidth4;">
+                    @Resources.CMS180.lblPlanCode
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @Html.CommonTextBox("PlanCodeDetailInfo", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblSubContractorName
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @Html.CommonTextBox("subContractor", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblInstallationSlipStatus
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @Html.CommonTextBox("SlipStatus", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblSalesmanName1
+                </div>
+                <div class="usr-object" style="width: 160px">
+                    @Html.CommonTextBox("SalesmanEmpNo1", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @Html.CommonTextBox("SalesmanEmpName1", null, new { style = "width:450px", @readonly = true })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblSalesmanName2
+                </div>
+                <div class="usr-object" style="width: 160px">
+                    @Html.CommonTextBox("SalesmanEmpNo2", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @Html.CommonTextBox("SalesmanEmpName2", null, new { style = "width:450px", @readonly = true })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblChangeReason
+                </div>
+                <div class="usr-object" style="width: 300px">
+                    @Html.CommonRadioButton("rdoCustomerReason", @Resources.CMS180.lblChangeCustomerReson, "CustomerReason", true, "InstallationSlipHistory")
+                    <span style="width:@ViewBag.spaceWidth;">&nbsp;</span>
+                    @Html.CommonRadioButton("rdoSecomReason", @Resources.CMS180.lblChangeSecomReason, "SecomReason", true, "InstallationSlipHistory")
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblInstallationType
+                </div>
+                <div class="usr-object" style="width: @ViewBag.LabelWidth3;">
+                    @Html.CommonTextBox("InstallationTypeName", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblInstallationCauseReason
+                </div>
+                <div class="usr-object" style="width:@ViewBag.LabelWidth3;">
+                    @Html.CommonTextBox("InstallationCauseReason", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";", @readonly = true })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblNormalContractFee
+                </div>
+                <div class="usr-object" style="width: 200px">
+                    @Html.NumericTextBoxWithMultipleCurrency("NormalContractFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+                    @*@Html.NumericTextBoxWithUnit("NormalContractFee", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.CURRENCY })*@
+                </div>
+                <div class="usr-label" style="width: 250px">
+                    @Resources.CMS180.lblNormalInstallationFee
+                </div>
+                <div class="usr-object" style="width: 200px">
+                    @Html.NumericTextBoxWithMultipleCurrency("NormalInstallFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+                    @*@Html.NumericTextBoxWithUnit("NormalInstallFee", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.CURRENCY })*@
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblInstallationFeeBillingFlag
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3;">
+                    @Html.CommonTextBox("InstallationFeeBillingFlag", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+                <div class="usr-label" style="width:@ViewBag.LabelWidth4;">
+                    @Resources.CMS180.lblBillingInstallationFee
+                </div>
+                <div class="usr-object" style="width: 200px">
+                    @Html.NumericTextBoxWithMultipleCurrency("BillingInstallFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+                    @*@Html.NumericTextBoxWithUnit("BillingInstallFee", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.CURRENCY })*@
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblBillingOcc
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3;">
+                    @Html.CommonTextBox("BillingOCC", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblSECOMpayment
+                </div>
+                <div class="usr-object" style="width: 200px">
+                    @Html.NumericTextBoxWithMultipleCurrency("SecomPayment", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+                    @*@Html.NumericTextBoxWithUnit("SecomPayment", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.CURRENCY })*@
+                </div>
+                <div class="usr-label" style="width: 250px">
+                    @Resources.CMS180.lblSECOMrevenue
+                </div>
+                <div class="usr-object" style="width: 200px">
+                    @Html.NumericTextBoxWithMultipleCurrency("SecomRevenue", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true }, SECOM_AJIS.Presentation.Common.Helpers.TextBoxHelper.MULTIPLE_CURRENCY_TYPE.COMBOBOX)
+                    @*@Html.NumericTextBoxWithUnit("SecomRevenue", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true, SECOM_AJIS.Common.Helpers.TextBoxHelper.NUMERIC_UNIT_TYPE.CURRENCY })*@
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblApproveNo1
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @Html.CommonTextBox("ApproveNo1", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+                <div class="usr-label" style="width:@ViewBag.LabelWidth4;">
+                    @Resources.CMS180.lblApproveNo2
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @Html.CommonTextBox("ApproveNo2", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblSlipIssueDate
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @Html.CommonTextBox("SlipIssueDate", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+                <div class="usr-label" style="width:@ViewBag.LabelWidth4;">
+                    @Resources.CMS180.lblInstrumentStockOutDate
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @Html.CommonTextBox("InstrumentStockOutDate", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                    @Resources.CMS180.lblInstallationCompleteDate
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @Html.CommonTextBox("InstallationCompleteDate", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+                <div class="usr-label" style="width:@ViewBag.LabelWidth4;">
+                    @Resources.CMS180.lblReturnedInstrumentReceiveDate
+                </div>
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                    @Html.CommonTextBox("ReturnInstrumentReceiveDate", null, new { style = "width:" + @ViewBag.ObjectWidth3 + ";", @readonly = true })
+                </div>
+            </div>
+            <div class="usr-clear-style">
+                &nbsp;</div>
+        </div>
+        <div id="divAttachedDoclist" class="sub-table"style="margin-top:10px">
+            <div class="table-sub-header">
+                @Resources.CMS180.lblAttachedDocList
+            </div>
+            <div class="usr-row">
+                <div class="usr-label" style="width:@ViewBag.lblWidth;">&nbsp;</div>
+                <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                    <div id="CMS180_gridAttachDocList" style="width:400px;"></div>
+                </div>
+            </div>
+            <div class="usr-clear-style">&nbsp;</div>
+        </div>
+        <br />
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth3;">
+                &nbsp;
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LabelWidth3; font-weight:bold">
+                @Resources.CMS180.lblInstallationSubContractor
+            </div>                       
+        </div>
+        <div>
+            <div id="gridSubContractor" style="width: 65%; margin-left: 285px;">
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="sub-table">
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth3; margin-top:80px">
+                        @Resources.CMS180.lblInstallationMemoList
+                    </div>
+                    <div class="usr-object" style="width:@ViewBag.ObjectWidth3; ">
+                        @Html.CommonTextArea("Memo", null, new { style = "width:" + @ViewBag.ObjectWidthLong2 + ";" + " height:160px; overflow:auto;", @readonly = true })
+                    </div>
+                </div>
+                <div class="usr-clear-style">
+                    &nbsp;</div>
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<!-- Instrument detail ==================================================================================================================== -->
+<div id="divInstrumentDetail" class="main-table">
+    <div class="table-header">
+        @Resources.CMS180.lblInstrumentDetail
+    </div>
+    <div>
+        <div id="gridInstrumentDetail" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>

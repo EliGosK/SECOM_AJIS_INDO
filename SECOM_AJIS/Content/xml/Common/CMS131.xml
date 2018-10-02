@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+    
+    <column id="DocumentName" width="*" type="ro" align="left" sort="str_custom">headerContract_document_type</column>
+    <column id="ContractDocOCC" width="100" type="ro" align="left" sort="str_custom">headerContract_document_occurrence</column>
+    <column id="DocStatusName_Extra" width="200" type="ro" align="left" sort="str_custom">headerDocument_status</column> 
+    <column id="DocAuditResultName_Extra" width="140" type="ro" align="left" sort="str_custom">headerDoc_audit_result</column>
+    <column id="CollectDocDate" width="120" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerContract_document_receiving_date</column>
+    
+    <!--
+    <column id="ContractOfficeName_Extra" width="100" type="ro" align="left" sort="str_custom">headerContract_office</column>
+    <column id="OperationOfficeName_Extra" width="100" type="ro" align="left" sort="str_custom">headerOperation_office</column>
+    <column id="Saleman1" width="100" type="ro" align="left" sort="str_custom">headerSalesman1</column>
+    
+    -->
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

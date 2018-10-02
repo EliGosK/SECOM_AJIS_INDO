@@ -1,0 +1,325 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Common.Models
+@using SECOM_AJIS.Presentation.Master.Helpers;
+
+
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script  type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script  type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script  type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script  type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script  type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script src="../../Scripts/jquery.maskedinput-1.3.js" type="text/javascript"></script>
+    <script src="../../Scripts/Test/CMS999.js" type="text/javascript"></script>
+    <script src="../../Scripts/json.js" type="text/javascript"></script>
+    <script src="../../Scripts/Base/ComboBox.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+}
+
+
+
+
+<!-- ===================================== TEST DOWNLOAD Slip =========================================== -->
+<form id="IVR_TestDownload" action='#' method="post" target="_blank">
+    @Html.Hidden("strSessionKey")
+</form>
+@Html.CommonButton("btnTestDownload", "Test Download Document")
+@Html.CommonButton("btnClearReportCache", "Clear Report Cache")
+<!-- ===================================== TEST DOWNLOAD Slip =========================================== -->
+<br />
+<br />
+
+<div style="border-style: solid">
+<b>Test GetIVR 100</b><br />
+<b>Inventory Checking Slip No:</b><input type="text" size="50" id="txtInvCheckingSlipNo" /><br />
+<input type="button" value="Get IVR100" id="btnGetIVR100" />
+<input type="button" value="Get IVR110" id="btnGetIVR110" />
+<input type="button" value="Get IVR010" id="btnGetIVR010" />
+<input type="button" value="Get IVR020" id="btnGetIVR020" />
+<input type="button" value="Get IVR030" id="btnGetIVR030" />
+<input type="button" value="Get IVR040" id="btnGetIVR040" />
+<input type="button" value="Get IVR050" id="btnGetIVR050" />
+<input type="button" value="Get IVR060" id="btnGetIVR060" />
+<br />
+<input type="button" value="Get IVR070" id="btnGetIVR070" />
+<input type="button" value="Get IVR080" id="btnGetIVR080" />
+<input type="button" value="Get IVR090" id="btnGetIVR090" />
+<input type="button" value="Get IVR120" id="btnGetIVR120" />
+<input type="button" value="Get IVR130" id="btnGetIVR130" />
+<input type="button" value="Get IVR170" id="btnGetIVR170" />
+<input type="button" value="Get IVR180" id="btnGetIVR180" />
+<input type="button" value="Get IVR190" id="btnGetIVR190" />
+<input type="button" value="Get IVR191" id="btnGetIVR191" />
+<input type="button" value="Get IVR192" id="btnGetIVR192" />
+<input type="button" value="Get IVR210" id="btnGetIVR210" />
+<br />
+<b>Batch date:</b>@Html.CommonTextBox("ivr140_batchdatetime", null, new { style = "width:120px;", maxlength = "50" })<br />
+<input type="button" value="Get IVR150" id="btnGetIVR150" />
+<input type="button" value="Get IVR140" id="btnGetIVR140" />
+</div>
+<br />
+
+<div style="border-style: solid">
+<b>Test Akat K.'s process</b><br />
+<input type="button" value="Test IVP070" id="btnIVP070" />
+<input type="button" value="Test IVP080" id="btnIVP080" />
+<input type="button" value="Test IVP090" id="btnIVP090" />
+<input type="button" value="Test IVP110" id="btnIVP110" />
+<input type="button" value="Test IVP120" id="btnIVP120" />
+<input type="button" value="Test IVP040" id="btnIVP040" />
+<input type="button" value="Test IVP060" id="btnIVP060" />
+</div>
+<br />
+<div style="border-style: solid">
+<input type="button" value="Test CompleteInstallation" id="btnCompleteInstallation" />
+<input type="button" value="Test ContractStartService" id="btnContractStartService" />
+<input type="button" value="Test CompleteProject" id="btnCompleteProject" />
+<input type="button" value="Test CancelInstallation" id="btnCancelInstallation" />
+<input type="button" value="Test CustomerAcceptance" id="btnCustomerAcceptance" />
+<input type="button" value="Test RealInvestigation" id="btnRealInvestigation" />
+</div>
+<br />
+
+<div style="border-style: solid">
+<b>Test Download File</b><br />
+<b>File Name:</b><input type="text" size="50" id="txtFileName" /><br />
+<input type="button" value="Download" id="btnDownload" />
+<iframe id="ifDownload" style="visibility: hidden; width: 0px; height: 0px;"></iframe>
+</div>
+<br />
+
+<div style="border-style: solid">
+<b>Test Contract Report</b><br />
+<b>Doc Id:</b><input type="text" size="50" id="txtDocId" /><br />
+<input type="button" value="CTR010" id="btnCTR010" />&nbsp;
+<input type="button" value="CTR011" id="btnCTR011" />&nbsp;
+<input type="button" value="CTR020" id="btnCTR020" />&nbsp;
+<input type="button" value="CTR030" id="btnCTR030" />&nbsp;
+<input type="button" value="CTR040" id="btnCTR040" />&nbsp;
+<input type="button" value="CTR050" id="btnCTR050" />&nbsp;
+<input type="button" value="CTR060" id="btnCTR060" />&nbsp;
+<input type="button" value="CTR070" id="btnCTR070" />&nbsp;
+<input type="button" value="CTR080" id="btnCTR080" />&nbsp;
+<input type="button" value="CTR090" id="btnCTR090" />
+<br /><br />
+<b>Doc Id:</b><input type="text" size="30" id="txtDocId2" />&nbsp;
+<b>Doc No:</b><input type="text" size="30" id="txtDocNo" />&nbsp;
+<b>Doc Code:</b><input type="text" size="30" id="txtDocCode" />
+<br />
+<input type="button" value="Gen Report" id="btnGenContractRpt" />
+</div>
+<br />
+
+<div style="border-style: solid">
+<b>Test Installation Report</b><br />
+<b>Slip/MA no.:</b><input type="text" size="50" id="txtInstallNo" />
+<b>Sub no.:</b><input type="text" size="50" id="txtSubNo" /><br />
+<input type="button" value="ISR010" id="btnISR010" />Slip no.<br />
+<input type="button" value="ISR020" id="btnISR020" />Slip no.<br />
+<input type="button" value="ISR030" id="btnISR030" />Slip no.<br />
+<input type="button" value="ISR040" id="btnISR040" />Slip no.<br />
+<input type="button" value="Gen ISR010/ISR020/ISR030/ISR040 from Tbt_InstallationReprint" id="btnISRReprint" />SlipNo and DocumentCode<br />
+<input type="button" value="ISR050" id="btnISR050" />MA and Sub code<br />
+<input type="button" value="ISR060" id="btnISR060" />MA<br />
+<input type="button" value="ISR070" id="btnISR070" />MA and Sub code<br />
+<input type="button" value="ISR080" id="btnISR080" />MA and Sub code<br />
+<input type="button" value="ISR090" id="btnISR090" />Slip no.<br />
+<input type="button" value="ISR100" id="btnISR100" />MA and Sub code<br />
+<input type="button" value="ISR110" id="btnISR110" />Slip no.<br />
+<input type="button" value="ISR111" id="btnISR111" />Slip no.<br />
+<br />
+<input type="button" value="InstallSlip" id="btnInstallSlip" />Install Slip no.<br />
+</div>
+<br />
+
+<div style="border-style: solid">
+<b>Test Common Report</b><br />
+<input type="button" value="CMR010" id="btnCMR010" />&nbsp;
+</div>
+<br />
+
+
+<div style="border-style: solid">
+<iframe id="iframeDownload" style="visibility: hidden; width: 0px; height: 0px;"></iframe>
+
+<b>Billing Report</b><br />
+Invoice / Tax Inveice: <input type="text" id="Invoice_Taxinvice"/><br/><br/>
+<input type="button" value="Invoice" id="btnBLR010" />&nbsp;
+@*<input type="button" value="BLR020" id="btnBLR020" />&nbsp;
+<input type="button" value="BLR030" id="btnBLR030" />&nbsp;
+<input type="button" value="BLR040" id="btnBLR040" />&nbsp;*@
+<input type="button" value="BLR050" id="btnBLR050" />&nbsp;
+<input type="button" value="Foxit Print" id="btnFoxitPrint" />&nbsp;
+&nbsp;
+<input type="button" value="Gen BLR010" id="btnGenBLR010" />&nbsp;
+<input type="button" value="Gen BLR020" id="btnGenBLR020" />&nbsp;<br/>
+<input type="button" value="Gen BLR010 from Tbt_InvoiceReprint" id="btnGenBLR010FromTable" />&nbsp;
+</div>
+<br />
+
+<div style="border-style: solid">
+<b>Test IVP Original</b><br />
+<form id="frmTestIVP" action="#">
+@*<input type="radio" name="procname" value="IVP010.InventoryHandler.NewBooking"/>IVP010.InventoryHandler.NewBooking <br />
+<input type="radio" name="procname" value="IVP010.InventoryHandler.ChangeExpectedStartServiceDate" />IVP010.InventoryHandler.ChangeExpectedStartServiceDate <br />
+<input type="radio" name="procname" value="IVP010.InventoryHandler.CancelBooking" />IVP010.InventoryHandler.CancelBooking <br />
+<input type="radio" name="procname" value="IVP010.InventoryHandler.Rebooking" />IVP010.InventoryHandler.Rebooking <br />
+<input type="radio" name="procname" value="IVP010.InventoryHandler.UpdateStockOutInstrument" />IVP010.InventoryHandler.UpdateStockOutInstrument <br />*@
+@*<input type="radio" name="procname" value="IVP020.InventoryHandler.UpdateCalculateDepreciation"/>IVP020.InventoryHandler.UpdateCalculateDepreciation <br />*@
+<input type="radio" name="procname" value="IVP040.InventoryHandler.UpdateStockOutInstrument Office=3040 SlipID=22"/>IVP040.InventoryHandler.UpdateStockOutInstrument Office=3040 SlipID=22 <br />
+<input type="radio" name="procname" value="IVP040.InventoryHandler.UpdateStockOutInstrument Office=3040 SlipID=11"/>IVP040.InventoryHandler.UpdateStockOutInstrument Office=3040 SlipID=11 <br />
+<input type="radio" name="procname" value="IVP020.InventoryHandler.InsertDepreciationData" />IVP020.InventoryHandler.InsertDepreciationData <br />
+<input type="radio" name="procname" value="IVP050.InventoryHandler.FreezeInStrumentDataForStockCheckingProcess"/>IVP050.InventoryHandler.FreezeInStrumentDataForStockCheckingProcess <br />
+<input type="radio" name="procname" value="IVP090.InventoryHandler.GeneratePurchaseOrderNo"/>IVP090.InventoryHandler.GeneratePurchaseOrderNo <br />
+@*<input type="radio" name="procname" value="IVP100.InventoryHandler.GenerateInventoryAccountData"/>IVP100.InventoryHandler.GenerateInventoryAccountData<br />*@
+<input type="radio" name="procname" value="IVP110.InventoryHandler.AutoCompleteStockChecking"/>IVP110.InventoryHandler.AutoCompleteStockChecking<br />
+<input type="radio" name="procname" value="IVP120.InventoryHandler.GenerateLotNo #1"/>IVP120.InventoryHandler.GenerateLotNo #1<br />
+<input type="radio" name="procname" value="IVP120.InventoryHandler.GenerateLotNo #2"/>IVP120.InventoryHandler.GenerateLotNo #2<br />
+<input type="radio" name="procname" value="IVP120.InventoryHandler.GenerateLotNo #3"/>IVP120.InventoryHandler.GenerateLotNo #3<br />
+<input type="radio" name="procname" value="IVP120.InventoryHandler.GenerateLotNo #4"/>IVP120.InventoryHandler.GenerateLotNo #4<br />
+<input type="radio" name="procname" value="IVP120.InventoryHandler.GenerateLotNo #5"/>IVP120.InventoryHandler.GenerateLotNo #5<br />
+<input type="radio" name="procname" value="IVP120.InventoryHandler.GenerateLotNo #6"/>IVP120.InventoryHandler.GenerateLotNo #6<br />
+<input type="radio" name="procname" value="IVP120.InventoryHandler.GenerateLotNo #7"/>IVP120.InventoryHandler.GenerateLotNo #7<br />
+<input type="radio" name="procname" value="IVP120.InventoryHandler.GenerateLotNo #8"/>IVP120.InventoryHandler.GenerateLotNo #8<br />
+<input type="radio" name="procname" value="IVP030.InventoryHandler.UpdateCompleteInstallation #1"/>IVP030.InventoryHandler.UpdateCompleteInstallation #1<br />
+<input type="radio" name="procname" value="IVP030.InventoryHandler.UpdateCompleteInstallation #2"/>IVP030.InventoryHandler.UpdateCompleteInstallation #2<br />
+<input type="radio" name="procname" value="IVP030.InventoryHandler.UpdateContractStartService"/>IVP030.InventoryHandler.UpdateContractStartService<br />
+<input type="radio" name="procname" value="IVP030.InventoryHandler.UpdateCancelInstallation"/>IVP030.InventoryHandler.UpdateCancelInstallation<br />
+<input type="radio" name="procname" value="IVP030.InventoryHandler.UpdateRealInvestigation"/>IVP030.InventoryHandler.UpdateRealInvestigation<br />
+<input type="radio" name="procname" value="IVP030.InventoryHandler.UpdateCompleteProject"/>IVP030.InventoryHandler.UpdateCompleteProject<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #1"/>IVP060.CalculateMovingAveragePrice #1<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #2"/>IVP060.CalculateMovingAveragePrice #2<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #3"/>IVP060.CalculateMovingAveragePrice #3<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #4"/>IVP060.CalculateMovingAveragePrice #4<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #5"/>IVP060.CalculateMovingAveragePrice #5<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #6"/>IVP060.CalculateMovingAveragePrice #6<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #7"/>IVP060.CalculateMovingAveragePrice #7<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #8"/>IVP060.CalculateMovingAveragePrice #8<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #9"/>IVP060.CalculateMovingAveragePrice #9<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #10"/>IVP060.CalculateMovingAveragePrice #10<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #11"/>IVP060.CalculateMovingAveragePrice #11<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #12"/>IVP060.CalculateMovingAveragePrice #12<br />
+<input type="radio" name="procname" value="IVP060.CalculateMovingAveragePrice #13"/>IVP060.CalculateMovingAveragePrice #13<br />
+<input type="button" value="Execute" id="btnTestIVP" /> <br />
+<textarea id="txtResultIVP" style="width:500px" rows="5" cols="100"></textarea>
+</form>
+</div>
+<br />
+
+<div style="border-style: solid">
+<b>Test IV: Natthavat S.</b><br />
+<input type="button" value="IVP010" id="btnTestIVP010" />&nbsp; 
+<input type="button" value="IVP020" id="btnTestIVP020" />&nbsp; 
+<input type="button" value="IVP100" id="btnTestIVP100" />&nbsp; 
+<input type="button" value="IVP130" id="btnTestIVP130" />&nbsp; 
+<br />
+</div>
+<br />
+
+<div style="border-style: solid">
+<b>Test Contract Process</b><br />
+<input type="button" value="CTP020" id="btnCTP020" />&nbsp;
+<input type="button" value="CTP021" id="btnCTP021" />&nbsp;
+<input type="button" value="CTP022" id="btnCTP022" />&nbsp;
+<input type="button" value="CTP090" id="btnCTP090" />&nbsp;
+<input type="button" value="CTP100" id="btnCTP100" />&nbsp;
+<input type="button" value="CTP120" id="btnCTP120" />&nbsp;
+<input type="button" value="CTP030" id="btnCTP030" />
+</div>
+<br />
+
+<div style="border-style: solid">
+    <input type="button" value="CTP060" id="btnCTP060" />
+</div>
+<br />
+
+<div style="border-style: solid">
+    Input case: 
+    <input type="radio" name="rdoCaseGroup" id="rdoCase1" value="1" checked="checked"/>1
+    <input type="radio" name="rdoCaseGroup" id="rdoCase2" value="2"/>2
+    <input type="radio" name="rdoCaseGroup" id="rdoCase3" value="3"/>3
+    <input type="radio" name="rdoCaseGroup" id="rdoCase4" value="4"/>4
+    <input type="radio" name="rdoCaseGroup" id="rdoCase5" value="5"/>5<br />
+    <input type="button" value="CTP070" id="btnCTP070" />
+    <input type="button" value="CTP080" id="btnCTP080" />
+    <br />
+    <br />
+    <input type="radio" name="rdoCTP110CaseGroup" id="rdoCTP110Case1" value="1" checked="checked"/>1
+    <input type="radio" name="rdoCTP110CaseGroup" id="rdoCTP110Case2" value="2"/>2
+    <input type="radio" name="rdoCTP110CaseGroup" id="rdoCTP110Case31" value="3.1"/>3.1
+    <input type="radio" name="rdoCTP110CaseGroup" id="rdoCTP110Case32" value="3.2"/>3.2
+    <input type="radio" name="rdoCTP110CaseGroup" id="rdoCTP110Case33" value="3.3"/>3.3
+    <input type="radio" name="rdoCTP110CaseGroup" id="rdoCTP110Case4" value="4"/>4
+    <input type="radio" name="rdoCTP110CaseGroup" id="rdoCTP110Case5" value="5"/>5
+    <input type="radio" name="rdoCTP110CaseGroup" id="rdoCTP110Case6" value="6"/>6
+    <input type="radio" name="rdoCTP110CaseGroup" id="rdoCTP110Case7" value="7"/>7
+    <br />
+    <input type="button" value="CTP110" id="btnCTP110" />
+</div>
+<br />
+
+<div style="border-style: solid">
+<b>Software test: Billing</b><br /><br />
+Case: <input type="text" id="BillingCase"/>&nbsp; ex. 1, 2, 3,... <br/><br/>
+<input type="button" value="BLP010" id="btnBLP010" />&nbsp;[BLP010] Manage billing basic information (15 cases) <br/>
+<input type="button" value="BLP011" id="btnBLP011" />&nbsp;[BLP011] Manage billing detail information by command (3 cases)<br/>
+<input type="button" value="BLP012" id="btnBLP012" />&nbsp;[BLP012] Manage billing basic information for start service (2 cases)<br/>
+<input type="button" value="BLP013" id="btnBLP013" />&nbsp;[BLP013] Manage billing basic information for resume (2 cases)<br/>
+<input type="button" value="BLP015" id="btnBLP015" />&nbsp;[BLP015] Manage billing basic information for stop service (3 cases)<br/>
+<input type="button" value="BLP016" id="btnBLP016" />&nbsp;[BLP016] Manage billing basic information for termination (1 cases)<br/>
+<input type="button" value="BLP017" id="btnBLP017" />&nbsp;[BLP017] Manage billing basic information for change name and address (3 cases)<br/>
+<input type="button" value="BLP070" id="btnBLP070" />&nbsp;[BLP070] Get billing target information (3 cases)<br/>
+<input type="button" value="BLP080" id="btnBLP080" />&nbsp;[BLP080] Get billing basic information (3 cases)<br/>
+<input type="button" value="BLP014" id="btnBLP014" />&nbsp;[BLP014] Calculate difference of monthly fee (4 cases)<br/>
+<input type="button" value="BLP020" id="btnBLP020" />&nbsp;[BLP020]* Manage billing detail information for monthly fee<br/>
+<input type="button" value="BLP030" id="btnBLP030" />&nbsp;[BLP030]* Manage invoice information<br/>
+<input type="button" value="BLP032" id="btnBLP032" />&nbsp;[BLP032] Generate invoice document<br/>
+<input type="button" value="BLP031" id="btnBLP031" />&nbsp;[BLP031] Manage invoice information by command<br/>
+<input type="button" value="BLP040" id="btnBLP040" />&nbsp;[BLP040] Bank Specification Process (10 cases)<br/>
+<br />
+
+<input type="button" value="BLP030Temp" id="btnBLP030Temp" />&nbsp;[BLP030Temp]* Manage invoice information<br/>
+<br />
+
+<textarea id="txtResultBilling" style="margin-left:10px; width:900px;" rows="20" cols="100"></textarea>
+
+</div>
+<br />
+
+<div style="border-style: solid">
+<b>Test Income Report</b><br />
+<b>Doc Id:</b><input type="text" size="50" id="incomeDocId" /><br />
+<input type="button" value="ICR010" id="btnICR010" />&nbsp;
+<input type="button" value="ICR020" id="btnICR020" />&nbsp;
+<input type="button" value="Gen ICR010" id="btnGenICR010" />&nbsp;
+<input type="button" value="ICR030" id="btnICR030" />&nbsp;
+<input type="button" value="ICR040" id="btnICR040" />&nbsp;
+</div>
+<br />
+
+
+<div style="border-style: solid">
+<br />
+        <div id="TT060_ResultListGrid" style="width: 99%; margin-left: 4px;"></div>
+<br />
+<input type="button" value="Add" id="tbn060_add" />
+<input type="button" value="Clear" id="tbn060_clear" />
+</div>
+<br />
+
+
+<div style="border-style: solid">
+<b>Generate Temp File</b><br />
+<b>Number of files:</b><input type="text" size="50" id="txtTempfileNo" value="" /><br />
+<input type="button" value="GenTempFile" id="btnGenTempFile" />&nbsp;
+</div>
+<br />
+
+<div style="border-style: solid">
+<b>IVP140 - Update Monthly Average Price</b><br />
+<b>Batch date:</b>@Html.CommonTextBox("IVP140_batchdatetime", null, new { style = "width:120px;", maxlength = "50" })<br />
+<input type="button" value="Run" id="btnIVP140" />
+</div>
+<br />

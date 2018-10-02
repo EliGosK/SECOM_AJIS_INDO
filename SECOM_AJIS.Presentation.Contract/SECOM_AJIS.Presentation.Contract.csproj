@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{68DA2208-ACDD-48FE-9D8A-F76B010664C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.Presentation.Contract</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Presentation.Contract</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CSI.WindsorHelper">
+      <HintPath>..\SECOM_AJIS.Common\_ExtLib\CSI.WindsorHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\CTS051_ChangePlan.cs" />
+    <Compile Include="Controllers\CTS053_ChangePlanContractFee.cs" />
+    <Compile Include="Controllers\CTS130_RegisterChangeNameAddress.cs" />
+    <Compile Include="Controllers\CTS160_RegisterGenerateContractDocument.cs" />
+    <Compile Include="Controllers\CTS180_MaintainContractDocument.cs" />
+    <Compile Include="Controllers\CTS210_RegisterIssueContractDocument.cs" />
+    <Compile Include="Controllers\CTS220_ChangeInformationRental.cs" />
+    <Compile Include="Controllers\CTS150_MaintainSaleContractData.cs" />
+    <Compile Include="Controllers\CTS240_RegisterProjectChange.cs" />
+    <Compile Include="Controllers\CTS330_ViewEditIncidentDetail.cs" />
+    <Compile Include="Controllers\CTS350_RegisterNewAR.cs" />
+    <Compile Include="Controllers\CTS370_ARList.cs" />
+    <Compile Include="Controllers\CTS380_ViewEditARDetail.cs" />
+    <Compile Include="Controllers\CTS390_SummaryAR.cs" />
+    <Compile Include="Controllers\CTS070_RegisterStartResumeService.cs" />
+    <Compile Include="Controllers\CTS190_CP32RegisterContractDocReceiving.cs" />
+    <Compile Include="Controllers\CTS020_RegisterSaleContract.cs" />
+    <Compile Include="Controllers\CTS140_MaintenaneContract.cs" />
+    <Compile Include="Controllers\CTS062_ChangePlan.cs" />
+    <Compile Include="Controllers\CTS120_RegisterCompleteCancelContract.cs" />
+    <Compile Include="Controllers\CTS260_ViewProjectDetail.cs" />
+    <Compile Include="Controllers\CTS290_SearchNearlyExpiredWarrantySaleContract.cs" />
+    <Compile Include="Controllers\CTS320_IncidentList.cs" />
+    <Compile Include="Controllers\CTS360_SearchAR.cs" />
+    <Compile Include="Controllers\CTS340_IncidentSummary.cs" />
+    <Compile Include="Controllers\CTS061_SaleRegisterChange.cs" />
+    <Compile Include="Controllers\CTS052_RegisterContractChange.cs" />
+    <Compile Include="Controllers\CTS230_RegisterNewProject.cs" />
+    <Compile Include="Controllers\CTS300_RegisterNewIncident.cs" />
+    <Compile Include="Controllers\ContractController.cs" />
+    <Compile Include="Controllers\ContractData.cs" />
+    <Compile Include="Controllers\Cancel_Contract.cs" />
+    <Compile Include="Controllers\Contract Menu\Contract_After.cs" />
+    <Compile Include="Controllers\Contract Menu\Contract_IncidentAR.cs" />
+    <Compile Include="Controllers\Contract Menu\Contract_AR.cs" />
+    <Compile Include="Controllers\Contract Menu\Contract_Before.cs" />
+    <Compile Include="Controllers\Contract Menu\Contract_Project.cs" />
+    <Compile Include="Controllers\CTS080_RegisterQuotationForCancelContract.cs" />
+    <Compile Include="Controllers\CTS110_RegisterCancelContract.cs" />
+    <Compile Include="Controllers\CTS261_ViewContractDetail.cs" />
+    <Compile Include="Controllers\CTS310_SearchIncident.cs" />
+    <None Include="Controllers\_CTS053_ChangePlanContractFee.cs_" />
+    <Compile Include="Controllers\CTS100_RegisterStopService.cs" />
+    <Compile Include="Controllers\CTS270_SearchMaintenanceCheckup.cs" />
+    <Compile Include="Controllers\CTS090_RegisterCancelSaleContract.cs" />
+    <Compile Include="Controllers\CTS280_RegisterMaintenanceCheckupResult.cs" />
+    <Compile Include="Controllers\CTS010_RegisterRentalContract.cs" />
+    <Compile Include="Controllers\CTS030_ApproveContract.cs" />
+    <Compile Include="Controllers\CTS040_SearchContractApprovalResult.cs" />
+    <None Include="Controllers\_CTS051_ChangePlan.cs_" />
+    <Compile Include="Controllers\CTS054_ContractRegisterChange.cs" />
+    <Compile Include="Controllers\CTS055_ContractCancel.cs" />
+    <Compile Include="Helper\ComboBoxHelper.cs" />
+    <Compile Include="Message\MessageList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageList.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CTS010.cs" />
+    <Compile Include="Models\CTS020.cs" />
+    <Compile Include="Models\CTS030.cs" />
+    <Compile Include="Models\CTS040.cs" />
+    <Compile Include="Models\CTS051.cs" />
+    <Compile Include="Models\CTS052.cs" />
+    <Compile Include="Models\CTS053.cs" />
+    <Compile Include="Models\CTS054.cs" />
+    <Compile Include="Models\CTS055.cs" />
+    <Compile Include="Models\CTS061.cs" />
+    <Compile Include="Models\CTS062.cs" />
+    <Compile Include="Models\CTS070.cs" />
+    <Compile Include="Models\CTS080.cs" />
+    <Compile Include="Models\CTS090.cs" />
+    <Compile Include="Models\CTS100.cs" />
+    <Compile Include="Models\CTS110.cs" />
+    <Compile Include="Models\CTS120.cs" />
+    <Compile Include="Models\CTS130.cs" />
+    <Compile Include="Models\CTS140.cs" />
+    <Compile Include="Models\CTS150.cs" />
+    <Compile Include="Models\CTS160.cs" />
+    <Compile Include="Models\CTS180.cs" />
+    <Compile Include="Models\CTS190.cs" />
+    <Compile Include="Models\CTS210.cs" />
+    <Compile Include="Models\CTS220.cs" />
+    <Compile Include="Models\CTS230.cs" />
+    <Compile Include="Models\CTS240.cs" />
+    <Compile Include="Models\CTS260.cs" />
+    <Compile Include="Models\CTS261.cs" />
+    <Compile Include="Models\CTS270.cs" />
+    <Compile Include="Models\CTS280.cs" />
+    <Compile Include="Models\CTS290.cs" />
+    <Compile Include="Models\CTS300.cs" />
+    <Compile Include="Models\CTS310.cs" />
+    <Compile Include="Models\CTS320.cs" />
+    <Compile Include="Models\CTS330.cs" />
+    <Compile Include="Models\CTS340.cs" />
+    <Compile Include="Models\CTS350.cs" />
+    <Compile Include="Models\CTS360.cs" />
+    <Compile Include="Models\CTS370.cs" />
+    <Compile Include="Models\CTS380.cs" />
+    <Compile Include="Models\CTS390.cs" />
+    <Compile Include="Models\ReportModel.cs" />
+    <None Include="Models\_CTS051.cs_" />
+    <None Include="Models\_CTS053.cs_" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\CTR010_ContractEnglish.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR010_ContractEnglish.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR011_ContractThai.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR011_ContractThai.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR020_ChangeNotice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR020_ChangeNotice.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR030_ChangeMemorandum.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR030_ChangeMemorandum.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR040_StartResumeMemorandum.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR040_StartResumeMemorandum.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR050_ConfirmCurrentInstrumentMemorandum.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR050_ConfirmCurrentInstrumentMemorandum.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR060_CancelContractMemorandum.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR060_CancelContractMemorandum.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR070_ChangeFeeMemorandum.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR070_ChangeFeeMemorandum.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR080_QuotationForCancelContractMemorandum.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR080_QuotationForCancelContractMemorandum.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR090_CoverLetter.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR090_CoverLetter.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR100_MaintenanceCheckUpSlip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR100_MaintenanceCheckUpSlip.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR101_MaintenanceCheckSheet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR101_MaintenanceCheckSheet.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\CTR110_MaintenanceCompletionReport.cs">
+      <SubType>Component</SubType>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CTR110_MaintenanceCompletionReport.rpt</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\TempReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TempReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Billing\SECOM_AJIS.Entity.Billing.csproj">
+      <Project>{D5237D53-9467-4B1E-92D7-B91C8358402C}</Project>
+      <Name>SECOM_AJIS.Entity.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Common\SECOM_AJIS.Entity.Common.csproj">
+      <Project>{527A7562-621E-47CD-92CB-E0FA26660A4E}</Project>
+      <Name>SECOM_AJIS.Entity.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Contract\SECOM_AJIS.Entity.Contract.csproj">
+      <Project>{22F8AFE0-0CBB-4543-A703-2C29A1E2105A}</Project>
+      <Name>SECOM_AJIS.Entity.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Income\SECOM_AJIS.Entity.Income.csproj">
+      <Project>{82E5CDD0-5A70-4637-9BF2-AE7DED57B8C7}</Project>
+      <Name>SECOM_AJIS.Entity.Income</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Installation\SECOM_AJIS.Entity.Installation.csproj">
+      <Project>{E952E4EE-DD08-4187-AD89-0F56C4CF8D7D}</Project>
+      <Name>SECOM_AJIS.Entity.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Inventory\SECOM_AJIS.Entity.Inventory.csproj">
+      <Project>{DDC95591-2286-4A85-BD76-C3499101BA98}</Project>
+      <Name>SECOM_AJIS.Entity.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Master\SECOM_AJIS.Entity.Master.csproj">
+      <Project>{65F28583-CF30-4765-A871-E97D2AE7F9B9}</Project>
+      <Name>SECOM_AJIS.Entity.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Entity.Quotation\SECOM_AJIS.Entity.Quotation.csproj">
+      <Project>{E44DC4DC-CE32-4CE7-9CB6-ADDEDFDF1B23}</Project>
+      <Name>SECOM_AJIS.Entity.Quotation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Billing\SECOM_AJIS.Interface.Billing.csproj">
+      <Project>{0958FEAD-16B9-4BB9-9C1E-DA33749F7685}</Project>
+      <Name>SECOM_AJIS.Interface.Billing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Common\SECOM_AJIS.Interface.Common.csproj">
+      <Project>{0177E9AC-5098-42BC-9AC1-9B8862FB3E3C}</Project>
+      <Name>SECOM_AJIS.Interface.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Contract\SECOM_AJIS.Interface.Contract.csproj">
+      <Project>{99F59DB1-92D2-49BB-9FCD-46D7880F089E}</Project>
+      <Name>SECOM_AJIS.Interface.Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Income\SECOM_AJIS.Interface.Income.csproj">
+      <Project>{BA5911DE-A7E3-467B-8857-1528A134CE42}</Project>
+      <Name>SECOM_AJIS.Interface.Income</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Installation\SECOM_AJIS.Interface.Installation.csproj">
+      <Project>{BFF36845-756B-4D9B-A575-DEBC4099774B}</Project>
+      <Name>SECOM_AJIS.Interface.Installation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Inventory\SECOM_AJIS.Interface.Inventory.csproj">
+      <Project>{0CB3F45D-11BB-45C1-8031-BB960C5C5B0D}</Project>
+      <Name>SECOM_AJIS.Interface.Inventory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Master\SECOM_AJIS.Interface.Master.csproj">
+      <Project>{0AC1F756-B4CC-4386-B6A3-C58F555E953B}</Project>
+      <Name>SECOM_AJIS.Interface.Master</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECOM_AJIS.Interface.Quotation\SECOM_AJIS.Interface.Quotation.csproj">
+      <Project>{1F3EE1E7-4718-4410-A396-6C7B0E5A95C5}</Project>
+      <Name>SECOM_AJIS.Interface.Quotation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Message\MessageList.ja-JP.resx" />
+    <EmbeddedResource Include="Message\MessageList.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageList.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message\MessageList.th-TH.resx" />
+    <None Include="Reports\CTR030_ChangeMemorandum.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR030_ChangeMemorandum.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CTR010_ContractEnglish.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR010_ContractEnglish.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CTR011_ContractThai.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR011_ContractThai.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CTR050_ConfirmCurrentInstrumentMemorandum.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR050_ConfirmCurrentInstrumentMemorandum.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CTR060_CancelContractMemorandum.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR060_CancelContractMemorandum.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CTR070_ChangeFeeMemorandum.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR070_ChangeFeeMemorandum.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CTR080_QuotationForCancelContractMemorandum.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR080_QuotationForCancelContractMemorandum.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CTR090_CoverLetter.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR090_CoverLetter.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CTR100_MaintenanceCheckUpSlip.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR100_MaintenanceCheckUpSlip.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CTR040_StartResumeMemorandum.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR040_StartResumeMemorandum.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="Reports\CTR101_MaintenanceCheckSheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR101_MaintenanceCheckSheet.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CTR110_MaintenanceCompletionReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR110_MaintenanceCompletionReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TempReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TempReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Reports\CTR020_ChangeNotice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CTR020_ChangeNotice.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)Reports\*.*" "C:\development\SECOM_AJIS\FileServer\SECOM_SharePath\ReportTemplate_CSI"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

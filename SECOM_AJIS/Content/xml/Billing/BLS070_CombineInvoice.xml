@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="BefNumberOfDetail" width="135" type="edn" format="0,000" align="right" sort="na" >headerBeforeCombine</column>
+    <column id="BefAmount" width="135" type="edn" align="right"  sort="na">#cspan</column>
+    <column id="AftNumberOfDetail" width="135" type="edn" format="0,000" align="right" sort="na" >headerAfterCombine</column>
+    <column id="AftAmount" width="*" type="edn" align="right"  sort="na">#cspan</column>
+
+    <afterInit>
+      <call command="attachHeader">
+        <param>lblHeader3BefNumberOfDetail,lblHeader3BefAmount,lblHeader3AftNumberOfDetail,lblHeader3AftAmount</param>
+      </call>
+    </afterInit>
+  </head>
+</rows>

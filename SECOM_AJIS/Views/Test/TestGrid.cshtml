@@ -1,0 +1,50 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@{
+    ViewBag.Title = "Grid";
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+}
+
+    <script language=javascript type="text/javascript">
+        var mygrid;
+        var mygrid2;
+        $(document).ready(function () {
+            LoadAndInitial();
+            mygrid = $("#mygrid_container").InitialGrid(15, true, "/Test/InitialGrid");
+            $("#btnSearch").click(loadGrid);
+            
+        });
+        function LoadAndInitial() {
+            var pageRow = 5;
+            var parameter = CreateObjectData("GroupCode=G0000017&StrPreFix=N"); //CreateObjectData({"StrPreFix=N");
+            mygrid2 = $("#Custlist").LoadDataToGridWithInitial(pageRow, true, true, "/Common/CMS100_GetContlist_CT_Rental", parameter, "View_dtContractListGrp", false);
+        }
+        function loadGrid() {
+            $("#mygrid_container").LoadDataToGrid(mygrid, 20, false, "/Master/MAS090_Search", null, "dtInstrument", false);
+        }
+        
+    </script>
+
+<div class="main-table">
+    LoadDataToGridWithInitial
+<pre>
+    function LoadAndInitial() {
+        var pageRow = 5;
+        var parameter = CreateObjectData("GroupCode=G0000017&StrPreFix=N"); //CreateObjectData({"StrPreFix=N");
+        mygrid2 = $("#Custlist").LoadDataToGridWithInitial(pageRow, true, true, "/Common/CMS100_GetContlist_CT_Rental", parameter, "View_dtContractListGrp", false);
+    }
+</pre>
+<div id="Custlist" style="width:99%;margin-left:4px;"></div>
+</div>
+<div class="main-table">
+    InitialGrid
+<pre>
+    function loadGrid() {
+        $("#mygrid_container").LoadDataToGrid(mygrid, 20, false, "/Master/MAS090_Search", null, "dtInstrument", false);
+    }
+</pre>
+    <div id="mygrid_container" style="width:99%;margin-left:4px;"></div>
+    @Html.CommonButton("btnSearch", "Search", new { style = "width:100px;", type = "button" })
+    
+</div>

@@ -1,0 +1,111 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@{
+    ViewBag.LabelWidth = "215px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<div id="divProviderServiceInformation" class="main-table">
+    <div class="usr-row">
+        <div class="table-header">
+            @Resources.CTS140.lblProvideServiceInformation
+        </div>       
+        <div id="divAlarmProvidedServiceType" class="usr-row">
+            <fieldset id="AlarmProvidedServiceType"><legend style="color:Black;"> @Resources.CTS140.lblAlarmProvidedServiceType</legend>
+                <div class="usr-label">&nbsp;</div>
+                <div class="usr-label" style="width:220px;text-align:left">@Html.CommonCheckButton("FireMonitoringFlag", @Resources.CTS140.lblFireMonitoring, null, (bool?)@ViewBag.FireMonitorFlag, null)</div>
+                <div class="usr-label">&nbsp;</div>
+                <div class="usr-label" style="width:220px;text-align:left">@Html.CommonCheckButton("CrimePreventFlag", @Resources.CTS140.lblCrimePrevention, null, (bool?)@ViewBag.CrimePreventFlag, null)</div>
+                <div class="usr-label">&nbsp;</div>
+                <div class="usr-label" style="width:220px;text-align:left">@Html.CommonCheckButton("EmergencyReportFlag", @Resources.CTS140.lblEmergencyReport, null, (bool?)@ViewBag.EmergencyReportFlag, null)</div>
+                <div class="usr-label">&nbsp;</div>
+                <div class="usr-label" style="width:220px;text-align:left">@Html.CommonCheckButton("FacilityMonitorFlag", @Resources.CTS140.lblFacilityMonitoring, null, (bool?)@ViewBag.FacilityMonitorFlag, null)</div>                                        
+            </fieldset>        
+        </div>      
+        <div class="usr-row">
+            <fieldset id="LineForNormalSignal"><legend style="color:Black">@Resources.CTS140.lblLineForNormalSignal</legend>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS140.lblTelephoneLineType
+                    </div>
+                    <div class="usr-object" style="width: 200px">
+                        @Html.PhoneLineTypeComboBox("TelephoneLineType1", new { style = "width:200px;", selected = (string)@ViewBag.PhoneLineTypeCode1 })                         
+                    </div>
+                    <div class="usr-label" style="width: 197px">
+                        @Resources.CTS140.lblTelephoneLineOwner
+                    </div>
+                    <div class="usr-object">
+                        @Html.PhoneLineOwnerTypeComboBox("TelephoneLineOwner1", new { style = "width:200px;", selected = (string)@ViewBag.PhoneLineOwnerCode1 })        
+                    </div>
+                </div> 
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS140.lblTelephoneNo
+                    </div>
+                    <div class="usr-object" style="width: 100px">
+                        @Html.CommonTextBox("TelephoneNo1", (string)@ViewBag.PhoneNo1, new { style = "width:196px;", maxlength = "100" })                         
+                    </div>
+                </div>                               
+            </fieldset>        
+        </div>
+        <div class="usr-row">
+            <fieldset id="LineForImageMonitoring"><legend style="color:Black">@Resources.CTS140.lblLineForImageMonitoring</legend>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS140.lblTelephoneLineType
+                    </div>
+                    <div class="usr-object" style="width: 200px">
+                        @Html.PhoneLineTypeComboBox("TelephoneLineType2", new { style = "width:200px;", selected = (string)@ViewBag.PhoneLineTypeCode2 })                         
+                    </div>
+                    <div class="usr-label" style="width: 197px">
+                        @Resources.CTS140.lblTelephoneLineOwner
+                    </div>
+                    <div class="usr-object">
+                        @Html.PhoneLineOwnerTypeComboBox("TelephoneLineOwner2", new { style = "width:200px;", selected = (string)@ViewBag.PhoneLineOwnerCode2 })        
+                    </div>
+                </div> 
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS140.lblTelephoneNo
+                    </div>
+                    <div class="usr-object" style="width: 100px">
+                        @Html.CommonTextBox("TelephoneNo2", (string)@ViewBag.PhoneNo2, new { style = "width:196px;", maxlength = "100" })                         
+                    </div>
+                </div>                                
+            </fieldset>        
+        </div>
+        <div class="usr-row">
+            <fieldset id="LineForDisconnectionMonitoring"><legend style="color:Black">@Resources.CTS140.lblLineForDisconnectionMonitoring</legend>
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS140.lblTelephoneLineType
+                    </div>
+                    <div class="usr-object" style="width: 200px">
+                        @Html.PhoneLineTypeComboBox("TelephoneLineType3", new { style = "width:200px;", selected = (string)@ViewBag.PhoneLineTypeCode3 })                         
+                    </div>
+                    <div class="usr-label" style="width: 197px">
+                        @Resources.CTS140.lblTelephoneLineOwner
+                    </div>
+                    <div class="usr-object">
+                        @Html.PhoneLineOwnerTypeComboBox("TelephoneLineOwner3", new { style = "width:200px;", selected = (string)@ViewBag.PhoneLineOwnerCode3 })        
+                    </div>
+                </div> 
+                <div class="usr-row">
+                    <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                        @Resources.CTS140.lblTelephoneNo
+                    </div>
+                    <div class="usr-object" style="width: 100px">
+                        @Html.CommonTextBox("TelephoneNo3", (string)@ViewBag.PhoneNo3, new { style = "width:196px;", maxlength = "100" })                         
+                    </div>
+                </div>                                
+            </fieldset>        
+        </div> 
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

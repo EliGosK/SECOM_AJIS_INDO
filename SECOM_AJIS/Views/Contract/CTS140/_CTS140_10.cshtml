@@ -1,0 +1,29 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<div id="divOtherInformation" class="main-table">
+    <div class="usr-row">
+        <div class="table-header">
+            @Resources.CTS140.lblOtherInformation
+        </div>              
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.CTS140.lblMemo
+            </div>
+            <div class="usr-object" style="width: 600px">
+                @Html.TextArea("Memo", (string)@ViewBag.Memo, new { style = "width:595px;height:100px;overflow:auto" })                                              
+            </div>
+        </div>
+    </div>    
+    <div class="usr-clear-style">&nbsp;</div>
+</div>   

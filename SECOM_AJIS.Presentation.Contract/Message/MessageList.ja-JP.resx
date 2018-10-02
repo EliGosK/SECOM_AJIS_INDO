@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG3001" xml:space="preserve">
+    <value>契約コードは「成約取消」または「解約」されています。もう一度チェックしてください。</value>
+  </data>
+  <data name="MSG3002" xml:space="preserve">
+    <value>指定された見積コードは利用できません。</value>
+  </data>
+  <data name="MSG3003" xml:space="preserve">
+    <value>受注契約料金は0で登録されています。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3004" xml:space="preserve">
+    <value>受注契約料金は大幅に調整されています。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3005" xml:space="preserve">
+    <value>受注契約料金は調整されています。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3006" xml:space="preserve">
+    <value>現在は期限付料金変更中のため、当該変更中料金以外の金額での変更登録はできません。一旦現在の変更中料金と同額で、期限なしに変更するCP12（料金変更）データを登録した上であらためて変更工事データを登録してください。</value>
+  </data>
+  <data name="MSG3007" xml:space="preserve">
+    <value>工事料金は調整されました。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3008" xml:space="preserve">
+    <value>保証金は調整されました。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3009" xml:space="preserve">
+    <value>決裁番号は決裁番号1から順番に登録してください。</value>
+  </data>
+  <data name="MSG3010" xml:space="preserve">
+    <value>契約料分割請求オプションが選択されています。契約料金を支払う請求先を少なくとも二つ登録してください。</value>
+  </data>
+  <data name="MSG3011" xml:space="preserve">
+    <value>契約料分割請求オプションが選択されていません。契約料金を支払う請求先を一つのみ登録してください。</value>
+  </data>
+  <data name="MSG3012" xml:space="preserve">
+    <value>請求契約料金の合計は受注契約料金と同じではありません。修正してください。</value>
+  </data>
+  <data name="MSG3013" xml:space="preserve">
+    <value>請求工事料金の合計は受注工事料金と同じではありません。修正してください。</value>
+  </data>
+  <data name="MSG3014" xml:space="preserve">
+    <value>請求保証金の合計は受注保証金と同じではありません。修正してください。
+</value>
+  </data>
+  <data name="MSG3015" xml:space="preserve">
+    <value>実施予定日は過去の日付で登録されています。もう一度チェックしてください。</value>
+  </data>
+  <data name="MSG3016" xml:space="preserve">
+    <value>番号が最大値になっているため、事案番号を採番できません。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG3017" xml:space="preserve">
+    <value>番号が最大値になっているため、依頼番号を採番できません。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG3018" xml:space="preserve">
+    <value>番号が最大値になっているため、決裁番号を採番できません。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG3019" xml:space="preserve">
+    <value>この社員は選択された部署や事業所に所属していないため、指定できません。</value>
+  </data>
+  <data name="MSG3020" xml:space="preserve">
+    <value>この社員を指定できません。事案統括責任者は一人のみでなければなりません。</value>
+  </data>
+  <data name="MSG3021" xml:space="preserve">
+    <value>この社員は他のロールに指定されました。
+</value>
+  </data>
+  <data name="MSG3022" xml:space="preserve">
+    <value>契約プレフィックスが存在しないため、契約コードを採番できません。</value>
+  </data>
+  <data name="MSG3023" xml:space="preserve">
+    <value>番号が最小値になっているため、警備オカーレンスを採番できません。</value>
+  </data>
+  <data name="MSG3024" xml:space="preserve">
+    <value>番号が最大値になっているため、契約カウンターを採番できません。</value>
+  </data>
+  <data name="MSG3025" xml:space="preserve">
+    <value>番号が最大値になっているため、契約文書オカーレンスを採番できません。</value>
+  </data>
+  <data name="MSG3026" xml:space="preserve">
+    <value>番号が最小値になっているため、売買契約オカーレンスを採番できません。</value>
+  </data>
+  <data name="MSG3027" xml:space="preserve">
+    <value>支払タイミングが工事完了時の請求工事料金合計と受注工事料金合計が一致しません。修正してください。</value>
+  </data>
+  <data name="MSG3028" xml:space="preserve">
+    <value>支払タイミングが実施時の請求工事料金合計と受注工事料金合計が一致しません。修正してください。</value>
+  </data>
+  <data name="MSG3029" xml:space="preserve">
+    <value>工事完了時の請求工事料金の支払方法を選択してください。</value>
+  </data>
+  <data name="MSG3030" xml:space="preserve">
+    <value>実施時の請求工事料金の支払方法を選択してください。</value>
+  </data>
+  <data name="MSG3031" xml:space="preserve">
+    <value>請求保証金の支払方法を選択してください。</value>
+  </data>
+  <data name="MSG3032" xml:space="preserve">
+    <value>請求先一覧にVAT登録先コード及び請求事業所が同じ請求先が存在しています。</value>
+  </data>
+  <data name="MSG3033" xml:space="preserve">
+    <value>「契約期間(月数）」は「契約終了日」と同時に入力できません。</value>
+  </data>
+  <data name="MSG3034" xml:space="preserve">
+    <value>「更新月数」の入力なしに「契約期間(月数）」は入力できません。</value>
+  </data>
+  <data name="MSG3035" xml:space="preserve">
+    <value>「契約期間(月数)」と「契約終了日」の両方を空白にできません。</value>
+  </data>
+  <data name="MSG3037" xml:space="preserve">
+    <value>請求工事料金の支払方法を選択してください。</value>
+  </data>
+  <data name="MSG3038" xml:space="preserve">
+    <value>選択した見積コードは、採用区分が「販売停止」または「抹消」である機器が含まれています。この見積を使用する際に注意してください。</value>
+  </data>
+  <data name="MSG3039" xml:space="preserve">
+    <value>未実施データや進行中工事データがあります。そのデータの処理が取消または完了された後に実行してください。</value>
+  </data>
+  <data name="MSG3040" xml:space="preserve">
+    <value>この契約コードは業務提供中ではありません。</value>
+  </data>
+  <data name="MSG3041" xml:space="preserve">
+    <value>実査日は変更実施日より前の日付ではいけません。</value>
+  </data>
+  <data name="MSG3042" xml:space="preserve">
+    <value>ステータスが「解約・成約取消」、または「代替実施中」の場合、「料金変更」が処理できません。</value>
+  </data>
+  <data name="MSG3044" xml:space="preserve">
+    <value>契約コード{0}は停止されています。開始している場合に処理することが出来ます。</value>
+  </data>
+  <data name="MSG3045" xml:space="preserve">
+    <value>「契約料金変更日」は「最新変更日」以降でなければなりません。</value>
+  </data>
+  <data name="MSG3046" xml:space="preserve">
+    <value>「契約料金戻り日」は「契約料金変更日」より以降でならなければなりません。</value>
+  </data>
+  <data name="MSG3047" xml:space="preserve">
+    <value>契約料金はまだ最新契約料金と同じです。契約料金を調整してください。</value>
+  </data>
+  <data name="MSG3048" xml:space="preserve">
+    <value>現在は期限付料金変更中のため、当該変更中料金以外の金額での変更登録はできません。今回の料金変更登録を行う場合、一旦現在の変更中料金と同額で、期限なし料金変更とするCP12（料金変更）データを最新の変更実施日付で登録後に登録してください。</value>
+  </data>
+  <data name="MSG3049" xml:space="preserve">
+    <value>計画変更の契約条件の登録が完了しました。</value>
+  </data>
+  <data name="MSG3050" xml:space="preserve">
+    <value>計画変更の契約条件の登録が完了しました。工事完了時に、システムは工事料金請求、契約料金変更、差額の請求書発行、次回請求書金額調整の処理をします。</value>
+  </data>
+  <data name="MSG3051" xml:space="preserve">
+    <value>計画変更の契約条件の登録が完了しました。システムは契約料金変更、差額の請求書発行、次回請求書金額調整の処理を直ちに行います。</value>
+  </data>
+  <data name="MSG3052" xml:space="preserve">
+    <value>この契約に機器はありません。機器の変更は許可されません。</value>
+  </data>
+  <data name="MSG3053" xml:space="preserve">
+    <value>実施予定日変更対象の未実施データはありません。</value>
+  </data>
+  <data name="MSG3054" xml:space="preserve">
+    <value>工事中や工事完了の契約オカーレンスは取消ができません。</value>
+  </data>
+  <data name="MSG3055" xml:space="preserve">
+    <value>新規工事完了前の未実施警備基本を取消することはできません。</value>
+  </data>
+  <data name="MSG3056" xml:space="preserve">
+    <value>取消対象の未実施データがありません。</value>
+  </data>
+  <data name="MSG3057" xml:space="preserve">
+    <value>未実施オカーレンスの削除が完了しました。</value>
+  </data>
+  <data name="MSG3058" xml:space="preserve">
+    <value>工事完了しているため、登録できません。</value>
+  </data>
+  <data name="MSG3059" xml:space="preserve">
+    <value>受注売却システム料金が全ての請求タイミングの売却システム料金合計と一致しません。</value>
+  </data>
+  <data name="MSG3060" xml:space="preserve">
+    <value>売却システム料金が調整されました。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3061" xml:space="preserve">
+    <value>工事完了予定日に過去の日付が登録されています。</value>
+  </data>
+  <data name="MSG3062" xml:space="preserve">
+    <value>分散元コードを指定してください。</value>
+  </data>
+  <data name="MSG3063" xml:space="preserve">
+    <value>分散コード{0}は存在しません。</value>
+  </data>
+  <data name="MSG3064" xml:space="preserve">
+    <value>支払方法は振込、または自振ではありません。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3065" xml:space="preserve">
+    <value>受注売却システム料金は0で登録されています。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3066" xml:space="preserve">
+    <value>受注売却システム料金は大幅に調整されています。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3067" xml:space="preserve">
+    <value>新規レンタル契約データが既に存在します。</value>
+  </data>
+  <data name="MSG3068" xml:space="preserve">
+    <value>この見積コードのステータスは「差戻」ではありません。</value>
+  </data>
+  <data name="MSG3069" xml:space="preserve">
+    <value>実施予定日に過去日付は入力できません。</value>
+  </data>
+  <data name="MSG3070" xml:space="preserve">
+    <value>実施予定日には3年後の同日より後の日付は入力できません。</value>
+  </data>
+  <data name="MSG3071" xml:space="preserve">
+    <value>工事予定日に過去日付は入力できません。</value>
+  </data>
+  <data name="MSG3072" xml:space="preserve">
+    <value>工事予定日には3年後の同日より後の日付は入力できません。</value>
+  </data>
+  <data name="MSG3075" xml:space="preserve">
+    <value>このプロジェクトコードはプロジェクト最終完了登録されたため、プロジェクトデータは変更できません。</value>
+  </data>
+  <data name="MSG3076" xml:space="preserve">
+    <value>このプロジェクトコードはプロジェクト取消登録されたため、プロジェクトデータは変更できません。</value>
+  </data>
+  <data name="MSG3077" xml:space="preserve">
+    <value>CTP060:社員番号{0}はシステムには存在しないため、メール送信できません。</value>
+  </data>
+  <data name="MSG3078" xml:space="preserve">
+    <value>CTP060:{0}メールの再送信は失敗しました。</value>
+  </data>
+  <data name="MSG3079" xml:space="preserve">
+    <value>契約期間規定外が選択されています。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3080" xml:space="preserve">
+    <value>契約終了日に過去の日付、または当日を入力できません。</value>
+  </data>
+  <data name="MSG3081" xml:space="preserve">
+    <value>契約期間月数は36以下です。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3082" xml:space="preserve">
+    <value>更新月数は12以下です。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3083" xml:space="preserve">
+    <value>受注契約料金に0が登録されています。決裁番号が入力されていることを確認してください。</value>
+  </data>
+  <data name="MSG3084" xml:space="preserve">
+    <value>受注契約料金が大幅に調整されました。決裁番号が入力されていることを確認してください。</value>
+  </data>
+  <data name="MSG3085" xml:space="preserve">
+    <value>契約期間月数が36以上、または更新月数が12以上になっています。決裁番号が入力されていることを確認してください。</value>
+  </data>
+  <data name="MSG3086" xml:space="preserve">
+    <value>日割方法は「暦日」ではありません。確認してください。</value>
+  </data>
+  <data name="MSG3087" xml:space="preserve">
+    <value>請求料金は少なくとも一つ入力しなければなりません。</value>
+  </data>
+  <data name="MSG3088" xml:space="preserve">
+    <value>受注工事料金は全ての請求タイミングの受注工事料金合計と一致しません。</value>
+  </data>
+  <data name="MSG3089" xml:space="preserve">
+    <value>支払タイミングが成約承認時の請求工事料金合計と受注工事料金合計が一致しません。修正してください。</value>
+  </data>
+  <data name="MSG3090" xml:space="preserve">
+    <value>受注保証金は0以上です。保証金の請求タイミングを選択してください。</value>
+  </data>
+  <data name="MSG3091" xml:space="preserve">
+    <value>受注保証金は0です。保証金の請求タイミングを選択しないでください。</value>
+  </data>
+  <data name="MSG3092" xml:space="preserve">
+    <value>保証金スライド元契約コードのフラグがチェックされています。契約コードを入力してください。</value>
+  </data>
+  <data name="MSG3093" xml:space="preserve">
+    <value>全ての保守対象契約は同一物件を持たなければなりません。</value>
+  </data>
+  <data name="MSG3094" xml:space="preserve">
+    <value>「販売停止」または「論理削除」の機器採用区分があります。</value>
+  </data>
+  <data name="MSG3095" xml:space="preserve">
+    <value>指定された見積先コードは編集された見積先コードと同じ値を保持していません。</value>
+  </data>
+  <data name="MSG3097" xml:space="preserve">
+    <value>契約コード{1}の保守点検番号{0}を削除します。よろしいですか？</value>
+  </data>
+  <data name="MSG3099" xml:space="preserve">
+    <value>新規売買契約データは既に存在します。</value>
+  </data>
+  <data name="MSG3100" xml:space="preserve">
+    <value>新規売買契約のステータスは「差戻」ではありません。</value>
+  </data>
+  <data name="MSG3101" xml:space="preserve">
+    <value>異常機器の場所を登録してください。</value>
+  </data>
+  <data name="MSG3102" xml:space="preserve">
+    <value>契約コード{0}、商品コード{1}、指示日{2}の保守点検データは存在しません。</value>
+  </data>
+  <data name="MSG3103" xml:space="preserve">
+    <value>登録できません。契約コード{0}の撤去工事以外の工事基本データあります。</value>
+  </data>
+  <data name="MSG3104" xml:space="preserve">
+    <value>登録できません。契約は実施されましたが、停止されていません。</value>
+  </data>
+  <data name="MSG3105" xml:space="preserve">
+    <value>契約コード {0} は終了しています。確認してください。</value>
+  </data>
+  <data name="MSG3106" xml:space="preserve">
+    <value>未実施継続契約データが存在します。</value>
+  </data>
+  <data name="MSG3107" xml:space="preserve">
+    <value>工事完了済み、または客先引渡登録済みのため、工事取消はできません。</value>
+  </data>
+  <data name="MSG3108" xml:space="preserve">
+    <value>契約料金の期間が重複しています。</value>
+  </data>
+  <data name="MSG3109" xml:space="preserve">
+    <value>契約料金が追加できません。保守料金が入力されています。</value>
+  </data>
+  <data name="MSG3110" xml:space="preserve">
+    <value>保守料金の期間が重複しています。</value>
+  </data>
+  <data name="MSG3111" xml:space="preserve">
+    <value>保守料金が追加できません。契約料金が入力されています。</value>
+  </data>
+  <data name="MSG3112" xml:space="preserve">
+    <value>料金区分が重複しています。</value>
+  </data>
+  <data name="MSG3113" xml:space="preserve">
+    <value>一覧上に料金情報がありません。処理を進めますか？</value>
+  </data>
+  <data name="MSG3115" xml:space="preserve">
+    <value>登録できません。契約は解約されていません。</value>
+  </data>
+  <data name="MSG3116" xml:space="preserve">
+    <value>契約コード{0}が解約確定されています。</value>
+  </data>
+  <data name="MSG3117" xml:space="preserve">
+    <value>撤去工事が完了していません。</value>
+  </data>
+  <data name="MSG3118" xml:space="preserve">
+    <value>次の契約コードは指定できません：{0}。保守対象契約コードは売買契約、またはアラーム／売却オンライン／売却商品レンタル契約でなければなりません。</value>
+  </data>
+  <data name="MSG3119" xml:space="preserve">
+    <value>契約コード{0}は開始されていません。</value>
+  </data>
+  <data name="MSG3120" xml:space="preserve">
+    <value>契約コード{0}は、契約:{1}と既に連携しています。</value>
+  </data>
+  <data name="MSG3121" xml:space="preserve">
+    <value>指定した期間は登録済みの期間と重なっています。別の期間を指定してください。</value>
+  </data>
+  <data name="MSG3122" xml:space="preserve">
+    <value>当契約は元々撤去料金がないため、撤去料金を登録できません。</value>
+  </data>
+  <data name="MSG3123" xml:space="preserve">
+    <value>{1}が登録されたため、{0}を登録できません。</value>
+  </data>
+  <data name="MSG3124" xml:space="preserve">
+    <value>撤去料金が変更されました。この変更を請求データへ保存します。よろしいですか？</value>
+  </data>
+  <data name="MSG3125" xml:space="preserve">
+    <value>撤去工事が完了しました。修正した内容は請求データに反映されません。</value>
+  </data>
+  <data name="MSG3126" xml:space="preserve">
+    <value>{0}は当日、または過去の日付でなければなりません。</value>
+  </data>
+  <data name="MSG3127" xml:space="preserve">
+    <value>契約期間終了日は契約期間開始日より後の日付で登録しなければなりません。</value>
+  </data>
+  <data name="MSG3128" xml:space="preserve">
+    <value>紹介元コードは{0}であり、かつシステムに存在しなければなりません。</value>
+  </data>
+  <data name="MSG3129" xml:space="preserve">
+    <value>契約終了日に実施日より前の日付を入力できません。</value>
+  </data>
+  <data name="MSG3130" xml:space="preserve">
+    <value>契約コードの次の連番が取得できません。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG3131" xml:space="preserve">
+    <value>プロジェクトコードの次の連番が取得できません。管理者に連絡してください。</value>
+  </data>
+  <data name="MSG3132" xml:space="preserve">
+    <value>実施済オカーレンスではありません。</value>
+  </data>
+  <data name="MSG3133" xml:space="preserve">
+    <value>当該契約コードには、指定されたOCCより大きいOCC、または小さいOCCが存在しないため、オカーレンスを挿入できません。指定されたOCCを確認してください。</value>
+  </data>
+  <data name="MSG3134" xml:space="preserve">
+    <value>代替実施、または本実施のオカーレンスを指定できません。</value>
+  </data>
+  <data name="MSG3135" xml:space="preserve">
+    <value>指定された契約コードには、進行中の工事データが存在します。工事内容を確認し、工事取消してからOCCを削除してください。</value>
+  </data>
+  <data name="MSG3136" xml:space="preserve">
+    <value>この業者は一覧に存在しています。他の業者を選択してください。</value>
+  </data>
+  <data name="MSG3137" xml:space="preserve">
+    <value>実施済オカーレンスを削除します。よろしいですか。</value>
+  </data>
+  <data name="MSG3138" xml:space="preserve">
+    <value>変更実施日は前のオカーレンスの値より後の日付、または同日でなければなりません。</value>
+  </data>
+  <data name="MSG3140" xml:space="preserve">
+    <value>開始予定日は変更実施日より後の日付、または同日でなければなりません。</value>
+  </data>
+  <data name="MSG3141" xml:space="preserve">
+    <value>契約料金戻り日に当日以降を入力しなければなりません。</value>
+  </data>
+  <data name="MSG3142" xml:space="preserve">
+    <value>上申ステータスは「依頼差戻」です。依頼者の更新待ちで、照会のみ可能です。</value>
+  </data>
+  <data name="MSG3143" xml:space="preserve">
+    <value>上申ステータスは「決裁待ち」です。決裁者の更新待ちで、照会のみ可能です。</value>
+  </data>
+  <data name="MSG3144" xml:space="preserve">
+    <value>上申ステータスは「審査中」です。審査者の更新待ちで、照会のみ可能です。</value>
+  </data>
+  <data name="MSG3145" xml:space="preserve">
+    <value>上申ステータスは「決裁済み」です。管理者以外のユーザーは照会のみ可能です。</value>
+  </data>
+  <data name="MSG3146" xml:space="preserve">
+    <value>上申ステータスは「指示」です。管理者以外のユーザーは照会のみ可能です。</value>
+  </data>
+  <data name="MSG3147" xml:space="preserve">
+    <value>上申ステータスは「却下」です。管理者以外のユーザーは照会のみ可能です。</value>
+  </data>
+  <data name="MSG3148" xml:space="preserve">
+    <value>契約料金は変更されました。</value>
+  </data>
+  <data name="MSG3150" xml:space="preserve">
+    <value>保守料金の請求先は1つのみでなければなりません。</value>
+  </data>
+  <data name="MSG3151" xml:space="preserve">
+    <value>保守請求区分が変更されました。請求モジュール側で手動で料金を変更するのを忘れないで下さい。</value>
+  </data>
+  <data name="MSG3152" xml:space="preserve">
+    <value>「管理者一覧」画面を開く権限がありません。</value>
+  </data>
+  <data name="MSG3153" xml:space="preserve">
+    <value>保守料金が調整されました。決裁番号を登録してください。</value>
+  </data>
+  <data name="MSG3154" xml:space="preserve">
+    <value>解約／成約取消日は未来日付ではいけません。</value>
+  </data>
+  <data name="MSG3155" xml:space="preserve">
+    <value>解約／成約取消日は変更実施日より前の日付ではいけません。</value>
+  </data>
+  <data name="MSG3156" xml:space="preserve">
+    <value>契約コード {0} は停止されました。</value>
+  </data>
+  <data name="MSG3157" xml:space="preserve">
+    <value>停止日は未来日付ではいけません。</value>
+  </data>
+  <data name="MSG3158" xml:space="preserve">
+    <value>停止日には1年前の同日以前の日付は入力できません。</value>
+  </data>
+  <data name="MSG3159" xml:space="preserve">
+    <value>再開予定日は停止日から起算して6ヶ月以上離れています。処理を進めますか？</value>
+  </data>
+  <data name="MSG3160" xml:space="preserve">
+    <value>登録できません。契約は承認されていません。</value>
+  </data>
+  <data name="MSG3161" xml:space="preserve">
+    <value>商品種類が保守契約、またはアラーム契約ではないため、保守スケジュールを生成できません。</value>
+  </data>
+  <data name="MSG3162" xml:space="preserve">
+    <value>一覧上に登録するデータが存在していません。</value>
+  </data>
+  <data name="MSG3163" xml:space="preserve">
+    <value>機器コード{0}が重複しています。他の機器を選択してください。</value>
+  </data>
+  <data name="MSG3164" xml:space="preserve">
+    <value>営業社員は順番に入力しなければなりません。</value>
+  </data>
+  <data name="MSG3165" xml:space="preserve">
+    <value>「保証期間開始」は「客先引渡日」より後の日付、または同日でなければなりません。</value>
+  </data>
+  <data name="MSG3166" xml:space="preserve">
+    <value>「保証期間終了」は「保証期間開始」より後の日付でなければなりません。</value>
+  </data>
+  <data name="MSG3167" xml:space="preserve">
+    <value>本契約状態は実施・再開を行うことができません。</value>
+  </data>
+  <data name="MSG3168" xml:space="preserve">
+    <value>売却契約データの最新オカーレンスは「新規売却」または「追加売却」でなければなりません。</value>
+  </data>
+  <data name="MSG3169" xml:space="preserve">
+    <value>実施日・再開日には1年前の同日以前の日付は入力できません。</value>
+  </data>
+  <data name="MSG3170" xml:space="preserve">
+    <value>保守契約は、実施日・再開日が当月でなければなりません。</value>
+  </data>
+  <data name="MSG3171" xml:space="preserve">
+    <value>工事完了していないため、実施できません。</value>
+  </data>
+  <data name="MSG3172" xml:space="preserve">
+    <value>発注書または契約書が回収されていないため、決裁番号を入力しないと、実施できません。</value>
+  </data>
+  <data name="MSG3173" xml:space="preserve">
+    <value>対象の保守契約が一部まだ実施されていないため、実施できません。</value>
+  </data>
+  <data name="MSG3174" xml:space="preserve">
+    <value>アラーム契約ではないため、代替実施できません。</value>
+  </data>
+  <data name="MSG3175" xml:space="preserve">
+    <value>工事完了していないため、再開できません。</value>
+  </data>
+  <data name="MSG3176" xml:space="preserve">
+    <value>契約が停止されてい3ないため、再開できません。</value>
+  </data>
+  <data name="MSG3177" xml:space="preserve">
+    <value>3ヶ月以上前の日付で実施日・再開日が入力されました。処理を進めますか？</value>
+  </data>
+  <data name="MSG3179" xml:space="preserve">
+    <value>発行されていない契約文書は回収できません。</value>
+  </data>
+  <data name="MSG3180" xml:space="preserve">
+    <value>保守予定日は過去日付で登録されました。</value>
+  </data>
+  <data name="MSG3181" xml:space="preserve">
+    <value>保守料金が請求側に送った後に変更されました。請求モジュール側で手動で料金を変更するのを忘れないで下さい。</value>
+  </data>
+  <data name="MSG3182" xml:space="preserve">
+    <value>再開予定日は停止日以降を入力しなければなりません。</value>
+  </data>
+  <data name="MSG3183" xml:space="preserve">
+    <value>部署担当者が２名以上登録されました。管理部署（HR）に連絡してください。</value>
+  </data>
+  <data name="MSG3184" xml:space="preserve">
+    <value>部署責任者が登録されていません。管理部署（HR）に連絡してください。</value>
+  </data>
+  <data name="MSG3185" xml:space="preserve">
+    <value>停止日には最新の変更実施日より前の日付の登録はできません。</value>
+  </data>
+  <data name="MSG3186" xml:space="preserve">
+    <value>会社名{0}は既に一覧上に存在しています。</value>
+  </data>
+  <data name="MSG3187" xml:space="preserve">
+    <value>システム（商品）名称{0}は既に一覧上に存在しています。</value>
+  </data>
+  <data name="MSG3188" xml:space="preserve">
+    <value>サポートスタッフ {0} は既に一覧上に存在しています。</value>
+  </data>
+  <data name="MSG3189" xml:space="preserve">
+    <value>契約を否認しますが、よろしいですか。</value>
+  </data>
+  <data name="MSG3190" xml:space="preserve">
+    <value>事案番号を採番できません。契約データが存在しません。</value>
+  </data>
+  <data name="MSG3191" xml:space="preserve">
+    <value>成約承認依頼を差し戻します。よろしいですか。</value>
+  </data>
+  <data name="MSG3192" xml:space="preserve">
+    <value>上申起案番号を採番できません。契約データが存在しません。</value>
+  </data>
+  <data name="MSG3193" xml:space="preserve">
+    <value>同じサイクルに結果が登録されているため、保守点検スケジュールを削除できません。</value>
+  </data>
+  <data name="MSG3194" xml:space="preserve">
+    <value>ユーザーコード／契約コード {0} は一覧に存在しています。別の契約を選択してください。</value>
+  </data>
+  <data name="MSG3195" xml:space="preserve">
+    <value>請求先の登録が正しくありません。出来高料金の請求先は1つのみ登録することが出来ます。</value>
+  </data>
+  <data name="MSG3196" xml:space="preserve">
+    <value>変更種類が業務停止ではない場合、開始予定日を入力できません。</value>
+  </data>
+  <data name="MSG3197" xml:space="preserve">
+    <value>変更種類が変更料金ではない場合、契約料金戻り日を入力できません。</value>
+  </data>
+  <data name="MSG3198" xml:space="preserve">
+    <value>契約コード{0}は実施していないので、最終完了プロジェクトが登録できません。</value>
+  </data>
+  <data name="MSG3199" xml:space="preserve">
+    <value>このプロジェクトコードはプロジェクト最終完了が登録されているので、最終完了できません。</value>
+  </data>
+  <data name="MSG3200" xml:space="preserve">
+    <value>このプロジェクトコードは取消されているので、最終完了できません。</value>
+  </data>
+  <data name="MSG3201" xml:space="preserve">
+    <value>契約コード {0} が取消されていないため、プロジェクト取消ができません。</value>
+  </data>
+  <data name="MSG3202" xml:space="preserve">
+    <value>このプロジェクトコードはプロジェクト最終完了が登録されたため、プロジェクト取消ができません。</value>
+  </data>
+  <data name="MSG3203" xml:space="preserve">
+    <value>このプロジェクトコードは取消されているため、プロジェクト取消ができません。</value>
+  </data>
+  <data name="MSG3204" xml:space="preserve">
+    <value>見積：{0}には契約：{1}と同じ物件コードがありません。</value>
+  </data>
+  <data name="MSG3205" xml:space="preserve">
+    <value>工事完了予定日に過去日付は入力できません。</value>
+  </data>
+  <data name="MSG3206" xml:space="preserve">
+    <value>工事完了予定日には3年後の同日より後の日付は入力できません。</value>
+  </data>
+  <data name="MSG3207" xml:space="preserve">
+    <value>客先引渡予定日に過去日付は入力できません。</value>
+  </data>
+  <data name="MSG3208" xml:space="preserve">
+    <value>客先引渡予定日には3年後の同日より後の日付は入力できません。</value>
+  </data>
+  <data name="MSG3210" xml:space="preserve">
+    <value>請求売却システム料金（契約承認時）の支払方法を選択下さい。</value>
+  </data>
+  <data name="MSG3211" xml:space="preserve">
+    <value>請求一部金の支払方法を選択して下さい。</value>
+  </data>
+  <data name="MSG3212" xml:space="preserve">
+    <value>請求売却システム料金（客先引渡時）の支払方法を選択して下さい。</value>
+  </data>
+  <data name="MSG3213" xml:space="preserve">
+    <value>結線区分が選択されています。契約コードを入力してください。</value>
+  </data>
+  <data name="MSG3214" xml:space="preserve">
+    <value>分散先が選択されています。分散元を入力してください。</value>
+  </data>
+  <data name="MSG3215" xml:space="preserve">
+    <value>分散元契約が既に解約されています。</value>
+  </data>
+  <data name="MSG3216" xml:space="preserve">
+    <value>本画面を開く前にメインメニューでプロジェクトコードを指定してください。</value>
+  </data>
+  <data name="MSG3217" xml:space="preserve">
+    <value>契約文書情報が重複しています。</value>
+  </data>
+  <data name="MSG3218" xml:space="preserve">
+    <value>エラーが発生しました。&lt;br/&gt;
+保存完了の契約文書は:&lt;br/&gt; {0}&lt;br/&gt;
+保存されない契約文書は：&lt;br/&gt; {1}</value>
+  </data>
+  <data name="MSG3219" xml:space="preserve">
+    <value>撤去工事があります。撤去料金は必須です。</value>
+  </data>
+  <data name="MSG3224" xml:space="preserve">
+    <value>保守対象契約コードがアラーム又は売却オンライン又は売却商品レンタル契約の場合、一つの契約のみ登録できます。</value>
+  </data>
+  <data name="MSG3227" xml:space="preserve">
+    <value>この上申内容の上申タイトルが見つからないため、この上申内容の選択を取消できません。</value>
+  </data>
+  <data name="MSG3228" xml:space="preserve">
+    <value>お客様のID番号は契約先と同じですが、他の情報が違います。</value>
+  </data>
+  <data name="MSG3229" xml:space="preserve">
+    <value>お客様のID番号は発注元と同じですが、他の情報が違います。</value>
+  </data>
+  <data name="MSG3230" xml:space="preserve">
+    <value>契約料金に０を設定する新規請求先は登録できません。</value>
+  </data>
+  <data name="MSG3043" xml:space="preserve">
+    <value>保存完了しましたが、通知メールを送ることができません。契約料金の期限日を覚えてください。</value>
+  </data>
+  <data name="MSG3209" xml:space="preserve">
+    <value>次の物件情報の項目は必須です：{0}</value>
+  </data>
+  <data name="MSG3232" xml:space="preserve">
+    <value>保存完了しましたが、通知メールを送ることができません。</value>
+  </data>
+  <data name="MSG3233" xml:space="preserve">
+    <value>売却システム料金を保存できません。金額が上限に達しています。</value>
+  </data>
+  <data name="MSG3225" xml:space="preserve">
+    <value>進行中の工事があります。工事完了後、または取消後に処理を行ってください。</value>
+  </data>
+  <data name="MSG3226" xml:space="preserve">
+    <value>契約先／納入先のID番号／納税者番号が変更されましたが、支店名称／支店住所／連絡先は同じ値です。処理を続けてもよろしいですか？</value>
+  </data>
+  <data name="MSG0106" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG3234" xml:space="preserve">
+    <value>契約文書OCCを指定してください。</value>
+  </data>
+  <data name="MSG3235" xml:space="preserve">
+    <value>受注売却システム料金が受注商品代金と工事料金の金額の合計と一致しておりません。</value>
+  </data>
+  <data name="MSG3236" xml:space="preserve">
+    <value>契約ステータスが実施前ではないためCP-15を登録することができません。</value>
+  </data>
+  <data name="MSG3237" xml:space="preserve">
+    <value>契約ステータスが実施後ではないためCP-14を登録することができません。</value>
+  </data>
+  <data name="MSG3036" xml:space="preserve">
+    <value>このロールを指定できません。決裁者及び審査者には一人しか指定できません。</value>
+  </data>
+  <data name="MSG3073" xml:space="preserve">
+    <value>工事完了予定日に過去の日付が登録されています。
+</value>
+  </data>
+  <data name="MSG3074" xml:space="preserve">
+    <value>成約承認された見積先コードで上申を起案することはできません。</value>
+  </data>
+  <data name="MSG3096" xml:space="preserve">
+    <value>承認完了。契約コードは{0}です。</value>
+  </data>
+  <data name="MSG3098" xml:space="preserve">
+    <value>登録できません。契約コード{0}の工事基本データが存在しています。</value>
+  </data>
+  <data name="MSG3139" xml:space="preserve">
+    <value>変更実施日は次のオカーレンスの値より前の日付、または同日でなければなりません。</value>
+  </data>
+  <data name="MSG3149" xml:space="preserve">
+    <value>決裁者を指定しなければなりません。</value>
+  </data>
+  <data name="MSG3220" xml:space="preserve">
+    <value>このプロジェクトを最終完了登録します。よろしいですか。</value>
+  </data>
+  <data name="MSG3221" xml:space="preserve">
+    <value>このプロジェクトを取消します。よろしいですか。</value>
+  </data>
+  <data name="MSG3222" xml:space="preserve">
+    <value>プロジェクトを最終完了登録しました。</value>
+  </data>
+  <data name="MSG3223" xml:space="preserve">
+    <value>プロジェクト取消が完了しました。</value>
+  </data>
+  <data name="MSG3231" xml:space="preserve">
+    <value>一覧に料金情報が存在しないため、登録できません。</value>
+  </data>
+  <data name="MSG3238" xml:space="preserve">
+    <value>警備OCC {0} は既に存在しています。システムに存在しない警備OCCを選択してください。</value>
+  </data>
+  <data name="MSG3239" xml:space="preserve">
+    <value>受注売却システム料金が大幅に調整されています。決裁番号が入力されていることを確認してください。</value>
+  </data>
+  <data name="MSG3240" xml:space="preserve">
+    <value>プロジェクト仕掛倉庫明細のデータがないため、新規枝番作成できません。
+</value>
+  </data>
+  <data name="MSG3241" xml:space="preserve">
+    <value>プロジェクト仕掛倉庫明細に個別契約未出庫数のデータがないため、新規枝番作成できません。</value>
+  </data>
+  <data name="MSG3242" xml:space="preserve">
+    <value>登録するための請求基本がありません。</value>
+  </data>
+  <data name="MSG3243" xml:space="preserve">
+    <value>この見積先コードは承認待ちのため、新規登録はできません。内容の修正は、差し戻し後、編集から行ってください。</value>
+  </data>
+  <data name="MSG3244" xml:space="preserve">
+    <value>この見積先コードは否認されているため、新規登録はできません。</value>
+  </data>
+  <data name="MSG3245" xml:space="preserve">
+    <value>この見積先コードは差戻されているため、新規登録はできません。</value>
+  </data>
+  <data name="MSG3246" xml:space="preserve">
+    <value>この見積先コードは承認されているため、新規登録はできません。</value>
+  </data>
+  <data name="MSG3247" xml:space="preserve">
+    <value>営業社員が重複しています。</value>
+  </data>
+  <data name="MSG3248" xml:space="preserve">
+    <value>セコム商品として登録されている物件が違います。お客様情報／物件情報を確認してください。</value>
+  </data>
+  <data name="MSG3249" xml:space="preserve">
+    <value>受注売却システム料金が0として登録されています。決裁番号が入力されていることを確認してください。</value>
+  </data>
+  <data name="MSG3250" xml:space="preserve">
+    <value>「はい」をクリックすると、契約コードが付与されます。処理を進めますか？</value>
+  </data>
+  <data name="MSG3251" xml:space="preserve">
+    <value>請求サイクルが2ヶ月以下のため、決裁番号を入力してください。</value>
+  </data>
+  <data name="MSG3252" xml:space="preserve">
+    <value>{0}を保存できません。金額が上限に達しています</value>
+  </data>
+  <data name="MSG3260" xml:space="preserve">
+    <value>プロジェクトコード{0}がプロジェクト最終完了登録されていません。別のプロジェクトコードを入力してください。</value>
+  </data>
+  <data name="MSG3261" xml:space="preserve">
+    <value>保守対象契約の物件は保守契約の物件と一致しません。別の契約コードを選択してください。</value>
+  </data>
+  <data name="MSG3253" xml:space="preserve">
+    <value>請求先は登録、もしくは編集中です。請求先明細セクション上の「追加／更新」又は「キャンセル」をクリックしてください。</value>
+  </data>
+  <data name="MSG3254" xml:space="preserve">
+    <value>「保証金スライド元契約コード」欄にQコードを登録できません。</value>
+  </data>
+  <data name="MSG3255" xml:space="preserve">
+    <value>支払時期＞0です。決裁番号を入力してください。</value>
+  </data>
+  <data name="MSG3256" xml:space="preserve">
+    <value>「契約先／発注元」は必須項目が入力されていません。「顧客登録／編集」ボタンをクリックし、登録してください。</value>
+  </data>
+  <data name="MSG3257" xml:space="preserve">
+    <value>「お客様」は必須項目が入力されていません。「顧客登録／編集」ボタンをクリックし、登録してください。</value>
+  </data>
+  <data name="MSG3258" xml:space="preserve">
+    <value>「物件／納入先」は必須項目が入力されていません。「物件／納入先登録／編集」ボタンをクリックし、登録してください。</value>
+  </data>
+  <data name="MSG3259" xml:space="preserve">
+    <value>この契約に対して、契約料金／保守点検料金／常駐契約料金の請求先が複数登録されています。請求期間調整をブランクにして実施データを登録してください。</value>
+  </data>
+  <data name="MSG3262" xml:space="preserve">
+    <value>保守契約又は保守対象契約の物件を変更することができません。</value>
+  </data>
+  <data name="MSG3263" xml:space="preserve">
+    <value>「結線先コード」欄にQコード／MAコード／SGコードを登録できません。</value>
+  </data>
+  <data name="MSG3264" xml:space="preserve">
+    <value>新規継続契約登録が完了しました。</value>
+  </data>
+  <data name="MSG3265" xml:space="preserve">
+    <value>新規売買契約登録が完了しました。</value>
+  </data>
+  <data name="MSG3267" xml:space="preserve">
+    <value>保存完了しましたが、メールが送信できません。</value>
+  </data>
+  <data name="MSG3268" xml:space="preserve">
+    <value>この契約は実施／代替実施が既に登録されているため、代替実施できません。</value>
+  </data>
+  <data name="MSG3269" xml:space="preserve">
+    <value>エラーが発生しました。保守点検票の生成処理を中止しました。システムは、エラーが発生した時点までの点検票を生成します。エラー詳細を見るためには「詳細＞＞」ボタンをクリックしてください。</value>
+  </data>
+  <data name="MSG3270" xml:space="preserve">
+    <value>受注契約料金が0で登録されています。確認してください。決裁取得済みであれば更新は可能です。</value>
+  </data>
+  <data name="MSG3271" xml:space="preserve">
+    <value>受注契約料金が大幅に調整されています。確認してください。決裁取得済みであれば更新は可能です。</value>
+  </data>
+  <data name="MSG3272" xml:space="preserve">
+    <value>この契約コードが代替実施中です。代替実施中は実査修正は行えません。</value>
+  </data>
+  <data name="MSG3266" xml:space="preserve">
+    <value>{0}には、0より上の値を入力してください。</value>
+  </data>
+  <data name="MSG3273" xml:space="preserve">
+    <value>折衝担当者が重複しています。</value>
+  </data>
+  <data name="MSG3274" xml:space="preserve">
+    <value>当該契約に工事情報が存在しているため、プロジェクトコードを変更できません。</value>
+  </data>
+  <data name="MSG3275" xml:space="preserve">
+    <value>この社員を指定できません。先に事案統括責任者を指定しなければなりません。</value>
+  </data>
+  <data name="MSG3276" xml:space="preserve">
+    <value>事案統括責任者を指定していないため、他の担当者を指定できません。</value>
+  </data>
+  <data name="MSG3277" xml:space="preserve">
+    <value>事案登録できません。新しい事案統括責任者を指定しなければなりません。</value>
+  </data>
+  <data name="MSG3278" xml:space="preserve">
+    <value>指定した契約コードは売買契約のため、画面を開けません。</value>
+  </data>
+  <data name="MSG3279" xml:space="preserve">
+    <value>結線先コード{0}が存在しません。別の契約コードを指定してください。</value>
+  </data>
+  <data name="MSG3280" xml:space="preserve">
+    <value>結線先コード{0}が売却オンライン契約ではありません。別の契約コードを指定してください。</value>
+  </data>
+  <data name="MSG3281" xml:space="preserve">
+    <value>スライド先契約コードは、指定した契約コードと同じコードではいけません。</value>
+  </data>
+  <data name="MSG3282" xml:space="preserve">
+    <value>指定した期間は登録済みの期間と重なっています。処理を進めますか？</value>
+  </data>
+  <data name="MSG3283" xml:space="preserve">
+    <value>この契約コードは実施中ではありません。</value>
+  </data>
+  <data name="MSG3284" xml:space="preserve">
+    <value>工事予定情報が登録されています。実査修正を行う場合はこの情報を取り消すか、完了してから行ってください。</value>
+  </data>
+  <data name="MSG3285" xml:space="preserve">
+    <value>計画変更予定情報（未実施警備基本）が登録されています。実査修正を行う場合は
+この情報を取り消すか、完了してから行ってください。</value>
+  </data>
+  <data name="MSG3286" xml:space="preserve">
+    <value>MAコード、SGコードは実査修正できません。</value>
+  </data>
+  <data name="MSG3287" xml:space="preserve">
+    <value>月額は最大値{0}を超えます。</value>
+  </data>
+  <data name="MSG3288" xml:space="preserve">
+    <value>代替実施中はこの処理を行えません。</value>
+  </data>
+  <data name="MSG3289" xml:space="preserve">
+    <value>最新警備オカーレンスが未実施オカーレンスのため、この機能では削除できません。未実施オカーレンスの取消は未実施取消（CP-12）で処理してください。</value>
+  </data>
+  <data name="MSG3290" xml:space="preserve">
+    <value>撤去工事料金の請求先を指定してください。</value>
+  </data>
+  <data name="MSG3291" xml:space="preserve">
+    <value>少なくとも1つの項目を編集しなければなりません。</value>
+  </data>
+  <data name="MSG3292" xml:space="preserve">
+    <value>請求データの変更が必要ないか確認してください。</value>
+  </data>
+  <data name="MSG3293" xml:space="preserve">
+    <value>指定された契約コードには、進行中の工事データが存在します。工事内容を確認し、工事取消してからOCCを削除してください。</value>
+  </data>
+  <data name="MSG3294" xml:space="preserve">
+    <value>折衝担当者は折衝担当者1から順番に登録してください。</value>
+  </data>
+  <data name="MSG3295" xml:space="preserve">
+    <value>採用区分が「抹消」の機器があります。</value>
+  </data>
+  <data name="MSG3296" xml:space="preserve">
+    <value>採用区分が「仮採用」、「一時採用」、「抹消」の機器があります。</value>
+  </data>
+  <data name="MSG3297" xml:space="preserve">
+    <value>連携元売買契約が工事完了していないため実施データの登録はできません。</value>
+  </data>
+  <data name="MSG3298" xml:space="preserve">
+    <value>実施予定日に最新実施日より前の日付を入力することはできません。</value>
+  </data>
+  <data name="MSG3299" xml:space="preserve">
+    <value>実施予定日は未来日付で登録できません。</value>
+  </data>
+  <data name="MSG3300" xml:space="preserve">
+    <value>契約コード {0} は終了しています。確認してください。</value>
+  </data>
+  <data name="MSG3301" xml:space="preserve">
+    <value>決裁者が登録されていないため、審査者を登録できません。</value>
+  </data>
+  <data name="MSG3302" xml:space="preserve">
+    <value>メールの配布先は8人を超えて登録できません。</value>
+  </data>
+  <data name="MSG3303" xml:space="preserve">
+    <value>審査者が登録されていないため、「審査依頼」を登録できません。</value>
+  </data>
+  <data name="MSG3304" xml:space="preserve">
+    <value>重要事案の通知先{0}のメールアドレスが見つかりません。システム管理者に連絡し重要事案の通知先のメールアドレスを登録してもらうか、もしくは「はい」ボタンをクリックしメール送信なしでこの事案の登録を行ってください。</value>
+  </data>
+  <data name="MSG3305" xml:space="preserve">
+    <value>指定した通知先{0}のメールアドレスが見つかりません。システム管理者に連絡し通知先のメールアドレスを登録してもらうか、もしくは「はい」ボタンをクリックしメール送信なしでこの上申の登録を行ってください。</value>
+  </data>
+  <data name="MSG3306" xml:space="preserve">
+    <value>この契約は成約取消済みのため、解約確定登録ができません。</value>
+  </data>
+  <data name="MSG3307" xml:space="preserve">
+    <value>業務開始確認書は未回収です。処理を続けてもよろしいですか？</value>
+  </data>
+  <data name="MSG3308" xml:space="preserve">
+    <value>請求期間調整は実施日／再開日より前の日付ではいけません。</value>
+  </data>
+  <data name="MSG3309" xml:space="preserve">
+    <value>工事ステータスが「00：工事未登録」ではないため、登録できません。</value>
+  </data>
+  <data name="MSG3310" xml:space="preserve">
+    <value>当初実施日が次のOCCの変更実施日（{0}）より後の日付ではいけません。</value>
+  </data>
+  <data name="MSG3311" xml:space="preserve">
+    <value>当初実施日を変更するとき年月を変更してはいけません。</value>
+  </data>
+  <data name="MSG3312" xml:space="preserve">
+    <value>あなたは決裁者ではありません</value>
+  </data>
+  <data name="MSG3313" xml:space="preserve">
+    <value>本当に決済者を変更しますか？</value>
+  </data>
+  <data name="MSG3342" xml:space="preserve">
+    <value>Sum of billing installation fee must equal to Order installation fee</value>
+  </data>
+  <data name="MSG3343" xml:space="preserve">
+    <value>変更後料金の通貨が、現在の契約料金の通貨と異なります。&lt;br /&gt;金額が正しいか確認してください。&lt;br /&gt;もし請求金額に変更がある場合は、マニュアル計算で請求書を発行してください。</value>
+  </data>
+  <data name="MSG3320" xml:space="preserve">
+    <value>Cannot register. Contract no. {0} is one-shot.</value>
+  </data>
+  <data name="MSG3321" xml:space="preserve">
+    <value>Cannot register. Quotation no. {0} is one-shot.</value>
+  </data>
+  <data name="MSG3352" xml:space="preserve">
+    <value>受注商品代金が大幅に調整されています。決裁番号が入力されていることを確認してください。</value>
+  </data>
+  <data name="MSG3353" xml:space="preserve">
+    <value>受注工事料金が大幅に調整されています。決裁番号が入力されていることを確認してください。</value>
+  </data>
+  <data name="MSG3354" xml:space="preserve">
+    <value>請求承認代金（承認時）の通貨が、受注商品代金の通貨と異なります。
+金額が正しいか確認してください。</value>
+  </data>
+  <data name="MSG3355" xml:space="preserve">
+    <value>商品代金一部金の通貨が、受注商品代金の通貨と異なります。
+金額が正しいか確認してください。</value>
+  </data>
+  <data name="MSG3356" xml:space="preserve">
+    <value>請求商品だ金（客先引渡時）の通貨が、受注商品代金の通貨と異なります。
+金額が正しいか確認してください。</value>
+  </data>
+  <data name="MSG3357" xml:space="preserve">
+    <value>請求工事料金（承認時）の通貨が、受注工事料金の通貨と異なります。
+金額が正しいか確認してください。</value>
+  </data>
+  <data name="MSG3358" xml:space="preserve">
+    <value>工事料金一部金の通貨が、受注工事料金の通貨と異なります。
+金額が正しいか確認してください。</value>
+  </data>
+  <data name="MSG3359" xml:space="preserve">
+    <value>請求工事料金（客先引渡時）の通貨が、受注工事料金の通貨と異なります。
+金額が正しいか確認してください。</value>
+  </data>
+</root>

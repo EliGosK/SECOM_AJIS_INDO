@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="GroupCode" width="110" type="ro" align="left" sort="str_custom">headerGroupCode</column>
+    <column id="GroupNameShow" width="180" type="ro" align="left" sort="str_custom">headerGroupName</column>
+    <column id="Memo" width="*" type="ro" align="left" sort="str_custom">headerMemo</column>
+    <column id="OfficeName" width="190" type="ro" align="left" sort="str_custom">headerSecomContact</column>
+    <column id="GroupEmpName" width="190" type="ro" align="left" sort="str_custom">headerSecomPerson</column>
+    <column id="Detail" width="30" type="link" align="center" sort="na">headerEdit</column>
+    
+    <column id="DeleteFlag" width="*" type="ro" align="center" hidden="true"></column>
+    <column id="GroupNameEN" width="*" type="ro" align="center" hidden="true"></column>
+    <column id="GroupNameLC" width="*" type="ro" align="center" hidden="true"></column>
+    <column id="GroupOfficeCode" width="*" type="ro" align="center" hidden="true"></column>
+    <column id="GroupEmpNo" width="*" type="ro" align="center" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

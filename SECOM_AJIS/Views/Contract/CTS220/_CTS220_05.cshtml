@@ -1,0 +1,47 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS220/CTS220_05.js")"></script>
+@{
+    Layout = "";
+    ViewBag.Title = "CTS220";
+    ViewBag.LabelWidth = "250px";
+    ViewBag.RightLabelWidth = "270px";
+    ViewBag.ObjectWidth = "120px";
+    ViewBag.ObjectWidthUnit = "180px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+
+<div id="divInsuranceSection" class="main-table">
+    <div class="usr-row">
+        <div class="table-header" style="width: 400px;">
+            @Resources.CTS220.lblInsuranceInformation
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblInsuranceType
+        </div>
+        <div class="usr-object" style="width: 180px">
+            @Html.InsuranceTypeComboBox("InsuranceType", new { style = "width:194px;" })
+        </div>  
+        <div class="usr-label" style="width:251px;">
+            @Resources.CTS220.lblInsuranceCoverageFee
+        </div>
+        <div class="usr-object" style="width:220px">
+            @Html.NumericTextBoxWithMultipleCurrency("InsuranceCoverageFee", null, null, new { style = "width:140px;" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS220.lblMonthlyInsuranceFee
+        </div>
+        <div class="usr-object" style="width:220px">
+            @Html.NumericTextBoxWithMultipleCurrency("MonthlyInsuranceFee", null, null, new { style = "width:140px;" })
+        </div>   
+    </div>      
+    <div class="usr-row">&nbsp;</div>
+</div>

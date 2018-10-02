@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="0" type="ro" align="center"></column>
+    <column id="PermissionType" width="80" type="ro" align="left" sort="str_custom">headerPermissionType</column>
+    <column id="crPermissionGroupName" width="100" type="ro" align="left" sort="str_custom">headerPermissionGroupName</column>
+    <column id="crPermissionIndividualName" width="90" type="ro" align="left" sort="str_custom">headerPermissionIndividualName</column>
+    <column id="OfficeDepPosDisplay" width="*" type="ro" align="left" sort="str_custom">headerOffice</column>
+    <column id="Quotation" width="70" type="yesNoCell" align="center" sort="str_custom">headerQuotation</column>
+    <column id="Contract" width="65" type="yesNoCell" align="center" sort="str_custom">headerContract</column>
+    <column id="Install" width="80" type="yesNoCell" align="center" sort="str_custom">headerInstallation</column>
+    <column id="Inventory" width="75" type="yesNoCell" align="center" sort="str_custom">headerInventory</column>
+    <column id="Billing" width="50" type="yesNoCell" align="center" sort="str_custom">headerBilling</column>
+    <column id="Income" width="60" type="yesNoCell" align="center" sort="str_custom">headerIncome</column>
+    <column id="Common" width="65" type="yesNoCell" align="center" sort="str_custom">headerCommon</column>
+    <column id="Master" width="55" type="yesNoCell" align="center" sort="str_custom">headerMaster</column>
+    <column id="Edit" width="30" type="link" align="center" sort="na">headerDetail</column>
+
+    <column id="crPermissionGroupCode" width="0" type="ro" align="center" hidden="true">headerMaster</column>
+    <column id="crPermissionIndividualCode" width="0" type="ro" align="center" hidden="true">headerMaster</column>
+    <column id="crPermissionIndividualName" width="0" type="ro" align="center" hidden="true">headerMaster</column>
+    <column id="crOfficeCode" width="0" type="ro" align="center" hidden="true">headerMaster</column>
+    <column id="crDepartmentCode" width="0" type="ro" align="center" hidden="true">headerMaster</column>
+    <column id="crPositionCode" width="0" type="ro" align="center" hidden="true">headerMaster</column>
+    <column id="PermissionTypeCode" width="0" type="ro" align="center" hidden="true">headerMaster</column>
+
+    <column id="UpdateDate" width="0" type="ro" align="center" hidden="true">headerMaster</column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>
+

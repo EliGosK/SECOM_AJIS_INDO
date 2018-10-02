@@ -1,0 +1,198 @@
+﻿<!--
+//*********************************
+// Create by: Non A.
+// Create date: 9/Mar/2012
+// Update date: 12/Mar/2012
+//*********************************
+-->
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Presentation.Inventory.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+@{
+    ViewBag.SearchCol1Width = "180px";
+    ViewBag.SearchCol2Width = "180px";
+    ViewBag.SearchCol2WidthCbo = "184px";
+    ViewBag.SearchCol3Width = "180px";
+    ViewBag.SearchCol4Width = "180px";
+    ViewBag.SearchCol4WidthCbo = "184px";
+    ViewBag.SearchWidthButton1 = "80px";
+    ViewBag.SearchWidthButton2 = "80px";
+    ViewBag.DatePickerWidth = "95px";
+
+
+    ViewBag.DetailCol1Width = "180px";
+    ViewBag.DetailCol2Width = "180px";
+    ViewBag.DetailCol2WidthFull = "550px";
+    ViewBag.DetailCol3Width = "180px";
+    ViewBag.DetailCol4Width = "180px";
+}
+
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Inventory/IVS230.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/number-functions.js")"></script>
+}
+
+<div id="divSearchCriteria" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.IVS230.lblSearchCriteria</div>
+    <form name="formSearch" id="formSearch" action="#">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.SearchCol1Width;">@Resources.IVS230.lblInventorySlipNo</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtSearchInvSlipNo", null, new { style = "width:" + ViewBag.SearchCol2Width, maxlength = 16 })
+            </div> 
+            <div class="usr-label" style="width:@ViewBag.SearchCol3Width;">@Resources.IVS230.lblSlipStatus</div>
+            <div class="usr-object">
+               @Html.SlipStatusCbo("cboSearchSlipStatus", new { style = "width:" + @ViewBag.SearchCol4WidthCbo }, true)
+            </div> 
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.SearchCol1Width;">@Resources.IVS230.lblCreateOffice</div>
+            <div class="usr-object">
+                @Html.InventoryOfficeBelongCbo("cboSearchCreateOffice", new { style = "width:" + ViewBag.SearchCol2WidthCbo }, SECOM_AJIS.Common.Util.CommonUtil.eFirstElementType.All)
+            </div>
+            <div class="usr-label" style="width:@ViewBag.SearchCol3Width;">@Resources.IVS230.lblCreateDate</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtSearchDateFrom", null, new { style = "width:" + ViewBag.DatePickerWidth })
+                <span> ~ </span>
+                @Html.CommonTextBox("txtSearchDateTo", null, new { style = "width:" + ViewBag.DatePickerWidth })
+            </div>
+            <div class="usr-object">
+                @Html.LabelDateFormat("lblDateFormat")
+            </div>
+        </div>
+        
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.SearchCol1Width;">@Resources.IVS230.lblCreateEmployeeNo</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtSearchEmpNo", null, new { style = "width:" + ViewBag.SearchCol2Width, maxlength = 10 })
+            </div> 
+            <div class="usr-label" style="width:@ViewBag.SearchCol3Width;">@Resources.IVS230.lblProjectCode</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtSearchProjectCode", null, new { style = "width:" + ViewBag.SearchCol4Width, maxlength = 8 })
+            </div> 
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.SearchCol1Width;">@Resources.IVS230.lblStockOutType</div>
+            <div class="usr-object">
+                <input id="rdoStockOutTypeAll" name="StockOutType" type="radio" value="" checked="checked" /> @Resources.IVS230.lblStockOutTypeAll
+                <input id="rdoStockOutType1" name="StockOutType" type="radio" value="1" /> @Resources.IVS230.lblStockOutTypeProjectStockOut
+                <input id="rdoStockOutType2" name="StockOutType" type="radio" value="2" /> @Resources.IVS230.lblStockOutTypeTransferNormalStock
+                <input id="rdoStockOutType3" name="StockOutType" type="radio" value="3" /> @Resources.IVS230.lblStockOutTypeTransferArea
+                <input id="rdoStockOutType4" name="StockOutType" type="radio" value="4" /> @Resources.IVS230.lblStockOutTypePartialStockOut
+                <input id="rdoStockOutType5" name="StockOutType" type="radio" value="5" /> @Resources.IVS230.lblStockOutTypeNormalStockOut
+            </div> 
+        </div>
+        
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.SearchCol1Width;">@Resources.IVS230.lblContractCode</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtSearchContractCode", null, new { style = "width:" + ViewBag.SearchCol2Width, maxlength = 50 })
+            </div> 
+            <div class="usr-label" style="width:@ViewBag.SearchCol3Width;">@Resources.IVS230.lblInstrumentCode</div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtSearchInstrumentCode", null, new { style = "width:" + ViewBag.SearchCol4Width, maxlength = 50 })
+            </div> 
+        </div>
+
+    </form>
+
+    <div class="usr-clear-style">&nbsp;</div>
+    <div class="usr-row" style="margin-top: 5px">
+        <div style="text-align: right; float: right; width:@ViewBag.ObjectColMergeWidth; margin-right: 4px;">
+            @Html.CommonButton("btnSearch", (string)@Resources.IVS230.btnSearch, new { style = "width:" + @ViewBag.SearchWidthButton1 })
+            @Html.CommonButton("btnClear", (string)@Resources.IVS230.btnClear, new { style = "width:" + @ViewBag.SearchWidthButton2 })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="divInvSlipList" class="main-table" style="margin-top:5px;">
+    <div class="table-header">@Resources.IVS230.lblInventorySlipList</div>
+
+    <div id="divGrdInvSlipList" style="width: 99%; margin-left: 4px;">
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+<div id="divDetail" class="main-table" style="margin-top:5px; visibility: hidden;">
+    <div class="table-header">@Resources.IVS230.lblSlipDetail</div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.DetailCol1Width;">@Resources.IVS230.lblInventorySlipNo</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtDtlInvSlipNo", null, new { style = "width:" + ViewBag.DetailCol2Width })
+        </div> 
+        <div class="usr-label" style="width:@ViewBag.DetailCol3Width;">@Resources.IVS230.lblSlipStatus</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtDtlSlipStatus", null, new { style = "width:" + ViewBag.DetailCol4Width })
+        </div> 
+    </div>
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.DetailCol1Width;">@Resources.IVS230.lblStockOutDate</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtDtlStockOutDate", null, new { style = "width:" + ViewBag.DetailCol2Width })
+        </div> 
+        <div class="usr-label" style="width:@ViewBag.DetailCol3Width;">@Resources.IVS230.lblReceiveDate</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtDtlReceiveDate", null, new { style = "width:" + ViewBag.DetailCol4Width })
+        </div> 
+    </div>
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.DetailCol1Width;">@Resources.IVS230.lblStockOutOffice</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtDtlStockOutOffice", null, new { style = "width:" + ViewBag.DetailCol2Width })
+        </div> 
+        <div class="usr-label" style="width:@ViewBag.DetailCol3Width;">@Resources.IVS230.lblReceiveOffice</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtDtlReceiveOffice", null, new { style = "width:" + ViewBag.DetailCol4Width })
+        </div> 
+    </div>
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.DetailCol1Width;">@Resources.IVS230.lblSourceLocation</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtDtlSourceLocation", null, new { style = "width:" + ViewBag.DetailCol2Width })
+        </div> 
+        <div class="usr-label" style="width:@ViewBag.DetailCol3Width;">@Resources.IVS230.lblDestinationLocation</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtDtlDestinationLocation", null, new { style = "width:" + ViewBag.DetailCol4Width })
+        </div> 
+    </div>
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.DetailCol1Width;">@Resources.IVS230.lblApproveNo</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtDtlApproveNo", null, new { style = "width:" + ViewBag.DetailCol2Width })
+        </div> 
+        <div class="usr-label" style="width:@ViewBag.DetailCol3Width;">@Resources.IVS230.lblStockOutType</div>
+        <div class="usr-object">
+            @Html.CommonTextBox("txtDtlStockOutType", null, new { style = "width:" + ViewBag.DetailCol4Width })
+        </div> 
+    </div>
+    
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.DetailCol1Width;">@Resources.IVS230.lblMemo</div>
+        <div class="usr-object">
+            @Html.CommonTextArea("txtDtlMemo", null, new { style = "width:" + ViewBag.DetailCol2WidthFull })
+        </div> 
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+
+    <div id="divGrdInvSlipDtlList" style="width: 99%; margin-left: 4px; margin-top:5px;">
+    </div>
+
+    <div class="usr-clear-style">&nbsp;</div>
+
+</div>

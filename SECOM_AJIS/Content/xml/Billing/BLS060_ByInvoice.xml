@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="No" width="0" type="ro" align="left" sort="na" > </column>
+    <column id="InvoiceNo" width="180" type="link" align="left" sort="na" >lblHeader3InvoiceNo</column>
+    <column id="AutoTransferDate" width="150" type="link" align="left" sort="na" >lblHeader3AutoTransferDate</column>
+    <column id="RealTimeIssue" width="100" type="link" align="center" sort="na" >lblHeader3RealTimeIssue</column>
+    <column id="Del" width="30" type="link" align="center" sort="na" >headerButtonRemove</column>
+    <column id="TempSpan" width="0" type="ro"  hidden="true"></column>
+	  <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

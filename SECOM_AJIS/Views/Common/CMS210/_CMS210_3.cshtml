@@ -1,0 +1,134 @@
+﻿@using SECOM_AJIS.DataEntity.Common;
+@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Master.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+
+
+<div class="main-table">
+    <div class="table-header">@Resources.CMS210.lblMaintenanceCheckupList</div>
+    <div class="usr-row">
+        <div id="mygrid_cms210" style="width: 99%; margin-left: 4px;">
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+
+
+<!---===============================================================================--->
+<div style="height: 5px">&nbsp;</div>
+<!---===============================================================================--->
+
+
+<div class="main-table" id="DivMaintenanceCheckupInfo">
+    <div class="table-header">@Resources.CMS210.lblMaintenanceCheckupInfo</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS210.lblCheckupYearMonth
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtCheckupYearMonth", (string)@ViewBag.txtCheckupYearMonth, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS210.lblMaintenanceDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtMaintenanceDate", (string)@ViewBag.txtMaintenanceDate, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS210.lblExpectedDate
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtExpectedDate", (string)@ViewBag.txtExpectedDate, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS210.lblSubcontractor
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtSubcontractor", (string)@ViewBag.txtSubcontractor, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS210.lblPersonInchargeOfSubcontractor
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtPersonInchargeOfSubcontractor", (string)@ViewBag.PersonInchargeOfSubcontractor, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS210.lblMaintenamceEmployee
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtMaintenamceEmployee", (string)@ViewBag.txtMaintenamceEmployee, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS210.lblCheckupUsageTime
+        </div>
+        <div class="usr-object" style="width:auto; background-color:@ViewBag.txtBackgroundColor;">
+            <div style="float:left">@Html.CommonTextBox("txtCheckupUsageTime", (string)@ViewBag.txtCheckupUsageTime, new { isViewMode = @ViewBag.isViewMode }) </div>
+        </div>
+        <div class="usr-label"">
+            &nbsp;@Resources.CMS210.lblMinute
+        </div>
+    </div>
+
+    <div class="usr-row" style="margin-top:2px; margin-bottom:2px;">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">&nbsp;</div>
+
+        <div class="usr-object" >
+            <div class="label-view">@Html.CommonCheckButton("chkInstrumentMalfunction", @Resources.CMS210.chkInstrumentMalfunction, "", false , new { disabled = "disabled" })  </div>
+        </div>
+
+       <div class="usr-object" style="padding-left:7px">
+            <div class="label-view">@Html.CommonCheckButton("chkNeedContactSaleman", @Resources.CMS210.chkNeedContactSaleman, "", false , new { disabled = "disabled" }) </div> 
+        </div>
+
+
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS210.lblLocation
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtLocation", (string)@ViewBag.txtLocation, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS210.lblMalfunctionSalesmanInfo
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtMalfunctionSalesmanInfo", (string)@ViewBag.txtMalfunctionSalesmanInfo, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.lbWidth;">
+            @Resources.CMS210.lblRemark
+        </div>
+        <div class="usr-object" style="width:@ViewBag.longText; background-color:@ViewBag.txtBackgroundColor;">
+            @Html.CommonTextBox("txtRemark", (string)@ViewBag.txtRemark, new { isViewMode = @ViewBag.isViewMode })
+        </div>
+    </div>
+
+
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

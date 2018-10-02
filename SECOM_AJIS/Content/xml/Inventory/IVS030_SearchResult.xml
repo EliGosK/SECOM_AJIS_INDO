@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="50" type="ro" align="center" sort="na"></column>
+    <column id="ContractCodeShort" width="100" type="ro" align="left" sort="str_custom">headerContractCode</column>
+    <column id="CompleteDate" width="150" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date" >headerCompleteDate</column>
+    <column id="InstallationSlipNo" width="180" type="ro" align="left" sort="str_custom">headerIntallationSlipNo</column>
+    <column id="SubContractorName" width="*" type="ro" align="left" sort="str_custom">headerSubContractorName</column>
+    <column id="ProjectCode" width="200" type="ro" align="left" sort="str_custom">headerProjectCode</column>
+    <column id="DetailButton" width="30" type="ro" align="center" sort="na"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

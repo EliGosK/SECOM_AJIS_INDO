@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG3001" xml:space="preserve">
+    <value>เลขที่สัญญาถูกบันทึกไว้เป็น "ยกเลิกสัญญาก่อนเปิดให้บริการ" หรือ "ยกเลิกสัญญาหลังเปิดให้บริการ" กรุณาตรวจสอบอีกครั้ง</value>
+  </data>
+  <data name="MSG3002" xml:space="preserve">
+    <value>ไม่สามารถใช้ใบเสนอราคาที่เลือกได้</value>
+  </data>
+  <data name="MSG3003" xml:space="preserve">
+    <value>มีการบันทึกค่าเช่า/ค่าบริการที่ลูกค้าเซ็นมาเป็น 0 กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3004" xml:space="preserve">
+    <value>มีการปรับเปลี่ยนค่าเช่า/ค่าบริการที่ลูกค้าเซ็นมาต่างไปจากเดิมมาก กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3005" xml:space="preserve">
+    <value>มีการปรับเปลี่ยนค่าเช่า/ค่าบริการที่ลูกค้าเซ็นมา กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3006" xml:space="preserve">
+    <value>ไม่สามารถบันทึกการเปลี่ยนแปลงโดยใช้จำนวนเงินที่ไม่เท่ากับราคาระหว่างการเปลี่ยนแปลงราคาชั่วคราวได้เนื่องจากสัญญานี้อยู่ในช่วงระยะเวลาเปลี่ยนแปลงราคาแบบชั่วคราว กรุณาบันทึกข้อมูลการเปลี่ยนแปลงการติดตั้งอีกครั้งหลังจากบันทึกข้อมูล CP12 (เปลี่ยนราคา) ให้เป็นการเปลี่ยนแปลงราคาแบบไม่มีกำหนดเวลาโดยใช้จำนวนเงินที่เท่ากับราคาระหว่างการเปลี่ยนแปลงแล้ว</value>
+  </data>
+  <data name="MSG3007" xml:space="preserve">
+    <value>มีการปรับเปลี่ยนค่าติดตั้ง　กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3008" xml:space="preserve">
+    <value>มีการปรับเปลี่ยนค่ามัดจำ กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3009" xml:space="preserve">
+    <value>ต้องทำการกรอกเลขที่อนุมัติตามลำดับตั้งแต่เลขที่อนุมัติ 1 เป็นต้นไป</value>
+  </data>
+  <data name="MSG3010" xml:space="preserve">
+    <value>ตัวเลือกแยกบิลค่าเช่า/ค่าบริการได้ถูกเลือกไว้ กรุณาบันทึกลูกค้าสำหรับออกใบแจ้งหนี้เพื่อจ่ายค่าเช่า/ค่าบริการอย่างน้อยสองราย</value>
+  </data>
+  <data name="MSG3011" xml:space="preserve">
+    <value>ตัวเลือกแยกบิลค่าเช่า/ค่าบริการไม่ได้ถูกเลือกไว้ กรุณาบันทึกลูกค้าสำหรับออกใบแจ้งหนี้เพื่อจ่ายค่าเช่า/ค่าบริการเพียงหนึ่งราย</value>
+  </data>
+  <data name="MSG3012" xml:space="preserve">
+    <value>ยอดรวมของค่าเช่า/ค่าบริการที่เรียกเก็บไม่เท่ากับค่าเช่า/ค่าบริการที่ลูกค้าเซ็นมา กรุณาแก้ไขอีกครั้ง</value>
+  </data>
+  <data name="MSG3013" xml:space="preserve">
+    <value>ยอดรวมของค่าติดตั้งที่เรียกเก็บไม่เท่ากับค่าติดตั้งที่ลูกค้าเซ็นมากรุณาแก้ไขอีกครั้ง
+</value>
+  </data>
+  <data name="MSG3014" xml:space="preserve">
+    <value>ยอดรวมของค่ามัดจำที่เรียกเก็บไม่เท่ากับค่ามัดจำที่ลูกค้าเซ็นมา กรุณาแก้ไขอีกครั้ง</value>
+  </data>
+  <data name="MSG3015" xml:space="preserve">
+    <value>วันที่คาดว่าจะเปิดใช้บริการถูกบันทึกเป็นวันที่ในอดีต กรุณาตรวจสอบอีกครั้ง</value>
+  </data>
+  <data name="MSG3016" xml:space="preserve">
+    <value>ไม่สามารถสร้างเลขที่เหตุการณ์ได้ เนื่องจากตัวเลขเกินขอบเขตที่กำหนดไว้ กรุณาติดต่อผู้ดูเเลระบบ
+</value>
+  </data>
+  <data name="MSG3017" xml:space="preserve">
+    <value>ไม่สามารถสร้างเลขที่คำร้องได้ เนื่องจากตัวเลขเกินขอบเขตที่กำหนดไว้ กรุณาติดต่อผู้ดูเเลระบบ</value>
+  </data>
+  <data name="MSG3018" xml:space="preserve">
+    <value>ไม่สามารถสร้างเลขที่อนุมัติได้ เนื่องจากตัวเลขเกินขอบเขตที่กำหนดไว้ กรุณาติดต่อผู้ดูเเลระบบ</value>
+  </data>
+  <data name="MSG3019" xml:space="preserve">
+    <value>ไม่สามารถเลือกพนักงานรายนี้ได้เนื่องจากไม่ได้สังกัดอยู่ในแผนกและสาขาที่เลือกไว้</value>
+  </data>
+  <data name="MSG3020" xml:space="preserve">
+    <value>ไม่สามารถกำหนดหน้าที่ให้พนักงานคนนี้ได้ หัวหน้าควบคุมการรับมือกับเหตุการณ์ต้องมีเพียงรายเดียว</value>
+  </data>
+  <data name="MSG3021" xml:space="preserve">
+    <value>พนักงานรายนี้ถูกกำหนดให้อยู่ในหน้าที่อื่นแล้ว</value>
+  </data>
+  <data name="MSG3022" xml:space="preserve">
+    <value>ไม่สามารถสร้างเลขที่สัญญาได้ เนื่องจากไม่มี Prefix ของสัญญา</value>
+  </data>
+  <data name="MSG3023" xml:space="preserve">
+    <value>ไม่สามารถสร้าง OCC การรักษาความปลอดภัยได้ เนื่องจากตัวเลขเกินขอบเขตที่กำหนดไว้</value>
+  </data>
+  <data name="MSG3024" xml:space="preserve">
+    <value>ไม่สามารถสร้างการนับจำนวนครั้งการเปลี่ยนแปลงได้ เนื่องจากตัวเลขเกินขอบเขตที่กำหนดไว้</value>
+  </data>
+  <data name="MSG3025" xml:space="preserve">
+    <value>ไม่สามารถสร้าง OCC เอกสารสัญญาได้ เนื่องจากตัวเลขเกินขอบเขตที่กำหนดไว้</value>
+  </data>
+  <data name="MSG3026" xml:space="preserve">
+    <value>ไม่สามารถสร้างสัญญาขายขาดได้ เนื่องจากตัวเลขน้อยกว่าขอบเขตที่กำหนดไว้</value>
+  </data>
+  <data name="MSG3027" xml:space="preserve">
+    <value>ยอดรวมค่าติดตั้งที่เรียกเก็บเมื่อเสร็จสิ้นการติดตั้งไม่เท่ากับค่าติดตั้งที่ลูกค้าเซ็นมาเมื่ออนุมัติ กรุณาแก้ไขอีกครั้ง</value>
+  </data>
+  <data name="MSG3028" xml:space="preserve">
+    <value>ยอดรวมค่าติดตั้งที่เรียกเก็บเมื่อเปิดใช้บริการไม่เท่ากับค่าติดตั้งที่ลูกค้าเซ็นมาเมื่ออนุมัติ กรุณาแก้ไขอีกครั้ง</value>
+  </data>
+  <data name="MSG3029" xml:space="preserve">
+    <value>กรุณาเลือกวิธีการชำระเงินค่าติดตั้งที่เรียกเก็บตอนเสร็จสิ้นการติดตั้ง</value>
+  </data>
+  <data name="MSG3030" xml:space="preserve">
+    <value>กรุณาเลือกวิธีการชำระเงินค่าติดตั้งที่เรียกเก็บตอนเปิดใช้บริการ</value>
+  </data>
+  <data name="MSG3031" xml:space="preserve">
+    <value>กรุณาเลือกวิธีการชำระเงินค่ามัดจำ</value>
+  </data>
+  <data name="MSG3032" xml:space="preserve">
+    <value>มีลูกค้าสำหรับออกใบแจ้งหนี้ที่มีรหัสลูกค้าสำหรับเรียกเก็บและสาขาที่ออกบิลเหมือนกันอยู่ในรายการลูกค้าสำหรับออกใบแจ้งหนี้อยู่แล้ว</value>
+  </data>
+  <data name="MSG3033" xml:space="preserve">
+    <value>ไม่สามารถกรอกข้อมูลของ "อายุสัญญา　(เดือน)" และ "วันสิ้นสุดสัญญา" ได้</value>
+  </data>
+  <data name="MSG3034" xml:space="preserve">
+    <value>ไม่สามารถกรอกข้อมูลของ "อายุสัญญา　(เดือน)" โดยไม่มี "ต่อสัญญาอัตโนมัติ (เดือน)" ได้</value>
+  </data>
+  <data name="MSG3035" xml:space="preserve">
+    <value>ไม่สามารถปล่อยให้ทั้ง "อายุสัญญา (เดือน)" และ "วันสิ้นสุดสัญญา" เป็นค่าว่างพร้อมกันได้</value>
+  </data>
+  <data name="MSG3037" xml:space="preserve">
+    <value>กรุณาเลือกวิธีการชำระเงินค่าติดตั้งที่เรียกเก็บ</value>
+  </data>
+  <data name="MSG3038" xml:space="preserve">
+    <value>รหัสใบเสนอราคานี้ประกอบด้วยอุปกรณ์ทีมีประเภทการใช้งานเป็น "หยุดขาย" หรือ "ลบทางลอจิคอล" คุณต้องระมัดระวังในการใช้ใบเสนอราคานี้ </value>
+  </data>
+  <data name="MSG3039" xml:space="preserve">
+    <value>มีข้อมูลที่ยังไม่เปิดใช้บริการหรือข้อมูลงานติดตั้งที่อยู่ระหว่างการดำเนินการ กรุณาดำเนินการอีกครั้งหลังจากกระบวนการจัดการข้อมูลดังกล่าวถูกยกเลิกหรือเสร็จสิ้นแล้ว</value>
+  </data>
+  <data name="MSG3040" xml:space="preserve">
+    <value>เลขที่สัญญานี้ไม่ได้อยู่ระหว่างให้บริการ</value>
+  </data>
+  <data name="MSG3041" xml:space="preserve">
+    <value>วันที่ตรวจสอบในสถานที่จริงต้องไม่ใช่วันก่อนหน้าวันที่ดำเนินการแก้ไข</value>
+  </data>
+  <data name="MSG3042" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการ "เปลี่ยนแปลงราคา" ได้ เมื่อสถานะเป็น "ยกเลิกสัญญา" หรือ "อยู่ในระหว่างการเปิดใช้บริการบางส่วน"</value>
+  </data>
+  <data name="MSG3044" xml:space="preserve">
+    <value>เลขที่สัญญา {0} ถูกหยุดใช้บริการไว้ กรุณาดำเนินการอีกครั้งหลังจากสัญญาเริ่มเปิดใช้บริการ</value>
+  </data>
+  <data name="MSG3045" xml:space="preserve">
+    <value>วันที่เปลี่ยนแปลงค่าเช่า/ค่าบริการ ต้องเป็นวันเดียวกับหรือหลังจาก "วันที่เปลี่ยนแปลงครั้งสุดท้าย"</value>
+  </data>
+  <data name="MSG3046" xml:space="preserve">
+    <value>วันที่กลับไปใช้ราคาเก่า ต้องเป็นวันหลังจาก "วันที่เปลี่ยนแปลงค่าเช่า/ค่าบริการ"</value>
+  </data>
+  <data name="MSG3047" xml:space="preserve">
+    <value>ค่าเช่า/ค่าบริการยังคงมีค่าเท่ากับค่าเช่า/ค่าบริการสุดท้าย กรุณาปรับเปลี่ยนค่าเช่า/ค่าบริการอีกครั้ง</value>
+  </data>
+  <data name="MSG3048" xml:space="preserve">
+    <value>ไม่สามารถบันทึกการเปลี่ยนแปลงโดยใช้จำนวนเงินที่ไม่เท่ากับราคาระหว่างการเปลี่ยนแปลงราคาชั่วคราวได้เนื่องจากสัญญานี้อยู่ในช่วงระยะเวลาเปลี่ยนแปลงราคาแบบชั่วคราว หากต้องการบันทึกการเปลี่นแปลงในครั้งนี้ กรุณาบันทึกข้อมูลอีกครั้งหลังจากบันทึกข้อมูล CP12 (เปลี่ยนราคา) ให้เป็นการเปลี่ยนแปลงราคาแบบไม่มีกำหนดเวลาโดยใช้จำนวนเงินที่เท่ากับราคาระหว่างการเปลี่ยนแปลงแล้ว</value>
+  </data>
+  <data name="MSG3049" xml:space="preserve">
+    <value>บันทึกเงื่อนไขสัญญาจากการแก้ไขสัญญาสำเร็จแล้ว</value>
+  </data>
+  <data name="MSG3050" xml:space="preserve">
+    <value>บันทึกเงื่อนไขสัญญาจากการแก้ไขสัญญาสำเร็จแล้ว เมื่อการติดตั้งเสร็จสิ้น ระบบจะดำเนินการเรียกเก็บค่าติดตั้ง,  เปลี่ยนแปลงค่าเช่า/ค่าบริการ, ออกใบแจ้งหนี้ค่าส่วนต่าง และ ปรับจำนวนเงินในใบแจ้งหนี้ครั้งต่อไป</value>
+  </data>
+  <data name="MSG3051" xml:space="preserve">
+    <value>บันทึกเงื่อนไขสัญญาจากการแก้ไขสัญญาสำเร็จแล้ว ระบบจะดำเนินการเปลี่ยนแปลงค่าเช่า/ค่าบริการ, ออกใบเรียกเก็บค่าส่วนต่าง และ ปรับจำนวนเงินในใบแจ้งหนี้ครั้งต่อไปทันที</value>
+  </data>
+  <data name="MSG3052" xml:space="preserve">
+    <value>ไม่มีอุปกรณ์ในสัญญานี้ ไม่อนุญาติให้เปลี่ยนแปลงอุปกรณ์</value>
+  </data>
+  <data name="MSG3053" xml:space="preserve">
+    <value>ไม่มีข้อมูลที่ยังไม่เปิดใช้บริการสำหรับดำเนินการเปลี่ยนแปลงวันที่คาดว่าจะเปิดใช้บริการ</value>
+  </data>
+  <data name="MSG3054" xml:space="preserve">
+    <value>ไม่สามารถยกเลิก OCC ของสัญญาซึ่งอยู่ในระหว่างการติดตั้งหรือหลังจากติดตั้งเสร็จสิ้นได้</value>
+  </data>
+  <data name="MSG3055" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกการรักษาความปลอดภัยพื้นฐานได้ก่อนการติดตั้งเสร็จสิ้น</value>
+  </data>
+  <data name="MSG3056" xml:space="preserve">
+    <value>ไม่มีข้อมูลที่ยังไม่เปิดใช้บริการสำหรับดำเนินการยกเลิกสัญญา</value>
+  </data>
+  <data name="MSG3057" xml:space="preserve">
+    <value>ลบ OCC ที่ยังไม่เปิดใช้บริการ</value>
+  </data>
+  <data name="MSG3058" xml:space="preserve">
+    <value>ไม่สามารถบันทึกได้เนื่องจากการติดตั้งเสร็จสิ้นแล้ว</value>
+  </data>
+  <data name="MSG3059" xml:space="preserve">
+    <value>ราคาขายที่ลูกค้าเซ็นมาไม่เท่ากับยอดรวมราคาขายของทุกรอบการออกใบเรียกเก็บ</value>
+  </data>
+  <data name="MSG3060" xml:space="preserve">
+    <value>ราคาขายถูกปรับปรุงแก้ไขแล้ว กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3061" xml:space="preserve">
+    <value>วันที่คาดว่าจะติดตั้งเสร็จสิ้นถูกบันทึกเป็นวันที่ในอดีต</value>
+  </data>
+  <data name="MSG3062" xml:space="preserve">
+    <value>กรุณาระบุเลขที่สัญญาขายอุปกรณ์หลัก</value>
+  </data>
+  <data name="MSG3063" xml:space="preserve">
+    <value>รหัสการแยกขาย {0} ไม่มีในระบบ</value>
+  </data>
+  <data name="MSG3064" xml:space="preserve">
+    <value>วิธีการจ่ายเงินไม่ได้ถูกตั้งค่าไว้เป็นการโอนผ่านธนาคารหรือหักบัญชีอัตโนมัติ กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3065" xml:space="preserve">
+    <value>ราคาขายที่ลูกค้าเซ็นมาถูกบันทึกเป็น 0 กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3066" xml:space="preserve">
+    <value>มีการปรับเปลี่ยนราคาขายต่างไปจากเดิมมาก กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3067" xml:space="preserve">
+    <value>มีข้อมูลสัญญาเช่าใหม่ในระบบอยู่แล้ว</value>
+  </data>
+  <data name="MSG3068" xml:space="preserve">
+    <value>สถานะของเลขที่ใบคำนวณราคานี้ไม่ใช่ "ตีกลับ"</value>
+  </data>
+  <data name="MSG3069" xml:space="preserve">
+    <value>วันที่คาดว่าจะเปิดใช้บริการไม่สามารถเป็นวันในอดีตได้</value>
+  </data>
+  <data name="MSG3070" xml:space="preserve">
+    <value>วันที่คาดว่าจะเปิดใช้บริการต้องไม่เกิน 3 ปีหลังจากนี้</value>
+  </data>
+  <data name="MSG3071" xml:space="preserve">
+    <value>วันที่คาดว่าจะทำการติดตั้งไม่สามารถเป็นวันในอดีตได้</value>
+  </data>
+  <data name="MSG3072" xml:space="preserve">
+    <value>วันที่คาดว่าจะทำการติดตั้งต้องไม่เกิน 3 ปีหลังจากนี้</value>
+  </data>
+  <data name="MSG3075" xml:space="preserve">
+    <value>เลขที่โครงการนี้ได้บันทึกโครงการเสร็จสิ้นทั้งหมดแล้วจึงไม่สามารถเปลี่ยนแปลงข้อมูลของโครงการได้</value>
+  </data>
+  <data name="MSG3076" xml:space="preserve">
+    <value>เลขที่โครงการนี้ได้บันทึกยกเลิกโครงการแล้วจึงไม่สามารถเปลี่ยนแปลงข้อมูลของโครงการได้</value>
+  </data>
+  <data name="MSG3077" xml:space="preserve">
+    <value>CTP060: ไม่สามารถส่งอีเมล์ได้เนื่องจากไม่มีรหัสพนักงาน {0} อยู่ในระบบ</value>
+  </data>
+  <data name="MSG3078" xml:space="preserve">
+    <value>CTP060: เกิดความผิดพลาดในการส่งอีเมล์ {0} แม้ว่าจะส่งซ้ำครบจำนวนแล้ว</value>
+  </data>
+  <data name="MSG3079" xml:space="preserve">
+    <value>คุณเลือกอายุต่างจากที่กำหนดไว้ กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3080" xml:space="preserve">
+    <value>วันสิ้นสุดสัญญาต้องไม่เป็นวันในอดีตหรือวันปัจจุบัน</value>
+  </data>
+  <data name="MSG3081" xml:space="preserve">
+    <value>อายุสัญญา (เดือน) น้อยกว่า 36 กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3082" xml:space="preserve">
+    <value>ระยะเวลาต่อสัญญาอัตโนมัติ (เดือน) น้อยกว่า 12 กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3083" xml:space="preserve">
+    <value>ค่าเช่า/ค่าบริการที่ลูกค้าเซ็นมาถูกบันทึกไว้เป็น 0 กรุณาตรวจสอบว่าเลขที่อนุมัติได้ถูกกรอกไว้แล้ว</value>
+  </data>
+  <data name="MSG3084" xml:space="preserve">
+    <value>มีการเปลี่ยนค่าเช่า/ค่าบริการที่ลูกค้าเซ็นมาต่างไปจากเดิมมาก กรุณาตรวจสอบว่าเลขที่อนุมัติได้ถูกกรอกไว้แล้ว</value>
+  </data>
+  <data name="MSG3085" xml:space="preserve">
+    <value>อายุสัญญา (เดือน) มากกว่า 36 หรือระยะเวลาต่อสัญญาอัตโนมัติ (เดือน) มากกว่า 12 กรุณาตรวจสอบว่าเลขที่อนุมัติได้ถูกกรอกไว้แล้ว</value>
+  </data>
+  <data name="MSG3086" xml:space="preserve">
+    <value>วิธีคำนวณค่าเช่า/ค่าบริการรายวันไม่เป็น "วันตามปฏิทิน" กรุณาตรวจสอบว่าตัวเลือกนี้ถูกต้องแล้วหรือไม่</value>
+  </data>
+  <data name="MSG3087" xml:space="preserve">
+    <value>ต้องกรอกราคาที่เรียกเก็บอย่างน้อยหนึ่งรายการ</value>
+  </data>
+  <data name="MSG3088" xml:space="preserve">
+    <value>ค่าติดตั้งที่ลูกค้าเซ็นมาไม่เท่ากับยอดรวมค่าติดตั้งที่ลูกค้าเซ็นมาของทุกรอบการออกใบเรียกเก็บ</value>
+  </data>
+  <data name="MSG3089" xml:space="preserve">
+    <value>ยอดรวมค่าติดตั้งที่เรียกเก็บเมื่ออนุมัติไม่เท่ากับค่าติดตั้งที่ลูกค้าเซ็นมาเมื่ออนุมัติ กรุณาแก้ไขอีกครั้ง</value>
+  </data>
+  <data name="MSG3090" xml:space="preserve">
+    <value>ค่ามัดจำที่ลูกค้าเซ็นมามากกว่า 0 กรุณาเลือกรอบการออกใบเรียกเก็บค่ามัดจำ</value>
+  </data>
+  <data name="MSG3091" xml:space="preserve">
+    <value>ค่ามัดจำที่ลูกค้าเซ็นมาเท่ากับ 0 รอบการออกใบเรียกเก็บค่ามัดจำต้องไม่ถูกเลือก</value>
+  </data>
+  <data name="MSG3092" xml:space="preserve">
+    <value>ตัวเลือกโอนค่ามัดจำจากสัญญาอื่นมาได้ถูกเลือกไว้ กรุณากรอกรหัสสัญญา</value>
+  </data>
+  <data name="MSG3093" xml:space="preserve">
+    <value>สัญญาที่จะบำรุงรักษาจะต้องมีสถานที่ติดตั้งเดียวกันทั้งหมด</value>
+  </data>
+  <data name="MSG3094" xml:space="preserve">
+    <value>มีประเภทการใช้งานของเครื่องมือที่เป็น "หยุดขาย" หรือ "ลบทางลอจิคอล" อยู่ด้วย</value>
+  </data>
+  <data name="MSG3095" xml:space="preserve">
+    <value>รหัสลูกค้าเพื่อเสนอราคาที่เลือกไม่ตรงกับรหัสลูกค้าเพื่อเสนอราคาที่ถูกแก้ไข</value>
+  </data>
+  <data name="MSG3097" xml:space="preserve">
+    <value>คุณต้องการที่จะลบเลขที่การบำรุงรักษา {0} ของเลขที่สัญญา {1} หรือไม่?</value>
+  </data>
+  <data name="MSG3099" xml:space="preserve">
+    <value>มีข้อมูลสัญญาขายใหม่อยู่แล้วในระบบ</value>
+  </data>
+  <data name="MSG3100" xml:space="preserve">
+    <value>สถานะสัญญาขายใหม่ไม่ได้เป็น "ส่งคืน"</value>
+  </data>
+  <data name="MSG3101" xml:space="preserve">
+    <value>กรุณาบันทึกตำแหน่งของอุปกรณ์ที่ไม่สมบูรณ์</value>
+  </data>
+  <data name="MSG3102" xml:space="preserve">
+    <value>ไม่มีข้อมูลการเข้าบำรุงรักษาของเลขที่สัญญา {0} ประเภทระบบ {1} และวันที่ต้องเข้าบำรุงรักษา {2} ในระบบ</value>
+  </data>
+  <data name="MSG3103" xml:space="preserve">
+    <value>ไม่สามารถบันทึกได้เนื่องจากเลขที่สัญญา {0} มีข้อมูลการติดตั้งพื้นฐานของการติดตั้งแบบอื่นที่ไม่ใช่การถอดอุปกรณ์</value>
+  </data>
+  <data name="MSG3104" xml:space="preserve">
+    <value>ไม่สามารถบันทึกได้ สัญญาได้เริ่มเปิดใช้บริการแล้วแต่ยังไม่ถูกหยุดให้บริการ</value>
+  </data>
+  <data name="MSG3105" xml:space="preserve">
+    <value>สัญญาเลขที่ {0} สิ้นสุดสัญญาแล้ว กรุณาตรวจสอบข้อมูลใหม่อีกครั้ง</value>
+  </data>
+  <data name="MSG3106" xml:space="preserve">
+    <value>มีข้อมูลสัญญาเช่าอุปกรณ์เตือนภัยที่ยังไม่เปิดใช้บริการ</value>
+  </data>
+  <data name="MSG3107" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกการติดตั้งได้ เนื่องจากการติดตั้งเสร็จสิ้นแล้วหรือมีการบันทึกการส่งมอบแล้ว</value>
+  </data>
+  <data name="MSG3108" xml:space="preserve">
+    <value>ระยะเวลาของค่าเช่า/ค่าบริการซ้ำซ้อนกันอยู่</value>
+  </data>
+  <data name="MSG3109" xml:space="preserve">
+    <value>ไม่สามารถเพิ่มค่าเช่า/ค่าบริการได้ มีการกรอกค่าบำรุงรักษาไว้อยู่</value>
+  </data>
+  <data name="MSG3110" xml:space="preserve">
+    <value>ระยะเวลาของค่าบำรุงรักษาซ้ำซ้อนกันอยู่</value>
+  </data>
+  <data name="MSG3111" xml:space="preserve">
+    <value>ไม่สามารถเพิ่มค่าบำรุงรักษาได้ มีการกรอกค่าเช่า/ค่าบริการไว้อยู่</value>
+  </data>
+  <data name="MSG3112" xml:space="preserve">
+    <value>มีประเภทรายการที่เรียกเก็บซ้ำกัน</value>
+  </data>
+  <data name="MSG3113" xml:space="preserve">
+    <value>ไม่มีข้อมูลค่าบริการอยู่ในรายการ คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG3115" xml:space="preserve">
+    <value>ไม่สามารถบันทึกได้ เนื่องจากสัญญายังไม่ถูกยกเลิก</value>
+  </data>
+  <data name="MSG3116" xml:space="preserve">
+    <value>เลขที่สัญญา {0} ถูกยืนยันการยกเลิกสัญญาแล้ว</value>
+  </data>
+  <data name="MSG3117" xml:space="preserve">
+    <value>การถอดอุปกรณ์ยังไม่เสร็จสิ้น</value>
+  </data>
+  <data name="MSG3118" xml:space="preserve">
+    <value>เลขที่สัญญาต่อไปนี้ผิดพลาด: {0} เลขที่สัญญาเป้าหมายการบำรุงรักษาต้องเป็นสัญญาซื้อ สัญญาเช่าอุปกรณ์เตือนภัย สัญญาบริการ Online หรือสัญญาเช่าอุปกรณ์ขายขาด</value>
+  </data>
+  <data name="MSG3119" xml:space="preserve">
+    <value>เลขที่่สัญญา {0} ยังไม่เริ่มเปิดใช้บริการ</value>
+  </data>
+  <data name="MSG3120" xml:space="preserve">
+    <value>เลขที่่สัญญา {0} มีการเชื่อมโยงกับสัญญา {1} แล้ว</value>
+  </data>
+  <data name="MSG3121" xml:space="preserve">
+    <value>ขอบเขตของระยะเวลาที่ระบุทับซ้อนกับระยะเวลาที่บันทึกไว้ กรุณาระบุระยะเวลาอื่น</value>
+  </data>
+  <data name="MSG3122" xml:space="preserve">
+    <value>ไม่สามารถบันทึกค่าถอดอุปกรณ์ได้เนื่องจากสัญญาปัจจุบันไม่มีค่าถอดอุปกรณ์รวมอยู่ด้วยมาก่อน</value>
+  </data>
+  <data name="MSG3123" xml:space="preserve">
+    <value>ไม่สามารถบันทึก {0} ได้เนื่องจากมีการบันทึก {1} ไว้แล้ว</value>
+  </data>
+  <data name="MSG3124" xml:space="preserve">
+    <value>มีการเปลี่ยนแปลงค่าถอดอุปกรณ์ คุณต้องการบันทึกการเปลี่ยนแปลงนี้ไปยังข้อมูลการเรียกเก็บเงินหรือไม่?</value>
+  </data>
+  <data name="MSG3125" xml:space="preserve">
+    <value>มีการเปลี่ยนแปลงค่าถอดอุปกรณ์ คุณต้องการบันทึกการเปลี่ยนแปลงนี้ไปยังข้อมูลการเรียกเก็บเงินหรือไม่?</value>
+  </data>
+  <data name="MSG3126" xml:space="preserve">
+    <value>{0} ต้องเป็นวันที่ปัจจุบันหรือวันที่ในอดีต</value>
+  </data>
+  <data name="MSG3127" xml:space="preserve">
+    <value>วันสิ้นสุดอายุสัญญาจะต้องเป็นวันที่หลังจากวันเริ่มอายุสัญญา</value>
+  </data>
+  <data name="MSG3128" xml:space="preserve">
+    <value>รหัสผู้แนะนำลูกค้าต้องเป็น {0} และมีอยู่ในระบบ</value>
+  </data>
+  <data name="MSG3129" xml:space="preserve">
+    <value>วันสิ้นสุดสัญญาต้องไม่ใช่วันที่ก่อนวันเปิดใช้บริการ</value>
+  </data>
+  <data name="MSG3130" xml:space="preserve">
+    <value>ไม่สามารถดึงข้อมูล Running no. หมายเลขถัดไปของเลขที่สัญญาได้ กรุณาติดต่อผู้ดูแลระบบ </value>
+  </data>
+  <data name="MSG3131" xml:space="preserve">
+    <value>ไม่สามารถดึงข้อมูล Running no. หมายเลขถัดไปของเลขที่โครงการได้ กรุณาติดต่อผู้ดูแลระบบ  </value>
+  </data>
+  <data name="MSG3132" xml:space="preserve">
+    <value>นี่ไม่ใช่ OCC ที่เปิดใช้บริการแล้ว</value>
+  </data>
+  <data name="MSG3133" xml:space="preserve">
+    <value>ไม่สามารถแทรก OCC ได้ เนื่องจากเลขที่สัญญาที่ระบุยังไม่มี OCC อื่นที่มากกว่าหรือน้อยกกว่า OCC ที่ระบุ กรุณาตรวจสอบ OCC ที่ระบุ</value>
+  </data>
+  <data name="MSG3134" xml:space="preserve">
+    <value>OCC ที่เลือกต้องไม่ใช่การใช้บริการบางส่วนหรือการเริ่มใช้บริการใหม่</value>
+  </data>
+  <data name="MSG3135" xml:space="preserve">
+    <value>มีข้อมูลการติดตั้งของสัญญานี้อยู่ กรุณาลบ OCC หลังจากตรวจสอบรายละเอียดการติดตั้งและยกเลิกการติดตั้งแล้ว</value>
+  </data>
+  <data name="MSG3136" xml:space="preserve">
+    <value>มีผู้รับเหมานี้อยู่ในรายการเเล้ว กรุณาเลือกผู้รับเหมาอื่น</value>
+  </data>
+  <data name="MSG3137" xml:space="preserve">
+    <value>คุณต้องการลบ OCC ที่เปิดใช้บริการแล้วหรือไม่</value>
+  </data>
+  <data name="MSG3138" xml:space="preserve">
+    <value>วันที่ดำเนินการเปลี่ยนเเปลงต้องเป็นวันที่หลังจากหรือเป็นวันเดียวกับค่าของ OCC ก่อนหน้านี้</value>
+  </data>
+  <data name="MSG3140" xml:space="preserve">
+    <value>วันที่คาดว่าจะเปิดใช้บริการต้องเป็นวันที่หลังจากหรือเป็นวันเดียวกับวันที่ดำเนินการเปลี่ยนเเปลง</value>
+  </data>
+  <data name="MSG3141" xml:space="preserve">
+    <value>วันที่กลับไปใช้ราคาเก่าต้องเป็นวันที่ปัจจุบันหรือวันที่ในอนาคต</value>
+  </data>
+  <data name="MSG3142" xml:space="preserve">
+    <value>สถานะ Approval Request เป็น “ตีกลับคำขอ” ขณะนี้รอการปรับปรุงจากผู้ร้องขอ จึงสามารถดูข้อมูลได้อย่างเดียว</value>
+  </data>
+  <data name="MSG3143" xml:space="preserve">
+    <value>สถานะ Approval Request เป็น"รออนุมัติ" ขณะนี้รอการปรับปรุงจากผู้ร้องขอ จึงสามารถดูข้อมูลได้อย่างเดียว</value>
+  </data>
+  <data name="MSG3144" xml:space="preserve">
+    <value>สถานะ Approval Request เป็น "กำลังตรวจสอบ" ขณะนี้รอการปรับปรุงจากผู้ร้องขอ จึงสามารถดูข้อมูลได้อย่างเดียว</value>
+  </data>
+  <data name="MSG3145" xml:space="preserve">
+    <value>สถานะ Approval Request เป็น"อนุมัติเเล้ว" ผู้ใช้อื่นนอกจากผู้ดูเเลระบบจึงสามารถดูข้อมูลได้อย่างเดียว</value>
+  </data>
+  <data name="MSG3146" xml:space="preserve">
+    <value>สถานะของ Approval Request เป็น"ออกคำสั่งแล้ว" ผู้ใช้อื่นนอกจากผู้ดูเเลระบบจึงสามารถดูข้อมูลได้อย่างเดียว</value>
+  </data>
+  <data name="MSG3147" xml:space="preserve">
+    <value>สถานะของ Approval Request เป็น"ไม่อนุมัติ" ผู้ใช้อื่นนอกจากผู้ดูแลระบบจึงสามารถดูข้อมูลได้อย่างเดียว</value>
+  </data>
+  <data name="MSG3148" xml:space="preserve">
+    <value>ค่าเช่า/ค่าบริการถูกเปลี่ยนเเปลงไปแล้ว</value>
+  </data>
+  <data name="MSG3150" xml:space="preserve">
+    <value>ต้องมีลูกค้าสำหรับออกใบแจ้งหนี้สำหรับการชำระค่าบำรุงรักษาเพียง 1 รายเท่านั้น</value>
+  </data>
+  <data name="MSG3151" xml:space="preserve">
+    <value>มีการเปลี่ยนแปลงวิธีการเรียกเก็บค่าบำรุงรักษา กรุณาอย่าลืมเข้าไปเปลี่ยนค่าบริการในโมดูล Billing ด้วย</value>
+  </data>
+  <data name="MSG3152" xml:space="preserve">
+    <value>คุณไม่ได้รับอนุญาตให้เปิดหน้าจอ "รายการสำหรับผู้ดูแลระบบ" ได้</value>
+  </data>
+  <data name="MSG3153" xml:space="preserve">
+    <value>มีการเปลี่ยนแปลงค่าบำรุงรักษา กรุณาบันทึกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3154" xml:space="preserve">
+    <value>วันที่ยกเลิกสัญญาต้องไม่เป็นวันที่ในอนาคต</value>
+  </data>
+  <data name="MSG3155" xml:space="preserve">
+    <value>วันที่ยกเลิกสัญญาต้องไม่ใช่วันที่ก่อนวันที่ดำเนินการแก้ไข</value>
+  </data>
+  <data name="MSG3156" xml:space="preserve">
+    <value>เลขที่สัญญา {0} ถูกระงับแล้ว</value>
+  </data>
+  <data name="MSG3157" xml:space="preserve">
+    <value>วันที่หยุดใช้บริการต้องไม่ใช่วันที่ในอนาคต</value>
+  </data>
+  <data name="MSG3158" xml:space="preserve">
+    <value>วันที่หยุดใช้บริการต้องเป็นวันที่ก่อนหน้าไม่เกิน 1 ปีนับจากวันนี้</value>
+  </data>
+  <data name="MSG3159" xml:space="preserve">
+    <value>วันที่คาดว่าจะกลับมาใช้บริการใหม่ห่างจากวันที่หยุดใช้บริการ 6 เดือนหรือมากกว่า คุณต้องการดำเนินการต่อหรือไม่</value>
+  </data>
+  <data name="MSG3160" xml:space="preserve">
+    <value>ไม่สามารถบันทึกได้ เนื่องจากสัญญายังไม่ได้รับการอนุมัติ</value>
+  </data>
+  <data name="MSG3161" xml:space="preserve">
+    <value>ไม่สามารถออกกำหนดการบำรุงรักษาได้เนื่องจากประเภทการขายไม่ใช่สัญญาบริการบำรุงรักษาหรือสัญญาเช่าอุปกรณ์เตือนภัย</value>
+  </data>
+  <data name="MSG3162" xml:space="preserve">
+    <value>ไม่มีข้อมูลที่จะบันทึกในรายการ</value>
+  </data>
+  <data name="MSG3163" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ซ้ำ กรุณาเลือกอุปกรณ์อื่น</value>
+  </data>
+  <data name="MSG3164" xml:space="preserve">
+    <value>ต้องใส่ข้อมูลพนักงานขายตามลำดับ</value>
+  </data>
+  <data name="MSG3165" xml:space="preserve">
+    <value>ระยะเวลาการรับประกัน (ตั้งแต่) ต้องเป็นวันที่หลังจากหรือเป็นวันเดียวกับวันส่งมอบสินค้า</value>
+  </data>
+  <data name="MSG3166" xml:space="preserve">
+    <value>ระยะเวลาการรับประกัน (ตั้งแต่) ต้องมากกว่าระยะเวลาการรับประกัน (จนถึง) </value>
+  </data>
+  <data name="MSG3167" xml:space="preserve">
+    <value>สถานะของสัญญานี้ไม่สามารถดำเนินการเปิดใช้บริการหรือกลับมาใช้บริการใหม่ได้</value>
+  </data>
+  <data name="MSG3168" xml:space="preserve">
+    <value>ข้อมูลสัญญาขายของ OCC ล่าสุดต้องเป็น "ขายใหม่" หรือ "ขายเพิ่ม"</value>
+  </data>
+  <data name="MSG3169" xml:space="preserve">
+    <value>วันที่เปิดใช้บริการ/วันที่กลับมาใช้บริการใหม่ต้องผ่านมาไม่เกิน 1 ปี</value>
+  </data>
+  <data name="MSG3170" xml:space="preserve">
+    <value>สำหรับสัญญาบริการบำรุงรักษา วันที่เปิดใช้บริการและวันที่กลับมาใช้บริการใหม่ต้องเป็นเดือนปัจจุบัน</value>
+  </data>
+  <data name="MSG3171" xml:space="preserve">
+    <value>ไม่สามารถเปิดใช้บริการได้เนื่องจากการติดตั้งยังไม่เสร็จสิ้น</value>
+  </data>
+  <data name="MSG3172" xml:space="preserve">
+    <value>ไม่สามารถเปิดใช้บริการได้เนื่องจากยังไม่ได้รับใบสั่งซื้อหรือใบสัญญาและยังไม่ได้ใส่เลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3173" xml:space="preserve">
+    <value>ไม่สามารถเปิดใช้บริการได้เนื่องจากสัญญาที่จะบำรุงรักษายังไม่ได้เปิดใช้บริการทั้งหมด</value>
+  </data>
+  <data name="MSG3174" xml:space="preserve">
+    <value>ไม่สามารถเปิดใช้บริการบางส่วนได้เนื่องจากไม่ใช่สัญญาเช่าอุปกรณ์เตือนภัย</value>
+  </data>
+  <data name="MSG3175" xml:space="preserve">
+    <value>ไม่สามารถกลับมาใช้บริการใหม่ได้เนื่องจากการติดตั้งยังไม่เสร็จสิ้น</value>
+  </data>
+  <data name="MSG3176" xml:space="preserve">
+    <value>ไม่สามารถกลับมาใช้บริการใหม่ได้เนื่องจากยังไม่มีการหยุดใช้บริการ</value>
+  </data>
+  <data name="MSG3177" xml:space="preserve">
+    <value>คุณใส่วันที่เปิดใช้บริการ/วันที่กลับมาใช้บริการใหม่ด้วยวันที่ที่ผ่านมาแล้วเกิน 3 เดือน ต้องการดำเนินการต่อหรือไม่</value>
+  </data>
+  <data name="MSG3179" xml:space="preserve">
+    <value>ไม่สามารถรับเอกสารสัญญาที่ยังไม่ได้ดำเนินการออกเอกสารได้</value>
+  </data>
+  <data name="MSG3180" xml:space="preserve">
+    <value>วันที่คาดว่าจะทำการซ่อมบำรุงถูกบันทึกเป็นวันที่ในอดีต</value>
+  </data>
+  <data name="MSG3181" xml:space="preserve">
+    <value>มีการเปลี่ยนแปลงค่าบำรุงรักษาหลังจากส่งใบแจ้งหนี้ไปแล้ว กรุณาอย่าลืมเข้าไปเปลี่ยนแปลงค่าบริการในโมดูล Billing ด้วย</value>
+  </data>
+  <data name="MSG3182" xml:space="preserve">
+    <value>วันที่คาดว่าจะกลับมาใช้บริการใหม่ต้องเป็นวันที่เดียวกันหรือหลังจากวันที่หยุดใช้บริการ</value>
+  </data>
+  <data name="MSG3183" xml:space="preserve">
+    <value>มีการกำหนดผู้รับผิดชอบของแผนกไว้มากกว่า 1 คน กรุณาติดต่อแผนกที่รับผิดชอบ (แผนกบุคคล)</value>
+  </data>
+  <data name="MSG3184" xml:space="preserve">
+    <value>ยังไม่กำหนดผู้รับผิดชอบของแผนก กรุณาติดต่อแผนกที่รับผิดชอบ (แผนกบุคคล)</value>
+  </data>
+  <data name="MSG3185" xml:space="preserve">
+    <value>วันที่หยุดใช้บริการต้องไม่ใช่วันที่ก่อนวันที่ดำเนินการแก้ไขล่าสุด</value>
+  </data>
+  <data name="MSG3186" xml:space="preserve">
+    <value>ชื่อบริษัท {0} มีอยู่ในรายการแล้ว</value>
+  </data>
+  <data name="MSG3187" xml:space="preserve">
+    <value>ชื่อระบบ (สินค้า) {0} มีอยู่ในรายการแล้ว</value>
+  </data>
+  <data name="MSG3188" xml:space="preserve">
+    <value>พนักงานซัพพอร์ต {0} มีอยู่ในรายการแล้ว</value>
+  </data>
+  <data name="MSG3189" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะไม่อนุมัติสัญญา</value>
+  </data>
+  <data name="MSG3190" xml:space="preserve">
+    <value>ไม่สามารถสร้างเลขที่เหตุการณ์ได้เนื่องจากไม่มีข้อมูลสัญญาอยู่</value>
+  </data>
+  <data name="MSG3191" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะตีกลับคำขอ</value>
+  </data>
+  <data name="MSG3192" xml:space="preserve">
+    <value>ไม่สามารถสร้างเลขที่ขออนุมัติได้เนื่องจากไม่มีข้อมูลสัญญาในระบบ</value>
+  </data>
+  <data name="MSG3193" xml:space="preserve">
+    <value>ไม่สามารถลบกำหนดการบำรุงรักษาได้ เนื่องจากมีข้อมูลผลการตรวจสอบบางรายการถูกบันทึกไว้แล้วในรอบเดียวกัน</value>
+  </data>
+  <data name="MSG3194" xml:space="preserve">
+    <value>มี User code/รหัสสัญญา {0} อยู่ในรายการเเล้ว กรุณาเลือกสัญญาอื่น</value>
+  </data>
+  <data name="MSG3195" xml:space="preserve">
+    <value>ข้อมูลลูกค้าสำหรับออกใบแจ้งหนี้ผิดพลาด ลูกค้าสำหรับออกใบแจ้งหนี้ที่ชำระค่าบริการเป็นรายครั้งสามารถบันทึกได้เพียงรายเดียว</value>
+  </data>
+  <data name="MSG3196" xml:space="preserve">
+    <value>ไม่สามารถใส่ข้อมูลวันที่คาดว่าจะเปิดใช้บริการได้ในกรณีที่ประเภทการเปลี่ยนเเปลงของสัญญาไม่ใช่หยุดใช้บริการ</value>
+  </data>
+  <data name="MSG3197" xml:space="preserve">
+    <value>ไม่สามารถใส่ข้อมูลวันที่กลับไปใช้ข้อมูลเก่าได้ในกรณีที่ประเภทการเปลี่ยนเเปลงไม่ใช่เปลี่ยนเเปลงราคา</value>
+  </data>
+  <data name="MSG3198" xml:space="preserve">
+    <value>ไม่สามารถบันทึกโครงการเสร็จสิ้นขั้นสุดท้ายได้เพราะเลขที่สัญญา {0} ยังไม่เปิดใช้บริการ</value>
+  </data>
+  <data name="MSG3199" xml:space="preserve">
+    <value>เลขที่โครงการนี้ถูกบันทึกไว้เป็นโครงการเสร็จสิ้นขั้นสุดท้ายเเล้วจึงไม่สามารถบันทึกเป็นโครงการเสร็จสิ้นขั้นสุดท้ายได้อีก</value>
+  </data>
+  <data name="MSG3200" xml:space="preserve">
+    <value>โครงการนี้ถูกบันทึกยกเลิกเเล้วจึงไม่สามารถบันทึกเป็นโครงการเสร็จสิ้นขั้นสุดท้ายได้อีก</value>
+  </data>
+  <data name="MSG3201" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกโครงการได้ เพราะรหัสสัญญา {0} ยังไม่ถูกยกเลิก</value>
+  </data>
+  <data name="MSG3202" xml:space="preserve">
+    <value>เลขที่โครงการนี้ถูกบันทึกไว้เป็นโครงการเสร็จสิ้นขั้นสุดท้ายเเล้วจึงไม่สามารถยกเลิกโครงการได้</value>
+  </data>
+  <data name="MSG3203" xml:space="preserve">
+    <value>เลขที่โครงการนี้ถูกบันทึกยกเลิกเเล้วจึงไม่สามารถทำการยกเลิกโครงการได้</value>
+  </data>
+  <data name="MSG3204" xml:space="preserve">
+    <value>ใบเสนอราคา {0} ไม่มีรหัสสถานที่ตั้งเดียวกันกับในสัญญา {1}</value>
+  </data>
+  <data name="MSG3205" xml:space="preserve">
+    <value>วันที่คาดว่าจะติดตั้งเสร็จต้องไม่เป็นวันที่ในอดีต</value>
+  </data>
+  <data name="MSG3206" xml:space="preserve">
+    <value>วันที่คาดว่าจะติดตั้งเสร็จต้องเป็นวันที่ไม่เกิน 3 ปีต่อจากนี้</value>
+  </data>
+  <data name="MSG3207" xml:space="preserve">
+    <value>วันที่คาดว่าจะส่งมอบต้องไม่เป็นวันที่ในอดีต</value>
+  </data>
+  <data name="MSG3208" xml:space="preserve">
+    <value>วันที่คาดว่าจะส่งมอบต้องเป็นวันที่ไม่เกิน 3 ปีต่อจากนี้ไป</value>
+  </data>
+  <data name="MSG3209" xml:space="preserve">
+    <value>จำเป็นต้องใส่ข้อมูลสถานที่ติดตั้งดังต่อไปนี้: {0}</value>
+  </data>
+  <data name="MSG3210" xml:space="preserve">
+    <value>กรุณาเลือกวิธีการชำระเงินของราคาขายที่เรียกเก็บจากลูกค้าเมื่ออนุมัติสัญญา</value>
+  </data>
+  <data name="MSG3211" xml:space="preserve">
+    <value>กรุณาเลือกวิธีการชำระเงินของราคาแบ่งจ่ายที่เรียกเก็บจากลูกค้า</value>
+  </data>
+  <data name="MSG3212" xml:space="preserve">
+    <value>กรุณาเลือกวิธีการชำระเงินของราคาขายที่เรียกเก็บจากลูกค้าเมื่อส่งมอบ</value>
+  </data>
+  <data name="MSG3213" xml:space="preserve">
+    <value>มีการเลือกตัวเลือกเชื่อมต่อกับสัญญาบริการ Online ไว้ กรุณาระบุเลขที่สัญญา</value>
+  </data>
+  <data name="MSG3214" xml:space="preserve">
+    <value>มีการเลือกสัญญาขายอุปกรณ์เสริมไว้แล้ว กรุณาระบุสัญญาขายอุปกรณ์หลัก</value>
+  </data>
+  <data name="MSG3215" xml:space="preserve">
+    <value>สัญญาขายอุปกรณ์หลักถูกยกเลิกแล้ว</value>
+  </data>
+  <data name="MSG3216" xml:space="preserve">
+    <value>กรุณากรอกเลขที่โครงการที่เมนูหลักก่อนเปิดหน้าจอนี้</value>
+  </data>
+  <data name="MSG3217" xml:space="preserve">
+    <value>มีข้อมูลเอกสารสัญญาซ้ำกัน</value>
+  </data>
+  <data name="MSG3218" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดบางประการขึ้น&lt;br/&gt;
+บันทึกเอกสารสัญญาต่อไปนี้สำเร็จเเล้ว:&lt;br/&gt; {0}&lt;br/&gt;
+ไม่ได้บันทึกเอกสารสัญญาต่อไปนี้:&lt;br/&gt; {1}</value>
+  </data>
+  <data name="MSG3219" xml:space="preserve">
+    <value>มีการถอดอุปกรณ์ จำเป็นต้องกรอกค่าถอดอุปกรณ์</value>
+  </data>
+  <data name="MSG3227" xml:space="preserve">
+    <value>ไม่สามารถยกเลิกการเลือกประเภทการขออนุมัตินี้ได้ เพราะค้นหาหัวข้อการขออนุมัติของประเภทการขออนุมัตินี้ไม่พบ</value>
+  </data>
+  <data name="MSG3228" xml:space="preserve">
+    <value>ลูกค้ามีเลขประจำตัวประชาชนเหมือนกับผู้ทำสัญญาเเต่ ข้อมูลอื่นเเตกต่างกัน</value>
+  </data>
+  <data name="MSG3229" xml:space="preserve">
+    <value>ลูกค้ามีเลขประจำตัวประชาชนเหมือนผู้ซื้อ เเต่ข้อมูลอื่นเเตกต่างกัน</value>
+  </data>
+  <data name="MSG3230" xml:space="preserve">
+    <value>ไม่สามารถบันทึกลูกค้าสำหรับออกใบแจ้งหนี้ใหม่โดยกำหนดค่าเช่า/ค่าบริการเป็นศูนย์ได้</value>
+  </data>
+  <data name="MSG3043" xml:space="preserve">
+    <value>บันทึกสำเร็จ เเต่อีเมล์ที่ระบุไม่สามารถส่งได้ กรุณาจำวันที่สิ้นสุดการใช้ค่าเช่า/ค่าบริการราคานี้ไว้</value>
+  </data>
+  <data name="MSG3224" xml:space="preserve">
+    <value>กรณีที่เลขที่สัญญาเป้าหมายการซ่อมบำรุงเป็นสัญญาอุปกรณ์เตือนภัยหรือบริการ Online หรือเช่าอุปกรณ์ขายขาด จะบันทึกได้แค่สัญญาเดียวเท่านั้น</value>
+  </data>
+  <data name="MSG3232" xml:space="preserve">
+    <value>บันทึกเสร็จสิ้น เเต่อีเมล์ที่ระบุไม่สามารถส่งได้</value>
+  </data>
+  <data name="MSG3233" xml:space="preserve">
+    <value>ไม่สามารถบันทึกราคาขายได้ จำนวนเงินมีค่าสูงสุดในขอบเขตที่กำหนดไว้</value>
+  </data>
+  <data name="MSG3225" xml:space="preserve">
+    <value>มีการติดตั้งที่กำลังดำเนินการอยู่ กรุณาดำเนินการอีกครั้งหลังจากที่การติดตั้งเสร็จสิ้นหรือถูกยกเลิก</value>
+  </data>
+  <data name="MSG3226" xml:space="preserve">
+    <value>เลขประจำตัวประชาชน/เลขประจำตัวผู้เสียภาษีของผู้ทำสัญญา/ผู้ซื้อถูกเปลี่ยนเเปลงไป เเต่ชื่อสาขา/ที่อยู่สาขา/การติดต่อยังคงเป็นข้อมูลเดิม คุณต้องการดำเนินการต่อหรือไม่</value>
+  </data>
+  <data name="MSG0106" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG3234" xml:space="preserve">
+    <value>กรุณาระบุ OCC ของเอกสารสัญญา</value>
+  </data>
+  <data name="MSG3235" xml:space="preserve">
+    <value>ราคาขายที่ลูกค้าเซ็นมาไม่เท่ากับยอดรวมของราคาสินค้าที่ลูกค้าเซ็นมากับค่าติดตั้ง</value>
+  </data>
+  <data name="MSG3236" xml:space="preserve">
+    <value>ไม่สามารถบันทึก CP-15 ได้เนื่องจากสัญญาไม่ได้อยู่ในสถานะก่อนเปิดใช้บริการ</value>
+  </data>
+  <data name="MSG3237" xml:space="preserve">
+    <value>ไม่สามารถบันทึก CP-14 ได้เนื่องจากสัญญาไม่ได้อยู่ในสถานะหลังเปิดใช้บริการ</value>
+  </data>
+  <data name="MSG3036" xml:space="preserve">
+    <value>ไม่สามารถระบุตำแหน่งนี้ได้ ผู้อนุมัติและผู้ตรวจสอบสามารถมีเพียงรายเดียวในแต่ละตำแหน่ง</value>
+  </data>
+  <data name="MSG3073" xml:space="preserve">
+    <value>วันที่คาดว่าจะติดตั้งเสร็จสิ้นถูกบันทึกเป็นวันที่ในอดีต</value>
+  </data>
+  <data name="MSG3074" xml:space="preserve">
+    <value>ไม่สามารถขออนุมัติโดยใช้รหัสลูกค้าเพื่อเสนอราคาที่อนุมัติสัญญาไปแล้วได้</value>
+  </data>
+  <data name="MSG3096" xml:space="preserve">
+    <value>อนุมัติสำเร็จแล้ว เลขที่สัญญาคือ {0}</value>
+  </data>
+  <data name="MSG3098" xml:space="preserve">
+    <value>ไม่สามารถบันทึกได้ มีข้อมูลการติดตั้งพื้นฐานของเลขที่สัญญา {0} อยู่แล้วในระบบ</value>
+  </data>
+  <data name="MSG3139" xml:space="preserve">
+    <value>วันที่ดำเนินการเปลี่ยนเเปลงต้องต้องเป็นวันที่ก่อนหน้าหรือเป็นวันเดียวกับค่าของ OCC ก่อนหน้านี้</value>
+  </data>
+  <data name="MSG3149" xml:space="preserve">
+    <value>ต้องระบุผู้อนุมัติ</value>
+  </data>
+  <data name="MSG3220" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการบันทึกโครงการนี้เป็นโครงการเสร็จสิ้นขั้นสุดท้าย?</value>
+  </data>
+  <data name="MSG3221" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการยกเลิกโครงการนี้?</value>
+  </data>
+  <data name="MSG3222" xml:space="preserve">
+    <value>บันทึกโครงการนี้เป็นโครงการเสร็จสิ้นขั้นสุดท้ายสำเร็จแล้ว</value>
+  </data>
+  <data name="MSG3223" xml:space="preserve">
+    <value>ยกเลิกโครงการสำเร็จแล้ว</value>
+  </data>
+  <data name="MSG3231" xml:space="preserve">
+    <value>ไม่สามารถบันทึกได้เนื่องจากไม่มีข้อมูลราคาอยู่ในรายการ</value>
+  </data>
+  <data name="MSG3238" xml:space="preserve">
+    <value>OCC การรักษาความปลอดภัย {0} มีอยู่ในระบบแล้ว กรุณาเลือก OCC การรักษาความปลอดภัยอื่นที่ยังไม่มีในระบบ</value>
+  </data>
+  <data name="MSG3239" xml:space="preserve">
+    <value>มีการปรับเปลี่ยนราคาขายที่ลูกค้าเซ็นมาต่างไปจากเดิมมาก กรุณาตรวจสอบว่าเลขที่อนุมัติได้ถูกกรอกไว้แล้ว</value>
+  </data>
+  <data name="MSG3240" xml:space="preserve">
+    <value>ไม่สามารถบันทึกกลุ่มย่อยใหม่ได้เนื่องจากไม่มีข้อมูลรายละเอียดอุปกรณ์ในคลังสินค้า WIP ของโครงการ</value>
+  </data>
+  <data name="MSG3241" xml:space="preserve">
+    <value>ไม่สามารถบันทึกกลุ่มย่อยใหม่ได้เนื่องจากไม่มีข้อมูลจำนวนอุปกรณ์คงเหลือในข้อมูลรายละเอียดอุปกรณ์ในคลังสินค้า WIP ของโครงการ
+</value>
+  </data>
+  <data name="MSG3242" xml:space="preserve">
+    <value>ไม่มีข้อมูลพื้นฐานการเรียกเก็บสำหรับบันทึก</value>
+  </data>
+  <data name="MSG3243" xml:space="preserve">
+    <value>ไม่สามารถใช้รหัสลูกค้าเพื่อเสนอราคานี้ได้เนื่องจากอยู่ในสถานะรออนุมัติ หากต้องการแก้ไขข้อมูลกรุณาตีกลับร่างสัญญาก่อนแล้วจึงดำเนินการแก้ไข</value>
+  </data>
+  <data name="MSG3244" xml:space="preserve">
+    <value>ไม่สามารถใช้รหัสลูกค้าเพื่อเสนอราคานี้ได้เนื่องจากอยู่ในสถานะไม่อนุมัติ</value>
+  </data>
+  <data name="MSG3245" xml:space="preserve">
+    <value>ไม่สามารถใช้รหัสลูกค้าเพื่อเสนอราคานี้ได้เนื่องจากอยู่ในสถานะตีกลับ</value>
+  </data>
+  <data name="MSG3246" xml:space="preserve">
+    <value>ไม่สามารถใช้รหัสลูกค้าเพื่อเสนอราคานี้ได้เนื่องจากอยู่ในสถานะอนุมัติแล้ว</value>
+  </data>
+  <data name="MSG3247" xml:space="preserve">
+    <value>พนักงานขายซ้ำกันอยู่</value>
+  </data>
+  <data name="MSG3248" xml:space="preserve">
+    <value>ข้อมูลสถานที่ติดตั้งของสินค้าซีคอมไม่ถูกต้อง กรุณาตรวจสอบข้อมูลผู้ใช้สถานที่ติดตั้ง/สถานที่ติดตั้งใหม่</value>
+  </data>
+  <data name="MSG3249" xml:space="preserve">
+    <value>ราคาขายที่ลูกค้าเซ็นมาถูกบันทึกไว้เป็น 0 กรุณาตรวจสอบว่าเลขที่อนุมัติได้ถูกกรอกไว้แล้ว</value>
+  </data>
+  <data name="MSG3250" xml:space="preserve">
+    <value>หากกดปุ่ม "ใช่" แล้วระบบจะดำเนินการสร้างเลขที่สัญญา คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG3251" xml:space="preserve">
+    <value>รอบการเรียกเก็บน้อยกว่า 3 เดือนกรุณากรอกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3252" xml:space="preserve">
+    <value>ไม่สามารถบันทึก{0}ได้ จำนวนเงินมีค่าสูงสุดในขอบเขตที่กำหนดไว้</value>
+  </data>
+  <data name="MSG3260" xml:space="preserve">
+    <value>เลขที่โครงการ {0} ยังไม่ได้บันทึกโครงการเสร็จสิ้นทั้งหมด กรุณากรอกเลขที่สัญญาอื่น</value>
+  </data>
+  <data name="MSG3261" xml:space="preserve">
+    <value>สถานที่ติดตั้งของสัญญาที่จะบำรุงรักษาไม่ตรงกับสถานที่ติดตั้งของสัญญาบริการบำรุงรักษา</value>
+  </data>
+  <data name="MSG3253" xml:space="preserve">
+    <value>ลูกค้าสำหรับออกใบแจ้งหนี้อยู่ในระหว่างการบันทึกหรือแก้ไข กรุณากดปุ่ม 'เพิ่ม/ปรับปรุง' หรือ 'ยกเลิก' ก่อน</value>
+  </data>
+  <data name="MSG3254" xml:space="preserve">
+    <value>ไม่สามารถบันทึกเลขที่สัญญาขายใน 'โอนค่ามัดจำจากสัญญาเลขที่' ได้</value>
+  </data>
+  <data name="MSG3255" xml:space="preserve">
+    <value>ระยะเวลาการชำระเงินมีค่ามากกว่า 0 กรุณากรอกเลขที่อนุมัติ</value>
+  </data>
+  <data name="MSG3256" xml:space="preserve">
+    <value>ไม่มีการกรอกข้อมูลที่จำเป็นต้องกรอกในส่วนของ 'ผู้ทำสัญญา/ผู้ซื้อ' กรุณากดปุ่ม 'สร้าง/แก้ไขข้อมูลลูกค้า' เพื่อทำการบันทึกข้อมูล</value>
+  </data>
+  <data name="MSG3257" xml:space="preserve">
+    <value>ไม่มีการกรอกข้อมูลที่จำเป็นต้องกรอกในส่วนของ 'ผู้ใช้สถานที่ติดตั้ง' กรุณากดปุ่ม 'สร้าง/แก้ไขข้อมูลลูกค้า' เพื่อทำการบันทึกข้อมูล</value>
+  </data>
+  <data name="MSG3258" xml:space="preserve">
+    <value>ไม่มีการกรอกข้อมูลที่จำเป็นต้องกรอกในส่วนของ 'สถานที่ติดตั้ง' กรุณากดปุ่ม 'สร้าง/แก้ไขข้อมูลสถานที่ติดตั้ง' เพื่อทำการบันทึข้อมูล</value>
+  </data>
+  <data name="MSG3259" xml:space="preserve">
+    <value>สัญญานี้มีการบันทึกลูกค้าสำหรับออกใบแจ้งหนี้ของค่าเช่า/ค่าบริการ/ค่าบำรุงรักษา/ค่าบริการพนักงานรักษาความปลอดภัยหลายราย กรุณาบันทึกข้อมูลการเริ่มให้บริการโดยไม่ต้องกรอกช่องปรับช่วงเวลาเรียกเก็บ</value>
+  </data>
+  <data name="MSG3262" xml:space="preserve">
+    <value>โปรแกรมไม่อนุญาตให้เปลี่ยนสถานที่ติดตั้งของสัญญาที่จะบำรุงรักษาหรือสัญญาบริการบำรุงรักษา</value>
+  </data>
+  <data name="MSG3263" xml:space="preserve">
+    <value>ไม่สามารถบันทึกเลขที่สัญญาขาย/เลขที่สัญญาการบำรุงรักษา/เลขที่สัญญาการเฝ้ายามใน 'เลขที่สัญญาที่เชื่อมต่อ' ได้</value>
+  </data>
+  <data name="MSG3264" xml:space="preserve">
+    <value>บันทึกสัญญาเช่าใหม่เสร็จสิ้น</value>
+  </data>
+  <data name="MSG3265" xml:space="preserve">
+    <value>บันทึกสัญญาขายใหม่เสร็จสิ้น</value>
+  </data>
+  <data name="MSG3267" xml:space="preserve">
+    <value>บันทึกเสร็จสิ้น เเต่อีเมล์ไม่สามารถส่งได้</value>
+  </data>
+  <data name="MSG3268" xml:space="preserve">
+    <value>ไม่สามารถเปิดใช้บริการบางส่วนได้เนื่องจากสัญญาได้มีการบันทึกเริ่มให้บริการ/เริ่มให้บริการบางส่วน</value>
+  </data>
+  <data name="MSG3269" xml:space="preserve">
+    <value>เกิดข้อผิดพลาดขึ้น กระบวนการสร้างใบตรวจสอบบำรุงรักษาหยุดกระทันหัน ระบบจะสร้างสลิปจนถึงจุดที่เกิดข้อผิดพลาด กรุณากดปุ่ม [รายละเอียด &gt;&gt;] เพื่อดูรายละเอียดของข้อผิดพลาด</value>
+  </data>
+  <data name="MSG3270" xml:space="preserve">
+    <value>ค่าเช่า/ค่าบริการที่ลูกค้าเซ็นมาถูกบันทึกไว้เป็น 0 กรุณาตรวจสอบอีกครั้ง หากได้รับการอนุมัติแล้วจึงจะสามารถปรับปรุงได้</value>
+  </data>
+  <data name="MSG3271" xml:space="preserve">
+    <value>มีการปรับเปลี่ยนค่าเช่า/ค่าบริการที่ลูกค้าเซ็นมาต่างไปจากเดิมมาก กรุณาตรวจสอบอีกครั้ง หากได้รับการอนุมัติแล้วจึงจะสามารถปรับปรุงได้</value>
+  </data>
+  <data name="MSG3272" xml:space="preserve">
+    <value>สัญญานี้อยู่ระหว่างการเปิดใช้บริการบางส่วน ไม่สามารถปรับจำนวนอุปกรณ์จากการตรวจสอบในสถานที่ติดตั้งจริงระหว่างการเปิดใช้บริการบางส่วนได้</value>
+  </data>
+  <data name="MSG3266" xml:space="preserve">
+    <value>กรุณากรอกค่า {0} มากกว่า 0</value>
+  </data>
+  <data name="MSG3273" xml:space="preserve">
+    <value>พนักงานที่ติดต่อกับลูกค้าซ้ำกัน</value>
+  </data>
+  <data name="MSG3274" xml:space="preserve">
+    <value>ไม่สามารถเปลี่ยนเลขที่โครงการได้เนื่องจากสัญญานี้มีข้อมูลการติดตั้งอยู่</value>
+  </data>
+  <data name="MSG3275" xml:space="preserve">
+    <value>ไม่สามารถระบุพนักงานรายนี้ได้ ต้องระบุหัวหน้าผู้รับผิดชอบเหตุการณ์ก่อน</value>
+  </data>
+  <data name="MSG3276" xml:space="preserve">
+    <value>ไม่สามารถระบุผู้รับผิดชอบอื่น ๆ ได้ เนื่องจากยังไม่ได้ระบุหัวหน้าผู้รับผิดชอบเหตุการณ์</value>
+  </data>
+  <data name="MSG3277" xml:space="preserve">
+    <value>ไม่สามารถบันทึกเหตุการณ์ได้ ต้องระบุหัวหน้าผู้รับผิดชอบเหตุการณ์คนใหม่ แทนที่คนเดิม</value>
+  </data>
+  <data name="MSG3278" xml:space="preserve">
+    <value>ไม่สามารถเปิดหน้าจอได้เนื่องจากเลขที่สัญญาที่ระบุเป็นสัญญาขาย</value>
+  </data>
+  <data name="MSG3279" xml:space="preserve">
+    <value>เลขที่สัญญาที่เชื่อมต่อ {0} ไม่มีในระบบ กรุณาระบุเลขที่สัญญาใหม่</value>
+  </data>
+  <data name="MSG3280" xml:space="preserve">
+    <value>เลขที่สัญญาที่เชื่อมต่อ {0} ไม่ใช่เลขที่สัญญาบริการ Online กรุณาระบุเลขที่สัญญาใหม่</value>
+  </data>
+  <data name="MSG3281" xml:space="preserve">
+    <value>เลขที่สัญญาสำหรับโอนค่ามัดจำต้องไม่ใช่เลขที่สัญญาเดียวกับที่กำลังทำรายการอยู่</value>
+  </data>
+  <data name="MSG3282" xml:space="preserve">
+    <value>ขอบเขตของระยะเวลาที่ระบุทับซ้อนกับระยะเวลาที่บันทึกไว้ คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG3283" xml:space="preserve">
+    <value>สัญญานี้ไม่ได้อยู่ระหว่างการให้บริการ</value>
+  </data>
+  <data name="MSG3284" xml:space="preserve">
+    <value>มีการบันทึกข้อมูลแผนการติดตั้งเรียบร้อยแล้ว หากคุณต้องการปรับจำนวนอุปกรณ์จากการตรวจสอบในสถานที่ติดตั้งจริง กรุณายกเลิกหรือบันทึกเสร็จสิ้นการติดตั้งนี้ก่อน</value>
+  </data>
+  <data name="MSG3285" xml:space="preserve">
+    <value>มีการบันทึกข้อมูลแผนการเปลี่ยนแปลนเรียบร้อยแล้ว หากคุณต้องการปรับจำนวนอุปกรณ์จากการตรวจสอบในสถานที่ติดตั้งจริง กรุณายกเลิกหรือบันทึกเสร็จสิ้นการติดตั้งนี้ก่อน</value>
+  </data>
+  <data name="MSG3286" xml:space="preserve">
+    <value>ไม่สามารถปรับจำนวนอุปกรณ์จากการตรวจสอบในสถานที่ติดตั้งจริงด้วยเลขที่สัญญา MA หรือ SG ได้</value>
+  </data>
+  <data name="MSG3287" xml:space="preserve">
+    <value>จำนวนเงินรายเดือนเกินกว่าค่าสูงสุดที่กรอกได้ ({0})</value>
+  </data>
+  <data name="MSG3288" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการขณะที่ให้บริการบางส่วนได้</value>
+  </data>
+  <data name="MSG3289" xml:space="preserve">
+    <value>ไม่สามารถลบ OCC ล่าสุดด้วยฟังก์ชั่นนี้ได้เนื่องจากเป็น OCC ที่ยังไม่เปิดใช้บริการ หากต้องการยกเลิกสัญญาที่ยังไม่เปิดใช้บริการ กรุณาดำเนินการที่หน้าจอ CP-12 เพื่อยกเลิกสัญญาที่ยังไม่เปิดใช้บริการ</value>
+  </data>
+  <data name="MSG3290" xml:space="preserve">
+    <value>กรุณาระบุลูกค้าสำหรับออกใบแจ้งหนี้สำหรับการชำระค่าถอดอุปกรณ์</value>
+  </data>
+  <data name="MSG3291" xml:space="preserve">
+    <value>ต้องแก้ไขข้อมูลอย่างน้อยหนึ่งรายการ</value>
+  </data>
+  <data name="MSG3292" xml:space="preserve">
+    <value>กรุณาตรวจสอบว่าจำเป็นต้องมีการเปลี่ยนแปลงข้อมูลการเรียกเก็บเงินหรือไม่</value>
+  </data>
+  <data name="MSG3293" xml:space="preserve">
+    <value>เลขที่สัญญาที่ระบุมีข้อมูลการติดตั้งที่กำลังดำเนินการอยู่ กรุณาลบ OCC หลังจากตรวจสอบเนื้อหาการติดตั้งและยกเลิกการติดตั้งแล้ว</value>
+  </data>
+  <data name="MSG3294" xml:space="preserve">
+    <value>ต้องทำการบันทึกข้อมูลพนักงานที่ติดต่อกับลูกค้าตามลำดับตั้งแต่พนักงานที่ติดต่อกับลูกค้า 1 เป็นต้นไป</value>
+  </data>
+  <data name="MSG3295" xml:space="preserve">
+    <value>มีอุปกรณ์บางชิ้นที่ประเภทการใช้งานเป็น 'ลบ (ทางลอจิคอล)'</value>
+  </data>
+  <data name="MSG3296" xml:space="preserve">
+    <value>มีอุปกรณ์บางชิ้นที่ประเภทการใช้งานเป็น 'ใช้ชั่วคราว', 'ใช้ครั้งเดียว', 'ลบ (ทางลอจิคอล)'</value>
+  </data>
+  <data name="MSG3297" xml:space="preserve">
+    <value>ไม่สามารถเปิดใช้บริการได้เนื่องจากสัญญาขายที่ใช้อ้างถึงยังไม่เสร็จสิ้นการติดตั้ง</value>
+  </data>
+  <data name="MSG3298" xml:space="preserve">
+    <value>วันที่คาดว่าจะเปิดใช้บริการต้องไม่ใช่วันที่ก่อนวันที่เปิดใช้บริการครั้งล่าสุด</value>
+  </data>
+  <data name="MSG3299" xml:space="preserve">
+    <value>วันที่คาดว่าจะเปิดใช้บริการต้องไม่ใช่วันที่ในอนาคต</value>
+  </data>
+  <data name="MSG3300" xml:space="preserve">
+    <value>สัญญาเลขที่ {0} สิ้นสุดสัญญาแล้ว กรุณาตรวจสอบข้อมูลใหม่อีกครั้ง</value>
+  </data>
+  <data name="MSG3301" xml:space="preserve">
+    <value>ไม่สามารถบันทึกผู้ตรวจสอบเพียงอย่างเดียวได้ คุณต้องบันทึกผู้อนุมัติก่อน</value>
+  </data>
+  <data name="MSG3302" xml:space="preserve">
+    <value>ไม่สามารถบันทึกข้อมูลผู้รับอีเมล์มากกว่า 8 รายได้</value>
+  </data>
+  <data name="MSG3303" xml:space="preserve">
+    <value>ไม่สามารถบันทึกโดยขอให้มีการตรวจสอบได้ คุณต้องบันทึกผู้ตรวจสอบก่อน</value>
+  </data>
+  <data name="MSG3304" xml:space="preserve">
+    <value>ไม่พบอีเมล์ของ {0} ซึ่งเป็นผู้รับผิดชอบเรื่องสำคัญ กรุณาติดต่อผู้ดูแลระบบเพื่อบันทึกข้อมูลอีเมล์ของผู้รับผิดชอบเรื่องสำคัญหรือกดปุ่ม "ใช่" เพื่อบันทึกเหตุการณ์นี้โดยไม่ต้องส่งอีเมล์</value>
+  </data>
+  <data name="MSG3305" xml:space="preserve">
+    <value>ไม่พบอีเมล์ของ {0} ซึ่งเป็นผู้รับผิดชอบที่ระบุกรุณาติดต่อผู้ดูแลระบบเพื่อบันทึกข้อมูลอีเมล์ของผู้รับผิดชอบ หรือกดปุ่ม "ใช่" เพื่อบันทึกการขออนุมัตินี้โดยไม่ต้องส่งอีเมล์</value>
+  </data>
+  <data name="MSG3306" xml:space="preserve">
+    <value>ไม่สามารถบันทึกยืนยันยกเลิกการเช่าอุปกรณ์เตือนภัยได้เนื่องจากสัญญานี้ได้ถูกยกเลิกก่อนเปิดใช้บริการแล้ว</value>
+  </data>
+  <data name="MSG3307" xml:space="preserve">
+    <value>หนังสือยืนยันการเริ่มเช่าอุปกรณ์เตือนภัยยังไม่ได้รับ ต้องการดำเนินการต่อหรือไม่</value>
+  </data>
+  <data name="MSG3308" xml:space="preserve">
+    <value>ไม่สามารถบันทึกค่าปรับช่วงเวลาเรียกเก็บน้อยกว่าวันที่เปิดใช้บริการ/วันที่กลับมาใช้บริการใหม่ได้</value>
+  </data>
+  <data name="MSG3309" xml:space="preserve">
+    <value>ไม่สามารถบันทึกได้เนื่องจากการสถานะติดตั้งไม่ใช่ '00: ยังไม่บันทึกการติดตั้ง'</value>
+  </data>
+  <data name="MSG3310" xml:space="preserve">
+    <value>วันเปิดใช้บริการครั้งแรกต้องไม่มากกว่าวันที่ดำเนินการแก้ไขของ OCC ถัดไป ({0})</value>
+  </data>
+  <data name="MSG3311" xml:space="preserve">
+    <value>เดือนของวันเปิดใช้บริการครั้งแรกต้องไม่เปลี่ยนแปลง</value>
+  </data>
+  <data name="MSG3312" xml:space="preserve">
+    <value>คุณไม่ใช่ผู้อนุมัติ</value>
+  </data>
+  <data name="MSG3313" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ที่จะถอนตัวเองจากผู้อนุมัติ</value>
+  </data>
+</root>

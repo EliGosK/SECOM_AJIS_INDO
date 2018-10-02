@@ -1,0 +1,288 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@{
+    ViewBag.LabelWidth = "220px";
+    ViewBag.RightLabelWidth = "355px";
+    ViewBag.ObjectWidth = "180px";
+    ViewBag.ObjectComboWidth = "184px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS180/CTS180_02.js")" ></script>
+
+<div id="divContractReport" class="main-table" style="display:none">   
+    <div class="table-header">
+        <div class="usr-label">
+            @Resources.CTS180.lblTitleContractReport
+        </div>                                  
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblContractCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("CT_ContractCodeShort", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", @readonly = "readonly" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+            @Resources.CTS180.lblDocumentLanguage
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("CT_DocumentLanguage", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "50", @readonly = "readonly" })
+            @Html.Hidden("C_DOC_LANGUAGE_EN", (string)@SECOM_AJIS.Common.Util.ConstantValue.DocLanguage.C_DOC_LANGUAGE_EN)
+            @Html.Hidden("C_DOC_LANGUAGE_TH", (string)@SECOM_AJIS.Common.Util.ConstantValue.DocLanguage.C_DOC_LANGUAGE_TH)
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblContractTargetName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CT_ContractTargetName", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "200", @readonly = "readonly" })
+        </div>                   
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblRealCustomerName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CT_RealCustomerName", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "200" })
+        </div>                    
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblSiteNameEN
+        </div> 
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CT_SiteNameEN", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "200" })
+        </div>            
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblSiteNameLC
+        </div> 
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CT_SiteNameLC", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "200" })
+        </div>            
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblSiteAddress
+        </div> 
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextBox("CT_SiteAddress", null, new { style = "width:" + @ViewBag.ObjectColMergeWidth + ";", maxlength = "255" })
+        </div>            
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblPlanCode
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.CommonTextBox("CT_PlanCode", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "20" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+            @Resources.CTS180.lblSystemName
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectComboWidth;">
+            @Html.SystemProduct("CT_SystemProduct", new { style = "height: 22px; width:" + @ViewBag.ObjectComboWidth + ";" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblLineType
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.PhoneLineTypeComboBox("CT_LineType", new { style = "height: 22px; width:" + @ViewBag.ObjectComboWidth + ";" })
+        </div>
+        <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+            @Resources.CTS180.lblTelephoneOwner
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectComboWidth;">
+            @Html.PhoneLineOwnerTypeComboBox("CT_TelephoneOwner", new { style = "height: 22px; width:" + @ViewBag.ObjectComboWidth + ";" })
+        </div>
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblProvidedService
+        </div>
+        <div class="usr-object" style="width:200px; text-align:left">
+            @Html.CommonCheckButton("chkFireMonitoring", @Resources.CTS180.lblFireMonitoringService, null, false)
+        </div>
+        <div class="usr-object" style="width:200px; text-align:left">
+            @Html.CommonCheckButton("chkCrimePrevention", @Resources.CTS180.lblCrimePreventionService, null, false)
+        </div>
+        <div class="usr-object" style="width:200px; text-align:left">
+            @Html.CommonCheckButton("chkEmergencyReport", @Resources.CTS180.lblEmergencyReportService, null, false)
+        </div>
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+
+    <div id="divContractReportList" class="main-table" >
+         @Html.Hidden("CanEditFee", (bool)@ViewBag.CanEditFee)
+        <div class="usr-row">
+            <div class="usr-object custom-table" style="width:100%;">
+                <table cellpadding="0" cellspacing="0">
+                    <tr class="hdr">
+                        <td style="width:150px;">&nbsp;</td>
+                        <td style="width:205px;">@Html.Raw(Resources.CTS180.headerOrder)</td>
+                        <td style="width:205px;">@Html.Raw(Resources.CTS180.headerApproveContract)</td>
+                        <td style="width:205px;">@Html.Raw(Resources.CTS180.headerCompleteInstallation)</td>
+                        <td style="width:205px;">@Html.Raw(Resources.CTS180.headerStartService)</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">@Resources.CTS180.lblContractFee</td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("OrderContractFee", null, null, new { style = "width:140px;" })
+                            </div>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">@Resources.CTS180.lblInstallationFee</td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("OrderInstallFee", null, null, new { style = "width:140px;" })
+                            </div>
+                        </td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("InstallFee_ApproveContract", null, null, new { style = "width:140px;" })
+                            </div>
+                        </td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("InstallFee_CompleteInstall", null, null, new { style = "width:140px;" })
+                            </div>
+                        </td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("InstallFee_StartService", null, null, new { style = "width:140px;" })
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">@Resources.CTS180.lblDepositFee</td>
+                        <td style="padding-left:1px;">
+                            <div style="float:right;">
+                                @Html.NumericTextBoxWithMultipleCurrency("OrderDepositFee", null, null, new { style = "width:140px;" })
+                            </div>
+                        </td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+                
+        <div class="usr-row">
+            <div class="usr-label" style="width:214px;">
+                @Resources.CTS180.lblBillingTimingOfDepositFee
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectComboWidth;">
+                @Html.BillingTimingTypeForRegisterContractComboBox("CT_BillingTimingType", new { style = "height: 22px; width:" + @ViewBag.ObjectComboWidth + ";" })
+            </div> 
+        </div>       
+       <div class="usr-row"></div>
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+
+    <div id="divContractFee" class="main-table" >
+        <div class="table-header">
+            <div class="usr-label">
+                @Resources.CTS180.lblTitleContractFee
+            </div> 
+        </div>
+        <div>
+            <div class="usr-row">
+                <div class="usr-label" style="width: 150px;">
+                        @Resources.CTS180.lblContractFeeBillingCycle
+                </div> 
+                <div class="usr-object" style = "width:100px;">
+                        @Html.NumericTextBox("CT_BillingCycle", null, new { style = "width:100px;", maxlength = "14" })
+                </div>  
+                <div class="usr-label" style="width: 150px;">
+                        @Resources.CTS180.lblContractFeePaymentMethod
+                </div> 
+                <div class="usr-object" style="width:@ViewBag.ObjectComboWidth;">
+                        @Html.PaymentMethodTypeComboBox("CT_PaymentMethodType", new { style = "height: 22px; width:" + @ViewBag.ObjectComboWidth + ";" })
+                </div> 
+                <div class="usr-label" style="width: 150px;">
+                        @Resources.CTS180.lblCreditTerm
+                </div> 
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                        @Html.NumericTextBox("CT_CreditTerm", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "14" })
+                </div>                   
+            </div>
+            <div class="usr-row"></div>
+        </div>
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblContractDuration
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.NumericTextBox("CT_ContractDuration", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "14" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblAutoRenew
+        </div>
+        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+            @Html.NumericTextBox("CT_AutoRenew", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "14" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS180.lblCustomerSignatureName
+        </div>
+        <div class="usr-object" style = "width:375px;">
+            @Html.CommonTextBox("CT_CustomerSignatureName", null, new { style = "width:375px;", maxlength = "150" })
+        </div>
+    </div>
+    <div class="usr-row" style="height:5px"></div>
+
+    <div id="divSecomSignatureContract" class="main-table" >
+        <div class="table-header">
+            <div class="usr-label">
+                @Resources.CTS180.lblTitleSecomSignature
+            </div> 
+        </div>
+        <div>
+            <div class="usr-row">
+                <div class="usr-label"  style="width: 150px;">
+                        @Resources.CTS180.lblUseSignaturePicture
+                </div>
+                <div class="usr-object">
+                        @Html.CommonCheckButton("CT_UseSignaturePicture", null, null, false)
+                </div>    
+                <div class="usr-label"  style="width: 235px;">
+                        @Resources.CTS180.lblEmployeeName
+                </div> 
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                        @Html.CommonTextBox("CT_EmployeeName", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "100" })
+                </div>  
+                <div class="usr-label" style="width: 150px;">
+                        @Resources.CTS180.lblEmployeePosition
+                </div> 
+                <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                        @Html.CommonTextBox("CT_EmployeePosition", null, new { style = "width:" + @ViewBag.ObjectWidth + ";", maxlength = "100" })
+                </div>                   
+            </div>
+            <div class="usr-row"></div>
+        </div>
+    </div>
+
+    <div class="usr-row"></div>
+</div>
+

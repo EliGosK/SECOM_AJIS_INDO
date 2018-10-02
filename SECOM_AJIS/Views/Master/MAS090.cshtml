@@ -1,0 +1,422 @@
+﻿<!--
+//*********************************
+// Create by: Akat K.
+// Create date: 22/Jun/2010
+// Update date: 22/Jun/2010
+//*********************************
+-->
+
+@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers;
+@using SECOM_AJIS.Common.Util.ConstantValue;
+@{
+    ViewBag.LabelWidth = "200px";
+    ViewBag.RightLabelWidth = "170px";
+    ViewBag.ObjectWidth = "250px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.ShortLabel = "180px";
+}
+@*@section page_title{
+    MAS090: Maintain instrument information
+}*@
+@section page_header{
+    <script src="../../Scripts/jquery.maskedinput-1.3.js" type="text/javascript"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcommon.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgrid.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_data.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/ext/dhtmlxgrid_pgn.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxgridcell.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/AutoComplete.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/GridControl.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Master/MAS090.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    
+    <script type="text/javascript">
+        var permission =
+        {
+            ADD: "@ViewBag.HasPermissionAdd",
+            EDIT: "@ViewBag.HasPermissionEdit"
+        };
+        var c_cancel = "@Resources.MAS090.btnCancel";
+
+        var c_type_general = "@ViewBag.InstrumentTypeGeneral";
+    </script>
+}
+<!-- SEARCH CRITERIA SECTION ==================================================================================================================== -->
+
+<div id="Search_Criteria" class="main-table">
+    <div class="table-header">
+       @Resources.MAS090.lblSearchInstrument
+    </div>
+    <form id="MAS090_Search" action='#' >
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblInstrumentCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtInstrumentCodeSearch", "", new { style = "width:205px;", maxlength = "50" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblInstrumentName
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("txtInstrumentNameSearch", "", new { style = "width:749px", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblLineUpType
+            </div>
+            <div class="usr-object">
+                @Html.LineUpTypeComboBox("cboLineUpTypeSearch", new { style = "width:209px" }, true, "ALL")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div style="text-align: right;">
+                @Html.CommonButton("btnSearch", @Resources.MAS090.btnSearch, new { type = "button" })
+                @Html.CommonButton("btnClear", @Resources.MAS090.btnClear, new { type = "button" })
+                @Html.CommonButton("btnNew", @Resources.MAS090.btnNew, new { type = "button" })
+            </div>
+        </div>
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+    </form>
+</div>
+
+<!-- SEARCH RESULT SECTION ====================================================================================================================== -->
+<div id="Search_Result" class="main-table">
+    <div class="table-header">
+        @Resources.MAS090.lblResultList
+    </div>
+    <div id="grid_result" style="width:99%;margin-left:4px;"></div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+<!-- RESULT DETAIL SECTION ====================================================================================================================== -->
+<div id="Result_Detail" class="main-table">
+    <div class="table-header">
+       @Resources.MAS090.lblMaintianInstrument
+    </div>
+    <form id="MAS090_InstrumentDetail" action="#">
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblInstrumentCode 
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                @Html.CommonTextBox("InstrumentCode", "", new { style = "width:160px;", maxlength = "50" })
+                @Html.RequireFiled()
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.MAS090.lblApproveNo
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LabelWidth;">
+                @Html.CommonTextBox("ApproveNo", "", new { style = "width:160px;", maxlength = "15" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; margin-top:14px">
+                @Resources.MAS090.lblAllowFor
+            </div>
+            <div class="usr-object" style="width:734px; margin-top:5px">
+                <div class="sub-table">
+                    <div class="usr-row">
+                        <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                            @Html.CommonCheckButton("RentalFlag", @Resources.MAS090.lblRental, "True")
+                        </div>
+                        <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">&nbsp;</div>
+                        <div class="usr-object" style="width:@ViewBag.LabelWidth;">
+                            @Html.CommonCheckButton("SaleFlag", @Resources.MAS090.lblSale, "True")
+                        </div>
+                    </div>
+                    <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:201px;">&nbsp;</div>
+            <div class="usr-object" style="width:425px;">
+                @Html.CommonCheckButton("MaintenanceFlag", @Resources.MAS090.lblMaintenance, "True")
+            </div>
+            @*<div class="usr-label" style="width:@ViewBag.RightLabelWidth;">&nbsp;</div>*@
+            <div class="usr-object" style="width:200px;">
+                @Html.CommonCheckButton("ControllerFlag", @Resources.MAS090.lblController, "True")
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:201px;">&nbsp;</div>
+            <div class="usr-object">
+                @Html.CommonCheckButton("ZeroBahtAssetFlag", @Resources.MAS090.lblZeroBaht, "True")
+            </div>
+        </div>
+        <!-- NAME INFORMATION --------------------------------------------------------------------------------- -->
+        <div class="usr-clear-style">&nbsp;</div>
+        <div style="height:10px;">&nbsp;</div>
+        <div style="font-size: 10pt;font-weight: bold;margin: 0px 0 5px 5px;">
+            @Resources.MAS090.lblNameInfo
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblName
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("InstrumentName", "", new { style = "width:730px;", maxlength = "100" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblNameForSupplier
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("InstrumentNameForSupplier", "", new { style = "width:730px;", maxlength = "100" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblNameForCustEng
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("InstrumentNameForCustomerEN", "", new { style = "width:730px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblNameForCustLocal
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("InstrumentNameForCustomerLC", "", new { style = "width:730px;", maxlength = "100" })
+                
+                @*Comment by Jirawat Jannet on 2016-12-23*@ 
+                @*@Html.RequireFiled()*@
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblDescription
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("Description", "", new { style = "width:730px;", maxlength = "100" })
+            </div>
+        </div>
+        <!-- PRICE INFORMATION -------------------------------------------------------------------------------- -->
+        <div class="usr-clear-style">&nbsp;</div>
+        <div style="height:10px;">&nbsp;</div>
+        <div style="font-size: 10pt;font-weight: bold;margin: 0px 0 5px 5px;">
+            @Resources.MAS090.lblPriceInfo
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblSaleUnitPrice
+            </div>
+            <div class="usr-object" style="width:230px;">
+                @*Comment by Jirawat Jannet on 2016-12-23*@
+                @*@Html.NumericTextBox("SaleUnitPriceText", null, new { style = "width:160px;" })*@
+                @Html.NumericTextBoxWithMultipleCurrency("SaleUnitPriceText", null, CurrencyUtil.C_CURRENCY_LOCAL)
+            </div>
+            <div class="usr-object" style="width:80px;">
+                @*@Html.LabelCurrencyUnit("saleUnitPriceCurrency")*@
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.MAS090.lblRentUnitPrice
+            </div>
+            <div class="usr-object" style="width:230px;">
+                @*Comment by Jirawat Jannet on 2016-12-23*@
+                @*@Html.NumericTextBox("RentalUnitPriceText", null, new { style = "width:160px;" })*@
+                @Html.NumericTextBoxWithMultipleCurrency("RentalUnitPriceText", null, CurrencyUtil.C_CURRENCY_LOCAL)
+            </div>
+            <div class="usr-object">
+                @*@Html.LabelCurrencyUnit("rentalUnitPriceCurrency")*@
+            </div>
+        </div>
+        <!-- Akat K. test clear style -->
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; margin-top:25px">
+                @Resources.MAS090.lblInstallUnitPrice
+            </div>
+            <div class="usr-object" style="width:470px; margin-top:5px">
+                <div class="sub-table">
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.ShortLabel;">
+                            @Resources.MAS090.lblAddUnitPrice
+                        </div>
+                        <div class="usr-object" style="width:230px">
+                            @*Comment by Jirawat Jannet on 2016-12-23*@
+                            @*@Html.NumericTextBox("AddUnitPriceText", null, new { style = "width:120px;" })*@
+                            @Html.NumericTextBoxWithMultipleCurrency("AddUnitPriceText", null, CurrencyUtil.C_CURRENCY_LOCAL)
+                        </div>
+                        <div class="usr-object">
+                            @*@Html.LabelCurrencyUnit("addUnitPriceCurrency")*@
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.ShortLabel;">
+                            @Resources.MAS090.lblRemUnitPrice
+                        </div>
+                        <div class="usr-object" style="width:230px;">
+                            @*Comment by Jirawat Jannet on 2016-12-23*@
+                            @*@Html.NumericTextBox("RemoveUnitPriceText", null, new { style = "width:120px;" })*@
+                            @Html.NumericTextBoxWithMultipleCurrency("RemoveUnitPriceText", null, CurrencyUtil.C_CURRENCY_LOCAL)
+                        </div>
+                        <div class="usr-object">
+                            @*@Html.LabelCurrencyUnit("removeUnitPriceCurrency")*@
+                        </div>
+                    </div>
+                    <div class="usr-row">
+                        <div class="usr-label" style="width:@ViewBag.ShortLabel;">
+                            @Resources.MAS090.lblMoveUnitPrice
+                        </div>
+                        <div class="usr-object" style="width:230px">
+                            @*Comment by Jirawat Jannet on 2016-12-23*@
+                            @*@Html.NumericTextBox("MoveUnitPriceText", null, new { style = "width:120px;" })*@
+                            @Html.NumericTextBoxWithMultipleCurrency("MoveUnitPriceText", null, CurrencyUtil.C_CURRENCY_LOCAL)
+                        </div>
+                        <div class="usr-object">
+                            @*@Html.LabelCurrencyUnit("moveUnitPriceCurrency")*@
+                        </div>
+                    </div>
+                    <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+        <!-- OTHER INFORMATION -------------------------------------------------------------------------------- -->
+        <div class="usr-clear-style">&nbsp;</div>
+        <div style="height:10px;">&nbsp;</div>
+        <div style="font-size: 10pt;font-weight: bold;margin: 0px 0 5px 5px;">
+            @Resources.MAS090.lblOtherInfo
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblInstrumentType
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                @Html.InstrumentTypeComboBox("InstrumentTypeCode", new { style = "width:164px" })
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth; margin-top:10px">
+                @Resources.MAS090.lblInstrumentFlag
+            </div>
+            <div class="usr-object" style="width:264px;">
+                <div class="sub-table" style="margin-top:5px">
+                    &nbsp;
+                    @Html.RadioButton("radioInstrumentFlagMain", "main", true) @Resources.MAS090.lblMain &nbsp;
+                    @Html.RadioButton("radioInstrumentFlagOption", "option", false) @Resources.MAS090.lblOption
+                </div>
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblNumOfInstallStaff
+            </div>
+            <div class="usr-object" style="width:@ViewBag.ObjectWidth;">
+                @Html.CommonTextBox("NoInstallStaffText", "", new { style = "width:160px;text-align:right" })
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth">
+                @Resources.MAS090.lblInstallTime
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("TimeInstallText", "", new { style = "width:160px;text-align:right" }) @Resources.MAS090.lblMinuite
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblRatioWorkerTime
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("WorkerRatioText", "", new { style = "width:160px;text-align:right" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblMaker
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("Maker", "", new { style = "width:260px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblDefaultSupplier
+            </div>
+            <div class="usr-object">
+                @Html.SupplierComboBox("SupplierCode", new { style = "width:164px" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblInstrumentCategory 1
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("InstrumentCategory1", "", new { style = "width:260px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblInstrumentCategory 2
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("InstrumentCategory2", "", new { style = "width:260px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblInstrumentCategory 3
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("InstrumentCategory3", "", new { style = "width:260px;", maxlength = "100" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblLineUpType
+            </div>
+            <div class="usr-object" style="width:169px">
+                @Html.LineUpTypeComboBox("LineUpTypeCode", new { style = "width:164px;" })
+            </div>
+            <div class="usr-object" style="width:81px">
+                <div class="usr-object"  id="req_lineup_type">
+                    @Html.RequireFiled()
+                </div>
+                <div class="usr-object">
+                    &nbsp;
+                </div>
+            </div>
+            <div class="usr-label" style="width:@ViewBag.RightLabelWidth;">
+                @Resources.MAS090.lblExpansionType
+            </div>
+            <div class="usr-object" style="width:169px">
+                @Html.ExpansionTypeComboBox("ExpansionTypeCode", new { style = "width:164px" })
+                @Html.Hidden("CurrentExpansionTypeCode")
+            </div>
+            <div class="usr-object" id="req_expansion_type">
+                @Html.RequireFiled()
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblParentInstrumentCode
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("ParentInstrumentCode", "", new { style = "width:160px;" })
+                @Html.CommonTextBox("ParentInstrumentName", "", new { style = "width:260px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+                @Resources.MAS090.lblRegistrationDate
+            </div>
+            <div class="usr-object">
+                @Html.CommonTextBox("CreateDate", null, new { style = "width:160px;" })
+            </div>
+        </div>
+        @Html.Hidden("UpdateDate", "")
+        @Html.Hidden("UpdateBy", "")
+        <div class="usr-clear-style" style="height:0%">&nbsp;</div>
+    </form>
+</div>

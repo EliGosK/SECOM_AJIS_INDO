@@ -1,0 +1,31 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.ObjectCol1Width = "140px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Quotation/QUS030/QUS030_16.js")"></script>
+<div id="divResultRegisterQuotationDetail" class="main-table">
+    <div class="table-header">
+        @Resources.QUS030.lblResultOfRegisterQuotationDetail
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">
+            @Resources.QUS030.lblQuotationCode
+        </div>
+        <div class="usr-object" style="margin-right:5px;">
+            <div style="float:left;">
+                
+            </div>
+            <div class="usr-object" style="margin-right:5px;">
+                <div style="float:left">@Html.CommonTextBox("QuotationTargetCode", (string)@ViewBag.QuotationTargetCode, new { @readonly = true, style = "width:" + @ViewBag.ObjectCol1Width + ";" })</div>
+                <div style="float:left">&nbsp;-&nbsp;</div>
+                <div style="float:left">@Html.CommonTextBox("Alphabet", (string)@ViewBag.Alphabet, new { @readonly = true, style = "width:40px;" })</div>
+            </div>
+            <div class="usr-object">
+                @Html.CommonButton("btnRegisterNextQuotationDetail", (string)@Resources.QUS030.btnRegisterNextQuotationDetail, new { style = "width:220px;" })
+            </div>
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

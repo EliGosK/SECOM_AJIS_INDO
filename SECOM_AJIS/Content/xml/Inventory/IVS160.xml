@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column width="30" type="ro" align="center" sort="na"></column>
+    <!--<column id="AreaCodeName" width="250" type="ro"  sort="na">headerInstrumentArea</column>-->
+    <column id="InstrumentCode" width="200" type="ro" align="left" sort="na">headerInstrumentCode</column>
+    <column id="InstrumentName" width="*" type="ro" align="left" sort="na">headerInstrumentName</column>
+    <column id="ShelfNo" width="180" type="ro"  sort="na">headerShelfNo</column>
+    <column id="CheckingQty" width="120" type="link" align="right" sort="na">headerInstrumentCheckingQty</column>
+
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

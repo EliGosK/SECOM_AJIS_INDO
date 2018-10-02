@@ -1,0 +1,68 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@{
+    ViewBag.LabelWidth = "250px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+    
+@*    if (ViewBag.IsSystemSuspending)
+    {
+        <script language="javascript" runat="server">
+            var obj = {
+            module: "Common",
+            code: "MSG0049"
+            };
+            call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                OpenErrorMessageDialog(result.Code, result.Message,
+                function () {
+                    window.location.href = generate_url("/common/CMS020");
+                },
+                null);
+            });
+        </script>
+    }
+
+    if (ViewBag.PermissionEdit == false || ViewBag.PermissionDelete == false)
+    {
+        <script language="javascript" runat="server">
+            var obj = {
+            module: "Common",
+            code: "MSG0053"
+            };
+            call_ajax_method("/Shared/GetMessage", obj, function (result) {
+                OpenErrorMessageDialog(result.Code, result.Message,
+                function () {
+                    window.location.href = generate_url("/common/CMS020");
+                },
+                null);
+            });
+        </script>
+     }  *@
+}
+@section page_header{
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/DateTimePicker.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS220.js")"></script> 
+}
+
+
+@Html.Partial("CTS220/_CTS220_01")
+@Html.EmptyDIVforLoadData2("CTS220_02")
+@Html.EmptyDIVforLoadData2("CTS220_03")
+@Html.EmptyDIVforLoadData2("CTS220_04")
+@Html.EmptyDIVforLoadData2("CTS220_05")
+@Html.EmptyDIVforLoadData2("CTS220_06")
+@Html.EmptyDIVforLoadData2("CTS220_07")
+@Html.EmptyDIVforLoadData2("CTS220_08")
+@Html.EmptyDIVforLoadData2("CTS220_09")
+
+<div id="dlgCTS220" class="main-popup-dialog">
+    <div class="popup-dialog"></div>
+</div>
+
+<div class="usr-row" style="height: 5px"></div>

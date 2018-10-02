@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column id="ID" width="180" type="ro" align="right" sort="na"></column>
+    <column id="NormalPrice" width="150" type="ro" align="right" sort="na">headerNormal</column>
+    <column id="OrderPrice" width="168" type="ro" align="right" sort="na">headerOrder</column>
+    <column id="BillingAmt_ApproveContract" width="150" type="ro" align="right" sort="na">headerBillingPriceATApproval</column>
+    <column id="PartialFee" width="150" type="ro" align="right" sort="na">headerPartialFee</column>
+    <column id="BillingAmt_Acceptance" width="160" type="ro" align="right" sort="na">headerBillingPriceAtCustomerAcceptance</column>  
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

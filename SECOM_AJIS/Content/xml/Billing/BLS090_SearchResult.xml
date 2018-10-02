@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="BillingOCC" width="100" type="ro"  sort="na">headerBillingOCC</column>
+    <column id="BillingClientName" width="*" type="ro" align="left" sort="na">headerBillingClientName</column>
+    <column id="MonthlyBillingAmount" width="150" type="edn" align="right" sort="na">headerCurrentMonthlyBillingFee</column>
+    <column id="NewMonthlyBillingAmount" width="210" type="edn" align="right" sort="na">headerNewMonthlyBillingFee</column>
+
+    <column id="ToJson" width="0" type="ro"  hidden="true"></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

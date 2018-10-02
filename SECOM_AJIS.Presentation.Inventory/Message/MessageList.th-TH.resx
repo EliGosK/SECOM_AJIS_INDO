@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MSG4001" xml:space="preserve">
+    <value>ไม่พบข้อมูล</value>
+  </data>
+  <data name="MSG4002" xml:space="preserve">
+    <value>ยังไม่ได้ดำเนินการล็อคข้อมูลเพื่อนับสต๊อก</value>
+  </data>
+  <data name="MSG4003" xml:space="preserve">
+    <value>ยังไม่ได้เริ่มต้นนับสต๊อก</value>
+  </data>
+  <data name="MSG4004" xml:space="preserve">
+    <value>ข้อมูลที่ค้นได้มีมากกว่า 1000 รายการ กรุณากรอกเงื่อนไขการค้นหาเพิ่มเติม</value>
+  </data>
+  <data name="MSG4005" xml:space="preserve">
+    <value>อุปกรณ์ที่เลือกซ้ำกับที่มีอยู่</value>
+  </data>
+  <data name="MSG4006" xml:space="preserve">
+    <value>ไม่มีข้อมูลสำหรับการโอน</value>
+  </data>
+  <data name="MSG4007" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ที่โอนของ {0} ต้องมากกว่า 0</value>
+  </data>
+  <data name="MSG4008" xml:space="preserve">
+    <value>อุปกรณ์ {0} มีจำนวนโอนมากกว่าจำนวนอุปกรณ์ปัจจุบัน</value>
+  </data>
+  <data name="MSG4009" xml:space="preserve">
+    <value>ไม่มีข้อมูลอุปกรณ์ {0} ในคลังสินค้าต้นทาง</value>
+  </data>
+  <data name="MSG4010" xml:space="preserve">
+    <value>เลขที่สลิปคลังสินค้าที่สร้างเกินหมายเลขสูงสุด กรุณาติดต่อผู้ดูเเลระบบ</value>
+  </data>
+  <data name="MSG4011" xml:space="preserve">
+    <value>ไม่พบสลิปเลขที่ {0} </value>
+  </data>
+  <data name="MSG4012" xml:space="preserve">
+    <value>สลิปเลขที่ {0} ถูกรับแล้ว</value>
+  </data>
+  <data name="MSG4013" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการรับอุปกรณ์?</value>
+  </data>
+  <data name="MSG4014" xml:space="preserve">
+    <value>'"สาขาต้นทาง" และ "สาขาปลายทาง" ต้องไม่เป็นสาขาเดียวกัน</value>
+  </data>
+  <data name="MSG4015" xml:space="preserve">
+    <value>เลขที่ชั้น (ตั้งแต่) ต้องเป็นตัวอักษรที่มาก่อนเลขที่ชั้น (จนถึง) ตามลำดับตัวอักษร</value>
+  </data>
+  <data name="MSG4016" xml:space="preserve">
+    <value>ไม่สามารถดึงข้อมูลสาขาใหญ่ของคลังสินค้าได้ กรุณาติดต่อผู้ดูเเลระบบ</value>
+  </data>
+  <data name="MSG4017" xml:space="preserve">
+    <value>ไม่สามารถกรอก "รหัสซัพพลายเออร์" และ "ชื่อซัพพลายเออร์" พร้อมกันได้</value>
+  </data>
+  <data name="MSG4018" xml:space="preserve">
+    <value>ประเภทการโอนของเลขที่สลิปนี้ไม่ถูกต้อง</value>
+  </data>
+  <data name="MSG4019" xml:space="preserve">
+    <value>บันทึกเสร็จสิ้น</value>
+  </data>
+  <data name="MSG4020" xml:space="preserve">
+    <value>ต้องกรอก "จำนวนที่สั่งซื้อ" มากกว่า 0</value>
+  </data>
+  <data name="MSG4021" xml:space="preserve">
+    <value>ไม่สามารถเพิ่มข้อมูลอุปกรณ์ได้มากกว่า 15 รายการ</value>
+  </data>
+  <data name="MSG4022" xml:space="preserve">
+    <value>มีการกดปุ่ม "Enter" ติดต่อกัน 4 ครั้งในช่อง "บันทึกข้อความ"</value>
+  </data>
+  <data name="MSG4023" xml:space="preserve">
+    <value>ไม่มีข้อมูลในรายการ "ระบุอุปกรณ์ที่สั่งซื้อ" คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG4024" xml:space="preserve">
+    <value>มีอุปกรณ์ตัวอย่างอยู่ในใบสั่งซื้อ คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG4025" xml:space="preserve">
+    <value>"แก้ไขจำนวนที่สั่งซื้อ" ต้องมากกว่าหรือเท่ากับ "จำนวนอุปกรณ์ที่รับแล้ว"</value>
+  </data>
+  <data name="MSG4026" xml:space="preserve">
+    <value>"แก้ไขจำนวนที่สั่งซื้อ" ต้องน้อยกว่าหรือเท่ากับ "จำนวนที่สั่งซื้อครั้งแรก"</value>
+  </data>
+  <data name="MSG4027" xml:space="preserve">
+    <value>ยืนยันการยกเลิกใบสั่งซื้อแล้ว คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG4028" xml:space="preserve">
+    <value>"สถานะการสั่งซื้อ" ปัจจุบันในฐานข้อมูล ไม่ใช่ "ยังไม่ได้รับคำสั่งซื้อ"</value>
+  </data>
+  <data name="MSG4029" xml:space="preserve">
+    <value>"จำนวนอุปกรณ์ที่โอน" ต้องมากกว่า 0</value>
+  </data>
+  <data name="MSG4030" xml:space="preserve">
+    <value>"จำนวนอุปกรณ์ออก" ของอุปกรณ์ {0} ต้องมากกว่า 0</value>
+  </data>
+  <data name="MSG4031" xml:space="preserve">
+    <value>"จำนวนอุปกรณ์ส่งคืน" ของอุปกรณ์ {0} ต้องมากกว่า 0</value>
+  </data>
+  <data name="MSG4032" xml:space="preserve">
+    <value>"สถานะการสั่งซื้อ" ในฐานข้อมูล เป็น "ส่งของเรียบร้อย"</value>
+  </data>
+  <data name="MSG4033" xml:space="preserve">
+    <value>"แก้ไขจำนวนที่สั่งซื้อ" ต้องเท่ากับหรือมากกว่า "จำนวนอุปกรณ์ที่รับแล้ว"</value>
+  </data>
+  <data name="MSG4034" xml:space="preserve">
+    <value>"จำนวนอุปกรณ์ที่รับครั้งนี้" ของอุปกรณ์ {0} ต้องเท่ากับหรือน้อยกว่า "จำนวนสั่งซื้อคงเหลือ"</value>
+  </data>
+  <data name="MSG4035" xml:space="preserve">
+    <value>ผลรวมของ "จำนวนอุปกรณ์ที่รับครั้งนี้" ต้องมากกว่า 0</value>
+  </data>
+  <data name="MSG4036" xml:space="preserve">
+    <value>ผลรวมของ "จำนวนอุปกรณ์ที่รับเข้า" ต้องมากกว่า 0</value>
+  </data>
+  <data name="MSG4037" xml:space="preserve">
+    <value>รหัสอุปกรณ์ที่กรอกไม่ได้บันทึกไว้ในมาสเตอร์ของอุปกรณ์ในระบบนี้ กรุณาตรวจสอบว่ากรอกผิดหรือไม่</value>
+  </data>
+  <data name="MSG4038" xml:space="preserve">
+    <value>รหัสอุปกรณ์นี้มีอยู่ในรายการแล้ว</value>
+  </data>
+  <data name="MSG4039" xml:space="preserve">
+    <value>รหัสอุปกรณ์และประเภทอุปกรณ์นี้มีอยู่ในรายการแล้ว</value>
+  </data>
+  <data name="MSG4040" xml:space="preserve">
+    <value>"จำนวนอุปกรณ์ที่รับเข้า" ต้องมากกว่า 0</value>
+  </data>
+  <data name="MSG4041" xml:space="preserve">
+    <value>"วันที่รับอุปกรณ์" ต้องเป็นวันที่ก่อนหรือวันเดียวกับ "วันที่นำอุปกรณ์ออก"</value>
+  </data>
+  <data name="MSG4042" xml:space="preserve">
+    <value>"วันที่สร้าง (ตั้งแต่)" ต้องเป็นวันที่ก่อนหรือวันที่เดียวกับ "วันที่สร้าง (จนถึง)" </value>
+  </data>
+  <data name="MSG4043" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการยกเลิกสลิป?</value>
+  </data>
+  <data name="MSG4044" xml:space="preserve">
+    <value>เดือนที่ระบุใน "วันที่รับอุปกรณ์" ต้องเป็นเดือนปัจจุบัน</value>
+  </data>
+  <data name="MSG4045" xml:space="preserve">
+    <value>สำหรับอุปกรณ์ {0} และประเภทอุปกรณ์ {1} จำนวนอุปกรณ์ปัจจุบันต้องเท่ากับหรือมากกว่า "จำนวนรับอุปกรณ์"</value>
+  </data>
+  <data name="MSG4046" xml:space="preserve">
+    <value>เลขที่ใบ IN ต้องยังไม่เคยบันทึกข้อมูลสินทรัพย์</value>
+  </data>
+  <data name="MSG4047" xml:space="preserve">
+    <value>ชั้นเลขที่ {0}, รหัสอุปกรณ์ {1}, ต้องกรอก "จำนวนอุปกรณ์ที่โอน" มากกว่า 0</value>
+  </data>
+  <data name="MSG4048" xml:space="preserve">
+    <value>มีข้อผิดพลาดในชั้นเลขที่ {0} ที่กรอกลงไป ชั้นดังกล่าวไม่มีในมาสเตอร์ของชั้น</value>
+  </data>
+  <data name="MSG4049" xml:space="preserve">
+    <value>ชั้นเลขที่ {0} และรหัสอุปกรณ์ {1} ต้องกรอก "เลขที่ชั้นปลายทาง"</value>
+  </data>
+  <data name="MSG4050" xml:space="preserve">
+    <value>ชั้นเลขที่ {0}, รหัสอุปกรณ์ {1}, ไม่สามารถกรอกหมายเลขชั้นชั่วคราว (00) ในช่อง "เลขที่ชั้นปลายทาง"</value>
+  </data>
+  <data name="MSG4051" xml:space="preserve">
+    <value>กรุณาระบุเลขที่สลิป</value>
+  </data>
+  <data name="MSG4052" xml:space="preserve">
+    <value>ต้องกรอก "ราคารวม" มากกว่า 0</value>
+  </data>
+  <data name="MSG4053" xml:space="preserve">
+    <value>ชั้นเลขที่ {0}, รหัสอุปกรณ์ {1}, ไม่สามารถกรอก "เลขที่ชั้นปลายทาง" เป็นเลขที่เดียวกับ "เลขที่ชั้นต้นทาง"</value>
+  </data>
+  <data name="MSG4054" xml:space="preserve">
+    <value>ชั้นเลขที่ {0}, รหัสอุปกรณ์ {1}, ไม่สามารถย้ายอุปกรณ์ ไปยังชั้นของประเภทอุปกรณ์อื่นได้</value>
+  </data>
+  <data name="MSG4055" xml:space="preserve">
+    <value>ชั้นเลขที่ {0}, รหัสอุปกรณ์ {1}, ไม่สามารถย้ายอุปกรณ์ ได้เนื่องจากมีชั้นที่อ้างอิงอุปกรณ์และประเภทอุปกรณ์เดียวกันอยู่แล้ว</value>
+  </data>
+  <data name="MSG4056" xml:space="preserve">
+    <value>ชั้นเลขที่ {0} และรหัสอุปกรณ์ {1} กรณีที่ย้ายชั้นจากชั้นปกติไปยังชั้นว่าง ต้องกรอก "จำนวนอุปกรณ์ที่โอน" เท่ากับ "จำนวนอุปกรณ์ในสต๊อก"</value>
+  </data>
+  <data name="MSG4057" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG4058" xml:space="preserve">
+    <value>ชั้นเลขที่ {0} และรหัสอุปกรณ์ {1} มี "จำนวนอุปกรณ์ที่โอน" มากกว่า "จำนวนอุปกรณ์ในสต๊อก"</value>
+  </data>
+  <data name="MSG4059" xml:space="preserve">
+    <value>ไม่มีข้อมูลชั้นเลขที่ {0} และรหัสอุปกรณ์ {1} ในคลังสินค้านี้</value>
+  </data>
+  <data name="MSG4060" xml:space="preserve">
+    <value>เลขที่ใบนำอุปกรณ์ออกที่สร้างเกินหมายเลขสูงสุด กรุณาติดต่อผู้ดูเเลระบบ</value>
+  </data>
+  <data name="MSG4061" xml:space="preserve">
+    <value>"วันที่คาดว่าจะนำอุปกรณ์ออก (ตั้งแต่)" ต้องมากกว่ากหรือเท่ากับ "วันที่คาดว่าจะนำอุปกรณ์ออก (จนถึง)"</value>
+  </data>
+  <data name="MSG4062" xml:space="preserve">
+    <value>"เลขที่สลิปการติดตั้ง" ที่เลือกซ้ำกับที่มีอยู่แล้ว</value>
+  </data>
+  <data name="MSG4063" xml:space="preserve">
+    <value>ไม่มีข้อมูลสำหรับการสร้างรายละเอียดใบนำอุปกรณ์ออก</value>
+  </data>
+  <data name="MSG4064" xml:space="preserve">
+    <value>สลิปการติดตั้ง {0} ถูกใช้บันทึกรายละเอียดใบนำอุปกรณ์ออก</value>
+  </data>
+  <data name="MSG4065" xml:space="preserve">
+    <value>ไม่สามารถดึงข้อมูลสลิปการติดตั้งได้</value>
+  </data>
+  <data name="MSG4066" xml:space="preserve">
+    <value>กรุณาระบุ "เลขที่โครงการ" ก่อนดำเนินการดึงข้อมูลโครงการ</value>
+  </data>
+  <data name="MSG4067" xml:space="preserve">
+    <value>ไม่พบเลขที่โครงการ {0}</value>
+  </data>
+  <data name="MSG4068" xml:space="preserve">
+    <value>ไม่มีข้อมูลสำหรับการคำนวณ</value>
+  </data>
+  <data name="MSG4069" xml:space="preserve">
+    <value>ต้องกรอกจำนวนของรหัสอุปกรณ์ {0} มากกว่า 0</value>
+  </data>
+  <data name="MSG4070" xml:space="preserve">
+    <value>สถานะโครงการไม่ใช่ "กำลังดำเนินการ"</value>
+  </data>
+  <data name="MSG4071" xml:space="preserve">
+    <value>ต้องกรอก "ยืนยันจำนวนส่งคืน" มากกว่า 0</value>
+  </data>
+  <data name="MSG4072" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการเริ่มต้นนับสต๊อก?</value>
+  </data>
+  <data name="MSG4073" xml:space="preserve">
+    <value>ไม่สามารถเริ่มต้นนับสต๊อกได้เนื่องจาก "สถานะการเช็คสต๊อก" ไม่เป็น "เตรียมการเพื่อเช็คสต๊อก"</value>
+  </data>
+  <data name="MSG4074" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการสิ้นสุดการนับสต๊อก?</value>
+  </data>
+  <data name="MSG4075" xml:space="preserve">
+    <value>ไม่สามารถเริ่มต้นเช็คสต๊อกได้เนื่องจาก "สถานะการนับสต๊อก" ไม่เป็น "กำลังนับสต๊อก"</value>
+  </data>
+  <data name="MSG4076" xml:space="preserve">
+    <value>เลขที่ใบสั่งซื้อที่สร้างเกินหมายเลขสูงสุด กรุณาติดต่อผู้ดูเเลระบบ</value>
+  </data>
+  <data name="MSG4077" xml:space="preserve">
+    <value>ไม่สามารถกรอก "วันที่นับสต๊อก" เป็นวันที่นอกระยะเวลาระหว่าง "วันที่เริ่มต้นนับสต๊อก({0})" และ "วันที่ปัจจุบัน" ได้</value>
+  </data>
+  <data name="MSG4078" xml:space="preserve">
+    <value>ไม่พบข้อมูลใบตรวจสอบจำนวนอุปกรณ์</value>
+  </data>
+  <data name="MSG4079" xml:space="preserve">
+    <value>ประเภทอุปกรณ์ของเลขที่ชั้น {0} ต่างจากประเภทอุปกรณ์ที่โอน</value>
+  </data>
+  <data name="MSG4080" xml:space="preserve">
+    <value>ไม่สามารถกรอกชั้นว่างได้</value>
+  </data>
+  <data name="MSG4081" xml:space="preserve">
+    <value>ข้อมูลอุปกรณ์ที่เพิ่มซ้ำกับที่มีอยู่</value>
+  </data>
+  <data name="MSG4082" xml:space="preserve">
+    <value>ไม่มีข้อมูลสำหรับนับสต๊อก</value>
+  </data>
+  <data name="MSG4083" xml:space="preserve">
+    <value>ต้องกรอกข้อมูล "จำนวนนับสต๊อก" ของชั้น {0} ประเภทอุปกรณ์ {1} รหัสอุปกรณ์ {3} </value>
+  </data>
+  <data name="MSG4084" xml:space="preserve">
+    <value>ไม่พบข้อมูลการนับสต๊อก</value>
+  </data>
+  <data name="MSG4085" xml:space="preserve">
+    <value>ไม่พบข้อมูลสลิปการติดตั้งสำหรับนำของออก</value>
+  </data>
+  <data name="MSG4086" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่สามารถนำอุปกรณ์ออกได้เนื่องจาก "อุปกรณ์ใหม่สำหรับขาย" เกินจำนวนอุปกรณ์ปัจจุบัน</value>
+  </data>
+  <data name="MSG4087" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่สามารถนำอุปกรณ์ออกได้เนื่องจาก "อุปกรณ์ใหม่ตัวอย่าง" เกินจำนวนอุปกรณ์ปัจจุบัน</value>
+  </data>
+  <data name="MSG4088" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่สามารถนำอุปกรณ์ออกได้เนื่องจาก "อุปกรณ์ใหม่สำหรับเช่า" เกินจำนวนอุปกรณ์ปัจจุบัน</value>
+  </data>
+  <data name="MSG4089" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่สามารถนำอุปกรณ์ออกได้เนื่องจาก "อุปกรณ์มือสองสำหรับเช่า" เกินจำนวนอุปกรณ์ปัจจุบัน</value>
+  </data>
+  <data name="MSG4090" xml:space="preserve">
+    <value>ไม่สามารถนำอุปกรณ์รหัส {0} ออกได้เนื่องจากจำนวนอุปกรณ์ออกรวมเกินจำนวนอุปกรณ์ปัจจุบันในแต่ละประเภทอุปกรณ์　กรุณาแก้ไขจำนวนอุปกรณ์ออกให้ตรงกัน</value>
+  </data>
+  <data name="MSG4091" xml:space="preserve">
+    <value>การนำอุปกรณ์ออกครั้งแรกต้องมีจำนวนอุปกรณ์ออกรวมทั้งหมดไม่เท่ากับ "จำนวนอุปกรณ์ออกคงเหลือ" กรณีที่จะส่งอุปกรณ์ออกทั้งหมดเต็มจำนวน ให้ใช้หน้า IVS020: บันทึกส่งอุปกรณ์ออก</value>
+  </data>
+  <data name="MSG4092" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ออกรวมทั้งหมดของรหัสอุปกรณ์ {0} มากกว่า "จำนวนอุปกรณ์ออกคงเหลือ"</value>
+  </data>
+  <data name="MSG4093" xml:space="preserve">
+    <value>เลขที่ล็อตที่สร้างเกินหมายเลขสูงสุด กรุณาติดต่อผู้ดูเเลระบบ</value>
+  </data>
+  <data name="MSG4094" xml:space="preserve">
+    <value>ไม่พบสลิปการติดตั้งที่ใช้สำหรับรับอุปกรณ์ที่ถอดถอน</value>
+  </data>
+  <data name="MSG4095" xml:space="preserve">
+    <value>ไม่พบสลิปคลังสินค้าที่ใช้สำหรับรับอุปกรณ์ที่ถอดถอน</value>
+  </data>
+  <data name="MSG4096" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการรับอุปกรณ์ที่ถอดถอน?</value>
+  </data>
+  <data name="MSG4097" xml:space="preserve">
+    <value>สลิปนี้ถูกใช้รับอุปกรณ์ที่ถอดถอนแล้ว</value>
+  </data>
+  <data name="MSG4098" xml:space="preserve">
+    <value>คุณไม่มีสิทธิ์ในการใช้งานส่วนนี้</value>
+  </data>
+  <data name="MSG4099" xml:space="preserve">
+    <value>กรอกประเภทของข้อมูลผิด</value>
+  </data>
+  <data name="MSG4100" xml:space="preserve">
+    <value>ยินยันการปรับสต๊อก คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG4101" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ที่ปรับสต๊อกต้องน้อยกว่าหรือเท่ากับจำนวนอุปกรณ์ที่ยืนยันการปรับสต๊อก</value>
+  </data>
+  <data name="MSG4102" xml:space="preserve">
+    <value>จำนวนอุปกรณ์ที่ปรับสต๊อกต้องน้อยกว่าหรือเท่ากับจำนวนอุปกรณ์ก่อนการนับสต๊อก</value>
+  </data>
+  <data name="MSG4103" xml:space="preserve">
+    <value>วันที่โอนต้องอยู่ในเดือนปัจจุบัน</value>
+  </data>
+  <data name="MSG4104" xml:space="preserve">
+    <value>เลขที่ชั้น {0} ไม่ใช่ชั้นปกติ</value>
+  </data>
+  <data name="MSG4105" xml:space="preserve">
+    <value>กลุ่มของเลขที่ชั้นปลายทาง {0}/ประเภทอุปกรณ์ปลายทาง/อุปกรณ์ที่ระบุไม่ตรงกับเลขที่ชั้น/ประเภทอุปกรณ์/อุปกรณ์ที่บันทึกไว้ในมาสเตอร์ของชั้น</value>
+  </data>
+  <data name="MSG4106" xml:space="preserve">
+    <value>รหัสอุปกรณ์และประเภทอุปกรณ์ที่ระบุในเลขที่ชั้น {0} ถูกอ้างอิงอยู่ในชั้น {1} แล้ว</value>
+  </data>
+  <data name="MSG4107" xml:space="preserve">
+    <value>สำหรับรหัสอุปกรณ์ {0} กรณีที่กรอก "เลขที่ชั้นปลายทาง" เหมือนกับ "เลขที่ชั้นต้นทาง" แล้ว ต้องกรอก "จำนวนของที่โอน" เท่ากับ "จำนวนของในสต๊อก"</value>
+  </data>
+  <data name="MSG4108" xml:space="preserve">
+    <value>สำหรับเลขที่ชั้น {0} กรณีที่กรอก "เลขที่ชั้นปลายทาง" เหมือนกับ "เลขที่ชั้นต้นทาง" แล้ว ต้องกรอกจำนวนอุปกรณ์เท่ากับ 0</value>
+  </data>
+  <data name="MSG4109" xml:space="preserve">
+    <value>อุปกรณ์ {0} ไม่มีในฐานข้อมูลคลังสินค้า</value>
+  </data>
+  <data name="MSG4112" xml:space="preserve">
+    <value>กรุณากรอกข้อมูล {0}</value>
+  </data>
+  <data name="MSG4113" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการบันทึกการนำอุปกรณ์ออกกรณีพิเศษ</value>
+  </data>
+  <data name="MSG4114" xml:space="preserve">
+    <value>ภาษีมูลค่าเพิ่มและภาษีหัก ณ ที่จ่ายที่แก้ไขต้องไม่เกินยอดรวม</value>
+  </data>
+  <data name="MSG4115" xml:space="preserve">
+    <value>ยืนยันการทำลายอุปกรณ์ คุณต้องการดำเนินการต่อหรือไม่?</value>
+  </data>
+  <data name="MSG4116" xml:space="preserve">
+    <value>ยังไม่ได้ดำเนินการล็อคข้อมูลเพื่อนับสต๊อก</value>
+  </data>
+  <data name="MSG4117" xml:space="preserve">
+    <value>สร้างใบตรวจสอบจำนวนอุปกรณ์แล้ว</value>
+  </data>
+  <data name="MSG4118" xml:space="preserve">
+    <value>เกิดความผิดพลาดในการสร้างใบตรวจสอบจำนวนอุปกรณ์</value>
+  </data>
+  <data name="MSG4119" xml:space="preserve">
+    <value>กรุณาเลือก "ประเภทอุปกรณ์" ของรหัสอุปกรณ์ {0}</value>
+  </data>
+  <data name="MSG4120" xml:space="preserve">
+    <value />
+  </data>
+  <data name="MSG4121" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0}: อุปกรณ์ลูกทุกตัวที่อยู่ใต้อุปกรณ์แม่ตัวเดียวกันต้องกรอกจำนวนอุปกรณ์ออกให้เท่ากัน</value>
+  </data>
+  <data name="MSG4122" xml:space="preserve">
+    <value>ต้องกรอกจำนวนอุปกรณ์ออกมากกว่า 0</value>
+  </data>
+  <data name="MSG4123" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ต้องเลือกประเภทเป็นอุปกรณ์ทั่วไปหรือวัตถุดิบเท่านั้น</value>
+  </data>
+  <data name="MSG4124" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} มีอุปกรณ์ลูก กรุณาใช้อุปกรณ์ลูกในการออกใบสั่งซื้อ</value>
+  </data>
+  <data name="MSG4125" xml:space="preserve">
+    <value>"วันที่รับอุปกรณ์ (ตั้งแต่)" ต้องเป็นวันที่ก่อนหรือวันเดียวกับ "วันที่รับอุปกรณ์ (จนถึง)"</value>
+  </data>
+  <data name="MSG4126" xml:space="preserve">
+    <value>คุณไม่มีสิทธิ์ในการดึงข้อมูลสลิปใบนี้</value>
+  </data>
+  <data name="MSG4127" xml:space="preserve">
+    <value>ไม่มีจำนวนอุปกรณ์ที่ส่งกลับสำหรับการรับเข้าสต๊อค</value>
+  </data>
+  <data name="MSG4128" xml:space="preserve">
+    <value>ชั้นเลขที่ {0}, รหัสอุปกรณ์ {1}, ไม่สามารถระบุชั้นว่างเดียวกันให้กับ "เลขที่ชั้นต้นทาง" ที่มี "รหัสอุปกรณ์" ต่างกัน</value>
+  </data>
+  <data name="MSG4130" xml:space="preserve">
+    <value>สาขาที่คุณสังกัดไม่มีสิทธิ์ในการเปิดหน้าจอนี้</value>
+  </data>
+  <data name="MSG4131" xml:space="preserve">
+    <value>ตัวเลขของจำนวนสต๊อกอุปกรณ์มือสองไม่สอดคล้องกับความเป็นจริง กรุณาติดต่อแผนกที่จัดการเกี่ยวกับคลังสินค้า</value>
+  </data>
+  <data name="MSG4132" xml:space="preserve">
+    <value>ไม่สามารถบันทึกได้เนื่องจากผลรวมของจำนวนเงินเกิน 10 หลัก</value>
+  </data>
+  <data name="MSG4129" xml:space="preserve">
+    <value>ไม่สามารถดึงค่าDepreciation period for contract และ Depreciation period for revenue จาก tbt_RentalContractBasic ได้</value>
+  </data>
+  <data name="MSG4133" xml:space="preserve">
+    <value>ไม่สามารถลงทะเบียนใบสั่งซื้อได้เนื่องจากไม่มีข้อมูลอุปกรณ์</value>
+  </data>
+  <data name="MSG4134" xml:space="preserve">
+    <value>ไม่มีข้อมูลสำหรับการแก้ไข "แก้ไขจำนวนที่สั่งซื้อ"</value>
+  </data>
+  <data name="MSG4135" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่สามารถนำอุปกรณ์ออกได้เนื่องจาก "อุปกรณ์ใหม่สำหรับขาย" เกินจำนวนอุปกรณ์ที่ออกโดยโปรเจ็ค</value>
+  </data>
+  <data name="MSG4136" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่สามารถนำอุปกรณ์ออกได้เนื่องจาก "อุปกรณ์ใหม่ตัวอย่าง" เกินจำนวนที่ออกโดยโปรเจ็ค</value>
+  </data>
+  <data name="MSG4137" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่สามารถนำอุปกรณ์ออกได้เนื่องจาก "อุปกรณ์ใหม่สำหรับเช่า" เกินจำนวนที่ออกโดยโปรเจ็ค</value>
+  </data>
+  <data name="MSG4138" xml:space="preserve">
+    <value>รหัสอุปกรณ์ {0} ไม่สามารถนำอุปกรณ์ออกได้เนื่องจาก "อุปกรณ์มือสองสำหรับเช่า" เกินจำนวนที่ออกโดยโปรเจ็ค</value>
+  </data>
+  <data name="MSG4139" xml:space="preserve">
+    <value>เลขที่ชั้น {0}, รหัสอุปกรณ์ {1}, ไม่สามารถย้ายชั้นปกติของหมายไปยังชั้นปกติอื่นที่มีจำนวนอุปกรณ์มากกว่า 0 ได้</value>
+  </data>
+  <data name="MSG4140" xml:space="preserve">
+    <value>อุปกรณ์{0}ได้ถูกลบ (ทางลอจิคอล) ไปแล้ว</value>
+  </data>
+  <data name="MSG4141" xml:space="preserve">
+    <value>สลิปเลขที่ {0} ไม่สามารถนำอุปกรณ์ออกได้เพราะสถานะของสลิปไม่เป็น 'ยังไม่ได้นำอุปกรณ์ออก' หรือ 'นำอุปกรณ์ออกบางส่วน'</value>
+  </data>
+  <data name="MSG4142" xml:space="preserve">
+    <value>สลิปเลขที่ {0} ไม่สามารถนำอุปกรณ์ออกได้เพราะสถานะของสลิปไม่เป็น 'ยังไม่ได้นำอุปกรณ์ออก'</value>
+  </data>
+  <data name="MSG4143" xml:space="preserve">
+    <value>อุปกรณ์ {0} ไม่สามารถปรับจำนวนอุปกรณ์ได้ เพราะไม่มีอุปกรณ์ที่ buffer W/H และ user W/H</value>
+  </data>
+  <data name="MSG4144" xml:space="preserve">
+    <value>ส่วนลดต้องน้อยกว่ายอดรวม</value>
+  </data>
+  <data name="MSG4145" xml:space="preserve">
+    <value>โปรดระบุหน่วยอุปกรณ์</value>
+  </data>
+  <data name="MSG4146" xml:space="preserve">
+    <value>สลิปเลขที่นี้ถูกบันทึกข้อมูลสินทรัพย์แล้ว</value>
+  </data>
+  <data name="MSG4147" xml:space="preserve">
+    <value>คุณแน่ใจหรือไม่ว่าต้องการใส่ราคารวมอุปกรณ์เป็น 0? ({0})</value>
+  </data>
+  <data name="MSG4148" xml:space="preserve">
+    <value>ไม่สามารถแก้ไขหรือยกเลิกใบรับของหลังจากมีการคำนวนราคารายเดือนไปแล้ว</value>
+  </data>
+  <data name="MSG4149" xml:space="preserve">
+    <value>ไลน์อัพของ {0} เป็น 'หยุดขาย'.</value>
+  </data>
+</root>

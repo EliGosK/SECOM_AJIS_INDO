@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>  <!--headerNo-->
+    <column id="OCC" width="50" type="ro" align="left" sort="str">headerOCC</column>
+    <!--70-->
+    <column id="BillingOCC" width="50" type="ro" align="left" sort="str_custom">headerBillingOCC</column>
+    <!--150-->
+    <column id="BillingClientCode_EX" width="80" type="ro" align="left" sort="str_custom">headerBillingTargetCode</column>
+    <!--100-->
+    <column id="BillingTargetRunningNo" width="60" type="ro" align="left" sort="str_custom">#cspan</column>
+    <!--170-->
+    <column id="BillingClientName" width="*" type="ro" align="left" sort="str_custom">headerBillingClientName</column>
+    <!--150-->
+    <column id="BillingOffice" width="100" type="ro" align="left" sort="str_custom">headerBillingOffice</column>
+    <!--200-->
+    <column id="BillingTiming_EX" width="140" type="ro" align="left" sort="str_custom">headerBillingTiming</column>
+    <!--200-->
+    <column id="BillingType_EX" width="100" type="ro" align="left" sort="str_custom">headerFeeType</column>
+    <!--120-->
+    <column id="TextTransferBillingAmt" width="180"  type="ro" align="right" sort="na" >headerAmountTHB</column>
+    <!--150-->
+    <column id="Paymethod_EX" width="90" type="ro" align="left" sort="str_custom">headerPaymentMethod</column>
+
+
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,headerBillingClientCode,headerRunningNo,#rspan,#rspan,#rspan,#rspan,#rspan,#rspan</param>
+      </call>
+    </afterInit>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

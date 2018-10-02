@@ -1,0 +1,22 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@{
+    Layout = "";
+    ViewBag.LabelCol1Width = "220px";
+    ViewBag.ObjectColMergeWidth = "720px";
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS010/CTS010_03_F.js")"></script>
+<div id="divInstrumentDetail" class="main-table">
+    <div class="table-header">
+        @Resources.CTS010.lblFacilityDetail
+    </div>
+    <div class="usr-row">
+        <div id="gridFacilityDetailC" style="width:99%;margin-left:4px;"></div>
+    </div>
+    <div class="usr-row usr-row-space">
+        <div class="usr-label" style="width:@ViewBag.LabelCol1Width;">@Resources.QUS030.lblMemo</div>
+        <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+            @Html.CommonTextArea("FacilityMemo", (string)@ViewBag.FacilityMemo, new { @readonly = true, style = "width:" + @ViewBag.ObjectColMergeWidth + ";height:65px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

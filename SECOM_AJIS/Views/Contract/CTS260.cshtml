@@ -1,0 +1,393 @@
+﻿@using SECOM_AJIS.Common.Helpers
+@using SECOM_AJIS.Presentation.Common.Helpers
+@using SECOM_AJIS.Presentation.Contract.Helpers
+@section page_header{
+
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/excells/dhtmlxgrid_excell_dhxcalendar.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/js/dhtmlxgrid/dhtmlxcalendar.js")"></script>
+    <script src="../../Scripts/Base/DateTimePicker.js" type="text/javascript"></script>
+    <script src="../../Scripts/Contract/Dialog.js" type="text/javascript"></script>
+    <script src="../../Scripts/Common/Dialog.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var CTS260ProjectCode = "@ViewBag.strProjectCode";
+        var CTS260BranchNo = "@ViewBag.BranchDDL";
+    </script>
+    
+    @*<script src="../../Scripts/Contract/CTS260.js" type="text/javascript"></script>*@
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Contract/CTS260.js")" ></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/Base/ComboBox.js")"></script>
+}
+@{
+    ViewBag.Col1 = "210px";
+    ViewBag.Col2 = "260px;";
+    ViewBag.ProjPurSortObj = "120px";
+    ViewBag.LongTxt = "720px";
+    ViewBag.Midtxt = "220px";
+    ViewBag.SysProdTxt = "300px";
+}
+<div id="divProjectCondition" class="main-table">
+    <div class="table-header">
+        @Resources.CTS260.lblSpecifyProjectCode
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.Col1">@Resources.CTS260.lblProjectCode</div>
+        <div class="usr-object" style="margin-right:5px;">
+            @Html.CommonTextBox("ProjectCode", null, new { style = "width:140px;" })
+        </div>
+        <div class="usr-object">
+            @Html.CommonButton("btnRetrieveProject", @Resources.CTS260.btnRetrieve, new { style = "width:100px;" })
+            @Html.CommonButton("btnSearchProject", @Resources.CTS260.btnSearch, new { style = "width:100px;" })
+            @Html.CommonButton("btnClearProject", @Resources.CTS260.btnClear, new { style = "width:100px;" })
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>
+<div class="main-table" id="ProjectInfo">
+    <div class="table-header">@Resources.CTS260.HeaderProjectInformation</div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 216px">@Resources.CTS260.lblProjectStatus
+        </div>
+        <div class="usr-object" style="width: 140px;">
+            @Html.CommonTextBox("pjProjectStatusCodeName", null, new { style = "width:140px;" })@Html.Hidden("BrancDDL")
+        </div>
+    </div>
+    <div id="ProjectNameSection">
+        <div class="usr-row">
+            <div class="usr-label" style="width: 216px">@Resources.CTS260.lblProjectName</div>
+            <div class="usr-object">@Html.CommonTextBox("pjProjectName", null, new { maxlength = "100", style = "width:" + ViewBag.LongTxt + ";" })</div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width: 216px">@Resources.CTS260.lblProjectRepresentativeAddress</div>
+            <div class="usr-object">@Html.CommonTextBox("pjProjectAddress", null, new { maxlength = "1600", style = "width:" + ViewBag.LongTxt + ";" })</div>
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+    <br />
+    <!--======================================= Project Purchaser =============================-->
+    <div class="main-table" id="ProjectPurchaserSection">
+        <div class="table-header">@Resources.CTS260.HeaderProjectPurchaser</div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblCustomerCode</div>
+            <div class="usr-object" style="width: 140px;">
+                @Html.CommonTextBox("CPCustCodeShort", null, new { style = "width:140px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width: @ViewBag.Col1">@Resources.CTS260.lblCustomerStatus</div>
+            <div class="usr-object" style="width: 140px;">
+                @Html.CommonTextBox("CPCustStatusCodeName", null, new { style = "width:140px;" })
+            </div>
+            <div class="usr-label" style="width: 160px;">@Resources.CTS260.lblCustomerType</div>
+            <div class="usr-object" style="width: 145px;">
+                @Html.CommonTextBox("CPCustTypeCodeName", null, new { style = "width:145px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblNameEnglish</div>
+            <div class="usr-object" style="width:@ViewBag.LongTxt;">
+                @Html.CommonTextBox("CPCustFullNameEN", null, new { style = "width:" + @ViewBag.LongTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblAddressEnglish</div>
+            <div class="usr-object" style="width:@ViewBag.LongTxt;">
+                @Html.CommonTextBox("CPAddressFullEN", null, new { style = "width:" + @ViewBag.LongTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row usr-row-space">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblNameLocal</div>
+            <div class="usr-object" style="width:@ViewBag.LongTxt;">
+                @Html.CommonTextBox("CPCustFullNameLC", null, new { style = "width:" + @ViewBag.LongTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblAddressLocal</div>
+            <div class="usr-object" style="width:@ViewBag.LongTxt;">
+                @Html.CommonTextBox("CPAddressFullLC", null, new { style = "width:" + @ViewBag.LongTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblNationality</div>
+            <div class="usr-object" style="width:@ViewBag.ProjPurSortObj;">
+                @Html.CommonTextBox("CPNationality", null, new { style = "width:" + @ViewBag.ProjPurSortObj + ";" })
+            </div>
+            <div class="usr-label" style="width: 180px;">@Resources.CTS260.lblTelephoneNo</div>
+            <div class="usr-object" style="width:@ViewBag.ProjPurSortObj;">
+                @Html.CommonTextBox("CPPhoneNo", null, new { style = "width:" + @ViewBag.ProjPurSortObj + ";" })
+            </div>
+            <div class="usr-label" style="width: 170px;">@Resources.CTS260.lblBusinessType</div>
+            <div class="usr-object" style="width: 120px;">
+                @Html.CommonTextBox("CPBusinessTypeName", null, new { style = "width:120px;" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblIdNoTaxIdNo</div>
+            <div class="usr-object" style="width:@ViewBag.ProjPurSortObj;">
+                @Html.CommonTextBox("CPIDNo", null, new { style = "width:" + @ViewBag.ProjPurSortObj + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblUrl</div>
+            <div class="usr-object" style="width:@ViewBag.LongTxt;">
+                @Html.CommonTextBox("CPURL", null, new { style = "width:" + @ViewBag.LongTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+    <!--======================================= End Project Purchaser =============================-->
+    <div class="main-table" style="margin-top: 5px;" id="ProjectOwnerSection">
+        <div class="table-header">@Resources.CTS260.HeaderProjectOwner</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblOwner1NameEnglish</div>
+            <div class="usr-object" style="width:@ViewBag.LongTxt;">
+                @Html.CommonTextBox("pjOwner1NameEN", null, new { maxlength = "200", style = "width:" + @ViewBag.LongTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblOwner1NameLocal</div>
+            <div class="usr-object" style="width:@ViewBag.LongTxt;">
+                @Html.CommonTextBox("pjOwner1NameLC", null, new { maxlength = "200", style = "width:" + @ViewBag.LongTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row usr-row-space-2x">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblOwner2NameEnglish</div>
+            <div class="usr-object" style="width:@ViewBag.LongTxt;">
+                @Html.CommonTextBox("pjOwner2NameEN", null, new { maxlength = "200", style = "width:" + @ViewBag.LongTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblOwner2NameLocal</div>
+            <div class="usr-object" style="width:@ViewBag.LongTxt;">
+                @Html.CommonTextBox("pjOwner2NameLC", null, new { maxlength = "200", style = "width:" + @ViewBag.LongTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+    <!-- Project Owner -->
+    <div class="main-table">
+        <div class="table-header">@Resources.CTS260.HeaderProjectManagementCompany</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;">@Resources.CTS260.lblCompanyNameEnglish
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongTxt;">
+                @Html.CommonTextBox("pjManagementCompanyNameEN", null, new { style = "width:" + @ViewBag.LongTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.Col1;">
+                @Resources.CTS260.lblCompanyNameLocal
+            </div>
+            <div class="usr-object" style="width:@ViewBag.LongTxt;">
+                @Html.CommonTextBox("pjManagementCompanyNameLC", null, new { style = "width:" + @ViewBag.LongTxt + ";" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 216px">@Resources.CTS260.lblOverallBudgetAmount
+        </div>
+        <div class="usr-object" style="width: 220px;">
+            @Html.NumericTextBoxWithMultipleCurrency("pjOverallBudgetAmount", null, null, new { style = "width:140px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: @ViewBag.Col2">@Resources.CTS260.lblReceivedBudgetAmount
+        </div>
+        <div class="usr-object" style="width: 220px;">
+            @Html.NumericTextBoxWithMultipleCurrency("pjReceivedBudgetAmount", null, null, new { style = "width:140px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 216px">@Resources.CTS260.lblReceivedInstallationFee
+        </div>
+        <div class="usr-object" style="width: 220px;">
+            <div style="height: 25px;">
+                @Html.NumericTextBoxWithMultipleCurrency("pjReceivedInstallationFee", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+            </div>
+            <div>
+                @Html.NumericTextBoxWithMultipleCurrency("pjReceivedInstallationFeeUsd", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_US, new { style = "width:140px;", @readonly = true })
+            </div>
+        </div>
+        <div class="usr-label" style="width: @ViewBag.Col2">@Resources.CTS260.lblReceivedInstrumentPrice
+        </div>
+        <div class="usr-object" style="width: 220px;">
+            <div style="height: 25px;">
+                @Html.NumericTextBoxWithMultipleCurrency("pjReceivedInstrumentPrice", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_LOCAL, new { style = "width:140px;", @readonly = true })
+            </div>
+            <div>
+                @Html.NumericTextBoxWithMultipleCurrency("pjReceivedInstrumentPriceUsd", null, SECOM_AJIS.Common.Util.ConstantValue.CurrencyUtil.C_CURRENCY_US, new { style = "width:140px;", @readonly = true })
+            </div>
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 216px">@Resources.CTS260.lblBiddingDate
+        </div>
+        <div class="usr-object" style="width: 220px;">
+            @Html.CommonTextBox("pjBiddingDate", null, new { style = "width:190px;" })
+        </div>
+        <div class="usr-label" style="width: 260px;">@Resources.CTS260.lblLastOrderAmount
+        </div>
+        <div class="usr-object" style="width: 220px;">
+            @Html.NumericTextBoxWithMultipleCurrency("pjLastOrderAmount", null, null, new { style = "width:140px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 216px">@Resources.CTS260.lblStockedOutInstrumentAmount
+        </div>
+        <div class="usr-object" style="width: 220px;">
+            @Html.NumericTextBoxWithMultipleCurrency("pjStockedOutInstrumentAmount", null, null, new { style = "width:140px;", @readonly = true })
+        </div>
+        <div class="usr-label" style="width: @ViewBag.Col2">@Resources.CTS260.lblInstallationOrderedAmount
+        </div>
+        <div class="usr-object" style="width: 220px;">
+            @Html.NumericTextBoxWithMultipleCurrency("pjInstallationOrderedAmount", null, null, new { style = "width:140px;", @readonly = true })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+    <br />
+    <!--======================================= Other project related company/person =============================-->
+    <div class="main-table" id="OtherProjectSection">
+        <div class="table-header">@Resources.CTS260.HeaderOtherProjectRelatedCompanyPerson</div>
+        <div id="OtherGridPlane">
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+        <!--======================================= End Other project related company/person =============================-->
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+</div>
+<!--************************************** Half page ***********************************************-->
+<div class="main-table" id="SecomInfoSection">
+    <div class="table-header">@Resources.CTS260.HeaderSecomInformation</div>
+    <!--======================================= System product =============================-->
+    <div class="main-table" id="SystemProductSection">
+        <div class="table-header">@Resources.CTS260.HgridSystemProductName</div>
+        <div class="usr-row">
+            <div class="usr-object">
+                <div id="systemGridPlane" style="width: 430px; margin-left: 216px;">
+                </div>
+            </div>
+            <div class="usr-object" style="width: 130px; margin-left: 20px;">@Html.CommonButton("btnViewContractDetail", @Resources.CTS260.lblBtnViewContract, new { style = "width:150px;" })</div>
+            <div class="usr-label" style="margin-left: 20px;">
+                @Resources.CTS260.lblViewContract</div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 216px;">@Resources.CTS230.lblHeadSalesman</div>
+        <div class="usr-object">@Html.CommonTextBox("pjHeadSalesmanEmpNo", null, new { style = "width:" + @ViewBag.ProjPurSortObj + ";", maxlength = "10" })
+            @Html.CommonTextBox("pjHeadSalesmanEmpFullName", null, new { style = "width:" + @ViewBag.SysProdTxt + ";" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 216px;">@Resources.CTS230.lblProjectManager</div>
+        <div class="usr-object">@Html.CommonTextBox("pjProjectManagerEmpNo", null, new { style = "width:" + @ViewBag.ProjPurSortObj + ";", maxlength = "10" })
+            @Html.CommonTextBox("pjProjectManagerEmpFullName", null, new { style = "width:" + @ViewBag.SysProdTxt + ";" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 216px;">@Resources.CTS230.lblProjectSubManager</div>
+        <div class="usr-object">@Html.CommonTextBox("pjProjectSubManagerEmpNo", null, new { style = "width:" + @ViewBag.ProjPurSortObj + ";", maxlength = "10" })
+            @Html.CommonTextBox("pjProjectSubManagerEmpFullName", null, new { style = "width:" + @ViewBag.SysProdTxt + ";" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 216px;">@Resources.CTS230.lblSecurityPlanningChief</div>
+        <div class="usr-object">@Html.CommonTextBox("pjSecurityPlanningChiefEmpNo", null, new { style = "width:" + @ViewBag.ProjPurSortObj + ";", maxlength = "10" })
+            @Html.CommonTextBox("pjSecurityPlanningChiefEmpFullName", null, new { style = "width:" + @ViewBag.SysProdTxt + ";" })
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width: 216px;">@Resources.CTS230.lblInstallationChief</div>
+        <div class="usr-object">@Html.CommonTextBox("pjInstallationChiefEmpNo", null, new { style = "width:" + @ViewBag.ProjPurSortObj + ";", maxlength = "10" })
+            @Html.CommonTextBox("pjInstallationChiefEmpFullName", null, new { style = "width:" + @ViewBag.SysProdTxt + ";" })
+        </div>
+    </div>
+    <div class="usr-clear-style">
+        &nbsp;</div>
+    <br />
+    <!--======================================= End System product  =============================-->
+    <!--======================================= Support staff =============================-->
+    <div class="main-table" id="SupportStaffSection">
+        <div class="table-header">@Resources.CTS260.HeaderSupportStaff</div>
+        <div id="SupportGridPlane">
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+    <!--======================================= End Support staff  =============================-->
+    <!--======================================= Expect intrument details =============================-->
+    <div class="main-table" id="ExpectIntrumentDetailsSection">
+        <div class="table-header">@Resources.CTS260.HeaderExpectedInstrumentDetail</div>
+        <div id="ExpectGridPlane">
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+    <!--======================================= End Expect intrument details  =============================-->
+    <!--======================================= Project Wiph intrument detail =============================-->
+    <div class="main-table" id="ProjectWiphIntrumentSection">
+        <div class="table-header">@Resources.CTS260.HeaderProjectWipWHInstrumentDetail</div>
+        <div id="WipGridPlane">
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+    <!--======================================= End Project Wiph intrument detail  =============================-->
+    <!--======================================= Project stock out =============================-->
+    <div class="main-table" id="ProjectStockOutSection">
+        <div class="table-header">@Resources.CTS260.HeaderProjectStockOutInstrumentDetail</div>
+        <div class="usr-row">
+            <div class="usr-label">
+                @Resources.CTS260.lblProjectBranchNo
+            </div>
+            <div class="usr-object">@Html.ProjectBranchNoComboBox("ddlProjectBranch", (string)@ViewBag.strProjectCode, new { style = "width:120px;" })</div>
+        </div>
+        <div class="usr-row">
+            <div id="StockOutGridPlane">
+            </div>
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width: 216px; vertical-align: middle;">@Resources.CTS260.lblStockOutMemo</div>
+            <div class="usr-object">@Html.CommonTextArea("pjStockoutMemo", null, new { @readonly = true, style = "width:600px;", rows = "4" })
+            </div>
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>
+    <!--======================================= End Project stock out  =============================-->
+    <!--======================================= attach doc list =============================-->
+    @*<div class="main-table" id="AttachDocListSection">
+        <div class="table-header">@Resources.CTS260.HeaderAttachedDocumentList</div>
+        <div id="AttachGridPlane" style="width: 400px;margin-left:@ViewBag.Col1">
+        </div>
+        <div class="usr-clear-style">
+            &nbsp;</div>
+    </div>*@
+    <!---------------------------------- Attached Document list ---------------------------------------------->
+    <div id="divAttachedDoclist" class="sub-table" style="margin-top:10px">
+        <div class="table-sub-header">@Resources.CTS300.lblAttachedDocumentList</div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:215px;">&nbsp;</div>
+            <div class="usr-object" style="width:@ViewBag.ObjectColMergeWidth;">
+                <div id="CTS260_gridAttachDocList" style="width:400px;"></div>
+                <iframe id="ifDownload" style="visibility: hidden; width: 0px; height: 0px;"></iframe>
+            </div>
+        </div>       
+    <div class="usr-clear-style">&nbsp;</div>
+    </div>
+    
+    <!---------------------------------- End   Attached Document list---------------------------------------------->
+    <!--======================================= End attach doc list   =============================-->
+    <div class="usr-clear-style">
+        &nbsp;</div>
+</div>
+<div id="dlgBox" class="main-popup-dialog">
+    <div class="popup-dialog">
+    </div>
+</div>

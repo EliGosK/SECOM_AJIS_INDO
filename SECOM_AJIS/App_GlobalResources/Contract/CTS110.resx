@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="headerAmount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="headerBillingClientCode" xml:space="preserve">
+    <value>Billing client code</value>
+  </data>
+  <data name="headerBillingOCC" xml:space="preserve">
+    <value>Billing OCC</value>
+  </data>
+  <data name="headerBillingOffice" xml:space="preserve">
+    <value>Billing office</value>
+  </data>
+  <data name="headerBillingTargetCode" xml:space="preserve">
+    <value>Billing customer code</value>
+  </data>
+  <data name="headerBillingTargetName" xml:space="preserve">
+    <value>&lt;div&gt; Billing customer name &lt;br/&gt; (1) English &lt;br/&gt; (2) Local &lt;/div&gt;</value>
+  </data>
+  <data name="headerDetail" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;Detail&lt;/div&gt;</value>
+  </data>
+  <data name="headerFee" xml:space="preserve">
+    <value>Fee</value>
+  </data>
+  <data name="headerFeeType" xml:space="preserve">
+    <value>Fee type</value>
+  </data>
+  <data name="headerHandlingType" xml:space="preserve">
+    <value>Handling type</value>
+  </data>
+  <data name="headerPaymentMethod" xml:space="preserve">
+    <value>Payment method</value>
+  </data>
+  <data name="headerPeriod" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="headerRemark" xml:space="preserve">
+    <value>Remark</value>
+  </data>
+  <data name="headerRemove" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;Remove&lt;/div&gt;</value>
+  </data>
+  <data name="headerSelect" xml:space="preserve">
+    <value>Select</value>
+  </data>
+  <data name="headerTax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="lblAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="lblAddressEnglish" xml:space="preserve">
+    <value>Address (English)</value>
+  </data>
+  <data name="lblAddressLocal" xml:space="preserve">
+    <value>Address (Local)</value>
+  </data>
+  <data name="lblAddUpdate" xml:space="preserve">
+    <value>Add/Update</value>
+  </data>
+  <data name="lblApprove1" xml:space="preserve">
+    <value>Approve no. 1</value>
+  </data>
+  <data name="lblApprove2" xml:space="preserve">
+    <value>Approve no. 2</value>
+  </data>
+  <data name="lblBill" xml:space="preserve">
+    <value>Bill</value>
+  </data>
+  <data name="lblBillingClientAddressEN" xml:space="preserve">
+    <value>Billing customer address (English)</value>
+  </data>
+  <data name="lblBillingClientAddressLC" xml:space="preserve">
+    <value>Billing customer address (Local)</value>
+  </data>
+  <data name="lblBillingClientCode" xml:space="preserve">
+    <value>Billing client code</value>
+  </data>
+  <data name="lblBillingClientNameEN" xml:space="preserve">
+    <value>Billing customer name (English)</value>
+  </data>
+  <data name="lblBillingClientNameLC" xml:space="preserve">
+    <value>Billing customer name (Local)</value>
+  </data>
+  <data name="lblBillingOCC" xml:space="preserve">
+    <value>Billing OCC</value>
+  </data>
+  <data name="lblBillingOffice" xml:space="preserve">
+    <value>Billing office</value>
+  </data>
+  <data name="lblBillingTargetCode" xml:space="preserve">
+    <value>Billing customer code</value>
+  </data>
+  <data name="lblBillingTargetDetail" xml:space="preserve">
+    <value>Billing customer detail</value>
+  </data>
+  <data name="lblBranchNameEN" xml:space="preserve">
+    <value>Branch name (English)</value>
+  </data>
+  <data name="lblBranchNameEnglish" xml:space="preserve">
+    <value>Branch name (English)</value>
+  </data>
+  <data name="lblBranchNameLC" xml:space="preserve">
+    <value>Branch name (Local)</value>
+  </data>
+  <data name="lblBranchNameLocal" xml:space="preserve">
+    <value>Branch name (Local)</value>
+  </data>
+  <data name="lblBranchOfContractTarget" xml:space="preserve">
+    <value>Branch of customer</value>
+  </data>
+  <data name="lblBranchOfContractTargetDetail" xml:space="preserve">
+    <value>Branch of customer</value>
+  </data>
+  <data name="lblBusinessType" xml:space="preserve">
+    <value>Business category</value>
+  </data>
+  <data name="lblCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="lblCancelContractBeforeExpiration" xml:space="preserve">
+    <value>Termination before expiration</value>
+  </data>
+  <data name="lblCancelDate" xml:space="preserve">
+    <value>Cancel date</value>
+  </data>
+  <data name="lblCancelReason" xml:space="preserve">
+    <value>Cancel reason</value>
+  </data>
+  <data name="lblClearBillingTarget" xml:space="preserve">
+    <value>Clear billing customer</value>
+  </data>
+  <data name="lblContractCode" xml:space="preserve">
+    <value>Contract no.</value>
+  </data>
+  <data name="lblContractCodeForSlideFee" xml:space="preserve">
+    <value>Contract no. for slide fee</value>
+  </data>
+  <data name="lblContractExpired" xml:space="preserve">
+    <value>Contract expired</value>
+  </data>
+  <data name="lblContractTarget" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="lblContractTargetDetail" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="lblCopy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="lblCopyDetail" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="lblCopyInformationType" xml:space="preserve">
+    <value>Copy information type</value>
+  </data>
+  <data name="lblCopyName" xml:space="preserve">
+    <value>Copy name and address information</value>
+  </data>
+  <data name="lblCustomerType" xml:space="preserve">
+    <value>Customer type</value>
+  </data>
+  <data name="lblExempt" xml:space="preserve">
+    <value>Exempt</value>
+  </data>
+  <data name="lblFee" xml:space="preserve">
+    <value>Fee</value>
+  </data>
+  <data name="lblFeeType" xml:space="preserve">
+    <value>Fee type</value>
+  </data>
+  <data name="lblHandlingType" xml:space="preserve">
+    <value>Handling type</value>
+  </data>
+  <data name="lblIDNo" xml:space="preserve">
+    <value>NPWP</value>
+  </data>
+  <data name="lblNameEnglish" xml:space="preserve">
+    <value>Name (English)</value>
+  </data>
+  <data name="lblNameLocal" xml:space="preserve">
+    <value>Name (Local)</value>
+  </data>
+  <data name="lblNationality" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="lblNew" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="lblNewEditBillingClientInfo" xml:space="preserve">
+    <value>New/Edit billing customer info</value>
+  </data>
+  <data name="lblNormalFee" xml:space="preserve">
+    <value>Normal fee</value>
+  </data>
+  <data name="lblOtherRemarks" xml:space="preserve">
+    <value>Other remarks</value>
+  </data>
+  <data name="lblPeriod" xml:space="preserve">
+    <value>Period</value>
+  </data>
+  <data name="lblRealCustomerDetail" xml:space="preserve">
+    <value>Real customer (End user)</value>
+  </data>
+  <data name="lblRealCustomerEndUser" xml:space="preserve">
+    <value>Real customer (End user)</value>
+  </data>
+  <data name="lblReceiveAsRevenue" xml:space="preserve">
+    <value>Receive as revenue</value>
+  </data>
+  <data name="lblRefund" xml:space="preserve">
+    <value>Refund</value>
+  </data>
+  <data name="lblRemark" xml:space="preserve">
+    <value>Remark</value>
+  </data>
+  <data name="lblRemovalFeeBillingTarget" xml:space="preserve">
+    <value>Removal fee billing customer</value>
+  </data>
+  <data name="lblRemovalInstallationFee" xml:space="preserve">
+    <value>Removal installation fee</value>
+  </data>
+  <data name="lblRetrieve" xml:space="preserve">
+    <value>Retrieve</value>
+  </data>
+  <data name="lblRetrieveDetail" xml:space="preserve">
+    <value>Retrieve</value>
+  </data>
+  <data name="lblSearchBillingClient" xml:space="preserve">
+    <value>Search billing customer</value>
+  </data>
+  <data name="lblSearchBillingClientDetail" xml:space="preserve">
+    <value>Search billing customer</value>
+  </data>
+  <data name="lblSelectProcessAfterCounterBal" xml:space="preserve">
+    <value>Select process after counter balancing</value>
+  </data>
+  <data name="lblSite" xml:space="preserve">
+    <value>Premise</value>
+  </data>
+  <data name="lblSiteDetail" xml:space="preserve">
+    <value>Premise</value>
+  </data>
+  <data name="lblSpecifyCode" xml:space="preserve">
+    <value>Specify code</value>
+  </data>
+  <data name="lblSpecifyCodeType" xml:space="preserve">
+    <value>Specify code type</value>
+  </data>
+  <data name="lblStopType" xml:space="preserve">
+    <value>Stop type</value>
+  </data>
+  <data name="lblTax" xml:space="preserve">
+    <value>Tax</value>
+  </data>
+  <data name="lblTelephoneNo" xml:space="preserve">
+    <value>Telephone no.</value>
+  </data>
+  <data name="lblTitleBillingTargetDetail" xml:space="preserve">
+    <value>Billing customer detail</value>
+  </data>
+  <data name="lblTitleCancelContract" xml:space="preserve">
+    <value>Termination</value>
+  </data>
+  <data name="lblTitleCancelContractCondition" xml:space="preserve">
+    <value>Termination condition</value>
+  </data>
+  <data name="lblTitleRemovalFeeBillingTarget" xml:space="preserve">
+    <value>Removal fee billing customer</value>
+  </data>
+  <data name="lblTo" xml:space="preserve">
+    <value>~</value>
+  </data>
+  <data name="lblTotalBillingAmount" xml:space="preserve">
+    <value>(2) Total billing amount</value>
+  </data>
+  <data name="lblTotalCounterBalAmount" xml:space="preserve">
+    <value>(1) - (2) Total counter balancing amount</value>
+  </data>
+  <data name="lblTotalRefundAmount" xml:space="preserve">
+    <value>(1) Total refund amount</value>
+  </data>
+  <data name="lblTotalSlideAmount" xml:space="preserve">
+    <value>Total slide amount</value>
+  </data>
+  <data name="headerCurrencyLocal" xml:space="preserve">
+    <value>Rp.</value>
+  </data>
+  <data name="headerCurrencyUsd" xml:space="preserve">
+    <value>US$</value>
+  </data>
+  <data name="lblSelectProcessAfterCounterBalRp" xml:space="preserve">
+    <value>Select process after counter balancing (Rp.)</value>
+  </data>
+  <data name="lblSelectProcessAfterCounterBalUsd" xml:space="preserve">
+    <value>Select process after counter balancing (US$)</value>
+  </data>
+  <data name="lblTotalBillingAmountRp" xml:space="preserve">
+    <value>Total billing amount (Rp.)</value>
+  </data>
+  <data name="lblTotalBillingAmountUsd" xml:space="preserve">
+    <value>Total billing amount (US$)</value>
+  </data>
+  <data name="lblTotalCounterBalAmountRp" xml:space="preserve">
+    <value>Total counter balancing amount (Rp.)</value>
+  </data>
+  <data name="lblTotalCounterBalAmountUsd" xml:space="preserve">
+    <value>Total counter balancing amount (US$)</value>
+  </data>
+  <data name="lblTotalRefundAmountRp" xml:space="preserve">
+    <value>Total refund amount (Rp.)</value>
+  </data>
+  <data name="lblTotalRefundAmountUsd" xml:space="preserve">
+    <value>Total refund amount (US$)</value>
+  </data>
+  <data name="lblTotalSlideAmountRp" xml:space="preserve">
+    <value>Total slide amount (Rp.)</value>
+  </data>
+  <data name="lblTotalSlideAmountUsd" xml:space="preserve">
+    <value>Total slide amount (US$)</value>
+  </data>
+</root>

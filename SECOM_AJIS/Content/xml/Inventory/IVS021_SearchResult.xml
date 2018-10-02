@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    
+    <column id="SlipNo" width="140" type="ro" align="left" sort="int">headerLastInstallationSlipNo</column>
+    <column id="ContractCodeShort" width="110" type="ro" align="left" sort="str_custom">headerContractCode</column>
+    <column id="CustFullNameDisplay" width="*" type="ro" align="left" sort="str_custom">headerCustFullName</column>
+    <column id="SlipIssueDate" width="120" type="dhxCalendar" format="%d-%b-%Y" align="left" sort="date">headerExpectedStockOutDate</column>
+    <column id="OfficeName" width="120" type="ro" align="left" sort="str_custom">headerInventoryOffice</column>
+    <column id="InstallationTypeName" width="100" type="ro" align="left" sort="str_custom">headerInstallationType</column>
+    <column id="BtnEdit" width="30" type="ro" align="center" sort="na">headerBtnEdit</column>
+    <column id="ToJson" width="0" type="ro" hidden="true"></column>
+    
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

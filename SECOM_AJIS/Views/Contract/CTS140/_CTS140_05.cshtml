@@ -1,0 +1,88 @@
+﻿@using SECOM_AJIS.Common.Helpers;
+@using SECOM_AJIS.Presentation.Common.Helpers
+@{
+    ViewBag.LabelWidth = "215px";
+    ViewBag.RightLabelWidth = "220px";
+    ViewBag.ObjectWidth = "160px";
+    ViewBag.RightObjectWidth = "180px";
+    ViewBag.isViewMode = true;
+    ViewBag.ContractTargetCustomerImportant = false;
+    
+    ViewBag.SubTableWidth = "550px";
+    ViewBag.SubLabelCol1Width = "120px";
+}
+<div id="divContractDocumentInformation" class="main-table">
+    <div class="usr-row">
+        <div class="table-header">
+            @Resources.CTS140.lblContractDocumentInformation
+        </div>
+        <div class="usr-row">
+            <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            </div>
+            <div class="usr-object">
+               @Html.CommonCheckButton("IrregurationDocUsageFlag", @Resources.CTS140.lblOutOfRegulation, null, (bool?)@ViewBag.IrregurationDocUsageFlag,null)
+            </div>           
+        </div>       
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:10px;">&nbsp</div>
+        <div class="usr-label" style="font-weight:bold;text-align:left;">
+            @Resources.CTS140.lblPOReport
+        </div>     
+    </div>
+    <div class="usr-row">     
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS140.lblDocumentAuditResult
+        </div>     
+        <div class="usr-object" style="width: 120px">
+            @Html.CommonTextBox("PODocAuditResult", (string)@ViewBag.PODocAuditResult, new { style = "width:200px;", @readonly = true })        
+        </div>
+        <div class="usr-label" style="width: 275px">
+            @Resources.CTS140.lblReceiveDate
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("PODocReceiveDate", null, new { style = "width:120px;", @readonly = true })        
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:10px;">&nbsp</div>
+        <div class="usr-label" style="font-weight:bold;text-align:left;">
+            @Resources.CTS140.lblContractReport
+        </div>     
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS140.lblDocumentAuditResult
+        </div>     
+        <div class="usr-object" style="width: 120px">
+            @Html.CommonTextBox("ContractDocAuditResult", (string)@ViewBag.ContractDocAuditResult, new { style = "width:200px;", @readonly = true })        
+        </div>
+        <div class="usr-label" style="width: 275px">
+            @Resources.CTS140.lblReceiveDate
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("ContractDocReceiveDate", null, new { style = "width:120px;", @readonly = true })        
+        </div>
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:10px;">&nbsp</div>
+        <div class="usr-label" style="font-weight:bold;text-align:left;">
+            @Resources.CTS140.lblStartMemorandum
+        </div>     
+    </div>
+    <div class="usr-row">
+        <div class="usr-label" style="width:@ViewBag.LabelWidth;">
+            @Resources.CTS140.lblDocumentAuditResult
+        </div>     
+        <div class="usr-object" style="width: 120px">
+            @Html.CommonTextBox("StartMemoAuditResult", (string)@ViewBag.StartMemoAuditResult, new { style = "width:200px;", @readonly = true })        
+        </div>
+        <div class="usr-label" style="width: 275px">
+            @Resources.CTS140.lblReceiveDate
+        </div>
+        <div class="usr-object">
+            @Html.CommonTextBox("StartMemoReceiveDate", null, new { style = "width:120px;", @readonly = true })        
+        </div>
+    </div>
+    <div class="usr-clear-style">&nbsp;</div>
+</div>

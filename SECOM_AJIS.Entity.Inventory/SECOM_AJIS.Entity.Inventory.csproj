@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DDC95591-2286-4A85-BD76-C3499101BA98}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SECOM_AJIS.DataEntity.Inventory</RootNamespace>
+    <AssemblyName>SECOM_AJIS.Entity.Inventory</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomEntity\EXT_doInventoryBookingDetail.cs" />
+    <Compile Include="CustomEntity\EXT_dtOutReportDetail.cs" />
+    <Compile Include="CustomEntity\EXT_dtInprocessToInstallReportDetail.cs" />
+    <Compile Include="CustomEntity\EXT_dtInProcessReportDetail.cs" />
+    <Compile Include="CustomEntity\doIVS290SearchCondition.cs" />
+    <Compile Include="CustomEntity\doIVS289SearchCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dtChangeAreaReportHeader.cs" />
+    <Compile Include="CustomEntity\doIVS030SearchCondition.cs" />
+    <Compile Include="CustomEntity\doIVS288SearchCondition.cs" />
+    <Compile Include="CustomEntity\EXT_doSearchReceiveSlipResult.cs" />
+    <Compile Include="CustomEntity\EXT_doIVR010.cs" />
+    <Compile Include="CustomEntity\EXT_doIVR192.cs" />
+    <Compile Include="CustomEntity\EXT_doIVR181.cs" />
+    <Compile Include="CustomEntity\doIVS283SearchCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dtInProcessReport.cs" />
+    <Compile Include="CustomEntity\doIVS286SearchCondition.cs" />
+    <Compile Include="CustomEntity\doIVS287SearchCondition.cs" />
+    <Compile Include="CustomEntity\doIVS285SearchCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dtInprocessToInstallReport.cs" />
+    <Compile Include="CustomEntity\doIVS284SearchCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dtReturnReportHeader.cs" />
+    <Compile Include="CustomEntity\doIVS282SearchCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dtOutReportHeader.cs" />
+    <Compile Include="CustomEntity\doIVS281SearchCondition.cs" />
+    <Compile Include="CustomEntity\EXT_dtInReportHeader.cs" />
+    <Compile Include="CustomEntity\doIVS280SearchCondition.cs" />
+    <Compile Include="CustomEntity\doClearQtyAllLot.cs" />
+    <Compile Include="CustomEntity\doCommonCSVInv.cs" />
+    <Compile Include="CustomEntity\doGroupSecondhandInstrument.cs" />
+    <Compile Include="CustomEntity\doSearchInstrumentListConditionIVS190.cs" />
+    <Compile Include="CustomEntity\doUpdateCompleteStockoutForPartial.cs" />
+    <Compile Include="CustomEntity\EXT_doCSVassetAmountAcc.cs" />
+    <Compile Include="CustomEntity\EXT_doCSVInvDepreciationAcc.cs" />
+    <Compile Include="CustomEntity\EXT_doCSVMovingAssetAcc.cs" />
+    <Compile Include="CustomEntity\EXT_doCSVOtherFinancialAcc.cs" />
+    <Compile Include="CustomEntity\EXT_doIVR180.cs" />
+    <Compile Include="CustomEntity\EXT_doProjectInformation.cs" />
+    <Compile Include="CustomEntity\doSearchInstallationSlipCond.cs" />
+    <Compile Include="CustomEntity\EXT_dtSearchInstallationSlipResult.cs" />
+    <Compile Include="CustomEntity\EXT_dtStockOutByInstallationSlipResult.cs" />
+    <Compile Include="CustomEntity\EXT_dtResultInventorySlipDetail.cs" />
+    <Compile Include="CustomEntity\EXT_dtResultInventorySlipIVS230.cs" />
+    <Compile Include="CustomEntity\doGetInventorySlipIVS230.cs" />
+    <Compile Include="CustomEntity\EXT_dtResultIVS220.cs" />
+    <Compile Include="CustomEntity\doGetIVS220.cs" />
+    <Compile Include="CustomEntity\EXT_doIVR191.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_InventoryCheckingSlipDetail.cs" />
+    <Compile Include="CustomEntity\EXT_doResultIVS201.cs" />
+    <Compile Include="CustomEntity\doInventorySlipDetailList.cs" />
+    <Compile Include="CustomEntity\doGetIVS201.cs" />
+    <Compile Include="CustomEntity\doInventorySlipList.cs" />
+    <Compile Include="CustomEntity\EXT_doIVR110.cs" />
+    <Compile Include="CustomEntity\EXT_RPTdoIVR150.cs" />
+    <Compile Include="CustomEntity\EXT_RPTdoIVR143.cs" />
+    <Compile Include="CustomEntity\EXT_RPTdoIVR142.cs" />
+    <Compile Include="CustomEntity\EXT_RPTdoIVR141.cs" />
+    <Compile Include="CustomEntity\EXT_RPTdoIVR140.cs" />
+    <Compile Include="CustomEntity\EXT_doIVR.cs" />
+    <Compile Include="CustomEntity\EXT_dtCheckingDetailList.cs" />
+    <Compile Include="CustomEntity\EXT_dtStockCheckingList.cs" />
+    <Compile Include="CustomEntity\doGetCheckingDetailList.cs" />
+    <Compile Include="CustomEntity\doGetStockCheckingList.cs" />
+    <Compile Include="CustomEntity\EXT_dtCheckingStatusList.cs" />
+    <Compile Include="CustomEntity\EXT_dtOfficeCheckingList.cs" />
+    <Compile Include="CustomEntity\doBooking.cs" />
+    <Compile Include="CustomEntity\doGetIVS200.cs" />
+    <Compile Include="CustomEntity\doInsertDepreciationData.cs" />
+    <Compile Include="CustomEntity\EXT_doOffice.cs" />
+    <Compile Include="CustomEntity\doSearchInstrumentListCondition.cs" />
+    <Compile Include="CustomEntity\doRegisterTransferInstrumentData.cs" />
+    <Compile Include="CustomEntity\EXT_doResultGetReturnSlip.cs" />
+    <Compile Include="CustomEntity\EXT_doResultInstallationDetailForStockOut.cs" />
+    <Compile Include="CustomEntity\EXT_doResultInstallationSlipForStockOut.cs" />
+    <Compile Include="CustomEntity\EXT_doResultReturnInstrument.cs" />
+    <Compile Include="CustomEntity\EXT_dtSearchInstrumentListResult.cs" />
+    <Compile Include="CustomEntity\doCheckTransferQtyResult.cs" />
+    <Compile Include="CustomEntity\doCheckTransferQty.cs" />
+    <Compile Include="CustomEntity\doGroupNewInstrument.cs" />
+    <Compile Include="CustomEntity\doGroupSampleInstrument.cs" />
+    <Compile Include="CustomEntity\EXT_doInventorySlipDetail.cs" />
+    <Compile Include="CustomEntity\EXT_doInventorySlip.cs" />
+    <Compile Include="CustomEntity\doInventorySlipSearchCondition.cs" />
+    <Compile Include="CustomEntity\EXT_doPurchaseOrderDetail.cs" />
+    <Compile Include="CustomEntity\EXT_doPurchaseOrder.cs" />
+    <Compile Include="CustomEntity\EXT_GetTbt_InventorySlipDetailForView.cs" />
+    <Compile Include="CustomEntity\EXT_tbt_InventorySlip.cs" />
+    <Compile Include="doCalPriceCondition.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCheckingTempForGenSlip.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCompleteRemoveInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCompleteStockoutInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doContractUnoperatedInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doContractWIPInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doContractWIPInstrumentPartial.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCSVassetAmountAcc.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCSVInvDepreciationAcc.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCSVMovingAssetAcc.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doCSVOtherFinancialAcc.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doDepreciationData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doFIFOInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doFIFOInstrumentPrice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetInstallationDetailForStockOut.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetInstallationSlipForStockOut.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetInstallationStockOutForChecking.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetShelfCurrentData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGetShelfOfArea.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGroupNewInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGroupSampleInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doGroupSecondhandInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInstrumentMASale.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInventoryBookingDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInventorySlip.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInventorySlipDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInventorySlipDetailList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doInventorySlipList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIsEmptyShelfResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIVR.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIVR010.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIVR100.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIVR110.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIVR170.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIVR180.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIVR181.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIVR190.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIVR191.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIVR192.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doIVR210.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doLIFOInstrumentPrice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doMonthlyAveragePrice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doNormalShelfExistCurrent.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doOffice.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doProjectInformation.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doPurchaseOrder.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doPurchaseOrderDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doResultGetReturnSlip.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doResultGetSumPartialStockOutList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doResultInstallationDetailForStockOut.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doResultInstallationSlipForStockOut.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doResultInstallationStockOutForChecking.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doResultIVS200.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doResultIVS201.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doResultReturnInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSaleInstrument.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doSearchReceiveSlipResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doShelfCurrentData.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="doTbt_InventorySlipDetailForView.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Doxygen-DO.cs" />
+    <Compile Include="Doxygen-function.cs" />
+    <Compile Include="dtBatchProcessResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBufferLossReportDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtBufferLossReportHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtChangeAreaReportDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtChangeAreaReportHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCheckingDetailList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCheckingDetialList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCheckingStatusList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtCheckingYear.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtEliminateReportDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtEliminateReportHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInProcessReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInProcessReportDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInprocessToInstallReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInprocessToInstallReportDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInReportDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInReportHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtInstrumentForMovementReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtMovementReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtOfficeCheckingList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtOutReportDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtOutReportHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtPhysicalReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtResultInventorySlipDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtResultInventorySlipIVS230.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtResultIVS220.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtReturnReportDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtReturnReportHeader.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSearchInstallationSlipResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtSearchInstrumentListResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtStockCheckingList.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtStockListReport.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="dtStockOutByInstallationSlipResult.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTdoIVR140.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTdoIVR141.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTdoIVR142.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTdoIVR143.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RPTdoIVR150.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_InventoryRunningSlipNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_LotRunningNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbs_PurchaseOrderRunningNo.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_AccountInprocess.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_AccountInstalled.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_AccountInstock.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_AccountSampleInprocess.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_AccountSampleInstock.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_AccountStockMoving.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventoryBooking.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventoryBookingDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventoryCheckingSchedule.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventoryCheckingSlip.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventoryCheckingSlipDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventoryCheckingTemp.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventoryCurrent.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventoryCurrentChina.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventoryDepreciation.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventoryProjectWIP.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventorySlip.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_InventorySlipDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_PurchaseOrder.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbt_PurchaseOrderDetail.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <None Include="SECOM_AJIS.Entity.Inventory.Context.Biz.cs">
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.Context.tt</DependentUpon>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Inventory.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.Context.tt</DependentUpon>
+    </None>
+    <Compile Include="SECOM_AJIS.Entity.Inventory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SECOM_AJIS.Entity.Inventory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECOM_AJIS.Entity.Inventory.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="SECOM_AJIS.Entity.Inventory.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Inventory.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SECOM_AJIS.Entity.Inventory.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Inventory.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SECOM_AJIS.Entity.Inventory.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SECOM_AJIS.Entity.Inventory.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SECOM_AJIS.Common\SECOM_AJIS.Common.csproj">
+      <Project>{3A5B1A39-B295-4D51-833C-37CF1E7F081E}</Project>
+      <Name>SECOM_AJIS.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

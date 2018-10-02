@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="chkShowBranch" xml:space="preserve">
+    <value>สาขา</value>
+  </data>
+  <data name="chkShowLawsuit" xml:space="preserve">
+    <value>ทนาย</value>
+  </data>
+  <data name="chkShowNotDue" xml:space="preserve">
+    <value>ยังไม่ถึงกำหนด</value>
+  </data>
+  <data name="chkShowOutStanding" xml:space="preserve">
+    <value>ถึงกำหนด</value>
+  </data>
+  <data name="chkShowPending" xml:space="preserve">
+    <value>พักการตามหนี้</value>
+  </data>
+  <data name="headerAmount" xml:space="preserve">
+    <value>จำนวนเงิน</value>
+  </data>
+  <data name="headerBillingClient" xml:space="preserve">
+    <value>ลูกค้าสำหรับเรียกเก็บ</value>
+  </data>
+  <data name="headerBillingEndDate" xml:space="preserve">
+    <value>รอบบิล(จนถึง)</value>
+  </data>
+  <data name="headerBillingOffice" xml:space="preserve">
+    <value>สาขาที่ออกบิล</value>
+  </data>
+  <data name="headerBillingStartDate" xml:space="preserve">
+    <value>รอบบิล(ตั้งแต่)</value>
+  </data>
+  <data name="headerBillingTarget" xml:space="preserve">
+    <value>รหัสลูกค้าสำหรับออกใบแจ้งหนี้</value>
+  </data>
+  <data name="headerBillingType" xml:space="preserve">
+    <value>ประเภทการเรียกเก็บ</value>
+  </data>
+  <data name="headerCallDateAndName" xml:space="preserve">
+    <value>&lt;div&gt;&lt;u&gt;ข้อมูลการโทร&lt;/u&gt;&lt;br/&gt;(1) วันที่โทร&lt;br/&gt;(2) ผู้โทร&lt;br/&gt;(3) ประเภทสัญญา&lt;/div&gt;</value>
+  </data>
+  <data name="headerCallResult" xml:space="preserve">
+    <value>ผลการตามหนี้</value>
+  </data>
+  <data name="headerContractCode" xml:space="preserve">
+    <value>เลขที่สัญญา</value>
+  </data>
+  <data name="headerContractCount" xml:space="preserve">
+    <value>จำนวนสัญญา</value>
+  </data>
+  <data name="headerDocDate" xml:space="preserve">
+    <value>ลงวันที่</value>
+  </data>
+  <data name="headerDocNo" xml:space="preserve">
+    <value>เลขที่เช็คคืน</value>
+  </data>
+  <data name="headerDueDate" xml:space="preserve">
+    <value>วันครบกำหนดชำระ</value>
+  </data>
+  <data name="headerInvoiceAmount" xml:space="preserve">
+    <value>ราคาที่เรียกเก็บ (รวม VAT)</value>
+  </data>
+  <data name="headerInvoiceCount" xml:space="preserve">
+    <value>จำนวนใบแจ้งหนี้</value>
+  </data>
+  <data name="headerInvoiceNo" xml:space="preserve">
+    <value>เลขที่ใบแจ้งหนี้</value>
+  </data>
+  <data name="headerIssueDate" xml:space="preserve">
+    <value>วันที่ออกใบแจ้งหนี้</value>
+  </data>
+  <data name="headerNextCallDate" xml:space="preserve">
+    <value>วันที่จะโทรใหม่</value>
+  </data>
+  <data name="headerPaymentDetail" xml:space="preserve">
+    <value>&lt;div&gt;&lt;u&gt;การจ่าย&lt;/u&gt;&lt;br /&gt;(1) วันที่จะจ่าย&lt;br /&gt;(2) จำนวนเงิน&lt;br/&gt;(3) ประเภทชำระ&lt;/div&gt;</value>
+  </data>
+  <data name="headerPaymentMethod" xml:space="preserve">
+    <value>ประเภทชำระ</value>
+  </data>
+  <data name="headerPostponeReason" xml:space="preserve">
+    <value>สาเหตุที่ยังไม่จ่าย</value>
+  </data>
+  <data name="headerRemark" xml:space="preserve">
+    <value>หมายเหตุ</value>
+  </data>
+  <data name="headerSelectAll" xml:space="preserve">
+    <value>&lt;input name="chkSelectAll" id="chkSelectAll" style="MARGIN-LEFT: -3px" type="checkbox" value=""&gt;&lt;/input&gt;</value>
+  </data>
+  <data name="headerStatus" xml:space="preserve">
+    <value>สถานะ</value>
+  </data>
+  <data name="headerUnpaidAmount" xml:space="preserve">
+    <value>ยอดค้างชำระ</value>
+  </data>
+  <data name="lblAmount" xml:space="preserve">
+    <value>จำนวนเงิน</value>
+  </data>
+  <data name="lblBillingOffice" xml:space="preserve">
+    <value>สาขาที่ออกบิล</value>
+  </data>
+  <data name="lblBtnClear" xml:space="preserve">
+    <value>ล้าง</value>
+  </data>
+  <data name="lblBtnSearch" xml:space="preserve">
+    <value>ค้นหา</value>
+  </data>
+  <data name="lblContactInfo" xml:space="preserve">
+    <value>ข้อมูลติดต่อ</value>
+  </data>
+  <data name="lblContactPersonName" xml:space="preserve">
+    <value>ชื่อผู้ติดต่อ</value>
+  </data>
+  <data name="lblContacts" xml:space="preserve">
+    <value>ข้อมูลติดต่อ</value>
+  </data>
+  <data name="lblCurrentStatus" xml:space="preserve">
+    <value>สถานะปัจจุบัน</value>
+  </data>
+  <data name="lblCustDebtInfo" xml:space="preserve">
+    <value>ข้อมูลลูกค้า</value>
+  </data>
+  <data name="lblDebtTracingInput" xml:space="preserve">
+    <value>บันทึกข้อมูลการตามหนี้</value>
+  </data>
+  <data name="lblDTList" xml:space="preserve">
+    <value>รายการตามหนี้</value>
+  </data>
+  <data name="lblEstimateDate" xml:space="preserve">
+    <value>วันที่จะจ่าย</value>
+  </data>
+  <data name="lblHistory" xml:space="preserve">
+    <value>ประวัติการตามหนี้</value>
+  </data>
+  <data name="lblInvoiceDetails" xml:space="preserve">
+    <value>ข้อมูลการเรียกเก็บ</value>
+  </data>
+  <data name="lblInvoiceList" xml:space="preserve">
+    <value>รายการใบแจ้งหนี้</value>
+  </data>
+  <data name="lblNextCallDate" xml:space="preserve">
+    <value>วันที่จะโทรใหม่</value>
+  </data>
+  <data name="lblPaymentMethod" xml:space="preserve">
+    <value>ประเภทชำระ</value>
+  </data>
+  <data name="lblPhoneNo" xml:space="preserve">
+    <value>เบอร์โทร</value>
+  </data>
+  <data name="lblPostponeReason" xml:space="preserve">
+    <value>สาเหตุที่ยังไม่จ่าย</value>
+  </data>
+  <data name="lblRemark" xml:space="preserve">
+    <value>หมายเหตุ</value>
+  </data>
+  <data name="lblResult" xml:space="preserve">
+    <value>ผลการตามหนี้</value>
+  </data>
+  <data name="headerContractAndInvoiceCount" xml:space="preserve">
+    <value>&lt;div&gt;จำนวนสัญญา /&lt;br/&gt; ใบแจ้งหนี้ถึงกำหนด /&lt;br/&gt; ใบแจ้งหนี้ไม่ถึงกำหนด&lt;/div&gt;</value>
+  </data>
+  <data name="chkShowNotMatching" xml:space="preserve">
+    <value>รอ matching</value>
+  </data>
+  <data name="headerIsOverDueDesc" xml:space="preserve">
+    <value>สถานะ</value>
+  </data>
+  <data name="headerPaidButton" xml:space="preserve">
+    <value />
+  </data>
+  <data name="lblBillingClient" xml:space="preserve">
+    <value>ชื่อลูกค้าสำหรับเรียกเก็บ</value>
+  </data>
+  <data name="lblContractCode" xml:space="preserve">
+    <value>เลขที่สัญญา</value>
+  </data>
+  <data name="lblDebtTracingStatus" xml:space="preserve">
+    <value>สถานะ</value>
+  </data>
+  <data name="lblInvoiceNo" xml:space="preserve">
+    <value>เลขที่ใบแจ้งหนี้</value>
+  </data>
+  <data name="lblPaidButton" xml:space="preserve">
+    <value>ชำระแล้ว</value>
+  </data>
+  <data name="PaidConfirmParam" xml:space="preserve">
+    <value>ตั้งสถานะลูกค้าให้เป็นจ่ายแล้วและรอการจับคู่</value>
+  </data>
+  <data name="headerFirstFeeFlag" xml:space="preserve">
+    <value>&lt;img src="../../Content/images/icon/F.png" width = '16px' height = '16px'&gt;</value>
+  </data>
+  <data name="chkFirstFeeFlag" xml:space="preserve">
+    <value>เป็นค่าใช้จ่ายครั้งแรก</value>
+  </data>
+</root>

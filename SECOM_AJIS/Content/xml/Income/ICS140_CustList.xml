@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+
+    <column id="No" width="30" type="ro" align="center" sort="na"></column>
+    <column id="BillingOfficeDisplay" width="120" type="ro" align="left" sort="str_custom">headerBillingOffice</column>
+    <column id="BillingTargetCodeShort" width="110" type="ro" align="left" sort="str_custom">headerBillingTarget</column>
+    <column id="BillingClientName" width="*" type="ro" align="left" sort="str_custom">headerBillingClient</column>
+    <column id="ContractAndInvoiceCount" width="130" type="ro" align="left" sort="str_custom">headerContractAndInvoiceCount</column>
+    <!--<column id="InvoiceCount" width="80" type="ron2" align="right" numberformat="#,##0;-#,##0;0" sort="decimal_custom">headerInvoiceCount</column>
+    <column id="ContractCount" width="80" type="ron2" align="right" numberformat="#,##0;-#,##0;0" sort="decimal_custom">headerContractCount</column>-->
+    <!-- Edit by Jirawat jannet on 2016-10-31 -->
+    <column id="AmountShow" width="160" type="ro" align="right" sort="str_custom">headerAmount</column>
+    <column id="UnpaidAmountShow" width="160" type="ro" align="right" sort="str_custom">headerUnpaidAmount</column>
+    
+    <column id="DebtTracingStatusDesc" width="120" type="ro" align="left" sort="str_custom">headerStatus</column>
+    <column id="PaidButton" width="80" type="ro" align="center" sort="na">headerPaidButton</column>
+    <column id="SelectButton" width="30" type="ro" align="center" sort="na"></column>
+    <column id="BillingTargetCode" width="0" type="ro"  hidden="true"></column>
+    <column id="ContactPersonName" width="0" type="ro"  hidden="true"></column>
+    <column id="PhoneNo" width="0" type="ro"  hidden="true"></column>
+    <column id="DebtTracingSubStatus" width="0" type="ro"  hidden="true"></column>
+    <column id="IsHQBranch" width="0" type="ro"  hidden="true"></column>
+    <column id="BillingOfficeCode" width="0" type="ro"  hidden="true"></column>
+    <column id="ServiceTypeCode" width="0" type="ro"  hidden="true"></column>
+
+    <column id="Amount" width="0" type="ro" hidden="true"></column>
+    <column id="UnpaidAmount" width="0" type="ro" hidden="true"></column>
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

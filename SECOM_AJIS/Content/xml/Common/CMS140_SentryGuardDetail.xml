@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <column width="30" type="ro" align="center" sort="na"></column>
+
+    <column id="SentryGuardType" width="*" type="ro" align="left" sort="str_custom">headerSentry_guard_type</column>
+    <column id="NumOfDate" width="100" type="edn" format="0,000.0"  align="right" sort="int">headerNumber_of_date</column>
+    <column id="strStartTime" width="100" type="ro" align="center" sort="str_custom">headerSecurity_time_HHMM</column>
+    <column id="strFinishTime" width="100" type="ro" align="center" sort="str_custom">#cspan</column>
+    <column id="WorkHourPerMonth" width="100" type="edn" format="0,000.0" align="right" sort="int">headerWorking_hours_per_month</column>
+    <column id="TextTransferTimeUnitPrice" width="180" type="ro" align="right" sort="na">headerCost_per_hour_THB</column>
+    <column id="NumOfSentryGuard" width="150" type="edn" format="0,000" align="right" sort="int">headerNumber_of_SG_Persons</column>
+
+
+    <afterInit>
+      <call command="attachHeader">
+        <param>#rspan,#rspan,#rspan,headerStart,headerFinish,#rspan,#rspan,#rspan</param>
+      </call>
+    </afterInit>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

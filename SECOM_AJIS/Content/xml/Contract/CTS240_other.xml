@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+    <!--  <column id="No"  width="30" type="ro" align="center"></column> -->
+
+    <column id="CompanyName"  width="*" type="ro" align="left" sort="na">lblCompanyName</column>
+    <column id="Name"  width="*"  type="ro" align="left" sort="na">HgridName</column>
+    <column id="TelNo"  width="*"  type="ro" align="left" sort="na">lblContactTelephoneNo</column>
+    <column id="Remark"  width="*"  type="ro" align="left" sort="na">HgridRemark</column>
+    <column id="Edit" width="30" type="ro" align="center" sort="na">HgridEdit</column>
+    <column id="Remove" width="30" type="ro" align="center" sort="na">HgridRemove</column>
+
+
+    <!--Hidden-->
+    <column id="tmpCol" width="*" hidden="true" type="ro" align="center"></column>
+    <column id="SequenceNo" width="*" hidden="true" type="ro" align="center"></column>
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

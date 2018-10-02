@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<rows>
+  <head>
+	
+    <column id="DocumentName"  width="*" type="ro" align="left">HgridDocumentName</column>
+	  <column id="AttachFileID" width="30" type="ro" align="center" sort="na" hidden="true"></column>
+    <column id="Delete"  width="80" type="ro" align="center">HgridDelete</column>
+	<column id="TmpColumn" width="0" type="ro" hidden="true" sort="na"></column>
+
+
+    <settings>
+      <colwidth>px</colwidth>
+    </settings>
+  </head>
+</rows>

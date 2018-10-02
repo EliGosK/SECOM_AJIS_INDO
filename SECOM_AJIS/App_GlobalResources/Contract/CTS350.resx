@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="btnDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="btnRegisterNextAR" xml:space="preserve">
+    <value>Register next approval request</value>
+  </data>
+  <data name="btnRemove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="btnRetrieve" xml:space="preserve">
+    <value>Retrieve</value>
+  </data>
+  <data name="btnSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="btnViewEditARDetail" xml:space="preserve">
+    <value>View/Edit approval request detail</value>
+  </data>
+  <data name="headerAROrder" xml:space="preserve">
+    <value>Approval request (Order)</value>
+  </data>
+  <data name="headerARRole" xml:space="preserve">
+    <value>Approval request role</value>
+  </data>
+  <data name="headerContractCode" xml:space="preserve">
+    <value>Contract no.</value>
+  </data>
+  <data name="headerContractTarget" xml:space="preserve">
+    <value>&lt;div&gt;Customer name&lt;br/&gt;(1) English&lt;br/&gt;(2) Local&lt;/div&gt;</value>
+  </data>
+  <data name="headerDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="headerDepartment" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="headerDocumentName" xml:space="preserve">
+    <value>Document name</value>
+  </data>
+  <data name="headerEmployeeName" xml:space="preserve">
+    <value>Employee name</value>
+  </data>
+  <data name="headerGroupCode" xml:space="preserve">
+    <value>Group code</value>
+  </data>
+  <data name="headerGroupNameEN" xml:space="preserve">
+    <value>Group name (English)</value>
+  </data>
+  <data name="headerGroupNameLC" xml:space="preserve">
+    <value>Group name (Local)</value>
+  </data>
+  <data name="headerOCDC" xml:space="preserve">
+    <value>Discount/Over-received rate</value>
+  </data>
+  <data name="headerOffice" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="headerQuotation" xml:space="preserve">
+    <value>Quotation</value>
+  </data>
+  <data name="headerRemove" xml:space="preserve">
+    <value>&lt;div style="display:none;"&gt;Remove&lt;/div&gt;</value>
+  </data>
+  <data name="headerSendMail" xml:space="preserve">
+    <value>Send mail</value>
+  </data>
+  <data name="headerSiteName" xml:space="preserve">
+    <value>&lt;div&gt;Premise's name&lt;br /&gt;(1)  English&lt;br /&gt;(2)Local&lt;/div&gt;</value>
+  </data>
+  <data name="headerUserCode" xml:space="preserve">
+    <value>User code</value>
+  </data>
+  <data name="lblAddress_English" xml:space="preserve">
+    <value>Address (English)</value>
+  </data>
+  <data name="lblAddress_Local" xml:space="preserve">
+    <value>Address (Local)</value>
+  </data>
+  <data name="lblAlarmMaintenSentryFee" xml:space="preserve">
+    <value>Alarm/Maintenance/Security guard</value>
+  </data>
+  <data name="lblARPurpose" xml:space="preserve">
+    <value>Approval request purpose</value>
+  </data>
+  <data name="lblARRelevantInformation" xml:space="preserve">
+    <value>Approval request relevant information</value>
+  </data>
+  <data name="lblARRelevantType" xml:space="preserve">
+    <value>Approval request relevant type</value>
+  </data>
+  <data name="lblARRole" xml:space="preserve">
+    <value>Approval request role</value>
+  </data>
+  <data name="lblARSubTitle" xml:space="preserve">
+    <value>Approval request subtitle</value>
+  </data>
+  <data name="lblARTitle" xml:space="preserve">
+    <value>Approval request title</value>
+  </data>
+  <data name="lblARType" xml:space="preserve">
+    <value>Approval request type</value>
+  </data>
+  <data name="lblAssignPersonInChargeInformation" xml:space="preserve">
+    <value>Assign person in charge information</value>
+  </data>
+  <data name="lblAssignPersonInchargeRemark" xml:space="preserve">
+    <value>Please select person to request audit/approval.</value>
+  </data>
+  <data name="lblAttachDocList" xml:space="preserve">
+    <value>Attached document list</value>
+  </data>
+  <data name="lblAttachedDocumentList" xml:space="preserve">
+    <value>Attached document</value>
+  </data>
+  <data name="lblBusinessType" xml:space="preserve">
+    <value>Business category</value>
+  </data>
+  <data name="lblContractFee" xml:space="preserve">
+    <value>Service fee</value>
+  </data>
+  <data name="lblContractTargetEN" xml:space="preserve">
+    <value>Customer name (English)</value>
+  </data>
+  <data name="lblContractTargetLC" xml:space="preserve">
+    <value>Customer name (Local)</value>
+  </data>
+  <data name="lblCustomerCode" xml:space="preserve">
+    <value>Customer code</value>
+  </data>
+  <data name="lblCustomerInformation" xml:space="preserve">
+    <value>Customer information</value>
+  </data>
+  <data name="lblDepartment" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="lblDepositFee" xml:space="preserve">
+    <value>Deposit fee</value>
+  </data>
+  <data name="lblDiscount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="lbldNoTaxIdNo" xml:space="preserve">
+    <value>NPWP</value>
+  </data>
+  <data name="lblDocumentName" xml:space="preserve">
+    <value>Document name</value>
+  </data>
+  <data name="lblDueDate_DeadLine" xml:space="preserve">
+    <value>Due date/Dead line</value>
+  </data>
+  <data name="lblEmployeeName" xml:space="preserve">
+    <value>Employee name</value>
+  </data>
+  <data name="lblImportanceFlag" xml:space="preserve">
+    <value>Importance</value>
+  </data>
+  <data name="lblInstallationFee" xml:space="preserve">
+    <value>Installation fee</value>
+  </data>
+  <data name="lblInstallFee2" xml:space="preserve">
+    <value>Installation fee</value>
+  </data>
+  <data name="lblName_English" xml:space="preserve">
+    <value>Name (English)</value>
+  </data>
+  <data name="lblName_Local" xml:space="preserve">
+    <value>Name (Local)</value>
+  </data>
+  <data name="lblNationality" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
+  <data name="lblNewARInfo" xml:space="preserve">
+    <value>New approval request field information</value>
+  </data>
+  <data name="lblOffice" xml:space="preserve">
+    <value>Office</value>
+  </data>
+  <data name="lblOperationOffice" xml:space="preserve">
+    <value>Operation office</value>
+  </data>
+  <data name="lblOverReceived" xml:space="preserve">
+    <value>Over-received</value>
+  </data>
+  <data name="lblPleasePayAttention" xml:space="preserve">
+    <value>Please pay attention to specify document name so that you won't confuse after registering.</value>
+  </data>
+  <data name="lblPleaseSetDue" xml:space="preserve">
+    <value>Please set due  date or deadline.</value>
+  </data>
+  <data name="lblProductPrice1" xml:space="preserve">
+    <value>Product price</value>
+  </data>
+  <data name="lblProjectCode" xml:space="preserve">
+    <value>Project code</value>
+  </data>
+  <data name="lblProjectInformation" xml:space="preserve">
+    <value>Project information</value>
+  </data>
+  <data name="lblProjectName" xml:space="preserve">
+    <value>Project name</value>
+  </data>
+  <data name="lblProjectPurchaserName_English" xml:space="preserve">
+    <value>Project customer name (English)</value>
+  </data>
+  <data name="lblProjectPurchaserName_Local" xml:space="preserve">
+    <value>Project customer name (Local)</value>
+  </data>
+  <data name="lblProjectRepresentativeAddress" xml:space="preserve">
+    <value>Project representative address</value>
+  </data>
+  <data name="lblQuotationCode" xml:space="preserve">
+    <value>Quotation target code</value>
+  </data>
+  <data name="lblQuotationOffice" xml:space="preserve">
+    <value>Quotation office</value>
+  </data>
+  <data name="lblQuotationTargetInformation" xml:space="preserve">
+    <value>Quotation target information</value>
+  </data>
+  <data name="lblRequestNo" xml:space="preserve">
+    <value>Request no.</value>
+  </data>
+  <data name="lblResultRegisterAR" xml:space="preserve">
+    <value>Result of register approval request</value>
+  </data>
+  <data name="lblSaleFee" xml:space="preserve">
+    <value>Sale</value>
+  </data>
+  <data name="lblSalePrice12" xml:space="preserve">
+    <value>Sale price (1) + (2)</value>
+  </data>
+  <data name="lblSiteAddressEN" xml:space="preserve">
+    <value>Premise's address (English)</value>
+  </data>
+  <data name="lblSiteAddressLC" xml:space="preserve">
+    <value>Premise's address (Local)</value>
+  </data>
+  <data name="lblSiteCode" xml:space="preserve">
+    <value>Premise's code</value>
+  </data>
+  <data name="lblSiteInformation" xml:space="preserve">
+    <value>Premise's information</value>
+  </data>
+  <data name="lblSiteNameEN" xml:space="preserve">
+    <value>Premise's name (English)</value>
+  </data>
+  <data name="lblSiteNameLC" xml:space="preserve">
+    <value>Premise's name (Local)</value>
+  </data>
+  <data name="lblStatus" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="lblTelephoneNo" xml:space="preserve">
+    <value>Telephone no.</value>
+  </data>
+  <data name="lblTime" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="lblUntil" xml:space="preserve">
+    <value>Until</value>
+  </data>
+  <data name="lblURL" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="lblUsage" xml:space="preserve">
+    <value>Premise's type</value>
+  </data>
+  <data name="lblUserCode_ContractCode" xml:space="preserve">
+    <value>User code/Contract no.</value>
+  </data>
+  <data name="rdoContract" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="rdoCustomer" xml:space="preserve">
+    <value>Customer</value>
+  </data>
+  <data name="rdoDeadLine" xml:space="preserve">
+    <value>Deadline</value>
+  </data>
+  <data name="rdoDueDate" xml:space="preserve">
+    <value>Due date</value>
+  </data>
+  <data name="rdoProject" xml:space="preserve">
+    <value>Project</value>
+  </data>
+  <data name="rdoQuotation" xml:space="preserve">
+    <value>Quotation target</value>
+  </data>
+  <data name="rdoRelatedAllContract" xml:space="preserve">
+    <value>Related to all contract in this premises</value>
+  </data>
+  <data name="rdoRelatedAllSite" xml:space="preserve">
+    <value>Related to all premises of this customer</value>
+  </data>
+  <data name="rdoRelatedCustomer" xml:space="preserve">
+    <value>Related to customer</value>
+  </data>
+  <data name="rdoRelatedSite" xml:space="preserve">
+    <value>Related to premises</value>
+  </data>
+  <data name="rdoSite" xml:space="preserve">
+    <value>Premises</value>
+  </data>
+  <data name="lblAskChangeARTitle" xml:space="preserve">
+    <value>Change approval request title, approval request purpose will be lost.</value>
+  </data>
+  <data name="lblAskChangeARType" xml:space="preserve">
+    <value>Change approval request type, approval request purpose will be lost.</value>
+  </data>
+  <data name="lblDC" xml:space="preserve">
+    <value>Discount</value>
+  </data>
+  <data name="lblOR" xml:space="preserve">
+    <value>Over-received</value>
+  </data>
+  <data name="lblAttachedDocument" xml:space="preserve">
+    <value>Attached document</value>
+  </data>
+  <data name="lblRemarkAttachFileSize" xml:space="preserve">
+    <value>Total file size not exceed 5MB.</value>
+  </data>
+</root>
